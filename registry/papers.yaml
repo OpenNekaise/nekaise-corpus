@@ -151731,3 +151731,164 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
+  - id: oas-10-48550-arxiv-2210-04876-4301008a
+    title: Parametric Simulation of Dynamic Glazing System with Changeable NIR Response
+    url: https://arxiv.org/pdf/2210.04876
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-10-10'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2210.04876
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2210.04876;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2210.04876 openalex:W4304732396
+    resolution: 'sim1: openalex location'
+  - id: arx-coloured-and-semi-transparent-nanowire-based-s
+    title: Coloured and Semi-Transparent Nanowire-based Solar Cells for Building Integrated
+      Photovoltaics
+    url: https://arxiv.org/pdf/2107.09465v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-07-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2107.09465
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2107.09465 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-modeling-lead-rubber-seismic-isolation-bearing
+    title: Modeling Lead-Rubber Seismic Isolation Bearings Using the Unified Mechanics
+      Theory
+    url: https://arxiv.org/pdf/2003.05621v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-03-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.05621
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.05621 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.31462/jseam.2021.04213226
+  - id: arx-mechanical-and-electrical-properties-of-mwcnt-
+    title: Mechanical and electrical properties of MWCNT/PP films and structural health
+      monitoring of GF/PP joints
+    url: https://arxiv.org/pdf/2204.00909v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-04-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.00909
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.00909 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-head-related-transfer-function-measurements-in
+    title: Head-related transfer function measurements in a compartment fire
+    url: https://arxiv.org/pdf/2108.11465v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-08-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2108.11465
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2108.11465 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1121/10.0009597
+  - id: arx-structural-engineering-of-transition-metal-nit
+    title: Structural engineering of transition-metal nitrides for surface-enhanced
+      Raman scattering chips
+    url: https://arxiv.org/pdf/2204.04441v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-04-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.04441
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.04441 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1007/s12274-021-3904-z
+  - id: arx-ray-tracing-and-finite-element-modeling-of-sou
+    title: Ray tracing and finite element modeling of sound propagation in a compartment
+      fire
+    url: https://arxiv.org/pdf/2108.11516v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-08-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2108.11516
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2108.11516 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1121/10.0009800
+  - id: arx-piezoelectric-pvdf-trfe-pet-energy-harvesters-
+    title: Piezoelectric PVDF-TrFE/ PET Energy Harvesters for Structural Health Monitoring
+      (SHM) Applications
+    url: https://arxiv.org/pdf/2210.13217v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-10-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2210.13217
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2210.13217 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-identifying-damage-sensitive-spatial-vibration
+    title: Identifying Damage-Sensitive Spatial Vibration Characteristics of Bridges
+      from Widespread Smartphone Data
+    url: https://arxiv.org/pdf/2211.01363v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-11-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2211.01363
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2211.01363 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
