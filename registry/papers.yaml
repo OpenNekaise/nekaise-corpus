@@ -150703,3 +150703,329 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-13'
+  - id: ope-reducing-the-carbon-footprint-of-house-heating
+    title: Reducing the carbon footprint of house heating through model predictive control
+      – A simulation study in Danish conditions
+    url: https://vbn.aau.dk/ws/files/301324153/Reducing_the_carbon_footprint_of_house_heating_through_model_predictive_contro_l_A_simulation_study_in_Danish_conditions.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2018-08-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.scs.2018.07.027
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://vbn.aau.dk/ws/files/301324153/Reducing_the_carbon_footprint_of_house_heating_through_model_predictive_contro_l_A_simulation_study_in_Danish_conditions.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.scs.2018.07.027 openalex:W2886357265
+    resolution: 'legacy: openalex location'
+  - id: ope-estimation-of-temperature-setpoints-and-heat-t
+    title: Estimation of temperature setpoints and heat transfer coefficients among
+      residential buildings in Denmark based on smart meter data
+    url: https://backend.orbit.dtu.dk/ws/files/192405100/Gianniou_et_al_manuscript_v2_clean.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2018-05-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2018.05.016
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://backend.orbit.dtu.dk/ws/files/192405100/Gianniou_et_al_manuscript_v2_clean.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2018.05.016 openalex:W2805002835
+    resolution: 'legacy: openalex location'
+  - id: ope-predictive-digital-twin-technologies-for-achie
+    title: 'Predictive digital twin technologies for achieving net zero carbon emissions:
+      a critical review and future research agenda'
+    url: https://discovery.ucl.ac.uk/10196652/1/Eghaish%20et%20al%202024%20-%20SASBE-03-2024-0096-FE.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-08-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1108/sasbe-03-2024-0096
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10196652/1/Eghaish%20et%20al%202024%20-%20SASBE-03-2024-0096-FE.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1108/sasbe-03-2024-0096 openalex:W4401253692
+    resolution: 'legacy: openalex location'
+  - id: ope-prediction-of-office-building-electricity-dema
+    title: Prediction of office building electricity demand using artificial neural
+      network by splitting the time horizon for different occupancy rates
+    url: https://eprints.gla.ac.uk/243106/1/243106.pdf
+    source: openalex
+    license: cc-by-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-06-05'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyai.2021.100093
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://eprints.gla.ac.uk/243106/1/243106.pdf; version acceptedVersion;
+      rights accepted]
+    rights_verified_at: '2026-10-13'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.egyai.2021.100093 openalex:W3171358385
+    resolution: 'legacy: openalex location'
+  - id: ope-long-term-continuous-air-quality-monitoring-in
+    title: Long-term, continuous air quality monitoring in a cross-sectional study of
+      three UK non-domestic buildings
+    url: https://discovery.ucl.ac.uk/10104753/1/1-s2.0-S0360132320304510-main.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-07-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2020.107071
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10104753/1/1-s2.0-S0360132320304510-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2020.107071 openalex:W3041021611
+    resolution: 'legacy: openalex location'
+  - id: ope-explaining-spatial-variations-in-residential-e
+    title: 'Explaining Spatial Variations in Residential Energy Usage Intensity in Chicago:
+      The Role of Urban Form and Geomorphometry'
+    url: https://cdr.lib.unc.edu/downloads/j3860q56m
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-09-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/0739456x19873382
+    license_evidence: no licence statement for this copy [copy https://cdr.lib.unc.edu/downloads/j3860q56m;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/0739456x19873382 openalex:W2972777500
+    resolution: 'legacy: openalex location'
+  - id: ope-multiple-benefits-through-smart-home-energy-ma
+    title: Multiple Benefits through Smart Home Energy Management Solutions—A Simulation-Based
+      Case Study of a Single-Family-House in Algeria and Germany
+    url: https://arxiv.org/pdf/1904.11496
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-04-23'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en12081537
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1904.11496;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en12081537 openalex:W2942398935
+    resolution: 'legacy: openalex location'
+  - id: ope-on-the-quality-evaluation-of-behavioural-model
+    title: On the quality evaluation of behavioural models for building performance
+      applications
+    url: https://discovery.ucl.ac.uk/10058652/1/JBPS_Accepted.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2016-09-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2016.1230148
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10058652/1/JBPS_Accepted.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2016.1230148 openalex:W2523171180
+    resolution: 'legacy: openalex location'
+  - id: ope-occupants-behavioural-impact-on-energy-consump
+    title: 'Occupants’ behavioural impact on energy consumption: ‘human-in-the-loop’
+      comfort process control'
+    url: https://pure.tue.nl/ws/files/3770716/1516161340807.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2013-11-12'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/17452007.2013.837252
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://pure.tue.nl/ws/files/3770716/1516161340807.pdf; version submittedVersion;
+      rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/17452007.2013.837252 openalex:W2153159656
+    resolution: 'legacy: openalex location'
+  - id: ope-dynamic-building-thermal-mass-clustering-for-e
+    title: 'Dynamic building thermal mass clustering for energy flexibility assessment:
+      An application to demand response events'
+    url: https://lirias.kuleuven.be/retrieve/7aea9a25-e8d5-41bc-87dd-9c392e36012d
+    source: openalex
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-02-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2024.114011
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://lirias.kuleuven.be/retrieve/7aea9a25-e8d5-41bc-87dd-9c392e36012d;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2024.114011 openalex:W4391938987
+    resolution: 'legacy: openalex location'
+  - id: arx-framework-for-a-simulation-based-aerodynamic-s
+    title: Framework for a simulation-based aerodynamic shape optimization of bridge
+      decks for different limit state phenomena
+    url: https://arxiv.org/pdf/2203.14414v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2203.14414
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2203.14414 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-urbanflow-designing-comfortable-outdoor-areas
+    title: 'UrbanFlow: Designing Comfortable Outdoor Areas'
+    url: https://arxiv.org/pdf/2204.01117v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-04-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.01117
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.01117 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-seismic-response-of-cylinder-assemblies-in-axi
+    title: Seismic response of cylinder assemblies in axial flow
+    url: https://arxiv.org/pdf/2110.15924v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-10-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2110.15924
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2110.15924 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1017/jfm.2022.433
+  - id: arx-cavity-dynamics-after-the-injection-of-a-micro
+    title: Cavity dynamics after the injection of a microfluidic jet in capillary bridges
+    url: https://arxiv.org/pdf/2207.02667v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-07-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2207.02667
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2207.02667 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-a-new-riemann-solver-for-modelling-bridges-in-
+    title: A New Riemann Solver for Modelling Bridges in Flood Flows -- Development
+      and Experimental Validation
+    url: https://arxiv.org/pdf/2207.00247v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-07-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2207.00247
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2207.00247 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-numerical-investigation-of-the-nonlinear-inter
+    title: Numerical investigation of the nonlinear interaction between the sinusoidal
+      motion-induced and gust-induced forces acting on bridge decks
+    url: https://arxiv.org/pdf/2109.00441v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2109.00441
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2109.00441 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.jfluidstructs.2022.103680
+  - id: arx-the-time-evolving-impact-of-tree-size-on-night
+    title: 'The time-evolving impact of tree size on nighttime street canyon microclimate:
+      Wind tunnel modeling of aerodynamic effects and heat removal'
+    url: https://arxiv.org/pdf/2301.05766v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-01-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2301.05766
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2301.05766 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: ope-optimal-renovation-strategies-for-education-bu
+    title: Optimal Renovation Strategies for Education Buildings—A Novel BIM–BPM–BEM
+      Framework
+    url: https://drum.lib.umd.edu/bitstreams/07189795-a804-4ff5-ba9e-aac73f316b8b/download
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2018-09-14'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su10093287
+    license_evidence: 'redirect: rights of requested copy https://drum.lib.umd.edu/bitstreams/07189795-a804-4ff5-ba9e-aac73f316b8b/download
+      do not transfer to https://api.drum.lib.umd.edu/server/api/core/bitstreams/07189795-a804-4ff5-ba9e-aac73f316b8b/content;
+      payload sha256=1f44248a1cf7a2e52f8c3fc6087d06a5db1e1f0612ea5c13a77d2aec2787c628;
+      original evidence: {"license": "unverified", "license_evidence": "no licence statement
+      for this copy [copy https://drum.lib.umd.edu/bitstreams/07189795-a804-4ff5-ba9e-aac73f316b8b/download;
+      version submittedVersion; rights unknown]", "rights_verified_at": "2026-10-13",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-13T09:46:16Z'
+    origin_ids: doi:10.3390/su10093287 openalex:W2889887533
+    resolution: 'legacy: openalex location'
