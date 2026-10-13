@@ -153651,20 +153651,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/4.0
     license_evidence: http://contexto.uanl.mx/index.php/contexto/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:contexto.uanl.mx:article/195
     rights_verified_at: '2026-10-13'
-  - id: ojs-contexto-rese-a-del-libro-espacio-metropolitano-contempor-n
-    title: Reseña del libro Espacio Metropolitano contemporáneo. Posiciones, desafíos
-      y propuestas de acción
-    url: http://contexto.uanl.mx/index.php/contexto/article/download/197/160
-    source: ojs_contexto
-    license: cc-by-nc
-    topic: architecture
-    format: pdf
-    language: es
-    published_at: '2019-04-12'
-    document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by-nc/4.0
-    license_evidence: http://contexto.uanl.mx/index.php/contexto/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:contexto.uanl.mx:article/197
-    rights_verified_at: '2026-10-13'
   - id: ojs-contexto-los-costes-de-la-modernizaci-n-desigualdad-social
     title: 'Los costes de la modernización: desigualdad social y fragmentación urbana
       en Tampico, Tamaulipas'
@@ -154723,21 +154709,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2001 Pongchai Nimcharoenwon, Graham Miller)'
     rights_verified_at: '2026-10-13'
-  - id: ojs-ajceb-releasing-brownfields
-    title: Releasing Brownfields
-    url: http://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/2881/3046
-    source: ojs_ajceb
-    license: unverified
-    topic: construction
-    format: pdf
-    language: en
-    published_at: '2012-11-14'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.5130/ajceb.v1i2.2881
-    license_evidence: 'http://epress.lib.uts.edu.au/journals/index.php/AJCEB/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:epress.lib.uts.edu.au:article/2881
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2001 Alan Jeary)'
-    rights_verified_at: '2026-10-13'
   - id: ojs-ajceb-integrated-manufacturing-services-businesses-in-the-a
     title: Integrated Manufacturing-Services Businesses in the Australian Building and
       Construction Sector
@@ -155216,36 +155187,6 @@ sources:
     license_evidence: 'http://epress.lib.uts.edu.au/journals/index.php/AJCEB/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:epress.lib.uts.edu.au:article/2918
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2003 Patricia McLaughlin)'
-    rights_verified_at: '2026-10-13'
-  - id: ojs-ajceb-value-management-in-practice-an-interview-survey
-    title: 'Value Management in Practice: An Interview Survey'
-    url: http://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/2927/3103
-    source: ojs_ajceb
-    license: unverified
-    topic: construction
-    format: pdf
-    language: en
-    published_at: '2012-11-18'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.5130/ajceb.v4i2.2927
-    license_evidence: 'http://epress.lib.uts.edu.au/journals/index.php/AJCEB/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:epress.lib.uts.edu.au:article/2927
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2004 Therese Daddow, Martin Skitmore)'
-    rights_verified_at: '2026-10-13'
-  - id: ojs-ajceb-supportive-organisational-cultures-and-their-effects
-    title: Supportive Organisational Cultures and their effects on Male Civil Engineers
-    url: http://epress.lib.uts.edu.au/journals/index.php/AJCEB/article/download/2934/3112
-    source: ojs_ajceb
-    license: unverified
-    topic: construction
-    format: pdf
-    language: en
-    published_at: '2012-11-19'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.5130/ajceb.v4i1.2934
-    license_evidence: 'http://epress.lib.uts.edu.au/journals/index.php/AJCEB/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:epress.lib.uts.edu.au:article/2934
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2004 Valarie Francis)'
     rights_verified_at: '2026-10-13'
   - id: ojs-ajceb-application-of-project-time-management-tools-and-tech
     title: Application of Project Time Management Tools and Techniques to the Construction
@@ -156643,4 +156584,2793 @@ sources:
     persistent_id: https://doi.org/10.25299/saintis.2026.vol26(01).27771
     license_url: http://creativecommons.org/licenses/by-sa/4.0
     license_evidence: http://journal.uir.ac.id/index.php/saintis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journal.uir.ac.id:article/27771
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-4d-radar-imaging-and-camera-fusion-for-road-crossing
+    title: 4D Radar Imaging and Camera Fusion for Road Crossing Detection and Classification
+      Using Deep Learning
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3268/1030
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i1.3268
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3268
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-factors-influencing-the-elastic-stiffness-factor-in
+    title: Factors Influencing the Elastic Stiffness Factor in Reinforced Concrete Structures
+      of Dual Systems Using Pushover Analysis
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3321/1023
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i1.3321
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3321
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-global-local-self-attention-based-long-short-term-me
+    title: Global-Local Self-Attention-Based Long Short-Term Memory with Optimization
+      Algorithm for Speaker Identification
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3386/1035
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i1.3386
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3386
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-smart-iot-energy-optimisation-and-localisation-monit
+    title: Smart IoT Energy Optimisation and Localisation Monitoring for E-Bike Sharing
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3448/1096
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i2.3448
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3448
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-natural-bitumen-in-hot-asphalt-mixture-suitability-o
+    title: 'Natural Bitumen in Hot Asphalt Mixture: Suitability of Using Treated Natural
+      Bitumen Instead of Petroleum Asphalt Binder'
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3452/1074
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i2.3452
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3452
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-utilization-of-msw-derived-biochar-for-production-of
+    title: Utilization of MSW-Derived Biochar for Production of Iron Through Solid–Solid
+      Reaction
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3509/1088
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i2.3509
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3509
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-an-integration-method-for-supplier-selection-a-pract
+    title: 'An Integration Method for Supplier Selection: A Practical Study in the Indonesian
+      Concrete Company'
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3575/1090
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i2.3575
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3575
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-corrosion-evaluation-on-fly-ash-and-silica-fume-conc
+    title: Corrosion Evaluation on Fly Ash and Silica Fume Concrete Using NDT Methods
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3606/1129
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i3.3606
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3606
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-characterisation-and-strength-activity-index-of-eco
+    title: Characterisation and Strength Activity Index of Eco-Processed Pozzolan
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3631/1130
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i3.3631
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3631
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-machine-learning-and-rsm-for-strength-forecasting-in
+    title: Machine Learning and RSM for Strength Forecasting in Sustainable SCGC
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3730/1131
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i3.3730
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3730
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-initial-investigation-on-improving-the-physicomechan
+    title: Initial Investigation on Improving the Physicomechanical Properties of Clayey
+      Sand Using Clay Brick Dust
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3821/1132
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i3.3821
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3821
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-numerical-investigation-of-sediment-scour-downstream
+    title: Numerical Investigation of Sediment Scour Downstream of Adjustable and Fixed
+      Submerged Weir Using FLOW-3D
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3825/1133
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v26i3.3825
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3825
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-eco-friendly-asphalt-mixture-utilization-of-waste-po
+    title: 'Eco-Friendly Asphalt Mixture: Utilization of Waste Polypropylene as a Partial
+      Replacement of Aggregate'
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3843/1244
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v27i2.3843
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3843
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-field-and-laboratory-evaluation-of-reliability-in-a
+    title: Field and Laboratory Evaluation of Reliability in a Novel Cone Deployment
+      System for Safer Highway Operations
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/3971/1264
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v27i2.3971
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/3971
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-promptlesssam-from-foundational-model-to-domain-expe
+    title: 'PromptLessSAM: From Foundational Model to Domain Expert via Lightweight
+      Decoder Adaptation for Crack Segmentation'
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/4124/1254
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v27i2.4124
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/4124
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-repeated-loading-behavior-of-cfrp-strengthened-conti
+    title: 'Repeated Loading Behavior of CFRP-Strengthened Continuous RC Beams: Experimental
+      Investigation, Finite Element Analysis, and Predictive Modeling'
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/4517/1324
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v27i3.4517
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/4517
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-machine-learning-prediction-of-marshall-mix-design-p
+    title: Machine-Learning Prediction of Marshall Mix-Design Properties and Mechanical
+      Characterization of DCR-Treated Asphaltic Concrete
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/4533/1325
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v27i3.4533
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/4533
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-a-predictive-energy-management-framework-for-malaysi
+    title: A Predictive Energy Management Framework for Malaysian Residential Microgrid
+      Using LSTM-Driven Adaptive Rule-Based Control
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/4635/1342
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v27i3.4635
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/4635
+    rights_verified_at: '2026-10-13'
+  - id: ojs-iiumej-numerical-evaluation-of-geogrid-reinforced-slopes-un
+    title: Numerical Evaluation of Geogrid-Reinforced Slopes under Various Soil and
+      Geometric Configurations
+    url: http://journals.iium.edu.my/ejournal/index.php/iiumej/article/download/4705/1333
+    source: ojs_iiumej
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31436/iiumej.v27i3.4705
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: http://journals.iium.edu.my/ejournal/index.php/iiumej/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.iium.edu.my:article/4705
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-pengembangan-formula-scf-untuk-analisa-kelelahan-joint
+    title: Pengembangan Formula SCF untuk Analisa Kelelahan Joint (Sambungan) T pada
+      Struktur Bangunan Lepas Pantai
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2687/1298
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-02-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.1.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2687
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kajian-instrumen-pungutan-bagi-pengguna-jalan-untuk-dan
+    title: Kajian Instrumen Pungutan Bagi Pengguna Jalan untuk Dana Pemeliharaan di
+      Propinsi Jawa Barat
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2688/1299
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-02-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.1.5
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2688
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-dilatancy-behavior-in-constant-strain-rate-consolidatio
+    title: Dilatancy Behavior in Constant Strain Rate Consolidation Test
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2689/1300
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.2.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2689
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-regulasi-tarif-sistem-hibrid-alternatif-untuk-proyek-pr
+    title: Regulasi Tarif Sistem Hibrid Alternatif untuk Proyek Privatisasi Infrastruktur
+      Berisiko Tinggi
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2690/1301
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.2.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2690
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-model-hak-guna-air-dan-insentif-disinsentif-bagi-pemeri
+    title: Model Hak Guna Air dan Insentif / Disinsentif Bagi Pemerintah Otonomi Kabupaten
+      / Kota di Jawa Barat (Studi Kasus DAS Cimanuk – Jawa Barat)
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2691/1302
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.2.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2691
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-pola-supply-chain-pada-proyek-konstruksi-bangunan-gedun
+    title: Pola Supply Chain pada Proyek Konstruksi Bangunan Gedung
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2693/1304
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.3.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2693
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-mengukur-risiko-dan-atraktivitas-investasi-infrastruktu
+    title: Mengukur Risiko dan Atraktivitas Investasi Infrastruktur di Indonesia
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2694/1305
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.3.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2694
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kajian-pengadaan-oleh-kontraktor-pelaksana-pada-proyek
+    title: Kajian Pengadaan oleh Kontraktor Pelaksana pada Proyek Konstruksi Bangunan
+      Gedung
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2695/1306
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.3.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2695
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-degradasi-kekuatan-beton-akibat-intrusi-mikroorganisme
+    title: Degradasi Kekuatan Beton Akibat Intrusi Mikroorganisme
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2696/1307
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.3.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2696
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-pengamatan-lendutan-dan-rambatan-retak-pada-perkerasan
+    title: Pengamatan Lendutan dan Rambatan Retak pada Perkerasan Lentur Diperkuat Geosintetik
+      Akibat Beban Siklik
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2697/1308
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.4.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2697
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-rentang-modulus-dari-thin-layer-yang-menunjukkan-kondis
+    title: Rentang Modulus dari Thin Layer yang Menunjukkan Kondisi Bonding Antar Lapisan
+      Beraspal
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2700/1310
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.4.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2700
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-pengoperasian-dan-umur-guna-waduk-studi-kasus-waduk-cim
+    title: 'Pengoperasian dan Umur Guna Waduk (Studi Kasus : Waduk Cimeta Padalarang)'
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2701/1311
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2006.13.4.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2701
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-studi-penurunan-kekuatan-geser-tanah-lempung-indramayu
+    title: Studi Penurunan Kekuatan Geser Tanah Lempung Indramayu Akibat Pupuk Kimia
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2704/1313
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-02-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.1.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2704
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-estimasi-respon-tanah-sedang-di-beberapa-lokasi-di-kota
+    title: Estimasi Respon Tanah Sedang di Beberapa Lokasi di Kota Medan Akibat Skenario
+      Terburuk Gempa Sumatera
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2705/1314
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-02-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.1.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2705
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-persamaan-korelasi-sifat-mekanik-beton-mutu-tinggi-deng
+    title: Persamaan Korelasi Sifat Mekanik Beton Mutu Tinggi dengan Agregat Alami dan
+      Slag Nikel
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2706/1315
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-02-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.1.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2706
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kajian-sistim-pengendalian-banjir-wilayah-tengah-dki-ja
+    title: Kajian Sistim Pengendalian Banjir Wilayah Tengah DKI-Jakarta Terhadap Beban
+      Hidrograf Banjir Akibat Hujan Merata
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2707/1316
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-02-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.1.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2707
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-pengaruh-strength-reduction-tanah-clay-shale-akibat-pel
+    title: Pengaruh Strength Reduction Tanah Clay-Shale Akibat Pelaksanaan Pemboran
+      Terhadap Nilai Daya Dukung Pondasi Tiang di Jembatan Suramadu Berdasarkan Ana
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2709/1318
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.2.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2709
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-perbandingan-kinerja-pendekatan-simulasi-dan-analitis-p
+    title: Perbandingan Kinerja Pendekatan Simulasi dan Analitis pada Kasus Perhitungan
+      Dampak Konsumsi Float Aktivitas Nonkritis dalam Penjadwalan Proyek
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2710/1319
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.2.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2710
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-analisis-kehandalan-anjungan-lepas-pantai-tipe-jacket-b
+    title: Analisis Kehandalan Anjungan Lepas Pantai Tipe Jacket Berdasarkan Kapasitas
+      Fatigue pada Sambungan
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2711/1320
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.2.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2711
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-model-pemilihan-moda-angkutan-penumpang-pesawat-terbang
+    title: 'Model Pemilihan Moda Angkutan Penumpang Pesawat Terbang dan Kapal Cepat
+      dengan Data SP (Stated Preference) (Studi Kasus: Rute Palembang - Batam)'
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2712/1321
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.2.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2712
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kinerja-campuran-beton-aspal-lapis-aus-dengan-menggunak
+    title: Kinerja Campuran Beton Aspal Lapis Aus dengan Menggunakan Bahan Pengikat
+      Aspal Supracoat
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2713/1322
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.2.5
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2713
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-audit-keselamatan-jalan-tol-di-indonesia-studi-kasus-ja
+    title: Audit Keselamatan Jalan Tol di Indonesia (Studi Kasus Jalan Tol Cikampek
+      - Padalarang/Cipularang)
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2721/1324
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.3.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2721
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-analisis-metoda-aashto-93-dalam-disain-tebal-lapisan-ta
+    title: Analisis Metoda AASHTO’93 dalam Disain Tebal Lapisan Tambahan pada Struktur
+      Perkerasan Lentur yang Dimodelkan Hanya Berdasarkan Lapisan Campuran Beras
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2722/1325
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.3.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2722
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kajian-analitik-pengaruh-beban-termal-terhadap-stabilit
+    title: Kajian Analitik Pengaruh Beban Termal Terhadap Stabilitas Tiang Pipa Baja
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2723/1326
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.3.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2723
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kajian-teoritis-terhadap-persamaan-gelombang-nonlinier
+    title: Kajian Teoritis terhadap Persamaan Gelombang Nonlinier
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2724/1327
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.3.5
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2724
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-identifikasi-rantai-pasok-dalam-industri-konstruksi-ind
+    title: Identifikasi Rantai-Pasok dalam Industri Konstruksi Indonesia untuk Pengembangan
+      Sistem Penjaminan Mutu
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2726/1329
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.4.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2726
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-gerusan-yang-terjadi-di-sekitar-abutment-tanpa-sayap-pa
+    title: Gerusan yang Terjadi di Sekitar Abutment Tanpa Sayap pada Jembatan (Kajian
+      Laboratorium)
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2727/1330
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.4.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2727
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kajian-model-matematik-pengaruh-pemanfaatan-waduk-pada
+    title: Kajian Model Matematik Pengaruh Pemanfaatan Waduk pada Kapasitas Sistem Pengendalian
+      Banjir Jakarta Wilayah Tengah
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2728/1331
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.4.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2728
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-run-up-dan-run-down-akibat-pengaruh-sudut-datang-gelomb
+    title: Run - Up dan Run - Down Akibat Pengaruh Sudut Datang Gelombang pada Berbagai
+      Unit Lapis Lindung Pemecah Gelombang
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2729/1332
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2007.14.4.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2729
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kontribusi-bubuk-slag-nikel-di-dalam-meminimalkan-dampa
+    title: Kontribusi Bubuk Slag Nikel di dalam Meminimalkan Dampak Intrusi Mikroorganisme
+      terhadap Perilaku Fisik Material Beton
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2730/1333
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-04-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.1.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2730
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-model-matematis-penentuan-interval-profit-yang-wajar-un
+    title: Model Matematis Penentuan Interval Profit yang Wajar untuk Pelaksanaan Proyek
+      Konstruksi
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2731/1334
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-04-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.1.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2731
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kekuatan-riset-multiskala-dalam-membentuk-teknologi-inf
+    title: Kekuatan Riset Multiskala dalam Membentuk Teknologi Infrastruktur Masa Depan
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2732/1335
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-04-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.1.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2732
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-hubungan-antara-risiko-premium-dan-tingkat-diskonto-dal
+    title: Hubungan antara Risiko, Premium dan Tingkat Diskonto dalam Struktur Modal
+      Project Finance dari Perspektif Teorema Utilitas
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2734/1337
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.2.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2734
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-aplikasi-stake-out-titik-dengan-akurasi-tinggi
+    title: Aplikasi Stake-Out Titik dengan Akurasi Tinggi
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2735/1338
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.2.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2735
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kajian-efektifitas-semen-dan-fly-ash-dalam-campuran-soi
+    title: Kajian Efektifitas Semen dan Fly Ash dalam Campuran Soil Cement Memakai Tanah
+      Lempung dan Pasir Pulau Timor
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2736/1339
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.2.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2736
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-faktor-faktor-kritis-dalam-sistem-manajemen-mutu-smm-un
+    title: Faktor-Faktor Kritis dalam Sistem Manajemen Mutu (SMM) untuk Optimasi Profitabilitas
+      dan Daya Saing Perusahaan Jasa Konstruksi di Indonesia
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2738/1341
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.3.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2738
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-penggunaan-washer-khusus-besar-pada-sambungan-baja-cold
+    title: Penggunaan Washer Khusus (Besar) pada Sambungan Baja Cold-Formed
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2739/1342
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.3.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2739
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kekakuan-dan-kekuatan-lentur-maksimum-balok-glulam-dan
+    title: Kekakuan dan Kekuatan Lentur Maksimum Balok Glulam dan Utuh Kayu Akasia
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2740/1343
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.3.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2740
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-optimisasi-bubuk-slag-nikel-dengan-sistem-ternary-c-a-s
+    title: Optimisasi Bubuk Slag Nikel dengan Sistem Ternary C-A-S
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2741/1344
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.3.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2741
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-analisis-struktur-perkerasan-lentur-menggunakan-program
+    title: 'Analisis Struktur Perkerasan Lentur Menggunakan Program Everseries dan Metoda
+      AASHTO 1993 Studi kasus: Jalan Tol Jakarta - Cikampek'
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2742/1345
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2008.15.3.5
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2742
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-penentuan-debit-harian-menggunakan-pemodelan-rainfall-r
+    title: Penentuan Debit Harian Menggunakan Pemodelan Rainfall Runoff GR4J untuk Analisa
+      Unit Hidrograf pada DAS Citarum Hulu
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2743/1346
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-04-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.1.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2743
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kajian-hubungan-antara-debit-berubah-dengan-tinggi-muka
+    title: Kajian Hubungan Antara Debit Berubah dengan Tinggi Muka Air dan Kecepatan
+      Aliran
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2744/1347
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-04-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.1.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2744
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-predicting-the-influence-of-accident-related-factors-on
+    title: 'Predicting The Influence of Accident Related Factors on Motorcycle Fatal
+      Accidents Using Logistic Regression (Case Study : Tabanan, Bali)'
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2745/1348
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-04-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.1.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2745
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-distorsi-sambungan-baut-akibat-curling-dan-pencegahanny
+    title: Distorsi Sambungan Baut akibat Curling dan Pencegahannya Studi Kasus Sambungan
+      Pelat Tipe Geser (lap-joint) dengan Baut Tunggal
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2747/1350
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.2.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2747
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-analisis-pengaruh-temperatur-terhadap-kuat-tekan-beton
+    title: Analisis Pengaruh Temperatur terhadap Kuat Tekan Beton
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2748/1351
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.2.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2748
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-peta-respons-spektrum-provinsi-sumatera-barat-untuk-per
+    title: Peta Respons Spektrum Provinsi Sumatera Barat untuk Perencanaan Bangunan
+      Gedung Tahan Gempa
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2749/1352
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.2.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2749
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-vorticity-fields-on-flow-with-vortex-system
+    title: Vorticity Fields on Flow with Vortex System
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2750/1353
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.2.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2750
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-kaji-ulang-penentuan-tarif-dan-sistem-penggolongan-kend
+    title: Kaji Ulang Penentuan Tarif dan Sistem Penggolongan Kendaraan Jalan Tol di
+      Indonesia
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2751/1354
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.2.5
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2751
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-the-analysis-of-household-car-and-motorcycle-ownerships
+    title: 'The Analysis of Household Car and Motorcycle Ownerships Using Poisson Regression
+      (Case Study: Denpasar-Bali)'
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2752/1355
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.2.6
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2752
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-efek-kerapatan-relatif-dr-terhadap-daya-dukung-fondasi
+    title: Efek Kerapatan Relatif (Dr) Terhadap Daya Dukung Fondasi Dangkal pada Tanah
+      Pasiran dengan Beban Sentris
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2753/1356
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.3.1
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2753
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-analisis-hazard-gempa-dan-usulan-ground-motion-pada-bat
+    title: Analisis Hazard Gempa dan Usulan Ground Motion pada Batuan Dasar untuk Kota
+      Jakarta
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2754/1357
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.3.2
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2754
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-moisture-absorption-and-thermal-expansion-of-building-b
+    title: Moisture Absorption and Thermal Expansion of Building Blocks Bound with Bitumen
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2755/1358
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.3.3
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2755
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-jts-analisa-hidrolika-penggunaan-pintu-air-pada-proyek-rekl
+    title: Analisa Hidrolika Penggunaan Pintu Air pada Proyek Reklamasi Pantai Utara
+      DKI Jakarta dengan Perangkat Lunak SMS 8.1
+    url: http://journals.itb.ac.id/index.php/jts/article/download/2756/1359
+    source: ojs_jts
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.5614/jts.2009.16.3.4
+    license_evidence: 'http://journals.itb.ac.id/index.php/jts/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2756
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-pengaruh-sudut-pemasangan-nail-terhadap-stabilisasi
+    title: Pengaruh Sudut Pemasangan Nail Terhadap Stabilisasi Lereng Metode Soil Nailing
+      Di Ruas Jalan Giriwoyo-Glonggong
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/5483/3059
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: id
+    published_at: '2023-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i1.5483
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/5483
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-implementation-of-building-information-modelling-bi
+    title: IMPLEMENTATION OF BUILDING INFORMATION MODELLING (BIM) FOR ROAD INFRASTRUCTURE
+      IN THE DESIGN PHASE
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/5601/3067
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i1.5601
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/5601
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-pengendalian-banjir-sungai-banger-kota-semarang-den
+    title: PENGENDALIAN BANJIR SUNGAI BANGER KOTA SEMARANG DENGAN ANALISA HEC-RAS
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/6180/3065
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i1.6180
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/6180
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-kinerja-simpang-tak-bersinyal-kawasan-pere
+    title: ANALISIS KINERJA SIMPANG TAK BERSINYAL KAWASAN PEREKONOMIAN PASAR BEKA SIMONGAN
+      SEMARANG
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/6258/3078
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i1.6258
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/6258
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-evaluasi-struktur-kuda-kuda-baja-konvensional-menar
+    title: Evaluasi Struktur Kuda-Kuda Baja Konvensional Menara Usm Universitas Semarang
+      Berdasarkan Perbandingan Sni 1729-2015 Dengan Sni 1729-2020
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/6468/3062
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i1.6468
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/6468
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-evaluasi-tingkat-kelayakan-struktur-gedung-eksistin
+    title: EVALUASI TINGKAT KELAYAKAN STRUKTUR GEDUNG EKSISTING 8 LANTAI DI KOTA SEMARANG
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/6469/3060
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i1.6469
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/6469
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-perbandingan-metode-manajemen-risiko-pekerjaan-erec
+    title: Perbandingan Metode Manajemen Risiko Pekerjaan Erection Steel Box Girder
+      di PT. Waskita Karya Jalan Tol JAPEK II
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7343/3520
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7343
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7343
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-faktor-tenaga-kerja-pada-produktivitas-pro
+    title: Analisis Faktor Tenaga Kerja pada Produktivitas Proyek Konstruksi di Masa
+      Pandemi
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7379/3497
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7379
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7379
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-kajian-sisa-umur-jembatan-berdasarkan-bridge-manaje
+    title: Kajian Sisa Umur Jembatan Berdasarkan Bridge Manajemen System (BMS)
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7541/3521
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7541
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7541
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-penurunan-pondasi-pancang-pada-bangunan-in
+    title: Analisis Penurunan Pondasi Pancang Pada Bangunan Instalasi Pengolahan Air
+      Kawasan Industri Terpadu Batang
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7773/3524
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7773
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7773
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-perencanaan-jembatan-komposit-bentang-50-m-desa-kec
+    title: Perencanaan Jembatan Komposit Bentang 50 M Desa Kecapi Kecamatan Tahunan
+      Kabupaten Jepara
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7812/5431
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: id
+    published_at: '2023-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7812
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7812
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-pengaruh-kadar-air-kayu-terhadap-kuat-lentur-kayu-d
+    title: Pengaruh Kadar Air Kayu Terhadap Kuat Lentur Kayu di Kota Sorong – Papua
+      Barat Daya
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7828/3498
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7828
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7828
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-campuran-expanded-polystyrene-system-styrofoam-untu
+    title: Campuran Expanded Polystyrene System (Styrofoam) Untuk Beton Ringan
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7839/3499
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7839
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7839
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-penataan-kawasan-terminal-akap-brps-golongan-termin
+    title: Penataan Kawasan Terminal AKAP BRPS Golongan Terminal Type A Berbasis Transit
+      Oriented Development (TOD) Sebagai Upaya Pengembangan Sistem Angkutan Ma
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7924/3927
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i1.7924
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7924
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-manajemen-risiko-pembangunan-jalan-tol-pada-tahap-p
+    title: 'Manajemen Risiko Pembangunan Jalan Tol pada Tahap Pra Konstruksi (Studi
+      Kasus: Jalan Tol Jagat Kerthi Gilimanuk-Mengwi)'
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7980/3526
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7980
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7980
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-evaluasi-kondisi-dan-pemeliharaan-utilitas-sistem-p
+    title: Evaluasi Kondisi dan Pemeliharaan Utilitas Sistem Proteksi Kebakaran Aktif
+      pada Bangunan Gedung (Studi Kasus Gedung F Universitas Pekalongan)
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/7987/3549
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.7987
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/7987
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-kajian-teknis-kerusakan-jembatan-dondang-kalimantan
+    title: Kajian Teknis Kerusakan Jembatan Dondang Kalimantan Timur
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8034/3550
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.8034
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8034
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-penilaian-kondisi-dan-prediksi-sisa-umur-jembatan-m
+    title: Penilaian Kondisi dan Prediksi Sisa Umur Jembatan Mahulu Kalimantan Timur
+      Menggunakan Bridge Manajemen System (BMS)
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8035/3551
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v18i2.8035
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8035
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-hidrologi-pada-das-gonjol-sebagai-dasar-pe
+    title: Analisis Hidrologi Pada DAS Gonjol Sebagai Dasar Penanggulangan Banjir Di
+      Kecamatan Sayung - Demak
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8092/3926
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i1.8092
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8092
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Teknika)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-transformasi-urban-di-surakarta-analisis-dampak-aru
+    title: 'Transformasi Urban di Surakarta: Analisis Dampak Arus Lalu Lintas Akibat
+      Pembangunan Masjid Syeikh Zayed'
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8420/3900
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i1.8420
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8420
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Dimas A Prasetyo, Sodikin Sodikin, Tantin Pristyawati)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisa-lalu-lintas-terhadap-kapasitas-jalan-brigje
+    title: Analisa Lalu Lintas Terhadap Kapasitas Jalan Brigjend Sudiarto Kota Semarang
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8554/3911
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i1.8554
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8554
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Muhammad Asin Zubet)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-perbandingan-performa-lentur-balok-beton-bertulang
+    title: Perbandingan Performa Lentur Balok Beton Bertulang dengan Sambungan Lewatan
+      dan Mekanis Tipe Clamp
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8624/3930
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i1.8624
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8624
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Jafar Jafar)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-perbandingan-tebal-perkerasan-lentur-rigid-dan-pavi
+    title: Perbandingan Tebal Perkerasan Lentur, Rigid, dan Paving Blok pada Pembangunan
+      Jalan Baru di Kawasan Industri Kendal (KIK)
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8666/3925
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i1.8666
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8666
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Siti Rohmattun A)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-modulus-elastisitas-beton-geopolimer-berbasis-fly-a
+    title: Modulus Elastisitas Beton Geopolimer Berbasis Fly ash PLTU Tanjungjati B
+      Jepara
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8748/3906
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i1.8748
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8748
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Anik Kustirini, ST., M.Si.)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-pengaruh-kadar-lumpur-terhadap-nilai-kuat-tekan-pav
+    title: Pengaruh Kadar Lumpur Terhadap Nilai Kuat Tekan Paving Block Dengan Bahan
+      Dasar Sedimentasi Limbah Galian C di Sungai Klagison, Kota Sorong.
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/8773/3929
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i1.8773
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/8773
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Muhammad Nur Fajar, Asrul Saputra, Didik Setya Purwantoro, Iqbal Iqbal,
+      Herlina Arifin)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-perbandingan-bok-brt-hybrid-menjadi-brt-listrik-dit
+    title: Perbandingan BOK BRT Hybrid Menjadi BRT Listrik Ditinjau Dari Ekonomi Dan
+      Lingkungan
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/9068/4581
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: id
+    published_at: '2024-11-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.9068
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/9068
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 NOORA SAVERA)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-implementasi-lean-construction-pada-proses-konstruk
+    title: IMPLEMENTASI LEAN CONSTRUCTION PADA PROSES KONSTRUKSI PCU GIRDER PROYEK FLYOVER
+      DJUANDA SIDOARJO JAWA TIMUR
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/9288/5702
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: id
+    published_at: '2024-11-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.9288
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/9288
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Sugeng Prastyo Prastyo)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-evaluasi-efektivitas-operasional-bus-rapid-transit
+    title: 'Evaluasi Efektivitas Operasional Bus Rapid Transit : Studi Kasus Kota Bandung'
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/9325/6100
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/c34h1198
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/9325
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Ari Pujiyanto)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-aktivitas-masyarakat-sebagai-bentuk-tarika
+    title: Analisis Aktivitas Masyarakat Sebagai Bentuk Tarikan dan Bangkitan pada Kawasan
+      Industri Knitting Mill Semarang
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/9769/4586
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: id
+    published_at: '2024-11-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.9769
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/9769
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Wardana Galih Pamungkas, Yesina Pratiwi, Sulistyowati -)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-perencanaan-lajur-khusus-sepeda-di-kampung-inggris
+    title: Perencanaan Lajur Khusus Sepeda di Kampung Inggris Pare
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10021/4564
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.10021
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10021
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Rizal Aprianto, Shinta Nur Fadhilah, Frans Tohom)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-peringkat-indikator-keberlanjutan-untuk-penilaian-p
+    title: PERINGKAT INDIKATOR KEBERLANJUTAN UNTUK PENILAIAN PROYEK PEMBANGUNAN PERUMAHAN
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10318/4582
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.10318
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10318
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Lila Anggraini)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-pengaruh-media-penyimpanan-tulangan-baja-terhadap-l
+    title: Pengaruh Media Penyimpanan Tulangan Baja Terhadap laju korosi menggunakan
+      metode Weight Loss
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10356/4563
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.10356
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10356
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Muhammad Nur Fajar, Herlina Arifin, Didik Setyo Purwantoro, Alfina Maysyurah)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-studi-komparasi-analisis-struktur-dengan-jenis-tump
+    title: Studi Komparasi Analisis Struktur dengan Jenis Tumpuan Jepit dan Spring pada
+      Struktur Beton Bertulang
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10377/4560
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.10377
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10377
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Fernanda Niko, Antonius Antonius, Rinda Karlinasari)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analysis-of-flood-discharge-at-the-top-of-the-bruka
+    title: Analysis of Flood Discharge at the Top of the Brukah River Due to Changes
+      in Land Use of the Sindu Kalibening Block in Banjarnegara
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10499/4562
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.10499
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10499
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Ahmad Hakim Bintang Kuncoro, Susilowati Susilowati)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-kepuasan-pengguna-terhadap-infrastruktur-b
+    title: Analisis Kepuasan Pengguna Terhadap Infrastruktur Bandar Udara Internasional
+      Jenderal Ahmad Yani Semarang Dengan Metode EUCS-CSI
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10566/4583
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.10566
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10566
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 ANNISA BERLIANA, CHILATUN NAFISAH, MUDJIASTUTI HANDAJANI, AGUS MULDIYANTO)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-perbandingan-kinerja-lentur-balok-beton-bertulang-d
+    title: Perbandingan Kinerja Lentur Balok Beton Bertulang Dengan Sambungan Lewatan
+      Dan Sambungan Mekanis Tipe Cold Forged Sleeve With Parallel Threads
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10662/6102
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/87cpvk81
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10662
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Jafar Jafar, Bayu Setya Rahmayuda)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-pengaruh-pengencangan-baut-grade-8-8-m22-secara-ber
+    title: Pengaruh Pengencangan Baut Grade 8.8 M22 Secara Berulang Terhadap Kekuatan
+      Struktur Jembatan
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10722/6281
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i1.10722
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10722
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Pulung Priyo Pamungkas)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-karaketeristik-penumpang-pesawat-di-bandara-jendera
+    title: Karaketeristik Penumpang Pesawat di Bandara Jenderal Ahmad Yani Semarang
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10775/4584
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v19i2.10775
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10775
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Agus Muldiyanto)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-parkir-dan-manajemen-rekayasa-lalu-lintas
+    title: Analisis Parkir dan Manajemen Rekayasa Lalu Lintas pada Pasar Mranggen Kab.
+      Demak untuk Mengatasi Kemacetan di Ruas Jalan Semarang-Godong
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/10959/6099
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/8ctk2489
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/10959
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Agung Pradhana)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-tipe-penggunaan-expansion-joint-pada-jemba
+    title: Analisis Tipe Penggunaan Expansion Joint Pada Jembatan Mahulu Kota Samarinda
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/11125/6105
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/zjbk8k46
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/11125
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Musfain B)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisa-penyebab-kerusakan-pondasi-jembatan-dondang
+    title: Analisa Penyebab Kerusakan Pondasi Jembatan Dondang Kalimantan Timur
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/11171/6279
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/h91snj83
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/11171
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Fauzi A)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-evaluasi-struktur-bangunan-atas-jembatan-sambaliung
+    title: Evaluasi Struktur Bangunan Atas Jembatan Sambaliung Provinsi Kalimantan Timur
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/11194/6104
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/g6dpef06
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/11194
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Hariadi Purwatmoko)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-pengaruh-limbah-bata-merah-cepu-sebagai-bahan-subti
+    title: Pengaruh Limbah Bata Merah Cepu Sebagai Bahan Subtitusi Semen Terhadap Sifat
+      Mekanik Mortar
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/11402/6244
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i1.11402
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/11402
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Sulistia Sulistia)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-dampak-pembangunan-jalan-tol-semarang-dema
+    title: Analisis Dampak Pembangunan Jalan Tol Semarang - Demak Terhadap Lalu Lintas
+      Di Kawasan Industri Sayung
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/11842/6640
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-10-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.11842
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/11842
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Agus Muldiyanto, Mudjiastuti Handajani, Naufal Akbar Purnayudha Aji,
+      Yoga Dwi Affandi)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-evaluasi-penekanan-waktu-pelaksanaan-pekerjaan-stru
+    title: 'EVALUASI PENEKANAN WAKTU PELAKSANAAN PEKERJAAN STRUKTUR PADA PEMBANGUNAN
+      INTERCHANGE DARANGDAN RAMP 1 DAN RAMP 4 PADA RUAS JALAN TOL CIPULARANG TAHUN '
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/11955/6687
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.11955
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/11955
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Yogi Agus Sucahyo, Anton Soekiman, Chandra Afriade Siregar)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-kesiapan-pengguna-terhadap-penerapan-pemba
+    title: 'Analisis Kesiapan Pengguna Terhadap Penerapan Pembayaran Tol Sistem Multi
+      Lane Free Flow dengan Metode ETC (Electric Toll Connection)(Studi Kasus: Jal'
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/12033/6685
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.12033
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/12033
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Gantas Kalistyo, Pratikso, Juny Andry Sulistyo)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-evaluasi-penerapan-bim-dalam-konstruksi-jalan-tol-s
+    title: 'Evaluasi Penerapan BIM dalam Konstruksi Jalan Tol: Studi Kasus Serang–Panimbang
+      Seksi 3'
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/12089/6686
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.12089
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/12089
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Maman Taryaman ST, MT, Anton Soekiman, Chandra Afriade)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-perilaku-beton-berserat-baja-terhadap-beban-uniaksi
+    title: Perilaku Beton Berserat Baja Terhadap Beban Uniaksial
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/12216/6641
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-10-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.12216
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/12216
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Purwanto; Hermawan)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-impact-of-specific-gravity-on-soil-compaction-chara
+    title: Impact of Specific Gravity on Soil Compaction Characteristics for Road-Base
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/12349/7024
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.12349
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/12349
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 David Idiata, Ngozi Kayode-Ojo, E.S. Okonofua)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-human-resource-allocation-in-the-main-drainage-cons
+    title: Human Resource Allocation in the Main Drainage Construction Project for Flood
+      Control in Palangka Raya City
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/12404/6689
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.12404
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/12404
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Lendra Lendra, Febry Handayani, Alprido Perdian, Jermias Tjakra, Theresia
+      Widi Asih Cahyanti)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-pengaruh-perilaku-spring-tanah-pada-retaka
+    title: Analisis Pengaruh Perilaku Spring Tanah Pada Retakan Lantai Jembatan
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/12424/6680
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: id
+    published_at: '2025-11-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.12424
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/12424
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Taufiq Rinaldi, Muhammad Ridwan, Priyo Suroso)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-andalalin-akibat-on-street-parking-dan-pengalihan-a
+    title: ANDALALIN Akibat On Street Parking dan Pengalihan Arus Lalu Lintas pada Kawasan
+      Rumah Sakit Pupuk Kalimantan Timur Bontang
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/12466/6684
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.12466
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/12466
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Wahyu Fitriyani, Ashadi Putrawirawan, Karminto, Muhammad Risky Ramadhan)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-numerical-and-field-based-analysis-of-soil-nailing
+    title: Numerical and Field-Based Analysis of Soil Nailing for Slope Stability
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/12918/6681
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.12918
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/12918
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Adolf Situmorang, Anik Kustirini, Kukuh Wisnuaji Widiatmoko)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-peningkatan-efisiensi-drainase-perkotaan-melalui-pe
+    title: Peningkatan Efisiensi Drainase Perkotaan melalui Penerapan Infrastruktur
+      Jalan Berkelanjutan di Kota Malang
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13068/7037
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13068
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13068
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Rais Amin, Angel Natalia , Mega Putri Aulia, Siti Fatimah, Sri Rahayu)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-pengaruh-kendaraan-over-dimension-over-loading-odol
+    title: Pengaruh Kendaraan Over Dimension Over Loading (Odol) Terhadap Kecelakaan
+      dan Kemacetan Lalu Lintas
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13087/6678
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v20i2.13087
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13087
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Akhmad Adam Wyldan, Pio Ranap Tua Naibaho)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-penggunaan-metode-soybean-crude-urease-calcite-prec
+    title: Penggunaan Metode Soybean Crude Urease Calcite Precipitation (SCU-CP) dalam
+      Meningkatkan Kuat Tekan Tanah Lempung Berpasir
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13108/7023
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13108
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13108
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Raudah Ahmad, Hilmy Vaza Barakwan, IGN Aditya Dhiva, Budi Nugroho, Dhiana
+      Dwi Widiawati)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-the-analisa-scouring-pada-bagian-bawah-jembatan-pad
+    title: The Analisa Scouring pada Bagian Bawah Jembatan, pada Rencana Pembangunan
+      Jembatan Besi 2, Kabupaten Tenggarong, Kalimantan Timur
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13156/7027
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13156
+    license_evidence: "http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13156\
+      \ : dc:rights carries no single verifiable Creative Commons licence URL (Copyright\
+      \ (c) 2026 Freddy Barus, Dhiana dwi widiawati, Insan Kamil\t, Tommy E. Sutarto,\
+      \ M. Ilham Taufik, M. Fiki Alimul)"
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-dan-desain-struktur-jembatan-bentang-tungg
+    title: 'ANALISIS DAN DESAIN STRUKTUR JEMBATAN BENTANG TUNGGAL DENGAN SISTEM GIRDER
+      PRATEGANG : STUDI KASUS JEMBATAN NGLESES KABUPATEN BOYOLALI'
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13541/7063
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13541
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13541
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 suudi almukarom, Retno Sri Waryani, Adolf situmorang)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analysis-of-conduit-plugging-implementation-in-mara
+    title: ANALYSIS OF CONDUIT PLUGGING IMPLEMENTATION IN MARANGKAYU DAM
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13574/7089
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13574
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13574
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Ikhwanudin, Tegar Wijaya Saputra, Farida Yudaningrum)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-komparatif-efisiensi-distribusi-logistik-e
+    title: Analisis Komparatif Efisiensi Distribusi Logistik E-Commerce
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13645/7039
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13645
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13645
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Dr. Ir. Alfa Narendra, IPU, Ardhiatma Yuniar Irnizarifka, Fitri Anisa,
+      Ghaida Zulfatun Hasanah, Herlingga Izzah Fatati, Maulana Himmatul Fala)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-efektivitas-pompa-pasarwaru-sistem-drainas
+    title: ANALISIS EFEKTIVITAS POMPA PASARWARU SISTEM DRAINASE TENGGANG
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13680/7042
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13680
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13680
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Fitria Maya Lestari , Burhanudin Mukhamad Noor , Puja Aulia, Moch Sediono)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-evaluasi-faktor-yang-mendorong-dominasi-keterlibata
+    title: Evaluasi Faktor yang Mendorong Dominasi Keterlibatan Manajemen Konstruksi
+      pada Tahap Pelaksanaan Proyek Gedung
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13878/7026
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13878
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13878
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Lila Anggraini, Sri Wanto, Hendra Masvika, Son Haji)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-penilaian-kinerja-drainase-eksisting-dan-rekonstruk
+    title: Penilaian Kinerja Drainase Eksisting dan Rekonstruksi Berdasarkan Perbandingan
+      Qr-Qs di Kawasan FIKK UNM Makassar
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13883/7036
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13883
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13883
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Furqan Ali Yusuf furqan, Muhammad Akbar -)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-biaya-operasi-tarif-dan-kelayakan-finansia
+    title: Analisis Biaya Operasi, Tarif, dan Kelayakan Finansial Kereta Bandara Soekarno–Hatta
+      pada Skema Public Service Obligation (PSO)
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13895/7043
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13895
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13895
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Dewa Kresna Satyandaru, Hermawan)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-teknika-analisis-implementasi-metode-sosrobahu-pada-proyek
+    title: Analisis Implementasi Metode Sosrobahu pada Proyek Pembangunan Jalan Tol
+      Solo-Yogyakarta-NYIA Kulon Progo Paket 2.2B
+    url: http://journals.usm.ac.id/index.php/teknika/article/download/13911/7025
+    source: ojs_teknika
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26623/teknika.v21i1.13911
+    license_evidence: 'http://journals.usm.ac.id/index.php/teknika/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.usm.ac.id:article/13911
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 ANNISA BERLIANA, MAULANA AKBAR SIDQI)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-behavior-of-self-compacting-reinforced-concrete-one-w
+    title: Behavior of Self Compacting Reinforced Concrete One Way Bubble Deck Slab
+    url: https://nahje.com/nahje/article/download/201/201
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-03-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.23010001
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/201
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-effect-of-hybrid-modification-and-type-of-compaction
+    title: Effect of Hybrid Modification and Type of Compaction on the Cracking Properties
+      of Asphalt Concrete
+    url: https://nahje.com/nahje/article/download/212/212
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.23020106
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/212
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-bio-cementation-of-sandy-soil-through-bacterial-proce
+    title: Bio-Cementation of Sandy Soil through Bacterial Processing to Precipitate
+      Carbonate
+    url: https://nahje.com/nahje/article/download/224/224
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.23030225
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/224
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-a-review-of-sustainable-materials-to-improve-geotechn
+    title: A Review of Sustainable Materials to Improve Geotechnical Properties of Soils
+    url: https://nahje.com/nahje/article/download/231/231
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.23030289
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/231
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-strut-and-tie-modelling-of-reinforced-concrete-deep-b
+    title: Strut and Tie Modelling of Reinforced Concrete Deep Beams Under Static and
+      Fixed Pulsating Loading
+    url: https://nahje.com/nahje/article/download/232/232
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.23030306
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/232
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-seismic-analysis-of-reinforced-concrete-pier-strength
+    title: Seismic Analysis of Reinforced Concrete Pier Strengthened by Carbon Fiber
+      Reinforced Polymers
+    url: https://nahje.com/nahje/article/download/233/233
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.23030313
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/233
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-implementation-of-prefabricated-building-systems-in-i
+    title: Implementation of Prefabricated Building Systems in Iraq
+    url: https://nahje.com/nahje/article/download/240/240
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-12-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.23040371
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/240
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-seismic-evaluation-and-retrofitting-of-an-existing-bu
+    title: Seismic Evaluation and Retrofitting of an Existing Buildings-State of the
+      Art
+    url: https://nahje.com/nahje/article/download/251/251
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-07-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.24010052
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/251
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-revisiting-the-mesopotamian-city-a-drawing-of-its-inh
+    title: 'Revisiting the Mesopotamian City: a Drawing of its Inhabitants'' Mental-
+      Image'
+    url: https://nahje.com/nahje/article/download/252/252
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.24020088
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/252
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-prediction-of-california-bearing-ratio-from-consisten
+    title: Prediction of California Bearing Ratio from Consistency and Compaction Characteristics
+      of Fine-grained Soils
+    url: https://nahje.com/nahje/article/download/256/256
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.24020123
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/256
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-stability-and-volumetric-properties-of-colored-asphal
+    title: Stability and Volumetric Properties of Colored Asphalt Mixtures Containing
+      Iron Oxide
+    url: https://nahje.com/nahje/article/download/257/257
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.24020130
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/257
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-effect-of-aggregate-gradation-and-filler-content-on-t
+    title: Effect of Aggregate Gradation and Filler Content on the Rutting Resistance
+      of Modified Colored Hot Mix Asphalt
+    url: https://nahje.com/nahje/article/download/258/258
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.24020137
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/258
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-evaluation-of-water-seepage-along-proposed-baghdad-me
+    title: Evaluation of Water seepage Along Proposed Baghdad Metro Tunnel Across Tigris
+      River
+    url: https://nahje.com/nahje/article/download/260/260
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes.24020149
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/260
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-the-effect-of-improvement-surrounding-soil-on-driven
+    title: The Effect of Improvement Surrounding Soil on Driven Pile Friction Capacity
+    url: https://nahje.com/nahje/article/download/268/268
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/268
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-gypseous-soil-improvement-by-silicone-oil
+    title: Gypseous Soil Improvement by Silicone Oil
+    url: https://nahje.com/nahje/article/download/269/269
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/269
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-combined-effects-of-sawdust-and-building-rubbles-as-a
+    title: Combined Effects of Sawdust and Building Rubbles as Aggregate on the Concrete
+    url: https://nahje.com/nahje/article/download/270/270
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/270
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-effect-of-filler-content-on-properties-of-asphaltic-m
+    title: Effect of Filler Content on Properties of Asphaltic Mixtures for Marshall
+      and Superpave Gyratory Compactor
+    url: https://nahje.com/nahje/article/download/283/283
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/283
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-effect-of-two-sheet-piles-in-double-soil-layers-on-se
+    title: Effect of Two Sheet Piles In Double Soil Layers on Seepage Properties Under
+      Hydraulic Structure Using SEEP/W Program
+    url: https://nahje.com/nahje/article/download/284/284
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/284
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-cracking-control-due-to-early-thermal-movement-of-wat
+    title: Cracking Control due to Early Thermal Movement of Watertight Continuous RC
+      Members
+    url: https://nahje.com/nahje/article/download/285/285
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/285
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-experimental-and-numerical-investigation-of-high-stre
+    title: Experimental and Numerical Investigation of High Strength Reinforced Concrete
+      Deep Beams with Web Openings under Repeated Loading
+    url: https://nahje.com/nahje/article/download/295/295
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/295
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-finite-element-modelling-of-concrete-filled-double-sk
+    title: Finite Element Modelling of Concrete Filled Double Skin Steel Tubular Columns
+      under Cyclic Axial Compression Load
+    url: https://nahje.com/nahje/article/download/296/296
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/296
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-performance-of-composite-steel-concrete-beams-with-st
+    title: Performance of Composite Steel-Concrete Beams with Stud Shear Connectors
+      under Periodical Loadings
+    url: https://nahje.com/nahje/article/download/297/297
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/297
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-free-vibration-of-simply-supported-beam-on-elastic-fo
+    title: Free Vibration of Simply Supported Beam on Elastic Foundations
+    url: https://nahje.com/nahje/article/download/298/298
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/298
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-comparative-study-for-different-types-of-shear-walls
+    title: Comparative Study for Different Types of Shear Walls in Buildings Subjected
+      to Earthquake Loading
+    url: https://nahje.com/nahje/article/download/299/299
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/299
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-numerical-modal-analysis-of-reinforced-concrete-slab
+    title: Numerical Modal Analysis of Reinforced Concrete Slab with Opening
+    url: https://nahje.com/nahje/article/download/300/300
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/300
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-finite-element-analysis-of-rc-tapered-beams-under-cyc
+    title: Finite Element Analysis of RC Tapered Beams under Cyclic Loading
+    url: https://nahje.com/nahje/article/download/301/301
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/301
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-behavior-of-bridge-piles-substructure-embedded-into-s
+    title: Behavior of Bridge Piles Substructure Embedded Into Soil Layers during Earthquake
+    url: https://nahje.com/nahje/article/download/302/302
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/302
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-earthfill-dams-response-to-earthquake-excitation-khas
+    title: Earthfill Dams Response to Earthquake Excitation -Khassa Chai Dam as a Case
+      Study
+    url: https://nahje.com/nahje/article/download/303/303
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/303
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-a-case-study-of-random-vibration-response-modeling-of
+    title: A Case Study of Random Vibration Response Modeling of Two- Story-Building
+      Due to Earthquake
+    url: https://nahje.com/nahje/article/download/304/304
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/304
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-a-comparative-study-on-the-design-spectra-defined-by
+    title: A Comparative Study on the Design Spectra Defined by Several Codes of Practice
+      on RC Building Located in Baghdad City
+    url: https://nahje.com/nahje/article/download/305/305
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/305
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-the-strategies-of-architectural-design-resisting-eart
+    title: The Strategies of Architectural Design Resisting Earthquake in Tall Buildings
+    url: https://nahje.com/nahje/article/download/306/306
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/306
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-numerical-analysis-of-a-pile-soil-system-under-earthq
+    title: Numerical Analysis of a Pile-Soil System Under Earthquake Loading
+    url: https://nahje.com/nahje/article/download/307/307
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/307
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-behavior-of-self-compacting-concrete-with-different-f
+    title: Behavior of Self-Compacting Concrete with Different Fineness Moduli of Fine
+      Aggregate
+    url: https://nahje.com/nahje/article/download/308/308
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/308
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-effect-of-adding-nano-materials-and-carbon-fiber-on-i
+    title: Effect of Adding Nano-Materials and Carbon Fiber on Impact Strength of Cementitious
+      Composite (CC)
+    url: https://nahje.com/nahje/article/download/309/309
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-25'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/309
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-the-influence-of-fines-content-on-the-mechanical-prop
+    title: The Influence of Fines Content on the Mechanical Properties of Aggregate
+      Subbase Course Material for Highway Construction using Repeated Load CBR Test
+    url: https://nahje.com/nahje/article/download/345/345
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-06-14'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/345
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-strengthening-and-retrofitting-of-reinforced-concrete
+    title: Strengthening and Retrofitting of Reinforced Concrete Hollow Columns using
+      High Strength Ferrocement Fibers Composites
+    url: https://nahje.com/nahje/article/download/346/346
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-06-14'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/346
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-significance-of-using-a-superpave-gyratory-compactor
+    title: Significance of using a Superpave Gyratory Compactor to Simulate Field Compaction
+      of Fine Grained Soil
+    url: https://nahje.com/nahje/article/download/348/348
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-06-14'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/348
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-effect-of-particle-size-of-waste-glass-on-compressive
+    title: Effect of Particle Size of Waste Glass on Compressive Strength and Modulus
+      of Rupture of Concrete Mix
+    url: https://nahje.com/nahje/article/download/384/384
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-08-02'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/384
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-nonlinear-finite-element-analysis-of-rc-beams-without
+    title: Nonlinear Finite Element Analysis of RC Beams without Stirrups Strengthened
+      by Longitudinal Soffit Bonded CFRP Strips for Shear
+    url: https://nahje.com/nahje/article/download/387/387
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-08-02'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/387
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-the-shear-behavior-of-reinforced-concrete-i-beams-wit
+    title: The Shear Behavior of Reinforced Concrete I – Beams With Polypropylene Fibers
+    url: https://nahje.com/nahje/article/download/391/391
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-11-03'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/391
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-modeling-contractor-s-cash-in-flow-in-public-school-b
+    title: Modeling Contractor’s Cash-in-Flow in Public School Building Projects in
+      Karbala
+    url: https://nahje.com/nahje/article/download/394/394
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-11-03'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/394
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-effect-of-using-internal-steel-plates-for-shear-reinf
+    title: Effect of Using Internal Steel Plates for Shear Reinforcement on Flexural
+      Behavior of Self-Compacting Concrete Beams
+    url: https://nahje.com/nahje/article/download/395/395
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-11-03'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/395
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-effects-of-sand-density-and-reinforcement-on-the-beha
+    title: Effects of Sand Density and Reinforcement on the Behavior of Buried Tunnel
+    url: https://nahje.com/nahje/article/download/396/396
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-11-03'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/396
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-evaluation-of-combined-sewer-network-design-using-gis
+    title: Evaluation of Combined Sewer Network Design Using GIs and Multi Criteria
+      Decision Making (MCDM)
+    url: https://nahje.com/nahje/article/download/404/404
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-11-03'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/404
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-intelligent-controller-for-monitoring-vehicles-at-the
+    title: Intelligent Controller for Monitoring Vehicles at the Roads
+    url: https://nahje.com/nahje/article/download/411/411
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-11-03'
+    document_type: journal-article
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/411
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-determination-of-settlement-for-beam-on-elastic-found
+    title: Determination of Settlement for Beam on Elastic Foundation by ETABS Software
+    url: https://nahje.com/nahje/article/download/416/416
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-02-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes21010012
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/416
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2018 Al-Nahrain Journal for Engineering Sciences)'
+    rights_verified_at: '2026-10-13'
+  - id: ojs-nahje-properties-of-epoxy-asphalt-pavement-mixture-for-brid
+    title: Properties of Epoxy-Asphalt Pavement Mixture for Bridge Decks
+    url: https://nahje.com/nahje/article/download/417/417
+    source: ojs_nahje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-02-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29194/njes21010020
+    license_evidence: 'https://nahje.com/nahje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/417
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2018 Al-Nahrain Journal for Engineering Sciences)'
     rights_verified_at: '2026-10-13'
