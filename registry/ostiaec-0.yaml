@@ -1113,20 +1113,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
-  - id: osa-guidance-on-demand-controlled-kitchen-ventilation
-    title: Guidance on Demand-Controlled Kitchen Ventilation
-    url: https://www.osti.gov/servlets/purl/1755519
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2015-10-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1755519
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
   - id: osa-summary-and-analysis-of-construction-costs-of-ten-so
     title: Summary and analysis of construction costs of ten solar energy systems on
       commercial buildings
@@ -3975,4 +3961,76 @@ sources:
     license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Resources,
       Conservation and Recycling): free to read under the DOE Public Access Plan; publisher
       copyright, no reuse licence'
+    rights_verified_at: '2026-10-13'
+  - id: osa-high-efficiency-variable-dehumidification-for-air-co
+    title: 'High-Efficiency Variable Dehumidification for Air Conditioners: ClimaStat'
+    url: https://www.osti.gov/servlets/purl/922139
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2006-04-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/922139
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-exposure-to-radon-and-radon-progeny-in-the-ind-2
+    title: Exposure to radon and radon progeny in the indoor environment
+    url: https://www.osti.gov/servlets/purl/5707109
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1991-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5707109
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-potential-risks-from-exposure-to-organic-compounds-i
+    title: Potential risks from exposure to organic compounds in indoor air
+    url: https://www.osti.gov/servlets/purl/6111476
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1988-05-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6111476
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-demonstration-assessment-of-light-emitting-dio-3
+    title: 'Demonstration Assessment of Light-Emitting Diode (LED) Residential Downlights
+      and Undercabinet Lights - Host Site: Lane County Tour of Homes, Eugene, '
+    url: https://www.osti.gov/servlets/purl/1218245
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2008-10-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1218245
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-study-of-the-atmospheric-chemistry-of-radon-pr-4
+    title: Study of the atmospheric chemistry of radon progeny in laboratory and real
+      indoor atmospheres. Progress report, May 1, 1993--January 31, 1994
+    url: https://www.osti.gov/servlets/purl/10143679
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1993-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10143679
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-13'
