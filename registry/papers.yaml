@@ -146983,3 +146983,399 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
+  - id: oas-10-1016-j-energy-2022-123585-62693162
+    title: Refurbish or replace? The Life Cycle Carbon Footprint and Life Cycle Cost
+      of Refurbished and New Residential Archetype Buildings in London
+    url: https://discovery.ucl.ac.uk/10147288/1/Schwartz_Refurbish%20or%20Replace_AAM.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-03-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2022.123585
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10147288/1/Schwartz_Refurbish%20or%20Replace_AAM.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2022.123585 openalex:W4214837933
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-aei-2020-101185-8e4af899
+    title: Quick energy prediction and comparison of options at the early design stage
+    url: https://lirias.kuleuven.be/retrieve/aad6519b-6c8b-4745-8f84-bfa02d9f885c
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.aei.2020.101185
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/aad6519b-6c8b-4745-8f84-bfa02d9f885c;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.aei.2020.101185 openalex:W3097271459
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-jobe-2021-103571-e8df0544
+    title: 'An integrated building energy performance evaluation method: From parametric
+      modeling to GA-NN based energy consumption prediction modeling'
+    url: https://pureadmin.qub.ac.uk/ws/files/258567681/1_s2.0_S2352710221014297_main.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2021.103571
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://pureadmin.qub.ac.uk/ws/files/258567681/1_s2.0_S2352710221014297_main.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2021.103571 openalex:W3210470805
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-rser-2023-113410-e2ec5a4d
+    title: Thermal heat transfer and energy modeling through incorporation of phase
+      change materials (PCMs) into polyurethane foam
+    url: https://digital.library.unt.edu/ark:/67531/metadc2201570/m2/1/high_res_d/1-s2.0-S1364032123002678-main.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rser.2023.113410
+    license_evidence: no licence statement for this copy [copy https://digital.library.unt.edu/ark:/67531/metadc2201570/m2/1/high_res_d/1-s2.0-S1364032123002678-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.rser.2023.113410 openalex:W4379212560
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-su14106106-0ad2b4f8
+    title: Comparison of Thermal Energy Saving Potential and Overheating Risk of Four
+      Adaptive Façade Technologies in Office Buildings
+    url: https://eprints.leedsbeckett.ac.uk/id/eprint/8969/1/ComparisonOfThermalEnergySavingPV-YANG.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-05-17'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su14106106
+    license_evidence: no licence statement for this copy [copy https://eprints.leedsbeckett.ac.uk/id/eprint/8969/1/ComparisonOfThermalEnergySavingPV-YANG.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/su14106106 openalex:W4280609038
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-buildings13010021-b81ac2b8
+    title: The Potential of Using Passive Cooling Roof Techniques to Improve Thermal
+      Performance and Energy Efficiency of Residential Buildings in Hot Arid Regio
+    url: https://mau.diva-portal.org/smash/get/diva2:1723267/FULLTEXT01
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-12-22'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings13010021
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://mau.diva-portal.org/smash/get/diva2:1723267/FULLTEXT01;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/buildings13010021 openalex:W4312187223
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2020-110181-244bc79f
+    title: 'The hot summer-cold winter region in China: Challenges in the low carbon
+      adaptation of residential slab buildings to enhance comfort'
+    url: https://www.repository.cam.ac.uk/bitstreams/f117fa00-f94b-4edf-83d6-0316fe52c5f6/download
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-31'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2020.110181
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://www.repository.cam.ac.uk/bitstreams/f117fa00-f94b-4edf-83d6-0316fe52c5f6/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2020.110181 openalex:W3029927134
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-urban-energy-flux-human-mobility-as-a-predicto
+    title: 'Urban Energy Flux: Human Mobility as a Predictor for Spatial Changes'
+    url: https://arxiv.org/pdf/1609.01239v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-09-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1609.01239
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1609.01239 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-along-the-sun-drenched-roadside-on-the-interpl
+    title: 'Along the sun-drenched roadside: On the interplay between urban street orientation
+      entropy and the buildings'' solar potential'
+    url: https://arxiv.org/pdf/1704.01119v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-04-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1704.01119
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1704.01119 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-contamination-source-inference-in-water-distri
+    title: Contamination source inference in water distribution networks
+    url: https://arxiv.org/pdf/1712.00486v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-12-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1712.00486
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1712.00486 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-data-oriented-algorithm-for-real-time-estimati
+    title: Data-Oriented Algorithm for Real-Time Estimation of Flow Rates and Flow Directions
+      in a Water Distribution Network
+    url: https://arxiv.org/pdf/1807.10147v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2018-07-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1807.10147
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1807.10147 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-planarity-and-street-network-representation-in
+    title: Planarity and Street Network Representation in Urban Form Analysis
+    url: https://arxiv.org/pdf/1806.01805v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-06-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1806.01805
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1806.01805 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1177/2399808318802941
+  - id: arx-logistic-models-of-fractal-dimension-growth-fo
+    title: Logistic Models of Fractal Dimension Growth for Spatio-Temporal Dynamics
+      of Urban Morphology
+    url: https://arxiv.org/pdf/1606.03538v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-06-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1606.03538
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1606.03538 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1142/s0218348x18500330
+  - id: arx-understanding-fractal-dimension-of-urban-form-
+    title: Understanding Fractal Dimension of Urban Form through Spatial Entropy
+    url: https://arxiv.org/pdf/1607.04876v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-07-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1607.04876
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1607.04876 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.3390/e19110600
+  - id: arx-fractal-analytical-approach-of-urban-form-base
+    title: Fractal Analytical Approach of Urban Form Based on Spatial Correlation Function
+    url: https://arxiv.org/pdf/1209.5546v2
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2012-09-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1209.5546
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1209.5546 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.chaos.2013.02.006
+  - id: arx-a-set-of-formulae-on-fractal-dimension-relatio
+    title: A Set of Formulae on Fractal Dimension Relations and Its Application to Urban
+      Form
+    url: https://arxiv.org/pdf/1306.3818v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2013-06-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1306.3818
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1306.3818 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.chaos.2013.07.010
+  - id: arx-generating-urban-morphologies-at-large-scales
+    title: Generating urban morphologies at large scales
+    url: https://arxiv.org/pdf/1903.06807v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-03-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1903.06807
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1903.06807 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-estimating-country-specific-space-heating-thre
+    title: Estimating country-specific space heating threshold temperatures from national
+      consumption data
+    url: https://arxiv.org/pdf/1904.02080v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1904.02080
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1904.02080 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-modeling-growth-curve-of-fractal-dimension-of-
+    title: Modeling Growth Curve of Fractal Dimension of Urban Form of Beijing
+    url: https://arxiv.org/pdf/1608.02053v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-08-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1608.02053
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1608.02053 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.physa.2019.04.165
+  - id: arx-quantifying-networked-resilience-via-multi-sca
+    title: Quantifying Networked Resilience via Multi-Scale Feedback Loops in Water
+      Distribution Networks
+    url: https://arxiv.org/pdf/1904.03004v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-04-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1904.03004
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1904.03004 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-a-new-agent-based-methodology-for-the-seismic-
+    title: A New Agent-Based Methodology for the Seismic Vulnerability Assessment of
+      Urban Areas
+    url: https://arxiv.org/pdf/1901.04335v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-01-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1901.04335
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1901.04335 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-fractal-dimensions-derived-from-spatial-allome
+    title: Fractal Dimensions Derived from Spatial Allometric Scaling of Urban Form
+    url: https://arxiv.org/pdf/1511.01177v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2015-11-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1511.01177
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1511.01177 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.chaos.2019.05.029
