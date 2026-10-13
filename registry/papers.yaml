@@ -141720,23 +141720,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-12'
-  - id: oas-w389991997
-    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2007-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W389991997
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-12'
-    selected_version: submittedVersion
-    origin_ids: openalex:W389991997
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-density-based-stochastic-reachability-computat
     title: Density-based Stochastic Reachability Computation for Occupancy Prediction
       in Automated Driving
@@ -149083,4 +149066,543 @@ sources:
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: oas-10-1080-19401493-2022-2142294-81730f07
+    title: A novel approach to account for shape-morphing and kinetic shading systems
+      in building energy performance simulations
+    url: https://pure.tue.nl/ws/files/297588129/A_novel_approach_to_account_for_shape_morphing_and_kinetic_shading_systems_in_building_energy_performance_simulations.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-11-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2022.2142294
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://pure.tue.nl/ws/files/297588129/A_novel_approach_to_account_for_shape_morphing_and_kinetic_shading_systems_in_building_energy_performance_simulations.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2022.2142294 openalex:W4308402904
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-energy-2022-123819-eb873647
+    title: A solar thermal driven ORC-VFR system employed in subtropical Mediterranean
+      climatic building
+    url: https://pure.hud.ac.uk/ws/files/48334510/Accepted_manuscript.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-03-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2022.123819
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://pure.hud.ac.uk/ws/files/48334510/Accepted_manuscript.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2022.123819 openalex:W4220994418
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-prediction-of-sewer-pipe-deterioration-using-r
+    title: Prediction of Sewer Pipe Deterioration Using Random Forest Classification
+    url: https://arxiv.org/pdf/1912.04194v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-12-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.04194
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.04194 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-multi-objective-optimisation-of-damper-placeme
+    title: Multi-Objective Optimisation of Damper Placement for Improved Seismic Response
+      in Dynamically Similar Adjacent Buildings
+    url: https://arxiv.org/pdf/2001.03237v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-12-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2001.03237
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2001.03237 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-an-innovative-method-to-determine-optimum-insu
+    title: An innovative method to determine optimum insulation thickness based on non-uniform
+      adaptive moving grid
+    url: https://arxiv.org/pdf/1903.03587v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-02-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1903.03587
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1903.03587 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1007/s40430-019-1670-6
+  - id: arx-identifying-weakly-connected-subsystems-in-bui
+    title: Identifying Weakly Connected Subsystems in Building Energy Model for Effective
+      Load Estimation in Presence of Parametric Uncertainty
+    url: https://arxiv.org/pdf/2004.08417v1
+    source: arxiv
+    license: cc0
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-04-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.08417
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.08417 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-multi-scale-modelling-of-concrete-structures-a
+    title: 'Multi-scale modelling of concrete structures affected by alkali-silica reaction:
+      Coupling the mesoscopic damage evolution and the macroscopic concrete'
+    url: https://arxiv.org/pdf/2006.13859v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2020-06-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.13859
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.13859 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.ijsolstr.2020.10.010
+  - id: arx-data-driven-optimization-of-building-layouts-f
+    title: Data-driven optimization of building layouts for energy efficiency
+    url: https://arxiv.org/pdf/2007.12796v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.12796
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.12796 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.enbuild.2021.110815
+  - id: arx-the-natural-frequencies-of-masonry-beams
+    title: The natural frequencies of masonry beams
+    url: https://arxiv.org/pdf/2012.05704v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2020-12-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2012.05704
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2012.05704 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1007/s00419-021-01887-4
+  - id: arx-an-empirical-evaluation-of-the-t-sne-algorithm
+    title: An Empirical Evaluation of the t-SNE Algorithm for Data Visualization in
+      Structural Engineering
+    url: https://arxiv.org/pdf/2109.08795v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2109.08795
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2109.08795 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-an-efficient-two-dimensional-heat-transfer-mod
+    title: An efficient two-dimensional heat transfer model for building envelopes
+    url: https://arxiv.org/pdf/2111.09131v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.09131
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.09131 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1080/10407782.2020.1836936
+  - id: arx-a-predictive-multiphase-model-of-silica-aeroge
+    title: A Predictive Multiphase Model of Silica Aerogels for Building Envelope Insulations
+    url: https://arxiv.org/pdf/2107.12182v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-07-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2107.12182
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2107.12182 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-a-macro-modelling-continuum-approach-with-embe
+    title: A macro modelling continuum approach with embedded discontinuities for the
+      assessment of masonry arch bridges under earthquake loading
+    url: https://arxiv.org/pdf/2202.06288v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-02-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2202.06288
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2202.06288 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-hybrid-continuum-discrete-macro-modelling-of-m
+    title: Hybrid continuum-discrete macro modelling of multi ring masonry arch bridges
+    url: https://arxiv.org/pdf/2202.06323v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-02-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2202.06323
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2202.06323 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-notes-on-bim-and-bfm-optimal-power-flow-with-p
+    title: Notes on BIM and BFM Optimal Power Flow With Parallel Lines and Total Current
+      Limits
+    url: https://arxiv.org/pdf/2202.06449v2
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-02-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2202.06449
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2202.06449 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-the-influence-of-deflections-on-the-static-and
+    title: The influence of deflections on the static and dynamic behaviour of masonry
+      columns
+    url: https://arxiv.org/pdf/2110.01370v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2021-09-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2110.01370
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2110.01370 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.euromechsol.2022.104570
+  - id: arx-a-hybrid-model-approach-for-reducing-the-perfo
+    title: A hybrid-model approach for reducing the performance gap in building energy
+      forecasting
+    url: https://arxiv.org/pdf/2206.00460v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-05-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2206.00460
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2206.00460 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.aei.2022.101627
+  - id: arx-case-study-of-sars-cov-2-transmission-risk-ass
+    title: Case study of SARS-CoV-2 transmission risk assessment in indoor environments
+      using cloud computing resources
+    url: https://arxiv.org/pdf/2111.09353v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.09353
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.09353 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-design-optimisation-of-piezoelectric-energy-ha
+    title: Design optimisation of piezoelectric energy harvesters for bridge infrastructure
+    url: https://arxiv.org/pdf/2205.06949v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-05-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2205.06949
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2205.06949 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-machine-learning-based-assessment-of-energy-be
+    title: Machine Learning-Based Assessment of Energy Behavior of RC Shear Walls
+    url: https://arxiv.org/pdf/2111.08295v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.08295
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.08295 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.istruc.2022.08.114
+  - id: arx-accelerating-hydrodynamic-simulations-of-urban
+    title: Accelerating hydrodynamic simulations of urban drainage systems with physics-guided
+      machine learning
+    url: https://arxiv.org/pdf/2206.01538v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-05-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2206.01538
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2206.01538 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.watres.2022.118972
+  - id: arx-on-the-joint-optimization-of-energy-harvesting
+    title: 'On the Joint Optimization of Energy Harvesting and Sensing of Piezoelectric
+      Energy Harvesters: Case Study of a Cable-Stayed Bridge'
+    url: https://arxiv.org/pdf/2205.06974v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-05-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2205.06974
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2205.06974 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-multi-mesh-multi-objective-optimization-with-a
+    title: Multi-mesh multi-objective optimization with application to a model problem
+      in urban design
+    url: https://arxiv.org/pdf/1610.02277v2
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-10-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1610.02277
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1610.02277 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-probabilistic-selection-and-design-of-concrete
+    title: Probabilistic selection and design of concrete using machine learning
+    url: https://arxiv.org/pdf/2304.11226v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-04-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.11226
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.11226 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1017/dce.2023.5
+  - id: arx-a-framework-for-structural-shape-optimization-
+    title: A framework for structural shape optimization based on automatic differentiation,
+      the adjoint method and accelerated linear algebra
+    url: https://arxiv.org/pdf/2211.15409v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-11-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2211.15409
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2211.15409 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1007/s00158-023-03601-0
+  - id: arx-configurable-convolutional-neural-networks-for
+    title: Configurable convolutional neural networks for real-time pedestrian-level
+      wind prediction in urban environments
+    url: https://arxiv.org/pdf/2311.07985v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-11-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.07985
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.07985 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-digitalization-in-infrastructure-construction-
+    title: 'Digitalization in Infrastructure Construction Projects: A PRISMA-Based Review
+      of Benefits and Obstacles'
+    url: https://arxiv.org/pdf/2405.16875v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-05-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2405.16875
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2405.16875 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-towards-commands-recommender-system-in-bim-aut
+    title: Towards commands recommender system in BIM authoring tool using transformers
+    url: https://arxiv.org/pdf/2406.10237v1
+    source: arxiv
+    license: cc-by-sa
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-06-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2406.10237
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2406.10237 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-maintenance-strategies-for-sewer-pipes-with-mu
+    title: Maintenance Strategies for Sewer Pipes with Multi-State Degradation and Deep
+      Reinforcement Learning
+    url: https://arxiv.org/pdf/2407.12894v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-07-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.12894
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.12894 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.36001/phme.2024.v8i1.4091
+  - id: arx-the-latin-pgd-methodology-to-nonlinear-dynamic
+    title: The LATIN-PGD methodology to nonlinear dynamics and quasi-brittle materials
+      for future earthquake engineering applications
+    url: https://arxiv.org/pdf/2408.05108v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-08-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.05108
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.05108 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-when-fire-attacks-how-does-concrete-stand-up-t
+    title: 'When Fire Attacks: How does Concrete Stand up to Heat ?'
+    url: https://arxiv.org/pdf/2408.15756v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-08-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.15756
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.15756 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-13'
