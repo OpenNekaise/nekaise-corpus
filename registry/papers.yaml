@@ -151029,3 +151029,72 @@ sources:
     rights_verified_at: '2026-10-13T09:46:16Z'
     origin_ids: doi:10.3390/su10093287 openalex:W2889887533
     resolution: 'legacy: openalex location'
+  - id: arx-numerical-study-of-wind-pressure-loads-on-low-
+    title: Numerical Study of Wind Pressure Loads on Low Rise Buildings under different
+      Terrain
+    url: https://arxiv.org/pdf/2309.10960v1
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-09-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2309.10960
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2309.10960 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-a-computational-approach-to-evaluate-the-effec
+    title: A Computational Approach to Evaluate the Effect of Shelter Construction Material
+      and Fuel Load on the Fire Spread Behavior in Rohingya Refugee Camp
+    url: https://arxiv.org/pdf/2310.06078v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-10-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.06078
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.06078 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-impact-of-street-canyon-morphology-on-heat-and
+    title: Impact of street canyon morphology on heat and fluid flow-an experimental
+      water tunnel study using simultaneous PIV-LIF technique
+    url: https://arxiv.org/pdf/2306.04972v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.04972
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.04972 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.expthermflusci.2023.111066
+  - id: arx-an-experimental-investigation-of-the-heat-and-
+    title: 'An experimental investigation of the heat and flow features in street canyons:
+      Impacts of the approaching turbulent boundary layer flow'
+    url: https://arxiv.org/pdf/2310.13242v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.13242
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.13242 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
