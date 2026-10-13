@@ -117592,19 +117592,6 @@ sources:
       latest v3): http://arxiv.org/licenses/nonexclusive-distrib/1.0/ -> pointer-only
       (arXiv non-exclusive distribution licence (grants distribution to arXiv only))'
     rights_verified_at: '2026-09-25'
-  - id: ope-simulating-the-deep-decarbonisation-of-residen
-    title: Simulating the deep decarbonisation of residential heating for limiting global
-      warming to 1.5 °C
-    url: http://arxiv.org/pdf/1710.11019
-    source: openalex
-    license: arxiv-nonexclusive
-    topic: equipment_systems
-    format: pdf
-    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
-    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1710.11019 (v3 by dates;
-      latest v3): http://arxiv.org/licenses/nonexclusive-distrib/1.0/ -> pointer-only
-      (arXiv non-exclusive distribution licence (grants distribution to arXiv only))'
-    rights_verified_at: '2026-09-25'
   - id: ope-evaluating-project-level-investment-trends-for
     title: 'Evaluating project level investment trends for the U.S. ESCO industry: 1990–2017'
     url: https://escholarship.org/content/qt3286w75d/qt3286w75d.pdf
@@ -149088,23 +149075,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.energy.2022.123819 openalex:W4220994418
     resolution: 'sim1: openalex+unpaywall location'
-  - id: arx-prediction-of-sewer-pipe-deterioration-using-r
-    title: Prediction of Sewer Pipe Deterioration Using Random Forest Classification
-    url: https://arxiv.org/pdf/1912.04194v1
-    source: arxiv
-    license: arxiv-nonexclusive
-    topic: infrastructure
-    format: pdf
-    language: en
-    published_at: '2019-12-09'
-    document_type: preprint
-    persistent_id: doi:10.48550/arxiv.1912.04194
-    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
-    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.04194 (v1, the current
-      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
-      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
-      to arXiv only))'
-    rights_verified_at: '2026-10-13'
   - id: arx-multi-objective-optimisation-of-damper-placeme
     title: Multi-Objective Optimisation of Damper Placement for Improved Seismic Response
       in Dynamically Similar Adjacent Buildings
@@ -150516,3 +150486,21 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-13'
     origin_ids: doi:10.1007/s10546-009-9370-x
+  - id: arx-computational-fluid-dynamics-modeling-of-a-woo
+    title: Computational Fluid Dynamics Modeling of a wood-burning stove-heated sauna
+      using NIST's Fire Dynamics Simulator
+    url: https://arxiv.org/pdf/1404.6774v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-04-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1404.6774
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1404.6774 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
