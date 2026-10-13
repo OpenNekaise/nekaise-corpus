@@ -151098,3 +151098,125 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-13'
+  - id: oas-10-1016-j-jobe-2023-107425-41da9604
+    title: Impact of outdoor particulate matter 2.5 pollution on natural ventilation
+      energy saving potential in office buildings in China
+    url: https://vuir.vu.edu.au/46894/1/J%20Building%20Engineering.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2023.107425
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://vuir.vu.edu.au/46894/1/J%20Building%20Engineering.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2023.107425 openalex:W4384945544
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-jclepro-2024-143410-6019b8a1
+    title: Assessing residential sustainable energy autonomous buildings for hot climate
+      applications
+    url: https://strathprints.strath.ac.uk/90339/1/Mohammadi-Bahman-JCP-2024-Assessing-residential-sustainable-energy-autonomous-buildings.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-08-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2024.143410
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/90339/1/Mohammadi-Bahman-JCP-2024-Assessing-residential-sustainable-energy-autonomous-buildings.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2024.143410 openalex:W4401610288
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-flutter-stability-of-twin-box-bridge-decks
+    title: Flutter stability of twin-box bridge decks
+    url: https://arxiv.org/pdf/2410.17097v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.17097
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.17097 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-electrostatics-slows-down-the-breakup-of-liqui
+    title: Electrostatics slows down the breakup of liquid bridges on solid surfaces
+    url: https://arxiv.org/pdf/2410.17679v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.17679
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.17679 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-modeling-multivariable-high-resolution-3d-urba
+    title: Modeling Multivariable High-resolution 3D Urban Microclimate Using Localized
+      Fourier Neural Operator
+    url: https://arxiv.org/pdf/2411.11348v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.11348
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.11348 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-determination-of-the-young-s-angle-using-stati
+    title: Determination of the Young's angle using static friction in capillary bridges
+    url: https://arxiv.org/pdf/2411.15021v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.15021
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.15021 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-using-diffusion-models-for-reducing-spatiotemp
+    title: Using Diffusion Models for Reducing Spatiotemporal Errors of Deep Learning
+      Based Urban Microclimate Predictions at Post-Processing Stage
+    url: https://arxiv.org/pdf/2501.04847v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-01-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.04847
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.04847 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
