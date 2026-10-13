@@ -152137,3 +152137,19 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621987907
     resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-lateral-expansion-of-the-bridges-of-cygnus-a-a
+    title: Lateral Expansion of the Bridges of Cygnus A and other Powerful Radio Sources
+    url: https://arxiv.org/pdf/astro-ph/9507104v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '1995-07-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.astro-ph/9507104
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:astro-ph/9507104&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:astro-ph/9507104 (v1, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-13'
