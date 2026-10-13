@@ -152015,3 +152015,108 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
+  - id: oas-10-48550-arxiv-2511-08575-9c5f6099
+    title: 'CO2-Meter: A Comprehensive Carbon Footprint Estimator for LLMs on Edge Devices'
+    url: https://arxiv.org/pdf/2511.08575
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-11-11'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2511.08575
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2511.08575;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2511.08575 openalex:W4416185180
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-experimental-investigation-of-skew-wind-effect
+    title: Experimental Investigation of Skew Wind Effects on Vortex-Induced Vibration
+      of Typical Bridge Decks
+    url: https://arxiv.org/pdf/2510.01772v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-10-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.01772
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.01772 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-scalable-nanoscale-positioning-of-highly-coher
+    title: Scalable, nanoscale positioning of highly coherent color centers in prefabricated
+      diamond nanostructures
+    url: https://arxiv.org/pdf/2502.01198v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-02-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.01198
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.01198 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1038/s41467-025-64758-4
+  - id: arx-physics-informed-regression-modelling-for-vert
+    title: 'Physics-Informed Regression Modelling for Vertical Facade Surface Temperature:
+      A Tropical Case Study on Solar-reflective Material'
+    url: https://arxiv.org/pdf/2507.16174v3
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-07-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.16174
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.16174 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-ultralow-and-tunable-thermal-conductivity-of-p
+    title: Ultralow and Tunable Thermal Conductivity of Parylene C for Thermal Insulation
+      in Advanced Packaging
+    url: https://arxiv.org/pdf/2603.03737v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-03-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2603.03737
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2603.03737 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-phononic-bragg-reflectors-for-thermal-insulati
+    title: Phononic Bragg Reflectors for Thermal Insulation of Scalable Cryogenic Control
+      Electronics from Qubits
+    url: https://arxiv.org/pdf/2603.13726v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-03-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2603.13726
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2603.13726 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
