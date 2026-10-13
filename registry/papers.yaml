@@ -148434,23 +148434,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
-  - id: arx-the-modular-technology-of-development-of-the-c
-    title: 'The modular technology of development of the CAD expansions: protection
-      of the buildings from the lightning'
-    url: https://arxiv.org/pdf/cs/0412030v1
-    source: arxiv
-    license: arxiv-nonexclusive
-    topic: construction
-    format: pdf
-    language: en
-    published_at: '2004-12-08'
-    document_type: preprint
-    persistent_id: doi:10.48550/arxiv.cs/0412030
-    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cs/0412030&metadataPrefix=arXivRaw
-    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cs/0412030 (v1, the current
-      version and the copy this URL names): no licence element -> arxiv-nonexclusive
-      (no licence recorded: arXiv''s default distribution licence applies)'
-    rights_verified_at: '2026-10-13'
   - id: arx-computational-homogenization-of-non-stationary
     title: Computational homogenization of non-stationary transport processes in masonry
       structures
@@ -150504,3 +150487,93 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
+  - id: oas-10-1016-j-egyr-2020-11-011-7317469d
+    title: Investigations towards lower cooling load in a typical residential building
+      in Kurdistan (Iraq)
+    url: http://researchrepository.napier.ac.uk/Output/2787393
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyr.2020.11.011
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy http://researchrepository.napier.ac.uk/Output/2787393;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyr.2020.11.011 openalex:W3109005860
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2610-01863-37da1f2a
+    title: 'LiteReality-Agent: An Agentic System for Interactable 3D Indoor Scene Reconstruction'
+    url: https://arxiv.org/pdf/2610.01863
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-10-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.01863
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.01863;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.01863 openalex:W7216572626
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-48550-arxiv-2610-01943-89687554
+    title: 'TouchTherm: Building Multimodal Digital Twins of Objects for Tactile and
+      Thermal Rendering'
+    url: https://arxiv.org/pdf/2610.01943
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-10-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.01943
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.01943;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.01943 openalex:W7216236347
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-flooding-in-urban-drainage-systems-coupling-hy
+    title: 'Flooding in urban drainage systems: Coupling hyperbolic conservation laws
+      for sewer systems and surface flow'
+    url: https://arxiv.org/pdf/1402.4254v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2014-02-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1402.4254
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1402.4254 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1002/fld.3957
+  - id: arx-heat-engines-and-heat-pumps-in-a-hydrostatic-a
+    title: 'Heat engines and heat pumps in a hydrostatic atmosphere: How surface pressure
+      and temperature constrain wind power output and circulation cell size'
+    url: https://arxiv.org/pdf/1505.02679v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2015-05-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1505.02679
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1505.02679 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1080/16000870.2016.1272752

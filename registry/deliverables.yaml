@@ -178,14 +178,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: eud-requirements-key-performance-indicators-system
-    title: 'Requirements: Key Performance Indicators, system components and performance
-      targets'
-    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bfa63472&appId=PPGMS
-    source: openaire_deliverable
-    license: open
-    topic: building_energy
-    format: pdf
   - id: eud-report-on-improving-building-operation-with-en
     title: Report on improving building operation with enhanced EPC
     url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50bf3a99e&appId=PPGMS
@@ -1073,14 +1065,6 @@ sources:
     license: open
     topic: equipment_systems
     format: pdf
-  - id: eud-requirements-context-of-application-building-c
-    title: 'Requirements: context of application, building classification, and dynamic
-      uses consideration'
-    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bf56dc66&appId=PPGMS
-    source: openaire_deliverable
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: eud-hybuild-optimised-building-management-system
     title: HYBUILD optimised building management system
     url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5cda50875&appId=PPGMS
@@ -1156,13 +1140,6 @@ sources:
   - id: eud-current-and-future-overview-of-technical-marke
     title: Current and future overview of technical market application.
     url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50229ea94&appId=PPGMS
-    source: openaire_deliverable
-    license: open
-    topic: equipment_systems
-    format: pdf
-  - id: eud-smart-system-algorithms
-    title: Smart system algorithms
-    url: https://www.ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5bdfa35a3&appId=PPGMS
     source: openaire_deliverable
     license: open
     topic: equipment_systems
@@ -39745,21 +39722,6 @@ sources:
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
       https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
     rights_verified_at: '2026-10-12'
-  - id: eud-768623-openbim-libraries-of-advanced-technologi
-    title: 'REZBUILD (768623): openBIM libraries of advanced technologies'
-    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c8e20cb9&appId=PPGMS
-    source: cordis_deliverable
-    license: unverified
-    topic: construction
-    format: pdf
-    language: en
-    document_type: report
-    persistent_id: cordis:768623_11_DELIV
-    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
-      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
-      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
-      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
-    rights_verified_at: '2026-10-12'
   - id: eud-768623-guideline-of-lesson-learns-and-best-prac
     title: 'REZBUILD (768623): Guideline of lesson learns and best practices. Report
       1'
@@ -39959,22 +39921,6 @@ sources:
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
       https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
     rights_verified_at: '2026-10-12'
-  - id: eud-768735-plug-n-play-optimal-energy-management-sy
-    title: 'PLUG-N-HARVEST (768735): Plug-N-Play Optimal Energy Management System (OEMS)
-      at District/Grid Level'
-    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c2d2c310&appId=PPGMS
-    source: cordis_deliverable
-    license: unverified
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: report
-    persistent_id: cordis:768735_13_DELIV
-    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
-      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
-      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
-      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
-    rights_verified_at: '2026-10-12'
   - id: eud-768735-control-safety-mechanisms
     title: 'PLUG-N-HARVEST (768735): Control Safety Mechanisms'
     url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c2cd5f4b&appId=PPGMS
@@ -40075,21 +40021,6 @@ sources:
     language: en
     document_type: report
     persistent_id: cordis:768735_22_DELIV
-    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
-      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
-      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
-      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
-    rights_verified_at: '2026-10-12'
-  - id: eud-768735-evaluation-report
-    title: 'PLUG-N-HARVEST (768735): Evaluation Report'
-    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f78176ac&appId=PPGMS
-    source: cordis_deliverable
-    license: unverified
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: report
-    persistent_id: cordis:768735_23_DELIV
     license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
       CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
@@ -40292,21 +40223,6 @@ sources:
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
       https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
     rights_verified_at: '2026-10-12'
-  - id: eud-768735-active-fa-ade-cfd-simulation-and-optimiz
-    title: 'PLUG-N-HARVEST (768735): Active-façade CFD simulation and optimization guidelines'
-    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c2b8afc7&appId=PPGMS
-    source: cordis_deliverable
-    license: unverified
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: report
-    persistent_id: cordis:768735_6_DELIV
-    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
-      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
-      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
-      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
-    rights_verified_at: '2026-10-12'
   - id: eud-768735-plug-n-harvest-adbe-advanced-design
     title: 'PLUG-N-HARVEST (768735): PLUG-N-HARVEST ADBE Advanced Design'
     url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c2c20492&appId=PPGMS
@@ -40317,21 +40233,6 @@ sources:
     language: en
     document_type: report
     persistent_id: cordis:768735_7_DELIV
-    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
-      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
-      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
-      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
-    rights_verified_at: '2026-10-12'
-  - id: eud-768735-plug-n-harvest-adbe-simulative-tests-eva
-    title: 'PLUG-N-HARVEST (768735): PLUG-N-HARVEST ADBE Simulative Tests Evaluation'
-    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c2cd4da5&appId=PPGMS
-    source: cordis_deliverable
-    license: unverified
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: report
-    persistent_id: cordis:768735_8_DELIV
     license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
       CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
@@ -40425,22 +40326,6 @@ sources:
     language: en
     document_type: report
     persistent_id: cordis:768766_27_DELIV
-    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
-      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
-      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
-      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
-    rights_verified_at: '2026-10-12'
-  - id: eud-768766-high-quality-data-sets-collected-during-
-    title: 'EnergyMatching (768766): High-quality data sets collected during the monitoring
-      of the 4 case-studies, and energy performance analysis'
-    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5f346fa8e&appId=PPGMS
-    source: cordis_deliverable
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    document_type: report
-    persistent_id: cordis:768766_39_DELIV
     license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
       CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
@@ -41074,22 +40959,6 @@ sources:
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
       https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
     rights_verified_at: '2026-10-12'
-  - id: eud-768738-manual-for-configuration-installation-an
-    title: 'eTEACHER (768738): Manual for configuration, installation and commissioning
-      of eTEACHER (first release)'
-    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5c96c8f8c&appId=PPGMS
-    source: cordis_deliverable
-    license: unverified
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: report
-    persistent_id: cordis:768738_32_DELIV
-    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
-      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
-      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
-      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
-    rights_verified_at: '2026-10-12'
   - id: eud-768738-evaluation-of-eteacher-results-first-rel
     title: 'eTEACHER (768738): Evaluation of eTEACHER results. First release'
     url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5d9ef9cb8&appId=PPGMS
@@ -41100,22 +40969,6 @@ sources:
     language: en
     document_type: report
     persistent_id: cordis:768738_33_DELIV
-    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
-      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
-      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
-      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
-    rights_verified_at: '2026-10-12'
-  - id: eud-768738-manual-for-configuration-installation-a-2
-    title: 'eTEACHER (768738): Manual for configuration, installation and commissioning
-      of eTEACHER (final release)'
-    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5df0e6791&appId=PPGMS
-    source: cordis_deliverable
-    license: unverified
-    topic: controls_bas
-    format: pdf
-    language: en
-    document_type: report
-    persistent_id: cordis:768738_34_DELIV
     license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
       CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
@@ -110350,6 +110203,467 @@ sources:
     language: en
     document_type: report
     persistent_id: cordis:101123556_6_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101114356-digital-orientation-programme-for-invest
+    title: 'FINEST SCALEUP (101114356): Digital orientation programme for investors'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51b6634fc&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101114356_14_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101121100-open-call-documentation-and-rules
+    title: 'D2XCEL (101121100): Open call documentation and rules'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50b7fbc5a&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101121100_3_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101121100-list-of-selected-companies-and-their-pro
+    title: 'D2XCEL (101121100): List of selected companies and their profiles'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51a96ae5d&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101121100_4_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101123330-design-guidance-framework-based-on-multi
+    title: 'DRASTIC (101123330): Design guidance framework based on multi-cycle sustainability
+      and circularity assessment, including product and building level'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e510066371&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: building_energy
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101123330_6_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101123330-data-collection-protocol
+    title: 'DRASTIC (101123330): Data collection protocol'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e512824594&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: building_energy
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101123330_7_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101135855-analysis-of-pre-normative-research-for-n
+    title: 'AFCOS (101135855): Analysis of pre-normative research for new building materials'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51873058a&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101135855_2_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101135855-methodology-for-co-design-of-roadmaps
+    title: 'AFCOS (101135855): Methodology for co-design of roadmaps'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5177858e2&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101135855_3_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101131190-report-on-advances-in-causal-effects-alg
+    title: 'UDENE (101131190): Report on Advances in Causal Effects Algorithms'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51a30b5fa&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101131190_7_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101131190-inventory-of-the-european-providers-of-e
+    title: 'UDENE (101131190): Inventory of the European providers of EO-based Applications
+      and Services'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51ac34b17&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101131190_8_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101131910-databases-data-stores-and-data-ingestion
+    title: 'PAVE-SCAN (101131910): Databases/Data Stores and Data Ingestion Pipelines
+      (prototype & report)'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e519196472&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101131910_16_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101135299-projekt-management-plan-review-1
+    title: 'MASS-IPV (101135299): Projekt Management Plan - Review 1'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51ac3938c&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: building_energy
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101135299_21_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101135299-business-strategies
+    title: 'MASS-IPV (101135299): Business strategies'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51a526406&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: building_energy
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101135299_3_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101136094-advantages-of-matrix-shingle-technology-
+    title: 'SPHINX (101136094): Advantages of matrix shingle technology for integrated
+      PV'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50e013ff5&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101136094_12_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101136094-design-pilot-line
+    title: 'SPHINX (101136094): Design pilot line'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e507f859b2&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101136094_17_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101136112-d4-1-testing-programme-for-bipv-iipv-ver
+    title: 'Increase (101136112): D4.1 Testing programme for BIPV/IIPV version 1'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e515678374&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101136112_11_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101136112-d6-1-conceptual-co-creation-model
+    title: 'Increase (101136112): D6.1 Conceptual co-creation model'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5098469b5&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101136112_5_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101136112-d8-1-cde-strategy-version-1
+    title: 'Increase (101136112): D8.1 CDE Strategy version 1'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e509843f81&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101136112_6_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101136112-d6-3-kpis-for-design-to-demonstration-an
+    title: 'Increase (101136112): D6.3 KPIs for design to demonstration and beyond:
+      KPIs, and monitoring approaches version 1'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5109355a0&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101136112_8_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101139730-solutions-practices-and-support-systems-
+    title: 'GreenInCities (101139730): SOLUTIONS, PRACTICES and SUPPORT SYSTEMS MERGING
+      NBS and NEB initial catalogue'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5129ed490&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101139730_11_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101139730-initial-toolbox-and-methodologies-for-ll
+    title: 'GreenInCities (101139730): Initial Toolbox and Methodologies for LLs towards
+      Implementation and Twinning'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51691ab54&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101139730_12_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101139730-greenincities-lls-governance-initial-rep
+    title: 'GreenInCities (101139730): GreenInCities LLs Governance initial report'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e516917c6f&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101139730_14_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101139730-innovation-management-plan
+    title: 'GreenInCities (101139730): Innovation management plan'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50ebb22e0&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101139730_2_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101139730-inclusivity-plan
+    title: 'GreenInCities (101139730): Inclusivity Plan'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5129e9946&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101139730_30_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101139730-data-domain-protocol-for-greening-innova
+    title: 'GreenInCities (101139730): Data domain protocol for greening innovation'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e512f3a2d7&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101139730_5_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101139730-public-green-space-and-built-environment
+    title: 'GreenInCities (101139730): Public green space and built environment requirements
+      framework'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51449160e&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101139730_8_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101139730-greenincities-sustainable-renaturing-too
+    title: 'GreenInCities (101139730): GreenInCities Sustainable Renaturing Toolbox'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5169168b9&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101139730_9_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101147041-state-of-the-art-gaps-and-challenges-for
+    title: 'CLARION (101147041): State of the Art, Gaps and Challenges for Climate Resilient
+      Maritime Ports'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e5115343b9&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101147041_1_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101147041-project-administrative-and-financial-man
+    title: 'CLARION (101147041): Project Administrative and Financial Management Handbook'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e50eb2a52b&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: report
+    persistent_id: cordis:101147041_31_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101182652-collaborative-platform
+    title: 'NEUTRAL4GS (101182652): Collaborative Platform'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51c417c08&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101182652_7_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101182689-repository-of-bechmark-monitoring-and-te
+    title: 'GRID (101182689): Repository of bechmark monitoring and testing data sets'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e517eff897&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: materials
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101182689_1_DELIVHORIZON
+    license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
+      CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
+      beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
+      https://cordis.europa.eu/about/legal). No reuse licence is stated for this document.'
+    rights_verified_at: '2026-10-13'
+  - id: eud-101182689-guideline-for-integration-of-ml-in-geote
+    title: 'GRID (101182689): Guideline for integration of ML in geotechnical engineering'
+    url: https://ec.europa.eu/research/participants/documents/downloadPublic?documentIds=080166e51a67d0b7&appId=PPGMS
+    source: cordis_deliverable
+    license: unverified
+    topic: materials
+    format: pdf
+    document_type: report
+    persistent_id: cordis:101182689_2_DELIVHORIZON
     license_evidence: 'CORDIS public project deliverable (EURIO graph). CORDIS: its
       CC BY 4.0 licence ''does NOT cover deliverables or publications uploaded by project
       beneficiaries — those follow per-project Grant Agreement terms'' (https://cordis.europa.eu/llms.txt;
