@@ -144419,23 +144419,6 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-12'
-  - id: oas-w621987907
-    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2004-12-15'
-    document_type: article
-    persistent_id: https://openalex.org/W621987907
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-12'
-    selected_version: submittedVersion
-    origin_ids: openalex:W621987907
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-physics-informed-machine-learning-for-building
     title: Physics-informed machine learning for building performance simulation-A review
       of a nascent field
@@ -150630,3 +150613,93 @@ sources:
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-13'
     origin_ids: doi:10.1007/s10546-019-00484-x
+  - id: arx-dispersion-in-an-array-of-buildings-in-stable-
+    title: Dispersion in an array of buildings in stable and convective atmospheric
+      conditions
+    url: https://arxiv.org/pdf/1908.06027v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-08-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1908.06027
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1908.06027 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.atmosenv.2019.117100
+  - id: arx-rupture-of-liquid-bridges-on-porous-tips-compe
+    title: 'Rupture of liquid bridges on porous tips: Competing mechanisms of spontaneous
+      imbibition and stretching'
+    url: https://arxiv.org/pdf/2008.10424v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-08-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2008.10424
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2008.10424 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-numerical-study-of-flow-structure-and-pedestri
+    title: Numerical Study of Flow Structure and Pedestrian Level Wind Comfort Inside
+      Urban Street Canyons
+    url: https://arxiv.org/pdf/1703.08963v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1703.08963
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1703.08963 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1080/03036758.2021.1892776
+  - id: arx-breakup-dynamics-of-capillary-bridges-on-hydro
+    title: Breakup Dynamics of Capillary Bridges on Hydrophobic Stripes
+    url: https://arxiv.org/pdf/1910.01887v3
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-10-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1910.01887
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1910.01887 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.ijmultiphaseflow.2021.103582
+  - id: arx-prediction-of-three-dimensional-flood-flow-pas
+    title: Prediction of three-dimensional flood-flow past bridge piers in a large-scale
+      meandering river using convolutional neural networks
+    url: https://arxiv.org/pdf/2106.11276v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-06-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.11276
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.11276 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
