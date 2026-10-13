@@ -147379,3 +147379,396 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-13'
     origin_ids: doi:10.1016/j.chaos.2019.05.029
+  - id: oas-10-1016-j-enbuild-2023-113318-746f3699
+    title: Transforming and validating urban microclimate data with multi-sourced microclimate
+      datasets for building energy modelling at urban scale
+    url: https://discovery.ucl.ac.uk/10172677/2/Wei_WW-Draft-0504.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2023.113318
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10172677/2/Wei_WW-Draft-0504.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2023.113318 openalex:W4382073734
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2023-113284-e8846ac0
+    title: Simulation-based sensitivity analysis of energy performance applied to an
+      old Beijing residential neighbourhood for retrofit strategy optimisation wit
+    url: https://discovery.ucl.ac.uk/10199383/1/ENB-D-23-00630_R2.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2023.113284
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10199383/1/ENB-D-23-00630_R2.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2023.113284 openalex:W4381163295
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-w399462216
+    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W399462216
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-13'
+    selected_version: submittedVersion
+    origin_ids: openalex:W399462216
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-spatial-point-pattern-and-urban-morphology-per
+    title: 'Spatial Point Pattern and Urban Morphology: Perspectives from Entropy, Complexity
+      and Networks'
+    url: https://arxiv.org/pdf/1904.09787v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-04-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1904.09787
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1904.09787 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1103/physreve.100.022320
+  - id: arx-spatial-information-and-the-legibility-of-urba
+    title: 'Spatial Information and the Legibility of Urban Form: Big Data in Urban
+      Morphology'
+    url: https://arxiv.org/pdf/1910.00118v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-09-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1910.00118
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1910.00118 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.ijinfomgt.2019.09.009
+  - id: arx-a-dimensionality-reduction-strategy-to-compute
+    title: A Dimensionality-Reduction Strategy to Compute Shortest Paths in Urban Water
+      Networks
+    url: https://arxiv.org/pdf/1903.11710v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1903.11710
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1903.11710 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-built-environment-and-walking-short-vs-long-wa
+    title: 'Built Environment and Walking: Short vs. Long Walking Trips'
+    url: https://arxiv.org/pdf/2001.00640v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-12-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2001.00640
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2001.00640 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-urban-planning-in-the-first-unfortified-spanis
+    title: 'Urban Planning in the First Unfortified Spanish Colonial Town: The orientation
+      of the historic churches of San Cristobal de La Laguna'
+    url: https://arxiv.org/pdf/2003.12410v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.12410
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.12410 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1558/jsa.34336
+  - id: arx-experimental-study-on-determinants-of-the-evac
+    title: Experimental study on determinants of the evacuation performance in the super-high
+      rise building
+    url: https://arxiv.org/pdf/2004.04310v1
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-04-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.04310
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.04310 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-socio-economic-built-environment-and-mobility-
+    title: 'Socio-economic, built environment, and mobility conditions associated with
+      crime: A study of multiple cities'
+    url: https://arxiv.org/pdf/2004.05822v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-04-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.05822
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.05822 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-exposed-an-occupant-exposure-model-for-confine
+    title: 'EXPOSED: An occupant exposure model for confined spaces to retrofit crowd
+      models during a pandemic'
+    url: https://arxiv.org/pdf/2005.04007v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2005.04007
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2005.04007 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.ssci.2020.104834
+  - id: arx-from-form-to-information-analysing-built-envir
+    title: 'From form to information: Analysing built environments in different spatial
+      cultures'
+    url: https://arxiv.org/pdf/2006.13897v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-06-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.13897
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.13897 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-renyi-s-spectra-of-urban-form-for-different-mo
+    title: Renyi's spectra of urban form for different modalities of input data
+    url: https://arxiv.org/pdf/2007.07410v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-07-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.07410
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.07410 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1016/j.chaos.2020.109995
+  - id: arx-exploring-urban-form-through-openstreetmap-dat
+    title: 'Exploring Urban Form Through Openstreetmap Data: A Visual Introduction'
+    url: https://arxiv.org/pdf/2008.12142v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-08-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2008.12142
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2008.12142 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-alexander-s-wholeness-as-the-scientific-founda
+    title: Alexander's Wholeness as the Scientific Foundation of Sustainable Urban Design
+      and Planning
+    url: https://arxiv.org/pdf/1909.11755v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-09-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1909.11755
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1909.11755 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-assessment-of-the-regionalised-demand-response
+    title: Assessment of the regionalised demand response potential in Germany using
+      an open source tool and dataset
+    url: https://arxiv.org/pdf/2009.05122v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-09-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.05122
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.05122 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-fractal-modeling-and-fractal-dimension-descrip
+    title: Fractal Modeling and Fractal Dimension Description of Urban Morphology
+    url: https://arxiv.org/pdf/1809.05810v5
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-09-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1809.05810
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1809.05810 (v5, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.3390/e22090961
+  - id: arx-fractal-based-modeling-and-spatial-analysis-of
+    title: 'Fractal-based modeling and spatial analysis of urban form and growth: a
+      case study of Shenzhen in China'
+    url: https://arxiv.org/pdf/2010.05225v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-10-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2010.05225
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.05225 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.3390/ijgi9110672
+  - id: arx-buildings-as-species-competition-and-scaling-r
+    title: 'Buildings as Species: Competition and Scaling Rules in Cities'
+    url: https://arxiv.org/pdf/1912.01889v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-12-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.01889
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.01889 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+  - id: arx-investigating-the-effect-of-expected-travel-di
+    title: Investigating the effect of expected travel distance on individual descent
+      speed in the stairwell with super long distance
+    url: https://arxiv.org/pdf/2101.00237v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-01-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2101.00237
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2101.00237 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-marketability-of-building-energy-efficiency-sy
+    title: 'Marketability of building energy efficiency systems based on behavioral
+      change: A case study of a novel micro-moments based solution'
+    url: https://arxiv.org/pdf/2105.10460v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2105.10460
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2105.10460 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-13'
+  - id: arx-machine-learning-for-buildings-characterizatio
+    title: Machine learning for buildings characterization and power-law recovery of
+      urban metrics
+    url: https://arxiv.org/pdf/2002.08355v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-02-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.08355
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.08355 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-13'
+    origin_ids: doi:10.1371/journal.pone.0246096

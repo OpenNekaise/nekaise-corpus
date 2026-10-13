@@ -501,21 +501,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-12'
-  - id: osa-comparative-study-of-dc-and-ac-microgrids-in-commerc
-    title: Comparative Study of DC and AC Microgrids in Commercial Buildings Across
-      Different Climates and Operating Profiles
-    url: https://www.osti.gov/servlets/purl/1225024
-    source: osti_aec
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2015-06-07'
-    document_type: conference-paper
-    persistent_id: doi:10.1109/icdcm.2015.7152031
-    license_evidence: OSTI Conference full text; the OSTI record states no rights and
-      OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-12'
   - id: osa-analysis-of-electric-vehicle-interconnection-with-co
     title: Analysis of electric vehicle interconnection with commercial building microgrids
     url: https://www.osti.gov/servlets/purl/1016367
@@ -3768,6 +3753,136 @@ sources:
     published_at: '1982-09-01'
     document_type: technical-report
     persistent_id: doi:10.2172/6824008
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-concentrating-photovoltaic-retrofit-for-existing-par
+    title: 'Concentrating photovoltaic retrofit for existing parabolic trough solar
+      collectors: Design, experiments, and levelized cost of electricity'
+    url: https://www.osti.gov/servlets/purl/1799009
+    source: osti_aec
+    license: publisher-oa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-11'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.apenergy.2020.114751
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Applied
+      Energy): free to read under the DOE Public Access Plan; publisher copyright, no
+      reuse licence'
+    rights_verified_at: '2026-10-13'
+  - id: osa-integrated-building-management-system-ibms
+    title: Integrated Building Management System (IBMS)
+    url: https://www.osti.gov/servlets/purl/1057456
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-07-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1057456
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-better-buildings-neighborhood-program-betterbuilding
+    title: 'Better Buildings Neighborhood Program: BetterBuildings Lowell (Final Report)'
+    url: https://www.osti.gov/servlets/purl/1117204
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-04-04'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1117204
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-geothermal-district-heating-and-cooling-system-for-t
+    title: Geothermal district heating and cooling system for the city of Calistoga,
+      California
+    url: https://www.osti.gov/servlets/purl/5243996
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5243996
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-issues-concerning-the-application-of-seismic-base-is
+    title: Issues concerning the application of seismic base isolation in the DOE
+    url: https://www.osti.gov/servlets/purl/10134639
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1994-02-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-solar-industrial-retrofit-system-north-coles-levee-n
+    title: 'Solar industrial retrofit system: North Coles Levee Natural Gas Processing
+      Plant. Appendices. Final report'
+    url: https://www.osti.gov/servlets/purl/5166661
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1980-07-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5166661
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-potential-role-of-district-heating-in-the-us
+    title: Potential role of district heating in the US
+    url: https://www.osti.gov/servlets/purl/6327034
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1981-01-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-solar-industrial-retrofit-system-for-the-provident-e
+    title: 'Solar industrial retrofit system for the Provident Energy Company refinery.
+      Section 1: executive summary. Final report, September 28, 1979-July 15, 19'
+    url: https://www.osti.gov/servlets/purl/5232225
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1980-07-15'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5232225
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-13'
+  - id: osa-renovation-opportunities-for-steam-district-heating-
+    title: 'Renovation opportunities for steam district heating systems: A decision
+      process in San Francisco'
+    url: https://www.osti.gov/servlets/purl/6016446
+    source: osti_aec
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1964-05-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6016446
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-13'
