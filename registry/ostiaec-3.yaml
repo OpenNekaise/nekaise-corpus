@@ -7551,21 +7551,6 @@ sources:
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-14'
-  - id: osa-methods-development-for-measuring-and-classifying-fl
-    title: Methods development for measuring and classifying flammability/combustibility
-      of refrigerants. Interim report, task 2 - test plan
-    url: https://www.osti.gov/servlets/purl/10118185
-    source: osti_aec
-    license: unverified
-    topic: materials
-    format: pdf
-    language: en
-    published_at: '1994-07-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/10118185
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-14'
   - id: osa-energy-and-cost-analysis-of-residential-refrigerator
     title: Energy and cost analysis of residential refrigerators
     url: https://www.osti.gov/servlets/purl/7325133
@@ -7594,4 +7579,48 @@ sources:
     persistent_id: doi:10.2172/6379099
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-tests-of-a-reduced-scale-experimental-model-of-a-bui
+    title: Tests of a Reduced-Scale Experimental Model of a Building Solar Heating-Cooling
+      System
+    url: https://www.osti.gov/servlets/purl/7239672
+    source: osti_aec
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '1976-09-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/7239672
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-optimal-insulation-of-pipes-and-tanks-for-solar-heat
+    title: Optimal insulation of pipes and tanks for solar heating systems. Topical
+      report
+    url: https://www.osti.gov/servlets/purl/6305876
+    source: osti_aec
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '1979-02-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/6305876
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-thermal-conductivity-of-oriented-fibrous-carbon-insu
+    title: Thermal conductivity of oriented fibrous carbon insulation from 300 to 1300
+      K in nitrogen and argon at one atmosphere
+    url: https://www.osti.gov/servlets/purl/4380608
+    source: osti_aec
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '1973-01-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-14'
