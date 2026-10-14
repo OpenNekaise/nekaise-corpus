@@ -67392,14 +67392,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-socio-economic-equity-and-human-related-impact
-    title: Socio-economic equity and human-related impacts of flooding — Socio-economic
-      equity and human-related impacts of flooding in appraisal
-    url: https://assets.publishing.service.gov.uk/media/61714026e90e07197d8fb83d/Socio-economic_equity_and_human-related_impacts_of_flooding_in_appraisal.pdf
-    source: gov_uk
-    license: open
-    topic: equipment_systems
-    format: pdf
   - id: guk-the-eatwell-plate-external-reference-group-rev-8
     title: 'The eatwell plate: external reference group review — External reference
       group: eatwell plate background information'
@@ -108376,6 +108368,303 @@ sources:
     title: South West River Basin District preliminary flood risk assessment — Devon
       County Council preliminary flood risk assessment
     url: https://assets.publishing.service.gov.uk/media/5accb546e5274a76be66bf92/PFRA_Devon_County_Council_2017.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-humber-river-basin-district-preliminary-flood--5
+    title: Humber River Basin District preliminary flood risk assessments — Derby City
+      Council preliminary flood risk assessment
+    url: https://assets.publishing.service.gov.uk/media/5acb859bed915d5a9323b542/PFRA_Derby_City_Council__2017.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-humber-river-basin-district-preliminary-flood--7
+    title: Humber River Basin District preliminary flood risk assessments — Doncaster
+      Metropolitan Borough Council preliminary flood risk assessment
+    url: https://assets.publishing.service.gov.uk/media/5acb8578ed915d5a9323b540/PFRA_Doncaster_Metropolitan_Borough_Council_2017.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-shoreham-adur-tidal-walls-scheme-reaches-w5-w6
+    title: 'Shoreham Adur tidal walls scheme: reaches W5, W6 and W7'
+    url: https://www.gov.uk/government/publications/shoreham-adur-tidal-walls-scheme-reaches-w5-w6-and-w7/shoreham-adur-tidal-walls-scheme-reaches-w5-w6-and-w7
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-rugeley-flood-defence-scheme
+    title: Rugeley flood defence scheme
+    url: https://www.gov.uk/government/publications/rugeley-flood-defence-scheme/rugeley-flood-defence-scheme
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-minimising-risks-from-fluid-reinjection-to-dee-2
+    title: 'Minimising risks from fluid reinjection to deep geological formations —
+      Minimising risks from fluid reinjection to deep geological formations: report'
+    url: https://assets.publishing.service.gov.uk/media/5a823bf440f0b62305b93325/Minimising_risks_from_fluid_reinjection_to_deep_geological_formations_-_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-upper-ouse-and-bedford-ouse-abstraction-licens
+    title: Upper Ouse and Bedford Ouse abstraction licensing strategy
+    url: https://assets.publishing.service.gov.uk/media/5a820dd6e5274a2e87dc0e7f/ALS_2017_Upper_Ouse_and_Bedford_Ouse.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-monktonmead-flood-risk-management
+    title: Monktonmead flood risk management
+    url: https://www.gov.uk/government/publications/monktonmead-flood-risk-management/monktonmead-flood-risk-management
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-river-thames-and-connecting-waterways-cruising
+    title: 'River Thames and connecting waterways: cruising guide — Cruising guide to
+      The River Thames and Connecting Waterways 2013-2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7b841be5274a7202e17aba/LIT_6689_3e9c5e.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-cumbria-flood-action-plan-cumbria-flood-action-2
+    title: Cumbria Flood Action Plan — Cumbria Flood Action Plan - full list of actions
+    url: https://assets.publishing.service.gov.uk/media/5a81668440f0b6230269719d/cumbria-flood-plan-detail.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-cumbria-flood-action-plan-braithwaite-communit
+    title: Cumbria Flood Action Plan — Braithwaite community action table
+    url: https://assets.publishing.service.gov.uk/media/5a80bc9d40f0b6230269537c/cumbria-flood-plan-community-braithwaite.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-cumbria-flood-action-plan-burneside-community-
+    title: Cumbria Flood Action Plan — Burneside community action table
+    url: https://assets.publishing.service.gov.uk/media/5a7f720f40f0b62305b8730e/Burneside_FINAL.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-register-your-flood-risk-activity-exemption-en
+    title: 'Register your flood risk activity exemption: environmental permits'
+    url: https://www.gov.uk/guidance/register-your-flood-risk-exemption-environmental-permits
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-water-framework-directive-assessment-for-a-flo
+    title: 'Water Framework Directive assessment for a flood risk activity — Water Framework
+      Directive risk assessment: how to assess the risk of your activity'
+    url: https://assets.publishing.service.gov.uk/media/5a819cd7ed915d74e33ff25a/LIT_10445.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-sandwich-town-tidal-defences
+    title: Sandwich Town tidal defences
+    url: https://www.gov.uk/government/publications/sandwich-town-tidal-defences/sandwich-town-tidal-defences
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-planning-application-process-statutory-consult-2
+    title: 'Planning application process: statutory consultee arrangements — Further
+      changes to statutory consultee arrangements for the planning application process:
+      government response'
+    url: https://assets.publishing.service.gov.uk/media/5a80952c40f0b62305b8bfe6/Final_Statutory_Consultee_Consultation_Response.pdf
+    source: gov_uk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-flood-and-sea-defences-designated-assets-on-yo
+    title: 'Flood and sea defences: designated assets on your land'
+    url: https://www.gov.uk/guidance/flood-and-sea-defences-designated-assets-on-your-land
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-2010-to-2015-government-policy-access-to-the-c
+    title: '2010 to 2015 government policy: access to the countryside'
+    url: https://www.gov.uk/government/publications/2010-to-2015-government-policy-access-to-the-countryside/2010-to-2015-government-policy-access-to-the-countryside
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-the-national-flood-emergency-framework-for-eng
+    title: 'The national flood emergency framework for England — The National Flood
+      Emergency Framework for England (updated: December 2014)'
+    url: https://assets.publishing.service.gov.uk/media/5a759671e5274a545822caac/pb14238-nfef-201412.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-pagham-to-east-head-coastal-defence-strategy
+    title: Pagham to East Head coastal defence strategy
+    url: https://www.gov.uk/government/publications/pagham-to-east-head-coastal-defence-strategy/pagham-to-east-head-coastal-defence-strategy
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-upper-mole-flood-alleviation-scheme
+    title: Upper Mole flood alleviation scheme
+    url: https://www.gov.uk/government/publications/upper-mole-flood-alleviation-scheme/upper-mole-flood-alleviation-scheme
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-flood-risk-management-information-for-flood-ri-6
+    title: 'Flood risk management: information for flood risk management authorities,
+      asset owners and local authorities — Appendix C'
+    url: https://assets.publishing.service.gov.uk/media/5a75102140f0b6360e4730e3/onsite-prepguide-c.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-flood-risk-management-information-for-flood-ri-11
+    title: 'Flood risk management: information for flood risk management authorities,
+      asset owners and local authorities — The Vale of Pickering Internal Drainage Board
+      Order 2014'
+    url: https://assets.publishing.service.gov.uk/media/5a7e414140f0b6230268a2a5/vale-pickering-idb-order.pdf
     source: gov_uk
     license: unverified
     topic: infrastructure

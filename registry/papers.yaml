@@ -151608,23 +151608,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.36828/efs.219 openalex:W4327731521
     resolution: 'sim1: openalex+unpaywall location'
-  - id: oas-w2111364805
-    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2005-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2111364805
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-13'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2111364805
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-the-influence-of-structure-geometry-and-materi
     title: The influence of structure geometry and material on seismic metamaterial
       performance
@@ -152682,4 +152665,23 @@ sources:
     rights_verified_at: '2026-10-14'
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enbuild.2018.10.026 openalex:W2896071755
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2018-03-005-ad9a719e
+    title: An assessment of the potential of supply-side ventilation demand control
+      to regulate natural ventilation flow patterns and reduce domestic space heati
+    url: https://cris.brighton.ac.uk/ws/files/487667/final.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-03-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2018.03.005
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://cris.brighton.ac.uk/ws/files/487667/final.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2018.03.005 openalex:W2793303474
     resolution: 'sim1: openalex+unpaywall location'
