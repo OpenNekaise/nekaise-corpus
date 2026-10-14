@@ -152796,3 +152796,37 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1002/aenm.202100698 openalex:W3167535879
     resolution: 'legacy: openalex location'
+  - id: arx-affine-lambda-buildings-ultrapowers-of-lie-gro
+    title: 'Affine $\Lambda$-buildings, ultrapowers of Lie groups and Riemannian symmetric
+      spaces: an algebraic proof of the Margulis conjecture'
+    url: https://arxiv.org/pdf/math/0209122v5
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2002-09-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0209122
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/0209122&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0209122 (v5, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-14'
+  - id: arx-the-generalized-triangle-inequalities-in-symme
+    title: The generalized triangle inequalities in symmetric spaces and buildings with
+      applications to algebra
+    url: https://arxiv.org/pdf/math/0210256v5
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2002-10-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0210256
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/0210256&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0210256 (v5, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-14'
