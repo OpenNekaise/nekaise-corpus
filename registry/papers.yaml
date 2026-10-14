@@ -153248,3 +153248,127 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.buildenv.2013.04.003 openalex:W2030194612
     resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2006-11-008-b6c44cad
+    title: Applying uncertainty considerations to energy conservation equations
+    url: https://strathprints.strath.ac.uk/6561/1/strathprints006561.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2007-02-08'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2006.11.008
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/6561/1/strathprints006561.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2006.11.008 openalex:W2075451481
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2013-03-016-5133b4cc
+    title: Characterising the energy performance of centralised HVAC&R systems in the
+      UK
+    url: https://centaur.reading.ac.uk/31924/1/Mehdi%20Shahrestani-Characterising%20the%20energy%20performance%20of%20centralised%20HVAC%26R%20systems%20in%20the%20UK%20%281%29.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-03-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2013.03.016
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/31924/1/Mehdi%20Shahrestani-Characterising%20the%20energy%20performance%20of%20centralised%20HVAC%26R%20systems%20in%20the%20UK%20%281%29.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2013.03.016 openalex:W2002070905
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-14786451-2014-966711-10f237a0
+    title: 'Building envelope design for climate change mitigation: a case study of
+      hotels in Greece'
+    url: http://bura.brunel.ac.uk/bitstream/2438/10997/1/FullText.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-10-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/14786451.2014.966711
+    license_evidence: no licence statement for this copy [copy http://bura.brunel.ac.uk/bitstream/2438/10997/1/FullText.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/14786451.2014.966711 openalex:W2074916084
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2012-08-046-c92302eb
+    title: The development and calibration of a generic dynamic absorption chiller model
+    url: https://strathprints.strath.ac.uk/42941/1/Borg_S_Kelly_NJ_Pure_The_development_and_calibration_of_a_generic_dynamic_absorption_chiller_model_Dec_2012.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-09-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2012.08.046
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/42941/1/Borg_S_Kelly_NJ_Pure_The_development_and_calibration_of_a_generic_dynamic_absorption_chiller_model_Dec_2012.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2012.08.046 openalex:W2028810290
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1177-0143624414528722-e90a59b4
+    title: 'Simulation of pollution transport in buildings: the importance of taking
+      into account dynamic thermal effects'
+    url: https://discovery.ucl.ac.uk/1456521/1/Simulation%20of%20pollution%20transport%20in%20buildings.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-03-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/0143624414528722
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/1456521/1/Simulation%20of%20pollution%20transport%20in%20buildings.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/0143624414528722 openalex:W2042079845
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-w1572646669
+    title: 'Beyond arrows: energy performance of a new, naturally ventilated, double-skin
+      facade configuration for a high-rise office building in Chicago'
+    url: https://www.ideals.illinois.edu/items/17102/bitstreams/61639/data.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2010-08-31'
+    document_type: article
+    persistent_id: https://openalex.org/W1572646669
+    license_evidence: no licence statement for this copy [copy https://www.ideals.illinois.edu/items/17102/bitstreams/61639/data.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1572646669
+    resolution: 'sim1: openalex location'
+  - id: oas-w1492606078
+    title: Evaluating the potential of renewable energy technologies for buildings in
+      Nigeria
+    url: http://www.arcom.ac.uk/-docs/proceedings/ar2008-1175-1182_Ahmed_and_Gidado.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2008-09-03'
+    document_type: article
+    persistent_id: https://openalex.org/W1492606078
+    license_evidence: no licence statement for this copy [copy http://www.arcom.ac.uk/-docs/proceedings/ar2008-1175-1182_Ahmed_and_Gidado.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1492606078
+    resolution: 'sim1: openalex location'
