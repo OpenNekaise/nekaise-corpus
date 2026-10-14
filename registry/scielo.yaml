@@ -190752,22 +190752,6 @@ sources:
       (v541) is ''BY-NC/3.0'' (https://articlemeta.scielo.org/api/v1/journal/?collection=cri&issn=2215-3705)'
     rights_verified_at: '2026-10-13'
     origin_ids: doi:10.15517/iv.v24i43.47931
-  - id: sci-s2215-37052022000100042
-    title: Análisis funcional de la infraestructura peatonal en el centro histórico
-      de la Ciudad de Matanzas, Cuba
-    url: https://www.scielo.sa.cr/pdf/infraestructura/v24n43/2215-3705-infraestructura-24-43-42.pdf
-    source: scielo_cri
-    license: unverified
-    topic: infrastructure
-    format: pdf
-    language: es
-    document_type: journal-article
-    persistent_id: S2215-37052022000100042
-    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=cri&code=S2215-37052022000100042&format=json);
-      context only, not evidence for this article: the journal record''s current licence
-      (v541) is ''BY-NC/3.0'' (https://articlemeta.scielo.org/api/v1/journal/?collection=cri&issn=2215-3705)'
-    rights_verified_at: '2026-10-13'
-    origin_ids: doi:10.15517/iv24i43.49924
   - id: sci-s2215-37052022000100073
     title: Uso de Vinaza de Saccharum Officinarum para Estabilización de Suelos Cohesivos
     url: https://www.scielo.sa.cr/pdf/infraestructura/v24n43/2215-3705-infraestructura-24-43-73.pdf
@@ -215085,3 +215069,218 @@ sources:
       context only, not evidence for this article: the journal record''s current licence
       (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
     rights_verified_at: '2026-10-14'
+  - id: sci-s1517-70762013000100005
+    title: Estudo da influência da deformação e do envelhecimento nas propriedades mecânicas
+      da superliga de níquel X-750
+    url: https://www.scielo.br/pdf/rmat/v18n1/05.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762013000100005
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762013000100005&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+  - id: sci-s1517-70762013000100004
+    title: Influência da incorporação de resíduo de rocha ornamental sobre as propriedades
+      e microestrutura sinterizada de piso cerâmico
+    url: https://www.scielo.br/pdf/rmat/v18n1/04.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762013000100004
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762013000100004&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+  - id: sci-s1517-70762013000100009
+    title: Reconstrução digital de volume de eletrodo de PaCOS para cálculo de porosidade
+      e tortuosidade
+    url: https://www.scielo.br/pdf/rmat/v18n1/09.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762013000100009
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762013000100009&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+  - id: sci-s1517-70762013000200002
+    title: Nanocompósitos de matriz epoxídica com reforços produzidos a partir do grafite
+      natural
+    url: https://www.scielo.br/pdf/rmat/v18n2/02.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762013000200002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762013000200002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+  - id: sci-s1517-70762013000300005
+    title: Influência do tratamento térmico de envelhecimento a 850ºC na microestrutura
+      e nas propriedades mecânicas e magnéticas do aço Duplex UNS S31803
+    url: https://www.scielo.br/pdf/rmat/v18n3/04.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762013000300005
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762013000300005&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+  - id: sci-s1517-70762013000400018
+    title: Durability under thermal loads of polyvinyl alcohol fibers
+    url: https://www.scielo.br/pdf/rmat/v18n4/18.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1517-70762013000400018
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762013000400018&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+  - id: sci-s1517-70762013000400010
+    title: Comportamento Termoelástico de Vigas SMAHC sob Flexão em duas Temperaturas
+    url: https://www.scielo.br/pdf/rmat/v18n4/10.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762013000400010
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762013000400010&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+  - id: sci-s1517-70762014000300204
+    title: 'Lodo proveniente da estação de tratamento de água do município de Leopoldina,
+      MG, para aproveitamento na indústria de cerâmica vermelha Parte I: carac'
+    url: https://www.scielo.br/pdf/rmat/v19n3/1517-7076-rmat-19-03-0204.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762014000300204
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762014000300204&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+    origin_ids: doi:10.1590/s1517-70762014000300003
+  - id: sci-s1517-70762014000300228
+    title: Microstructural and optical properties of CSS and CBD-CdS thin films for
+      photovoltaic solar cells
+    url: https://www.scielo.br/pdf/rmat/v19n3/1517-7076-rmat-19-03-0228.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1517-70762014000300228
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762014000300228&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+    origin_ids: doi:10.1590/s1517-70762014000300006
+  - id: sci-s1517-70762015000200436
+    title: Módulo complexo de compósitos asfálticos com argila calcinada sob flexão
+      a quatro pontos
+    url: https://www.scielo.br/pdf/rmat/v20n2/1517-7076-rmat-20-02-00436.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762015000200436
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762015000200436&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+    origin_ids: doi:10.1590/s1517-707620150002.0044
+  - id: sci-s1517-70762015000200466
+    title: 'Influência da utilização de procedimentos não padronizados de ensaio para
+      a determinação experimental da resistência à compressão simples e do módulo '
+    url: https://www.scielo.br/pdf/rmat/v20n2/1517-7076-rmat-20-02-00466.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762015000200466
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762015000200466&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+    origin_ids: doi:10.1590/s1517-707620150002.0047
+  - id: sci-s1517-70762015000200501
+    title: Estudo da incorporação de argilas montmorilonitas em cimentos asfálticos
+      de petróleo
+    url: https://www.scielo.br/pdf/rmat/v20n2/1517-7076-rmat-20-02-00501.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762015000200501
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762015000200501&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+    origin_ids: doi:10.1590/s1517-707620150002.0050
+  - id: sci-s1517-70762015000200399
+    title: Influência dos agregados leves de argila calcinada nas propriedades mecânicas
+      de concretos estruturais
+    url: https://www.scielo.br/pdf/rmat/v20n2/1517-7076-rmat-20-02-00399.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762015000200399
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762015000200399&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+    origin_ids: doi:10.1590/s1517-707620150002.0041
+  - id: sci-s1517-70762014000100003
+    title: Caracterização física e mecânica de um compósito de polipropileno reciclado
+      e farinha de madeira sem aditivos
+    url: https://www.scielo.br/pdf/rmat/v19n1/1517-7076-rmat-19-01-00007.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1517-70762014000100003
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1517-70762014000100003&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1517-7076)'
+    rights_verified_at: '2026-10-14'
+    origin_ids: doi:10.1590/s1517-70762014000100003
