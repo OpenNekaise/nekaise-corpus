@@ -67591,13 +67591,6 @@ sources:
     license: open
     topic: construction
     format: pdf
-  - id: guk-calculate-grant-in-aid-gia-funding-for-fcerm-p
-    title: Calculate grant-in-aid (GIA) funding for FCERM projects (2014)
-    url: https://assets.publishing.service.gov.uk/media/616ee6a9d3bf7f56077ce6e4/Calculate_grant-in-aid__GIA__funding_for_FCERM_projects__2014_.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
   - id: guk-national-planning-policy-consultation-on-propo
     title: 'National Planning Policy: consultation on proposed changes — Consultation
       on proposed changes to National Planning Policy'
@@ -109366,6 +109359,356 @@ sources:
     source: gov_uk
     license: unverified
     topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-wyre-catchment-flood-management-plan-wyre-catc
+    title: 'Wyre: Catchment flood management plan — Wyre Catchment Flood Management
+      Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c14a4ed915d210ade174a/Wyre_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-calculate-grant-in-aid-funding-flood-risk-mana
+    title: 'Calculate grant in aid funding: flood risk management authorities — Calculate
+      Grant in Aid funding for flood and coastal erosion risk management projects -
+      Guidance for risk manage'
+    url: https://assets.publishing.service.gov.uk/media/5a7c629140f0b626628abaff/LIT_9142_dd8bbe.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-warrington-flood-risk-management-scheme
+    title: Warrington flood risk management scheme
+    url: https://www.gov.uk/government/publications/warrington-flood-risk-management-scheme/warrington-flood-risk-management-scheme
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-exe-estuary-flood-and-coastal-erosion-risk-man-3
+    title: Exe Estuary flood and coastal erosion risk management strategy — Exe Estuary
+      strategy redacted consultation report
+    url: https://assets.publishing.service.gov.uk/media/5a7c7146e5274a5255bceaca/LIT_8597_3cc76d.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-frome-and-piddle-catchment-flood-management-pl-2
+    title: 'Frome and Piddle: Catchment flood management plan — Frome and Piddle Catchment
+      Flood Management Plan: Post adoption statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7c465a40f0b62dffde1013/Frome_and_Piddle_Catchment_Flood_Management_Plan_Post_adoption_statement.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-north-and-mid-somerset-catchment-flood-managem-3
+    title: 'North and Mid Somerset: Catchment flood management plan — North and Mid
+      Somerset Catchment Flood Management Plan: Revised action plan'
+    url: https://assets.publishing.service.gov.uk/media/5a7c28cb40f0b645ba3c7120/North_and_Mid_Somerset_Catchment_Flood_Management_Plan_Revised_action_plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-flood-alerts-and-warnings-what-they-are-and-wh
+    title: 'Flood alerts and warnings: what they are and what to do'
+    url: https://www.gov.uk/guidance/flood-alerts-and-warnings-what-they-are-and-what-to-do
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: html
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-uk-dams-post-incident-reporting-2009-annual-re
+    title: 'UK dams post-incident reporting: 2009 annual report — Learning from Experience
+      Post-incident reporting for UK dams 2009 Annual Report'
+    url: https://assets.publishing.service.gov.uk/media/5a7b981be5274a7202e182df/geho1010bsoo-e-e.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-river-dee-catchment-flood-management-plan-rive
+    title: 'River Dee: Catchment flood management plan — River Dee Catchment Flood Management
+      Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7dec7b40f0b62305b7fa44/LIT_10019_River_Dee_CFMP_gewa0110brko-e-e.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-river-witham-catchment-flood-management-plan-r
+    title: 'River Witham: Catchment flood management plan — River Witham Catchment Flood
+      Management Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7ca52ee5274a38e5755dd3/River_Witham_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-river-nene-catchment-flood-management-plan-riv
+    title: 'River Nene: Catchment flood management plan — River Nene Catchment Flood
+      Management Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7cdb0b40f0b65b3de0b92c/River_Nene_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-great-ouse-catchment-flood-management-plan-gre
+    title: 'Great Ouse: Catchment flood management plan — Great Ouse Catchment Flood
+      Management Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c39a4ed915d7d70d1d6c9/Great_Ouse_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-great-ouse-catchment-flood-management-plan-gre-2
+    title: 'Great Ouse: Catchment flood management plan — Great Ouse Catchment Flood
+      Management Plan: Post adoption statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7b9d1ae5274a7202e184d9/Great_Ouse_Catchment_Flood_Management_Plan_Post_adoption_statement.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-east-suffolk-catchment-flood-management-plan-e
+    title: 'East Suffolk: Catchment flood management plan — East Suffolk Catchment Flood
+      Management Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c793140f0b62aff6c1eb3/East_Suffolk_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-east-suffolk-catchment-flood-management-plan-e-2
+    title: 'East Suffolk: Catchment flood management plan — East Suffolk Catchment Flood
+      Management Plan: Post adoption statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7ca5e4ed915d6969f465d4/East_Suffolk_Catchment_Flood_Management_Plan_Post_adoption_statement.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-south-essex-catchment-flood-management-plan-so-2
+    title: 'South Essex: Catchment flood management plan — South Essex Catchment Flood
+      Management Plan: Post adoption statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc7f1e5274a38e5756b4e/South_Essex_Catchment_Flood_Management_Plan_Post_adoption_statement.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-river-severn-catchment-flood-management-plan-r-2
+    title: 'River Severn: Catchment flood management plan — River Severn Catchment Flood
+      Management Plan: Post adoption statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc749ed915d68223627e9/River_Severn_Catchment_Management_Plan_Post_adoption_statement.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-river-till-and-breamish-catchment-flood-manage
+    title: 'River Till and Breamish: Catchment flood management plan — River Till and
+      Breamish Catchment Flood Management Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7c644aed915d6969f448c7/River_Till_and_Breamish_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-river-don-catchment-flood-management-plan-rive
+    title: 'River Don: Catchment flood management plan — River Don Catchment Flood Management
+      Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7ce231ed915d36e95f03f2/River_Don_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-water-resources-strategy-midlands-region-actio-2
+    title: 'Water resources strategy: Midlands region action plan — Water for people
+      and the environment: Water Resources Strategy Regional Action Plan for Midlands
+      Region - Appendix 1: Curren'
+    url: https://assets.publishing.service.gov.uk/media/5a7c7840e5274a559005a159/geho1209brky-e-e.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-lune-catchment-flood-management-plan-lune-catc
+    title: 'Lune: Catchment flood management plan — Lune Catchment Flood Management
+      Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a75798fed915d731495a3fc/Lune_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-douglas-catchment-flood-management-plan-catchm
+    title: 'Douglas: Catchment flood management plan — Catchment Flood Management Plan:
+      Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a7baaa640f0b638d61be276/Douglas_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-mersey-estuary-catchment-flood-management-plan
+    title: 'Mersey Estuary: Catchment flood management plan — Mersey Estuary Catchment
+      Flood Management Plan: Summary report'
+    url: https://assets.publishing.service.gov.uk/media/5a74986ee5274a44083b7f0e/Mersey_Estuary_Catchment_Flood_Management_Plan.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-new-forest-catchment-flood-management-plan-new-2
+    title: 'New Forest: Catchment flood management plan — New Forest Catchment Flood
+      Management Plan: Post adoption statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7c534ee5274a1b00423021/New_Forest_Catchment_Flood_Management_Plan_Post_adoption_statement.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-south-east-hampshire-catchment-flood-managemen-2
+    title: 'South east Hampshire: Catchment flood management plan — South east Hampshire
+      Catchment Flood Management Plan: Post adoption statement'
+    url: https://assets.publishing.service.gov.uk/media/5a7cc802ed915d6822362830/South_east_Hampshire_Catchment_Flood_Management_Plan_Post_adoption_statement.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: en
     license_evidence: 'GOV.UK publication page: ''All content is available under the

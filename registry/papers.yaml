@@ -152685,3 +152685,78 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enbuild.2018.03.005 openalex:W2793303474
     resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-en10010095-20eed236
+    title: Dynamic Exergy Analysis for the Thermal Storage Optimization of the Building
+      Envelope
+    url: https://strathprints.strath.ac.uk/59413/8/Bonetti_Kokogiannakis_Energies_2016_Dynamic_exergy_analysis_for_the_thermal_storage.pdf
+    source: openalex_sim
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-13'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en10010095
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa;
+      unpaywall.license=cc-by-nc-sa [copy https://strathprints.strath.ac.uk/59413/8/Bonetti_Kokogiannakis_Energies_2016_Dynamic_exergy_analysis_for_the_thermal_storage.pdf;
+      version acceptedVersion; rights restricted]
+    rights_verified_at: '2026-10-14'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/en10010095 openalex:W2576761143
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1109-tpwrs-2018-2808223-3b134ffa
+    title: Tractable and Robust Modeling of Building Flexibility Using Coarse Data
+    url: https://arxiv.org/pdf/1802.06165
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-02-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tpwrs.2018.2808223
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1802.06165;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/tpwrs.2018.2808223 openalex:W2964136792
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-arakelov-intersection-indices-of-linear-cycles
+    title: Arakelov intersection indices of linear cycles and the geometry of buildings
+      and symmetric spaces
+    url: https://arxiv.org/pdf/math/0006128v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2000-06-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0006128
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/0006128&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0006128 (v2, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-14'
+  - id: oas-10-3390-cli5030072-a8a6c975
+    title: A Study of the Oklahoma City Urban Heat Island Effect Using a WRF/Single-Layer
+      Urban Canopy Model, a Joint Urban 2003 Field Campaign, and MODIS Satell
+    url: https://drum.lib.umd.edu/bitstreams/27be759b-2726-4f51-ae8e-6a9def9e65a1/download
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-09-07'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/cli5030072
+    license_evidence: 'redirect: rights of requested copy https://drum.lib.umd.edu/bitstreams/27be759b-2726-4f51-ae8e-6a9def9e65a1/download
+      do not transfer to https://api.drum.lib.umd.edu/server/api/core/bitstreams/27be759b-2726-4f51-ae8e-6a9def9e65a1/content;
+      payload sha256=2cb2084a2e3d5398a865ad67f3a4cd23b92c5dc690006bd8d6364be412805223;
+      original evidence: {"license": "unverified", "license_evidence": "no licence statement
+      for this copy [copy https://drum.lib.umd.edu/bitstreams/27be759b-2726-4f51-ae8e-6a9def9e65a1/download;
+      version submittedVersion; rights unknown]", "rights_verified_at": "2026-10-14",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-14T08:55:50Z'
+    origin_ids: doi:10.3390/cli5030072 openalex:W2753207483
+    resolution: 'sim1: openalex+unpaywall location'
