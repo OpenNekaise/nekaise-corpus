@@ -152049,23 +152049,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
-  - id: oas-w621987907
-    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2004-12-15'
-    document_type: article
-    persistent_id: https://openalex.org/W621987907
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-13'
-    selected_version: submittedVersion
-    origin_ids: openalex:W621987907
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-lateral-expansion-of-the-bridges-of-cygnus-a-a
     title: Lateral Expansion of the Bridges of Cygnus A and other Powerful Radio Sources
     url: https://arxiv.org/pdf/astro-ph/9507104v1
@@ -152876,6 +152859,38 @@ sources:
     persistent_id: doi:10.48550/arxiv.math/0402228
     license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/0402228&metadataPrefix=arXivRaw
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0402228 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-14'
+  - id: arx-c-algebras-coming-from-some-buildings
+    title: $C^*$-algebras coming from some buildings
+    url: https://arxiv.org/pdf/math/0406162v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2004-06-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0406162
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/0406162&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0406162 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-14'
+  - id: arx-centers-of-convex-subsets-of-buildings
+    title: Centers of convex subsets of buildings
+    url: https://arxiv.org/pdf/math/0410440v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2004-10-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0410440
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/0410440&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0410440 (v1, the current
       version and the copy this URL names): no licence element -> arxiv-nonexclusive
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-14'
