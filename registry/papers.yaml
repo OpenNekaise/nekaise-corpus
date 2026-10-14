@@ -152760,3 +152760,39 @@ sources:
     rights_verified_at: '2026-10-14T08:55:50Z'
     origin_ids: doi:10.3390/cli5030072 openalex:W2753207483
     resolution: 'sim1: openalex+unpaywall location'
+  - id: ope-a-high-resolution-bioclimate-map-of-the-world-
+    title: 'A high‐resolution bioclimate map of the world: a unifying framework for
+      global biodiversity research and monitoring'
+    url: https://lirias.kuleuven.be/retrieve/15d5747f-ac87-45c6-b937-605e4c220974
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2012-12-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1111/geb.12022
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/15d5747f-ac87-45c6-b937-605e4c220974;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1111/geb.12022 openalex:W2111027908
+    resolution: 'legacy: openalex location'
+  - id: ope-emerging-indoor-photovoltaic-technologies-for-
+    title: Emerging Indoor Photovoltaic Technologies for Sustainable Internet of Things
+    url: https://www.repository.cam.ac.uk/bitstreams/64aa8624-7ae2-4184-9ec1-8e7277e98552/download
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2021-06-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/aenm.202100698
+    license_evidence: no licence statement for this copy [copy https://www.repository.cam.ac.uk/bitstreams/64aa8624-7ae2-4184-9ec1-8e7277e98552/download;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/aenm.202100698 openalex:W3167535879
+    resolution: 'legacy: openalex location'
