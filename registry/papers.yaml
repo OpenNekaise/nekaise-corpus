@@ -152357,25 +152357,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.energy.2016.06.041 openalex:W2420628784
     resolution: 'sim1: openalex+unpaywall location'
-  - id: oas-10-1007-s12273-017-0347-2-895a5ab9
-    title: Simulation-based analysis of the use of PCM-wallboards to reduce cooling
-      energy demand and peak-loads in low-rise residential heavyweight buildings in
-    url: https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download
-    source: openalex_sim
-    license: cc-by-nc-sa
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2017-01-16'
-    document_type: article
-    persistent_id: https://doi.org/10.1007/s12273-017-0347-2
-    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa;
-      unpaywall.license=cc-by-nc-sa [copy https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-14'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1007/s12273-017-0347-2 openalex:W2573472155
-    resolution: 'sim1: openalex+unpaywall location'
   - id: oas-10-1016-j-jclepro-2019-01-246-c59e6d4b
     title: Optimal design of photovoltaic shading systems for multi-story buildings
     url: https://pure.coventry.ac.uk/ws/files/22557420/Binder1.pdf
