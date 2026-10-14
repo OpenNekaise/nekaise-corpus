@@ -8188,21 +8188,6 @@ sources:
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-14'
-  - id: osa-next-generation-luminaire-ngl-downlight-demonstratio
-    title: Next Generation Luminaire (NGL) Downlight Demonstration Project, Hilton Columbus
-      Downtown
-    url: https://www.osti.gov/servlets/purl/1220500
-    source: osti_aec
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2014-09-30'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1220500
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-14'
   - id: osa-isolated-building-wake-experiment-at-texas-tech-univ
     title: Isolated Building Wake Experiment At Texas Tech University’s Wind Engineering
       Research Field Lab
@@ -8569,6 +8554,121 @@ sources:
     format: pdf
     language: en
     published_at: '2009-11-18'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-u-s-residential-miscellaneous-refrigeration-products
+    title: 'U.S. Residential Miscellaneous Refrigeration Products: Results from Amazon
+      Mechanical Turk Surveys'
+    url: https://www.osti.gov/servlets/purl/1164375
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2013-11-14'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1164375
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-a-case-control-study-of-airways-obstruction-among-co
+    title: 'A case-control study of airways obstruction among construction workers:
+      Airways Obstruction Among Construction Workers'
+    url: https://www.osti.gov/servlets/purl/1438175
+    source: osti_aec
+    license: publisher-oa
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2015-06-29'
+    document_type: journal-article
+    persistent_id: doi:10.1002/ajim.22495
+    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (American
+      Journal of Industrial Medicine): free to read under the DOE Public Access Plan;
+      publisher copyright, no reuse licence'
+    rights_verified_at: '2026-10-14'
+  - id: osa-building-magnets-at-brookhaven-national-laboratory-a
+    title: Building Magnets at Brookhaven National Laboratory - An Account
+    url: https://www.osti.gov/servlets/purl/1345751
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2017-02-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1345751
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-idaho-national-laboratory-comprehensive-land-use-and
+    title: Idaho National Laboratory Comprehensive Land Use and Environmental Stewardship
+      Report
+    url: https://www.osti.gov/servlets/purl/1504912
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2015-07-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1504912
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-reconsolidated-salt-as-a-geotechnical-barrier
+    title: Reconsolidated Salt as a Geotechnical Barrier
+    url: https://www.osti.gov/servlets/purl/1332801
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2015-11-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-supplemental-radiological-survey-plan-for-the-lease-
+    title: Supplemental Radiological Survey Plan for the Lease of the Rooms Associated
+      with C107 of Building K-1006 at the East Tennessee Technology Park, Oak Ri
+    url: https://www.osti.gov/servlets/purl/1015991
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2010-09-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/1015991
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-safety-assessment-of-building-800-low-level-waste-re
+    title: Safety assessment of building 800 low-level waste repacking
+    url: https://www.osti.gov/servlets/purl/10146631
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1997-01-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10146631
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-gas-heat-pumps-are-coming-but-by-a-different-name
+    title: 'Gas heat pumps are coming: But by a different name'
+    url: https://www.osti.gov/servlets/purl/10178821
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1994-09-01'
     document_type: conference-paper
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
