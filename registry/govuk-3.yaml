@@ -49760,14 +49760,6 @@ sources:
     license: open
     topic: architecture
     format: pdf
-  - id: guk-dissemination-of-the-revitalised-flood-estimat
-    title: Dissemination of the revitalised flood estimation handbook (FEH) rainfall-runoff
-      method — Dissemination of the Revitalised FEH Rainfall-runoff Method
-    url: https://assets.publishing.service.gov.uk/media/5a7bff0940f0b63f7572ab2d/scho0706bler-e-e.pdf
-    source: gov_uk
-    license: open
-    topic: construction
-    format: pdf
   - id: guk-self-assessment-generic-technical-specificatio-2
     title: Self Assessment generic technical specifications (2016) — Non form validation
       rules version 1.0 (5 October 2015)
@@ -75114,14 +75106,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-eurotop-wave-overtopping-of-sea-defences-and-r
-    title: 'EurOtop wave overtopping of sea defences and related structure: assessment
-      manual'
-    url: https://assets.publishing.service.gov.uk/media/5a7cb774e5274a2f304efa6a/scho0308bnvi-e-e.pdf
-    source: gov_uk
-    license: open
-    topic: architecture
-    format: pdf
   - id: guk-rules-and-regulations-on-teacher-involvement-i
     title: Rules and regulations on teacher involvement in exam development — Consultation
       on safeguards for the confidentiality of assessment materials
@@ -92517,15 +92501,6 @@ sources:
     license: open
     topic: building_energy
     format: pdf
-  - id: guk-more-targeted-flood-warnings-improving-institu
-    title: 'More targeted flood warnings: improving institutional and social responses
-      to flooding — More Targeted Flood Warnings: A Review - Improving Institutional
-      and Social Responses to Fl'
-    url: https://assets.publishing.service.gov.uk/media/5a7b7e3bed915d1a79023a25/scho0509bqbv-e-e.pdf
-    source: gov_uk
-    license: open
-    topic: architecture
-    format: pdf
   - id: guk-making-a-difference-disability-hate-crime
     title: 'Making a difference: disability hate crime'
     url: https://assets.publishing.service.gov.uk/media/5a7d9a3ced915d3fb9594ba8/disability-hate-crime.pdf
@@ -108011,6 +107986,731 @@ sources:
     source: gov_uk
     license: unverified
     topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-spatial-coherence-risk-of-widespread-flooding-
+    title: Spatial coherence - risk of widespread flooding — Spatial coherence - risk
+      of widespread flooding - summary (75KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/603379cb8fa8f54328f45e73/_SC060088_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-spatial-coherence-risk-of-widespread-flooding--2
+    title: 'Spatial coherence - risk of widespread flooding — Report 1 spatial coherence
+      of flood risk: Technical methodology - technical report (3.7MB)'
+    url: https://assets.publishing.service.gov.uk/media/60337a1ed3bf7f7214adbe2e/spatial_coherence_of_flood_risk_technical_methodology_report_1.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-temporary-and-demountable-flood-protection-gui-2
+    title: Temporary and demountable flood protection guidance 2010 — Temporary and
+      demountable flood protection guide - technical report (6.4MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/603376bce90e0766021bf14f/_flood_protection_guide.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-developing-a-prototype-tool-for-mapping-floodi-4
+    title: 'Developing a prototype tool for mapping flooding from all sources — Phase
+      1: Scoping and conceptual method development - technical report (7.1MB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/60337168e90e0766066037a6/phase_1_-_scoping_and_conceptual_method_development_technical_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-developing-a-prototype-tool-for-mapping-floodi-6
+    title: 'Developing a prototype tool for mapping flooding from all sources — Phase
+      2: MAST user guide - guidance (3.6MB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/603371dad3bf7f7219b4a006/_Developing_a_prototype_tool_for_mapping_flooding_from_all_sources_Phase_2_MAST_user_guide.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-flood-vulnerability-and-urban-resilience-a-rea-4
+    title: 'Flood vulnerability and urban resilience: a real-time study of local recovery
+      following the floods of June 2007 in Hull — After the rain: learning the lessons
+      from flood recovery i'
+    url: https://assets.publishing.service.gov.uk/media/60336899d3bf7f721724e025/_After_the_Rain_Learning_Lessons_from_flood_recovery_in_Hull.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-the-updated-beach-management-manual-the-update
+    title: The updated beach management manual — The updated beach management manual
+      - summary (85KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/6032dc948fa8f54328f45e71/Updated_beach_management_manual_Summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-scoping-the-risk-assessment-process-for-small--3
+    title: Scoping the risk assessment process for small reservoirs — Scoping the risk
+      assessment process for small reservoirs - technical report (3 MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602fe1a1d3bf7f722294d1f7/Scoping_the_Risk_Assessment_Process_for_Small_Reservoirs_technical_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-case-studies-and-guidance-about-coastal-defenc
+    title: 'Case studies and guidance about coastal defence schemes involving local
+      funding — Understanding the business case for surface water management schemes
+      in comparison to other flood '
+    url: https://assets.publishing.service.gov.uk/media/602fccfed3bf7f7220fe10d9/FD2635Understanding_the_Business_Case_for_Surface_Water_Management_Schemes_in_Comparison_to_other_Flood___Coastal_Schemes.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-case-studies-and-guidance-about-coastal-defenc-5
+    title: 'Case studies and guidance about coastal defence schemes involving local
+      funding — Case study report 2: Blakeney Freshes River Glaven realignment and Cley
+      to Salthouse drainage impr'
+    url: https://assets.publishing.service.gov.uk/media/602fd29ad3bf7f72182e99aa/CaseStudy2BlakeneyFreshesRGlavenRealignmentFD2635.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-case-studies-and-guidance-about-coastal-defenc-7
+    title: 'Case studies and guidance about coastal defence schemes involving local
+      funding — Case study report 4: East Head beach recharge (404 KB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/602fd33f8fa8f54333d24c34/CaseStudy4EastHeadBeachRecharge-FD2635.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-practicalities-for-implementing-regionalised-a
+    title: Practicalities for implementing regionalised allowances for climate change
+      on flood flows — Practicalities for implementing regionalised allowances for climate
+      change on flood flow
+    url: https://assets.publishing.service.gov.uk/media/602faca78fa8f5432fbf5b27/Practicalities_for_Implementing_Regionalised_Allowances_for_Climate_Change_on_Flood_Flows_Final_Report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-regionalised-impacts-of-climate-change-on-floo-4
+    title: 'Regionalised impacts of climate change on flood flows — Regionalised impacts
+      of climate change on flood flows: hydrological Models, catchments and calibration
+      - milestone report (2'
+    url: https://assets.publishing.service.gov.uk/media/602f841fd3bf7f7223f00010/_Milestone_1_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-regionalised-impacts-of-climate-change-on-floo-6
+    title: 'Regionalised impacts of climate change on flood flows — Regionalised impacts
+      of climate change on flood flows: regionalising the flood response types in Britain
+      - milestone report '
+    url: https://assets.publishing.service.gov.uk/media/602f84f08fa8f5432bc23d86/_Milestone_4_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-fluvial-design-guide-chapter-2-hydrology-1-5-m
+    title: Fluvial design guide — Chapter 2 - hydrology (1.5 MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/6054988ce90e0724cce0afd9/FDG_chapter_2_-_Hydrology.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-fluvial-design-guide-chapter-6-navigation-recr
+    title: Fluvial design guide — Chapter 6 - navigation, recreation and amenity (1.8
+      MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/60549a5ae90e0724cb471dba/FDG_chapter_6_-_Navigation__recreation_and_amenity.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-fluvial-design-guide-chapter-10-flood-storage-
+    title: Fluvial design guide — Chapter 10 - flood storage works (1.4 MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/60549b7a8fa8f545cf209a29/FDG_chapter_10_-_Flood_storage_works.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-scoping-study-for-a-guide-to-risk-assessment-o
+    title: Scoping study for a guide to risk assessment of reservoirs — Scoping study
+      for a guide to risk assessment of reservoirs - summary (234KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602e9719e90e0766088116db/Scoping_study_for_a_guide_to_risk_assessment_of_reservoirs_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-communication-and-dissemination-of-probabilist
+    title: 'Communication and dissemination of probabilistic flood forecasts — Literature
+      review: Communication and dissemination of probabilistic flood warnings - summary
+      (218KB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/602e8f28d3bf7f7214adbde9/Communication_and_dissemination_of_probabilistic_flood_warnings_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-communication-and-dissemination-of-probabilist-5
+    title: 'Communication and dissemination of probabilistic flood forecasts — Literature
+      review 2: Communicating risk and uncertainty in flood warnings (EA and Defra material)
+      - technical rep'
+    url: https://assets.publishing.service.gov.uk/media/602e90b3d3bf7f722294d1d3/Communication_and_Dissemination_of_Probabilistic_Flood_Forecasts_-lit_review_2.pdf
+    source: gov_uk
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-investigating-public-understanding-of-severe-f-2
+    title: Investigating public understanding of severe flash flooding — Public understanding
+      of and response to severe flash flooding - literature review (2 MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602e9037e90e07660b5ab211/Understanding_of_and_response_to_severe_flash_flooding_literature_review.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-assessment-of-flood-management-impacts-on-bodi
+    title: Assessment of flood management impacts on bodies of water — Water Framework
+      Directive - expert assessment of flood and coastal risk management impacts - summary
+      (44 KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602e8b8ad3bf7f721a23a9dd/_WFD_Expert_Assessment_of_Flood_Management_Impacts_Project_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-developing-the-evidence-base-for-flood-resista-2
+    title: Developing the evidence base for flood resistance and resilience — Developing
+      the evidence base for flood resistance and resilience - final report supplement
+      (50 KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602e8411d3bf7f72154fab98/Developing_the_evidence_base_for_flood_resistance_and_resilience_final_report_supp_info.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-exploring-how-social-justice-issues-are-addres
+    title: 'Exploring how social justice issues are addressed in flood risk management
+      — Social justice in the context of flood and coastal erosion risk management:
+      a review of policy and prac'
+    url: https://assets.publishing.service.gov.uk/media/602e754c8fa8f54325716411/Social_Justice_in_the_Context_of_Flood_and_Coastal_Erosion_Risk_Management_A_Review_for_Policy_and_Practice_final_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-supporting-the-development-of-a-social-science-2
+    title: Supporting the Development of a Social Science Strategy for FCERM — Supporting
+      the development of a social science strategy for FCERM - technical report 1 (1
+      MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602e7000d3bf7f721a23a9c1/_Supporting_the_Development_of_a_Social_Science_Strategy_for_the_FCERM_R_D_Programme_Technical_report_1.pdf
+    source: gov_uk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-improving-flood-warnings-and-responses-to-floo
+    title: 'Improving flood warnings and responses to flooding — Work package 1: Improving
+      Institutional and Social Responses to flooding - summary (97KB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/602e6bcfe90e076604773425/Improving_Institutional_and_Social_Responses_to_flooding_WP_1_Flood_warning_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-improving-flood-warnings-and-responses-to-floo-3
+    title: 'Improving flood warnings and responses to flooding — Work package 1b: More
+      targeted flood warnings - technical report (1.9MB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/602e6c768fa8f54328f45e25/more_targetted_flood_warnings_a_review_WP1b_technical_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-improving-flood-warnings-and-responses-to-floo-8
+    title: 'Improving flood warnings and responses to flooding — Work package 4: Mainstreaming
+      collaboration with communities and stakeholders for FCERM - summary (132KB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/602e6d64d3bf7f721a23a9c0/mainstreaming_collaboration_with_communities_and_stakeholders_for_FCERM_WP4_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-improving-flood-warnings-and-responses-to-floo-10
+    title: 'Improving flood warnings and responses to flooding — Work package 5: Improving
+      institutional and social responses to flooding synthesis - technical report (119KB)
+      MB'
+    url: https://assets.publishing.service.gov.uk/media/602e6dd8e90e07660e26e945/improving_institutional_and_social_responses_to_flooding_WP5_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-improving-flood-warnings-and-responses-to-floo-12
+    title: 'Improving flood warnings and responses to flooding — Supporting documents:
+      improving institutional and social responses to flooding - technical report (3MB)
+      PDF'
+    url: https://assets.publishing.service.gov.uk/media/602e6e858fa8f5432d802fe8/improving_institutional_and_social_responses_to_flooding_supporting_docs.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-coastal-flood-forecasting-probabilistic-coasta
+    title: Coastal flood forecasting — Probabilistic coastal flood forecasting forecast
+      demonstration project - summary (224KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602e6a08e90e07660f807b3b/Probabilistic_Coastal_Flood_Forecasting_Forecast_demonstration_project_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-improving-the-flood-estimation-handbook-feh-st
+    title: Improving the Flood Estimation Handbook (FEH) statistical index flood method
+      and software — Improving the FEH statistical procedures for flood frequency estimation
+      - summary (62KB)
+    url: https://assets.publishing.service.gov.uk/media/602e5bd78fa8f543272b3fb2/Improving_the_FEH_Statistical_Procedures_for_Flood_Frequency_Estimation_Summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-risk-assessment-and-risk-management-for-small-
+    title: Risk assessment and risk management for small urban catchments — Risk assessment
+      and risk management for small urban catchments - final report (139 KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602e4d72d3bf7f722294d1af/Risk_assessment_and_risk_management_in_small_urban_catchment_areas_Final_Report.pdf
+    source: gov_uk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-reservoir-safety-a-new-model-to-estimate-long-
+    title: 'Reservoir safety: a new model to estimate long-term period rainfall — Reservoir
+      safety: a new model to estimate long return period rainfall - technical report
+      1 (18 MB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/602e43e2e90e0709e3127489/_long_return_report_1.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-rainfall-runoff-and-other-modelling-for-ungaug
+    title: Rainfall runoff and other modelling for ungauged catchments — Rainfall-runoff
+      and other modelling for ungauged/low-benefit locations - technical report (9.6
+      MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602d5aa88fa8f543272b3fa1/_SC030227_tech_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-rainfall-runoff-and-other-modelling-for-ungaug-2
+    title: Rainfall runoff and other modelling for ungauged catchments — Rainfall runoff
+      and other modelling for ungauged catchments - summary (247KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/60649f53d3bf7f0c8d06b7f2/Rainfall_runoff_and_other_modelling_for_ungauged_catchments_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-development-of-economic-appraisal-methods-for-
+    title: Development of economic appraisal methods for flood management and coastal
+      erosion protection — Development of economic appraisal methods for flood management
+      and coastal erosion p
+    url: https://assets.publishing.service.gov.uk/media/602d4aa8d3bf7f7223efffca/Development_of_economic_appraisal_methods_for_flood_management_and_coastal_erosion_protection__SID5__final_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-development-of-economic-appraisal-methods-for--4
+    title: 'Development of economic appraisal methods for flood management and coastal
+      erosion protection — The damage reducing effects of flood warnings: appendix questionnaire
+      - project reco'
+    url: https://assets.publishing.service.gov.uk/media/602d4f728fa8f5432c277b86/2006-08-21_FD2014_3865_PR3.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-dissemination-of-revitalised-flood-estimation-
+    title: Dissemination of revitalised Flood Estimation Handbook (FEH) rainfall-runoff
+      method — Dissemination of revitalised Flood Estimation Handbook (FEH) rainfall-runoff
+      method - technica
+    url: https://assets.publishing.service.gov.uk/media/602d49d8e90e0709dfea47e7/Dissemination_of_Revitalised_FEH_Rainfall-runoff_Method_technical_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-analysis-of-rasp-hlm-sensitivity-to-improve-na
+    title: Analysis of RASP HLM+ sensitivity to improve national flood risk assessment
+      — Analysis of RASP HLM+ sensitivity to improve national flood risk assessment
+      - summary (419KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602d47d1d3bf7f721724dfb1/_SC050064_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-analysis-of-rasp-hlm-sensitivity-to-improve-na-2
+    title: Analysis of RASP HLM+ sensitivity to improve national flood risk assessment
+      — Analysis of RASP HLM+ sensitivity to improve national flood risk assessment
+      - technical report (10.5MB
+    url: https://assets.publishing.service.gov.uk/media/602d4801e90e0709e584aa47/_SC050064_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-scoping-the-development-and-implementation-of-
+    title: Scoping the development and implementation of flood and coastal RASP models
+      — Scoping the development and implementation of flood and coastal RASP models
+      - summary (392KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602d45bfe90e0709e7f759c3/_Scoping_the_development_and_implementation_of_RASP.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-the-public-s-response-to-flood-warnings-the-pu-2
+    title: The public’s response to flood warnings — The public's response to flood
+      warnings - technical report (1.7MB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602d3a81d3bf7f721c13a3ba/Public_response_to_flood_warning_technical_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-establishing-a-performance-based-asset-managem-2
+    title: 'Establishing a Performance-based Asset Management System (PAMS): phase 1
+      scoping study — Performance-based Asset Management System (PAMS): phase 1 scoping
+      study - technical summary'
+    url: https://assets.publishing.service.gov.uk/media/602d3800d3bf7f7219b49f98/_Summary_-_Performance-based_Asset_Management_System_PAMS_-_Phase_1_Scoping_Study.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-risk-assessment-for-flood-incident-management--4
+    title: 'Risk assessment for flood incident management: framework and tools — Risk
+      assessment for flood incident management: risks and consequences - technical report
+      (2.1MB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/602d2d0fe90e0709e65338ea/risks_and_onsequences_of_4.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-achieving-technological-innovation-in-flood-fo
+    title: Achieving Technological Innovation in Flood Forecasting (ACTIF) — Achieving
+      Technological Innovation in Flood Forecasting (ACTIF) - summary (81KB) PDF
+    url: https://assets.publishing.service.gov.uk/media/602d1b82e90e0709dd4bf2bd/Achieving_Technological_Innovation_in_Flood_Forecasting_ACTIF_summary.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-hydraulic-performance-of-river-bridges-and-oth-3
+    title: 'Hydraulic performance of river bridges and other structures at high flows:
+      scoping study — Afflux at bridges and culverts: review of current knowledge and
+      practice - annex 5 (332 K'
+    url: https://assets.publishing.service.gov.uk/media/602ce2d9e90e0709e22e2100/2005-02-09_SC010029_w5a061_pr5_faulkner.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-hydraulic-performance-of-river-bridges-and-oth-8
+    title: 'Hydraulic performance of river bridges and other structures at high flows:
+      scoping study — Afflux at bridges and culverts: review of current knowledge and
+      practice - annex 3 (536 K'
+    url: https://assets.publishing.service.gov.uk/media/602ce3cae90e0709e0ffab80/2005-02-10_SC010029_w5a061_pr3_benn.pdf
+    source: gov_uk
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-development-of-flood-warning-management-system-4
+    title: 'Development of flood warning management system: phase 2 — Flood warning
+      management system - technical report (1.1MB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/60390e10d3bf7f03919ad28e/Flood_Warning_Management_System_Phase_I_technical_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-14'
+  - id: guk-development-of-flood-warning-management-system-6
+    title: 'Development of flood warning management system: phase 2 — Performance measures
+      for flood forecasting - technical report (892KB) PDF'
+    url: https://assets.publishing.service.gov.uk/media/60390e658fa8f50491a35b1d/Performance_measures_for_flood_forecasting_review_and_recoomendations_technical_report.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: en
     license_evidence: 'GOV.UK publication page: ''All content is available under the

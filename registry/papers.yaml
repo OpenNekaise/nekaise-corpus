@@ -151268,23 +151268,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-13'
-  - id: oas-w389991997
-    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2007-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W389991997
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-13'
-    selected_version: submittedVersion
-    origin_ids: openalex:W389991997
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-10-48550-arxiv-2610-06444-47d8df6a
     title: Choosing an energy-efficient software architecture for building system diagnostic
       support
@@ -152535,3 +152518,131 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/en10101463 openalex:W2758086300
     resolution: 'sim1: openalex+unpaywall location'
+  - id: ope-monitoring-deformations-of-infrastructure-netw
+    title: 'Monitoring deformations of infrastructure networks: A fully automated GIS
+      integration and analysis of InSAR time-series'
+    url: https://purehost.bath.ac.uk/ws/files/227883834/14759217211045912.pdf
+    source: openalex
+    license: cc-by-sa
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2022-01-05'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/14759217211045912
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://purehost.bath.ac.uk/ws/files/227883834/14759217211045912.pdf; version
+      submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/14759217211045912 openalex:W4206812703
+    resolution: 'legacy: openalex location'
+  - id: ope-optimized-dual-fire-attention-network-and-medi
+    title: Optimized Dual Fire Attention Network and Medium-Scale Fire Classification
+      Benchmark
+    url: https://research.edgehill.ac.uk/ws/files/101099337/Optimized_Dual_Fire_Attention_Network_and_Medium_Scale_Fire_Classification_Benchmark_3_.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2022-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tip.2022.3207006
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://research.edgehill.ac.uk/ws/files/101099337/Optimized_Dual_Fire_Attention_Network_and_Medium_Scale_Fire_Classification_Benchmark_3_.pdf;
+      version acceptedVersion; rights accepted]
+    rights_verified_at: '2026-10-14'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1109/tip.2022.3207006 openalex:W4296705332
+    resolution: 'legacy: openalex location'
+  - id: ope-review-article-a-comprehensive-review-of-compo
+    title: 'Review article: A comprehensive review of compound flooding literature with
+      a focus on coastal and estuarine regions'
+    url: https://nhess.copernicus.org/articles/25/747/2025/nhess-25-747-2025.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2025-02-20'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-25-747-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/25/747/2025/nhess-25-747-2025.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-14'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-25-747-2025 openalex:W4407785765
+    resolution: 'legacy: openalex location'
+  - id: ope-spectral-temporal-graph-neural-network-for-mul
+    title: Spectral Temporal Graph Neural Network for Multivariate Time-series Forecasting
+    url: https://arxiv.org/pdf/2103.07719
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2021-03-13'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2103.07719
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2103.07719;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2103.07719 openalex:W3104302219
+    resolution: 'legacy: openalex location'
+  - id: ope-potential-impacts-of-climate-and-environmental
+    title: Potential impacts of climate and environmental change on the stored water
+      of Lake Victoria Basin and economic implications
+    url: https://espace.curtin.edu.au/bitstream/20.500.11937/6581/2/195214_195214.pdf
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2013-11-24'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/2013wr014350
+    license_evidence: no licence statement for this copy [copy https://espace.curtin.edu.au/bitstream/20.500.11937/6581/2/195214_195214.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/2013wr014350 openalex:W1850586976
+    resolution: 'legacy: openalex location'
+  - id: ope-development-of-lorawan-based-iot-system-for-wa
+    title: Development of LoRaWAN-based IoT system for water quality monitoring in rural
+      areas
+    url: https://www.open-access.bcu.ac.uk/15149/1/1-s2.0-S095741742303364X-main.pdf
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2023-12-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.eswa.2023.122862
+    license_evidence: no licence statement for this copy [copy https://www.open-access.bcu.ac.uk/15149/1/1-s2.0-S095741742303364X-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.eswa.2023.122862 openalex:W4389410143
+    resolution: 'legacy: openalex location'
+  - id: ope-predicting-remaining-useful-life-using-time-se
+    title: Predicting Remaining Useful Life using Time Series Embeddings based on Recurrent
+      Neural Networks
+    url: https://arxiv.org/pdf/1709.01073
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2020-11-18'
+    document_type: article
+    persistent_id: https://doi.org/10.36001/ijphm.2018.v9i1.2689
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1709.01073;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.36001/ijphm.2018.v9i1.2689 openalex:W2750643767
+    resolution: 'legacy: openalex location'
