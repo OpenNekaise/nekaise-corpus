@@ -152369,3 +152369,169 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.renene.2018.08.031 openalex:W2888366500
     resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-buildenv-2016-01-010-d8516bbb
+    title: 'Mapping indoor overheating and air pollution risk modification across Great
+      Britain: A modelling study'
+    url: https://discovery.ucl.ac.uk/1479263/1/Taylor_et%20al%20Mapping%20indoor%20overheating.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-01-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2016.01.010
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://discovery.ucl.ac.uk/1479263/1/Taylor_et%20al%20Mapping%20indoor%20overheating.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2016.01.010 openalex:W2284135410
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2019-02-029-cd8606e6
+    title: Effectiveness of the thermal mass of external walls on residential buildings
+      for part-time part-space heating and cooling using the state-space method
+    url: https://centaur.reading.ac.uk/82376/3/Manuscript_clean.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-02-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2019.02.029
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/82376/3/Manuscript_clean.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2019.02.029 openalex:W2915864421
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-energy-2016-06-041-45d0eaf3
+    title: An exergy-based multi-objective optimisation model for energy retrofit strategies
+      in non-domestic buildings
+    url: https://discovery.ucl.ac.uk/1499604/1/Garcia-Kerdan_ENERGY_manuscript.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-06-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2016.06.041
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://discovery.ucl.ac.uk/1499604/1/Garcia-Kerdan_ENERGY_manuscript.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2016.06.041 openalex:W2420628784
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1007-s12273-017-0347-2-895a5ab9
+    title: Simulation-based analysis of the use of PCM-wallboards to reduce cooling
+      energy demand and peak-loads in low-rise residential heavyweight buildings in
+    url: https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download
+    source: openalex_sim
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s12273-017-0347-2
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa;
+      unpaywall.license=cc-by-nc-sa [copy https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s12273-017-0347-2 openalex:W2573472155
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-jclepro-2019-01-246-c59e6d4b
+    title: Optimal design of photovoltaic shading systems for multi-story buildings
+    url: https://pure.coventry.ac.uk/ws/files/22557420/Binder1.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-01-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2019.01.246
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://pure.coventry.ac.uk/ws/files/22557420/Binder1.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2019.01.246 openalex:W2912853558
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-09613218-2016-1224675-246dda2c
+    title: 'Overheating in English dwellings: comparing modelled and monitored large-scale
+      datasets'
+    url: https://researchonline.lshtm.ac.uk/id/eprint/3201628/1/BRI_overheating_accpeted.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-09-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/09613218.2016.1224675
+    license_evidence: no licence statement for this copy [copy https://researchonline.lshtm.ac.uk/id/eprint/3201628/1/BRI_overheating_accpeted.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/09613218.2016.1224675 openalex:W2523672120
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-buildenv-2018-06-035-f23e178b
+    title: 'Stressing the passive behavior of a Passivhaus: An evidence-based scenario
+      analysis for a Mediterranean case study'
+    url: https://centaur.reading.ac.uk/77761/1/1-s2.0-S0360132318303780-main.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2018.06.035
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/77761/1/1-s2.0-S0360132318303780-main.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.buildenv.2018.06.035 openalex:W2808418622
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2017-1417483-c719a578
+    title: On the multi-agent stochastic simulation of occupants in buildings
+    url: https://repository.nottingham.ac.uk/bitstreams/2788836a-2b03-4b88-b988-17f2f1d12e0b/download
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-02-08'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2017.1417483
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://repository.nottingham.ac.uk/bitstreams/2788836a-2b03-4b88-b988-17f2f1d12e0b/download;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2017.1417483 openalex:W2749928434
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3390-en10101463-66ce4c92
+    title: Comparison of Different Solar-Assisted Air Conditioning Systems for Australian
+      Office Buildings
+    url: https://eprints.qut.edu.au/112668/1/energies-227715_Online%20PDF%20Version.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-09-22'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en10101463
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://eprints.qut.edu.au/112668/1/energies-227715_Online%20PDF%20Version.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-14'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en10101463 openalex:W2758086300
+    resolution: 'sim1: openalex+unpaywall location'
