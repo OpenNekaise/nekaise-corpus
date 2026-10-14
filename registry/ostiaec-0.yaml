@@ -7994,20 +7994,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-14'
-  - id: osa-guidance-on-demand-controlled-kitchen-ventilation
-    title: Guidance on Demand-Controlled Kitchen Ventilation
-    url: https://www.osti.gov/servlets/purl/1755519
-    source: osti_aec
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2015-10-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1755519
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-14'
   - id: osa-existing-and-past-methods-of-test-and-rating-standar
     title: Existing and Past Methods of Test and Rating Standards Related to Integrated
       Heat Pump Technologies
@@ -9037,6 +9023,137 @@ sources:
     published_at: '1980-09-01'
     document_type: technical-report
     persistent_id: doi:10.2172/6541078
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-risk-analysis-of-environmental-hazards-at-the-high-f
+    title: Risk analysis of environmental hazards at the High Flux Beam Reactor
+    url: https://www.osti.gov/servlets/purl/10119627
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1994-01-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-wind-loading-on-solar-collectors
+    title: Wind loading on solar collectors
+    url: https://www.osti.gov/servlets/purl/5451635
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1985-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5451635
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-computer-simulation-of-heating-and-cooling-of-ventil
+    title: Computer simulation of heating and cooling of ventilation air for a passive
+      solar house
+    url: https://www.osti.gov/servlets/purl/6322841
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-generation-iv-nuclear-energy-systems-construct-3
+    title: Generation IV Nuclear Energy Systems Construction Cost Reductions Through
+      the Use of Virtual Environments
+    url: https://www.osti.gov/servlets/purl/838298
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2004-02-28'
+    document_type: technical-report
+    persistent_id: doi:10.2172/838298
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-safety-evaluation-report-by-the-office-of-nuclear-re
+    title: Safety evaluation report by the Office of Nuclear Reactor Regulation, U.
+      S. Nuclear Regulatory Commission for U. S. Energy Research and Development Ad
+    url: https://www.osti.gov/servlets/purl/7153708
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1976-07-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/7153708
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-multi-megawatt-organic-rankine-engine-power-plant-mo
+    title: 'Multi-Megawatt Organic Rankine Engine power plant (MORE). Phase IA final
+      report: system design of MORE power plant for industrial energy conservation '
+    url: https://www.osti.gov/servlets/purl/5469312
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1980-01-31'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5469312
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-study-on-the-use-of-adaptive-control-for-energy-cons
+    title: Study on the use of adaptive control for energy conservation in large solar
+      heated and cooled buildings
+    url: https://www.osti.gov/servlets/purl/7176167
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: conference-paper
+    persistent_id: doi:10.1109/cdc.1980.271995
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-assessment-of-concrete-repair-techniques-for-radiolo
+    title: Assessment of Concrete Repair Techniques for Radiologically Contaminated
+      Tank Farm Pump and Valve Pits
+    url: https://www.osti.gov/servlets/purl/804774
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2000-09-19'
+    document_type: technical-report
+    persistent_id: doi:10.2172/804774
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-14'
+  - id: osa-1994-triggered-lightning-test-program-measured-respo
+    title: '1994 Triggered lightning test program: Measured responses of a reinforced
+      concrete building under direct lightning attachments, Volume 2: Test data'
+    url: https://www.osti.gov/servlets/purl/105006
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1995-08-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/105006
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-14'
