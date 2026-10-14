@@ -207833,21 +207833,6 @@ sources:
     license_url: http://creativecommons.org/licenses/by/4.0
     license_evidence: https://journals.vilniustech.lt/index.php/Transport/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/1495
     rights_verified_at: '2026-10-14'
-  - id: ojs-transport-erratum-on-the-article-evaluating-the-effects-of
-    title: Erratum on the article ‘Evaluating the Effects of Road Geometry, Environment,
-      and Traffic Volume On Rollover Crashes’
-    url: https://journals.vilniustech.lt/index.php/Transport/article/download/1496/1184
-    source: ojs_transport
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-    language: en
-    published_at: '2016-09-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.3846/16484142.2016.1235833
-    license_url: http://creativecommons.org/licenses/by/4.0
-    license_evidence: https://journals.vilniustech.lt/index.php/Transport/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/1496
-    rights_verified_at: '2026-10-14'
   - id: ojs-transport-settings-of-short-left-turn-lane-and-signal-phase
     title: Settings of short left-turn lane and signal phase sequence for isolated signalized
       intersections
@@ -224468,22 +224453,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
       de autor 2011 César Andrés Eligio Triana)'
     rights_verified_at: '2026-10-14'
-  - id: ojs-revistadearquitect-to-preserve-or-to-renovate-construction
-    title: 'To preserve or to renovate : construction dynamics in the historic center
-      of three intermediate-sized heritage cities. A look through urban planning p'
-    url: https://revistadearquitectura.ucatolica.edu.co/article/download/849/1217
-    source: ojs_revistadearquitect
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: es
-    published_at: '2016-05-06'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.14718/revarq.2016.18.2.4
-    license_evidence: 'https://revistadearquitectura.ucatolica.edu.co/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:editorial.ucatolica.edu.co:article/849
-      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
-      de autor 2016 Lida Buitrago-Campos)'
-    rights_verified_at: '2026-10-14'
   - id: ojs-revistadearquitect-concepto-cultural
     title: Concepto cultural.
     url: https://revistadearquitectura.ucatolica.edu.co/article/download/940/997
@@ -226500,4 +226469,3627 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
       de autor 2022 Sánchez Suárez; Quesada Somano; Marqués León; Pancorbo Sandoval;
       Santos Pérez)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-influence-of-traffic-in-the-heavy-metals-accumu
+    title: 'Influence of traffic in the heavy metals accumulation on urban roads: Torrelavega
+      (Spain)-Soacha (Colombia)'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16318/14142
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2013-08-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16318
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16318
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-optimization-of-beam-and-column-sections-for-co
+    title: Optimization of beam and column sections for compliance drift of reinforced
+      concrete buildings using Artificial Neural Networks
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16382/16023
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-02-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16382
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16382
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-integrated-air-quality-index-for-colombian-citi
+    title: Integrated air quality index for Colombian cities
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16433/14273
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2013-08-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16433
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16433
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-study-and-characterization-of-bricks-from-a-his
+    title: Study and characterization of bricks from a historical bridge in Buga (Valle
+      del Cauca)
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16446/14276
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2013-08-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16446
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16446
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-service-life-prediction-of-reinforced-concrete
+    title: Service-life prediction of reinforced concrete structures through a chloride
+      diffusion model
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16479/17227
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-04-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16479
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16479
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-effect-of-the-fusion-and-aging-process-in-the-s
+    title: Effect of the fusion and aging process in the synthesis of zeotypes from
+      fly ash
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16484/18123
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2015-02-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16484
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16484
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-measured-pressures-on-the-basis-of-bottom-slab
+    title: Measured pressures on the basis of bottom slab with gaps in the flow direction
+      in a channel
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16682/14469
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2013-09-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16682
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16682
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-total-suspended-particles-interception-by-five
+    title: Total suspended particles interception by five urban tree species in Valle
+      de Aburrá
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16684/14471
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2013-09-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16684
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16684
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-freeway-speed-limits-under-inclement-weather-co
+    title: Freeway Speed Limits under Inclement Weather Conditions
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/16912/18117
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-02-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.16912
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/16912
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-single-pixel-optical-sensing-architecture-for-c
+    title: Single-pixel optical sensing architecture for compressive hyperspectral imaging
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/17312/17643
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.17312
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/17312
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-two-dimensional-packing-problem-using-a-hybrid
+    title: Two dimensional packing problem using a hybrid constructive algorithm of
+      variable neighborhood search and simulated annealing
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/17935/15404
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2013-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.17935
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/17935
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-simulation-of-the-soil-mechanical-behavior-in-t
+    title: Simulation of the soil mechanical behavior in the soil tillage tool interface
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18133/15596
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-01-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18133
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18133
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-a-nonlinear-finite-element-model-of-lightweight
+    title: A nonlinear finite element model of lightweight walls with cold formed steel
+      members under lateral load
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18145/15600
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-01-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18145
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18145
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-comparative-evaluation-of-some-limnological-cha
+    title: Comparative evaluation of some limnological characteristics of six lentic
+      environments of Colombia
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18151/15606
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-01-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18151
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18151
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-optimal-land-use-under-environmental-and-econom
+    title: Optimal land use under environmental and economic approaches
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18152/15607
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-01-20'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18152
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-physicochemical-dynamics-water-in-a-tropical-fl
+    title: Physicochemical dynamics water in a tropical floodplain
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18154/15609
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-01-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18154
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18154
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-evaluation-of-mature-landfill-leachates-treatme
+    title: 'Evaluation of mature landfill leachates Treatment systems: the case of the
+      landfill Curva de Rodas (Medellín-Colombia)'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18157/15612
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-01-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18157
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18157
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-influence-of-meteorology-and-source-variation-o
+    title: Influence of meteorology and source variation on airborne PM10 levels in
+      a high relief tropical Andean city
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18616/18122
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-02-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18616
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18616
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-hydration-process-in-ordinary-portland-cement-p
+    title: Hydration process in ordinary portland cement paste with thermally treated
+      kaolin
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18630/15980
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-02-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18630
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18630
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-design-of-a-model-system-for-the-study-of-corro
+    title: Design of a model system for the study of corrosion of pipe material and
+      its contribution in deterioration of drinking water quality
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18762/16071
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-03-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18762
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18762
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-emission-patterns-of-urban-air-pollution
+    title: Emission patterns of urban air pollution
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/18830/16108
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.18830
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/18830
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-physical-and-mechanical-characterization-of-con
+    title: Physical and mechanical characterization of concrete exposed to elevated
+      temperatures by using ultrasonic pulse velocity
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/19498/18757
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-05-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n75a12
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/19498
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-approach-to-the-determination-of-the-impact-of
+    title: Approach to the determination of the impact of the wastewater unloads of
+      the municipality of Ayapel, on the wetland waterquality
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20148/16995
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20148
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20148
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-structural-health-monitoring-methodology-for-si
+    title: 'Structural health monitoring methodology for simply supported bridges: numerical
+      implementation'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20189/17014
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2014-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20189
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20189
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2018 Revista Facultad de Ingeniería)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-imputation-of-spatial-air-quality-data-using-gi
+    title: Imputation of spatial air quality data using gis-spline and the index of
+      agreement in sparse urban monitoring networks
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20252/19964
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-09-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n76a09
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20252
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-aggregation-study-of-asphaltenes-from-colombian
+    title: Aggregation study of asphaltenes from colombian Castilla crude oil using
+      molecular simulation
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20255/20937
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-12-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n77a04
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20255
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-effect-of-different-combinations-of-size-and-sh
+    title: Effect of different combinations of size and shape parameters in the percentage
+      error of classification of structural elements in vegetal tissue of th
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20734/20779447
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-03-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n78a04
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20734
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-daily-river-level-forecast-based-on-the-develop
+    title: 'Daily river level forecast based on the development of an artificial neural
+      network: case study in La Virginia - Risaralda'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20792/19959
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-09-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n76a06
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20792
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-assessment-of-the-rls-90-calculation-method-for
+    title: Assessment of the RLS 90 calculation method for predicting road traffic noise
+      in Colombian conditions
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20804/18765
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-05-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n75a17
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20804
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-characterization-and-development-of-closed-form
+    title: Characterization and development of closed form solutions for axle load spectra
+      associated with trucks circulating the highways of Colombia
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20928/20956
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-12-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n77a05
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20928
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-comparing-dam-movements-obtained-with-terrestri
+    title: Comparing dam movements obtained with Terrestrial Laser Scanner (TLS) data
+      against direct pendulums records
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/20932/19967
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n76a12
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/20932
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-transmission-of-visible-light-through-mortars-u
+    title: Transmission of visible light through mortars using fluorite as a fine aggregate
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/21073/20957
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-12-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n77a06
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/21073
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-energy-absorption-capacity-of-expanded-metal-me
+    title: Energy absorption capacity of expanded metal meshes subjected to tensile
+      loading
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/21156/20958
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-12-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n77a07
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/21156
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-measurement-of-the-extremely-low-frequency-magn
+    title: Measurement of the extremely low frequency magnetic field in the laptop neighborhood
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/21846/19958
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-09-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n76a05
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/21846
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-identification-of-low-frequency-oscillation-mod
+    title: Identification of low frequency oscillation modes in large transmission systems
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/22130/20784561
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n82a04
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/22130
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-experimental-study-of-water-infiltration-on-an
+    title: Experimental study of water infiltration on an unsaturated soil-geosynthetic
+      system
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/22395/20779458
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-03-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n78a15
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/22395
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-effect-of-the-use-nickeliferous-laterite-and-pu
+    title: Effect of the use nickeliferous laterite and pumice as additives in the performance
+      and durability of the Portland cement
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/22495/20780419
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-06-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n79a15
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/22495
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-a-practical-method-to-compute-shear-force-and-b
+    title: A practical method to compute shear force and bending moment envelope curves
+      for isostatic bridges subjected to vehicle live loads
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/22701/20969
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n77a18
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/22701
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-effects-of-environmental-aging-and-ultra-violet
+    title: Effects of environmental aging and ultra violet radiation on asphalt mixture
+      dynamic modulus, permanent deformation and fatigue life
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/23021/20782805
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-09-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n80a10
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/23021
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-behavior-of-a-warm-mix-asphalt-using-a-chemical
+    title: Behavior of a warm mix asphalt using a chemical additive to foam the asphalt
+      binder
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/23543/20779460
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-03-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n78a17
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/23543
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-determination-of-accident-prone-road-sections-u
+    title: Determination of accident-prone road sections using quantile regression
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/24300/20780416
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-06-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n79a12
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/24300
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-lightning-activity-over-large-cities-located-in
+    title: 'Lightning activity over large cities located in mountainous tropical zone
+      and its relationship with particulate matter PM10 distribution. Bogotá city '
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/24310/20784560
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n82a03
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/24310
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-influence-of-very-fine-fraction-of-mixed-recycl
+    title: Influence of very fine fraction of mixed recycled aggregates on the mechanical
+      properties and durability of mortars and concretes
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/24353/20783758
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-12-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n81a08
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/24353
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-blast-densification-a-proposed-methodology-to-q
+    title: 'Blast densification: A proposed methodology to quantify the amount of densification
+      required to prevent liquefaction and flow in sandy soils'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/24738/20782802
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-09-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n80a07
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/24738
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-a-comparison-of-linear-and-nonlinear-model-perf
+    title: 'A comparison of linear and nonlinear model performance of shia_landslide:
+      a forecasting model for rainfall-induced landslides'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/25592/20782804
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-09-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n80a09
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/25592
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenieria2-microorganisms-isolated-from-polluted-urban-soi
+    title: Microorganisms isolated from polluted urban soils highly effectives in degrading
+      recalcitrant pesticides
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/25852/20783761
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-12-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.n81a10
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/25852
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-effect-of-adding-biosolids-dry-to-a-ceramic-pas
+    title: Effect of adding biosolids (dry) to a ceramic paste on mechanical strength
+      of bricks
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/1687/1632
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2015-11-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v14n27a4
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/1687
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-evaluation-of-mechanical-properties-of-composit
+    title: Evaluation of mechanical properties of composite materials made from recycled
+      fly ash and polymers
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/1688/1633
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2015-11-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v14n27a5
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/1688
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-analysis-of-safety-perception-on-pedestrian-bri
+    title: 'Analysis of safety perception on pedestrian bridges: a hybrid modelling
+      approach'
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/1689/1634
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2015-11-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v14n27a6
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/1689
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-airport-infrastructures-forms-of-ownership-and
+    title: 'Airport infrastructures: forms of ownership and the relationship with efficiency'
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/1693/1638
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2015-11-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v14n27a11
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/1693
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-polyethylene-terephthalate-as-a-partial-replace
+    title: Polyethylene terephthalate as a partial replacement for the fine aggregate
+      in concrete mixes
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/1711/2675
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2019-06-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v18n34a3
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/1711
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-improvement-of-environmental-and-energetic-perf
+    title: Improvement of Environmental and Energetic Performance of Social Housing
+      in Medellin by Using Modified Ceramic Bricks
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/1760/2762
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2019-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v18n35a3
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/1760
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-application-of-mgso4-7h2o-and-fly-ash-as-a-rein
+    title: Application of MgSO4 â€¢ 7H2O and Fly Ash as a Reinforcement in the Matrix
+      of Solid Ceramic Units
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/1801/2175
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2018-07-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v17n32a2
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/1801
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-use-of-blast-furnace-slag-and-steel-in-asphalt
+    title: 'Use of Blast Furnace Slag and Steel in Asphalt Mixtures: Review'
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/1993/2545
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2018-03-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v17n33a4
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/1993
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-sustainable-housing-from-a-theoretical-and-publ
+    title: Sustainable Housing, from a Theoretical and Public Policy Approach in Colombia
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2158/2543
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2018-04-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v17n33a2
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2158
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-floor-accelerations-for-the-design-of-non-struc
+    title: Floor Accelerations for the Design of Non-Structural and Structural Elements
+      that are not Part of the Seismic Resistance System in Buildings
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2183/2546
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2018-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v17n33a5
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2183
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-drinking-water-for-domestic-use-life-cycle-anal
+    title: 'Drinking Water for Domestic Use: Life Cycle Analysis and Hypothetical Environmental
+      Management Scenarios for the City of Pereira, Colombia'
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2190/2761
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2019-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v18n35a2
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2190
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-estimation-of-the-effects-of-greenhouse-gases-g
+    title: Estimation of the effects of greenhouse gases generated by wastewater treatment
+      plants located in the basin of the Bogotá River
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2411/2674
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2019-06-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v18n34a2
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2411
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-technology-trends-of-leachate-treatment-in-iber
+    title: Technology Trends of Leachate Treatment in Ibero-American Landfills
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2417/2767
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2019-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v18n35a8
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2417
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-thermal-comfort-in-residential-housing-in-medel
+    title: Thermal Comfort in Residential Housing in Medellin
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2456/2763
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2016-05-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v18n35a4
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2456
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-smart-campus-at-the-universidad-militar-nueva-g
+    title: 'Smart Campus at the Universidad Militar Nueva Granada: Creation of Base
+      Map and Applications for Campus Tree Monitoring'
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2485/3213
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-03-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v20n38a2
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2485
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-estimation-of-carbon-capture-in-an-urban-forest
+    title: Estimation of Carbon Capture in an Urban Forest Relict through Teledetection
+      Techniques
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2540/3142
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2019-10-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v19n37a1
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2540
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-monitoring-of-earth-s-crust-movements-associate
+    title: Monitoring of Earth's Crust Movements Associated to Earthquakes through GPS
+      Observations in the Gulf of California
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2681/3331
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2020-09-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v20n39a6
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2681
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-challenges-of-converting-an-in-person-dance-cou
+    title: Challenges of Converting an In-person Dance Course to a MOOC Course
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/2952/3229
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-03-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v20n38a7
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/2952
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-monitoring-of-fine-particulate-matter-and-black
+    title: 'Monitoring of Fine Particulate Matter and Black Carbon, in Micro-Environments
+      of Manizales Andean City: Pilot Study'
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/3079/3333
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2020-10-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v20n39a8
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/3079
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-a-look-at-algorithm-beptopnst
+    title: A Look at Algorithm BEPtoPNST
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/3084/3332
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v20n39a7
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/3084
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-innovation-in-water-distribution-and-recirculat
+    title: Innovation in Water Distribution and Recirculation Systems in a Sustainable
+      Social Housing Model
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/3272/3528
+    source: ojs_ingenierias
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-09-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v21n41a1
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/3272
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-evaluation-of-the-effect-of-the-loss-of-adhesio
+    title: Evaluation of the Effect of the Loss of Adhesion of The Geosynthetic Interface-Asphaltic
+      Mixture in the Performance of a Flexible Pavement Using the T
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/3446/3530
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-09-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v21n41a3
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/3446
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-rutting-in-asphalt-mixtures-a-review
+    title: Rutting in asphalt mixtures – a review
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/3489/3735
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v22n43a3
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/3489
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-biological-and-physiochemical-conditions-of-the
+    title: Biological and Physiochemical Conditions of the Surface Waters of the Cauca
+      River in the Urban Area of Popayán, Colombia
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/3727/3366
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-07-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v20n39a15
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/3727
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-systemic-approach-to-the-influence-of-climate-o
+    title: Systemic approach to the influence of climate on the dynamics of the municipality
+      of Pasto, Colombia
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/4090/3601
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-08-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v22n42a3
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/4090
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-ingenierias-evaluation-of-the-performance-of-soil-construct
+    title: Evaluation of The Performance of Soil/Construction Waste Mixtures as an Alternative
+      for The Improvement of Low Traffic Volume Road Subgrades
+    url: https://revistas.udem.edu.co/index.php/ingenierias/article/download/4264/3579
+    source: ojs_ingenierias
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2022-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22395/rium.v21n41a6
+    license_evidence: 'https://revistas.udem.edu.co/index.php/ingenierias/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.revistas.udem.edu.co:article/4264
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Revista Ingenierías Universidad de Medellín)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-two-case-studies-of-special-education-centers-for-chi
+    title: 'Two Case Studies of Special Education Centers for Children with Disabilities:
+      "Fray Pedro Ponce de León School" and "Hazelwood School"'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5257/5834
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-10-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n.5257
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5257
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-accessible-architecture-public-educational-center-for
+    title: 'Accessible Architecture: Public Educational Center for Children with Visual
+      Disabilities in the District of San Juan de Lurigancho, Lima'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5260/5835
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-10-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n.5260
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5260
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-impact-of-peri-urbanization-on-the-rural-community-of
+    title: Impact of peri-urbanization on the rural community of Azapampa and its proper
+      incorporation into the urban fabric
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5267/5746
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n009.5267
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5267
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-architectural-discourse-and-cultural-identity-the-ide
+    title: Architectural discourse and cultural identity. The ideological validity of
+      six Peruvian authors in the elaboration of a contemporary symbolic universe
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5278/6021
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-12-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n010.5278
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5278
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-museums-as-the-first-step-to-citizen-inclusion
+    title: Museums as the first step to citizen inclusion
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5305/6064
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-01-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n010.5305
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5305
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-digital-fabrication-in-inclusive-education-for-studen
+    title: 'Digital fabrication in inclusive education for students with visual impairment
+      and blindness: literary and bibliometric analysis'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5319/6103
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-01-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n010.5319
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5319
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-towards-sustainability-from-architecture-and-ecosophy
+    title: 'Towards sustainability from architecture and ecosophy: links between mental
+      ecology, emotional neuroscience and space'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5327/5099
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-08-09'
+    document_type: journal-article
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5327
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-circular-economy-applied-to-architecture-illusion-or
+    title: Circular economy applied to architecture illusion or reality
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5328/5100
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-08-09'
+    document_type: journal-article
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5328
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-adaptive-reuse-of-underused-buildings-a-sustainable-s
+    title: Adaptive reuse of underused buildings a sustainable strategy for urban reoccupation
+      in downtown Vitória (Brazil)
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5329/5102
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-08-09'
+    document_type: journal-article
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5329
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-infrastructure-as-a-strategy-for-land-conservation-ko
+    title: Infrastructure as a strategy for land conservation Kongjian Yu’s work
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5333/5103
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-08-09'
+    document_type: journal-article
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5333
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-transformations-of-el-olivar-forest-the-way-toward-la
+    title: 'Transformations of El Olivar Forest: the way toward landscape conservation'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5334/5104
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-08-09'
+    document_type: journal-article
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5334
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-worldview-for-sustainable-cities-and-communities
+    title: The worldview for sustainable cities and communities
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5335/5105
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-08-09'
+    document_type: journal-article
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5335
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-sustainable-architecture-and-construction-in-latin-am
+    title: Sustainable Architecture and Construction in Latin America
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5336/5106
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-08-09'
+    document_type: journal-article
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5336
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-reappraisal-of-vernacular-architecture-housing-module
+    title: 'Reappraisal of Vernacular Architecture: Housing Module for an Ashaninka
+      Community in Alto Kamonashiarii'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5337/5107
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-08-09'
+    document_type: journal-article
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5337
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-lima-a-non-inclusive-and-insecure-city
+    title: 'Lima: a non-inclusive and insecure city'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5379/6063
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-01-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n010.5379
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5379
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-neuroscience-and-architecture-an-innovative-coordinat
+    title: Neuroscience and architecture. An innovative coordinate system for spatial
+      autonomy
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5380/5744
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n009.5380
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5380
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-sensitivity-in-design-remodeling-of-the-mensajeros-de
+    title: 'Sensitivity in design: remodeling of the Mensajeros de la Paz residence
+      for the elderly'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5383/5749
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n009.5383
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5383
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-slums-and-disability-where-are-latin-american-settlem
+    title: 'Slums and Disability: Where are Latin American Settlements Headed?'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5384/5741
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n009.5384
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5384
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-academic-and-internationalization-experiences-through
+    title: Academic and internationalization experiences through virtual means. The
+      FADA UNA Inclusive Design Classroom
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5386/5743
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n009.5386
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5386
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-neuroarchitecture-sensorial-architecture-for-people-w
+    title: 'Neuroarchitecture: sensorial architecture for people with disabilities is
+      architecture for everyone'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5435/6065
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-01-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n010.5435
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5435
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-urban-installations-art-as-a-message-of-territorialit
+    title: 'Urban installations: art as a message of territoriality. Projected in the
+      non-places of a masked city (Armenia, Colombia)'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5436/6207
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n011.5436
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5436
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-neuroarchitecture-and-inclusive-educational-scenarios
+    title: Neuroarchitecture and inclusive educational scenarios
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5442/5745
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n009.5442
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5442
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-las-ciudades-el-cambio-clim-tico-y-la-energ-a-incorpo
+    title: Las ciudades, el cambio climático y la energía incorporada
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5549/5248
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5549
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5549
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-where-do-buildings-go-when-they-die
+    title: Where do buildings go when they die?
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5550/5249
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5550
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5550
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-bioclimatic-analysis-of-the-constructive-tradition-of
+    title: Bioclimatic analysis of the constructive tradition of rural housing in the
+      Huasteca Potosina
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5551/5250
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5551
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5551
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-salamanca-collaborating-to-preserve-the-presence-of-g
+    title: 'Salamanca: collaborating to preserve the presence of green in the neighborhood'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5552/5251
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5552
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5552
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-extractivism-and-territory-land-use-planning-as-a-too
+    title: 'Extractivism and territory: land-use planning as a tool for managing social
+      conflicts'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5553/5252
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5553
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5553
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-new-traditional-architecture-with-low-energy-consumpt
+    title: New Traditional Architecture with Low Energy Consumption in the Peruvian
+      Amazon
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5554/5253
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5554
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5554
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-lima-the-challenges-of-urban-mobility-on-the-road-to
+    title: 'Lima: the Challenges of Urban Mobility on the Road to Sustainability'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5555/5254
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5555
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5555
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-edge-in-conflict-case-study-lomas-de-amancaes
+    title: 'Edge in Conflict, Case Study: Lomas de Amancaes'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5556/5255
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5556
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5556
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-bioclimatic-housing-design-in-tumbes-city
+    title: Bioclimatic Housing Design in Tumbes City
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5557/5256
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5557
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5557
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-energira-el-juego-infantil-que-genera-energ-a-a-trav
+    title: 'Energira: el juego infantil que genera energía a través de la rotación'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5558/5257
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2021.n008.5558
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5558
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-learning-from-nature-a-biodigital-strategy-for-sustai
+    title: Learning from nature. A biodigital strategy for sustainable architecture
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5764/6209
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n011.5764
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5764
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-national-housing-fund-a-law-and-a-neighborhood-in
+    title: 'The National Housing Fund: a law and a neighborhood in late 1970s Argentina'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5791/6205
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n011.5791
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5791
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-public-health-landscaping-and-road-circulation-the-r
+    title: Public health, landscaping and road circulation. The río Primero systematization
+      project in the city of Córdoba (1942-1970)
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5823/6211
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n011.5823
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5823
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-dimensions-of-architecture-for-progress-in-argentina
+    title: Dimensions of architecture for progress in Argentina (1960-1975) A territorial
+      view
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5830/6195
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.5830
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5830
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-repetition-and-modulation-in-modern-peruvian-architec
+    title: Repetition and modulation in modern peruvian architecture. The San Felipe
+      towers and high-rise social housing
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5833/6204
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n011.5833
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5833
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-institutions-businesspeople-and-academics-in-the-prom
+    title: Institutions, businesspeople and academics in the promotion and use of precast
+      and industrialized systems for the construction of social housing in Co
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5834/6202
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n011.5834
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5834
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-early-modern-multifamily-housing-in-mexico-housing-fo
+    title: Early modern multifamily housing in Mexico housing for Public Workers in
+      the Second Half of the Twentieth Century
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5835/6203
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n011.5835
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5835
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-planning-tourism-and-mountain-hospitality-during-the
+    title: Planning, tourism and mountain hospitality during the first peronism in Mendoza,
+      Argentina (1952-1955)
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5836/6210
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n011.5836
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5836
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-di-logos-epistolares-entre-f-belaunde-terry-y-j-pasto
+    title: Diálogos epistolares entre F. Belaunde Terry y J. Pastor. Expresiones del
+      pensamiento urbano en Perú y Argentina a mediados de siglo xx
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5841/6200
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.5841
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5841
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-mexican-legislation-as-a-historical-loop-of-imposing
+    title: Mexican legislation as a historical loop of imposing urban trends. Considerations
+      for adequacy in the health post-crisis
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5900/6199
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.5900
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5900
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-architecture-of-modernization-in-uruguay-1895-1915-in
+    title: Architecture of modernization in Uruguay (1895-1915). Initial inquiries
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/5958/6191
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.5958
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5958
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-challenge-of-idle-industrial-areas-in-brazilian-m
+    title: The challenge of idle industrial areas in Brazilian metropole. The case of
+      the Great ABC paulista
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6000/6198
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.6000
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6000
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-fernando-salvador-an-exceptional-exile-as-a-state-off
+    title: 'Fernando Salvador: an exceptional exile as a state official and the assistance
+      architecture in Venezuela (1936-1960)'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6005/6193
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.6005
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6005
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-hennebique-in-the-works-of-the-argentine-state-techni
+    title: Hennebique in the works of the argentine state. Technical renovation and
+      French reinforced concrete tradition (1911-1915)
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6009/6192
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.6009
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6009
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-ideas-for-territorial-organization-in-argentina-regio
+    title: 'Ideas for territorial organization in Argentina: Regional planning and development
+      poles'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6016/6194
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.6016
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6016
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-urban-modernization-as-an-external-policy-action
+    title: The urban modernization as an external policy action. Belém (PA) and the
+      United States (1930-1960)
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6017/6197
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.6017
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6017
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-a-bet-on-the-future-the-building-for-the-national-cas
+    title: A bet on the future. The building for the national casino in Necochea, Argentina
+      (1961-1973)
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6018/6196
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n012.6018
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6018
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-accessibility-breaking-barriers
+    title: Accessibility, breaking barriers
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6260/6105
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-02-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2022.n.6260
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6260
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-necesidades-urban-sticas-versus-el-boom-inmobiliario
+    title: Necesidades urbanísticas versus el boom inmobiliario. Los casos de Magdalena
+      del Mar y Carabayllo
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6318/6546
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-11-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2023.n.6318
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6318
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-female-emancipation-in-self-managed-actions-of-housin
+    title: Female emancipation in self-managed actions of housing movements. The experience
+      of the Mutirão Paulo Freire
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6449/6837
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6449
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6449
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-graphic-movement-of-narrative-time-and-the-divers
+    title: The graphic movement of narrative time and the diverse design of content
+      positioned by the authors
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6504/6839
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6504
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6504
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-niemeyer-in-the-desert-presences-of-the-russian-avant
+    title: Niemeyer in the Desert. Presences of the Russian Avant-Garde in Ibirapuera
+      Park
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6529/6866
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-03-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6529
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6529
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-flux-of-ideas-among-underground-projects-comparat
+    title: 'The flux of ideas among underground projects: comparative study of Carré
+      d’art’s Media center (1984), Beaux-Arts Palace of Lille (1992) and Gugg Río ('
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6543/6841
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6543
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6543
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-accessibility-and-contemporary-inclusive-design-from
+    title: Accessibility and contemporary inclusive design from the local level and
+      the importance of integrating universal values into the architectural project
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6559/6843
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6559
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6559
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-to-render-visible-the-contribution-of-forensic-archit
+    title: 'To render visible: the contribution of forensic architecture to the reading
+      of contemporary events and the Latin American experience'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6582/6845
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6582
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6582
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-the-right-to-memory-as-a-right-to-the-city-in-bra
+    title: The The right to memory as a right to the city in Brasil
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6585/6847
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6585
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6585
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-looking-inwards-conversing-with-carlos-villag-mez-abo
+    title: Looking inwards. Conversing with Carlos Villagómez about Bolivian Architecture
+      and Its Global Presence
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6821/6851
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-03-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6821
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6821
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-technified-bajareque-evaluation-of-embodied-water-com
+    title: Technified bajareque. Evaluation of embodied water compared to conventional
+      building
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6880/7307
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-11-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n14.6880
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6880
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-conexiones-latinoamericanas-culturas-arquitect-nicas
+    title: 'Conexiones latinoamericanas: culturas arquitectónicas en tránsito'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6889/7295
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-11-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n14.6889
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6889
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-crecimiento-vertical-y-riesgo-de-deslizamientos-en-zo
+    title: 'Crecimiento vertical y riesgo de deslizamientos en zonas urbanas: análisis
+      cartográfico de la alcaldía de Miguel Hidalgo en la Ciudad de México'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6920/7989
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n016.6920
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6920
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-profession-intersectionalities-and-their-inequalities
+    title: Profession, intersectionalities, and their inequalities. The case of Brazil
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6926/7305
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-11-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n14.6926
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6926
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-latin-american-architecture-from-the-perspective-of-a
+    title: Latin American architecture from the perspective of architect Claudio Caveri.
+      Baroque connections to think contemporary narratives and dynamics
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6932/7298
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-11-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n14.6932
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6932
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-phenomenology-and-artificial-intelligence-a-liquid-pe
+    title: 'Phenomenology and artificial intelligence: a liquid perspective for 21st
+      century architecture'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6950/6849
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.6950
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6950
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-brasilia-cathedral-history-project-and-heritage-based
+    title: 'Brasilia Cathedral: History, project, and heritage based on an archive study'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6953/7288
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-11-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n14.6953
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6953
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-urban-sprawl-transformations-in-the-urban-fabric-of-b
+    title: Urban Sprawl. Transformations in the urban fabric of Brazilian cities and
+      their relationship with climate change
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6961/7497
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-01-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.6961
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6961
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-construction-of-rhetoric-an-analysis-of-the-disco
+    title: The construction of rhetoric. An analysis of the discourses in Arkinka on
+      weekend houses as a symbol of contemporary Peruvian architecture
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6966/7289
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-11-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n14.6966
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6966
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-spatialities-and-materialities-articulations-between
+    title: 'Spatialities and Materialities: Articulations Between Architecture, Landscape,
+      and Atmospheres'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6967/7290
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-11-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n14.6967
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6967
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-digital-inventory-of-contemporary-architecture-in-for
+    title: 'Digital Inventory of Contemporary Architecture in Fortaleza (Ceará, Brazil):
+      The Mercado dos Peixes: O Mercado dos Peixes'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/6969/7303
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-11-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n14.6969
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/6969
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-post-scriptum
+    title: Post scriptum
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7036/6870
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2024.n013.7036
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7036
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-artificial-intelligence-collaboration-and-bim-in-the
+    title: 'Artificial intelligence, collaboration and BIM in the methodological process
+      of architectural design: using the Architechtures tool'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7093/7496
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-01-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.7093
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7093
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-reclaiming-the-urban-commons-in-the-border-of-cities
+    title: Reclaiming the Urban Commons in the Border of Cities
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7122/8178
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2026-02-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2026.n017.7122
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7122
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-lima-imaginada-proyectos-no-construidos-en-lima-publi
+    title: 'Lima imaginada: proyectos no construidos en Lima publicados en la revista
+      Ciudad y Campo, 1924-1930'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7187/7675
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.7187
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7187
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-university-architecture-in-uruguay-from-the-student-h
+    title: 'University Architecture in Uruguay: from the Student Home to the Faculty
+      of Sciences: “La sociedad es una arquitectura en construcción.” (Serralta 200'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7210/7680
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.7210
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7210
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-nature-of-space-in-the-americas-realizing-a-non-e
+    title: 'The Nature of Space in the Americas: Realizing a Non-Eurocentric and Non-Anthropocentric
+      Theory or Theories for Architecture and Urbanism.'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7282/7669
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.7282
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7282
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-first-favela-urbanizations-in-diadema-s-o-paulo-in-th
+    title: 'First favela urbanizations in Diadema, São Paulo, in the 1980s: a cooperative
+      movement for citizenship'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7319/7682
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.7319
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7319
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-towards-a-queer-aesthetic-lgbt-spaces-in-chihuahua-ci
+    title: 'Towards a queer aesthetic: LGBT+ spaces in Chihuahua City, Mexico'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7321/7587
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-03-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.7321
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7321
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-cholets-architectural-disputes-and-spaces-of-power-in
+    title: 'Cholets: architectural disputes and spaces of power in El Alto, Bolivia'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7326/7999
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n016.7326
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7326
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-marginalization-of-the-visual-in-architectural-th
+    title: 'The marginalization of the visual in architectural theory: origins, consequences,
+      and challenges'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7653/8003
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n016.7653
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7653
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-kant-on-architecture-beauty-function-and-meaningn-and
+    title: 'Kant on architecture: beauty, function, and meaningn, and Meaning'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7658/7996
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n016.7658
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7658
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-the-beaux-arts-poch-and-modern-architecture-in-latin
+    title: The Beaux-Arts Poché and Modern Architecture in Latin America
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7661/7991
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n016.7661
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7661
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-archrypt-the-archive-for-the-post-apocalyptic-future
+    title: Archrypt. The archive for the post-apocalyptic future to exorcise architecture’s
+      end
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7671/7672
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.7671
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7671
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-values-principles-and-context-in-contemporary-mexican
+    title: Values, Principles, and Context in Contemporary Mexican Architecture
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7672/8005
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n016.7672
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7672
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-genealogies-of-power-architectural-responses-to-crisi
+    title: 'Genealogies of Power: Architectural Responses to Crisis in Historical and
+      Contemporary Contexts'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7697/7993
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n016.7697
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7697
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-nueva-tica-nueva-est-tica
+    title: Nueva ética, nueva estética
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7825/7667
+    source: ojs_limaq
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n015.7825
+    license_evidence: 'https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7825
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-trends-and-developments-in-computational-design-and-n
+    title: 'Trends and developments in computational design and nature-based approaches
+      in architecture: a bibliometric analysis'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7842/8275
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2026-04-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2026.n017.7842
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7842
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-el-lugar-de-lo-p-blico-usos-comunitarios-de-los-vac-o
+    title: El lugar de lo público. Usos comunitarios de los vacíos en San Agustín del
+      Norte y Las Flores de Puente Hierro
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7846/8656
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2026-09-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2026.n018.7846
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7846
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-filosof-a-arquitectura-contra-l-informe
+    title: 'Filosofía ,,/‘‘ Arquitectura: contra l’informe'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7859/8001
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2025.n016.7859
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7859
+    rights_verified_at: '2026-10-14'
+  - id: ojs-limaq-el-cuidado-y-los-lenguajes-de-acci-n-p-blica-vinculad
+    title: 'El cuidado y los lenguajes de acción pública vinculados al entorno construido:
+      los casos de Ámsterdam y Barcelona'
+    url: https://revistas.ulima.edu.pe/index.php/Limaq/article/download/7911/8273
+    source: ojs_limaq
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2026-04-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.26439/limaq2026.n017.7911
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.ulima.edu.pe/index.php/Limaq/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7911
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-urban-stratification-as-a-socioeconomic-indicator
+    title: Urban stratification as a socioeconomic indicator
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18724/19621
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18724
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-the-direct-plan-of-cali
+    title: The direct Plan of Cali
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18725/19622
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18725
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-convive-contest
+    title: Convive contest
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18727/19624
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18727
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-declaraci-n-de-bogot-sobre-la-ciudad-desde-la-pers
+    title: Declaración de Bogotá. Sobre la ciudad desde la perspectiva de los derechos
+      humanos
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18728/19625
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18728
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-rodrigo-rubio-vollert-comp-2006-ciudades-urgentes
+    title: 'Rodrigo Rubio Vollert (comp.) (2006): Ciudades urgentes. Intervención en
+      áreas urbanas de crecimiento rápido. Bogotá: Universidad de Los Andes'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18729/19626
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18729
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-de-periferia-a-ciudad-consolidada
+    title: De Periferia a Ciudad Consolidada
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18730/19627
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18730
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-oma-s-pleasure-garden
+    title: Oma´s Pleasure Garden
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18731/19628
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18731
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-town-planning-in-public-space-configuration-of-bog
+    title: Town planning in public space configuration of Bogotá periphery zone
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18732/19629
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18732
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-the-master-plan-of-school-equipment-in-the-constru
+    title: The master plan of school equipment in the construction of the city
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18733/19630
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18733
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-agropolis-or-the-city-region-end-conceptual-bases
+    title: Agropolis, or the city-region end. Conceptual bases for a rural planning
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18736/19631
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18736
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-the-world-change-revolutions
+    title: The world - change revolutions
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18737/19632
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18737
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-latin-american-cities-and-present-conflicts
+    title: Latin-American cities and present conflicts
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18738/19633
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18738
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-the-size-does-matter
+    title: The size does matter
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18739/19634
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18739
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-mall-shopping-centers-dynamics-in-bogot
+    title: Mall (Shopping Centers) dynamics in Bogotá
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18740/19635
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18740
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-from-periphery-to-consolidated-city-strategies-for
+    title: 'From periphery to consolidated city: Strategies for the transformation of
+      marginal urban zones'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18741/19636
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18741
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-concrete-world-heritage
+    title: Concrete world heritage
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18742/19637
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18742
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-the-annexation-of-the-6-surrounding-municipalities
+    title: The annexation of the 6 surrounding municipalities to Bogotá in 1954. “A
+      prior fact”
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18743/19638
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18743
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-changes-on-the-edge-of-the-downtown-a-fragment
+    title: Changes on the edge of the downtown. A fragment
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18744/19639
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18744
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-territories-order-space-public-politic-assembly
+    title: Territories…Order…Space – public – politic…assembly
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18745/19640
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18745
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-public-space-environment-and-landscape
+    title: Public space, environment and landscape
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18746/19641
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18746
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-espacios-urbanos-no-con-sentidos-an-lida-rinc-n-pa
+    title: Espacios Urbanos no Con-sentidos. Análida Rincón Patiño
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18747/19642
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2005-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18747
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-barrios-marginales-en-el-ordenamiento-de-bogot
+    title: BARRIOS MARGINALES EN EL ORDENAMIENTO DE BOGOTÁ
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18749/19644
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18749
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-urban-sustainability
+    title: Urban sustainability
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18750/19645
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18750
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-notes-on-colombia-s-dwelling-problem
+    title: Notes on Colombia’s dwelling problem
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18751/19646
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18751
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-35-m2-dwelling-notes-to-debate
+    title: 35 m2 dwelling. Notes to debate
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18752/19647
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18752
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-public-space-perception
+    title: Public space perception
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18753/19648
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18753
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-cities-country-development-engines
+    title: 'Cities: country development engines'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18754/19649
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18754
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-objectivity-in-public-space-systems
+    title: Objectivity in public space systems
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18755/19650
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18755
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-region-and-regionalism-autonomy-or-integration
+    title: Region and regionalism ¿autonomy or integration?
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18756/19651
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18756
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-marginal-neighborhoods-in-bogota-s-urban-ordering
+    title: Marginal neighborhoods in Bogota’s urban ordering
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18757/19652
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18757
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-karl-brunner-or-the-urbanism-like-science-of-detai
+    title: Karl Brunner or the urbanism like science of detail
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18758/19653
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18758
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-about-the-process-of-integration-in-bogot-s-southe
+    title: About the process of integration in Bogotá’s southern neighborhoods
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18759/19654
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18759
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-an-analysis-of-the-re-densification-process-in-bog
+    title: An analysis of the re-densification process in Bogotá, an alternative for
+      a sustainable urban growh?
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18760/19655
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18760
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-urbanizing-the-side-hill-an-enviromental-technolog
+    title: 'Urbanizing the side hill: An enviromental, technological and urban challenge'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18761/19656
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18761
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-public-space-an-urban-management-challenge
+    title: 'Public space: an urban management challenge'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18762/19657
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18762
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-urbanismos-no-1-a-a-v-v-ponencias-del-seminario-ur
+    title: 'Urbanismos No. 1 A.A.V.V., Ponencias del seminario: urbanismo ¿cambios o
+      permanencias?'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18763/19658
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18763
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-bogot-el-tr-nsito-a-la-ciudad-moderna-1920-1950-ju
+    title: Bogotá, el tránsito a la ciudad moderna 1920-1950 Juan Carlos del Castillo
+      Daza
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18764/19659
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18764
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-metr-polis-y-redes-telem-ticas-la-emergencia-de-la
+    title: METRÓPOLIS Y REDES TELEMÁTICAS. LA EMERGENCIA DE LA CIUDAD METROPOLITANA
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18771/19665
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18771
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-growth-crisis-or-absence-of-infrastructures
+    title: Growth crisis or Absence of Infrastructures
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18774/19668
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18774
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-the-urban-sense-of-public-space
+    title: The urban sense of public space
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18775/19669
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18775
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-involuntary-reestablishment-integration-and-civili
+    title: 'Involuntary Reestablishment: Integration and Civilization'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18776/19670
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18776
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-an-experience-of-territorial-ordering-in-the-colom
+    title: An experience of Territorial Ordering in the Colombian Pacific
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18777/19671
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18777
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-migratory-events-forced-and-suburbanization
+    title: Migratory Events Forced And Suburbanization
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18778/19672
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18778
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-metr-polis-and-telematic-networks
+    title: Metrópolis and Telematic Networks
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18780/19674
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18780
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-hernando-vargas-vida-y-obra-brunner-era-la-academi
+    title: Hernando Vargas vida y obra. Brunner era la academia, Le Corbusier la revolución
+      urbanística
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18781/19675
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18781
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-manuel-garc-a-1928-1999-arquitecto-urbanista-sembl
+    title: Manuel García 1928 - 1999. Arquitecto urbanista - semblanza
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18782/19676
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18782
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-the-electronic-space-and-urban-conformation-of-the
+    title: The electronic Space and Urban conformation of the Internet in Bogota
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18783/19677
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18783
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-the-industrial-expansion-and-the-modern-urbanism
+    title: The Industrial Expansion and the Modern Urbanism
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18784/19678
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18784
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-cartagena-de-indias-asentamientos-informales-en-la
+    title: Cartagena de Indias. Asentamientos informales en la década de los 90
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18785/19679
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2003-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18785
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-informe-t-cnico-del-campo-de-acci-n-institucional
+    title: INFORME TÉCNICO DEL CAMPO DE ACCIÓN INSTITUCIONAL
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18786/19680
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2002-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18786
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-campo-de-acci-n-institucional-espacio-y-territorio
+    title: Campo de Acción Institucional. Espacio y Territorio
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18787/19681
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2002-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18787
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-index-revistas-1997-2002-bitacora-urbano-territori
+    title: Index revistas 1997-2002. Bitacora urbano\territorial
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18789/19683
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2002-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18789
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-indice-acumulado-por-autor-bitacora-urbano-territo
+    title: Indice acumulado por autor. Bitacora urbano/territorial
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18791/19684
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2002-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18791
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-indice-acumulado-de-revistas-bitacora-urbano-terri
+    title: Indice acumulado de revistas. Bitacora urbano/territorial
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18792/19685
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2002-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18792
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-expansi-n-o-densificaci-n-reflexiones-en-torno-al
+    title: ¿EXPANSIÓN O DENSIFICACIÓN?; REFLEXIONES EN TORNO AL CASO BOGOTÁ
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18793/19686
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18793
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-la-no-construcci-n-de-lo-p-blico
+    title: La no Construcción de lo Público
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18794/19687
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18794
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-la-regi-n-polinuclear
+    title: La Región Polinuclear
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18795/19688
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18795
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-bogot-ciudad-fluible-recorridos-y-percepciones
+    title: Bogotá ¿ Ciudad Fluible?. Recorridos y Percepciones
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18796/19689
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18796
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-expansi-n-o-densificaci-n
+    title: ¿Expansión o Densificación?
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18797/19690
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18797
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-homenaje-a-edgar-burbano-1928-1999
+    title: Homenaje a Edgar Burbano 1928-1999
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18798/19691
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18798
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-a-prop-sito-del-libro-la-ciudad-h-bitat-de-diversi
+    title: 'A propósito del libro La Ciudad: Hábitat de Diversidad y Complejidad'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18799/19692
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18799
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-la-arquitectura-de-la-utopia-y-el-urbanismo
+    title: La Arquitectura de la Utopia y el Urbanismo
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18800/19693
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18800
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-campa-a-mundial-de-buena-gobernabilidad-urbana-hac
+    title: Campaña Mundial de Buena Gobernabilidad Urbana. Hacia una ciudad integradora
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18801/19694
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18801
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-campa-a-mundial-de-seguridad-en-la-tenencia-de-la
+    title: Campaña Mundial de Seguridad en la Tenencia de la Vivienda
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18802/19695
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18802
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-estambul-5-periodo-extraordinario-de-sesiones-de-l
+    title: 'Estambul + 5: periodo extraordinario de sesiones de las Naciones Unidas
+      para realizar un examen y una evaluación generales de la ejecución del Program'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18803/19696
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18803
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-asamblea-general-de-h-bitat-2001-junio-2001-nueva
+    title: ASAMBLEA GENERAL DE HÁBITAT 2001 Junio 2001, NUEVA YORK
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18804/19697
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2001-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18804
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-globalizaci-n-sociedad-y-pol-tica-en-la-era-de-la
+    title: GLOBALIZACIÓN, SOCIEDAD Y POLÍTICA EN LA ERA DE LA INFORMACIÓN
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18805/19698
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18805
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-pol-ticas-nacionales-y-desarrollo-tecnol-gico-en-e
+    title: Políticas Nacionales y Desarrollo Tecnológico en el sector del VIS. La calidad
+      de Oferta VIS en Colom bia
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18806/19699
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18806
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-urbanismo-operacional-y-proyecto-urbano-la-operaci
+    title: Urbanismo Operacional y Proyecto Urbano. La operación urbana como dirección
+      de procesos
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18807/19700
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18807
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-el-territorio-urbano-regional-de-cara-al-nuevo-mil
+    title: 'El Territorio Urbano Regional de cara al nuevo milenio: Trayectorias y Perspectivas'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18808/19701
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18808
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-las-centralidades-del-pot-de-santaf-de-bogot
+    title: Las Centralidades del POT de Santafé de Bogotá
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18809/19702
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18809
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-paisaje-urbano-en-nuestras-ciudades
+    title: Paisaje Urbano en Nuestras Ciudades
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18810/19703
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18810
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-el-paisajismo-y-su-compromiso-en-colombia
+    title: El Paisajismo y su Compromiso en Colombia
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18811/19704
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18811
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-anecdotas-de-un-soliloquio-homenaje-a-hans-rother
+    title: Anecdotas de un soliloquio. Homenaje a Hans Rother 1928-1999
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18813/19706
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18813
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-la-parcela-catastral
+    title: La Parcela Catastral
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18814/19707
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18814
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-la-ciudad-colombiana-una-reflexi-n-desde-lo-discip
+    title: 'La ciudad colombiana: Una reflexión desde lo disciplinario y lo social'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18815/19708
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18815
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-soy-como-mi-ciudad
+    title: Soy como mi ciudad
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18816/19709
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18816
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-recortes-de-ciudad
+    title: Recortes de ciudad
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18817/19710
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18817
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-para-hablar-del-pr-ximo-milenio-se-acaba-el-tiempo
+    title: Para hablar del próximo milenio se acaba el tiempo, ya falta muy poco para
+      estar ahí.
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18818/19711
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18818
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-la-expocici-n-mundial-del-a-o-2000-urban-21-berl-n
+    title: La Expocición Mundial del año 2000 URBAN 21 Berlín, junio de 2000
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18821/19714
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18821
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-ley-546-23-de-diciembre-de-1999
+    title: Ley 546 23 de diciembre de 1999
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18822/19715
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2000-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18822
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-pasto-ciudad-y-r-o
+    title: 'PASTO: CIUDAD Y RÍO'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18823/19716
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18823
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-el-tipo-y-la-vivienda-de-inter-s-social-v-i-s
+    title: El tipo y la vivienda de interés social (v.i.s.)
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18824/19717
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18824
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-car-cter-regional-y-forma-urbana
+    title: Carácter regional y forma urbana
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18825/19718
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18825
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-la-urbe-contempor-nea-y-la-pregunta-por-el-medio-a
+    title: La urbe contemporánea y la pregunta por el medio ambiente (Una aproximación
+      crítica)
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18826/19719
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18826
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-el-proyecto-del-espacio-p-blico
+    title: El proyecto del espacio público
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18827/19720
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18827
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-pasto-ciudad-y-r-o-una-experiencia-para-el-desarro
+    title: Pasto, ciudad y río. Una experiencia para el desarrollo metodológico
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18828/19721
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18828
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-espacio-p-blico-y-en-china
+    title: Espacio público y en China
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18829/19722
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18829
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-el-transporte-una-forma-de-hacer-ciudad
+    title: El transporte, una forma de hacer ciudad
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18830/19723
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18830
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-algunas-causas-y-evoluci-n-de-la-renovaci-n-urbana
+    title: Algunas causas y evolución de la renovación urbana por densificación en Bogotá
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18832/19724
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18832
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-di-logo-nacional-ciudad-y-territorio-propuesta-de
+    title: 'Diálogo nacional: ciudad y territorio Propuesta de la Universidad Nacional
+      de Colombia y Colciencias, en la EXPO 2000 Hannover'
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18833/19725
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18833
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-c-tedra-manuel-anc-zar-pensar-la-ciudad-una-mirada
+    title: Cátedra Manuel Ancízar Pensar la ciudad, una mirada hacia el próximo milenio
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18834/19726
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18834
+    rights_verified_at: '2026-10-14'
+  - id: ojs-bitacora-seminario-internacional-desarrollo-y-gesti-n-urban
+    title: Seminario internacional Desarrollo y gestión urbana
+    url: https://revistas.unal.edu.co/index.php/bitacora/article/download/18835/19727
+    source: ojs_bitacora
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '1999-01-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistas.unal.edu.co/index.php/bitacora/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.unal.edu.co:article/18835
     rights_verified_at: '2026-10-14'
