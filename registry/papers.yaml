@@ -153304,24 +153304,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.1410.0948 openalex:W1928484767
     resolution: 'sim1: openalex location'
-  - id: oas-10-1184-r1-6716120-e4aa4787
-    title: Dynamic Optimization of Integrated Active - Passive Strategies for Building
-      Enthalpy Control
-    url: http://repository.cmu.edu/dissertations/404
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2014-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1184/r1/6716120
-    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/404;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-14'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1184/r1/6716120 openalex:W1895185220
-    resolution: 'sim1: openalex location'
   - id: ope-performance-and-feasibility-assessment-of-a-hy
     title: Performance and feasibility assessment of a hybrid cooling system for office
       buildings based on heat dissipation panels
@@ -153705,3 +153687,22 @@ sources:
       version and the copy this URL names): no licence element -> arxiv-nonexclusive
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-15'
+  - id: oas-10-1353-jcl-2025-a956200-815be7c2
+    title: A study of pattern path expressions in Mandarin Chinese from the perspective
+      of motion event typology
+    url: https://muse.jhu.edu/pub/250/article/956200/pdf
+    source: openalex_ai
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1353/jcl.2025.a956200
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://muse.jhu.edu/pub/250/article/956200/pdf;
+      version publishedVersion; rights restricted]
+    rights_verified_at: '2026-10-15'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1353/jcl.2025.a956200 openalex:W4409460748
+    resolution: 'ai1: openalex+unpaywall location'
