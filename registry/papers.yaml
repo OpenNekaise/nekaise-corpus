@@ -154676,3 +154676,97 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-15'
+  - id: ope-role-of-subsurface-geo-energy-pilot-and-demons
+    title: Role of Subsurface Geo-Energy Pilot and Demonstration Sites in Delivering
+      Net Zero
+    url: https://strathprints.strath.ac.uk/80638/1/Stephenson_etal_ESSS_2022_Role_of_subsurface_geo_energy_pilot_and_demonstration_sites_in_delivering_net_zero.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-02-24'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/esss.2022.10045
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://strathprints.strath.ac.uk/80638/1/Stephenson_etal_ESSS_2022_Role_of_subsurface_geo_energy_pilot_and_demonstration_sites_in_delivering_net_zero.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3389/esss.2022.10045 openalex:W4213453076
+    resolution: 'legacy: openalex location'
+  - id: ope-assessing-the-effectiveness-of-energy-efficien
+    title: 'Assessing the Effectiveness of Energy Efficiency Measures in the Residential
+      Sector Gas Consumption Through Dynamic Treatment Effects: Evidence from E'
+    url: https://www.repository.cam.ac.uk/bitstreams/ed9ffe0a-954a-4f09-887f-20252d6af93d/download
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-01-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.2139/ssrn.4003841
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/ed9ffe0a-954a-4f09-887f-20252d6af93d/download;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.2139/ssrn.4003841 openalex:W4211011237
+    resolution: 'legacy: openalex location'
+  - id: ope-environmental-and-economic-assessment-of-elect
+    title: Environmental and economic assessment of electric ferries with different
+      lithium-ion battery technologies
+    url: https://vti.diva-portal.org/smash/get/diva2:1973305/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-06-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2025.126274
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://vti.diva-portal.org/smash/get/diva2:1973305/FULLTEXT01; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2025.126274 openalex:W4411137182
+    resolution: 'legacy: openalex location'
+  - id: ope-on-the-discrepancy-of-using-annual-or-hourly-e
+    title: On the discrepancy of using annual or hourly emission factors for power generation
+      to estimate CO2 reduction of building retrofitting
+    url: https://ri.diva-portal.org/smash/get/diva2:1887899/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-07-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2024.114499
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://ri.diva-portal.org/smash/get/diva2:1887899/FULLTEXT01; version submittedVersion;
+      rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2024.114499 openalex:W4400270570
+    resolution: 'legacy: openalex location'
+  - id: arx-thin-buildings
+    title: Thin buildings
+    url: https://arxiv.org/pdf/math/0601005v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2005-12-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0601005
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0601005 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-15'
+    origin_ids: doi:10.2140/gt.2006.10.667
