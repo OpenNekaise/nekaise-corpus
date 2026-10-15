@@ -153549,3 +153549,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enbuild.2023.113823 openalex:W4389671678
     resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-remarks-on-the-density-of-the-law-of-the-occup
+    title: Remarks on the density of the law of the occupation time for Bessel bridges
+      and stable excursions
+    url: https://arxiv.org/pdf/0706.3162v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2007-06-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0706.3162
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:0706.3162&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0706.3162 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-15'
