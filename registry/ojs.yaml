@@ -358285,20 +358285,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3241
     rights_verified_at: '2026-10-15'
-  - id: ojs-fis-rc-beams-damaged-by-cracking-and-strengthened-with-nsm
-    title: RC beams damaged by cracking and strengthened with NSM CFRP/GFRP rods
-    url: http://www.fracturae.com/index.php/fis/article/download/3248/3365
-    source: ojs_fis
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2021-09-25'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.3221/igf-esis.58.28
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3248
-    rights_verified_at: '2026-10-15'
   - id: ojs-fis-experimental-analysis-of-short-concrete-column-under-hy
     title: Experimental analysis of short concrete column under hygrothermo-mechanical
       accelerated aging
@@ -360228,22 +360214,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2017 Paulo Renato Mesquita Pellegrino)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-paam-estudos-das-reas-de-prote-o-ambiental-e-tombamento-com
-    title: 'Estudos das áreas de proteção ambiental e tombamento: Comparação das APAs
-      Corumbataí/ Botucatu / Tejupá e Cajamar / Cabreúva / Jundiaí'
-    url: https://revistas.usp.br/paam/article/download/133979/129808
-    source: ojs_paam
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '1986-12-10'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.v0i1-2p99-116
-    license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/133979
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2017 Helena Napoleon Degreas)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-paam-relat-rio-sobre-a-ocupa-o-dos-morros-do-maluf-e-soroco
     title: Relatório sobre a ocupação dos morros do Maluf e Sorocotuba (Guarujá, SP)
     url: https://revistas.usp.br/paam/article/download/133981/129809
@@ -360460,21 +360430,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2017 Maria da Glória Lanei da Silva)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-paam-devaneio-e-cr-tica-preliminares-ao-papel-da-fantasia-n
-    title: Devaneio e Crítica Preliminares ao Papel da Fantasia na Paisagem
-    url: https://revistas.usp.br/paam/article/download/134045/129876
-    source: ojs_paam
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '1999-12-10'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.v0i12p253-287
-    license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/134045
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2017 Eduardo Yázigi)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-paam-visibilidade-e-cultura
     title: Visibilidade e Cultura
     url: https://revistas.usp.br/paam/article/download/134046/129877
@@ -360567,22 +360522,6 @@ sources:
     license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/134114
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2017 Marcelo Guena de Oliveira)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-paam-o-passeio-p-blico-do-rio-de-janeiro-an-lise-hist-rica
-    title: 'O Passeio Público do Rio de Janeiro: Análise Histórica com Auxílio da Representação
-      Gráfica Digital'
-    url: https://revistas.usp.br/paam/article/download/134115/129926
-    source: ojs_paam
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2000-12-10'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.v0i13p97-124
-    license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/134115
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2017 Naylor Barbosa Vilas Boas)'
     rights_verified_at: '2026-10-15'
   - id: ojs-paam-quinta-da-boa-vista-de-espa-o-de-elite-a-espa-o-p-blic
     title: 'Quinta da Boa Vista: De Espaço de Elite a Espaço Público'
@@ -360704,21 +360643,6 @@ sources:
     license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/134134
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2017 Guilherme Mazza Dourado)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-paam-arquitetura-das-rvores-construindo-com-a-natureza
-    title: 'Arquitetura das árvores: construindo com a natureza'
-    url: https://revistas.usp.br/paam/article/download/134136/129947
-    source: ojs_paam
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2001-12-10'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.v0i14p95-110
-    license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/134136
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2017 Jualiana Castro, Alina Santiago)'
     rights_verified_at: '2026-10-15'
   - id: ojs-paam-os-modelos-de-moderniza-o-da-paisagem-na-zona-norte-do
     title: Os modelos de modernização da paisagem na zona norte do Rio de Janeiro
@@ -361113,21 +361037,6 @@ sources:
       autorais (c) 2019 Matheus Colli-Silva, Ana Clara Salama Corsi, Jônatas de Jesus
       Florentino, Lui Agostinho Teixeira, Suzana Ursi)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-paam-notas-sobre-paisagem-e-ensino-de-paisagismo
-    title: Notas sobre paisagem e ensino de paisagismo
-    url: https://revistas.usp.br/paam/article/download/153638/157626
-    source: ojs_paam
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2019-11-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2019.153638
-    license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/153638
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2019 Vladimir Bartalini)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-paam-parque-dom-pedro-ii-uma-ant-tese-do-espa-o-livre-p-bli
     title: 'Parque Dom Pedro II: uma antítese do espaço livre público em meio à metrópole
       paulistana'
@@ -361175,21 +361084,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2019 Fernanda de Abreu Pereira; Danielly Cozer Aliprandi)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-paam-o-jardim-de-objetos-introduzindo-a-quest-o
-    title: 'O jardim de objetos: introduzindo a questão'
-    url: https://revistas.usp.br/paam/article/download/156470/157741
-    source: ojs_paam
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2019-11-27'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2019.156470
-    license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/156470
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2019 Solange de Aragão, Euler Sandeville Jr.)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-paam-a-cidade-e-o-patrim-nio-p-s-industrial-potencialidades
     title: 'A cidade e o patrimônio pós-industrial: potencialidades acerca da Usina
       do Queimado em Campos dos Goytacazes/RJ'
@@ -361205,22 +361099,6 @@ sources:
     license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/158264
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2019 Larissa Miranda Sá, Fagner de Oliveira das Neves)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-paam-paisagismo-e-cerrado-jardins-para-celebrar-savanas-e-c
-    title: 'Paisagismo e Cerrado: jardins para celebrar savanas e campos brasileiros'
-    url: https://revistas.usp.br/paam/article/download/158266/176337
-    source: ojs_paam
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2021-10-06'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2021.158266
-    license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/158266
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2021 Mariana Siqueira, Alexandre Sampaio, Amalia Robredo, Claudomiro
-      de Almeida Cortes, João Bernardo de A. Bringel Jr, Keiko Fueta Pelliz)'
     rights_verified_at: '2026-10-15'
   - id: ojs-paam-the-tiete-river-straightening-process-and-its-implicat
     title: The Tiete river straightening process and its implications in the city of
@@ -361298,21 +361176,6 @@ sources:
     license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/161067
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2019 Bruno Ragi Eis Mendonça, Vera Regina Tângari, Virgínia Vasconcellos)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-paam-paisaje-y-estrat-gias-en-la-patrimonializaci-n-de-la-c
-    title: Paisaje y estratégias en la patrimonialización de la cultura material y de
-      la naturaleza em la Serra da Capivara-PI
-    url: https://revistas.usp.br/paam/article/download/161105/160028
-    source: ojs_paam
-    license: cc-by-nc-sa
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2019-11-27'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2019.161105
-    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
-    license_evidence: https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/161105
     rights_verified_at: '2026-10-15'
   - id: ojs-paam-a-estrutura-de-reas-verdes-urbanas-como-indicador-de-q
     title: A estrutura de áreas verdes urbanas como indicador de qualidade ambiental
@@ -362885,4 +362748,2043 @@ sources:
     license_evidence: 'https://revistas.usp.br/posfau/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/90253
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2015 Tiago Mesquita Carvalho)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-reas-de-preservaci-n-permanente-urbanas-y-parques-lin
+    title: 'Áreas de Preservación Permanente Urbanas y Parques Lineales en la Región
+      Norte: conflictos en la Laguna de los Indios, Macapá - Amapá'
+    url: https://revistas.usp.br/risco/article/download/157659/162966
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-08-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i0p1-19
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/157659
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-um-monumento-colonial-para-uma-cidade-moderna-o-conju
+    title: 'Um monumento “colonial” para uma cidade moderna: o conjunto jesuítico do
+      Pátio do Colégio nas comemorações do IV Centenário de São Paulo'
+    url: https://revistas.usp.br/risco/article/download/157718/168119
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.157718
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/157718
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-o-invari-vel-a-norma-e-o-desconhecido-a-emerg-ncia-da
+    title: 'O invariável, a norma e o desconhecido: a emergência da arquitetura moderna
+      brasileira em debate'
+    url: https://revistas.usp.br/risco/article/download/157816/173960
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.157816
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/157816
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-considera-es-sobre-perman-ncia-inova-o-e-resist-ncia
+    title: Considerações sobre permanência, inovação e resistência como pauta para o
+      urbanismo
+    url: https://revistas.usp.br/risco/article/download/157935/166848
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2020.157935
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/157935
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-terra-urbana-aforada-a-regula-o-da-produ-o-social-do
+    title: 'Terra urbana aforada: a regulação da produção social do espaço urbano em
+      Jeriquara/SP'
+    url: https://revistas.usp.br/risco/article/download/157950/163622
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-09-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i1p1-15
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/157950
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-alloggio-collettivo-opere-contemporanee-differenziate
+    title: 'Alloggio collettivo: opere contemporanee differenziate a San Paolo'
+    url: https://revistas.usp.br/risco/article/download/158129/164280
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-11-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2020.158129
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/158129
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-the-architecture-of-salgado-neighborhood-citt-di-set
+    title: 'The architecture of Salgado Neighborhood: Città di Setúbal, Portogallo'
+    url: https://revistas.usp.br/risco/article/download/158155/175588
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.158155
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/158155
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-intervento-contemporaneo-nel-patrimonio-architettonic
+    title: Intervento contemporaneo nel patrimonio architettonico e nell'industria culturale
+    url: https://revistas.usp.br/risco/article/download/158337/166849
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2020.158337
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/158337
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-palestras-do-moma-a-d-sobre-projeto-e-design-de-arqui
+    title: 'Palestras do MoMA A&D: sobre projeto e design de arquitetura (parte dois)'
+    url: https://revistas.usp.br/risco/article/download/158343/156170
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-09-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i2p129-130
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/158343
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Amanda Saba Ruggiero, Luis Michal)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-arquitetos-contempor-neos-da-escola-do-porto-uma-an-l
+    title: 'Arquitetos Contemporâneos da Escola do Porto: Uma análise panorâmica nas
+      obras de arquitetos portugueses de diferentes gerações'
+    url: https://revistas.usp.br/risco/article/download/158648/158161
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i3p35-61
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/158648
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Yuri Duarte)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-grifes-arquitet-nicas-no-s-culo-xxi-caracteriza-o-do
+    title: 'Grifes arquitetônicas no século XXI: caracterização do star system contemporâneo'
+    url: https://revistas.usp.br/risco/article/download/158691/158183
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i3p13-34
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/158691
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Lorena Petrovich Pereira de Carvalho)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-vivienda-social-y-le-programa-de-urbanizaci-n-de-fave
+    title: 'Vivienda social y le Programa de Urbanización de Favelas: el complejo Paraisópolis,
+      en São Paulo: IL COMPLESSO PARAISÓPOLIS'
+    url: https://revistas.usp.br/risco/article/download/159431/168773
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.159431
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/159431
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-coautores-urbanos-ciudadanos-formales-marginados-y-ac
+    title: 'Coautores urbanos: ciudadanos formales, marginados y activistas urbanos'
+    url: https://revistas.usp.br/risco/article/download/159488/168680
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.159488
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/159488
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-habita-o-e-habitat-campon-s-em-debate-no-iau-usp-o-i
+    title: 'Habitação e habitat camponês em debate no IAU-USP. O Iº Seminário Regional
+      do Habitat Rural: moradia, produção e a questão agrária no oeste paulista'
+    url: https://revistas.usp.br/risco/article/download/159534/154284
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i1p4-9
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/159534
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 João Marcos de Almeida Lopes, Akemi Ino)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-from-test-to-hybrid-policy-the-new-york-city-plaza-pr
+    title: 'From test to hybrid policy: the New York City Plaza Program'
+    url: https://revistas.usp.br/risco/article/download/159706/184261
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.159706
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/159706
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-aprender-a-reutilizar-a-modernidade-o-desafio-para-o
+    title: 'Aprender a Reutilizar a Modernidade: o desafio para o ensino da Arquitetura'
+    url: https://revistas.usp.br/risco/article/download/160075/158162
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i3p62-83
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160075
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Gonçalo Canto Moniz, Andrea Canziani, Carolina Quiroga)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-n-mades-as-pr-ticas-errantes-no-ensino-na-pesquisa-e
+    title: 'Nômades: as práticas errantes no ensino, na pesquisa e na extensão em arquitetura
+      e urbanismo – Por um (re)conhecimento urbano'
+    url: https://revistas.usp.br/risco/article/download/160287/184252
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.160287
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160287
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-n-o-h-desvio-sobre-o-vazio-a-produ-o-do-espa-o-pela-d
+    title: 'Não há desvio sobre o vazio: a produção do espaço pela desvalorização, atualização
+      e transformação de elementos existentes'
+    url: https://revistas.usp.br/risco/article/download/160338/184249
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.160338
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160338
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-extensive-nomadism-versus-intensive-nomadism-ciganos
+    title: Extensive nomadism versus intensive nomadism. Ciganos na Região Metropolitana
+      de Vitória
+    url: https://revistas.usp.br/risco/article/download/160457/184260
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.160457
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160457
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-o-mundo-revolucionado-de-new-babylon
+    title: O mundo revolucionado de New Babylon
+    url: https://revistas.usp.br/risco/article/download/160474/184257
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.160474
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160474
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-deambula-o-e-espacialidade-em-paranoia-1963
+    title: Deambulação e espacialidade em Paranoia (1963)
+    url: https://revistas.usp.br/risco/article/download/160561/175594
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.160561
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160561
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-urban-membranes-the-city-scene-and-scenery
+    title: 'Urban membranes: the city scene and scenery'
+    url: https://revistas.usp.br/risco/article/download/160591/158163
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i3p84-96
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160591
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Nilberto Gomes de Sousa)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-por-que-potlatch-contribui-es-do-boletim-de-informa-o
+    title: Por que Potlatch? Contribuições do Boletim de Informação da Internacional
+      letrista para o estabelecimento de uma nova civilização
+    url: https://revistas.usp.br/risco/article/download/160623/192677
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.160623
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160623
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-a-internacional-situacionista-e-a-ideia-de-um-mundo-s
+    title: A Internacional Situacionista e a ideia de um mundo sem fronteiras
+    url: https://revistas.usp.br/risco/article/download/160680/184259
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.160680
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160680
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-o-pequeno-volume-cont-nuo-na-cidade-projeto-para-o-no
+    title: 'O pequeno volume contínuo na cidade: projeto para o novo MAM em São Paulo,
+      2013'
+    url: https://revistas.usp.br/risco/article/download/160897/162967
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-08-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i0p1-12
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/160897
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-da-populariza-o-do-entorno-evas-o-da-elite-a-rua-das
+    title: 'Da popularização do entorno à evasão da elite: a Rua das Trincheiras, João
+      Pessoa-PB'
+    url: https://revistas.usp.br/risco/article/download/161069/162969
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-08-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i0p1-18
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/161069
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-ambi-ncias-urbanas-no-behaviorismo-espacial-e-na-feno
+    title: Ambiências urbanas no behaviorismo espacial e na fenomenologia da percepção
+    url: https://revistas.usp.br/risco/article/download/161410/166850
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2020.161410
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/161410
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-revelando-o-sistema-vi-rio-do-equador-anota-es-sobre
+    title: 'Revelando o sistema viário do Equador: Anotações sobre La ordenación de
+      la red vial. El cantón Cuenca, de Enrique Flores'
+    url: https://revistas.usp.br/risco/article/download/161422/158172
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i3p201-202
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/161422
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 José Luis Crespo-Fajardo)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-politicization-of-space-spatialization-of-history-dri
+    title: 'Politicization of space, spatialization of history: drifting and détournement
+      in letterists and situationists'
+    url: https://revistas.usp.br/risco/article/download/161423/184256
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.161423
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/161423
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-reflexiones-sobre-el-principio-de-la-funci-n-social-d
+    title: 'Reflexiones sobre el principio de la Función Social de la Propiedad y la
+      aplicación de la parcelación, construcción o el uso obligatorio de inmuebles '
+    url: https://revistas.usp.br/risco/article/download/161825/173091
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.161825
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/161825
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-a-constru-o-do-estatuto-da-cidade-e-da-ideia-de-plano
+    title: 'A construção do Estatuto da Cidade e da ideia de Plano Diretor numa perspectiva
+      histórica: discutindo a adequação destes instrumentos aos municípios d'
+    url: https://revistas.usp.br/risco/article/download/161985/163624
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-09-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i1p1-16
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/161985
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-utiliza-o-de-material-cer-mico-proveniente-do-rcd-par
+    title: 'Utilização de material cerâmico proveniente do RCD para aplicação em concreto:
+      uma revisão'
+    url: https://revistas.usp.br/risco/article/download/162069/169253
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.162069
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/162069
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-gen-se-de-la-marchandisation-du-foncier-urbain-au-par
+    title: Genèse de la marchandisation du foncier urbain au Pará et projet d'extension
+      du tissu urbain aux villes de Santarém, Macapá et Cametá
+    url: https://revistas.usp.br/risco/article/download/162300/176131
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.162300
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/162300
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-proposal-for-the-new-headquarters-of-the-institute-of
+    title: Proposal for the new headquarters of the Institute of Architecture and Urbanism
+      of São Carlos
+    url: https://revistas.usp.br/risco/article/download/162371/156169
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-09-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i2p5-23
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/162371
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Base Urbana)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-entrevista-com-juliet-kinchin
+    title: Entrevista com Juliet Kinchin
+    url: https://revistas.usp.br/risco/article/download/162387/156197
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-09-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i2p131-135
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/162387
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Tomás Antonio Moreira)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-entrevista-com-martino-stierli
+    title: Entrevista com Martino Stierli
+    url: https://revistas.usp.br/risco/article/download/162391/156198
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-09-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i2p136-139
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/162391
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Amanda Saba Ruggiero)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-entrevista-com-sean-anderson
+    title: Entrevista com Sean Anderson
+    url: https://revistas.usp.br/risco/article/download/162394/156195
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2019-09-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i2p140-144
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/162394
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2019 Amanda Saga Ruggiero)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-lei-n-13-465-a-regulariza-o-fundi-ria-no-brasil-e-sua
+    title: 'Lei nº 13.465: a Regularização Fundiária no Brasil e suas novas injunções'
+    url: https://revistas.usp.br/risco/article/download/162970/166851
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2020.162970
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/162970
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2020 Ana Luiza Vieira Gonçalves, Cibele Saliba Risek; http://creativecommons.org/licenses/by-nc-sa/4.0)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-favela-bairro-25-anos-conversa-com-o-arquiteto-e-urba
+    title: 'Favela-Bairro, 25 anos: conversa com o arquiteto e urbanista Sérgio Magalhães'
+    url: https://revistas.usp.br/risco/article/download/163645/163627
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-09-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i1p1-8
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/163645
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-guas-urbanas-tr-s-projetos-para-s-o-paulo
+    title: 'Águas Urbanas: três projetos para São Paulo'
+    url: https://revistas.usp.br/risco/article/download/163740/159926
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-03-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i0p1-11
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/163740
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-study-of-the-architectural-form-of-the-nossa-senhora
+    title: Study of the architectural form of the Nossa Senhora do Perpétuo Socorro
+      Sanctuary - Salgueiro / PE
+    url: https://revistas.usp.br/risco/article/download/163897/174992
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-08-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.163897
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/163897
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-obras-de-arte-da-companhia-paulista-no-s-culo-xix-peq
+    title: 'Obras de arte da Companhia Paulista no século XIX: pequeno estudo sobre
+      suas pontes ferroviárias'
+    url: https://revistas.usp.br/risco/article/download/164398/164291
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-11-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2020.164398
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/164398
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-mobilidade-urbana-em-s-o-jos-dos-campos-uma-constru-o
+    title: 'Mobilidade urbana em São José dos Campos: uma construção como direito de
+      ir e vir ou direito à cidade?'
+    url: https://revistas.usp.br/risco/article/download/164460/169514
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.164460
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/164460
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2021 Federica Giovanna Fochesato, Paulo Romano Reschilian, Dr; http://creativecommons.org/licenses/by-nc-sa/4.0)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-transforma-es-na-arquitetura-de-lvaro-siza-na-d-cada
+    title: 'Transformações na Arquitetura de Álvaro Siza na década de 1990 : uma entrevista
+      com Jorge Figueira (JF)'
+    url: https://revistas.usp.br/risco/article/download/165222/166853
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2020.165222
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/165222
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-saturnino-de-brito-y-el-proyecto-sanitario-de-la-ciud
+    title: Saturnino de Brito y el proyecto sanitario de la ciudad de Santa Maria/RS
+    url: https://revistas.usp.br/risco/article/download/166049/172281
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166049
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166049
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-vignola-en-portugu-s-apuntes-a-partir-de-las-reglas-d
+    title: 'Vignola en Portugués: apuntes a partir de las Reglas de los Cinco Órdenes
+      de 1787'
+    url: https://revistas.usp.br/risco/article/download/166114/174529
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166114
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166114
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-beleza-e-ornamento-na-arte-edificat-ria-a-recep-o-dos
+    title: 'Beleza e ornamento na arte edificatória: a recepção dos preceitos albertianos
+      num tratado espanhol de arquitetura.'
+    url: https://revistas.usp.br/risco/article/download/166186/174524
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166186
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166186
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-la-symmetria-vitruviana-interpretaci-n-de-francesco
+    title: 'La symmetria vitruviana: interpretación de Francesco'
+    url: https://revistas.usp.br/risco/article/download/166228/174525
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166228
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166228
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-arquitetura-e-romance-em-antonio-di-pietro-averlino
+    title: Arquitetura e romance em Antonio di Pietro Averlino
+    url: https://revistas.usp.br/risco/article/download/166249/174526
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166249
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166249
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-beleza-e-corpo-no-de-architectura-de-vitr-vio-uma-que
+    title: 'Beleza e corpo no De architectura de Vitrúvio: uma questão em aberto'
+    url: https://revistas.usp.br/risco/article/download/166352/174522
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166352
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166352
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-from-drawing-and-painting-to-the-colorful-flames-in-t
+    title: 'From drawing and painting to the colorful flames in the scene – Plínio,
+      Alberti and Serlio: ornato and amplification of the discourse on architecture,'
+    url: https://revistas.usp.br/risco/article/download/166354/175960
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166354
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166354
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-o-papel-do-dicion-rio-de-quatrem-re-de-quincy-nos-deb
+    title: O papel do dicionário de Quatremère de Quincy nos debates sobre as preceptivas
+      arquitetônicas
+    url: https://revistas.usp.br/risco/article/download/166740/174531
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166740
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166740
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-la-repercusi-n-en-la-arquitectura-y-las-artes-del-tra
+    title: La repercusión en la Arquitectura y las Artes del Tratado de las Órdenes
+      de Iacomo Barozzio da Vignola (1562)
+    url: https://revistas.usp.br/risco/article/download/166889/175959
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166889
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166889
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-atmi-g-nesis-de-la-ley-de-asistencia-t-cnica-en-vivie
+    title: 'ATMI: génesis de la Ley de Asistencia Técnica en Vivienda Social'
+    url: https://revistas.usp.br/risco/article/download/166911/173233
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.166911
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/166911
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-o-tratado-do-belo-ou-as-indaga-es-sobre-a-origem-e-a
+    title: O Tratado do belo ou as Indagações sobre a origem e a natureza do belo 1752
+      e alguns dos seus desdobramentos nos salons de 1763, 1765 e 1767 (e nos en
+    url: https://revistas.usp.br/risco/article/download/167078/174534
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.167078
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/167078
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-o-manifesto-dos-tratados-de-arquitetura-em-vila-rica
+    title: 'O Manifesto dos Tratados de Arquitetura em Vila Rica Setecentista: o pórtico
+      toscano do Palácio dos Governadores de José Fernandes Pinto Alpoim'
+    url: https://revistas.usp.br/risco/article/download/167169/174530
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.167169
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/167169
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-o-santu-rio-de-s-o-sebasti-o-arquitetura-sacra-neocol
+    title: 'O Santuário de São Sebastião: arquitetura sacra neocolonial em Porto Ferreira
+      (SP)'
+    url: https://revistas.usp.br/risco/article/download/167929/183293
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.167929
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/167929
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-increase-in-the-negative-socio-environmental-impacts
+    title: Increase in the negative socio-environmental impacts of urban planning legislation
+      of Santos/SP
+    url: https://revistas.usp.br/risco/article/download/168649/173247
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.168649
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/168649
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-evaluaci-n-de-la-seguridad-vial-a-trav-s-de-la-percep
+    title: 'Evaluación de la seguridad vial a través de la percepción del ciudadano
+      de Franca: estudio de caso de las principales avenidas, ubicadas en la ciudad '
+    url: https://revistas.usp.br/risco/article/download/168695/173283
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.168695
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/168695
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-la-protecci-n-del-patrimonio-cultural-brasile-o-y-su
+    title: La protección del patrimonio cultural brasileño y su relación con la teoría
+      de Viollet-le-Duc
+    url: https://revistas.usp.br/risco/article/download/169113/173386
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.169113
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/169113
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-barrio-irregulares-en-zona-de-riesgo-en-s-o-jos-dos-c
+    title: Barrio irregulares en zona de riesgo en São José dos Campos, São Paulo, Brasil
+    url: https://revistas.usp.br/risco/article/download/169571/173387
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.169571
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/169571
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-an-lisis-de-la-ventilaci-n-natural-en-una-habitacion
+    title: Análisis de la ventilación natural en una habitacion social con diferentes
+      configuraciones de pared utilizando simulaciones CFD
+    url: https://revistas.usp.br/risco/article/download/169870/172282
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.169870
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/169870
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-dessins-d-une-maison
+    title: Dessins d'une maison
+    url: https://revistas.usp.br/risco/article/download/170012/175595
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.170012
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170012
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-paisagem-e-apropria-o-urbana
+    title: Paisagem e Apropriação Urbana
+    url: https://revistas.usp.br/risco/article/download/170540/163220
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: fr
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p167-180
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170540
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-a-agricultura-urbana-na-ouagadougou-burkina-faso-divi
+    title: A agricultura urbana na Ouagadougou (Burkina Faso), dividida entre desejo
+      dos moradores da cidade e ação pública
+    url: https://revistas.usp.br/risco/article/download/170552/163210
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: fr
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p80-93
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170552
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-guas-pluviais-urbanas-olhares-cruzados-sobre-o-seu-pl
+    title: 'Águas pluviais urbanas: olhares cruzados sobre o seu planejamento em Paris
+      e no Rio de Janeiro'
+    url: https://revistas.usp.br/risco/article/download/170554/163202
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: fr
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p20-34
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170554
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-gest-o-participativa-da-arboriza-o-urbana-de-munic-pi
+    title: 'Gestão participativa da arborização urbana de municípios paulistas: implicações,
+      desafios e propostas'
+    url: https://revistas.usp.br/risco/article/download/170556/163216
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p106-118
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170556
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-about-the-relationship-between-nature-and-city-review
+    title: 'About the relationship between nature and city. Review of the Franco-Lusophone
+      dialogues in Tours: questions for future research!'
+    url: https://revistas.usp.br/risco/article/download/170557/163201
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: fr
+    published_at: '2020-08-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p1-6
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170557
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-economia-circular-preserva-o-de-recursos-naturais-e-p
+    title: 'Economia circular: preservação de Recursos naturais e práticas urbanas.
+      Uma análise comparativa (Tours, França e Recife, Brasil)'
+    url: https://revistas.usp.br/risco/article/download/170560/163203
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p1
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170560
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-a-multifuncionalidade-da-agricultura-intra-e-periurba
+    title: 'A multifuncionalidade da agricultura intra e periurbana valorisada em Dakar:
+      uma abordagem dialética multi-atores e multi-escala'
+    url: https://revistas.usp.br/risco/article/download/170561/163215
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: fr
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p94-105
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170561
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-sc-ne-de-conflits-entre-exploration-pr-servation-et-p
+    title: Scène de conflits entre exploration, préservation et patrimonialisation de
+      la nature:le cas de Chapada Gaúcha (Minas Gerais/Brésil)
+    url: https://revistas.usp.br/risco/article/download/170563/163204
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: fr
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p50-64
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170563
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-la-trama-verde-y-azul-matriz-de-la-renovaci-n-de-la-p
+    title: 'La Trama Verde y Azul, matriz de la renovación de la planificación metropolitana
+      en Brasil: reflexiones de la experiencia de Belo Horizonte.'
+    url: https://revistas.usp.br/risco/article/download/170564/163218
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: fr
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p119-137
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170564
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-dispers-o-urbana-degrada-o-e-produ-o-da-natureza-em-u
+    title: 'Dispersão urbana: degradação e produção da natureza em um contexto de globalização
+      e financeirização'
+    url: https://revistas.usp.br/risco/article/download/170667/163205
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p65-79
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170667
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-nature-et-ville-l-impossible-compromis
+    title: 'Nature et Ville : L’impossible compromis?'
+    url: https://revistas.usp.br/risco/article/download/170668/163199
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: fr
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p1-13
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170668
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-quest-es-da-verticaliza-o-urbana-na-fran-a-e-no-brasi
+    title: 'Questões da Verticalização Urbana na França e no Brasil. Projeto Highrise:
+      Proyecto Highrise'
+    url: https://revistas.usp.br/risco/article/download/170762/163219
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/issn.1984-4506.v18i2p138-166
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170762
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2020 Manoel Rodrigues Alves, Camila Moreno de Camargo,  Luiana Carolina
+      Cardozo; http://creativecommons.org/licenses/by-nc-sa/4.0)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-la-planificaci-n-regional-en-el-centro-oeste-brasile
+    title: 'La Planificación regional en el centro-oeste brasileño: acciones SUDECO
+      y la región y la georconómica de Brasília'
+    url: https://revistas.usp.br/risco/article/download/170828/176017
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.170828
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/170828
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-entre-nostalgia-y-modernidad-ecl-ctico-y-d-co-en-bras
+    title: 'Entre nostalgia y modernidad: ecléctico y déco en Brasil'
+    url: https://revistas.usp.br/risco/article/download/171061/173841
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-07-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.171061
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/171061
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-el-dise-o-espacio-del-di-logo
+    title: 'El diseño: espacio del diálogo'
+    url: https://revistas.usp.br/risco/article/download/171123/175597
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.171123
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/171123
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-entrevista-com-paulo-mendes-da-rocha
+    title: Entrevista com Paulo Mendes da Rocha
+    url: https://revistas.usp.br/risco/article/download/171176/175614
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.171176
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/171176
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-el-vivir-anunciado-la-divulgaci-n-publicitaria-de-uni
+    title: 'El vivir anunciado: la divulgación publicitaria de Unilabor en los medios
+      sociales de la ciudad São Paulo'
+    url: https://revistas.usp.br/risco/article/download/171972/173490
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.171972
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/171972
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-infraestructuras-viarias-y-l-gicas-proyectuales-relac
+    title: 'Infraestructuras Viarias y Lógicas Proyectuales: Relaciones espaciales entre
+      la Avenida Brasil y el territorio metropolitano de Río de Janeiro'
+    url: https://revistas.usp.br/risco/article/download/172202/175789
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.172202
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/172202
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-vila-z-d-costi-la-historia-y-la-arquitectura-resultan
+    title: 'Vila Z. D. Costi: la historia y la arquitectura resultante de un grupo de
+      casas de trabajadores en Passo Fundo'
+    url: https://revistas.usp.br/risco/article/download/172310/175591
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.172310
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/172310
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-la-recepci-n-del-maestro-eckhart-en-bruno-taut-pata-u
+    title: 'La recepción del maestro Eckhart en Bruno Taut: pata una arquitectura sin
+      porqué'
+    url: https://revistas.usp.br/risco/article/download/172359/176320
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-10-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.172359
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/172359
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-ensino-como-forma-o-t-cnica-e-pol-tica-para-o-exerc-c
+    title: 'Ensino como formação técnica e política para o exercício da função social
+      da Arquitetura: resgate da experiência de Mayumi Watanabe de Souza Lima em S'
+    url: https://revistas.usp.br/risco/article/download/172777/175889
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.172777
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/172777
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-niveles-y-dimensiones-de-la-renovaci-n-urbana-en-la-r
+    title: 'Niveles y dimensiones de la renovación urbana en la región de la luz de
+      la experiencia de la espoliacion a la lucha de clases socioespaciales: de la e'
+    url: https://revistas.usp.br/risco/article/download/173750/176415
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-10-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.173750
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/173750
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-schools-schools-the-presence-of-architecture-in-educa
+    title: 'schools, Schools: the presence of architecture in educational spaces'
+    url: https://revistas.usp.br/risco/article/download/174406/175609
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.174406
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/174406
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-o-modelo-tridimensional-e-a-arquitetura-do-f-sico-ao
+    title: 'O modelo tridimensional e a Arquitetura: do físico ao digital'
+    url: https://revistas.usp.br/risco/article/download/174479/175600
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.174479
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/174479
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-traduzir-para-criar-literatura-e-ensino-de-projeto
+    title: 'Traduzir para criar: literatura e ensino de projeto'
+    url: https://revistas.usp.br/risco/article/download/174650/176063
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.174650
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/174650
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-interfaces-metropolitanas-y-regionales-del-urbano-rec
+    title: 'Interfaces metropolitanas y regionales del urbano: reconocimiento de nodos
+      territoriales en Brasil'
+    url: https://revistas.usp.br/risco/article/download/175960/172279
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.175960
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/175960
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-architects-noirs-et-historie-georgia-brown-s-o-paulo
+    title: 'Architects noirs et historie: Georgia Brown, São Paulo Metropoltain et ses
+      fantmes'
+    url: https://revistas.usp.br/risco/article/download/176305/176347
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-10-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.176305
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/176305
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-apresenta-o-da-entrevista-com-jorge-figueira-transfor
+    title: 'Apresentação da entrevista com Jorge Figueira: transformações na arquitetura
+      de Álvaro Siza na década de 1990'
+    url: https://revistas.usp.br/risco/article/download/177392/166852
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2020-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2020.177392
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/177392
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-espacio-humano-y-sagrado-en-candombl
+    title: Espacio, Humano y Sagrado en Candomblé
+    url: https://revistas.usp.br/risco/article/download/178220/175790
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-09-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.178220
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/178220
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-operabilidad-imaginario-y-ethos-en-teor-a-de-la-arqui
+    title: Operabilidad imaginario y ethos en teoría de la arquitectura
+    url: https://revistas.usp.br/risco/article/download/180924/176515
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-10-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.180924
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/180924
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-arquitecturas-evanescentes-y-persistentes
+    title: Arquitecturas evanescentes y persistentes
+    url: https://revistas.usp.br/risco/article/download/181497/176521
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-10-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.181497
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/181497
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-guerra-y-paz-debates-sobre-la-construcci-n-del-centro
+    title: Guerra y Paz. Debates sobre la construcción del centro cívico en Brasilia.
+    url: https://revistas.usp.br/risco/article/download/181547/198042
+    source: ojs_risco
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-09-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.181547
+    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/181547
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      autorais (c) 2021 Rafael Augusto Urano de Carvalho Frajndlich, Prof. Alexandre
+      Benoit; http://creativecommons.org/licenses/by-nc-sa/4.0)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-acessibilidade-em-jardins-zool-gicos-um-estudo-no-par
+    title: 'Acessibilidade em Jardins Zoológicos: um estudo no Parque Zoológico da FZB/RS'
+    url: https://revistas.usp.br/risco/article/download/181575/183294
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.181575
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/181575
+    rights_verified_at: '2026-10-15'
+  - id: ojs-risco-a-documenta-o-hist-rica-arquitet-nica-conceitos-histo
+    title: 'A documentação histórica arquitetônica: conceitos historiográficos para
+      a fragmentação do tempo'
+    url: https://revistas.usp.br/risco/article/download/181618/186706
+    source: ojs_risco
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-09-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.181618
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/181618
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-window-to-wall-ratio-for-daylighting-and
+    title: Window to wall ratio for daylighting and energy efficiency in rooms in the
+      humid tropic
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/120772/86187
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-09-12'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/120772
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-the-impact-of-windows-on-visual-percepti
+    title: The impact of windows on visual perception in office spaces in hot and humid
+      tropical climates
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/120795/86188
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-09-12'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/120795
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-transparent-and-translucent-materials-on
+    title: 'Transparent and translucent materials on facades and their performance in
+      natural lighting: an overview of the international context and applicability'
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/120798/86190
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-09-12'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/120798
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-systemic-view-of-publications-related-to
+    title: Systemic view of publications related to prediction models of sulfate attack
+      in cementitious matrices
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/124587/88793
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-06-10'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/124587
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-the-impacts-of-visual-comfort-on-pediatr
+    title: The impacts of visual comfort on pediatric oncology instensive care units
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/125340/88782
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-06-10'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/125340
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-use-of-dregs-and-grits-as-partial-replac
+    title: 'Use of dregs and grits as partial replacement of cement: characterization
+      and mechanical strength'
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/126044/91125
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-01-11'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/126044
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-study-of-the-rheological-and-microstruct
+    title: Study of the rheological and microstructural properties of a geopolymer binder
+      based on fly ash
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/126070/88159
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-03-17'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/126070
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-update-of-the-construction-and-demolitio
+    title: 'Update of the construction and demolition waste recycling scenario in Brazil:
+      2008-2020'
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/127289/88786
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-06-10'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/127289
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-study-of-casting-gypsum-properties-with
+    title: Study of casting gypsum properties with addition of a water-repellent additive
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/127632/89981
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-03'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/127632
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-study-of-the-behavior-of-epoxy-resins-us
+    title: Study of the behavior of epoxy resins used in strengthening systems when
+      exposed to the accelerated degradation protocol proposed by ACI 440.9R (2015)
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/128534/89976
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-03'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/128534
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-the-influence-of-latitude-and-sky-condit
+    title: The influence of latitude and sky conditions on daylight harvesting in buildings
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/128958/89968
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-03'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/128958
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-analytic-hierarchy-process-ahp-applied-t
+    title: Analytic Hierarchy Process (AHP) applied to the study of different mortars
+      against sulfate attack
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/129416/91854
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-04-19'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/129416
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-the-underlying-geometrical-relationship
+    title: The underlying geometrical relationship in the shells of Eladio Dieste
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/130598/91528
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-03-11'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/130598
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-timber-consumption-for-temporary-works-b
+    title: Timber consumption for temporary works by buildings with the cast in situ
+      reinforced concrete
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/131790/91117
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-01-11'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/131790
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ambienteconstruido-thermographic-investigation-for-characte
+    title: 'Thermographic investigation for characterization of cracks in heating and
+      cooling flux: laboratory studies'
+    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/131881/91132
+    source: ojs_ambienteconstruido
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-01-11'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/131881
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-desenvolvimento-urbano-e-industrial-no-curso
+    title: 'DESENVOLVIMENTO URBANO E INDUSTRIAL NO CURSO INFERIOR DA BACIA DO RIO DOCE
+      E OS EFEITOS IMPACTANTES NO SISTEMA AQÜÍFERO-LACUSTRE EXTREMOZ–RN: ANÁLISE '
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/24292/16300
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-09-11'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/24292
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-hidrogeolog-a-regional-el-agua-subterr-nea-co
+    title: 'HIDROGEOLOGÍA REGIONAL: EL AGUA SUBTERRÁNEA COMO RECURSO FUNDAMENTAL DEL
+      SUR DE LA PROVINCIA DE CÓRDOBA, ARGENTINA.'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/24294/16301
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-09-11'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/24294
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-the-detection-of-leaks-from-tapacur-dam-brazi
+    title: THE DETECTION OF LEAKS FROM TAPACURÁ DAM, BRAZIL
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/24321/16320
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-09-11'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/24321
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-modelos-de-simulaci-n-de-flujo-y-transporte-c
+    title: MODELOS DE SIMULACIÓN DE FLUJO Y TRANSPORTE COMO PARÁMETROS DE TOMA DE DECISIONES
+      PARA EL APROVECHAMIENTO DEL ACUÍFERO DE LA MESILLA, PARA LLEVAR AGUA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/24322/16321
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-09-11'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/24322
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-efeito-de-barragens-subterr-neas-no-fluxo-de
+    title: EFEITO DE BARRAGENS SUBTERRÂNEAS NO FLUXO DE UM AQÜÍFERO ALUVIAL
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/24342/16344
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-09-11'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/24342
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-an-lise-de-corrosividade-e-incrusta-o-das-gua
+    title: ANÁLISE DE CORROSIVIDADE E INCRUSTAÇÃO DAS ÁGUAS SUBTERRÂNEAS NA REGIÃO URBANA
+      DE CAMPO GRANDE – MS
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/26144/17680
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-07-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v26i1.26144
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/26144
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-avalia-o-do-processo-de-infiltra-o-da-gua-em
+    title: Avaliação do Processo de Infiltração da Água em um Solo Residual para Superfícies
+      com Diferentes Declividades Utilizando Lisímetros
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27371/17709
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2013-07-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v27i2.27371
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27371
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-avalia-o-da-qualidade-da-gua-subterr-nea-no-e
+    title: AVALIAÇÃO DA QUALIDADE DA ÁGUA SUBTERRÂNEA NO ENTORNO DE UM ATERRO SANITÁRIO
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27399/18110
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2014-09-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v28i2.27399
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27399
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-as-guas-subterr-neas-em-aqu-fero-costeiro-e-u
+    title: 'AS ÁGUAS SUBTERRÂNEAS EM AQUÍFERO COSTEIRO E URBANO: ESTUDO DE CASO'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27466/17743
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2013-12-19'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27466
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-contamina-o-de-solos-e-aguas-subterr-neas-a-p
+    title: Contaminação de solos e aguas subterrâneas a partir de estruturas de controle
+      alternativo da drenagem urbana
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27494/17766
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2013-12-19'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27494
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-microbiologia-das-guas-do-c-rrego-que-abastec
+    title: MICROBIOLOGIA DAS ÀGUAS DO CÓRREGO QUE ABASTECEM A BARRAGEM DO RIO DO CANTO,
+      AREIA, PB Souza Neto, Simpliciano Eustaquilino
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27519/17786
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2013-12-20'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27519
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-caracteriza-o-dos-sistemas-de-disposi-o-local
+    title: CARACTERIZAÇÃO DOS SISTEMAS DE DISPOSIÇÃO LOCAL DE EXCRETAS E ESGOTOS DO
+      MUNICÍPIO DE JUAZEIRO DO NORTE – CE
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27549/17812
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-06'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27549
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-monitoramento-da-flutua-o-do-len-ol-fre-tico
+    title: Monitoramento da flutuação do lençol freático e avaliação simplificada da
+      qualidade da água em uma microbacia urbana
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27550/17813
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-06'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27550
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-proposta-de-desenvolvimento-tecnol-gico-das-b
+    title: PROPOSTA DE DESENVOLVIMENTO TECNOLÓGICO DAS BARRAGENS SUBTERRÂNEAS DO RIACHO
+      SÃO DOMINGOS, NO SEMIÁRIDO CRISTALINO. – PARADIGMA DE EXPLOTAÇÃO SUSTENTÁ
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27557/17817
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-06'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27557
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-simula-o-do-transporte-de-efluente-de-fossa-s
+    title: SIMULAÇÃO DO TRANSPORTE DE EFLUENTE DE FOSSA SÉPTICA NA CIDADE DE MACEIÓ
+      - AL
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27578/17837
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-07'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27578
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-influ-ncia-da-compacta-o-de-solos-agr-colas-n
+    title: INFLUÊNCIA DA COMPACTAÇÃO DE SOLOS AGRÍCOLAS NA RECARGA SUBTERRÂNEA EM ÁREA
+      DE AFLORAMENTO DO SISTEMA AQUÍFERO GUARANI (SAG)
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27611/17868
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-08'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27611
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-evapora-o-medida-pelo-m-todo-do-domo-em-barra
+    title: EVAPORAÇÃO MEDIDA PELO MÉTODO DO DOMO EM BARRAGEM SUBTERRÂNEA NO SEMIÁRIDO
+      PERNAMBUCANO
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27616/17873
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-08'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27616
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-problemas-ambientais-da-ocupa-o-urbana-de-sal
+    title: PROBLEMAS AMBIENTAIS DA OCUPAÇÃO URBANA DE SALINÓPOLIS – PARÁ E SUA INFLUÊNCIA
+      NO ABASTECIMENTO DE ÁGUA LOCAL
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27625/17882
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-08'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27625
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-o-uso-de-drenos-horizontais-profundos-e-a-est
+    title: O USO DE DRENOS HORIZONTAIS PROFUNDOS E A ESTABILIDADE DE TALUDES
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27643/17900
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-10'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27643
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-an-lise-da-mobilidade-de-elementos-em-saproli
+    title: Análise da mobilidade de elementos em saprolito de gnaisse do aterro sanitário
+      da CTRS – BR040 com ensaios de coluna e modelagem PHREEQC
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27664/17919
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-27'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27664
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-aplica-o-de-m-todos-geot-cnicos-para-recupera
+    title: APLICAÇÃO DE MÉTODOS GEOTÉCNICOS PARA RECUPERAÇÃO DE ÁREAS CONTAMINADAS
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27668/17923
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-27'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27668
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-o-crescimento-urbano-e-suas-implica-es-na-gua
+    title: 'O CRESCIMENTO URBANO E SUAS IMPLICAÇÕES NA ÁGUA SUBTERRÂNEA: O EXEMPLO DE
+      MIRASSOL/SP'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27756/18001
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-29'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27756
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-polui-o-difusa-em-microbacia-urbana
+    title: POLUIÇÃO DIFUSA EM MICROBACIA URBANA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27764/18005
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-01-30'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27764
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-proposta-de-abastecimento-para-a-microbacia-d
+    title: PROPOSTA DE ABASTECIMENTO PARA A MICROBACIA DO RIO MAGUARIAÇU, ANANINDEUA-PA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27809/18035
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2012-02-05'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27809
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-use-of-factorial-design-to-model-hydraulic-co
+    title: USE OF FACTORIAL DESIGN TO MODEL HYDRAULIC CONDUCTIVITY OF A SANDY SOIL CHEMICALLY
+      STABILIZED WITH LIME
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27850/18071
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2013-02-12'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27850
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-avalia-o-hidrogeol-gica-do-sistema-aqu-fero-p
+    title: Avaliação Hidrogeológica do Sistema Aquífero Parecis na Cidade de Sinop –
+      MT e seu Entorno
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27895/18092
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2013-04-11'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27895
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-asubterraneas-diagnosis-of-quality-of-groundwater-and-elabo
+    title: Diagnosis of quality of groundwater and elaboration of land use in the region
+      of Irecê-BA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27932/18354
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-03-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v29i1.27932
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27932
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'

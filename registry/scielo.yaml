@@ -98618,20 +98618,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0/
     license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212024000100209&format=json
     rights_verified_at: '2026-07-28'
-  - id: sci-s1678-86212024000100918
-    title: Processo analítico hierárquico (AHP) aplicado ao estudo de diferentes argamassas
-      frente ao ataque por sulfatos
-    url: https://www.scielo.br/pdf/ac/v24/1678-8621-ac-24-e129416.pdf
-    source: scielo_scl
-    license: cc-by
-    topic: construction
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S1678-86212024000100918
-    license_url: https://creativecommons.org/licenses/by/4.0/
-    license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212024000100918&format=json
-    rights_verified_at: '2026-07-28'
   - id: sci-s1678-86212024000100927
     title: Desempenho de painéis de partículas produzidos com madeira de Pinus oocarpa
       e cigarro industrializado
@@ -235266,6 +235252,306 @@ sources:
     document_type: journal-article
     persistent_id: S0370-44672006000300005
     license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672006000300005&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000100005
+    title: Considerações sobre prova de carga em estruturas de concreto
+    url: https://www.scielo.br/pdf/rem/v60n1/v60n1a05.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000100005
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000100005&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200002
+    title: Vertedores portáteis em microbacias de drenagem
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a02.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200007
+    title: The Eurocode System and the codes for steel and composite structures
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a07.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S0370-44672007000200007
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200007&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200015
+    title: Um sistema de laje mista para edificações residenciais usando perfis de chapa
+      dobrada com corrugações
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a15.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200015
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200015&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200008
+    title: Confiabilidade de vigas metálicas dimensionadas pela norma brasileira NBR
+      8800
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a08.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200008
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200008&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200003
+    title: Pilar-barreira entre painéis de lavra para a mina de carvão
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a03.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200003
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200003&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200011
+    title: Análise estrutural de um edifício de aço sob condições de incêndio
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a11.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200011
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200011&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200016
+    title: Flambagem lateral com torção em vigas com perfis de alma senoidal
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a16.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200016
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200016&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200009
+    title: Bases do dimensionamento de pilares mistos de aço e concreto segundo o projeto
+      de revisão da NBR 8800
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a09.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200009
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200009&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200013
+    title: Análise computacional do fenômeno de transferência de calor em paredes divisórias
+      do tipo dry wall
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a13.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200013
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200013&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200023
+    title: Estudo do conforto humano em pisos mistos (aço-concreto)
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a23.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200023
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200023&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200021
+    title: Influência das tensões residuais na resistência de pilares de aço considerando
+      a análise avançada com plasticidade distribuída
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a21.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200021
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200021&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200014
+    title: 'Incêndio real em um apartamento de interesse social: um estudo de caso'
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a14.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200014
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200014&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200019
+    title: A comparative study on three different construction methods of stiffened
+      plates-strength behaviour and ductility characteristics
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a19.pdf
+    source: scielo_scl
+    license: cc-by-nc
+    topic: materials
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S0370-44672007000200019
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/4.0' (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200019&format=json)
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000200012
+    title: Segurança das estruturas de aço externas a edificações em situação de incêndio
+    url: https://www.scielo.br/pdf/rem/v60n2/v60n02a12.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000200012
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000200012&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000300005
+    title: Condutividade hidráulica saturada de um rejeito de minério de ferro
+    url: https://www.scielo.br/pdf/rem/v60n3/v60n3a05.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000300005
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000300005&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000300006
+    title: Comportamento geotécnico de rochas brandas na mina Córrego do Sítio, Santa
+      Bárbara (MG)
+    url: https://www.scielo.br/pdf/rem/v60n3/v60n3a06.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000300006
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000300006&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000300013
+    title: Viabilidade energético-econômica de habitações de interesse social em Brasília
+      com uso de blocos de concreto e entulho
+    url: https://www.scielo.br/pdf/rem/v60n3/v60n3a13.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000300013
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000300013&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672002000300009
+    title: Seleção de solos para a imobilização de arsênio
+    url: https://www.scielo.br/pdf/rem/v55n3/v55n3a09.pdf
+    source: scielo_scl
+    license: cc-by-nc
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672002000300009
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/4.0' (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672002000300009&format=json)
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672002000300007
+    title: Microestruturas de pelotas feitas com mistura de redutor e finos de minério
+    url: https://www.scielo.br/pdf/rem/v55n3/v55n3a07.pdf
+    source: scielo_scl
+    license: cc-by-nc
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672002000300007
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/4.0' (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672002000300007&format=json)
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0370-44672007000400008
+    title: Avaliação construtiva e de desempenho térmico do prédio da Escola de Minas
+      da UFOP
+    url: https://www.scielo.br/pdf/rem/v60n4/a08v60n4.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0370-44672007000400008
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0370-44672007000400008&format=json);
       context only, not evidence for this article: the journal record''s current licence
       (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0370-4467)'
     rights_verified_at: '2026-10-15'
