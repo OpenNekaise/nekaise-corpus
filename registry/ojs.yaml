@@ -340804,20 +340804,6 @@ sources:
     license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4463
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-techne-detroit-lisbon
-    title: Detroit_Lisbon
-    url: https://oaj.fupress.net/index.php/techne/article/download/4464/4464
-    source: ojs_techne
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2015-11-16'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.13128/techne-17500
-    license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4464
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-techne-an-up-close-look-at-urban-regeneration-cultural-appr
     title: An up-close look at Urban Regeneration. Cultural approaches and applied strategies
       for the rebirth of cities
@@ -341340,20 +341326,6 @@ sources:
     document_type: journal-article
     persistent_id: https://doi.org/10.13128/techne-19332
     license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4575
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-techne-dialogues-with-time
-    title: Dialogues with time
-    url: https://oaj.fupress.net/index.php/techne/article/download/4576/4576
-    source: ojs_techne
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2016-11-28'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.13128/techne-19333
-    license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4576
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'
   - id: ojs-techne-managing-the-evolution-of-a-urban-system-the-unesco
@@ -345473,21 +345445,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1640
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-influence-of-number-of-the-transverse-connection-on
-    title: The influence of number of the transverse connection on the distribution
-      of stresses in the low-water bridge spans
-    url: https://ph.pollub.pl/index.php/bia/article/download/1641/1340
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-06-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1641
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1641
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-permeability-change-index-for-unstable-basement
     title: Permeability change index for unstable basement
     url: https://ph.pollub.pl/index.php/bia/article/download/1643/1342
@@ -345546,20 +345503,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1651
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-social-activity-of-the-architects
-    title: The social activity of the architects
-    url: https://ph.pollub.pl/index.php/bia/article/download/1653/1350
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-06-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1653
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1653
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-historical-reinforced-concrete-structures-used-material
     title: Historical reinforced concrete structures – used materials and calculating
       algorithms
@@ -345603,21 +345546,6 @@ sources:
     persistent_id: https://doi.org/10.35784/bud-arch.1659
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1659
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-legal-and-technical-possibilities-of-using-of-scaff
-    title: The legal and technical possibilities of using of scaffoldings as the ramp
-      for disabled persons
-    url: https://ph.pollub.pl/index.php/bia/article/download/1661/1356
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-03-10'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1661
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1661
     rights_verified_at: '2026-10-15'
   - id: ojs-bia-evaluation-of-the-decision-maker-s-preferences-in-the-s
     title: Evaluation of the decision maker's preferences in the selection means of
@@ -345778,64 +345706,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1684
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-smoke-and-heat-flow-in-a-large-volume-building-in-case
-    title: Smoke and heat flow in a large volume building in case of fire
-    url: https://ph.pollub.pl/index.php/bia/article/download/1706/1395
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1706
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1706
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-underground-travel-time-estimation-for-macro-simulation
-    title: Underground travel time estimation for macro simulation models, on the example
-      of the first line in Warsaw
-    url: https://ph.pollub.pl/index.php/bia/article/download/1707/1396
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1707
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1707
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-protection-against-traffic-noise-in-urban-areas-in-rela
-    title: Protection against traffic noise in urban areas in relation to noise control
-      plans
-    url: https://ph.pollub.pl/index.php/bia/article/download/1708/1397
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1708
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1708
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-safety-management-of-the-existing-road-network
-    title: Safety management of the existing road network
-    url: https://ph.pollub.pl/index.php/bia/article/download/1721/1407
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1721
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1721
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-self-cementing-properties-of-recycled-concrete-aggregat
     title: Self-cementing properties of recycled concrete aggregates (RCA) on the example
       of tests of material and layers of pavement subbase
@@ -345850,20 +345720,6 @@ sources:
     persistent_id: https://doi.org/10.35784/bud-arch.1723
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1723
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-studies-and-analysis-on-interlayer-bonding-in-asphalt-p
-    title: Studies and analysis on interlayer bonding in asphalt pavements
-    url: https://ph.pollub.pl/index.php/bia/article/download/1736/1419
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1736
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1736
     rights_verified_at: '2026-10-15'
   - id: ojs-bia-correlations-between-compressive-strength-and-tensile-s
     title: Correlations between compressive strength and tensile strength of concrete
@@ -345880,63 +345736,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1751
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-recycled-asphalt-pavement-rap-as-a-fully-valuable-compo
-    title: Recycled Asphalt Pavement (RAP) as a fully valuable component of the HMA
-      mixes
-    url: https://ph.pollub.pl/index.php/bia/article/download/1752/1435
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1752
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1752
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-warm-mix-asphalt-with-zeolite-additions
-    title: Warm mix asphalt with zeolite additions
-    url: https://ph.pollub.pl/index.php/bia/article/download/1754/1437
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1754
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1754
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-possibility-of-refreshing-binders-in-old-asphalt-paveme
-    title: Possibility of refreshing binders in old asphalt pavements
-    url: https://ph.pollub.pl/index.php/bia/article/download/1757/1438
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1757
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1757
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-safety-assessment-of-pedestrian-crossing-solutions
-    title: Safety assessment of pedestrian crossing solutions
-    url: https://ph.pollub.pl/index.php/bia/article/download/1758/1439
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1758
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1758
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-prognosis-of-the-technical-condition-of-masonry-walls-i
     title: Prognosis of the technical condition of masonry walls in residential buildings
     url: https://ph.pollub.pl/index.php/bia/article/download/1760/1442
@@ -345950,20 +345749,6 @@ sources:
     persistent_id: https://doi.org/10.35784/bud-arch.1760
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1760
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-program-of-renovation-work-on-the-example-of-the-sy
-    title: The program of renovation work on the example of the system building constructionW-70
-    url: https://ph.pollub.pl/index.php/bia/article/download/1762/1446
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1762
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1762
     rights_verified_at: '2026-10-15'
   - id: ojs-bia-investigation-of-the-bearing-capacity-of-reinforced-con
     title: Investigation of the bearing capacity of reinforced concrete beams strengthened
@@ -346084,36 +345869,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1808
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-research-on-anchorages-of-the-structural-strengthening
-    title: Research on anchorages of the structural strengthening system with prestressed
-      CFRP strips
-    url: https://ph.pollub.pl/index.php/bia/article/download/1809/1488
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1809
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1809
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-influence-of-longitudinal-reinforcement-on-shear-ca
-    title: The influence of longitudinal reinforcement on shear capacity of reinforced
-      concrete members without shear reinforcement
-    url: https://ph.pollub.pl/index.php/bia/article/download/1810/1489
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1810
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1810
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-experimental-tests-of-post-tensioned-girders-strengthen
     title: Experimental tests of post-tensioned girders strengthened with prestressed
       CFRP composites
@@ -346174,21 +345929,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1816
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-numeric-model-of-the-properties-of-viscoelastic-pav
-    title: The numeric model of the properties of viscoelastic pavement layers made
-      of asphalt concrete
-    url: https://ph.pollub.pl/index.php/bia/article/download/1818/1495
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-12-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1818
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1818
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-experimental-investigations-of-punching-shear-concrete
     title: Experimental investigations of punching shear concrete slabs with different
       types of transverse reinforcement
@@ -346218,20 +345958,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1822
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-partial-resistance-factors-of-class-4-steel-elements
-    title: Partial resistance factors of class 4 steel elements
-    url: https://ph.pollub.pl/index.php/bia/article/download/1824/1501
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1824
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1824
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-calculation-of-column-bases-under-biaxial-bending
     title: Calculation of column bases under biaxial bending
     url: https://ph.pollub.pl/index.php/bia/article/download/1825/1502
@@ -346260,124 +345986,6 @@ sources:
     persistent_id: https://doi.org/10.35784/bud-arch.1827
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1827
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-study-of-the-influence-of-initial-mast-shaft-imperf
-    title: The study of the influence of initial mast shaft imperfections on the values
-      of internal forces and the effort of mast structure
-    url: https://ph.pollub.pl/index.php/bia/article/download/1828/1505
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1828
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1828
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-parametric-study-on-the-rotation-capacity-of-stiffened
-    title: Parametric study on the rotation capacity of stiffened end-plate beam-to-column
-      connection
-    url: https://ph.pollub.pl/index.php/bia/article/download/1829/1506
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1829
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1829
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-structural-robustness-of-steel-framed-buildings-subject
-    title: Structural robustness of steel framed buildings subjected to accidental actions
-    url: https://ph.pollub.pl/index.php/bia/article/download/1831/1508
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1831
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1831
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-concept-of-housing-estate-a-b-and-c-in-the-borough
-    title: The concept of housing estate A, B, and C in the borough of Felin District
-      in Lublin and its implementation. Panel buildings and problems they pose
-    url: https://ph.pollub.pl/index.php/bia/article/download/1836/1511
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1836
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1836
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-cultural-values-of-architectural-form-in-terms-of-c
-    title: The cultural values of architectural form in terms of current conditions
-      of building technologies including prefabricated buildings
-    url: https://ph.pollub.pl/index.php/bia/article/download/1838/1513
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1838
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1838
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-transform-but-how
-    title: Transform, but how?
-    url: https://ph.pollub.pl/index.php/bia/article/download/1839/1514
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1839
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1839
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-revitalization-of-prefabricated-housing-implementation
-    title: Revitalization of prefabricated housing. Implementation of European solutions
-      to Polish conditions
-    url: https://ph.pollub.pl/index.php/bia/article/download/1840/1515
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1840
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1840
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-revitalization-of-prefabricated-estate-in-lipsko-comple
-    title: Revitalization of prefabricated estate in Lipsko - complement the function
-      of the multi-purpose building
-    url: https://ph.pollub.pl/index.php/bia/article/download/1841/1516
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2014-09-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1841
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1841
     rights_verified_at: '2026-10-15'
   - id: ojs-ppar-evaluation-of-design
     title: EVALUATION OF DESIGN
@@ -346588,19 +346196,6 @@ sources:
     license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2483
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-ppar-prof-j-nos-kl-r-1906-1972
-    title: Prof. JÁNOS KLÁR (1906-1972)
-    url: https://pp.bme.hu/ar/article/download/2485/1590
-    source: ojs_ppar
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '1973-01-01'
-    document_type: journal-article
-    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2485
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-ppar-systems-concept-and-urban-development-models
     title: SYSTEMS CONCEPT AND URBAN DEVELOPMENT MODELS
     url: https://pp.bme.hu/ar/article/download/2486/1591
@@ -346612,46 +346207,6 @@ sources:
     published_at: '1973-01-01'
     document_type: journal-article
     license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2486
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-ppar-zur-frage-der-rekonstruktion-der-st-dte
-    title: ZUR FRAGE DER REKONSTRUKTION DER STÄDTE
-    url: https://pp.bme.hu/ar/article/download/2489/1594
-    source: ojs_ppar
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '1973-01-01'
-    document_type: journal-article
-    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2489
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-ppar-punkte-die-von-zwei-raumelementen-in-durch-ein-gegeben
-    title: PUNKTE, DIE VON ZWEI RAUMELEMENTEN IN DURCH EIN GEGEBENES VERHÄLTNIS BESTIMMTEN
-      ABSTÄNDEN LIEGEN
-    url: https://pp.bme.hu/ar/article/download/2490/1595
-    source: ojs_ppar
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '1973-01-01'
-    document_type: journal-article
-    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2490
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-ppar-raumform-und-schalldiffusit-t
-    title: RAUMFORM UND SCHALLDIFFUSITÄT
-    url: https://pp.bme.hu/ar/article/download/2491/1596
-    source: ojs_ppar
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '1973-01-01'
-    document_type: journal-article
-    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2491
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'
   - id: ojs-ppar-la-protection-moderne-des-surfaces-des-monuments-histo
@@ -346771,20 +346326,6 @@ sources:
     published_at: '1972-01-01'
     document_type: journal-article
     license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2504
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-ppar-simboli-eskoe-zna-enie-i-istori-eska-funkci-estilopast
-    title: СИМВОЛИЧЕСКОЕ ЗНАЧЕНИЕ И ИСТОРИЧЕСКАЯ ФУНКЦИЯ ШЕСТИЛОПАСТНОй ТРОйНОй ЗВЕЗДЫ
-      НА АРХИТЕКТУРНЫХ ПАМЯТНИКАХ ВОСТОЧНОГО ХРИСТИАНСТВА. Simboličeskoe značeni
-    url: https://pp.bme.hu/ar/article/download/2505/1610
-    source: ojs_ppar
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '1971-01-01'
-    document_type: journal-article
-    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2505
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'
   - id: ojs-ppar-relations-between-the-development-of-space-and-mass-ar
@@ -347462,4 +347003,682 @@ sources:
     persistent_id: https://doi.org/10.3311/ppar.7458
     license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/7458
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-mitiga-o-do-g-s-rad-o-em-salas-fechadas-medidas
+    title: 'MITIGAÇÃO DO GÁS RADÃO EM SALAS FECHADAS: MEDIDAS DE CORREÇÃO EM EDIFÍCIOS
+      HISTÓRICOS COM RESTRIÇÕES DE INTERVENÇÃO'
+    url: https://revista.fumec.br/index.php/construindo/article/download/9942/4839
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-04-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9942
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-neuroarquitetura-aplicada-aos-crit-rios-de-proj
+    title: NEUROARQUITETURA APLICADA AOS CRITÉRIOS DE PROJETO DE ILUMINAÇÃO E CONFORTO
+      DO ESPAÇO CONSTRUIDO
+    url: https://revista.fumec.br/index.php/construindo/article/download/9943/4840
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-04-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9943
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-influ-ncia-da-adi-o-de-fibras-de-polipropileno
+    title: Influência da adição de fibras de polipropileno e nanotubos de carbono nas
+      propriedades mecânicas residuais e de durabilidade do concreto de alta resi
+    url: https://revista.fumec.br/index.php/construindo/article/download/10687/5205
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2025-08-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/10687
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-optimal-design-and-performance-evaluation-of-tu
+    title: Optimal design and performance evaluation of tuned mass damper inerter in
+      building structures
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/341996/20806297
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20210959
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/341996
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-pipe-bridge-design-optimisation-through-a-compa
+    title: Pipe bridge design optimisation through a comparative study of truss and
+      girder arrangements
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/342377/20806226
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20210957
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/342377
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-new-concrete-masonry-solid-block-with-non-conve
+    title: 'New concrete masonry solid block with non-conventional geometry: Experimental
+      characterization'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/343076/20807805
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-03-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20220370
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/343076
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-use-of-a-biological-additive-to-enhance-the-phy
+    title: Use of a biological additive to enhance the physical-mechanical and thermal
+      properties of concrete
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/343263/20803334
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2006-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.343263
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/343263
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2006 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-the-temperature-of-compacting-and-energy-influe
+    title: The temperature of compacting and energy influence in dynamics properties
+      of an asphalt mixture
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/343278/20803336
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2006-08-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.343278
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/343278
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2006 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-pyrometer-at-low-radiation-for-measuring-the-fo
+    title: Pyrometer at low radiation for measuring the forehead skin temperature
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/343283/20803340
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2006-08-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.343283
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/343283
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2006 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-potential-applications-of-portland-cement-on-bo
+    title: 'Potential applications of portland cement on bone tissue engineering. Phase
+      I: biocompatibility studies–calcium hydroxide effects'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/343394/20803444
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2006-08-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.343394
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/343394
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2006 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-three-bar-structure-optimality-criterion-using
+    title: Three-Bar structure optimality criterion using the linear resizing rule
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/343650/20806076
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20210850
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/343650
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-pedestrian-gaps-and-walking-speed-at-uncontroll
+    title: Pedestrian gaps and walking speed at uncontrolled midblock crosswalks
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/343817/20807500
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20220371
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/343817
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-optimization-of-water-reservoir-volume-in-an-ur
+    title: Optimization of water reservoir volume in an urban water supply system
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344068/20806157
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20210953
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344068
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-performance-and-determination-of-concentration
+    title: Performance and determination of concentration ratio for a parabolic solar
+      concentrator using a thermographic technique
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344223/20805407
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-05-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20210530
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344223
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-determination-of-the-gaseous-emission-of-toxic
+    title: Determination of the gaseous emission of toxic substances in the “Curva de
+      Rodas” sanitary landfill in Medellín
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344307/20804029
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2005-11-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.344307
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344307
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2005 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-study-of-dioxin-levels-in-releases-to-the-atmos
+    title: Study of dioxin levels in releases to the atmosphere from the use of secondary
+      fuels in cement kilns during clinker formation
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344317/20804033
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2005-11-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.344317
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344317
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2005 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-dioxins-and-furans-in-fly-ashes-from-an-inciner
+    title: Dioxins and furans in fly ashes from an incinerator
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344338/20804046
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2004-11-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.344338
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344338
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2004 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-performance-of-silica-gel-filters-used-in-an-ai
+    title: Performance of silica gel filters used in an air conditioning system based
+      in a vapor compression refrigeration system
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344500/20804137
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2004-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.344500
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344500
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2004 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-energy-savings-due-to-dehumidifiers-filters-in
+    title: Energy savings due to dehumidifiers filters in air conditioning systems using
+      vapor compression refrigeration equipments
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344501/20804138
+    source: ojs_ingenieria2
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    published_at: '2004-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.344501
+    license_evidence: 'https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344501
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2004 Revista Facultad de Ingeniería Universidad de Antioquia)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-a-mechanical-model-to-determine-upheaval-buckli
+    title: A mechanical model to determine upheaval buckling of buried submarine pipelines
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344509/20806469
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-10-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20211061
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344509
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-multiobjective-topology-optimization-of-planar
+    title: Multiobjective topology optimization of planar trusses using stress trajectories
+      and metaheuristic algorithms
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344790/20807903
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-05-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20220576
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344790
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-photocatalytic-treatment-based-on-tio2-for-a-co
+    title: Photocatalytic treatment based on TiO2 for a coal mining drainage
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344830/20806503
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-10-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20211063
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344830
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-mapping-of-clay-soils-by-remote-sensing-in-the
+    title: Mapping of clay soils by remote sensing in the area of Mers El Kébir, Algeria
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344875/20809649
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-10-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20221099
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344875
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-small-wind-turbines-study-and-integration-in-a
+    title: Small wind turbines study and integration in a peri-urban microgrid
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344901/20806015
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20210845
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344901
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-seismic-behavior-of-reinforced-concrete-buildin
+    title: Seismic behavior of reinforced concrete buildings using chained masonry walls
+      randomly located
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344916/20808125
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-05-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20220581
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344916
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-renewable-energy-in-sustainable-supply-chain-a
+    title: 'Renewable energy in sustainable supply chain: A review'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/344945/20806225
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20210956
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/344945
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-water-quality-trend-analysis-of-cheurfas-ii-dam
+    title: Water quality trend analysis of Cheurfas II dam, Algeria
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/345503/20806930
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-12-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20211267
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/345503
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-understanding-high-polluted-events-in-a-tropica
+    title: Understanding high polluted events in a tropical megacity with air quality
+      observations and ERA5-reanalysis data
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/346275/20808465
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20220682
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/346275
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-use-and-effect-of-fly-ash-in-concrete-a-literat
+    title: 'Use and effect of fly ash in concrete: A literature review'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/346833/20812634
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20230927
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/346833
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-uncovering-road-traffic-crashes-typologies-usin
+    title: Uncovering road traffic crashes typologies using multiple correspondence
+      analysis (MCA), in a low-resource setting
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/348588/20808806
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-07-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20220786
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/348588
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-effects-of-shear-wave-velocity-and-soil-structu
+    title: Effects of shear wave velocity and soil structure interaction on the structural
+      pounding during earthquakes
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/349033/20812669
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20231029
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/349033
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-effects-of-the-incorporation-of-steel-fibers-wi
+    title: Effects of the incorporation of steel fibers with plasticizer additive in
+      concrete
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/349736/20813911
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20240515
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/349736
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-monitoring-air-quality-in-residential-areas-wit
+    title: 'Monitoring air quality in residential areas with low-cost sensors: Santa
+      Cecilia case'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/350474/20817348
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20250157
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/350474
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-simulation-model-for-vehicle-fleet-growth-to-re
+    title: Simulation model for vehicle fleet growth to review public policies for transport
+      demand management
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/352021/20818496
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20250472
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/352021
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-emissions-and-trajectories-of-atmospheric-pollu
+    title: Emissions and trajectories of atmospheric pollutants from mobile sources
+      in a Colombian intermediate city
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/352038/20814187
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20240622
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/352038
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-utilization-of-treated-water-for-building-const
+    title: 'Utilization of treated water for building construction: A case study in
+      Egypt'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/352147/20813039
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-11-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20231135
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/352147
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-stochastic-linear-programming-model-for-the-she
+    title: Stochastic linear programming model for the shelter’s location in small Colombian
+      cities
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/352378/20814073
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20240619
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/352378
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-characterization-of-traffic-accidents-for-urban
+    title: Characterization of traffic accidents for urban road safety
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/353329/20812956
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20231134
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/353329
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-geothermal-energy-as-a-solution-to-heating-dema
+    title: 'Geothermal energy as a solution to heating demand: Economic analysis vs.
+      conventional supply'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/353465/20817955
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-02-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20250259
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/353465
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-determination-of-the-inflow-time-of-maximum-flo
+    title: Determination of the inflow time of maximum floods in a dam
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/353698/20816960
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20241251
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/353698
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-effect-of-binder-type-and-application-rate-on-a
+    title: Effect of binder type and application rate on asphalt layer bonding evaluated
+      by LCB test
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/354648/20813687
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20240306
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/354648
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-nopal-extract-and-aloe-vera-to-improve-structur
+    title: Nopal extract and aloe vera to improve structural concrete exposed to saline
+      environments
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/355000/20818181
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20240514
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/355000
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-chromium-adsorption-using-a-composite-adsorbent
+    title: Chromium adsorption using a composite adsorbent of corn waste and bentonite
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/355302/20816884
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20241249
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/355302
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-the-school-bus-routing-problem-a-systematic-lit
+    title: 'The school bus routing problem: A systematic literature review'
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/355509/20813988
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20240518
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/355509
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-analysis-of-vehicle-specific-power-and-road-gra
+    title: Analysis of vehicle specific power and road grade in a high-altitude city
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/355917/20814216
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20240726
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/355917
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ingenieria2-resilience-index-for-earth-retaining-systems-in
+    title: Resilience index for earth retaining systems in road infrastructure
+    url: https://revistas.udea.edu.co/index.php/ingenieria/article/download/356419/20818259
+    source: ojs_ingenieria2
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17533/udea.redin.20250369
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://revistas.udea.edu.co/index.php/ingenieria/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.udea.edu.co:article/356419
     rights_verified_at: '2026-10-15'
