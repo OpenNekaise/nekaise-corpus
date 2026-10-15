@@ -153476,25 +153476,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.scs.2021.102998 openalex:W3160305501
     resolution: 'sim1: openalex+unpaywall location'
-  - id: oas-10-1016-j-buildenv-2020-107070-2a3704c3
-    title: Assessing the application and limitations of a standardised overheating risk-assessment
-      methodology in a real-world context
-    url: https://figshare.com/articles/journal_contribution/Assessing_the_application_and_limitations_of_a_standardised_overheating_risk-assessment_methodology_in_a_real-world_context/12968030
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2020-07-11'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.buildenv.2020.107070
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
-      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Assessing_the_application_and_limitations_of_a_standardised_overheating_risk-assessment_methodology_in_a_real-world_context/12968030;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-15'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.buildenv.2020.107070 openalex:W3041793104
-    resolution: 'sim1: openalex+unpaywall location'
   - id: oas-10-1016-j-enbuild-2023-113823-b6764fd9
     title: 'Identification of representative building archetypes: A novel approach using
       multi-parameter cluster analysis applied to the Swedish residential build'
@@ -154531,3 +154512,40 @@ sources:
     rights_verified_at: '2026-10-15T17:25:04Z'
     origin_ids: doi:10.3389/fenrg.2022.879985 openalex:W4281854963
     resolution: 'legacy: openalex location'
+  - id: oas-10-1109-access-2026-3704912-67e89ebf
+    title: 'Multiport Converters for Low-Carbon Buildings: System-Level Co-Design, Control,
+      and Validation'
+    url: https://strathprints.strath.ac.uk/96678/1/Farag-etal-IEEEA-2026-Multiport-converters-for-low-carbon-buildings.pdf
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/access.2026.3704912
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/96678/1/Farag-etal-IEEEA-2026-Multiport-converters-for-low-carbon-buildings.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1109/access.2026.3704912 openalex:W7165164750
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-systematic-study-of-trace-radioactive-impuriti
+    title: Systematic study of trace radioactive impurities in candidate construction
+      materials for EXO-200
+    url: https://arxiv.org/pdf/0709.4524v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2007-09-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0709.4524
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0709.4524 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-15'
+    origin_ids: doi:10.1016/j.nima.2008.03.001
