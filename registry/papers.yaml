@@ -154178,3 +154178,206 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2111364805
     resolution: 'sim1: openalex location; resolution retry'
+  - id: ope-thermal-insulation-properties-of-green-vacuum-
+    title: Thermal insulation properties of green vacuum insulation panel using wood
+      fiber as core material
+    url: https://bioresources.cnr.ncsu.edu/wp-content/uploads/2019/03/BioRes_14_2_3339_Wang_LQCZDFR_Study_Thermal_Insulation_Green_Vacuum_Insul_Material_15005.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-03-06'
+    document_type: article
+    persistent_id: https://doi.org/10.15376/biores.14.2.3339-3351
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://bioresources.cnr.ncsu.edu/wp-content/uploads/2019/03/BioRes_14_2_3339_Wang_LQCZDFR_Study_Thermal_Insulation_Green_Vacuum_Insul_Material_15005.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-15'
+    selected_version: publishedVersion
+    origin_ids: doi:10.15376/biores.14.2.3339-3351 openalex:W2923075261
+    resolution: 'legacy: openalex location'
+  - id: ope-estimation-and-validation-of-energy-consumptio
+    title: Estimation and Validation of Energy Consumption in UK Existing Hotel Building
+      Using Dynamic Simulation Software
+    url: https://repository.uwl.ac.uk/id/eprint/4297/1/Estimation%20and%20Validation%20of%20Energy%20Consumption%20in%20UK%20Existing%20Hotel%20Building%20Using%20Dynamic%20Simulation%20Software.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-08-07'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su9081391
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://repository.uwl.ac.uk/id/eprint/4297/1/Estimation%20and%20Validation%20of%20Energy%20Consumption%20in%20UK%20Existing%20Hotel%20Building%20Using%20Dynamic%20Simulation%20Software.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su9081391 openalex:W2743144095
+    resolution: 'legacy: openalex location'
+  - id: ope-a-methodology-for-creating-building-energy-mod
+    title: A methodology for creating building energy model occupancy schedules using
+      personal location metadata
+    url: https://eprints.leedsbeckett.ac.uk/id/eprint/3817/1/Parker_2017%20A%20methodology%20for%20creating%20building%20energy%20model%20occupancy%20schedules%20using%20personal%20location%20metadata.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-06-12'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2017.06.014
+    license_evidence: no licence statement for this copy [copy https://eprints.leedsbeckett.ac.uk/id/eprint/3817/1/Parker_2017%20A%20methodology%20for%20creating%20building%20energy%20model%20occupancy%20schedules%20using%20personal%20location%20metadata.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2017.06.014 openalex:W2626846576
+    resolution: 'legacy: openalex location'
+  - id: ope-adaptive-temperature-limits-for-air-conditione
+    title: Adaptive temperature limits for air-conditioned museums in temperate climates
+    url: https://pure.tue.nl/ws/files/100587733/Adaptive_temperature_limits_for_air_conditioned_museums_in_temperate_climates.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-06-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/09613218.2017.1327561
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://pure.tue.nl/ws/files/100587733/Adaptive_temperature_limits_for_air_conditioned_museums_in_temperate_climates.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/09613218.2017.1327561 openalex:W2621327215
+    resolution: 'legacy: openalex location'
+  - id: ope-a-review-on-house-design-with-energy-saving-sy
+    title: A review on house design with energy saving system in the UK
+    url: https://uhra.herts.ac.uk/id/eprint/6150/1/Manuscript.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rser.2017.01.004
+    license_evidence: no licence statement for this copy [copy https://uhra.herts.ac.uk/id/eprint/6150/1/Manuscript.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.rser.2017.01.004 openalex:W2567929538
+    resolution: 'legacy: openalex location'
+  - id: ope-u-values-for-building-envelopes-of-different-m
+    title: 'U-Values for Building Envelopes of Different Materials: A Review'
+    url: https://eprints.whiterose.ac.uk/216998/1/buildings-14-02434.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-08-07'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings14082434
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/216998/1/buildings-14-02434.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/buildings14082434 openalex:W4401388333
+    resolution: 'legacy: openalex location'
+  - id: ope-drivers-for-implementation-of-energy-efficient
+    title: Drivers for implementation of energy-efficient technologies in building construction
+      projects — Results from a Swedish case study
+    url: https://liu.diva-portal.org/smash/get/diva2:1912851/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-07-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.resenv.2022.100078
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://liu.diva-portal.org/smash/get/diva2:1912851/FULLTEXT01; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.resenv.2022.100078 openalex:W4284959405
+    resolution: 'legacy: openalex location'
+  - id: ope-home-comfort-and-peak-household-implications-f
+    title: 'Home Comfort and “Peak Household”: Implications for Energy Demand'
+    url: https://research-repository.st-andrews.ac.uk/bitstream/10023/23258/1/Ellsworth_Krebs_et_al_2019_Home_comfort_and_Peak_household_for_PURE.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-11-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/14036096.2019.1694579
+    license_evidence: no licence statement for this copy [copy https://research-repository.st-andrews.ac.uk/bitstream/10023/23258/1/Ellsworth_Krebs_et_al_2019_Home_comfort_and_Peak_household_for_PURE.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/14036096.2019.1694579 openalex:W2989613872
+    resolution: 'legacy: openalex location'
+  - id: ope-towards-the-characterization-of-the-heat-loss-
+    title: 'Towards the characterization of the heat loss coefficient via on-board monitoring:
+      Physical interpretation of ARX model coefficients'
+    url: https://lirias.kuleuven.be/retrieve/71886fab-20e1-4f3e-a381-f3556bbeeb4c
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-05-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2019.05.001
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/71886fab-20e1-4f3e-a381-f3556bbeeb4c;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2019.05.001 openalex:W2943300284
+    resolution: 'legacy: openalex location'
+  - id: ope-evaluation-of-life-cycle-carbon-impacts-for-hi
+    title: 'Evaluation of life cycle carbon impacts for higher education building redevelopment:
+      a multiple case study approach'
+    url: https://discovery.ucl.ac.uk/10043120/1/Mumovic_HawkinsMultiCase_Accepted.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-05-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2017.05.058
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10043120/1/Mumovic_HawkinsMultiCase_Accepted.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2017.05.058 openalex:W2619341938
+    resolution: 'legacy: openalex location'
+  - id: ope-cost-effective-options-for-the-renovation-of-a
+    title: Cost-Effective Options for the Renovation of an Existing Education Building
+      toward the Nearly Net-Zero Energy Goal—Life-Cycle Cost Analysis
+    url: https://drum.lib.umd.edu/bitstreams/3cad3fed-b33b-4cf6-b805-905d7b28ec0c/download
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-04-25'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su11082444
+    license_evidence: 'redirect: rights of requested copy https://drum.lib.umd.edu/bitstreams/3cad3fed-b33b-4cf6-b805-905d7b28ec0c/download
+      do not transfer to https://api.drum.lib.umd.edu/server/api/core/bitstreams/3cad3fed-b33b-4cf6-b805-905d7b28ec0c/content;
+      payload sha256=63d73e2b131adbc16849389d53311950dce0ee32fd4226501e83971d8d759505;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://drum.lib.umd.edu/bitstreams/3cad3fed-b33b-4cf6-b805-905d7b28ec0c/download;
+      version submittedVersion; rights accepted]", "rights_verified_at": "2026-10-15",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-15T15:16:53Z'
+    origin_ids: doi:10.3390/su11082444 openalex:W2941582442
+    resolution: 'legacy: openalex location'
