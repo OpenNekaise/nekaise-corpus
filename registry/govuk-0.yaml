@@ -112154,19 +112154,6 @@ sources:
       name exempt content; no document-specific check was made, so the grant is not
       established for this document'
     rights_verified_at: '2026-10-15'
-  - id: guk-volume-5-environmental-topic-maps-air-quality-
-    title: 'Volume 5: Environmental topic maps — Air quality (AQ-01)'
-    url: https://assets.publishing.service.gov.uk/media/61ea86d28fa8f50590b5d912/M70.pdf
-    source: gov_uk
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    license_evidence: 'GOV.UK publication page: ''All content is available under the
-      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
-      name exempt content; no document-specific check was made, so the grant is not
-      established for this document'
-    rights_verified_at: '2026-10-15'
   - id: guk-ma01-land-quality-baseline-data-bid-lq-002-0ma
     title: MA01 Land quality baseline data (BID LQ-002-0MA01)
     url: https://assets.publishing.service.gov.uk/media/61e32e428fa8f5059241b8fb/M223.pdf
@@ -112268,6 +112255,233 @@ sources:
     source: gov_uk
     license: unverified
     topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-ecological-baseline-data-amphibian-and-pond-an-2
+    title: Ecological baseline data - amphibian and pond and canal surveys - Part 2
+      of 2 (BID EC-007-00001_Part 2)
+    url: https://assets.publishing.service.gov.uk/media/61e1e4b78fa8f50596013429/M120.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-off-route-works-planning-data-ct-004-or000
+    title: Off-route works - Planning data (CT-004-OR000)
+    url: https://assets.publishing.service.gov.uk/media/61e1c795d3bf7f0546a99cb2/M253.pdf
+    source: gov_uk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-planning-data-part-3-of-3-ct-004-00000-part-3
+    title: Planning data - Part 3 of 3 (CT-004-00000_Part 3)
+    url: https://assets.publishing.service.gov.uk/media/61e1c71dd3bf7f054fcc24a2/M103.pdf
+    source: gov_uk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-planning-data-part-2-of-3-ct-004-00000-part-2-
+    title: Planning data - Part 2 of 3 (CT-004-00000_Part 2) — This report presents
+      the planning data and committed developments relevant to the environmental impact
+      assessment of HS2 Phase 2
+    url: https://assets.publishing.service.gov.uk/media/61e1c6add3bf7f0540d10c43/M102.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-alternatives-report-ct-003-00000
+    title: Alternatives report (CT-003-00000)
+    url: https://assets.publishing.service.gov.uk/media/61e1c5968fa8f5058a4b2e1d/M97.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-ecology-and-biodiversity-designated-sites-ec-0
+    title: Ecology and biodiversity - Designated sites (EC-01)
+    url: https://assets.publishing.service.gov.uk/media/61e1aa6f8fa8f50586678369/M145.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-air-quality-aq-01
+    title: Air quality (AQ-01)
+    url: https://assets.publishing.service.gov.uk/media/61e1a8258fa8f50585ecbad2/M70.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-agriculture-forestry-and-soils-ag-01-ag-02-ag-
+    title: Agriculture, forestry and soils (AG-01, AG-02, AG-04)
+    url: https://assets.publishing.service.gov.uk/media/61e1a78dd3bf7f05452ed290/M47.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-draft-water-resources-and-flood-risk-operation
+    title: Draft water resources and flood risk operation and maintenance plan (WR-007-00000)
+    url: https://assets.publishing.service.gov.uk/media/61e1972ad3bf7f0549bf7d64/M341.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-transport-assessment-part-4-and-annex-a-report
+    title: Transport Assessment Part 4 and Annex A - Report 1 of 2 (TR-005-00000_Report
+      1)
+    url: https://assets.publishing.service.gov.uk/media/61e192088fa8f5059241b8e7/M295.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-ma06-historic-environment-baseline-report-part-2
+    title: MA06 Historic environment baseline report - Part 2 of 2 (BID HE-001-0MA06_Part
+      2)
+    url: https://assets.publishing.service.gov.uk/media/61e313ca8fa8f5058a4b2e24/M170.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-flood-risk-assessment-wr-005-0ma06
+    title: Flood risk assessment (WR-005-0MA06)
+    url: https://assets.publishing.service.gov.uk/media/61e15a54e90e07037ac9e088/M329.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-ma06-ma07-ma08-transport-assessment-part-3-rep-4
+    title: MA06/MA07/MA08 Transport Assessment Part 3 - Report 1 of 4 (TR-003-00006_Report
+      1)
+    url: https://assets.publishing.service.gov.uk/media/61e1569fd3bf7f054c397c06/M290.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-flood-risk-assessment-wr-005-0ma04
+    title: Flood risk assessment (WR-005-0MA04)
+    url: https://assets.publishing.service.gov.uk/media/61e04b358fa8f50596013400/M327.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-land-quality-report-lq-001-0ma06
+    title: Land quality report (LQ-001-0MA06)
+    url: https://assets.publishing.service.gov.uk/media/61e14fabd3bf7f054798bc59/M219.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-land-quality-report-lq-001-0ma04
+    title: Land quality report (LQ-001-0MA04)
+    url: https://assets.publishing.service.gov.uk/media/61e042df8fa8f50585ecbaa9/M217.pdf
+    source: gov_uk
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    license_evidence: 'GOV.UK publication page: ''All content is available under the
+      Open Government Licence v3.0, except where otherwise stated''. GOV.UK terms (https://www.gov.uk/help/terms-conditions)
+      name exempt content; no document-specific check was made, so the grant is not
+      established for this document'
+    rights_verified_at: '2026-10-15'
+  - id: guk-water-resources-assessment-wr-003-0ma02
+    title: Water resources assessment (WR-003-0MA02)
+    url: https://assets.publishing.service.gov.uk/media/61dffd1cd3bf7f0540d10c13/M307.pdf
+    source: gov_uk
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: en
     license_evidence: 'GOV.UK publication page: ''All content is available under the
