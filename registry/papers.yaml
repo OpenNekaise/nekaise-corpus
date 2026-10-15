@@ -153341,23 +153341,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2809037055
     resolution: 'legacy: openalex location'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-15'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-g-elements-finite-buildings-and-higher-cohen-m
     title: g-elements, finite buildings and higher Cohen-Macaulay connectivity
     url: https://arxiv.org/pdf/math/0512086v1
@@ -154102,3 +154085,79 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-15'
     origin_ids: doi:10.1103/physreve.78.051102
+  - id: oas-10-1080-19401493-2010-513740-dd3a9b26
+    title: 'Application of computational fluid dynamics in building performance simulation
+      for the outdoor environment: an overview'
+    url: https://lirias.kuleuven.be/retrieve/af640a56-d05a-4105-a11b-fd398e66b3d1
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2010-10-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2010.513740
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/af640a56-d05a-4105-a11b-fd398e66b3d1;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2010.513740 openalex:W2112191902
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-buildenv-2005-07-020-1e54d2fc
+    title: Series of experiments for empirical validation of solar gain modeling in
+      building energy simulation codes—Experimental setup, test cell characterizati
+    url: https://strathprints.strath.ac.uk/6575/1/Strachan_etal_Build_and_Env_2006_Series_of_experiments_empirical_validation_solar_gain_modelling_sim_codes_Dec_2006.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2005-09-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2005.07.020
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/6575/1/Strachan_etal_Build_and_Env_2006_Series_of_experiments_empirical_validation_solar_gain_modelling_sim_codes_Dec_2006.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2005.07.020 openalex:W2016632691
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1184-r1-6716120-e4aa4787
+    title: Dynamic Optimization of Integrated Active - Passive Strategies for Building
+      Enthalpy Control
+    url: http://repository.cmu.edu/dissertations/404
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1184/r1/6716120
+    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/404;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1184/r1/6716120 openalex:W1895185220
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-buildenv-2010-10-018-4075e9e6
+    title: Benchmark experiments for moisture transfer modelling in air and porous materials
+    url: https://biblio.ugent.be/publication/1966332/file/6763328.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2010-10-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2010.10.018
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/1966332/file/6763328.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/1966332/6763328;
+      payload sha256=8f99dcdb5030e1250313e1fa0cac033f7726f96e81641d289e86e30d8214f278;
+      original evidence: {"license": "unverified", "license_evidence": "openalex.license=other-oa;
+      openalex.license_id=https://openalex.org/licenses/other-oa; unpaywall.license=other-oa
+      [copy https://biblio.ugent.be/publication/1966332/file/6763328.pdf; version submittedVersion;
+      rights unknown]", "rights_verified_at": "2026-10-15", "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-15T14:07:27Z'
+    origin_ids: doi:10.1016/j.buildenv.2010.10.018 openalex:W2075120581
+    resolution: 'sim1: openalex+unpaywall location'
