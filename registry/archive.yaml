@@ -110568,21 +110568,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['c. 1922', '1922', '1928']
     rights_verified_at: '2026-10-14'
-  - id: arc-wedotheworkillustrationsofrecentcement-gunw-87b3944a
-    title: We do the work, illustrations of recent cement-gun work done by Cement Gun
-      Construction Co (1919) [arc-wedotheworkillustrationsofrecentcement-gunw-87b3944a]
-    url: https://archive.org/download/WeDoTheWorkIllustrationsOfRecentCement-gunWorkDoneByCementGun/CementGunConstructionCoCca30768_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1919'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['c. 1919', '1919']
-    rights_verified_at: '2026-10-14'
   - id: arc-wedotheworkillustrationsofrecentcement-gunw-75a5f972
     title: We do the work, illustrations of recent cement-gun work done by Cement Gun
       Construction Co (1919) [arc-wedotheworkillustrationsofrecentcement-gunw-75a5f972]
@@ -133625,21 +133610,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1930', '1930']
     rights_verified_at: '2026-10-15'
-  - id: arc-weilbrosgeneralcataloga-b561bb8a
-    title: 'General catalog A: plumbing and heating goods of every description (1910)
-      [arc-weilbrosgeneralcataloga-b561bb8a]'
-    url: https://archive.org/download/WeilBrosGeneralCatalogA/WeilBrosGeneralCatalogA_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1910'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1910', '1910']
-    rights_verified_at: '2026-10-15'
   - id: arc-ixlpumpandmfgcoincsimplifiedplumbinggoods00-abcb8d7e
     title: Simplified plumbing goods (1929) [arc-ixlpumpandmfgcoincsimplifiedplumbinggoods00-abcb8d7e]
     url: https://archive.org/download/IXLPumpandMfgCoIncSimplifiedPlumbingGoods0001/IXLPumpandMfgCoIncSimplifiedPlumbingGoods0001_djvu.txt
@@ -138568,4 +138538,823 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1922', '1922']
+    rights_verified_at: '2026-10-15'
+  - id: arc-weyerhaeusersalescohelpingtodayshomebuilder-a77ac7b3
+    title: Helping today's home builders get their money's worth (1946) [arc-weyerhaeusersalescohelpingtodayshomebuilder-a77ac7b3]
+    url: https://archive.org/download/WeyerhaeuserSalesCoHelpingtodayshomebuilders0001/WeyerhaeuserSalesCoHelpingtodayshomebuilders0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1946', '1946']
+    rights_verified_at: '2026-10-15'
+  - id: arc-weyerhaeusersalescomodernsmalllhomes0001-3f5de1dc
+    title: Modern smalll homes (1948) [arc-weyerhaeusersalescomodernsmalllhomes0001-3f5de1dc]
+    url: https://archive.org/download/WeyerhaeuserSalesCoModernsmalllhomes0001/WeyerhaeuserSalesCoModernsmalllhomes0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1948'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1948', '1948']
+    rights_verified_at: '2026-10-15'
+  - id: arc-weyerhaeusersalescomasterpiecesofprofession-e405b8c3
+    title: Masterpieces of professional planning (1955) [arc-weyerhaeusersalescomasterpiecesofprofession-e405b8c3]
+    url: https://archive.org/download/WeyerhaeuserSalesCoMasterpiecesofprofessionalplann0001/WeyerhaeuserSalesCoMasterpiecesofprofessionalplann0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-15'
+  - id: arc-leilarosswilburnsixtygoodnewhomes0001-da6272cb
+    title: Sixty good new homes [arc-leilarosswilburnsixtygoodnewhomes0001-da6272cb]
+    url: https://archive.org/download/LeilaRossWilburnSixtygoodnewhomes0001/LeilaRossWilburnSixtygoodnewhomes0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-royalbarrywillishousesforhomemakers0001-2c68e8f9
+    title: Houses for homemakers. (1945) [arc-royalbarrywillishousesforhomemakers0001-2c68e8f9]
+    url: https://archive.org/download/RoyalBarryWillisHousesforhomemakers0001/RoyalBarryWillisHousesforhomemakers0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1945'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1945', '1945']
+    rights_verified_at: '2026-10-15'
+  - id: arc-henrywilsonwilsonsmodernhomesno40001-8de8822a
+    title: Wilson's modern homes, no. 4 [arc-henrywilsonwilsonsmodernhomesno40001-8de8822a]
+    url: https://archive.org/download/HenryWilsonWilsonsmodernhomesno40001/HenryWilsonWilsonsmodernhomesno40001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-henrylwilsonwilsonsmodernhomesno50001-d7407c83
+    title: Wilson's modern homes, no. 5 (1920) [arc-henrylwilsonwilsonsmodernhomesno50001-d7407c83]
+    url: https://archive.org/download/HenryLWilsonWilsonsmodernhomesno50001/HenryLWilsonWilsonsmodernhomesno50001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-15'
+  - id: arc-wilsonmeyerinvestmentcowilsonmeyerhomes1928-57c5f066
+    title: Wilson-Meyer homes 1928 (1928) [arc-wilsonmeyerinvestmentcowilsonmeyerhomes1928-57c5f066]
+    url: https://archive.org/download/WilsonMeyerInvestmentCoWilsonMeyerhomes19280001/WilsonMeyerInvestmentCoWilsonMeyerhomes19280001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1928', '1928']
+    rights_verified_at: '2026-10-15'
+  - id: arc-alcarrapracticalguidetoprefabricatedhouses0-b62f6f0a
+    title: A practical guide to prefabricated houses (1947) [arc-alcarrapracticalguidetoprefabricatedhouses0-b62f6f0a]
+    url: https://archive.org/download/ALCarrApracticalguidetoprefabricatedhouses0001/ALCarrApracticalguidetoprefabricatedhouses0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-15'
+  - id: arc-geoewoodwardwoodwardscottagesandfarmhouses0-04ef8af3
+    title: Woodward's cottages and farm houses (1867) [arc-geoewoodwardwoodwardscottagesandfarmhouses0-04ef8af3]
+    url: https://archive.org/download/GeoEWoodwardWoodwardscottagesandfarmhouses0001/GeoEWoodwardWoodwardscottagesandfarmhouses0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1867'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1867', '1867']
+    rights_verified_at: '2026-10-15'
+  - id: arc-sunsetmagazinesunsetscabinplanbook0001-a1e3d3ca
+    title: Sunset's cabin plan book (1938) [arc-sunsetmagazinesunsetscabinplanbook0001-a1e3d3ca]
+    url: https://archive.org/download/SunsetMagazineSunsetscabinplanbook0001/SunsetMagazineSunsetscabinplanbook0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938', '1938']
+    rights_verified_at: '2026-10-15'
+  - id: arc-johnpaulpocketreferencebookpresentedby0001-9a6a1c4e
+    title: Pocket reference book presented by John Paul (1885) [arc-johnpaulpocketreferencebookpresentedby0001-9a6a1c4e]
+    url: https://archive.org/download/JohnPaulPocketreferencebookpresentedby0001/JohnPaulPocketreferencebookpresentedby0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1885'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1885', '1885']
+    rights_verified_at: '2026-10-15'
+  - id: arc-sbreedcottagehousesforvillageandcountryhome-ebab0757
+    title: Cottage houses for village and country homes (1899) [arc-sbreedcottagehousesforvillageandcountryhome-ebab0757]
+    url: https://archive.org/download/SBReedCottagehousesforvillageandcountryhomes0001/SBReedCottagehousesforvillageandcountryhomes0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1899'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1899', '1899']
+    rights_verified_at: '2026-10-15'
+  - id: arc-ceciljhkeeleybungalowsandmodernhomes0001-f82cdb63
+    title: Bungalows and modern homes (1928) [arc-ceciljhkeeleybungalowsandmodernhomes0001-f82cdb63]
+    url: https://archive.org/download/CecilJHKeeleyBungalowsandmodernhomes0001/CecilJHKeeleyBungalowsandmodernhomes0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1928', '1928']
+    rights_verified_at: '2026-10-15'
+  - id: arc-popularsciencepublishingcoinchowtobuildcabi-779da3bc
+    title: How to build cabins, lodges, bungalows (1934) [arc-popularsciencepublishingcoinchowtobuildcabi-779da3bc]
+    url: https://archive.org/download/PopularSciencePublishingCoIncHowtobuildcabinslodge0001/PopularSciencePublishingCoIncHowtobuildcabinslodge0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1934', '1934']
+    rights_verified_at: '2026-10-15'
+  - id: arc-williamtcomstockcottages0001-bdd9c66c
+    title: Cottages (1884) [arc-williamtcomstockcottages0001-bdd9c66c]
+    url: https://archive.org/download/WilliamTComstockCottages0001/WilliamTComstockCottages0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1884'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1884', '1884']
+    rights_verified_at: '2026-10-15'
+  - id: arc-williamswansonlogcabins0001-b6875d47
+    title: Log cabins (1948) [arc-williamswansonlogcabins0001-b6875d47]
+    url: https://archive.org/download/WilliamSwansonLogcabins0001/WilliamSwansonLogcabins0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1948'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1948', '1948']
+    rights_verified_at: '2026-10-15'
+  - id: arc-sbreedmodernhomesforeverybody0001-7db9352c
+    title: Modern homes for everybody (1900) [arc-sbreedmodernhomesforeverybody0001-7db9352c]
+    url: https://archive.org/download/SBReedModernhomesforeverybody0001/SBReedModernhomesforeverybody0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-15'
+  - id: arc-donahuehenneberrycothecompletehousebuilder0-74f74fc3
+    title: The complete house builder with hints on building (1890) [arc-donahuehenneberrycothecompletehousebuilder0-74f74fc3]
+    url: https://archive.org/download/DonahueHenneberryCoThecompletehousebuilder0001/DonahueHenneberryCoThecompletehousebuilder0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-15'
+  - id: arc-mullensmanufacturingcorpspecificationsfordi-7dee6a39
+    title: Specifications for Diana-style (1953) [arc-mullensmanufacturingcorpspecificationsfordi-7dee6a39]
+    url: https://archive.org/download/MullensManufacturingCorpSpecificationsforDianastyl0001/MullensManufacturingCorpSpecificationsforDianastyl0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1953'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1953', '1953']
+    rights_verified_at: '2026-10-15'
+  - id: arc-nationallumbermanufacturersassoclumberandit-533e8eaf
+    title: 'Lumber and its utilization: wood floors, vol. IV, ch. 15 (1929) [arc-nationallumbermanufacturersassoclumberandit-533e8eaf]'
+    url: https://archive.org/download/NationalLumberManufacturersAssocLumberanditsutiliz0001/NationalLumberManufacturersAssocLumberanditsutiliz0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929', '1929']
+    rights_verified_at: '2026-10-15'
+  - id: arc-nationallumbermanufacturingassocstandardind-ebcf58ed
+    title: 'Lumber and its utilizations: standard industrial buildings, vol. IV, ch.
+      14 (1929) [arc-nationallumbermanufacturingassocstandardind-ebcf58ed]'
+    url: https://archive.org/download/NationalLumberManufacturingAssocstandardindustrial0001/NationalLumberManufacturingAssocstandardindustrial0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929', '1929']
+    rights_verified_at: '2026-10-15'
+  - id: arc-nationallumbermanufacturingassocstrongerfra-6315f166
+    title: 'Lumber and its utilization: stronger frame walls, vol. IV, ch. 18 (1930)
+      [arc-nationallumbermanufacturingassocstrongerfra-6315f166]'
+    url: https://archive.org/download/NationalLumberManufacturingAssocStrongerframewalls0001/NationalLumberManufacturingAssocStrongerframewalls0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-15'
+  - id: arc-armstrongcorkcohowtobuildamorecomfortablene-453ae232
+    title: How to build a more comfortable new home (1949) [arc-armstrongcorkcohowtobuildamorecomfortablene-453ae232]
+    url: https://archive.org/download/ArmstrongCorkCoHowtobuildamorecomfortablenewhome0001/ArmstrongCorkCoHowtobuildamorecomfortablenewhome0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
+    rights_verified_at: '2026-10-15'
+  - id: arc-andersenlumbercohowtomakeyournewhomemorecom-09872c9b
+    title: How to make your new home more comfortable (1929) [arc-andersenlumbercohowtomakeyournewhomemorecom-09872c9b]
+    url: https://archive.org/download/AndersenLumberCoHowtomakeyournewhomemorecomfortabl0001/AndersenLumberCoHowtomakeyournewhomemorecomfortabl0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929', '1929']
+    rights_verified_at: '2026-10-15'
+  - id: arc-magnesiteproductscothestuccobeautiful0001-b61e596f
+    title: The stucco beautiful [arc-magnesiteproductscothestuccobeautiful0001-b61e596f]
+    url: https://archive.org/download/MagnesiteProductsCoThestuccobeautiful0001/MagnesiteProductsCoThestuccobeautiful0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-nilescenterbondandmortgageconilescenterelec-3fa5002a
+    title: Niles Center electrical home [arc-nilescenterbondandmortgageconilescenterelec-3fa5002a]
+    url: https://archive.org/download/NilesCenterBondandMortgageCoNilesCenterelectricalh0001/NilesCenterBondandMortgageCoNilesCenterelectricalh0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-fabrowmfginccontinueyourleadership0001-fe1c6419
+    title: Continue your leadership with constructions that's... [arc-fabrowmfginccontinueyourleadership0001-fe1c6419]
+    url: https://archive.org/download/FabrowMfgIncContinueyourleadership0001/FabrowMfgIncContinueyourleadership0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-owensillinoisglasscoideasforbrighterhomeswi-e2f49d92
+    title: Ideas for brighter homes with insulux glass block (1947) [arc-owensillinoisglasscoideasforbrighterhomeswi-e2f49d92]
+    url: https://archive.org/download/OwensIllinoisGlassCoIdeasforbrighterhomeswithinsul0001/OwensIllinoisGlassCoIdeasforbrighterhomeswithinsul0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-15'
+  - id: arc-marmetcorpthebrandnewmarmetventilator0001-314ad377
+    title: The brand new Marmet ventilator [arc-marmetcorpthebrandnewmarmetventilator0001-314ad377]
+    url: https://archive.org/download/MarmetCorpThebrandnewMarmetventilator0001/MarmetCorpThebrandnewMarmetventilator0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-thedonleybrotherscobookofsuccessfulfireplac-812598d1
+    title: Book of successful fireplaces (1954) [arc-thedonleybrotherscobookofsuccessfulfireplac-812598d1]
+    url: https://archive.org/download/TheDonleyBrothersCoBookofsuccessfulfireplaces0001/TheDonleyBrothersCoBookofsuccessfulfireplaces0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1954'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1954', '1954']
+    rights_verified_at: '2026-10-15'
+  - id: arc-northernhomesincnorthernhomes0001-0f5ff05d
+    title: Northern homes [arc-northernhomesincnorthernhomes0001-0f5ff05d]
+    url: https://archive.org/download/NorthernHomesIncNorthernhomes0001/NorthernHomesIncNorthernhomes0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-westcoastlumbermansassociationhowtobuildwel-713c7289
+    title: How to build well and save money [arc-westcoastlumbermansassociationhowtobuildwel-713c7289]
+    url: https://archive.org/download/WestCoastLumbermansAssociationHowtobuildwelland0001/WestCoastLumbermansAssociationHowtobuildwelland0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-louisvillecementcoincspecificationsrecommen-d86d1061
+    title: Specifications recommended to secure dry brick walls (1952) [arc-louisvillecementcoincspecificationsrecommen-d86d1061]
+    url: https://archive.org/download/LouisvilleCementCoIncSpecificationsrecommendedto0001/LouisvilleCementCoIncSpecificationsrecommendedto0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1952', '1952']
+    rights_verified_at: '2026-10-15'
+  - id: arc-armstrongcorkcolivablebasementrooms0001-7a2912d3
+    title: Livable basement rooms [arc-armstrongcorkcolivablebasementrooms0001-7a2912d3]
+    url: https://archive.org/download/ArmstrongCorkCoLivablebasementrooms0001/ArmstrongCorkCoLivablebasementrooms0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-armstrongcorkcobetterfloorsforbetterbusines-0f975ace
+    title: Better floors for better business (1944) [arc-armstrongcorkcobetterfloorsforbetterbusines-0f975ace]
+    url: https://archive.org/download/ArmstrongCorkCoBetterfloorsforbetterbusiness0001/ArmstrongCorkCoBetterfloorsforbetterbusiness0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1944'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1944', '1944']
+    rights_verified_at: '2026-10-15'
+  - id: arc-armstrongcorkcofloorsthatkeephomesinfashion-540f5c9a
+    title: Floors that keep homes in fashion (1937) [arc-armstrongcorkcofloorsthatkeephomesinfashion-540f5c9a]
+    url: https://archive.org/download/ArmstrongCorkCoFloorsthatkeephomesinfashion0001/ArmstrongCorkCoFloorsthatkeephomesinfashion0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937', '1937']
+    rights_verified_at: '2026-10-15'
+  - id: arc-armstrongcorkcohowtoplansmartbasementrooms0-220b0f7d
+    title: How to plan smart basement rooms (1950) [arc-armstrongcorkcohowtoplansmartbasementrooms0-220b0f7d]
+    url: https://archive.org/download/ArmstrongCorkCoHowtoplansmartbasementrooms0001/ArmstrongCorkCoHowtoplansmartbasementrooms0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-15'
+  - id: arc-brascomanufacturingcobrascostorefrontsserie-163b1960
+    title: 'Brasco store fronts: "series 500" all-copper construction, special catalog
+      no. 31 (1931) [arc-brascomanufacturingcobrascostorefrontsserie-163b1960]'
+    url: https://archive.org/download/BrascoManufacturingCoBrascostorefrontsseries500all0001/BrascoManufacturingCoBrascostorefrontsseries500all0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1931', '1931']
+    rights_verified_at: '2026-10-15'
+  - id: arc-thecolumbiamillsinccolumbiavenetianblindsan-2f4647d5
+    title: Columbia Venetian blinds and window shades (1935) [arc-thecolumbiamillsinccolumbiavenetianblindsan-2f4647d5]
+    url: https://archive.org/download/TheColumbiaMillsIncColumbiavenetianblindsandwindow0001/TheColumbiaMillsIncColumbiavenetianblindsandwindow0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c 1935', '1935']
+    rights_verified_at: '2026-10-15'
+  - id: arc-johnmanvillecorpbuildingmaterials19370001-3a262c9b
+    title: The catalog of Johns-Manville building materials (1937) [arc-johnmanvillecorpbuildingmaterials19370001-3a262c9b]
+    url: https://archive.org/download/JohnManvilleCorpBuildingmaterials19370001/JohnManvilleCorpBuildingmaterials19370001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937', '1937']
+    rights_verified_at: '2026-10-15'
+  - id: arc-plateglassmanufacturersofamericaplateglass0-33383557
+    title: Plate glass (1937) [arc-plateglassmanufacturersofamericaplateglass0-33383557]
+    url: https://archive.org/download/PlateGlassManufacturersofAmericaPlateglass0001/PlateGlassManufacturersofAmericaPlateglass0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937', '1937']
+    rights_verified_at: '2026-10-15'
+  - id: arc-portlandcementassocbeautyinwallsofarchitect-fb266bf8
+    title: Beauty in walls of architectural concrete (1936) [arc-portlandcementassocbeautyinwallsofarchitect-fb266bf8]
+    url: https://archive.org/download/PortlandCementAssocBeautyinwallsofarchitectural0001/PortlandCementAssocBeautyinwallsofarchitectural0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1936', '1936']
+    rights_verified_at: '2026-10-15'
+  - id: arc-pittsburghplateglasscoeasysetsystemmetalsto-b2c9352b
+    title: Easyset system metal store fronts, catalog H [arc-pittsburghplateglasscoeasysetsystemmetalsto-b2c9352b]
+    url: https://archive.org/download/PittsburghPlateGlassCoEasysetsystemmetalstorefront0001/PittsburghPlateGlassCoEasysetsystemmetalstorefront0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-pittsburghplateglasscohowtomakebathroomskit-0c5f2011
+    title: How to make bathrooms & kitchens better-looking (1941) [arc-pittsburghplateglasscohowtomakebathroomskit-0c5f2011]
+    url: https://archive.org/download/PittsburghPlateGlassCoHowtomakebathroomskitchen0001/PittsburghPlateGlassCoHowtomakebathroomskitchen0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941', '1941']
+    rights_verified_at: '2026-10-15'
+  - id: arc-zouridrawnmetalscogettingthepeoplein0001-e8a722ba
+    title: Getting the people in [arc-zouridrawnmetalscogettingthepeoplein0001-e8a722ba]
+    url: https://archive.org/download/ZouriDrawnMetalsCoGettingthepeoplein0001/ZouriDrawnMetalsCoGettingthepeoplein0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-15'
+  - id: arc-thestransteelirwinhousestwocenturyofprogres-2da7b32b
+    title: Two century of progress homes (1934) [arc-thestransteelirwinhousestwocenturyofprogres-2da7b32b]
+    url: https://archive.org/download/TheStranSteelIrwinHousesTwocenturyofprogresshomes0001/TheStranSteelIrwinHousesTwocenturyofprogresshomes0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1934', '1934']
+    rights_verified_at: '2026-10-15'
+  - id: arc-kawneermanufacturingcokawneerstorefronts191-046ddfb9
+    title: Kawneer store fronts (1913) [arc-kawneermanufacturingcokawneerstorefronts191-046ddfb9]
+    url: https://archive.org/download/KawneerManufacturingCoKawneerstorefronts19130001/KawneerManufacturingCoKawneerstorefronts19130001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1913', '1913']
+    rights_verified_at: '2026-10-15'
+  - id: arc-geolmeskermeskercompletestorefronts0001-f3a50f05
+    title: Mesker standard bowstring steel roof trusses, complete store fronts, marquise
+      (1927) [arc-geolmeskermeskercompletestorefronts0001-f3a50f05]
+    url: https://archive.org/download/GeoLMeskerMeskercompletestorefronts0001/GeoLMeskerMeskercompletestorefronts0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1927', '1927']
+    rights_verified_at: '2026-10-15'
+  - id: arc-woodconversioncothenuwoodcoloharmonizer0001-a52ba127
+    title: The nu-wood color harmonizer (1940) [arc-woodconversioncothenuwoodcoloharmonizer0001-a52ba127]
+    url: https://archive.org/download/WoodConversionCoThenuwoodcoloharmonizer0001/WoodConversionCoThenuwoodcoloharmonizer0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-15'
+  - id: arc-detroitshowcasecostorefronts0001-6eca66a5
+    title: Store fronts (1922) [arc-detroitshowcasecostorefronts0001-6eca66a5]
+    url: https://archive.org/download/DetroitShowCaseCoStorefronts0001/DetroitShowCaseCoStorefronts0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1922', '1922']
+    rights_verified_at: '2026-10-15'
+  - id: arc-montgomerywardcoincwards1941wallpaperstyleb-506b91cc
+    title: Wards 1941 wallpaper style book (1941) [arc-montgomerywardcoincwards1941wallpaperstyleb-506b91cc]
+    url: https://archive.org/download/MontgomeryWardCoIncWards1941wallpaperstylebook0001/MontgomeryWardCoIncWards1941wallpaperstylebook0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941', '1941']
+    rights_verified_at: '2026-10-15'
+  - id: arc-unitedstatesgypsumcoseventytwodesignsforfir-37d70f0a
+    title: Seventy-two designs for fireproof homes (1925) [arc-unitedstatesgypsumcoseventytwodesignsforfir-37d70f0a]
+    url: https://archive.org/download/UnitedStatesGypsumCoSeventytwodesignsforfireproof0001/UnitedStatesGypsumCoSeventytwodesignsforfireproof0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1925', '1925']
+    rights_verified_at: '2026-10-15'
+  - id: arc-buildingplanholdingcorphomebuildersplanbook-98c34496
+    title: Home builder's plan book (1921) [arc-buildingplanholdingcorphomebuildersplanbook-98c34496]
+    url: https://archive.org/download/BuildingPlanHoldingCorpHomebuildersplanbook0001/BuildingPlanHoldingCorpHomebuildersplanbook0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1921'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1921', '1921']
+    rights_verified_at: '2026-10-15'
+  - id: arc-maxlkeithattractivehomes0001-50dd1217
+    title: Attractive homes (1912) [arc-maxlkeithattractivehomes0001-50dd1217]
+    url: https://archive.org/download/MaxLKeithAttractivehomes0001/MaxLKeithAttractivehomes0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1912', '1912']
+    rights_verified_at: '2026-10-15'
+  - id: arc-robertlstevensonhomesofcharacteronehundredd-53cf215c
+    title: 'Homes of character: one-hundred designs (1923) [arc-robertlstevensonhomesofcharacteronehundredd-53cf215c]'
+    url: https://archive.org/download/RobertLStevensonHomesofcharacteronehundreddesigns0001/RobertLStevensonHomesofcharacteronehundreddesigns0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1923', '1923']
+    rights_verified_at: '2026-10-15'
+  - id: arc-lanepublishingcosunsetwesternranchhouses000-2845231c
+    title: Sunset western ranch houses (1946) [arc-lanepublishingcosunsetwesternranchhouses000-2845231c]
+    url: https://archive.org/download/LanePublishingCoSunsetwesternranchhouses0001/LanePublishingCoSunsetwesternranchhouses0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1946', '1946']
+    rights_verified_at: '2026-10-15'
+  - id: arc-williamtcomstockbungalowscampsandmountainho-432685aa
+    title: Bungalows, camps and mountain houses (1915) [arc-williamtcomstockbungalowscampsandmountainho-432685aa]
+    url: https://archive.org/download/WilliamTComstockBungalowscampsandmountainhouses0001/WilliamTComstockBungalowscampsandmountainhouses0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1915', '1915', '1908']
+    rights_verified_at: '2026-10-15'
+  - id: arc-robertlstevensonportfolioofhomes0001-2396a104
+    title: Portfolio of homes (1930) [arc-robertlstevensonportfolioofhomes0001-2396a104]
+    url: https://archive.org/download/RobertLStevensonPortfolioofhomes0001/RobertLStevensonPortfolioofhomes0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
     rights_verified_at: '2026-10-15'

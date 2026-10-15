@@ -371,14 +371,6 @@ sources:
     license: cc-by
     topic: construction
     format: pdf
-  - id: sci-s1678-86212011000100003
-    title: Avaliação da resistência à compressão, resistência à tração e formação de
-      microfissuras em concretos produzidos com diferentes tipos de cimentos, quan
-    url: https://www.scielo.br/pdf/ac/v11n1/a03v11n1.pdf
-    source: scielo_scl
-    license: cc-by
-    topic: construction
-    format: pdf
   - id: sci-s1678-86212010000400018
     title: Tableros de partículas de bambú (Bambusa vulgaris Schrad) y resina poliuretana
       a base de aceite de rícino (Ricinus communis L.)
@@ -2347,20 +2339,6 @@ sources:
     persistent_id: S1678-86212011000200010
     license_url: https://creativecommons.org/licenses/by/4.0/
     license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212011000200010&format=json
-    rights_verified_at: '2026-07-28'
-  - id: sci-s1678-86212011000200008
-    title: Desempenho estrutural de protótipo de alvenaria construída com blocos de
-      terra crua estabilizada
-    url: https://www.scielo.br/pdf/ac/v11n2/a08v11n2.pdf
-    source: scielo_scl
-    license: cc-by
-    topic: construction
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S1678-86212011000200008
-    license_url: https://creativecommons.org/licenses/by/4.0/
-    license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212011000200008&format=json
     rights_verified_at: '2026-07-28'
   - id: sci-s1678-86212011000200006
     title: Disposições técnicas e diretrizes para projeto de habitações sociais evolutivas
@@ -31595,20 +31573,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0/
     license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212015000300135&format=json
     rights_verified_at: '2026-07-28'
-  - id: sci-s1678-86212015000300057
-    title: Influência do uso de aditivo retentor de água à base de éter de celulose
-      nas propriedades das argamassas de assentamento em alvenaria estrutural de bl
-    url: https://www.scielo.br/pdf/ac/v15n3/1678-8621-ac-15-03-00057.pdf
-    source: scielo_scl
-    license: cc-by
-    topic: construction
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S1678-86212015000300057
-    license_url: https://creativecommons.org/licenses/by/4.0/
-    license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212015000300057&format=json
-    rights_verified_at: '2026-07-28'
   - id: sci-s1678-86212015000300007
     title: Ligante geopolimérico produzido com cinza volante e hidróxido de sódio
     url: https://www.scielo.br/pdf/ac/v15n3/1678-8621-ac-15-03-00007.pdf
@@ -43934,20 +43898,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0/
     license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212016000400251&format=json
     rights_verified_at: '2026-07-28'
-  - id: sci-s1678-86212016000400063
-    title: Development of an Augmented Reality environment for the assembly of a precast
-      wood-frame wall using the BIM model
-    url: https://www.scielo.br/pdf/ac/v16n4/1678-8621-ac-16-04-0063.pdf
-    source: scielo_scl
-    license: cc-by
-    topic: construction
-    format: pdf
-    language: en
-    document_type: journal-article
-    persistent_id: S1678-86212016000400063
-    license_url: https://creativecommons.org/licenses/by/4.0/
-    license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212016000400063&format=json
-    rights_verified_at: '2026-07-28'
   - id: sci-s1678-86212016000400109
     title: Proposta de modelo para controle integrado da produção e da qualidade com
       apoio da computação móvel
@@ -43961,20 +43911,6 @@ sources:
     persistent_id: S1678-86212016000400109
     license_url: https://creativecommons.org/licenses/by/4.0/
     license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212016000400109&format=json
-    rights_verified_at: '2026-07-28'
-  - id: sci-s1678-86212016000400027
-    title: Proposta paramétrica para projetos sustentáveis de Habitação de Interesse
-      Social em ambiente BIM
-    url: https://www.scielo.br/pdf/ac/v16n4/1678-8621-ac-16-04-0027.pdf
-    source: scielo_scl
-    license: cc-by
-    topic: construction
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S1678-86212016000400027
-    license_url: https://creativecommons.org/licenses/by/4.0/
-    license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212016000400027&format=json
     rights_verified_at: '2026-07-28'
   - id: sci-s1983-41952012000200006
     title: Guidelines for the development of concrete performance-based specifications
@@ -229986,6 +229922,244 @@ sources:
     document_type: journal-article
     persistent_id: S0366-69132004000200007
     license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132004000200007&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132004000400004
+    title: Utilização de rejeitos de pilha zinco-carvão em argamassas e concretos de
+      cimento Portland
+    url: https://www.scielo.br/pdf/ce/v50n316/a0450316.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132004000400004
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132004000400004&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132004000400008
+    title: Adição de microssílica e a secagem de concretos refratários
+    url: https://www.scielo.br/pdf/ce/v50n316/a0850316.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132004000400008
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132004000400008&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132004000400009
+    title: Assessment of industrial wastes in mortar layers deposited on stainless steel
+      sheets of sinks
+    url: https://www.scielo.br/pdf/ce/v50n316/a0950316.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S0366-69132004000400009
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132004000400009&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132004000400007
+    title: Caracterização de resíduo (lodo) proveniente de estação de tratamento de
+      águas visando sua utilização em cerâmica vermelha
+    url: https://www.scielo.br/pdf/ce/v50n316/a0750316.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132004000400007
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132004000400007&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000100002
+    title: Fibras metálicas e sua influência no comportamento mecânico de concretos
+      refratários durante a secagem
+    url: https://www.scielo.br/pdf/ce/v51n317/24201.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132005000100002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000100002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000100013
+    title: Avaliação das propriedades físico-mecânicas de uma massa cerâmica para revestimento
+      poroso (BIII)
+    url: https://www.scielo.br/pdf/ce/v51n317/24212.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132005000100013
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000100013&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000300009
+    title: Efeito do ciclo de queima sobre as propriedades tecnológicas de uma massa
+      cerâmica vermelha para revestimento poroso
+    url: https://www.scielo.br/pdf/ce/v51n319/26796.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132005000300009
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000300009&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000300004
+    title: 'Cinza da lenha para aplicação em cerâmica vermelha. parte I: características
+      da cinza'
+    url: https://www.scielo.br/pdf/ce/v51n319/26791.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132005000300004
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000300004&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000200003
+    title: 'Co-disposição de lodo centrifugado de Estação de Tratamento de Água (ETA)
+      em matriz de concreto: método alternativo de preservação ambiental'
+    url: https://www.scielo.br/pdf/ce/v51n318/25583.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132005000200003
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000200003&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000200007
+    title: Utilização do subproduto da recuperação metálica de escórias de aços inoxidáveis
+      na síntese de pigmentos cerâmicos; caracterização da matéria-prima
+    url: https://www.scielo.br/pdf/ce/v51n318/25587.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132005000200007
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000200007&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000400012
+    title: Mineralogical analysis of Brazilian ceramic sedimentary clays used in red
+      ceramic
+    url: https://www.scielo.br/pdf/ce/v51n320/29535.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S0366-69132005000400012
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000400012&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000400003
+    title: Avaliação das propriedades físicas e mecânicas de concretos produzidos com
+      vidro cominuído como agregado fino
+    url: https://www.scielo.br/pdf/ce/v51n320/29526.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132005000400003
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000400003&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132005000400009
+    title: Desenvolvimento de um sistema de fachada ventilada com placas cerâmicas de
+      grês porcelanato voltado para a construção civil do Brasil
+    url: https://www.scielo.br/pdf/ce/v51n320/29532.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132005000400009
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132005000400009&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132006000100014
+    title: Otimização do uso de sol de sílica como agente ligante para concretos refratários
+    url: https://www.scielo.br/pdf/ce/v52n321/13.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132006000100014
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132006000100014&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132006000100015
+    title: Estudo da influência de cimentos na fluência em concretos para a construção
+      civil
+    url: https://www.scielo.br/pdf/ce/v52n321/14.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132006000100015
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132006000100015&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
+    rights_verified_at: '2026-10-15'
+  - id: sci-s0366-69132006000100005
+    title: 'Novos aditivos de secagem para concretos refratários: fibras poliméricas
+      de alto desempenho'
+    url: https://www.scielo.br/pdf/ce/v52n321/04.pdf
+    source: scielo_scl
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S0366-69132006000100005
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S0366-69132006000100005&format=json);
       context only, not evidence for this article: the journal record''s current licence
       (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=0366-6913)'
     rights_verified_at: '2026-10-15'

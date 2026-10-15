@@ -153706,3 +153706,77 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.1353/jcl.2025.a956200 openalex:W4409460748
     resolution: 'ai1: openalex+unpaywall location'
+  - id: ope-a-data-driven-framework-for-occupancy-optimisa
+    title: A data-driven framework for occupancy optimisation strategies towards energy
+      demand reduction in non-domestic buildings
+    url: https://discovery.ucl.ac.uk/10198844/1/Soong_2024_DataDrivenFrameworkForOccupancyOptimisation.pdf
+    source: openalex
+    license: cc-by-nc
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/01436244241287000
+    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
+      [copy https://discovery.ucl.ac.uk/10198844/1/Soong_2024_DataDrivenFrameworkForOccupancyOptimisation.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/01436244241287000 openalex:W4403614964
+    resolution: 'legacy: openalex location'
+  - id: ope-cibse-tm54-energy-projections-ii-a-case-study-
+    title: 'CIBSE TM54 energy projections II: A case study using dynamic simulation
+      with template systems modelling'
+    url: https://discovery.ucl.ac.uk/id/eprint/10191762/1/jain-et-al-2024-cibse-tm54-energy-projections-ii-a-case-study-using-dynamic-simulation-with-template-systems-modelling.pdf
+    source: openalex
+    license: cc-by-nc
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-04-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/01436244241245522
+    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
+      [copy https://discovery.ucl.ac.uk/id/eprint/10191762/1/jain-et-al-2024-cibse-tm54-energy-projections-ii-a-case-study-using-dynamic-simulation-with-template-systems-modelling.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/01436244241245522 openalex:W4394786436
+    resolution: 'legacy: openalex location'
+  - id: ope-energy-efficiency-evaluation-and-forecasting-o
+    title: 'Energy Efficiency Evaluation and Forecasting of the Sussex Ports to Address
+      Climate Change Concerns: a Data-driven Decision Model'
+    url: https://cris.brighton.ac.uk/ws/files/42913153/gcgw23_proceeding.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.2139/ssrn.4663377
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://cris.brighton.ac.uk/ws/files/42913153/gcgw23_proceeding.pdf; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.2139/ssrn.4663377 openalex:W4389747335
+    resolution: 'legacy: openalex location'
+  - id: arx-chiral-brownian-rotor-and-heat-pump
+    title: Chiral Brownian rotor and heat pump
+    url: https://arxiv.org/pdf/0803.4105v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2008-03-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0803.4105
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0803.4105 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-15'
