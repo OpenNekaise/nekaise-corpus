@@ -153566,3 +153566,20 @@ sources:
       version and the copy this URL names): no licence element -> arxiv-nonexclusive
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-15'
+  - id: arx-nonadiabatic-electron-heat-pump
+    title: Nonadiabatic electron heat pump
+    url: https://arxiv.org/pdf/cond-mat/0610155v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2006-10-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cond-mat/0610155
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cond-mat/0610155&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cond-mat/0610155 (v4, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-15'
+    origin_ids: doi:10.1103/physrevb.76.085337
