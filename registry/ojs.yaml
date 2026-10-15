@@ -291843,20 +291843,6 @@ sources:
     license_evidence: 'https://oaj.fupress.net/index.php/ri-vista/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/2771
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-rivista-regeneration-a-southwark
-    title: Regeneration a Southwark
-    url: https://oaj.fupress.net/index.php/ri-vista/article/download/2772/2772
-    source: ojs_rivista
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2015-11-13'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.13128/rv-17484
-    license_evidence: 'https://oaj.fupress.net/index.php/ri-vista/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/2772
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-rivista-politiche-e-azioni-locali-per-il-verde-urbano-a-lon
     title: Politiche e azioni locali per il verde urbano a Londra
     url: https://oaj.fupress.net/index.php/ri-vista/article/download/2773/2773
@@ -294075,34 +294061,6 @@ sources:
     license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4422
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-techne-education-research-photography
-    title: Education, Research, Photography
-    url: https://oaj.fupress.net/index.php/techne/article/download/4423/4423
-    source: ojs_techne
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2015-04-24'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.13128/techne-16108
-    license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4423
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-techne-autonomy-independence-inclusion
-    title: Autonomy, Independence, Inclusion
-    url: https://oaj.fupress.net/index.php/techne/article/download/4424/4424
-    source: ojs_techne
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2015-04-24'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.13128/techne-16109
-    license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4424
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-techne-deep-renovation-of-the-school-building-stock-the-eur
     title: 'Deep renovation of the school building stock: the European opportunity and
       the Italian strategy'
@@ -294187,20 +294145,6 @@ sources:
     document_type: journal-article
     persistent_id: https://doi.org/10.13128/techne-16115
     license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4430
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-techne-organizational-models-for-the-flexible-management-of
-    title: Organizational models for the flexible management of hospitals
-    url: https://oaj.fupress.net/index.php/techne/article/download/4431/4431
-    source: ojs_techne
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2015-04-24'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.13128/techne-16116
-    license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/4431
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'
   - id: ojs-techne-the-third-sector-for-supporting-sustainability-and-i
@@ -297817,22 +297761,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2021 Gabriela Celani)'
     rights_verified_at: '2026-10-15'
-  - id: ojs-revprojetar-roda-de-conversa-ensino-remoto-de-projeto-de-au
-    title: RODA DE CONVERSA ENSINO REMOTO DE PROJETO DE AU EM CONTEXTO DE DISTANCIAMENTO
-      SOCIAL - APRESENTAÇÃO
-    url: https://periodicos.ufrn.br/revprojetar/article/download/23871/13750
-    source: ojs_revprojetar
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: pt
-    published_at: '2021-01-25'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.21680/2448-296x.2021v6n1id23871
-    license_evidence: 'https://periodicos.ufrn.br/revprojetar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.ufrn.br:article/23871
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2021 Maísa Veloso)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-revprojetar-an-lise-dos-bairros-ribeirinhos-da-zona-centro
     title: ANÁLISE DOS BAIRROS RIBEIRINHOS DA ZONA CENTRO/NORTE EM TERESINA, PIAUÍ
     url: https://periodicos.ufrn.br/revprojetar/article/download/23986/14825
@@ -298675,20 +298603,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/488
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-regeneration-of-pavement-with-modifiers-based-on-ecolog
-    title: Regeneration of pavement with modifiers based on ecological materials
-    url: https://ph.pollub.pl/index.php/bia/article/download/489/397
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2016-12-01'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.24358/bud-arch_16_154_12
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/489
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-comparative-analysis-of-survey-on-humidity-carried-out
     title: Comparative analysis of survey on humidity carried out by chemical way in
       proportion to gravimetric survey on selected building materials
@@ -298982,21 +298896,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/727
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-problem-of-gnss-positioning-with-measurements-recor
-    title: The problem of GNSS positioning with measurements recorded using Android
-      mobile devices
-    url: https://ph.pollub.pl/index.php/bia/article/download/738/1227
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2020-01-24'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.738
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/738
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-opportunities-and-threats-for-natural-building-using-st
     title: Opportunities and threats for natural building using straw bale technology
     url: https://ph.pollub.pl/index.php/bia/article/download/739/1666
@@ -299258,20 +299157,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-sa/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1494
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-castle-in-town-of-brody-the-phases-of-development-o
-    title: 'The castle in town of Brody: the phases of development of fortifications'
-    url: https://ph.pollub.pl/index.php/bia/article/download/1511/1237
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-12-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1511
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1511
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-architecture-as-the-art-of-creating-human-friendly-plac
     title: Architecture as the art of creating human-friendly places
     url: https://ph.pollub.pl/index.php/bia/article/download/1520/2200
@@ -299285,34 +299170,6 @@ sources:
     persistent_id: https://doi.org/10.35784/bud-arch.1520
     license_url: https://creativecommons.org/licenses/by-sa/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1520
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-study-of-the-mechanical-properties-of-the-porous-gy
-    title: The study of the mechanical properties of the porous gypsum
-    url: https://ph.pollub.pl/index.php/bia/article/download/1535/1298
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-12-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1535
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1535
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-wooden-heritage-buildings-and-preventing-them-against-f
-    title: Wooden heritage buildings and preventing them against fire
-    url: https://ph.pollub.pl/index.php/bia/article/download/1538/1301
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-12-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1538
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1538
     rights_verified_at: '2026-10-15'
   - id: ojs-bia-the-physical-and-mechanical-properties-of-magnesium-oxy
     title: The physical and mechanical properties of magnesium oxychloride cement-based
@@ -299414,21 +299271,6 @@ sources:
     persistent_id: https://doi.org/10.35784/bud-arch.1554
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1554
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-impact-of-temperature-humidity-and-the-direction-of
-    title: The impact of temperature, humidity and the direction of analysis on thermal
-      conductivity λ in different types of wood
-    url: https://ph.pollub.pl/index.php/bia/article/download/1555/1306
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-12-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1555
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1555
     rights_verified_at: '2026-10-15'
   - id: ojs-bia-measurement-inventory-and-diagnostics-of-wooden-vernacu
     title: Measurement, inventory and diagnostics of wooden vernacular architecture
@@ -299561,21 +299403,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1611
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-new-life-of-craftsmen-houses-in-heritage-park-of-wo
-    title: The new life of craftsmen houses in Heritage Park of Wooden Architecture
-      in Lodz
-    url: https://ph.pollub.pl/index.php/bia/article/download/1613/1314
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1613
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1613
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-functional-social-and-technical-aspects-of-wooden-leisu
     title: Functional, social and technical aspects of wooden leisure architecture of
       Lodz surroundings
@@ -299590,36 +299417,6 @@ sources:
     persistent_id: https://doi.org/10.35784/bud-arch.1615
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1615
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-importance-of-continuing-research-during-the-demoli
-    title: The importance of continuing research during the demolition of architectural
-      wooden architecture on the example of pens from Kaniczek translocated int
-    url: https://ph.pollub.pl/index.php/bia/article/download/1618/1318
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1618
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1618
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-wooden-development-renewal-as-an-element-of-establishme
-    title: Wooden development renewal as an element of establishment of the Wallachian
-      Culture route
-    url: https://ph.pollub.pl/index.php/bia/article/download/1619/1319
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1619
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1619
     rights_verified_at: '2026-10-15'
   - id: ojs-bia-project-the-wooden-treasure-preserving-heritage-design
     title: Project “The Wooden Treasure. Preserving Heritage Design Future” – 3D visualization
@@ -299650,21 +299447,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-sa/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1621
     rights_verified_at: '2026-10-15'
-  - id: ojs-bia-some-problems-of-protection-of-architecture-objects-in
-    title: Some problems of protection of architecture objects in the so-called “nadświdrzański
-      style”
-    url: https://ph.pollub.pl/index.php/bia/article/download/1622/1321
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1622
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1622
-    rights_verified_at: '2026-10-15'
   - id: ojs-bia-vernacular-which-means-semantic-remarks-as-side-notes-o
     title: Vernacular, which means? Semantic remarks as side notes on the main topic
       of the conference
@@ -299679,95 +299461,6 @@ sources:
     persistent_id: https://doi.org/10.35784/bud-arch.1623
     license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1623
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-diversity-of-modern-forms-of-preservation-of-rural
-    title: The diversity of modern forms of preservation of rural and small towns’ wooden
-      architecture in Poland
-    url: https://ph.pollub.pl/index.php/bia/article/download/1625/1324
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1625
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1625
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-the-historic-windows-and-doors-wooden-cottages-and-a-fa
-    title: The historic windows and doors wooden cottages and a farmhouse built in the
-      Lublin region – selected examples from Village Museum
-    url: https://ph.pollub.pl/index.php/bia/article/download/1628/1327
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1628
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1628
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-wooden-residential-buildings-in-the-kielce-region
-    title: Wooden residential buildings in the Kielce Region
-    url: https://ph.pollub.pl/index.php/bia/article/download/1630/1329
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1630
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1630
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-renovation-of-the-wooden-st-john-the-baptist-church-in
-    title: Renovation of the wooden St. John The Baptist Church in Zaborol village near
-      Rivne in the context of neo-vernacular trends
-    url: https://ph.pollub.pl/index.php/bia/article/download/1631/1330
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1631
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1631
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-rural-complexes-of-wooden-architecture-problems-of-prot
-    title: 'Rural complexes of wooden architecture: problems of protection and heritage
-      preservation'
-    url: https://ph.pollub.pl/index.php/bia/article/download/1635/1334
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1635
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1635
-    rights_verified_at: '2026-10-15'
-  - id: ojs-bia-wooden-religious-buildings-chances-opportunities-threat
-    title: Wooden religious buildings – chances, opportunities, threats, and risks.
-      Case study based on analysis of properties in Lublin Province
-    url: https://ph.pollub.pl/index.php/bia/article/download/1637/1336
-    source: ojs_bia
-    license: cc-by-nc-nd
-    topic: structures_civil
-    format: pdf
-    language: pl
-    published_at: '2015-09-08'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/bud-arch.1637
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/1637
     rights_verified_at: '2026-10-15'
   - id: ojs-bia-dispatching-concrete-trucks-using-simulation-method
     title: Dispatching concrete trucks using simulation method
@@ -299841,21 +299534,6 @@ sources:
     persistent_id: https://doi.org/10.35784/odk.3449
     license_url: https://creativecommons.org/licenses/by-sa/4.0
     license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/3449
-    rights_verified_at: '2026-10-15'
-  - id: ojs-odk-conservation-issues-of-historical-public-spaces-on-the
-    title: Conservation issues of historical public spaces on the example of transformations
-      of the Old Town urban landscape in Bydgoszcz
-    url: https://ph.pollub.pl/index.php/odk/article/download/3451/4257
-    source: ojs_odk
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-    language: pl
-    published_at: '2023-11-30'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/odk.3451
-    license_url: https://creativecommons.org/licenses/by-sa/4.0
-    license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/3451
     rights_verified_at: '2026-10-15'
   - id: ojs-odk-protection-of-historic-public-spaces-in-the-creative-pr
     title: 'Protection of historic public spaces in the creative process of the city''s
@@ -300141,20 +299819,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-sa/4.0
     license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/5674
     rights_verified_at: '2026-10-15'
-  - id: ojs-odk-committee-decisions-impact-on-the-world-heritage-list-b
-    title: 'Committee decisions impact on the World Heritage List: breaking the balance'
-    url: https://ph.pollub.pl/index.php/odk/article/download/5722/4315
-    source: ojs_odk
-    license: cc-by-sa
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2023-12-16'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/odk.5722
-    license_url: https://creativecommons.org/licenses/by-sa/4.0
-    license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/5722
-    rights_verified_at: '2026-10-15'
   - id: ojs-odk-protection-and-management-of-castles-and-castle-ruins-s
     title: Protection and management of castles' and castle ruins' surroundings
     url: https://ph.pollub.pl/index.php/odk/article/download/5818/4383
@@ -300212,21 +299876,6 @@ sources:
     persistent_id: https://doi.org/10.35784/odk.5853
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/5853
-    rights_verified_at: '2026-10-15'
-  - id: ojs-odk-care-for-monuments-in-the-lubuskie-region-cooperation-b
-    title: Care for monuments in the Lubuskie region – cooperation between community
-      activists and conservation services – in the past and today
-    url: https://ph.pollub.pl/index.php/odk/article/download/5965/4493
-    source: ojs_odk
-    license: cc-by
-    topic: architecture
-    format: pdf
-    language: pl
-    published_at: '2024-07-11'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/odk.5965
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/5965
     rights_verified_at: '2026-10-15'
   - id: ojs-odk-social-care-for-monuments-experience-from-the-last-doze
     title: Social care for monuments – experience from the last dozen or so years in
@@ -300446,21 +300095,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/7180
     rights_verified_at: '2026-10-15'
-  - id: ojs-odk-changes-in-the-status-of-authenticity-in-the-analysis-o
-    title: Changes in the status of authenticity in the analysis of the valuation of
-      historical monuments
-    url: https://ph.pollub.pl/index.php/odk/article/download/7188/5129
-    source: ojs_odk
-    license: cc-by
-    topic: architecture
-    format: pdf
-    language: pl
-    published_at: '2025-07-17'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.35784/odk.7188
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/7188
-    rights_verified_at: '2026-10-15'
   - id: ojs-odk-authenticity-of-architectural-monuments-from-a-honourab
     title: Authenticity of architectural monuments. From a "honourable mummy" to a "post-monument"
     url: https://ph.pollub.pl/index.php/odk/article/download/7204/5267
@@ -300609,4 +300243,2325 @@ sources:
     persistent_id: https://doi.org/10.35784/odk.9202
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://ph.pollub.pl/index.php/odk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/9202
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-architecture-versus-building-industry
+    title: ARCHITECTURE VERSUS BUILDING INDUSTRY
+    url: https://pp.bme.hu/ar/article/download/2361/1466
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2361
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-thermally-active-constructions
+    title: THERMALLY ACTIVE CONSTRUCTIONS
+    url: https://pp.bme.hu/ar/article/download/2362/1467
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2362
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-entwurfsmethoden-der-baukonstruktionen
+    title: ENTWURFSMETHODEN DER BAUKONSTRUKTIONEN
+    url: https://pp.bme.hu/ar/article/download/2363/1468
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2363
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-die-fragen-des-unterrichts-in-architektur-tjnd-in-bauk
+    title: DIE FRAGEN DES UNTERRICHTS IN ARCHITEKTUR tJND IN BAUKONSTRUKTIONEN
+    url: https://pp.bme.hu/ar/article/download/2364/1469
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2364
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-some-acoustic-problems-in-system-building
+    title: SOME ACOUSTIC PROBLEMS IN SYSTEM-BUILDING
+    url: https://pp.bme.hu/ar/article/download/2365/1470
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2365
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-recapitulation-by-prof-g-bor
+    title: RECAPITULATION BY PROF. GÁBOR
+    url: https://pp.bme.hu/ar/article/download/2366/1471
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2366
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-variability-in-industrialized-building-fundamental-que
+    title: VARIABILITY IN INDUSTRIALIZED BUILDING. Fundamental Questions of Variability
+      in Design, Manufacture and Assembly
+    url: https://pp.bme.hu/ar/article/download/2367/1472
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2367
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-heiztechnische-beschreibung-von-geb-uden-nach-dem-hnli
+    title: HEIZTECHNISCHE BESCHREIBUNG VON GEBÄUDEN NACH DEM ÄHNLICHKEITSVERFAHREN
+    url: https://pp.bme.hu/ar/article/download/2368/1473
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2368
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-an-approach-to-housing-flexibility
+    title: AN APPROACH TO HOUSING FLEXIBILITY
+    url: https://pp.bme.hu/ar/article/download/2369/1474
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1982-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2369
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-ulterior-wall-dampproofing-by-the-silicophob-anhydro-m
+    title: ULTERIOR WALL DAMPPROOFING BY THE SILICOPHOB-ANHYDRO METHOD
+    url: https://pp.bme.hu/ar/article/download/2370/1475
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1981-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2370
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-die-architekturtheorie-von-marc-antoine-laugier
+    title: DIE ARCHITEKTURTHEORIE VON MARC-ANTOINE LAUGIER
+    url: https://pp.bme.hu/ar/article/download/2371/1476
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1981-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2371
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-die-kreuzf-rmige-variante-des-zentralen-sechslappigen
+    title: 'DIE KREUZFÖRMIGE VARIANTE DES ZENTRALEN SECHSLAPPIGEN KIRCHENTYPS MIT KUPPELBALDACHIN
+      IM X. UND XI. JAHRHUNDERT: KUMURDO UND NIKORZMINDA'
+    url: https://pp.bme.hu/ar/article/download/2372/1477
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1981-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2372
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-anthropomorphic-supports-in-ancient-egyptian-architect
+    title: ANTHROPOMORPHIC SUPPORTS IN ANCIENT EGYPTIAN ARCHITECTURE
+    url: https://pp.bme.hu/ar/article/download/2374/1479
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1981-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2374
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-die-erhaltende-erneuerung-historischer-wohngeb-ude-und
+    title: DIE ERHALTENDE ERNEUERUNG HISTORISCHER WOHNGEBÄUDE UND WOHNQUARTIERE IN UNGARN
+    url: https://pp.bme.hu/ar/article/download/2375/1480
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1981-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2375
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-architecture-and-experiment
+    title: ARCHITECTURE AND EXPERIMENT
+    url: https://pp.bme.hu/ar/article/download/2377/1482
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2377
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-homologous-inversion-methods-in-environment-design
+    title: HOMOLOGOUS INVERSION METHODS IN ENVIRONMENT DESIGN
+    url: https://pp.bme.hu/ar/article/download/2378/1483
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2378
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-audiovisual-media-in-architectural-practice
+    title: AUDIOVISUAL MEDIA IN ARCHITECTURAL PRACTICE
+    url: https://pp.bme.hu/ar/article/download/2379/1484
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2379
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-the-letter-s
+    title: THE LETTER "S"
+    url: https://pp.bme.hu/ar/article/download/2380/1485
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2380
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-colour-harmony-in-architectural-space
+    title: COLOUR HARMONY IN ARCHITECTURAL SPACE
+    url: https://pp.bme.hu/ar/article/download/2382/1487
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2382
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-strassenm-bel
+    title: STRASSENMÖBEL
+    url: https://pp.bme.hu/ar/article/download/2383/1488
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2383
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-vorfertigung-und-anthropometrie-im-theoretischen-werk
+    title: VORFERTIGUNG UND ANTHROPOMETRIE IM THEORETISCHEN WERK VON LE CORBUSIER
+    url: https://pp.bme.hu/ar/article/download/2384/1489
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2384
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-book-review-zolt-n-zolt-n-az-infrastrukt-ra-t-rbeli-re
+    title: 'BOOK REVIEW. Zoltán Zoltán: Az infrastruktúra térbeli rendszerei és területi
+      hatásmechanizmusa (Spatial Infrastructure Systems and Mechanism of Region'
+    url: https://pp.bme.hu/ar/article/download/2385/1490
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2385
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-town-planning-actions-aiming-at-town-fabric-renewal
+    title: TOWN PLANNING ACTIONS AIMING AT TOWN FABRIC RENEWAL
+    url: https://pp.bme.hu/ar/article/download/2386/1491
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2386
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-on-the-way-to-the-second-millennium-imagination-and-re
+    title: 'ON THE WAY TO THE SECOND MILLENNIUM: IMAGINATION AND REALISM IN TOWN PLANNING'
+    url: https://pp.bme.hu/ar/article/download/2387/1492
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2387
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-agglomeration-a-new-alternative-form-of-settlement-net
+    title: 'AGGLOMERATION: A NEW ALTERNATIVE FORM OF SETTLEMENT NETWORK DEVELOPMENT'
+    url: https://pp.bme.hu/ar/article/download/2388/1493
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2388
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-some-town-plans-striving-to-urban-continuity
+    title: SOME TOWN PLANS STRIVING TO URBAN CONTINUITY
+    url: https://pp.bme.hu/ar/article/download/2389/1494
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2389
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-town-plan-as-source-of-early-hungarian-town-planning-h
+    title: TOWN PLAN AS SOURCE OF EARLY HUNGARIAN TOWN PLANNING HISTORY
+    url: https://pp.bme.hu/ar/article/download/2390/1495
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2390
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-logical-model-of-settlement-microstructure
+    title: LOGICAL MODEL OF SETTLEMENT MICROSTRUCTURE
+    url: https://pp.bme.hu/ar/article/download/2391/1496
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2391
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-urbanistic-way-of-thinking-of-the-soviet-avant-garde
+    title: URBANISTIC WAY OF THINKING OF THE SOVIET AVANT-GARDE
+    url: https://pp.bme.hu/ar/article/download/2392/1497
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2392
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-railway-network-and-town-fabric-of-budapest
+    title: RAILWAY NETWORK AND TOWN FABRIC OF BUDAPEST
+    url: https://pp.bme.hu/ar/article/download/2393/1498
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1980-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2393
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-event-and-background-the-theory-of-blind-design-an-int
+    title: Event and background THE THEORY OF BLIND DESIGN An introduction into transmission
+      and reception of information in industrialized building
+    url: https://pp.bme.hu/ar/article/download/2394/1499
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2394
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-colour-dynamic-requirements-and-the-coloroid-system
+    title: COLOUR DYNAMIC REQUIREMENTS AND THE COLOROID SYSTEM
+    url: https://pp.bme.hu/ar/article/download/2395/1500
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2395
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-zeichnerische-ermittlung-des-aufnahmestandpunktes-von
+    title: ZEICHNERISCHE ERMITTLUNG DES AUFNAHMESTANDPUNKTES VON PHOTOGRAPHIEN
+    url: https://pp.bme.hu/ar/article/download/2396/1501
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2396
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-aufhebung-der-antiken-winkelperspektive-die-umgekehrte
+    title: AUFHEBUNG DER ANTIKEN WINKELPERSPEKTIVE; DIE "UMGEKEHRTE" PERSPEKTIVE
+    url: https://pp.bme.hu/ar/article/download/2398/1503
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2398
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-practical-methods-of-constructing-building-perspective
+    title: PRACTICAL METHODS OF CONSTRUCTING BUILDING PERSPECTIVES
+    url: https://pp.bme.hu/ar/article/download/2399/1504
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2399
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-r-umliche-vierecke-windschiefer-fl-chen-zweiter-ordnun
+    title: RÄUMLICHE VIERECKE WINDSCHIEFER FLÄCHEN ZWEITER ORDNUNG
+    url: https://pp.bme.hu/ar/article/download/2400/1505
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2400
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-abdichtung-von-tiefbauobjekten-gegen-wasser
+    title: ABDICHTUNG VON TIEFBAUOBJEKTEN GEGEN WASSER
+    url: https://pp.bme.hu/ar/article/download/2403/1508
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2403
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-vergleichende-analyse-der-eigenfeuchtemessverfahren-de
+    title: VERGLEICHENDE ANALYSE DER EIGENFEUCHTEMESSVERFAHREN DER ZUSCHLAGSTOFFE
+    url: https://pp.bme.hu/ar/article/download/2404/1509
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2404
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-ber-die-notwendigkeit-der-feuchtigkeitsbestimmijng-von
+    title: ÜBER DIE NOTWENDIGKEIT DER FEUCHTIGKEITSBESTIMMIJNG VON NORMALBETONZUSCHLÄGEN
+    url: https://pp.bme.hu/ar/article/download/2405/1510
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2405
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-bautechnologische-und-bauorganisationsfragen-der-stahl
+    title: BAUTECHNOLOGISCHE UND BAUORGANISATIONSFRAGEN DER STAHLBETONBAUTEN FÜR ABWASSERREINIGUNG
+    url: https://pp.bme.hu/ar/article/download/2406/1511
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1979-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2406
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-sun-shields
+    title: SUN SHIELDS
+    url: https://pp.bme.hu/ar/article/download/2407/1512
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2407
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-lift-field-experimental-non-tectonic-hall
+    title: '"LIFT~FIELD" EXPERIMENTAL NON-TECTONIC HALL'
+    url: https://pp.bme.hu/ar/article/download/2408/1513
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2408
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-air-circulation-in-buildings-by-the-flow-in-networks-m
+    title: AIR CIRCULATION IN BUILDINGS BY THE FLOW IN NETWORKS METHOD
+    url: https://pp.bme.hu/ar/article/download/2409/1514
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2409
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-multi-parameter-load-problems-written-in-terms-of-char
+    title: MULTI-PARAMETER LOAD PROBLEMS WRITTEN IN TERMS OF CHARACTERISTIC LOAD AND
+      ANGULAR ROTATION VECTORS
+    url: https://pp.bme.hu/ar/article/download/2410/1515
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2410
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-ultimate-analysis-of-structures-exposed-to-seismic-eff
+    title: ULTIMATE ANALYSIS OF STRUCTURES EXPOSED TO SEISMIC EFFECTS
+    url: https://pp.bme.hu/ar/article/download/2411/1516
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2411
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-load-capacity-of-elasto-plastic-bars-with-no-tensile-s
+    title: LOAD CAPACITY OF ELASTO-PLASTIC BARS WITH NO TENSILE STRENGTH
+    url: https://pp.bme.hu/ar/article/download/2412/1517
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2412
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-conditions-of-equilibrium-in-a-six-force-system
+    title: CONDITIONS OF EQUILIBRIUM IN A SIX-FORCE SYSTEM
+    url: https://pp.bme.hu/ar/article/download/2413/1518
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2413
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-comparison-of-ultimate-load-capacities-of-reinforced-c
+    title: COMPARISON OF ULTIMATE LOAD CAPACITIES OF REINFORCED CONCRETE BEAMS BASED
+      ON TYPICAL DESIGN SPECIFICATIONS
+    url: https://pp.bme.hu/ar/article/download/2414/1519
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2414
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-beziehungen-der-ungarischen-architektur-im-xi-jarhhund
+    title: BEZIEHUNGEN DER UNGARISCHEN ARCHITEKTUR IM XI. JARHHUNDERT. FORMMÄSSIGE ANALYSE
+      DES ZENTRALEN SECHSLAPPIGEN KIRCHENTYPS
+    url: https://pp.bme.hu/ar/article/download/2416/1521
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2416
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-les-tendances-de-base-de-l-laboration-des-projets-arch
+    title: LES TENDANCES DE BASE DE L'ÉLABORATION DES PROJETS ARCHITECTURAUX AU MOYEN
+      ÂGE
+    url: https://pp.bme.hu/ar/article/download/2417/1522
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2417
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-sol-aequinoctialis-zur-frage-der-quinoktialen-ostung-i
+    title: SOL AEQUINOCTIALIS - ZUR FRAGE DER ÄQUINOKTIALEN OSTUNG IM MITTELALTER
+    url: https://pp.bme.hu/ar/article/download/2418/1523
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2418
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-city-model-and-society-in-the-theory-of-architecture-o
+    title: CITY MODEL AND SOCIETY IN THE THEORY OF ARCHITECTURE OF THE ITALIAN RENAISSANCE
+    url: https://pp.bme.hu/ar/article/download/2419/1524
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1978-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2419
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-rekonstruktion-eines-baudenkmals-windm-hle-durch-photo
+    title: REKONSTRUKTION EINES BAUDENKMALS (WINDMÜHLE) DURCH PHOTOGRAMMETRISCHE KONSTRUKTION
+    url: https://pp.bme.hu/ar/article/download/2422/1527
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2422
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-the-analytic-perspective
+    title: THE ANALYTIC PERSPECTIVE
+    url: https://pp.bme.hu/ar/article/download/2423/1528
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2423
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-prime-anie-k-metri-eskim-zada-am-vypoln-emym-v-ob-ej-a
+    title: ПРИМЕЧАНИЕ К МЕТРИЧЕСКИМ ЗАДАЧАМ, ВЫПОЛНЯЕМЫМ В ОБЩЕй АКСОНОМЕТРИИ. Primečanie
+      k metričeskim zadačam, vypolnâemym v obşej aksonometrii
+    url: https://pp.bme.hu/ar/article/download/2424/1529
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2424
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-int-gration-du-retard-de-r-flexion-l-tude-de-l-acousti
+    title: INTÉGRATION DU RETARD DE RÉFLEXION À L'ÉTUDE DE L'ACOUSTIQUE DES SALLES
+    url: https://pp.bme.hu/ar/article/download/2426/1531
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2426
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-zweck-und-moderne-methoden-des-unterrichts-in-der-fach
+    title: ZWECK UND MODERNE METHODEN DES UNTERRICHTS IN DER FACHGESCHICHTE DER ARCHITEKTUR
+      UND IN DER ARCHITEKTENAUSBILDUNG
+    url: https://pp.bme.hu/ar/article/download/2430/1535
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2430
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-history-approach-in-architectural-training
+    title: HISTORY APPROACH IN ARCHITECTURAL TRAINING
+    url: https://pp.bme.hu/ar/article/download/2431/1536
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2431
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-neue-architektur-in-einer-alten-umwelt
+    title: NEUE ARCHITEKTUR IN EINER ALTEN UMWELT
+    url: https://pp.bme.hu/ar/article/download/2432/1537
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2432
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-up-to-date-training-in-monuments-preservation
+    title: UP-TO-DATE TRAINING IN MONUMENTS PRESERVATION
+    url: https://pp.bme.hu/ar/article/download/2433/1538
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2433
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-architectural-design-education-as-practiced-at-this-in
+    title: ARCHITECTURAL DESIGN EDUCATION AS PRACTICED AT THIS INSTITUTE
+    url: https://pp.bme.hu/ar/article/download/2434/1539
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2434
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-theorie-und-geschichte-der-architektur-im-architekturs
+    title: THEORIE UND GESCHICHTE DER ARCHITEKTUR IM ARCHITEKTURSTUDIUM
+    url: https://pp.bme.hu/ar/article/download/2435/1540
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2435
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-lehr-und-studienmaterial-zu-theorie-und-geschichte-der
+    title: LEHR- UND STUDIENMATERIAL ZU THEORIE UND GESCHICHTE DER ARCHITEKTUR, ENTWICKELT
+      AN DER TECHNISCHEN UNIVERSITÄT DRESDEN
+    url: https://pp.bme.hu/ar/article/download/2436/1541
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2436
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-m-glichkeiten-und-grenzen-des-lehrfilms-im-fachgebiet
+    title: MÖGLICHKEITEN UND GRENZEN DES LEHRFILMS IM FACHGEBIET »ARCHITEKTUR«
+    url: https://pp.bme.hu/ar/article/download/2437/1542
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2437
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-l-histoire-de-l-architecture-et-de-l-urbanisme-dans-l
+    title: L'HISTOIRE DE L'ARCHITECTURE ET DE L'URBANISME DANS L'ENSEIGNEMENT À LA FACULTÉ
+      DE L'ARCHITECTURE DE VARSOVIE
+    url: https://pp.bme.hu/ar/article/download/2438/1543
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2438
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-program-and-method-of-teaching-history-of-20th-century
+    title: PROGRAM AND METHOD OF TEACHING HISTORY OF 20th CENTURY ARCHITECTURE
+    url: https://pp.bme.hu/ar/article/download/2439/1544
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2439
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-zu-aktuellen-lehrproblemen-der-theorie-und-entwicklung
+    title: ZU AKTUELLEN LEHRPROBLEMEN DER THEORIE UND ENTWICKLUNG DER ARCHITEKTUR
+    url: https://pp.bme.hu/ar/article/download/2440/1545
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2440
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-contributions
+    title: CONTRIBUTIONS
+    url: https://pp.bme.hu/ar/article/download/2441/1546
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2441
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-agreement
+    title: AGREEMENT
+    url: https://pp.bme.hu/ar/article/download/2442/1547
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2442
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-vereinbarung
+    title: VEREINBARUNG
+    url: https://pp.bme.hu/ar/article/download/2443/1548
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2443
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-article-2444-1549
+    title: ACCORD
+    url: https://pp.bme.hu/ar/article/download/2444/1549
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1977-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2444
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-visual-studies-in-the-training-of-architects
+    title: VISUAL STUDIES IN THE TRAINING OF ARCHITECTS
+    url: https://pp.bme.hu/ar/article/download/2446/1551
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2446
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-technique-and-education
+    title: TECHNIQUE AND EDUCATION
+    url: https://pp.bme.hu/ar/article/download/2447/1552
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2447
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-ber-den-unterirdischen-st-dtebau-und-einige-bauorganis
+    title: ÜBER DEN UNTERIRDISCHEN STÄDTEBAU UND EINIGE BAUORGANISATORISCHE PROBLEME
+    url: https://pp.bme.hu/ar/article/download/2449/1554
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2449
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-rechentechnische-zeitanalyse-eines-netzwerkplans-mit-v
+    title: RECHENTECHNISCHE ZEITANALYSE EINES NETZWERKPLANS MIT VERÄNDERLICHEN BEZIEHUNGEN
+    url: https://pp.bme.hu/ar/article/download/2451/1556
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2451
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-sistemnyj-analiz-upravleni-stroitel-noj-promy-lennost
+    title: СИСТЕМНЫй АНАЛИЗ УПРАВЛЕНИЯ СТРОИТЕЛЬНОй ПРОМЫШЛЕННОСТЬЮ . Sistemnyj analiz
+      upravleniâ stroitel'noj promyšlennost'ů
+    url: https://pp.bme.hu/ar/article/download/2452/1557
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2452
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-sistemnyj-analiz-prostranstvennoj-organizacii-stroitel
+    title: СИСТЕМНЫй АНАЛИЗ ПРОСТРАНСТВЕННОй ОРГАНИЗАЦИИ СТРОИТЕЛЬСТВА . Sistemnyj analiz
+      prostranstvennoj organizacii stroitel'stva
+    url: https://pp.bme.hu/ar/article/download/2453/1558
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2453
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-bedeutung-informationstechnischer-systeme-f-r-bauprodu
+    title: BEDEUTUNG INFORMATIONSTECHNISCHER SYSTEME FÜR BAUPRODUKTIONSORGANISATIONEN
+    url: https://pp.bme.hu/ar/article/download/2454/1559
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2454
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-rechentechnische-kraftquellenaggregation
+    title: RECHENTECHNISCHE KRAFTQUELLENAGGREGATION
+    url: https://pp.bme.hu/ar/article/download/2455/1560
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2455
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-betriebsnormen-und-normativen-in-der-bauindustrie
+    title: BETRIEBSNORMEN UND NORMATIVEN IN DER BAUINDUSTRIE
+    url: https://pp.bme.hu/ar/article/download/2456/1561
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2456
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-fertigungssysteme-der-leichtbauweise-und-deren-wirkung
+    title: FERTIGUNGSSYSTEME DER LEICHTBAUWEISE UND DEREN WIRKUNG AUF DEN BAUABLAUF
+    url: https://pp.bme.hu/ar/article/download/2458/1563
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2458
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-ziele-und-methoden-des-unterrichts-in-bauausf-hrung
+    title: ZIELE UND METHODEN DES UNTERRICHTS IN BAUAUSFÜHRUNG
+    url: https://pp.bme.hu/ar/article/download/2459/1564
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1976-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2459
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-ppar-architecture-structure-manufacture
+    title: ARCHITECTURE, STRUCTURE, MANUFACTURE
+    url: https://pp.bme.hu/ar/article/download/2460/1565
+    source: ojs_ppar
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '1975-01-01'
+    document_type: journal-article
+    license_evidence: 'https://pp.bme.hu/ar/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2460
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-inspe-o-e-diagn-stico-de-estrutura-de-concreto
+    title: INSPEÇÃO E DIAGNÓSTICO DE ESTRUTURA DE CONCRETO ARMADO - ESTUDO DE CASO
+    url: https://revista.fumec.br/index.php/construindo/article/download/6108/3125
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-11-29'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6108
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-uso-de-an-lise-num-rica-no-estudo-da-resist-nci
+    title: USO DE ANÁLISE NUMÉRICA NO ESTUDO DA RESISTÊNCIA À AÇÃO DE CALOR E CHOQUE
+      TÉRMICO EM PAINÉIS DE FACHADA
+    url: https://revista.fumec.br/index.php/construindo/article/download/6147/3126
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-11-29'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6147
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-manifesta-es-patol-gicas-em-estruturas-de-a-os
+    title: 'MANIFESTAÇÕES PATOLÓGICAS EM ESTRUTURAS DE AÇOS: ESTUDO DE CASO DA FEIRA
+      DA 304 SUL EM PALMAS/TO'
+    url: https://revista.fumec.br/index.php/construindo/article/download/6269/3453
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-08-12'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6269
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-patologias-em-estrutura-de-concreto-estudo-de-c
+    title: 'PATOLOGIAS EM ESTRUTURA DE CONCRETO - ESTUDO DE CASO: BLOCO I DA UNIVERSIDADE
+      FEDERAL DO TOCANTINS'
+    url: https://revista.fumec.br/index.php/construindo/article/download/6270/3693
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-04'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6270
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-da-influ-ncia-da-litologia-do-agregado
+    title: ANÁLISE DA INFLUÊNCIA DA LITOLOGIA DO AGREGADO GRAÚDO NAS PROPRIEDADES DE
+      RESISTÊNCIA À COMPRESSÃO E RESISTIVIDADE ELÉTRICA DO CONCRETO.
+    url: https://revista.fumec.br/index.php/construindo/article/download/6294/3121
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-11-29'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6294
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-desempenho-de-concretos-com-agregados-reciclado
+    title: DESEMPENHO DE CONCRETOS COM AGREGADOS RECICLADOS DA CONSTRUÇÃO CIVIL
+    url: https://revista.fumec.br/index.php/construindo/article/download/6421/3694
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-04'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6421
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-elabora-o-de-projeto-de-jardins-de-chuvas-para
+    title: ELABORAÇÃO DE PROJETO DE JARDINS DE CHUVAS PARA MINIMIZAÇÃO DAS ENCHENTES
+    url: https://revista.fumec.br/index.php/construindo/article/download/6422/3832
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-03'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6422
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-do-treinamento-de-colaboradores-no-seto
+    title: ANÁLISE DO TREINAMENTO DE COLABORADORES NO SETOR DA CONSTRUÇÃO CIVIL NA CIDADE
+      DE MONTES CLAROS (MG)
+    url: https://revista.fumec.br/index.php/construindo/article/download/6508/3939
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-11-26'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6508
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-estruturas-pr-moldadas-vantagens-e-desvantagens
+    title: 'ESTRUTURAS PRÉ-MOLDADAS: VANTAGENS E DESVANTAGENS DA SUA UTILIZAÇÃO NA CONSTRUÇÃO
+      CIVIL'
+    url: https://revista.fumec.br/index.php/construindo/article/download/6509/3697
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-04'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6509
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-steel-fiber-reinforced-concrete-durability-usin
+    title: STEEL FIBER REINFORCED CONCRETE DURABILITY USING ELECTRICAL RESISTIVITY TEST
+    url: https://revista.fumec.br/index.php/construindo/article/download/6519/3264
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2018-12-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6519
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-do-bloco-de-concreto-fabricado-com-res
+    title: ANÁLISE DO BLOCO DE CONCRETO FABRICADO COM RESÍDUO DA CONSTRUÇÃO CIVIL ACRESCIDO
+      DE POLIESTIRENO EXPANDIDO PARA PISO INTERTRAVADO
+    url: https://revista.fumec.br/index.php/construindo/article/download/6536/3829
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-03'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6536
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-proposta-para-o-uso-do-poli-etileno-tereftalato
+    title: 'PROPOSTA PARA O USO DO POLI(ETILENO TEREFTALATO GLICOL) - PETG EM COBERTURAS
+      DE EDIFICAÇÕES: ANÁLISE TÉRMICA E MECÂNICA'
+    url: https://revista.fumec.br/index.php/construindo/article/download/6537/3258
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-12-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6537
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-a-inser-o-de-materiais-recicl-veis-na-estrutura
+    title: A INSERÇÃO DE MATERIAIS RECICLÁVEIS NA ESTRUTURA DE PAVIMENTOS RODOVIÁRIOS
+      E VIAS URBANAS
+    url: https://revista.fumec.br/index.php/construindo/article/download/6597/3692
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-04'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6597
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-resist-ncia-ao-cisalhamento-do-eucalipto-grandi
+    title: RESISTÊNCIA AO CISALHAMENTO DO EUCALIPTO GRANDIS COM A UTILIZAÇÃO DE ADESIVOS
+      À BASE DE RESINA MENANINA E URÉIA E À BASE DE EMULSÃO ACRÍLICA POLIMERIZ
+    url: https://revista.fumec.br/index.php/construindo/article/download/6640/3211
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-11-29'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6640
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-caracteriza-o-de-res-duos-minerais-visando-apli
+    title: CARACTERIZAÇÃO DE RESÍDUOS MINERAIS VISANDO APLICAÇÃO COMO AGREGADO PARA
+      MATERIAIS DE MATRIZ CIMENTÍCIA
+    url: https://revista.fumec.br/index.php/construindo/article/download/6651/3443
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-07-31'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6651
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-physical-and-mechanical-characterization-of-oco
+    title: PHYSICAL AND MECHANICAL CHARACTERIZATION OF OCOTEA SP WOOD SPECIE
+    url: https://revista.fumec.br/index.php/construindo/article/download/6660/3257
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-12-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6660
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-a-influ-ncia-das-barras-na-medi-o-da-resistivid
+    title: A INFLUÊNCIA DAS BARRAS NA MEDIÇÃO DA RESISTIVIDADE ELÉTRICA DO CONCRETO
+      – REVISÃO
+    url: https://revista.fumec.br/index.php/construindo/article/download/6709/3265
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-12-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6709
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-resistividade-el-trica-em-concreto-de-mistura-p
+    title: RESISTIVIDADE ELÉTRICA EM CONCRETO DE MISTURA PROLONGADA
+    url: https://revista.fumec.br/index.php/construindo/article/download/6721/3263
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-12-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6721
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-estudo-da-resistividade-el-trica-em-concretos-c
+    title: ESTUDO DA RESISTIVIDADE ELÉTRICA EM CONCRETOS COM RESÍDUO DE LAMA DE MARMORARIA
+    url: https://revista.fumec.br/index.php/construindo/article/download/6725/3266
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-12-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6725
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-influ-ncia-do-n-mero-de-l-minas-na-resist-ncia
+    title: INFLUÊNCIA DO NÚMERO DE LÂMINAS NA RESISTÊNCIA À COMPRESSÃO DE MADEIRA LAMINADA
+      COLADA (MLC) DE TOONA CILIATA PRODUZIDA COM ADESIVO POLIURETANO VEGETA
+    url: https://revista.fumec.br/index.php/construindo/article/download/6875/3444
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-07-31'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6875
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-do-desempenho-e-da-viabilidade-t-cnica
+    title: ANÁLISE DO DESEMPENHO E DA VIABILIDADE TÉCNICA E ECONÔMICA DO SISTEMA LIGHT
+      STEEL FRAMING PARA CONSTRUÇÃO DE RESIDÊNCIAS POPULARES
+    url: https://revista.fumec.br/index.php/construindo/article/download/6914/3450
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-07-31'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6914
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-avalia-o-dos-impactos-da-tecnologia-bim-no-leva
+    title: AVALIAÇÃO DOS IMPACTOS DA TECNOLOGIA BIM NO LEVANTAMENTO DE QUANTITATIVOS
+      EM CONTRASTE À METODOLOGIA CONVENCIONAL
+    url: https://revista.fumec.br/index.php/construindo/article/download/6916/3449
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-07-31'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/6916
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-avalia-o-de-um-abrigo-de-nibus-em-estrutura-met
+    title: AVALIAÇÃO DE UM ABRIGO DE ÔNIBUS EM ESTRUTURA METÁLICA A PARTIR DA ABORDAGEM
+      DO DESIGN PARA SUSTENTABILIDADE
+    url: https://revista.fumec.br/index.php/construindo/article/download/7009/3698
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-04'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7009
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-corte-e-dobra-de-a-o-em-obra-de-concreto-armado
+    title: CORTE E DOBRA DE AÇO EM OBRA DE CONCRETO ARMADO
+    url: https://revista.fumec.br/index.php/construindo/article/download/7048/3699
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-04'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7048
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-t-cnica-de-estruturas-de-edif-cios-em-c
+    title: 'ANÁLISE TÉCNICA DE ESTRUTURAS DE EDIFÍCIOS EM CONCRETO ARMADO, DE 3 A 21
+      PAVIMENTOS, COM VARIAÇÃO DE RESISTÊNCIA À COMPRESSÃO (RELAÇÃO GEOMÉTRICA, EM '
+    url: https://revista.fumec.br/index.php/construindo/article/download/7064/3451
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-07-31'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7064
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-ensaios-n-o-destrutivos-usados-na-inspe-o-e-dia
+    title: ENSAIOS NÃO DESTRUTIVOS USADOS NA INSPEÇÃO E DIAGNÓSTICO DE EDIFÍCIOS HISTÓRICOS
+      DE ALVENARIA DE PEDRA
+    url: https://revista.fumec.br/index.php/construindo/article/download/7066/3371
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-06-28'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7066
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-experimental-das-caracter-sticas-mec-ni
+    title: ANÁLISE EXPERIMENTAL DAS CARACTERÍSTICAS MECÂNICAS DOS COMPONENTES E MATERIAIS
+      DE PONTES EM ARCO DE ALVENARIA DE PEDRA
+    url: https://revista.fumec.br/index.php/construindo/article/download/7067/3368
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-06-28'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7067
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-avalia-o-experimental-dos-efeitos-din-micos-ind
+    title: AVALIAÇÃO EXPERIMENTAL DOS EFEITOS DINÂMICOS INDUZIDOS PELO VENTO NA TORRE
+      DE TELECOMUNICAÇÕES DO MONTE DA VIRGEM
+    url: https://revista.fumec.br/index.php/construindo/article/download/7082/3369
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-06-28'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7082
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-monitora-o-experimental-e-modelagem-num-rica-do
+    title: MONITORAÇÃO EXPERIMENTAL E MODELAGEM NUMÉRICA DO COMPORTAMENTO DINÂMICO DE
+      PASSARELAS DE PEDESTRES
+    url: https://revista.fumec.br/index.php/construindo/article/download/7083/3374
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-06-28'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7083
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-monitoriza-o-do-comportamento-din-mico-de-zonas
+    title: MONITORIZAÇÃO DO COMPORTAMENTO DINÂMICO DE ZONAS DE TRANSIÇÃO DA VIA FÉRREA
+    url: https://revista.fumec.br/index.php/construindo/article/download/7084/3373
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-06-28'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7084
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-viabilidade-da-implementa-o-da-metodologia-bim
+    title: VIABILIDADE DA IMPLEMENTAÇÃO DA METODOLOGIA BIM NO SETOR FERROVIÁRIO – CASO
+      DE RENOVAÇÃO E INSPEÇÃO DA VIA FÉRREA
+    url: https://revista.fumec.br/index.php/construindo/article/download/7085/3375
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-06-28'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7085
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-caracteriza-o-t-rmica-de-solu-es-tradicionais-d
+    title: CARACTERIZAÇÃO TÉRMICA DE SOLUÇÕES TRADICIONAIS DE PAREDES DO CENTRO HISTÓRICO
+      DE VISEU
+    url: https://revista.fumec.br/index.php/construindo/article/download/7086/3370
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-06-28'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7086
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-m-dulo-de-elasticidade-din-mico-de-argamassas
+    title: MÓDULO DE ELASTICIDADE DINÂMICO DE ARGAMASSAS
+    url: https://revista.fumec.br/index.php/construindo/article/download/7087/3372
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2019-06-28'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7087
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-agregados-resuduais-e-concretos-de-cimento-port
+    title: AGREGADOS RESUDUAIS E CONCRETOS DE CIMENTO PORTLAND
+    url: https://revista.fumec.br/index.php/construindo/article/download/7176/3696
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-04'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7176
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-comparativo-da-resist-ncia-compress-o-do-concre
+    title: Comparativo da resistência à compressão do concreto através de ensaios destrutivos
+      e não destrutivos
+    url: https://revista.fumec.br/index.php/construindo/article/download/7233/3940
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-11-26'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7233
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-reaproveitamento-de-gua-pluvial-para-fins-n-o-n
+    title: REAPROVEITAMENTO DE ÁGUA PLUVIAL PARA FINS NÃO NOBRES EM EDIFÍCIOS RESIDENCIAIS
+    url: https://revista.fumec.br/index.php/construindo/article/download/7252/3942
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-11-26'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7252
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-comparativo-entre-estruturas-de-concreto-armado
+    title: COMPARATIVO ENTRE ESTRUTURAS DE CONCRETO ARMADO E ESTRUTURAS DE AÇO
+    url: https://revista.fumec.br/index.php/construindo/article/download/7296/4207
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2021-07-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7296
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-estudo-do-comportamento-mec-nico-de-vigas-de-ma
+    title: ESTUDO DO COMPORTAMENTO MECÂNICO DE VIGAS DE MADEIRA LAMINADA COLADA TRATADA
+      DE SERINGUEIRA (Hevea brasiliensis)
+    url: https://revista.fumec.br/index.php/construindo/article/download/7390/3941
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-11-26'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7390
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-rodo-m-vel-uma-ferramenta-tecnol-gica-para-o-mo
+    title: 'RODO MÓVEL: UMA FERRAMENTA TECNOLÓGICA PARA O MONITORAMENTO DE RODOVIAS'
+    url: https://revista.fumec.br/index.php/construindo/article/download/7402/4206
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2021-07-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7402
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-gest-o-de-seguran-a-atrav-s-de-aplicativo-no-ca
+    title: GESTÃO DE SEGURANÇA ATRAVÉS DE APLICATIVO NO CANTEIRO DE OBRAS
+    url: https://revista.fumec.br/index.php/construindo/article/download/7403/4208
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2021-07-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7403
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-do-processo-de-gera-o-e-destina-o-de-en
+    title: 'ANÁLISE DO PROCESSO DE GERAÇÃO E DESTINAÇÃO DE ENTULHO NA CONSTRUÇÃO CIVIL:
+      ESTUDO EM OBRA RESIDENCIAL NA CIDADE DE SÃO LUÍS - MA'
+    url: https://revista.fumec.br/index.php/construindo/article/download/7734/4477
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-06-07'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7734
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-acessibilidade-em-cal-adas-e-vias-p-blicas-estu
+    title: 'ACESSIBILIDADE EM CALÇADAS E VIAS PÚBLICAS: ESTUDO REALIZADO NA CIDADE DE
+      BARREIRINHAS-MA'
+    url: https://revista.fumec.br/index.php/construindo/article/download/7755/3938
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-11-26'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7755
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-comparativo-entre-alvenaria-estrutural-e-concre
+    title: COMPARATIVO ENTRE ALVENARIA ESTRUTURAL E CONCRETO ARMADO PARA A CONSTRUÇÃO
+      CIVIL NA CIDADE DE MONTES CLAROS - MG
+    url: https://revista.fumec.br/index.php/construindo/article/download/7812/4436
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-05-24'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7812
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-desenvolvimento-de-bloco-ecol-gico-para-constru
+    title: DESENVOLVIMENTO DE BLOCO ECOLÓGICO PARA CONSTRUÇÃO CIVIL EM MONTES CLAROS-MG
+    url: https://revista.fumec.br/index.php/construindo/article/download/7813/4479
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-06-07'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7813
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-utiliza-o-de-subprodutos-de-efluentes-tratados
+    title: UTILIZAÇÃO DE SUBPRODUTOS DE EFLUENTES TRATADOS NA CONSTRUÇÃO CIVIL
+    url: https://revista.fumec.br/index.php/construindo/article/download/7814/4485
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-06-07'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7814
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-influence-of-chemical-admixtures-and-of-pre-tre
+    title: INFLUENCE OF CHEMICAL ADMIXTURES AND OF PRE-TREATMENT IN WOOD-CEMENT COMPOSITES
+    url: https://revista.fumec.br/index.php/construindo/article/download/7817/4439
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-05-24'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/7817
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-compara-o-entre-alvenaria-estrutural-e-estrutur
+    title: COMPARAÇÃO ENTRE ALVENARIA ESTRUTURAL E ESTRUTURA COM PAREDES PORTANTES EM
+      TIJOLOS MACIÇOS PARA HABITAÇÃO POPULAR
+    url: https://revista.fumec.br/index.php/construindo/article/download/8081/4435
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-05-24'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8081
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-corros-o-de-armaduras-em-concreto-armado
+    title: Corrosão de armaduras em concreto armado
+    url: https://revista.fumec.br/index.php/construindo/article/download/8151/4697
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-05-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8151
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-influ-ncia-da-gua-na-an-lise-da-resistividade-e
+    title: INFLUÊNCIA DA ÁGUA NA ANÁLISE DA RESISTIVIDADE ELÉTRICA DO CONCRETO
+    url: https://revista.fumec.br/index.php/construindo/article/download/8163/3716
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-06-10'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8163
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-a-import-ncia-de-um-profissional-qualificado-em
+    title: A IMPORTÂNCIA DE UM PROFISSIONAL QUALIFICADO EM CONSTRUÇÕES CIVIS
+    url: https://revista.fumec.br/index.php/construindo/article/download/8164/3835
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-03'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8164
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-de-concreto-fraturado-e-mal-adensado-po
+    title: ANÁLISE DE CONCRETO FRATURADO E MAL ADENSADO POR MEIO DE INSPECÇÃO DO ENSAIO
+      DE RESISTIVIDADE ELÉTRICA
+    url: https://revista.fumec.br/index.php/construindo/article/download/8165/3717
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2018-07-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8165
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-a-emergente-necessidade-do-estudo-da-gest-o-amb
+    title: A EMERGENTE NECESSIDADE DO ESTUDO DA GESTÃO AMBIENTAL NA FORMAÇÃO DO ENGENHEIRO
+      CIVIL
+    url: https://revista.fumec.br/index.php/construindo/article/download/8184/4210
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2021-07-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8184
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-ndice-de-pre-o-do-material-de-constru-o
+    title: ÍNDICE DE PREÇO DO MATERIAL DE CONSTRUÇÃO
+    url: https://revista.fumec.br/index.php/construindo/article/download/8188/3833
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-06-15'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8188
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-efeito-filler-em-argamassas-de-revestimento-com
+    title: EFEITO FILLER EM ARGAMASSAS DE REVESTIMENTO COM RESÍDUOS DE QUARTZITO
+    url: https://revista.fumec.br/index.php/construindo/article/download/8195/4438
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-05-24'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8195
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-utiliza-o-das-ferramentas-de-gest-o-na-melhoria
+    title: UTILIZAÇÃO DAS FERRAMENTAS DE GESTÃO NA MELHORIA DA QUALIDADE NOS PROCESSOS
+      CONSTRUTIVOS
+    url: https://revista.fumec.br/index.php/construindo/article/download/8196/4701
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-05-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8196
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-de-passsarela-modular-treli-ada-padroni
+    title: ANÁLISE DE PASSSARELA MODULAR TRELIÇADA PADRONIZADA EM AÇO QUE ATENDA DIFERENTES
+      VÃOS
+    url: https://revista.fumec.br/index.php/construindo/article/download/8268/4702
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-05-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8268
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-aplicabilidade-do-sinapi-para-composi-o-de-cust
+    title: APLICABILIDADE DO SINAPI PARA COMPOSIÇÃO DE CUSTO DE EDIFICAÇÕES EM REGIÕES
+      NÃO METROPOLITANAS
+    url: https://revista.fumec.br/index.php/construindo/article/download/8297/4695
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-05-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8297
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-estudo-sobre-o-refluxo-do-esgoto-sanit-rio-em-r
+    title: 'ESTUDO SOBRE O REFLUXO DO ESGOTO SANITÁRIO EM RAMAL COLETOR PROVENIENTE
+      DE CONTRIBUIÇÃO IRREGULAR DE ÁGUA DE CHUVA: ESTUDO DE CASO NO BAIRRO CAIÇARA, '
+    url: https://revista.fumec.br/index.php/construindo/article/download/8306/3937
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-11-26'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8306
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-percep-o-dos-graduandos-em-engenharia-civil-ace
+    title: 'PERCEPÇÃO DOS GRADUANDOS EM ENGENHARIA CIVIL ACERCA DA NBR 15.575:2013:
+      UM ESTUDO DE CASO NA CIDADE DE SÃO LUÍS - MA'
+    url: https://revista.fumec.br/index.php/construindo/article/download/8307/4440
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-05-24'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8307
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-estudo-de-caso-an-lise-do-cumprimento-da-norma
+    title: 'ESTUDO DE CASO: ANÁLISE DO CUMPRIMENTO DA NORMA REGULAMENTAR NR-18 EM OBRA
+      COMERCIAL NO MUNICÍPIO DE BELO HORIZONTE'
+    url: https://revista.fumec.br/index.php/construindo/article/download/8316/3944
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2020-12-04'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8316
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-avalia-o-de-manifesta-es-patol-gicas-em-revesti
+    title: 'Avaliação de Manifestações Patológicas em Revestimentos Argamassados de
+      Fachada: Um Estudo de Caso em um Condomínio na Cidade de São Luís-MA'
+    url: https://revista.fumec.br/index.php/construindo/article/download/8318/4211
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2021-07-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8318
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-telhado-verde-retardo-e-redu-o-do-escoamento-su
+    title: 'TELHADO VERDE: RETARDO E REDUÇÃO DO ESCOAMENTO SUPERFICIAL'
+    url: https://revista.fumec.br/index.php/construindo/article/download/8418/4699
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-05-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8418
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-as-mudan-as-no-plano-diretor-de-belo-horizonte
+    title: AS MUDANÇAS NO PLANO DIRETOR DE BELO HORIZONTE E SUAS IMPLICAÇÕES NA CONSTRUÇÃO
+      CIVIL, PARTE 1
+    url: https://revista.fumec.br/index.php/construindo/article/download/8431/4162
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2021-03-17'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8431
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-as-mudan-as-no-plano-diretor-de-be-2
+    title: AS MUDANÇAS NO PLANO DIRETOR DE BELO HORIZONTE E SUAS IMPLICAÇÕES NA CONSTRUÇÃO
+      CIVIL - PARTE 2
+    url: https://revista.fumec.br/index.php/construindo/article/download/8432/4161
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2021-03-17'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8432
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-validity-of-the-subjective-rating-of-flexible-p
+    title: 'VALIDITY OF THE SUBJECTIVE RATING OF FLEXIBLE PAVEMENTS: AN ANALYSIS OF
+      SYSTEMATIC ERRORS'
+    url: https://revista.fumec.br/index.php/construindo/article/download/8461/4772
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8461
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-de-custos-de-um-projeto-de-tubul-es-a-c
+    title: ANÁLISE DE CUSTOS DE UM PROJETO DE TUBULÕES A CÉU ABERTO APÓS A ATUALIZAÇÃO
+      DA NR 18:2020
+    url: https://revista.fumec.br/index.php/construindo/article/download/8577/4205
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2021-07-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8577
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-raters-performance-in-subjective-evaluations-of
+    title: RATERS' PERFORMANCE IN SUBJECTIVE EVALUATIONS OF FLEXIBLE PAVEMENTS CONDITION
+      IN A UNIVERSITY CAMPUS
+    url: https://revista.fumec.br/index.php/construindo/article/download/8583/4768
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8583
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-technical-study-of-reinforced-concrete-building
+    title: 'TECHNICAL STUDY OF REINFORCED CONCRETE BUILDINGS OF DIFFERENT HEIGHTS: ANALYSIS
+      OF THE QUANTITY OF CONCRETE, STEEL AND FORMWORK'
+    url: https://revista.fumec.br/index.php/construindo/article/download/8589/4212
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-07-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8589
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-risk-analysis-for-dam-safety-case-study-itumbia
+    title: 'RISK ANALYSIS FOR DAM SAFETY – CASE STUDY: ITUMBIARA HYDROELECTRIC POWER
+      PLANT - FURNAS'
+    url: https://revista.fumec.br/index.php/construindo/article/download/8597/4767
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8597
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-met-matrix-materials-energy-toxicity-applied-to
+    title: MET MATRIX - MATERIALS, ENERGY, TOXICITY - APPLIED TO AUTOCLAVED CELL CONCRETE
+      BLOCK
+    url: https://revista.fumec.br/index.php/construindo/article/download/8686/4771
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8686
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-brazilian-cement-industry-consumption-and-envir
+    title: 'BRAZILIAN CEMENT INDUSTRY: CONSUMPTION AND ENVIRONMENTAL IMPACTS'
+    url: https://revista.fumec.br/index.php/construindo/article/download/8769/4484
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-06-07'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8769
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-application-of-bamboo-as-a-structural-element-o
+    title: APPLICATION OF BAMBOO AS A STRUCTURAL ELEMENT OF CIVIL CONSTRUCTION
+    url: https://revista.fumec.br/index.php/construindo/article/download/8811/4696
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-05-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8811
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-evaluation-of-the-relationship-between-characte
+    title: Evaluation of the relationship between characteristic values of compressive
+      and tensile strength parallel to the fibers of tropical hardwoods
+    url: https://revista.fumec.br/index.php/construindo/article/download/8932/4481
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-06-07'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/8932
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-a-influ-ncia-do-material-pulverulento-na-reten
+    title: A INFLUÊNCIA DO MATERIAL PULVERULENTO NA RETENÇÃO DE ÁGUA E NO TEMPO DE ESTABILIZAÇÃO
+      DA ARGAMASSA ESTABILIZADA
+    url: https://revista.fumec.br/index.php/construindo/article/download/9089/4811
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2025-08-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9089
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-reaproveitamento-de-res-duos-de-madeira-da-cons
+    title: REAPROVEITAMENTO DE RESÍDUOS DE MADEIRA DA CONSTRUÇÃO CIVIL PARA GERAÇÃO
+      DE ENERGIA – REVISÃO
+    url: https://revista.fumec.br/index.php/construindo/article/download/9112/4434
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2022-05-24'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9112
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-structural-collapse-of-reinforced-concrete-buil
+    title: 'STRUCTURAL COLLAPSE OF REINFORCED CONCRETE BUILDINGS: AN ASSOCIATION BETWEEN
+      OVERLOADS AND PATHOLOGIES'
+    url: https://revista.fumec.br/index.php/construindo/article/download/9161/4698
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-05-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9161
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-the-use-of-eps-monolithic-system-in-civil-const
+    title: 'THE USE OF EPS MONOLITHIC SYSTEM IN CIVIL CONSTRUCTION: A SUSTAINABLE ALTERNATIVE'
+    url: https://revista.fumec.br/index.php/construindo/article/download/9348/4810
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2025-08-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9348
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-use-of-frequency-and-probabilistic-analysis-in
+    title: USE OF FREQUENCY AND PROBABILISTIC ANALYSIS IN THE DETERMINATION OF MINIMUM
+      REFERENCE FLOWS
+    url: https://revista.fumec.br/index.php/construindo/article/download/9542/4700
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-05-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9542
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-experimental-investigation-on-the-behavior-of-m
+    title: EXPERIMENTAL INVESTIGATION ON THE BEHAVIOR OF MORTAR SUBJECTED TO SHEAR STRESSES
+    url: https://revista.fumec.br/index.php/construindo/article/download/9549/4769
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9549
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-comparative-study-between-analysis-methods-of-t
+    title: COMPARATIVE STUDY BETWEEN ANALYSIS METHODS OF THE CARBONATION FRONT IN CONCRETE
+      STRUCTURES.
+    url: https://revista.fumec.br/index.php/construindo/article/download/9553/4809
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2025-08-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9553
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-behavior-of-mortars-produced-with-partial-repla
+    title: BEHAVIOR OF MORTARS PRODUCED WITH PARTIAL REPLACEMENT OF CEMENT BY SILICA
+      FUME WHEN EXPOSED TO ATTACK BY SODIUM AND MAGNESIUM SULFATE
+    url: https://revista.fumec.br/index.php/construindo/article/download/9652/4773
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9652
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-bim-no-mercado-da-constru-o-civil-percep-o-e-ca
+    title: BIM NO MERCADO DA CONSTRUÇÃO CIVIL PERCEPÇÃO E CAPACITAÇÃO DE NOVOS ENGENHEIROS
+    url: https://revista.fumec.br/index.php/construindo/article/download/9757/4765
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2023-10-05'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9757
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-avalia-o-de-durabilidade-de-oae-obra-de-arte-es
+    title: 'AVALIAÇÃO DE DURABILIDADE DE OAE (OBRA DE ARTE ESPECIAL) EM AMBIENTE MARINHO:
+      ESTUDO DE CASO'
+    url: https://revista.fumec.br/index.php/construindo/article/download/9866/4812
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2025-08-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9866
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-simula-o-num-rica-de-vigas-de-concreto-armadas
+    title: SIMULAÇÃO NUMÉRICA DE VIGAS DE CONCRETO ARMADAS COM BARRAS DE AÇO E BARRAS
+      DE GFRP
+    url: https://revista.fumec.br/index.php/construindo/article/download/9885/4813
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2025-08-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9885
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-liga-es-cavilhadas-e-suas-tecnologias-uma-revis
+    title: 'LIGAÇÕES CAVILHADAS E SUAS TECNOLOGIAS: UMA REVISÃO SISTEMÁTICA DA LITERATURA'
+    url: https://revista.fumec.br/index.php/construindo/article/download/9901/4822
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2025-08-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9901
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-an-lise-da-efetividade-de-impermeabilizantes-em
+    title: ANÁLISE DA EFETIVIDADE DE IMPERMEABILIZANTES EM PAINÉIS DE MADEIRA AGLOMERADA
+      OU COMPENSADA EM CONTATO COM O SOLO
+    url: https://revista.fumec.br/index.php/construindo/article/download/9906/4825
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2025-08-30'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9906
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-application-of-digital-technologies-in-the-asse
+    title: APPLICATION OF DIGITAL TECHNOLOGIES IN THE ASSEMBLY CONTROL OF STEEL STRUCTURES
+    url: https://revista.fumec.br/index.php/construindo/article/download/9937/4835
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-04-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9937
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-avalia-o-da-propaga-o-da-degrada-o-em-fachadas
+    title: AVALIAÇÃO DA PROPAGAÇÃO DA DEGRADAÇÃO EM FACHADAS DE REVESTIMENTO CERÂMICO
+    url: https://revista.fumec.br/index.php/construindo/article/download/9939/4836
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-04-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9939
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-el-arte-urbano-en-el-centro-hist-rico-de-oporto
+    title: EL ARTE URBANO EN EL CENTRO HISTÓRICO DE OPORTO, ¿ENEMIGO O ALIADO DEL PATRIMONIO
+      CULTURAL?
+    url: https://revista.fumec.br/index.php/construindo/article/download/9940/4837
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-04-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9940
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-15'
+  - id: ojs-construindo-housing-energy-related-renovations-based-on-per
+    title: 'HOUSING ENERGY-RELATED RENOVATIONS BASED ON PERSPECTIVES ON SOCIAL AND LIFESTYLE
+      STANDARDS: PORTUGUESE HOMEOWNERS'
+    url: https://revista.fumec.br/index.php/construindo/article/download/9941/4838
+    source: ojs_construindo
+    license: unverified
+    topic: construction
+    format: pdf
+    language: pt
+    published_at: '2024-04-01'
+    document_type: journal-article
+    license_evidence: 'https://revista.fumec.br/index.php/construindo/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.agendaestrelabet.fumec.br:article/9941
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-15'

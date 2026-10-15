@@ -152914,23 +152914,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2993055849
     resolution: 'sim1: openalex location'
-  - id: oas-10-1184-r1-6715931-54529b53
-    title: Device-Level Data Analytics to Guide Policy
-    url: http://repository.cmu.edu/dissertations/896
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2017-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1184/r1/6715931
-    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/896;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-14'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1184/r1/6715931 openalex:W2615161488
-    resolution: 'sim1: openalex location'
   - id: arx-detector-construction-management-and-quality-c
     title: 'Detector Construction Management and Quality Control: Establishing and Using
       a CRISTAL System'
@@ -153474,3 +153457,55 @@ sources:
       version and the copy this URL names): no licence element -> arxiv-nonexclusive
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-15'
+  - id: oas-10-1016-j-aei-2026-104824-b6f019a2
+    title: A fully automated DM-BIM-BEM pipeline enabling graph-based intelligence,
+      interoperability, and performance-driven early design
+    url: https://arxiv.org/pdf/2601.16813
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-05-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.aei.2026.104824
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2601.16813;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.aei.2026.104824 openalex:W7162637152
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2608-06772-f4840704
+    title: 'ArchEGraph: A Large-Scale Graph Dataset for Geometry-Topology-Physics Aligned
+      Building Energy Modeling'
+    url: https://arxiv.org/pdf/2608.06772
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-08-07'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2608.06772
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2608.06772;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2608.06772 openalex:W7202118737
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2606-23215-2f8a3fec
+    title: Where Is My Physics Wrong? Localized and Identifiable Discovery of Model
+      Discrepancy
+    url: https://arxiv.org/pdf/2606.23215
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-06-22'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2606.23215
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2606.23215;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2606.23215 openalex:W7165664150
+    resolution: 'sim1: openalex location'
