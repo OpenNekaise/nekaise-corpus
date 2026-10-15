@@ -154029,3 +154029,76 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-15'
+  - id: oas-10-1016-j-enbuild-2015-04-015-8c8d69fb
+    title: Automatic extraction of reduced-order models from CFD simulations for building
+      energy modelling
+    url: https://pureadmin.qub.ac.uk/ws/files/15561508/Mullen_et_al._2015_Automatic_extraction_of_reduced_order_models_from_CFD_simulations_for_building_energy_modelling.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-04-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2015.04.015
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://pureadmin.qub.ac.uk/ws/files/15561508/Mullen_et_al._2015_Automatic_extraction_of_reduced_order_models_from_CFD_simulations_for_building_energy_modelling.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2015.04.015 openalex:W1971166405
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1177-0143624416675389-1f20ca67
+    title: Accounting for refrigeration heat exchange in energy performance simulations
+      of large food retail buildings
+    url: https://eprints.leedsbeckett.ac.uk/id/eprint/3225/1/Accounting%20for%20refrigeration%20heat%20exchange%20in%20energy%20performance%20simulations%20of%20large%20food%20retail%20buildings.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-10-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/0143624416675389
+    license_evidence: no licence statement for this copy [copy https://eprints.leedsbeckett.ac.uk/id/eprint/3225/1/Accounting%20for%20refrigeration%20heat%20exchange%20in%20energy%20performance%20simulations%20of%20large%20food%20retail%20buildings.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/0143624416675389 openalex:W2540065120
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-1710-06671-b5b53fa8
+    title: An approach for identifying sources of inadequacy and upgrades in models
+      with high-dimensional outputs and boundary conditions
+    url: https://arxiv.org/pdf/1710.06671
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-10-18'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.1710.06671
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1710.06671;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.1710.06671 openalex:W2795636963
+    resolution: 'sim1: openalex location'
+  - id: arx-maximum-distributions-of-bridges-of-noncollidi
+    title: Maximum distributions of bridges of noncolliding Brownian paths
+    url: https://arxiv.org/pdf/0808.3635v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-08-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0808.3635
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0808.3635 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-15'
+    origin_ids: doi:10.1103/physreve.78.051102
