@@ -8821,20 +8821,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-14'
-  - id: osa-winter-2016-progress-update-better-buildings-allianc
-    title: 'Winter 2016 Progress Update: Better Buildings Alliance'
-    url: https://www.osti.gov/servlets/purl/1671885
-    source: osti_aec
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2016-01-02'
-    document_type: technical-report
-    persistent_id: doi:10.2172/1671885
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-14'
   - id: osa-brine-availability-test-in-salt-doe-office-of-nuclea
     title: 'Brine Availability Test in Salt: DOE Office of Nuclear Energy Field Test.'
     url: https://www.osti.gov/servlets/purl/1841536
@@ -10303,4 +10289,61 @@ sources:
     persistent_id: doi:10.2172/4264722
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-15'
+  - id: osa-fire-protection-of-hepa-filters-by-using-water-spray
+    title: FIRE PROTECTION OF HEPA FILTERS BY USING WATER SPRAYS.
+    url: https://www.osti.gov/servlets/purl/4655447
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1972-01-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/4655447
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-15'
+  - id: osa-the-geotechnical-board-national-research-council-ann
+    title: The Geotechnical Board National Research Council. [Annual] activities report,
+      March 1, 1991--June 30, 1992
+    url: https://www.osti.gov/servlets/purl/10172954
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1993-08-11'
+    document_type: technical-report
+    persistent_id: doi:10.2172/10172954
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-15'
+  - id: osa-oak-ridge-national-laboratory-nonradiological-wastew
+    title: Oak Ridge National Laboratory Nonradiological Wastewater Treatment Plant
+      Optimization Report
+    url: https://www.osti.gov/servlets/purl/5430507
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1991-06-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/5430507
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-15'
+  - id: osa-earthquake-engineering-programs-at-the-lawrence-live
+    title: Earthquake engineering programs at the Lawrence Livermore Laboratory
+    url: https://www.osti.gov/servlets/purl/5283717
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '1980-02-28'
+    document_type: conference-paper
+    license_evidence: OSTI Conference full text; the OSTI record states no rights and
+      OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-15'
