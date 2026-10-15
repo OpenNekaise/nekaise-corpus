@@ -154381,3 +154381,21 @@ sources:
     rights_verified_at: '2026-10-15T15:16:53Z'
     origin_ids: doi:10.3390/su11082444 openalex:W2941582442
     resolution: 'legacy: openalex location'
+  - id: oas-10-1016-j-apenergy-2025-125528-5c1824d2
+    title: 'Protecting residential electrical panels and service through model predictive
+      control: A field study'
+    url: https://arxiv.org/pdf/2409.04884
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-02-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2025.125528
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2409.04884;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2025.125528 openalex:W4407849971
+    resolution: 'sim1: openalex+unpaywall location'
