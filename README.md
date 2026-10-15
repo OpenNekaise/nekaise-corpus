@@ -12,15 +12,15 @@ locally and retain their original licenses.
 <!-- STATS:START -->
 | | |
 |---|---|
-| **Training tokens** | **≈19.231B** (cleaned, training-ready) |
-| **Documents** | **1,637,334** |
-| **Extracted text** | ≈20.222B tokens (~80.889B chars) |
+| **Training tokens** | **≈19.234B** (cleaned, training-ready) |
+| **Documents** | **1,637,550** |
+| **Extracted text** | ≈20.225B tokens (~80.901B chars) |
 | **Raw originals** | ~1.1T (PDF / HTML / source code) |
 | **Topics** | 12 |
 
-**By topic:** equipment_systems 535,437 · construction 432,092 · building_energy 219,898 · structures_civil 173,733 · materials 112,785 · infrastructure 75,652 · architecture 47,386 · standards_protocols 12,982 · controls_bas 10,571 · simulation_modeling 8,467 · urban 7,914 · commissioning_fdd 417.
+**By topic:** equipment_systems 535,437 · construction 432,092 · building_energy 219,898 · structures_civil 173,776 · materials 112,787 · infrastructure 75,652 · architecture 47,440 · standards_protocols 12,982 · controls_bas 10,571 · simulation_modeling 8,467 · urban 8,031 · commissioning_fdd 417.
 
-_The default training view, auto-generated from the manifest. Another **60,898** rows (collected and kept) stay outside it: policy-held or restricted licences. The bytes are not shipped; run the loader to fetch your own copy._
+_The default training view, auto-generated from the manifest. Another **61,157** rows (collected and kept) stay outside it: policy-held or restricted licences. The bytes are not shipped; run the loader to fetch your own copy._
 <!-- STATS:END -->
 
 ## Quick start
