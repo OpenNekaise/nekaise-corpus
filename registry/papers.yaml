@@ -154879,3 +154879,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1080/09613218.2018.1426314 openalex:W2793946201
     resolution: 'legacy: openalex location'
+  - id: ope-opportunities-and-challenges-for-solid-waste-r
+    title: 'Opportunities and challenges for solid waste reuse and recycling in emerging
+      economies: A hybrid analysis'
+    url: https://eprints.gla.ac.uk/260622/1/260622.pdf
+    source: openalex
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-10-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.resconrec.2021.105968
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://eprints.gla.ac.uk/260622/1/260622.pdf; version acceptedVersion;
+      rights accepted]
+    rights_verified_at: '2026-10-15'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.resconrec.2021.105968 openalex:W3210309930
+    resolution: 'legacy: openalex location'
+  - id: arx-stochastic-modeling-of-chaotic-masonry-via-mes
+    title: Stochastic modeling of chaotic masonry via mesostructural characterization
+    url: https://arxiv.org/pdf/0811.0972v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2008-11-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0811.0972
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0811.0972 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-15'
+    origin_ids: doi:10.1615/intjmultcompeng.v7.i2.70
