@@ -153780,3 +153780,21 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-15'
+  - id: arx-dynamic-parameters-of-structures-extracted-fro
+    title: 'Dynamic parameters of structures extracted from ambient vibration measurements:
+      an aid for the seismic vulnerability assessment of existing buildings '
+    url: https://arxiv.org/pdf/0710.1210v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2007-10-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0710.1210
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:0710.1210&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0710.1210 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-15'
+    origin_ids: doi:10.1016/j.soildyn.2007.10.002
