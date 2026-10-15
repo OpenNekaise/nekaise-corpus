@@ -11988,21 +11988,6 @@ sources:
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-15'
-  - id: osa-building-hypotheses-to-understand-the-synergistic-ef
-    title: Building hypotheses to understand the synergistic effects of heat and pollution
-      exposure in a changing climate
-    url: https://www.osti.gov/servlets/purl/3363988
-    source: osti_aec
-    license: publisher-oa
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2025-04-16'
-    document_type: journal-article
-    persistent_id: doi:10.1136/thorax-2025-223233
-    license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Thorax):
-      free to read under the DOE Public Access Plan; publisher copyright, no reuse licence'
-    rights_verified_at: '2026-10-15'
   - id: osa-progress-towards-managing-residential-electricity-de
     title: 'Progress towards Managing Residential Electricity Demand: Impacts of Standards
       and Labeling for Refrigerators and Air Conditioners in India'
@@ -12016,21 +12001,6 @@ sources:
     document_type: conference-paper
     license_evidence: OSTI Conference full text; the OSTI record states no rights and
       OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-15'
-  - id: osa-deemed-savings-estimates-for-legacy-air-conditioning
-    title: Deemed Savings Estimates for Legacy Air Conditioning and WaterHeating Direct
-      Load Control Programs in PJM Region
-    url: https://www.osti.gov/servlets/purl/910325
-    source: osti_aec
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2007-03-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/910325
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-15'
   - id: osa-scalable-truck-charging-demand-simulation-for-cost-o
     title: Scalable Truck Charging Demand Simulation for Cost-Optimized Infrastructure
@@ -12062,21 +12032,6 @@ sources:
     license_evidence: 'OSTI DOE PAGES accepted manuscript of a journal article (Desalination):
       free to read under the DOE Public Access Plan; publisher copyright, no reuse licence'
     rights_verified_at: '2026-10-15'
-  - id: osa-compatibility-of-refrigerants-and-lubricants-w-3
-    title: Compatibility of refrigerants and lubricants with motor materials under retrofit
-      conditions. Final report, Volume II - data tables, high pressure refr
-    url: https://www.osti.gov/servlets/purl/416980
-    source: osti_aec
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '1996-10-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/416980
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-15'
   - id: osa-measurement-of-viscosity-density-and-gas-solub-2
     title: Measurement of viscosity, density and gas solubility of refrigerant blends
     url: https://www.osti.gov/servlets/purl/6486382
@@ -12090,34 +12045,6 @@ sources:
     persistent_id: doi:10.2172/6486382
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-15'
-  - id: osa-docmentation-of-newly-developed-methods-to-assess-ma
-    title: Docmentation of newly developed methods to assess material compatibility
-      in refrigeration and air-conditioning applications. Final report, 1 October 1
-    url: https://www.osti.gov/servlets/purl/395637
-    source: osti_aec
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '1994-08-01'
-    document_type: technical-report
-    persistent_id: doi:10.2172/395637
-    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
-      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
-    rights_verified_at: '2026-10-15'
-  - id: osa-comparison-of-global-warming-impacts-of-automobile-a
-    title: Comparison of global warming impacts of automobile air-conditioning concepts
-    url: https://www.osti.gov/servlets/purl/204715
-    source: osti_aec
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '1995-12-31'
-    document_type: conference-paper
-    license_evidence: OSTI Conference full text; the OSTI record states no rights and
-      OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-15'
   - id: osa-materials-compatibility-and-lubricant-research-on-cf
     title: Materials compatibility and lubricant research on CFC-refrigerant substitutes.
@@ -12203,6 +12130,36 @@ sources:
     published_at: '2001-08-28'
     document_type: technical-report
     persistent_id: doi:10.2172/771244
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-15'
+  - id: osa-eliminating-electricity-deficit-through-energy-effic
+    title: 'Eliminating Electricity Deficit through Energy Efficiency in India: An Evaluation
+      of Aggregate Economic and Carbon Benefits'
+    url: https://www.osti.gov/servlets/purl/983247
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2010-04-30'
+    document_type: technical-report
+    persistent_id: doi:10.2172/983247
+    license_evidence: OSTI Technical Report full text; the OSTI record states no rights
+      and OSTI distinguishes public access from public domain (osti.gov/disclaim)
+    rights_verified_at: '2026-10-15'
+  - id: osa-status-of-china-39-s-energy-efficiency-standards-and
+    title: Status of China&#39;s Energy Efficiency Standards and Labels for Appliances
+      and International Collaboration
+    url: https://www.osti.gov/servlets/purl/973092
+    source: osti_aec
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2008-03-01'
+    document_type: technical-report
+    persistent_id: doi:10.2172/973092
     license_evidence: OSTI Technical Report full text; the OSTI record states no rights
       and OSTI distinguishes public access from public domain (osti.gov/disclaim)
     rights_verified_at: '2026-10-15'
