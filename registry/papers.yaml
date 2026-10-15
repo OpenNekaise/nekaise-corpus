@@ -153583,3 +153583,125 @@ sources:
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-15'
     origin_ids: doi:10.1103/physrevb.76.085337
+  - id: oas-10-1016-j-enbuild-2020-110616-43e0de36
+    title: Evaluation and optimization of the performance of the heating system in a
+      nZEB educational building by monitoring and simulation
+    url: https://lirias.kuleuven.be/retrieve/108726f4-e057-467d-9cba-d0afc9b807d7
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2020.110616
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/108726f4-e057-467d-9cba-d0afc9b807d7;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2020.110616 openalex:W3098734280
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-jclepro-2024-142940-5f2eecf3
+    title: A simplified modeling method for studying the thermal performance of buildings
+      with vertical greening systems
+    url: https://discovery.ucl.ac.uk/id/eprint/10193793/1/1-s2.0-S0959652624023898-main.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2024.142940
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/id/eprint/10193793/1/1-s2.0-S0959652624023898-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2024.142940 openalex:W4399802802
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2023-113576-fed4d934
+    title: 'Enhancing self-consumption for decarbonization: An optimization strategy
+      based on a calibrated building energy model'
+    url: https://dadun.unav.edu/bitstreams/538f7b49-595b-41cd-b476-1b92e79d920f/download
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-09-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2023.113576
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://dadun.unav.edu/bitstreams/538f7b49-595b-41cd-b476-1b92e79d920f/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2023.113576 openalex:W4387007952
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-analyse-de-vuln-erabilit-e-sismique-a-grande-e
+    title: Analyse de vuln\'erabilit\'e sismique \`a grande \'echelle par utilisation
+      des propri\'et\'es dynamiques exp\'erimentales des b\^atiments
+    url: https://arxiv.org/pdf/0710.1603v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2007-10-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0710.1603
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:0710.1603&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0710.1603 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-15'
+  - id: arx-comparaison-entre-calculs-de-vuln-erabilit-e-s
+    title: Comparaison entre calculs de vuln\'erabilit\'e sismique et propri\'et\'es
+      dynamiques mesur\'ees
+    url: https://arxiv.org/pdf/0710.1607v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2007-10-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0710.1607
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:0710.1607&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0710.1607 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-15'
+  - id: arx-transitivity-properties-for-group-actions-on-b
+    title: Transitivity properties for group actions on buildings
+    url: https://arxiv.org/pdf/math/0601450v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2006-01-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0601450
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/0601450&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0601450 (v3, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-15'
+  - id: arx-estimation-of-fuzzy-anomalies-in-water-distrib
+    title: Estimation of fuzzy anomalies in Water Distribution Systems
+    url: https://arxiv.org/pdf/0711.2897v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2007-11-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0711.2897
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:0711.2897&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0711.2897 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-15'
