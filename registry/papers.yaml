@@ -153798,3 +153798,147 @@ sources:
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-15'
     origin_ids: doi:10.1016/j.soildyn.2007.10.002
+  - id: oas-10-1016-j-buildenv-2017-04-012-cce16bdc
+    title: New generalized expressions for forced convective heat transfer coefficients
+      at building facades and roofs
+    url: https://lirias.kuleuven.be/retrieve/8740ca0e-51ed-4147-a0ad-866c964f0b35
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-04-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2017.04.012
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/8740ca0e-51ed-4147-a0ad-866c964f0b35;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2017.04.012 openalex:W2606990849
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2018-02-008-c28e04f8
+    title: 'Advanced personal comfort system (APCS) for the workplace: A review and
+      case study'
+    url: https://strathprints.strath.ac.uk/71004/1/Shahzad_etal_EB2018_Advanced_personal_comfort_system_APCS_for_the_workplace.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-02-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2018.02.008
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/71004/1/Shahzad_etal_EB2018_Advanced_personal_comfort_system_APCS_for_the_workplace.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2018.02.008 openalex:W2790918434
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-buildenv-2018-12-008-1d919f89
+    title: A model based on Gauss Distribution for predicting window behavior in building
+    url: https://discovery.ucl.ac.uk/10065250/3/Wei_A%20Model%20Based%20on%20Gauss%20Distribution%20for%20Predicting%20Window%20Behavior%20in%20Building.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-12-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2018.12.008
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10065250/3/Wei_A%20Model%20Based%20on%20Gauss%20Distribution%20for%20Predicting%20Window%20Behavior%20in%20Building.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2018.12.008 openalex:W2904293161
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-apenergy-2018-04-046-94ac5123
+    title: A framework for producing gbXML building geometry from Point Clouds for accurate
+      and efficient Building Energy Modelling
+    url: https://strathprints.strath.ac.uk/67868/1/Garwood_etal_AE_2018_A_framework_for_producing_gbXML_building_geometry_from_Point_Clouds.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-05-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2018.04.046
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/67868/1/Garwood_etal_AE_2018_A_framework_for_producing_gbXML_building_geometry_from_Point_Clouds.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2018.04.046 openalex:W2801888261
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2018-07-042-5bd42245
+    title: 'On the utility of occupants’ behavioural diversity information for building
+      performance simulation: An exploratory case study'
+    url: https://discovery.ucl.ac.uk/10055401/1/Tahmasebi_10_1016_j_enbuild_2018_07_042.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-08-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2018.07.042
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10055401/1/Tahmasebi_10_1016_j_enbuild_2018_07_042.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2018.07.042 openalex:W2887716438
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-14733315-2017-1388627-146cc5e3
+    title: Evaluation tool of climate potential for ventilative cooling
+    url: https://vbn.aau.dk/ws/files/281522091/Evaluation_tool_of_climate_potential_for_ventilative_cooling.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-10-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/14733315.2017.1388627
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://vbn.aau.dk/ws/files/281522091/Evaluation_tool_of_climate_potential_for_ventilative_cooling.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/14733315.2017.1388627 openalex:W2594093627
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2016-1221996-69abf21d
+    title: The importance of integrally simulating the building, HVAC and control systems,
+      and occupants’ impact for energy predictions of buildings including te
+    url: https://pure.tue.nl/ws/files/68269609/The_importance_of_integrally_simulating_the_building_HVAC_and_control_systems_and_occupants_impact_for_energy_predictions_of_buildings_including.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-08-31'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2016.1221996
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://pure.tue.nl/ws/files/68269609/The_importance_of_integrally_simulating_the_building_HVAC_and_control_systems_and_occupants_impact_for_energy_predictions_of_buildings_including.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-15'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2016.1221996 openalex:W2508406206
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-structural-damage-detection-using-randomized-t
+    title: Structural Damage Detection Using Randomized Trained Neural Networks
+    url: https://arxiv.org/pdf/0806.4650v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-06-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0806.4650
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0806.4650 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-15'

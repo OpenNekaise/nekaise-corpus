@@ -22171,12 +22171,26 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-ronacrete-ronafix-for-renders-mix-a-technical-sds
-    title: 'SpecifiedBy (UK manufacturer documents): Ronacrete_Ronafix-for-Renders-Mix-A_Technical_SDS.pdf'
-    url: https://www.specifiedby.com/ronacrete/ronafix-for-renders-mix-a/Ronacrete_Ronafix-for-Renders-Mix-A_Technical_SDS.pdf
+  - id: vnd-specifiedby-ronacrete-ronafix-for-bedding-mortars-technical-sds
+    title: 'SpecifiedBy (UK manufacturer documents): Ronacrete_Ronafix-for-Bedding-Mortars_Technical_SDS.pdf'
+    url: https://www.specifiedby.com/ronacrete/ronafix-for-bedding-mortars/Ronacrete_Ronafix-for-Bedding-Mortars_Technical_SDS.pdf
     source: vendor_specifiedby
     license: open
-    topic: construction
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-tds-pcuk-en-4-3-03-115636d6
+    title: 'SpecifiedBy (UK manufacturer documents): tds-pcuk-en-4-3-03_115636d6.pdf'
+    url: https://www.specifiedby.com/foamglas-insulation/foamglas-service-maintenance-roof-with-timber-walkway-on-concrete-structure/tds-pcuk-en-4-3-03_115636d6.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
     format: pdf
     language: en
     document_type: product-literature
