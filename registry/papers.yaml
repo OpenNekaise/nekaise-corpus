@@ -155744,3 +155744,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2605.19826 openalex:W7161819994
     resolution: 'sim1: openalex location'
+  - id: arx-extended-f-4-buildings-and-the-baby-monster
+    title: Extended F_4-buildings and the Baby Monster
+    url: https://arxiv.org/pdf/math/0012266v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2000-12-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0012266
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/0012266&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0012266 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.1007/pl00005804
