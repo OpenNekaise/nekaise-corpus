@@ -157668,20 +157668,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1925', '1925']
     rights_verified_at: '2026-10-16'
-  - id: arc-pagewovenwirefencecatalog1896-4b646121
-    title: Page woven wire fence co. ; Adrian, Mich. U.S.A. (1896) [arc-pagewovenwirefencecatalog1896-4b646121]
-    url: https://archive.org/download/PageWovenWireFenceCatalog1896/PageWovenWireFenceCatalog1896_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1896'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1896', '1896']
-    rights_verified_at: '2026-10-16'
   - id: arc-kitselmanbros-1929catalog-a99a6321
     title: Kitselman Bros. 1929 catalog (1929) [arc-kitselmanbros-1929catalog-a99a6321]
     url: https://archive.org/download/KitselmanBros.1929Catalog/KitselmanBros.1929Catalog_djvu.txt
@@ -158591,4 +158577,797 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1911', '1911']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pagewirelawnfence1917-f53d82e5
+    title: Page Wire Lawn Fence (1917) [arc-pagewirelawnfence1917-f53d82e5]
+    url: https://archive.org/download/PageWireLawnFence1917/Page%20Wire%20Lawn%20Fence%201917_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1917'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1917', '1917']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pagewovenwire19121913lionfence-c9031091
+    title: '1912-1913 Page Woven Wire Fence Co. : specialists in steel and wire ; lion
+      fence. (1912) [arc-pagewovenwire19121913lionfence-c9031091]'
+    url: https://archive.org/download/PageWovenWire19121913LionFence/Page%20Woven%20Wire%201912%201913%20Lion%20Fence_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1912', '1912']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pagewovenwireafenceforeverypurpose-5696e05e
+    title: 'Page Woven Wire Fence Co. : A fence for every purpose. (1900) [arc-pagewovenwireafenceforeverypurpose-5696e05e]'
+    url: https://archive.org/download/PageWovenWireAFenceForEveryPurpose/Page%20Woven%20Wire%20a%20Fence%20for%20Every%20Purpose_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pagefencecatalogno-397-53f9f729
+    title: 'Page Fence : Chicago Fence & Wire Co. (1920) [arc-pagefencecatalogno-397-53f9f729]'
+    url: https://archive.org/download/PageFenceCatalogNo.397/PageFenceCatalogNo.397_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pagewovenwireco-cat-11-c540ac3f
+    title: 'Page Woven Wire Fence Co. : wrought iron ; catalogue no. 11. (1895) [arc-pagewovenwireco-cat-11-c540ac3f]'
+    url: https://archive.org/download/PageWovenWireCo.Cat.11/PageWovenWireCo.Cat.%2311_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895', '1895']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pagewovenwirefencecatalog1896-201508-9cd30271
+    title: Page Woven Wire Fence Co. (1896) [arc-pagewovenwirefencecatalog1896-201508-9cd30271]
+    url: https://archive.org/download/PageWovenWireFenceCatalog1896_201508/PageWovenWireFenceCatalog1896_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1896'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1896', '1896']
+    rights_verified_at: '2026-10-16'
+  - id: arc-peerlessfamousfencing-1223483f
+    title: 'The famous Peerless fence - and all Peerless products: farm and lawn gates,
+      lawn fencing,  (1925) [arc-peerlessfamousfencing-1223483f]'
+    url: https://archive.org/download/PeerlessFamousFencing/Peerless%20Famous%20Fencing_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1925', '1925']
+    rights_verified_at: '2026-10-16'
+  - id: arc-peerlessfencecat5-816c0602
+    title: 'Peerless Fence : illustrated catalogue no. 5 of the Peerless woven wire
+      gates, etc. (1895) [arc-peerlessfencecat5-816c0602]'
+    url: https://archive.org/download/PeerlessFenceCat5/Peerless%20Fence%20cat%205_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895', '1895']
+    rights_verified_at: '2026-10-16'
+  - id: arc-peerlessfullcatalogfactorytofarm-e06cfa97
+    title: 'The Famous Peerless Fence : now sold direct, from factory to farm. (1922)
+      [arc-peerlessfullcatalogfactorytofarm-e06cfa97]'
+    url: https://archive.org/download/PeerlessFullCatalogFactorytoFarm/PeerlessFullCatalogFactorytoFarm_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1922', '1922']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pendergastfenceco-2540c352
+    title: Pendergast Fence (1923) [arc-pendergastfenceco-2540c352]
+    url: https://archive.org/download/PendergastFenceCo./PendergastFenceCo._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1923', '1923']
+    rights_verified_at: '2026-10-16'
+  - id: arc-cyclonepropertyprotectionfence-ceb25428
+    title: Cyclone Property Protection Fence (1910) [arc-cyclonepropertyprotectionfence-ceb25428]
+    url: https://archive.org/download/CyclonePropertyProtectionFence/CyclonePropertyProtectionFence_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-16'
+  - id: arc-cycloneredtagfencegatesproducts-32df4465
+    title: 'Cyclone "Red Tag" fence gates and products : catalog no. 11 (1910) [arc-cycloneredtagfencegatesproducts-32df4465]'
+    url: https://archive.org/download/CycloneRedTagFenceGatesProducts/CycloneRedTagFenceGates%26Products_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-16'
+  - id: arc-daytonhedgeandfenceco-3fc31846
+    title: Hedge Fences. (1895) [arc-daytonhedgeandfenceco-3fc31846]
+    url: https://archive.org/download/DaytonHedgeAndFenceCo/Dayton%20Hedge%20and%20Fence%20Co_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895', '1895']
+    rights_verified_at: '2026-10-16'
+  - id: arc-dekalbfenceco-a89ee948
+    title: Dekalb Fence Co. (1893) [arc-dekalbfenceco-a89ee948]
+    url: https://archive.org/download/DeKalbFenceCo./DeKalbFenceCo._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1893'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1893', '1893']
+    rights_verified_at: '2026-10-16'
+  - id: arc-perfectionfencemachinesbyleader-63b855b0
+    title: 'Perfection Fence Machines and Wire Fence Material: Ornamental drive and
+      walk gates. (1902) [arc-perfectionfencemachinesbyleader-63b855b0]'
+    url: https://archive.org/download/PerfectionFenceMachinesByLeader/Perfection%20Fence%20Machines%20by%20Leader_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1902', '1902']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pioneerfencecatalogcontinentalsteelcorp-e282472c
+    title: 'Your crops deserve Pioneer Protection : demon rust can''t enter, this knot
+      can''t slip. (1929) [arc-pioneerfencecatalogcontinentalsteelcorp-e282472c]'
+    url: https://archive.org/download/PioneerFenceCatalogContinentalSteelCorp/PioneerFenceCatalogContinentalSteelCorp_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929', '1929']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittsperfectfence1902-2533a9df
+    title: Pittsburgh Perfect Fence. (1902) [arc-pittsperfectfence1902-2533a9df]
+    url: https://archive.org/download/PittsPerfectFence1902/Pitts%20Perfect%20Fence%201902_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1902', '1902']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittsperfectfence-51e1aca5
+    title: '"Pittsburgh Perfect" Fence : the weld that held. (1916) [arc-pittsperfectfence-51e1aca5]'
+    url: https://archive.org/download/PittsPerfectFence/Pitts%20Perfect%20Fence_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1916', '1916']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittsperfectpgfence15to20-220c496b
+    title: '"Pittsburgh Perfect" electrically welded wire fencing : for horses, hogs,
+      stock, and poult (1907) [arc-pittsperfectpgfence15to20-220c496b]'
+    url: https://archive.org/download/PittsPerfectPGFence15To20/Pitts%20Perfect%20P%26G%20Fence%2015%20to%2020_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907', '1907']
+    rights_verified_at: '2026-10-16'
+  - id: arc-dekalbfencecompany18931897-c8a706da
+    title: 'DeKalb Fence Company : manufacturers of wire fencing for all purposes (1897)
+      [arc-dekalbfencecompany18931897-c8a706da]'
+    url: https://archive.org/download/DeKalbFenceCompany18931897/DeKalbFenceCompany1893-1897_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1897'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1897', '1897']
+    rights_verified_at: '2026-10-16'
+  - id: arc-duboisfencegardenco-d3cf3d24
+    title: 'Dubois Woven Wood Fence : made in France. (1930) [arc-duboisfencegardenco-d3cf3d24]'
+    url: https://archive.org/download/DuBoisFenceGardenCo./DuBoisFence%26GardenCo._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-16'
+  - id: arc-dwigginswirefenceco-cat-no-21-9e671bc6
+    title: Dwiggins Wire Fence Co. (1920) [arc-dwigginswirefenceco-cat-no-21-9e671bc6]
+    url: https://archive.org/download/DwigginsWireFenceCo.Cat.No.21/DwigginsWireFenceCo.Cat.No.21_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-16'
+  - id: arc-dwittwireclothcopricelist1895-1ea32009
+    title: 'DeWitt Wire Cloth Co. : No. 54 ; price lists. (1895) [arc-dwittwireclothcopricelist1895-1ea32009]'
+    url: https://archive.org/download/DWittWireClothCoPriceList1895/DWittWireClothCoPriceList1895_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895', '1895']
+    rights_verified_at: '2026-10-16'
+  - id: arc-e-t-barnumbankrailing-a508b1f4
+    title: E. T. Barnum, manufacturer of bank railings, iron fencing, roof cresting,
+      wire and iron wo (1878) [arc-e-t-barnumbankrailing-a508b1f4]
+    url: https://archive.org/download/E.T.BarnumBankRailing/E.T.BarnumBankRailing_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1878'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1878', '1878']
+    rights_verified_at: '2026-10-16'
+  - id: arc-elwoodwovenwire6x3-6a813df7
+    title: 'Elwood Woven Wire Fences and Gates. : for farm and ranch, pastures, lawns,
+      parks, cemeteri (1899) [arc-elwoodwovenwire6x3-6a813df7]'
+    url: https://archive.org/download/ElwoodWovenWire6x3/Elwood%20Woven%20Wire%206x3_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1899'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1899', '1899']
+    rights_verified_at: '2026-10-16'
+  - id: arc-elwoodwovenwire1900-7f7ef938
+    title: 'Elwood Woven Wire Fences. : strongest, most durable, most efficient, most
+      economical. (1900) [arc-elwoodwovenwire1900-7f7ef938]'
+    url: https://archive.org/download/ElwoodWovenWire1900/Elwood%20Woven%20Wire%201900_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-enterprisefoundryfenceseriesh-59473d76
+    title: 'Enterprise Foundry & Fence Co. : Series H (1901) [arc-enterprisefoundryfenceseriesh-59473d76]'
+    url: https://archive.org/download/EnterpriseFoundryFenceSeriesH/EnterpriseFoundry%20and%20FenceSeriesH_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1901'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1901', '1901']
+    rights_verified_at: '2026-10-16'
+  - id: arc-empirefencesjan19246x8-b89f473e
+    title: 'Empire Fences : we have the knot, no fence is stronger than the knot, open
+      hearth steel -  (1924) [arc-empirefencesjan19246x8-b89f473e]'
+    url: https://archive.org/download/EmpireFencesJan19246x8/Empire%20Fences%20Jan%201924%206x8_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924', '1924']
+    rights_verified_at: '2026-10-16'
+  - id: arc-excelsiorfenceno5-81925927
+    title: 'Excelsior Fence : catalog no 5 ; farm and railroad fence. (1907) [arc-excelsiorfenceno5-81925927]'
+    url: https://archive.org/download/ExcelsiorFenceNo5/Excelsior%20Fence%20no%205_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907', '1907']
+    rights_verified_at: '2026-10-16'
+  - id: arc-fallpricesinterlockingfenceno30-9db9bb42
+    title: 'Interlocking Fences : fall prices -- catalogue no. 30 (1916) [arc-fallpricesinterlockingfenceno30-9db9bb42]'
+    url: https://archive.org/download/FallPricesInterlockingFenceNo30/Fall%20Prices%20Interlocking%20Fence%20no%2030_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1916', '1916']
+    rights_verified_at: '2026-10-16'
+  - id: arc-fencecompanyofamerican-miwhitecedar-26d33e08
+    title: 'Fence Company Of America : manufacturers of pree-fabb products ; fences
+      constructed of sel (1950) [arc-fencecompanyofamerican-miwhitecedar-26d33e08]'
+    url: https://archive.org/download/FenceCompanyOfAmericaN.MIWhiteCedar/FenceCompanyOfAmericaN.MIWhiteCedar_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-fencesforsuburbanproperties-4e7fd8fd
+    title: Fences For Suburban Properties (1900) [arc-fencesforsuburbanproperties-4e7fd8fd]
+    url: https://archive.org/download/FencesForSuburbanProperties/FencesForSuburbanProperties_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-frostfence1902-1a4e973a
+    title: The Frost Fence. (1902) [arc-frostfence1902-1a4e973a]
+    url: https://archive.org/download/FrostFence1902/FrostFence1902_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1902', '1902']
+    rights_verified_at: '2026-10-16'
+  - id: arc-generalcatalogue640-d86fcbe2
+    title: 'Central Iron & Wire Works : general catalogue no. 640. (1920) [arc-generalcatalogue640-d86fcbe2]'
+    url: https://archive.org/download/GeneralCatalogue640/General%20Catalogue%20640_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-16'
+  - id: arc-goodfences-3a6f4eea
+    title: Good Fences (1900) [arc-goodfences-3a6f4eea]
+    url: https://archive.org/download/GoodFences/GoodFences_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-hbelmerfencecat25-76a1b21c
+    title: 'The H. Belmer Co. : fence catalog no. 25. (1900) [arc-hbelmerfencecat25-76a1b21c]'
+    url: https://archive.org/download/HBelmerFenceCat25/H%20Belmer%20Fence%20Cat%2025_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-h-l-belmerfencecat-37-7c07a032
+    title: 'The H. Belmer Co. : fence catalog no. 37 (1900) [arc-h-l-belmerfencecat-37-7c07a032]'
+    url: https://archive.org/download/H.L.BelmerFenceCat.37/H.L.BelmerFenceCat.37_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-hartmanmfg-0f54bd03
+    title: 'Hartman Mfg. Co. : "Hartman" specialties. (1891) [arc-hartmanmfg-0f54bd03]'
+    url: https://archive.org/download/HartmanMfg/Hartman%20Mfg_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1891'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1891', '1891']
+    rights_verified_at: '2026-10-16'
+  - id: arc-hartmanmfgco-cat-no-15-1901-419155a1
+    title: Hartman Mfg. Co. of Lawn Fences; catalogue no. 15. (1901) [arc-hartmanmfgco-cat-no-15-1901-419155a1]
+    url: https://archive.org/download/HartmanMfgCo.Cat.No.15.1901/HartmanMfgCo.Cat.No.15.1901_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1901'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1901', '1901']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittsperfectpgfence15to20-201508-f8edcdae
+    title: '"Pittsburgh Perfect" electrically welded wire fencing : for horses, stock
+      and poultry ; ba (1900) [arc-pittsperfectpgfence15to20-201508-f8edcdae]'
+    url: https://archive.org/download/PittsPerfectPGFence15To20_201508/Pitts%20Perfect%20P%26G%20Fence%2015%20to%2020_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittsperfectpgfence19to23-99dabca1
+    title: '"Pittsburgh Perfect" electrically welded wire fencing : for horses, hogs,
+      stock, and poult (1900) [arc-pittsperfectpgfence19to23-99dabca1]'
+    url: https://archive.org/download/PittsPerfectPGFence19To23/Pitts%20Perfect%20P%26G%20Fence%2019%20to%2023_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittsperfectpgfencefile2folder16-77c89a91
+    title: '"Pittsburgh Perfect" Fencing. (1900) [arc-pittsperfectpgfencefile2folder16-77c89a91]'
+    url: https://archive.org/download/PittsPerfectPGFenceFile2Folder16/Pitts%20Perfect%20P%26G%20Fence%20file%202%20folder%2016_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittsperfectsteelfenceweldedbyelectricity-fca4c486
+    title: '"Pittsburgh Perfect" Steel Fence : strongest in the world ; welded by electricity.
+      (1900) [arc-pittsperfectsteelfenceweldedbyelectricity-fca4c486]'
+    url: https://archive.org/download/PittsPerfectSteelFenceWeldedByElectricity/Pitts%20Perfect%20Steel%20Fence%20Welded%20by%20Electricity_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittswovenwirefence-a50b5bd6
+    title: Pittsburgh Standard Field and Hog Fences. (1895) [arc-pittswovenwirefence-a50b5bd6]
+    url: https://archive.org/download/PittsWovenWireFence/Pitts%20Woven%20Wire%20Fence_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895', '1895']
+    rights_verified_at: '2026-10-16'
+  - id: arc-protection-201508-c73831e2
+    title: Protection (1920) [arc-protection-201508-c73831e2]
+    url: https://archive.org/download/Protection_201508/Protection_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-16'
+  - id: arc-republicornamentalfenceandgateno3-2e5ede18
+    title: 'Republic Ornamental Fence And Gate : catalog no. 3. (1900) [arc-republicornamentalfenceandgateno3-2e5ede18]'
+    url: https://archive.org/download/RepublicOrnamentalFenceAndGateNo3/Republic%20Ornamental%20Fence%20and%20Gate%20no3_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-rickardsfenceco-6d8b7907
+    title: 'Rickards Fence Co. : The "Rickards" fence has no equal, as a door-yard,
+      lawn or cemetery f (1900) [arc-rickardsfenceco-6d8b7907]'
+    url: https://archive.org/download/RickardsFenceCo/Richards%20Fence%20Co_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-richmondfenceelliotreidco-8d6e85d8
+    title: The Richmond Fence, made only of seasoned white oak pickets, manufactured
+      only by Elliott  (1895) [arc-richmondfenceelliotreidco-8d6e85d8]
+    url: https://archive.org/download/RichmondFenceElliotReidCo./Richmond%20Fence%20and%20Elliot%20Reid%20and%20Co_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895', '1895']
+    rights_verified_at: '2026-10-16'
+  - id: arc-rossmanmanuf-co-cat10-c2271e1e
+    title: 'Lawn and stock fence : Rossman Manufacturing Company ; catalogue no. 10
+      (1900) [arc-rossmanmanuf-co-cat10-c2271e1e]'
+    url: https://archive.org/download/RossmanManuf.Co.Cat10/RossmanManuf.Co.Cat%2310_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-searsandrobuckconcretebuildingmachines-ab0264a8
+    title: 'Sears, Robuck & Co. : catalogue no. 117 ; concrete building block machines.
+      (1900) [arc-searsandrobuckconcretebuildingmachines-ab0264a8]'
+    url: https://archive.org/download/SearsAndRobuckConcreteBuildingMachines/Sears%20and%20Robuck%20Concrete%20Building%20Machines_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-searsandrobucklawnandcementery-ae08a3e7
+    title: 'Sears, Roebuck and Co : lawn and cemetery steel picket and wire fabric fencing.
+      (1921) [arc-searsandrobucklawnandcementery-ae08a3e7]'
+    url: https://archive.org/download/SearsAndRobuckLawnAndCementery/Sears%20and%20Robuck%20Lawn%20and%20Cementery_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1921'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1921', '1921']
+    rights_verified_at: '2026-10-16'
+  - id: arc-searsandrobuckornamentalfencing-b157dce1
+    title: Ornamental fencing for lawns, parks, estates, factories, and cemeteries.
+      (1931) [arc-searsandrobuckornamentalfencing-b157dce1]
+    url: https://archive.org/download/SearsAndRobuckOrnamentalFencing/Sears%20and%20Robuck%20Ornamental%20Fencing_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931', '1931']
+    rights_verified_at: '2026-10-16'
+  - id: arc-sedgwickbros-illustratedcat-1884-d0ded0a0
+    title: Sedgwick Bros. Illustrated Catalogue, 1884. (1884) [arc-sedgwickbros-illustratedcat-1884-d0ded0a0]
+    url: https://archive.org/download/SedgwickBros.IllustratedCat.1884/SedgwickBros.IllustratedCat.1884_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1884'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1884', '1884']
+    rights_verified_at: '2026-10-16'
+  - id: arc-illustratedcatofcarterswiremachine-f969cb7f
+    title: 'Illustrated Catalogue Of Carters Woven Wire Fence Machine : springs, stretchers,
+      and wire  (1894) [arc-illustratedcatofcarterswiremachine-f969cb7f]'
+    url: https://archive.org/download/IllustratedCatOfCartersWireMachine/Illustrated%20Cat%20of%20Carters%20Wire%20Machine_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1894'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1894', '1894']
+    rights_verified_at: '2026-10-16'
+  - id: arc-instructionsforpagefencetools-7955dd75
+    title: Instructions For Use Of Page Fence Tools. (1895) [arc-instructionsforpagefencetools-7955dd75]
+    url: https://archive.org/download/InstructionsForPageFenceTools/InstructionsForPageFenceTools_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895', '1895']
     rights_verified_at: '2026-10-16'

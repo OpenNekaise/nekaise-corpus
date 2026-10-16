@@ -155478,3 +155478,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1049/iet-cta.2016.1400 openalex:W2550662066
     resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2011-09-022-daa4e1dd
+    title: Use of model predictive control and weather forecasts for energy efficient
+      building climate control
+    url: https://infoscience.epfl.ch/handle/20.500.14299/79129
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2011-09-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2011.09.022
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://infoscience.epfl.ch/handle/20.500.14299/79129;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2011.09.022 openalex:W2166313543
+    resolution: 'sim1: openalex+unpaywall location'
