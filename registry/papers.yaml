@@ -155761,3 +155761,69 @@ sources:
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-16'
     origin_ids: doi:10.1007/pl00005804
+  - id: oas-w7140346820
+    title: 'Cenergy3: An Open Software Package for City Energy 3D Modeling'
+    url: https://arxiv.org/pdf/2603.20361
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    published_at: '2026-03-20'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7140346820
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://arxiv.org/pdf/2603.20361; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7140346820
+    resolution: 'sim1: openalex location'
+  - id: oas-w7139147699
+    title: Real-Time, Crowdsourcing-Enhanced Forecasting of Building Functionality During
+      Urban Floods
+    url: https://arxiv.org/pdf/2603.17340
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    published_at: '2026-03-18'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7139147699
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://arxiv.org/pdf/2603.17340; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7139147699
+    resolution: 'sim1: openalex location'
+  - id: oas-w7127740619
+    title: 'Fisher-Information-Based Sensor Placement for Structural Digital Twins:
+      Analytic Results and Benchmarks'
+    url: https://arxiv.org/pdf/2602.02981
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-02-03'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7127740619
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2602.02981;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7127740619
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2601-11318-530d66fb
+    title: Building Digital Twins of Different Human Organs for Personalized Healthcare
+    url: https://arxiv.org/pdf/2601.11318
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-01-16'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2601.11318
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2601.11318;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2601.11318 openalex:W7124759659
+    resolution: 'sim1: openalex location'

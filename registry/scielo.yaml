@@ -108155,20 +108155,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0/
     license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212025000101400&format=json
     rights_verified_at: '2026-07-28'
-  - id: sci-s1678-86212025000100295
-    title: Previsão do consumo de água em centros de distribuição logística utilizando
-      regressão linear múltipla
-    url: https://www.scielo.br/pdf/ac/v25/1678-8621-AC-25-e150181.pdf
-    source: scielo_scl
-    license: cc-by
-    topic: construction
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S1678-86212025000100295
-    license_url: https://creativecommons.org/licenses/by/4.0/
-    license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212025000100295&format=json
-    rights_verified_at: '2026-07-28'
   - id: sci-s1678-86212025000100293
     title: Investigação paramétrica do efeito da transferência de momentos na resistência
       à punção de ligações laje-pilar
@@ -108294,20 +108280,6 @@ sources:
     persistent_id: S1678-86212026000100202
     license_url: https://creativecommons.org/licenses/by/4.0/
     license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212026000100202&format=json
-    rights_verified_at: '2026-07-28'
-  - id: sci-s1678-86212026000100201
-    title: 'Manchas diferenciais em fachadas com argamassa: análise por simulação higrotérmica
-      dos mecanismos e comportamentos'
-    url: https://www.scielo.br/pdf/ac/v26/1678-8621-AC-26-e149451.pdf
-    source: scielo_scl
-    license: cc-by
-    topic: construction
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S1678-86212026000100201
-    license_url: https://creativecommons.org/licenses/by/4.0/
-    license_evidence: https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1678-86212026000100201&format=json
     rights_verified_at: '2026-07-28'
   - id: sci-s1678-86212026000100602
     title: Study of eucalyptus wood ash as a partial replacement of cement in mixed
@@ -242887,4 +242859,334 @@ sources:
     persistent_id: S1405-77432012000100006
     license_url: https://creativecommons.org/licenses/by-nc/3.0/
     license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000100006&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432012000400011
+    title: Revisión de criterios de sostenibilidad en muros de concreto para viviendas
+      sismorresistentes
+    url: https://www.scielo.org.mx/pdf/iit/v13n4/v13n4a11.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432012000400011
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000400011&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432012000200009
+    title: Respuesta sísmica de estructuras adyacentes conectadas por amortiguadores
+      viscosos lineales
+    url: https://www.scielo.org.mx/pdf/iit/v13n2/v13n2a9.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432012000200009
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000200009&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432012000200006
+    title: Reproducibilidad en representación sísmica
+    url: https://www.scielo.org.mx/pdf/iit/v13n2/v13n2a6.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432012000200006
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000200006&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432012000300005
+    title: Aspectos relacionados con el control del flujo secundario de agua en climatización
+      centralizada
+    url: https://www.scielo.org.mx/pdf/iit/v13n3/v13n3a5.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432012000300005
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000300005&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432012000300012
+    title: Técnicas asociadas al análisis de frecuencia de crecientes en cuencas con
+      desarrollo urbano
+    url: https://www.scielo.org.mx/pdf/iit/v13n3/v13n3a12.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432012000300012
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000300012&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432012000300002
+    title: Efecto de la succión en la estabilidad de un talud de arena limosa
+    url: https://www.scielo.org.mx/pdf/iit/v13n3/v13n3a2.pdf
+    source: scielo_mex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432012000300002
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000300002&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC-ND/4.0'' (https://articlemeta.scielo.org/api/v1/journal/?collection=mex&issn=1405-7743)'
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432012000200010
+    title: Diseño y construcción de un sistema de lavado en vivo para los aisladores
+      de transformadores
+    url: https://www.scielo.org.mx/pdf/iit/v13n2/v13n2a10.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432012000200010
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000200010&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432012000300007
+    title: Una solución no simétrica aplicando un algoritmo genético con cruzamiento
+      natural para la optimización estructural de armaduras
+    url: https://www.scielo.org.mx/pdf/iit/v13n3/v13n3a7.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432012000300007
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432012000300007&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000100002
+    title: 'Método del elemento finito estocástico en geotecnia: Enfoque espectral'
+    url: https://www.scielo.org.mx/pdf/iit/v14n1/v14n1a2.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000100002
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000100002&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000200007
+    title: Humedal de flujo vertical para tratamiento terciario del efluente físico-químico
+      de una estación depuradora de aguas residuales domésticas
+    url: https://www.scielo.org.mx/pdf/iit/v14n2/v14n2a7.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000200007
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000200007&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000200005
+    title: Characterization Petrophysical of the Losero Formation in the Historical
+      Architecture of the Guanajuato city, Mexico
+    url: https://www.scielo.org.mx/pdf/iit/v14n2/v14n2a5.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1405-77432013000200005
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000200005&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000200011
+    title: Presencia y tratamiento de compuestos disruptores endócrinos en aguas residuales
+      de la Ciudad de México empleando un biorreactor con membranas sumergi
+    url: https://www.scielo.org.mx/pdf/iit/v14n2/v14n2a11.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000200011
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000200011&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000200012
+    title: Propiedades mecánicas del concreto para viviendas de bajo costo
+    url: https://www.scielo.org.mx/pdf/iit/v14n2/v14n2a12.pdf
+    source: scielo_mex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000200012
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000200012&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY-NC-ND/4.0'' (https://articlemeta.scielo.org/api/v1/journal/?collection=mex&issn=1405-7743)'
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000300010
+    title: 'Capacidad de carga tridimensional de celdas estructuradas apoyadas en suelo
+      cohesivo: método de análisis simplificado'
+    url: https://www.scielo.org.mx/pdf/iit/v14n3/v14n3a10.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000300010
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000300010&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000300013
+    title: Correlaciones entre las propiedades mecánicas del concreto reforzado con
+      fibras de acero
+    url: https://www.scielo.org.mx/pdf/iit/v14n3/v14n3a13.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000300013
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000300013&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000300009
+    title: Simulación multi-física del secado de madera en COMSOL Multiphysics 3.4.
+    url: https://www.scielo.org.mx/pdf/iit/v14n3/v14n3a9.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000300009
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000300009&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000300008
+    title: Modelado empírico simple del rompimiento de presas pequeñas de tierra (hidrograma
+      de salidas)
+    url: https://www.scielo.org.mx/pdf/iit/v14n3/v14n3a8.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000300008
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000300008&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000300007
+    title: Stochastic Analysis of a Non Uniform Surface of Bridges
+    url: https://www.scielo.org.mx/pdf/iit/v14n3/v14n3a7.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1405-77432013000300007
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000300007&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000400004
+    title: 'Satisfacción de las necesidades del cliente en el sector vivienda: el caso
+      del Valle de Toluca'
+    url: https://www.scielo.org.mx/pdf/iit/v14n4/v14n4a4.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000400004
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000400004&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000400012
+    title: Desarrollo de un material compuesto ultraligero para construir la plataforma
+      de una mesa vibradora
+    url: https://www.scielo.org.mx/pdf/iit/v14n4/v14n4a12.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000400012
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000400012&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000400011
+    title: Sistema de comunicación TCP/IP para el control de una intersección de tráfico
+      vehicular
+    url: https://www.scielo.org.mx/pdf/iit/v14n4/v14n4a11.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000400011
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000400011&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000400003
+    title: Factores de fiabilidad y eficiencia en la toma de decisiones para la rehabilitación
+      de tuberías
+    url: https://www.scielo.org.mx/pdf/iit/v14n4/v14n4a3.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000400003
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000400003&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432013000400013
+    title: Diseño y construcción de un microtensómetro universal automatizado
+    url: https://www.scielo.org.mx/pdf/iit/v14n4/v14n4a13.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: es
+    document_type: journal-article
+    persistent_id: S1405-77432013000400013
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432013000400013&format=json)
+    rights_verified_at: '2026-10-16'
+  - id: sci-s1405-77432014000100013
+    title: Analysis of the Earthquake-Resistant Design Approach for Buildings in Mexico
+    url: https://www.scielo.org.mx/pdf/iit/v15n1/v15n1a13.pdf
+    source: scielo_mex
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1405-77432014000100013
+    license_url: https://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: SciELO ArticleMeta article record license 'by-nc/3.0' (https://articlemeta.scielo.org/api/v1/article/?collection=mex&code=S1405-77432014000100013&format=json)
     rights_verified_at: '2026-10-16'
