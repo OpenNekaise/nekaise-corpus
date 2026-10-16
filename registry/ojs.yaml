@@ -431419,32 +431419,6 @@ sources:
     license_url: http://creativecommons.org/licenses/by/4.0
     license_evidence: https://journals.vilniustech.lt/index.php/Transport/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/12168
     rights_verified_at: '2026-10-16'
-  - id: ojs-khg-ways-of-structural-elements-of-historical-center-develo
-    title: WAYS OF STRUCTURAL ELEMENTS OF HISTORICAL CENTER DEVELOP STABLY BIG CITY
-    url: https://khg.kname.edu.ua/index.php/khg/article/download/1425/1418
-    source: ojs_khg
-    license: unverified
-    topic: urban
-    format: pdf
-    language: ru
-    published_at: '2013-10-24'
-    document_type: journal-article
-    license_evidence: 'https://khg.kname.edu.ua/index.php/khg/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.khg.kname.edu.ua:article/1425
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-16'
-  - id: ojs-khg-vertical-zoning-as-a-method-of-environmental-conservati
-    title: VERTICAL ZONING AS A METHOD OF ENVIRONMENTAL CONSERVATION HISTORIC CITY
-    url: https://khg.kname.edu.ua/index.php/khg/article/download/1500/1492
-    source: ojs_khg
-    license: unverified
-    topic: urban
-    format: pdf
-    language: ru
-    published_at: '2013-10-24'
-    document_type: journal-article
-    license_evidence: 'https://khg.kname.edu.ua/index.php/khg/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.khg.kname.edu.ua:article/1500
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-16'
   - id: ojs-khg-heat-loss-in-buildings-building-the-renovation-of-high
     title: HEAT LOSS IN BUILDINGS BUILDING THE RENOVATION OF HIGH-RISE BUILDINGS
     url: https://khg.kname.edu.ua/index.php/khg/article/download/1502/1494
@@ -431456,19 +431430,6 @@ sources:
     published_at: '2013-10-24'
     document_type: journal-article
     license_evidence: 'https://khg.kname.edu.ua/index.php/khg/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.khg.kname.edu.ua:article/1502
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-16'
-  - id: ojs-khg-unfit-and-conditional-merchantable-territory-as-a-reser
-    title: '"UNFIT" AND "CONDITIONAL MERCHANTABLE" TERRITORY AS A RESERVE FOR HOUSING'
-    url: https://khg.kname.edu.ua/index.php/khg/article/download/1523/1515
-    source: ojs_khg
-    license: unverified
-    topic: urban
-    format: pdf
-    language: ru
-    published_at: '2013-10-24'
-    document_type: journal-article
-    license_evidence: 'https://khg.kname.edu.ua/index.php/khg/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.khg.kname.edu.ua:article/1523
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-16'
   - id: ojs-rivista-diversit-e-differenze-on-diversity-and-differences
@@ -433065,21 +433026,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2019 Giorgio Pradella)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-techne-the-care-of-the-execution
-    title: The care of the execution
-    url: https://oaj.fupress.net/index.php/techne/article/download/7511/7398
-    source: ojs_techne
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2019-11-29'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.13128/techne-7511
-    license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/7511
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2019 Marco Introini)'
-    rights_verified_at: '2026-10-16'
   - id: ojs-techne-informed-executive-designs-research-and-professional
     title: '“Informed” executive designs: research and professional practice to improve
       the built environment'
@@ -433141,4 +433087,3553 @@ sources:
     license_evidence: 'https://oaj.fupress.net/index.php/techne/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.oaj.fupress.net:article/7517
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2019 Carlo Caldera, Valentino Manni, Luca Saverio Valzano)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-biomimetics-complex-geometry-and-parametric
+    title: 'BIOMIMETICS, COMPLEX GEOMETRY AND PARAMETRIC MODELING: A STRUCTURE OF KNOWLEDGE
+      FOR ARCHITECTURE'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5597/4917
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2022.v8.n5.63-73
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5597
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-value-of-real-and-virtual-water-in-the-p
+    title: 'THE VALUE OF REAL AND VIRTUAL WATER IN THE PRODUCTION OF CONCRET IN THE
+      METROPOLITAN REGION OF BELÉM-PABelém-PA, AMAZONIA, BRAZIL: O VALOR DA ÁGUA REA'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5635/5113
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-04-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n2.189-201
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5635
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-systematic-literature-review-for-disaster-sc
+    title: 'SYSTEMATIC LITERATURE REVIEW FOR DISASTER SCENARIOS:: CONCEPT, GAPS AND
+      RESEARCH OPPORTUNITY'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5653/4921
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2022.v8.n5.119-132
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5653
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-integrated-management-of-urban-solid-waste-i
+    title: INTEGRATED MANAGEMENT OF URBAN SOLID WASTE IN THE METROPOLITAN REGION OF
+      VALE DO AÇO/MG
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5658/4909
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2022.v8.n5.147-161
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5658
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-development-of-material-with-elastomer-waste
+    title: 'DEVELOPMENT OF MATERIAL WITH ELASTOMER WASTE : DESENVOLVIMENTO DE MATERIAL
+      COM RESÍDUOS DE ELASTÔMEROS'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5683/5462
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.79-90
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5683
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-the-un-sdgs-in-competence-based-educatio
+    title: 'The THE UN SDGs IN COMPETENCE-BASED EDUCATION: WASTE COLLECTION MACHINE
+      FOR PARANOÁ LAKE'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5685/4908
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2022.v8.n5.133-145
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5685
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-an-lise-de-materiais-aplicados-em-solu-es-de
+    title: ANÁLISE DE MATERIAIS APLICADOS EM SOLUÇÕES DE MOBILIÁRIOS PARA ACAMPAMENTOS
+      TEMPORÁRIOS PLANEJADOS (ATP) EM CENÁRIOS DE DESASTRE
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5701/4910
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2022.v8.n5.163-177
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5701
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-relevance-of-natural-ventilation-strateg
+    title: 'THE RELEVANCE OF NATURAL VENTILATION STRATEGY FOR PAULO AFONSO/BA/BR: A
+      RELEVÂNCIA DA ESTRATÉGIA VENTILAÇÃO NATURAL PARA PAULO AFONSO BA/BR'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5709/5230
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.85-100
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5709
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainability-levels-analysis-a-study-case
+    title: 'SUSTAINABILITY LEVELS ANALYSIS: A STUDY CASE OF GRAIN TRANSPORTATION USING
+      ROADRAILERS: ANÁLISE DOS NÍVEIS DE SUSTENTABILIDADE: UM ESTUDO DE CASO DO T'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5718/5219
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.147-157
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5718
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-evaluation-of-the-incorporation-of-steel-was
+    title: 'EVALUATION OF THE INCORPORATION OF STEEL WASTE IN SOIL-CEMENT BLOCKS: INCORPORAÇÃO
+      DE RESÍDUOS SIDERÚRGICOS À CONFECÇÃO DE BLOCOS DE SOLO-CIMENTO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5720/5173
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.83-100
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5720
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-entrevista-lisiane-ilha-librelotto
+    title: Entrevista - Lisiane Ilha Librelotto
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5729/4913
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2022.v8.n5.183-189
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5729
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainable-materials-for-the-fashion-indust
+    title: 'SUSTAINABLE MATERIALS FOR THE FASHION INDUSTRY THROUGH THE DOWNCYCLING PROCESS:
+      OS MATERIAIS SUSTENTÁVEIS PARA A INDÚSTRIA DA MODA ATRAVÉS DO PROCESSO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5732/6321
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.245-246
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5732
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainable-materials-for-the-f-2
+    title: 'SUSTAINABLE MATERIALS FOR THE FASHION INDUSTRY THROUGH THE DOWNCYCLING PROCESS:
+      MATERIAIS SUSTENTÁVEIS PARA A INDÚSTRIA DA MODA ATRAVÉS DO PROCESSO DE'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5734/5006
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n1.145-146
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5734
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainability-in-artisanal-production-with
+    title: 'SUSTAINABILITY IN ARTISANAL PRODUCTION WITH PLANT RESIDUES FROM THE MARANHÃO
+      AMAZON: SUSTENTABILIDADE NA PRODUÇÃO ARTESANAL COM RESÍDUOS VEGETAIS DA A'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5740/5011
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n1.151-151
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5740
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-art-of-classical-ballet-inspiring-a-coll
+    title: 'THE ART OF CLASSICAL BALLET INSPIRING A COLLECTION OF FASHION IN THE LIGHT
+      OF SUSTAINABLE IDEARY: A ARTE DO BALLET CLÁSSICO INSPIRANDO UMA COLEÇÃO DE '
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5741/5010
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n1.152-153
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5741
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-geopolitics-and-the-production-of-urban-spac
+    title: 'GEOPOLITICS AND THE PRODUCTION OF URBAN SPACE IN THE LEGAL AMAZON: THE TERRITORIAL
+      DYNAMICS IN BACABEIRA/MA: GEOPOLÍTICA E A PRODUÇÃO DO ESPAÇO URBANO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5746/5114
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-04-02'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5746
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-constitution-of-a-network-of-concepts-of
+    title: 'THE CONSTITUTION OF A NETWORK OF CONCEPTS OF THE COMPLEX GEOMETRY OF CONTEMPORARY
+      ARCHITECTURE: FROM THEORIES TO THE PARAMETRIC MODELING OF SURFACES: '
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5748/5025
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-12-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n1.154-154
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5748
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-utiliza-o-de-metaconceitos-no-design-de-sist
+    title: 'UTILIZAÇÃO DE METACONCEITOS NO DESIGN DE SISTEMA DE PRODUTO+SERVIÇO PARA
+      MANUFATURA E DESIGN DISTRIBUÍDOS DE TECNOLOGIA ASSISTIVA: RESUMO DE TESE'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5751/5115
+    source: ojs_mixsustentavel
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-04-02'
+    document_type: journal-article
+    license_evidence: 'https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5751
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2022 Gabriel Chemin Rosenmann, Aguinaldo dos Santos; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-model-for-promoting-active-urban-mobility-by
+    title: 'MODEL FOR PROMOTING ACTIVE URBAN MOBILITY BY BICYCLE: An APPROACH TO SERVICE
+      DESIGN FOR SUSTAINABLE BEHAVIOR: MODELO PARA PROMOÇÃO DA MOBILIDADE URBAN'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5753/5117
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-04-02'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5753
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-lca-of-supplementary-cementitious-materials
+    title: 'LCA OF SUPPLEMENTARY CEMENTITIOUS MATERIALS AND RECYCLED AGREGGATES: A SYSTEMATIC
+      REVIEW : ACV DE MATERIAIS CIMENTÍCIOS SUPLEMENTARES E AGREGADOS RECI'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5760/5172
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.67-81
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5760
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-mechanical-behavior-of-high-density-polyethy
+    title: 'MECHANICAL BEHAVIOR OF HIGH-DENSITY POLYETHYLENE REINFORCED WITH GRAPHENE
+      NANOPLATELETS AND JUTE FABRIC: COMPORTAMENTO MECÂNICO DO POLIETILENO DE ALTA'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5785/5156
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.50-65
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5785
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-environmental-aspects-of-rammed-earth-s-life
+    title: 'ENVIRONMENTAL ASPECTS OF RAMMED EARTH’S LIFE CYCLE INVENTORY: ASPECTOS AMBIENTAIS
+      DO CICLO DE VIDA DA TAIPA DE PILÃO: BERÇO A BERÇO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5798/5199
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.117-130
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5798
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-use-of-acoustic-tomograph-for-detecting-inte
+    title: 'USE OF ACOUSTIC TOMOGRAPH FOR DETECTING INTERNAL FAULTS IN WOODEN PARTS:
+      UTILIZAÇÃO DE TOMÓGRAFO ACÚSTICO PARA DETECÇÃO DE FALHAS INTERNAS EM PEÇAS DE'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5804/5700
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.155-163
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5804
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-development-process-of-an-illustrated-dictio
+    title: 'DEVELOPMENT PROCESS OF AN ILLUSTRATED DICTIONARY OF LIGHTING COMFORT: PROCESSO
+      DE DESENVOLVIMENTO DE UM DICIONÁRIO ILUSTRADO DE CONFORTO LUMÍNICO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5805/5555
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.101-113
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5805
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-scientific-field-of-sustainability-a-bib
+    title: 'THE SCIENTIFIC FIELD OF SUSTAINABILITY: A BIBLIOMETRIC STUDY : O CAMPO CIENTÍFICO
+      DA SUSTENTABILIDADE: UM ESTUDO BIBLIOMÉTRICO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5812/5444
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.29-39
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5812
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-environmental-impact-evaluation-caused-by-re
+    title: 'ENVIRONMENTAL IMPACT EVALUATION CAUSED BY REINFORCED CONCRETE USED IN BRIDGES:
+      AVALIAÇÃO DO IMPACTO AMBIENTAL CAUSADO POR CONCRETO ARMADO UTILIZADO EM'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5824/5153
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.17-32
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5824
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-green-roofs-concept-application-and-performa
+    title: 'GREEN ROOFS: CONCEPT, APPLICATION AND PERFORMANCE: COBERTURAS VERDES: CONCEITO,
+      APLICAÇÃO E DESEMPENHO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5845/5220
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.159-170
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5845
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-use-of-industrial-property-assets-in-the
+    title: 'THE USE OF INDUSTRIAL PROPERTY ASSETS IN THE CACHAÇA VALUE CHAIN: O USO
+      DE ATIVOS DE PROPRIEDADE INDUSTRIAL NA CADEIA DE VALOR DA CACHAÇA'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5859/5198
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.101-115
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5859
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-desalter-efficiency-in-removing-salts-from-b
+    title: 'DESALTER EFFICIENCY IN REMOVING SALTS FROM BRACKISH WATER IN PERNAMBUCO''S
+      SEMI-ARID REGION: EFICIÊNCIA DE DESSALINIZADORES NA REMOÇÃO DE SAIS DE ÁGUA '
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5891/5446
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.17-27
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5891
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainability-transparency-scope-for-digita
+    title: 'SUSTAINABILITY TRANSPARENCY: SCOPE FOR DIGITAL SERVICES: TRANSPARÊNCIA PARA
+      SUSTENTABILIDADE: ESCOPO EM SERVIÇOS DIGITAIS'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5914/5231
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.181-199
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5914
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-use-of-mobile-devices-in-macro-drainage-syst
+    title: 'USE OF MOBILE DEVICES IN MACRO DRAINAGE SYSTEMS IN THE CITY OF RECIFE-PE:
+      UTILIZAÇÃO DE DISPOSITIVOS MÓVEIS NOS SISTEMAS DE MACRODRENAGEM DA CIDADE DO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5925/6150
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.187-197
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5925
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-manufacture-of-briquettes-with-urban-pruning
+    title: 'MANUFACTURE OF BRIQUETTES WITH URBAN PRUNING RESIDUES : FABRICAÇÃO DE BRIQUETES
+      COM RESÍDUOS DE PODA URBANA'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5926/5503
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.41-50
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5926
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-industrial-production-and-sustainable-develo
+    title: 'INDUSTRIAL PRODUCTION AND SUSTAINABLE DEVELOPMENT: AN ANALYSIS OF THE ELECTROINTENSIVE
+      SEGMENT IN BRAZIL'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/5942/5460
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.65-78
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/5942
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-spatial-distribution-and-temporal-trends-in
+    title: 'SPATIAL DISTRIBUTION AND TEMPORAL TRENDS IN RAINFALL IN MATO GROSSO DO SUL,
+      BRAZIL: DISTRIBUIÇÃO ESPACIAL E TENDÊNCIAS TEMPORAIS DE PRECIPITAÇÃO NO MA'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6064/5701
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.165-181
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6064
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-design-and-sustainability-experimental-pract
+    title: 'DESIGN AND SUSTAINABILITY: EXPERIMENTAL PRACTICES WITH PROBLEMATIC MATERIALS
+      IN CONTEMPORARY JEWELRY EDUCATION: DESIGN E SUSTENTABILIDADE: PRÁTICAS EX'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6074/5238
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.17-26
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6074
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-3d-printing-with-cementitious-materials-a-co
+    title: '3D PRINTING WITH CEMENTITIOUS MATERIALS: A COMPARATIVE ANALYSIS OF RESIDENTIAL
+      PROJECTS: IMPRESSÃO 3D COM MATERIAIS CIMENTÍCIOS: UMA ANÁLISE COMPARATI'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6083/5239
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.27-39
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6083
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-steel-circular-economy-in-the-civil-construc
+    title: 'STEEL CIRCULAR ECONOMY IN THE CIVIL CONSTRUCTION: A STUDY CASE OF STEEL
+      INDUSTRY: ECONOMIA CIRCULAR DO AÇO NA CONSTRUÇÃO CIVIL: ESTUDO DE CASO DE SIDE'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6102/5463
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.51-63
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6102
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-crafted-adobe-production-and-budget-composit
+    title: 'CRAFTED ADOBE PRODUCTION AND BUDGET COMPOSITION AT ITABUNA-ILHEUS-URUÇUCA
+      AXIS, BA: PRODUÇÃO ARTESANAL DO ADOBE E COMPOSIÇÃO ORÇAMENTÁRIA NO EIXO ITAB'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6125/6136
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.137-149
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6125
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-assessment-of-the-distribution-of-parks-and
+    title: 'ASSESSMENT OF THE DISTRIBUTION OF PARKS AND SQUARES IN A MEDIUM-SIZED BRAZILIAN
+      CITY: AVALIAÇÃO DA DISTRIBUIÇÃO DE PARQUES E PRAÇAS EM UMA CIDADE BRAS'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6139/5300
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.41-50
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6139
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-sustainability-s-premise-of-synthetic-di
+    title: 'THE SUSTAINABILITY''S PREMISE OF SYNTHETIC DIAMONDS: A PREMISSA DE SUSTENTABILIDADE
+      DOS DIAMANTES SINTÉTICOS'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6160/6149
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.151-160
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6160
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-initial-development-of-acacia-mearnsii-on-su
+    title: 'INITIAL DEVELOPMENT OF Acacia mearnsii ON SUBSTRATE CONTAINING BIOCHAR DERIVED
+      FROM CHARCOAL FINES: DESENVOLVIMENTO INICIAL DE Acacia mearnsii EM SUBS'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6162/5589
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.115-124
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6162
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-reinvent-sustainable-composite-for-packaging
+    title: 'REINVENT: SUSTAINABLE COMPOSITE FOR PACKAGING: REINVENTE: COMPÓSITO SUSTENTÁVEL
+      PARA EMBALAGEM'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6178/6317
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.231-242
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6178
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-theoretical-analysis-of-timber-beams-reinfor
+    title: 'THEORETICAL ANALYSIS OF TIMBER BEAMS REINFORCED WITH POLYMERS FIBER REINFORCED
+      (FRP) BARS: ANÁLISE TEÓRICA DE VIGAS DE MADEIRA ARMADAS COM VERGALHÕES '
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6182/5341
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.87-97
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6182
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-ultra-high-performance-concretes-with-phenol
+    title: 'ULTRA-HIGH PERFORMANCE CONCRETES WITH PHENOLIC FOUNDRY SAND: MECHANICAL
+      AND MICROSTRUCTURAL EVALUATION: CONCRETOS DE ULTRA ALTO DESEMPENHO COM AREIA D'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6189/5776
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.183-199
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6189
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainable-jewelry-techniques-for-vulnerabl
+    title: 'SUSTAINABLE JEWELRY TECHNIQUES FOR VULNERABLE SOCIAL GROUP: TCC Abstract'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6192/5235
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n3.207-207
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6192
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-biomass-as-a-renewable-raw-material-obstacle
+    title: 'BIOMASS AS A RENEWABLE RAW MATERIAL: OBSTACLES TO ITS USE: BIOMASSA COMO
+      MATÉRIA-PRIMA RENOVÁVEL: OBSTÁCULOS PARA UTILIZAÇÃO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6211/5657
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.125-139
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6211
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-voz-das-comunidades-identification-and-analy
+    title: '“VOZ DAS COMUNIDADES”: IDENTIFICATION AND ANALYSIS OF THE FACTORS THAT ALLOWED
+      ITS GAIN IN SCALE : "VOZ DAS COMUNIDADES": IDENTIFICAÇÃO E ANÁLISE DOS '
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6212/5340
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.65-74
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6212
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainability-of-concrete-with-the-use-of-a
+    title: 'SUSTAINABILITY OF CONCRETE WITH THE USE OF ALTERNATIVE MATERIALS: SUSTENTIBILIDADE
+      DE CONCRETOS COM O USO DE MATERIAIS ALTERNATIVOS'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6226/6049
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.17-28
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6226
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-constructed-wetlands-as-carbon-sinks-or-emis
+    title: 'CONSTRUCTED WETLANDS AS CARBON SINKS OR EMISSION SOURCES – A REVIEW: WETLANDS
+      CONSTRUÍDOS COMO SUMIDOUROS DE CARBONO OU COMO FONTES DE EMISSÃO – UMA R'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6227/5339
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.75-85
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6227
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-volatile-organic-compounds-in-sustainable-po
+    title: VOLATILE ORGANIC COMPOUNDS IN SUSTAINABLE POLYMERIC MATERIALS FOR ARCHITECTURAL
+      AND INTERIOR USE, CASE STUDY AT PONTIFICIA UNIVERSIDAD JAVERIANA, BOGO
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6247/5356
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.171-181
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6247
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainable-public-policies-for-built-cultur
+    title: 'SUSTAINABLE PUBLIC POLICIES FOR BUILT CULTURAL HERITAGE, STUDY OF THE CONTRIBUTIONS
+      OF PREVENTIVE CONSERVATION MODELS APPLIED IN BRAZIL AND SPAIN: POL'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6258/5353
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.157-169
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6258
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-analysis-of-water-and-energy-consumption-in
+    title: 'ANALYSIS OF WATER AND ENERGY CONSUMPTION IN A VERTICAL GREEN RESIDENTIAL
+      BUILDING IN THE AMAZON: SOLUÇÕES BASEADAS NA NATUREZA (SBN) EM UMA CIDADE INT'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6262/6125
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.109-124
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6262
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-rain-gardens-technique-updates-based-on-a-sy
+    title: 'RAIN GARDENS: TECHNIQUE UPDATES BASED ON A SYSTEMATIC REVIEW: JARDINS DE
+      CHUVA: ATUALIZAÇÕES SOBRE A TÉCNICA A PARTIR DE UMA REVISÃO SISTEMÁTICA'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6274/5937
+    source: ojs_mixsustentavel
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n5.201-215
+    license_evidence: 'https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6274
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Fabio Gondim, Alfredo Akira Ohnuma Jr., Marcelo Obraczka; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-territory-jewel-in-the-state-of-par-an-analy
+    title: 'TERRITORY JEWEL IN THE STATE OF PARÁ: AN ANALYSIS OF THE PRODUCTIVE CHAIN
+      OF ADORNMENT WITH NATIVE SEEDS: JOIA DE TERRITÓRIO NO ESTADO DO PARÁ: UMA AN'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6288/5350
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.113-124
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6288
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-study-of-the-use-of-ecological-thermoacousti
+    title: 'STUDY OF THE USE OF ECOLOGICAL THERMOACOUSTIC INSULATORS IN ARCHITECTURE
+      AND CIVIL CONSTRUCTION : ESTUDO SOBRE EMPREGO DE ISOLANTES TERMOACÚSTICOS ECO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6290/5349
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.99-112
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6290
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-design-for-adaptability-dfad-and-biomimicry
+    title: 'DESIGN FOR ADAPTABILITY (DFAD) AND BIOMIMICRY: THE ICD-ITKE 2013-14 RESEARCH
+      PAVILION CASE STUDY: O DESIGN PARA ADAPTABILIDADE (DFAD) E A BIOMIMÉTICA:'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6295/5357
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.183-193
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6295
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-additive-manufacturing-and-distributed-recyc
+    title: 'ADDITIVE MANUFACTURING AND DISTRIBUTED RECYCLING: WASTE AS RAW MATERIAL
+      IN THE DESIGN AND MANUFACTURE OF UTILITARIAN OBJECTS : MANUFATURA ADITIVA E RE'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6338/6120
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.51-61
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6338
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-capillary-absorption-in-adobes-produced-with
+    title: 'CAPILLARY ABSORPTION IN ADOBES PRODUCED WITH MINING TAILINGS: A ABSORÇÃO
+      POR CAPILARIDADE EM ADOBES PRODUZIDOS COM REJEITOS DE MINERAÇÃO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6346/5358
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2023.v9.n4.195-207
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6346
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-influence-of-high-temperatures-on-the-compre
+    title: 'INFLUENCE OF HIGH TEMPERATURES ON THE COMPRESSIVE STRENGTH OF IRON ORE WASTE/CEMENT
+      COMPOSITE: INFLUENCE OF HIGH TEMPERATURES ON THE COMPRESSIVE STREN'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6379/6135
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.125-136
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6379
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-analysis-of-water-and-energy-co-2
+    title: 'ANALYSIS OF WATER AND ENERGY CONSUMPTION IN A VERTICAL GREEN RESIDENTIAL
+      BUILDING IN THE AMAZON: ANÁLISE DO CONSUMO DE ÁGUA E ENERGIA DE UMA CONSTRUÇÃ'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6401/6123
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.93-108
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6401
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-street-affordances-human-environment-interac
+    title: 'STREET AFFORDANCES: HUMAN-ENVIRONMENT INTERACTION IN THE DESIGN PROCESS
+      OF URBAN SPACE: AFFORDANCE DA RUA: INTERAÇÃO HOMEM-AMBIENTE NO PROCESSO DE PRO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6511/6151
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.199-209
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6511
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-design-tool-to-evaluate-experiences-of-mater
+    title: 'DESIGN TOOL TO EVALUATE EXPERIENCES OF MATERIALS DEVELOPED WITH AMAZONIAN
+      AGRO-INDUSTRIAL WASTE: FERRAMENTA DE DESIGN PARA AVALIAR EXPERIÊNCIAS DE MAT'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6513/6152
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6513
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-challenges-of-environmental-monitoring-withi
+    title: 'CHALLENGES OF ENVIRONMENTAL MONITORING WITHIN THE INTEGRATED RECYCLING COMPLEX
+      OF THE FEDERAL DISTRICT/DF: DESAFIOS DO MONITORAMENTO AMBIENTAL NO COMP'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6532/6121
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.63-73
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6532
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-design-and-university-a-look-at-regional-dif
+    title: 'DESIGN AND UNIVERSITY: A LOOK AT REGIONAL DIFFERENCES IN BRAZIL: DESIGN
+      E UNIVERSIDADE: UM OLHAR PARA AS DIFERENÇAS REGIONAIS'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6539/6055
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.41-50
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6539
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-acv-con-an-lisis-de-incertidumbre-revis-n-de
+    title: 'ACV CON ANÁLISIS DE INCERTIDUMBRE: REVISÓN DE LA LITERATURA Y POTENCIAL
+      EMPLEO EN LAS CARRETERAS FEDERALES DE BRASIL: LCA WITH UNCERTAINTY ANALYSIS - '
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6598/6122
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.75-92
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6598
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-use-of-calcium-carbonate-sludge-as-filler-in
+    title: 'USE OF CALCIUM CARBONATE SLUDGE AS FILLER IN HOT MIX ASPHALT CONCRETE SLUDGE
+      : UTILIZAÇÃO DE LAMA DE CARBONATO DE CÁLCIO COMO FÍLER EM CONCRETO ASFÁLT'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6629/6299
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.35-47
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6629
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-contribution-of-the-psychology-of-religi
+    title: 'THE CONTRIBUTION OF THE PSYCHOLOGY OF RELIGION AND SPIRITUALITY TO THE DEVELOPMENT
+      OF SUSTAINABILITY IN SMART CITIES: A CONTRIBUIÇÃO DA PSICOLOGIA DA '
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6808/6300
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.49-59
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6808
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-building-occupancy-thermal-performance-a-cas
+    title: 'BUILDING OCCUPANCY & THERMAL PERFORMANCE: A CASE STUDY IN DIFFERENT CLIMATE
+      ZONES IN BRAZIL : USO DE EDIFICAÇÕES & CONFORTO TÉRMICO: ESTUDO DE CASO EM'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6934/6139
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n1.161-172
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6934
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-technical-feasibility-study-of-a-ccw-recycli
+    title: 'TECHNICAL FEASIBILITY STUDY OF A CCW RECYCLING PLANT IN JUAZEIRO DO NORTE-CE
+      : ESTUDO DE VIABILIDADETÉCNICA DE USINA DE RECICLAGEM DE RCC EM JUAZEIRO '
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6935/6298
+    source: ojs_mixsustentavel
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.17-34
+    license_evidence: 'https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6935
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Marcus Vinicius de Oliveira Brasil, Mestrando Matheus Souza Leite, Dra.
+      Maria Gorethe de Sousa Lima Brito, Arquiteta Gabriela Aguiar Rezende;)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-sustainable-consumption-behavior-slow-fashio
+    title: 'SUSTAINABLE CONSUMPTION BEHAVIOR - SLOW FASHION IN BRAZIL: COMPORTAMENTO
+      DE CONSUMO SUSTENTÁVEL - SLOW FASHION NO BRASIL'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6939/6175
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n2.55-67
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6939
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-future-of-work-in-fashion-in-light-of-em
+    title: 'THE FUTURE OF WORK IN FASHION IN LIGHT OF EMERGING TECHNOLOGIES: PRELIMINARY
+      STUDY: O FUTURO DO TRABALHO NA MODA SOB O VIÉS DAS TECNOLOGIAS EMERGENTES'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/6948/6301
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.61-82
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/6948
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-the-environmental-dimension-in-new-products
+    title: 'THE ENVIRONMENTAL DIMENSION IN NEW PRODUCTS DESIGN – EDUCATIONAL TRAINING
+      IN INDUSTRIAL DESIGN: A DIMENSÃO AMBIENTAL NO PROJETO DE NOVOS PRODUTOS – FO'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/7119/6056
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n2.29-38
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/7119
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-assessment-of-the-mechanical-and-environment
+    title: 'ASSESSMENT OF THE MECHANICAL AND ENVIRONMENTAL PROPERTIES OF CONCRETES WITH
+      HIGH LEVELS OF LIME FILLER AND FLY ASH: AVALIAÇÃO DAS PROPRIEDADES MECÂNIC'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/7141/6311
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.195-211
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/7141
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-feasibility-study-of-the-use-of-iron-ore-tai
+    title: 'FEASIBILITY STUDY OF THE USE OF IRON ORE TAILINGS AS PIGMENT IN POLYPROPYLENE
+      RESINS: ESTUDO DE VIABILIDADE DO USO DE REJEITOS DE MINÉRIO DE FERRO COM'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/7142/6302
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.83-91
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/7142
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-tools-for-assessing-the-financial-sustainabi
+    title: 'TOOLS FOR ASSESSING THE FINANCIAL SUSTAINABILITY OF INTEGRATED MANAGEMENT
+      SYSTEMS OF URBAN SOLID WASTE : FERRAMENTAS PARA AVALIAÇÃO DA SUSTENTABILIDAD'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/7178/6304
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.105-120
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/7178
+    rights_verified_at: '2026-10-16'
+  - id: ojs-mixsustentavel-green-infrastructure-multifunctional-network
+    title: 'GREEN INFRASTRUCTURE: MULTIFUNCTIONAL NETWORKS AND WATER-FOCUSED APPROACH
+      A LITERATURE ANALYSIS: GREEN INFRASTRUCTURE: MULTIFUNCTIONAL NETWORKS AND WA'
+    url: https://ojs.sites.ufsc.br/index.php/mixsustentavel/article/download/7211/6303
+    source: ojs_mixsustentavel
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.29183/2447-3073.mix2024.v10.n3.93-103
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ojs.sites.ufsc.br/index.php/mixsustentavel/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.sites.ufsc.br:article/7211
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-deformability-of-the-masonry-subjected-to-shearing-due
+    title: Deformability of the masonry subjected to shearing due to vertical displacements
+    url: https://ph.pollub.pl/index.php/bia/article/download/2141/2072
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2141
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2141
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-experimental-investigation-of-the-failure-of-load-b
+    title: The experimental investigation of the failure of load-bearing masonry walls
+      supported by a deflecting structure
+    url: https://ph.pollub.pl/index.php/bia/article/download/2142/2012
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2142
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2142
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-simulation-of-four-point-beam-bending-test-using-the-x
+    title: Simulation of four-point beam bending test using the X-FEM method
+    url: https://ph.pollub.pl/index.php/bia/article/download/2143/2010
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2143
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2143
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-an-influence-of-foundation-settlement-on-the-selected-m
+    title: An influence of foundation settlement on the selected mast structure
+    url: https://ph.pollub.pl/index.php/bia/article/download/2145/1819
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2145
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2145
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-analysis-of-precast-lintels-behaviour-in-walls-confined
+    title: Analysis of precast lintels behaviour in walls confined by reinforced lightweight
+      and ordinary concrete
+    url: https://ph.pollub.pl/index.php/bia/article/download/2146/2036
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2146
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2146
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-crack-mechanisms-in-concrete-from-micro-to-macro-scale
+    title: Crack mechanisms in concrete – from micro to macro scale
+    url: https://ph.pollub.pl/index.php/bia/article/download/2147/2243
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2147
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2147
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-verification-of-prying-effect-in-prestressed-end-plate
+    title: Verification of prying effect in prestressed end-plate connection
+    url: https://ph.pollub.pl/index.php/bia/article/download/2148/1824
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2148
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2148
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-tests-of-bond-between-concrete-and-steel-bars-literatur
+    title: Tests of bond between concrete and steel bars – literature background and
+      program of own research
+    url: https://ph.pollub.pl/index.php/bia/article/download/2149/2027
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-08-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2149
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2149
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-research-on-the-recycled-and-hybrid-fibre-reinforced-se
+    title: Research on the recycled and hybrid fibre reinforced self-compacting concrete
+      under flexure
+    url: https://ph.pollub.pl/index.php/bia/article/download/2150/2029
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2150
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2150
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-digital-fabrication-in-the-process-of-creation-of-the-p
+    title: Digital fabrication in the process of creation of the parametric concrete
+      fencings
+    url: https://ph.pollub.pl/index.php/bia/article/download/2151/2008
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2151
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2151
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-tests-of-damaged-members-of-facade-scaffolding-bearing
+    title: Tests of damaged members of facade scaffolding bearing frames
+    url: https://ph.pollub.pl/index.php/bia/article/download/2153/1827
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2153
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2153
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-resistance-of-truss-n-shape-joints-made-with-steel-rhs
+    title: Resistance of truss N shape joints made with steel RHS in plug & play connections
+    url: https://ph.pollub.pl/index.php/bia/article/download/2156/1830
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2156
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2156
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-time-cost-relationship-for-predicting-construction-dura
+    title: Time-Cost Relationship for Predicting Construction Duration
+    url: https://ph.pollub.pl/index.php/bia/article/download/2160/1833
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2160
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2160
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-contemporary-symbols-in-the-space-of-baku
+    title: Contemporary symbols in the space of Baku
+    url: https://ph.pollub.pl/index.php/bia/article/download/2166/1863
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-08-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2166
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2166
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-studies-on-the-effects-of-superficial-strengthening-wit
+    title: Studies on the effects of superficial strengthening with FRCM system on compressive
+      strength of AAC masonry
+    url: https://ph.pollub.pl/index.php/bia/article/download/2169/2034
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2169
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2169
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-influence-of-the-interface-reinforcement-on-static-perf
+    title: Influence of the interface reinforcement on static performance of concrete
+      composite T-shaped beams
+    url: https://ph.pollub.pl/index.php/bia/article/download/2170/2011
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2170
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2170
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-composite-beams-with-indented-construction-joint-compar
+    title: Composite beams with indented construction joint – comparison of results
+      of laboratory tests and numerical analysis
+    url: https://ph.pollub.pl/index.php/bia/article/download/2171/2241
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2171
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2171
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-influence-of-sunspaces-on-the-heating-demand-in-rooms-c
+    title: Influence of sunspaces on the heating demand in rooms – comparison of ISO
+      13790 calculation methods
+    url: https://ph.pollub.pl/index.php/bia/article/download/2172/2441
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-07-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2172
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2172
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-cost-analysis-of-steel-halls-designing-according-to
+    title: The cost analysis of steel halls designing, according to environmental standards,
+      legal guidelines and market prices
+    url: https://ph.pollub.pl/index.php/bia/article/download/2174/1840
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2174
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2174
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-use-of-fuzzy-databases-and-knowledge-bases-for-aidi
+    title: The use of fuzzy databases and knowledge bases for aiding engineering projects
+    url: https://ph.pollub.pl/index.php/bia/article/download/2175/1841
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2175
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2175
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-integrating-construction-process-documentation-with-the
+    title: Integrating Construction Process Documentation with the use of Building Information
+      Modeling
+    url: https://ph.pollub.pl/index.php/bia/article/download/2176/1842
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2176
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2176
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-influence-of-steel-yielding-of-main-reinforcement-o
+    title: The influence of steel yielding of main reinforcement on bending capacity
+      of beams strengthened with CFRP strips
+    url: https://ph.pollub.pl/index.php/bia/article/download/2177/1843
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2177
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2177
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-applications-of-truss-topology-optimization-in-the-desi
+    title: Applications of truss topology optimization in the design of reinforced concrete
+      structures using „Strut and Tie” models
+    url: https://ph.pollub.pl/index.php/bia/article/download/2178/1844
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2178
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2178
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-reliability-of-the-support-zone-of-beams-formed-wit
+    title: The reliability of the support zone of beams formed with the use of ST models
+    url: https://ph.pollub.pl/index.php/bia/article/download/2179/1845
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2179
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2179
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-influence-of-concrete-topping-on-behaviour-of-prestress
+    title: Influence of concrete topping on behaviour of prestressed Hollow Core floor
+      slabs on flexible supports
+    url: https://ph.pollub.pl/index.php/bia/article/download/2180/1846
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2180
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2180
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-influence-of-reinforcement-temperature-on-stiffness
+    title: The influence of reinforcement temperature on stiffness of reinforced concrete
+      beams in fire conditions
+    url: https://ph.pollub.pl/index.php/bia/article/download/2181/1847
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2181
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2181
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-method-of-analysis-of-a-reinforced-concrete-section
+    title: The method of analysis of a reinforced concrete section under bending in
+      the post-yield range
+    url: https://ph.pollub.pl/index.php/bia/article/download/2182/1848
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2182
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2182
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-efficiency-analysis-of-strengthening-of-rc-structures-w
+    title: Efficiency analysis of strengthening of RC structures with prestressed CFRP
+      composites
+    url: https://ph.pollub.pl/index.php/bia/article/download/2184/1850
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2184
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2184
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-influence-of-concrete-strength-on-shear-capacity-of
+    title: The Influence of Concrete Strength on Shear Capacity of Reinforced Concrete
+      Members without Shear Reinforcement
+    url: https://ph.pollub.pl/index.php/bia/article/download/2186/1851
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2186
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2186
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-serviceability-limit-states-of-high-performance-reinfor
+    title: Serviceability limit states of high performance reinforced concrete beams
+      with hybrid fibre
+    url: https://ph.pollub.pl/index.php/bia/article/download/2187/1852
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2187
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2187
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-deformability-of-compressed-concrete-elements-stren
+    title: The deformability of compressed concrete elements strengthened with FRCM
+      composite materials
+    url: https://ph.pollub.pl/index.php/bia/article/download/2188/1853
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2188
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2188
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-control-of-the-transmission-length-in-the-prestressed-h
+    title: Control of the transmission length in the prestressed hollow-core slabs using
+      values of the strand end slip
+    url: https://ph.pollub.pl/index.php/bia/article/download/2189/1854
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2189
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2189
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-structural-fire-design-of-concrete-structures-with
+    title: The structural fire design of concrete structures with externally bonded
+      reinforcement and fire protection system
+    url: https://ph.pollub.pl/index.php/bia/article/download/2190/1855
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2190
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2190
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-experimental-investigations-of-rc-internal-columns
+    title: The experimental investigations of RC internal columns in the connection
+      zone with lightweight concrete slab
+    url: https://ph.pollub.pl/index.php/bia/article/download/2191/1856
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2191
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2191
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-analysis-of-the-effectiveness-of-different-types-of
+    title: The analysis of the effectiveness of different types of punching shear reinforcement
+      not fully anchored
+    url: https://ph.pollub.pl/index.php/bia/article/download/2192/1857
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2192
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2192
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-hybrid-methodology-of-multi-sensory-research-of-public
+    title: Hybrid methodology of multi-sensory research of public space in urban planning
+    url: https://ph.pollub.pl/index.php/bia/article/download/2198/2444
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-07-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2198
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2198
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-evaluation-of-uncertainty-in-the-resistance-models
+    title: The evaluation of uncertainty in the resistance models of reinforced concrete
+      members
+    url: https://ph.pollub.pl/index.php/bia/article/download/2199/1864
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2199
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2199
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-wind-tunnel-measurements-of-aeroelastic-guyed-mast-mode
+    title: Wind Tunnel Measurements of Aeroelastic Guyed Mast Models
+    url: https://ph.pollub.pl/index.php/bia/article/download/2200/1865
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2200
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2200
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-proposal-of-explicit-account-of-the-random-characte
+    title: The proposal of explicit account of the random character of design process
+      parameters
+    url: https://ph.pollub.pl/index.php/bia/article/download/2201/1866
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2201
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2201
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-contribution-to-the-diagnostics-of-rock-bolts-using-ela
+    title: Contribution to the diagnostics of rock bolts using elastic wave propagation
+    url: https://ph.pollub.pl/index.php/bia/article/download/2203/1867
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2203
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2203
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-numerical-analysis-of-micro-damage-evolution-in-dam
+    title: The numerical analysis of micro-damage evolution in damaged element with
+      structural discontinuity
+    url: https://ph.pollub.pl/index.php/bia/article/download/2204/1868
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2204
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2204
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-diagnostics-of-concrete-plate-in-bending-with-ultrasoni
+    title: Diagnostics of concrete plate in bending with ultrasonic waves modulated
+      by low frequency oscillations
+    url: https://ph.pollub.pl/index.php/bia/article/download/2205/1869
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2205
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2205
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-analysis-of-the-deformation-of-node-in-a-modular-sc
+    title: The analysis of the deformation of node in a modular scaffolding system
+    url: https://ph.pollub.pl/index.php/bia/article/download/2208/1872
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2208
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2208
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-analysis-of-stresses-and-displacements-in-the-alumi
+    title: The analysis of stresses and displacements in the aluminium structure with
+      replaceable elements
+    url: https://ph.pollub.pl/index.php/bia/article/download/2210/1873
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2210
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2210
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-initial-research-of-dynamic-parameters-for-composit
+    title: The initial research of dynamic parameters for composite structures containing
+      Zeolite
+    url: https://ph.pollub.pl/index.php/bia/article/download/2211/1874
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2211
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2211
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-tune-of-mass-dampers-for-the-municipal-stadium-in-p
+    title: The tune of mass dampers for the Municipal Stadium in Poznan
+    url: https://ph.pollub.pl/index.php/bia/article/download/2212/1875
+    source: ojs_bia
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2013-03-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2212
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2212
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-architecture-versus-a-place-context
+    title: Architecture versus a place context
+    url: https://ph.pollub.pl/index.php/bia/article/download/2213/1876
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2213
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2213
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-dialogue-with-surroundings
+    title: Dialogue with surroundings
+    url: https://ph.pollub.pl/index.php/bia/article/download/2214/1877
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2214
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2214
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-directions-of-the-development-of-single-family-housing
+    title: Directions of the development of single-family housing in Poland compared
+      to the European trends
+    url: https://ph.pollub.pl/index.php/bia/article/download/2215/1878
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2215
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2215
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-open-form-in-the-works-of-various-architects
+    title: The open form in the works of various architects
+    url: https://ph.pollub.pl/index.php/bia/article/download/2216/1879
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2216
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2216
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-architectural-analysis-of-tenement-at-bernardy-skie
+    title: The architectural analysis of tenement at Bernardyńskiej 9 in Lublin
+    url: https://ph.pollub.pl/index.php/bia/article/download/2218/1881
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2218
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2218
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-infrastructure-for-spatial-information-inspire-branch-p
+    title: Infrastructure for spatial information INSPIRE – branch profile metadata
+      with range of cultural heritage protection
+    url: https://ph.pollub.pl/index.php/bia/article/download/2221/1883
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2221
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2221
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-method-of-research-and-structure-analysis-of-the-hi
+    title: The method of research and structure analysis of the historic mortar. Part
+      I – the macroscopic and microscopic - in visible light and electron microsc
+    url: https://ph.pollub.pl/index.php/bia/article/download/2223/1885
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2223
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2223
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-prediction-of-construction-and-assembly-production-in-t
+    title: Prediction of construction and assembly production in the province of Lower
+      Silesia. Part I
+    url: https://ph.pollub.pl/index.php/bia/article/download/2224/1886
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2224
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2224
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-physical-and-mechanical-properties-keramsite-obtained-w
+    title: Physical and mechanical properties keramsite obtained with added glauconite
+    url: https://ph.pollub.pl/index.php/bia/article/download/2226/1887
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2226
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2226
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-experimental-testing-of-high-performance-fibre-reinforc
+    title: Experimental testing of high performance fibre reinforced concrete deep beams
+    url: https://ph.pollub.pl/index.php/bia/article/download/2227/1888
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2227
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2227
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-analysis-of-limit-state-of-reinforced-high-performance
+    title: Analysis of limit state of reinforced high performance hybrid fiber concrete
+      deep beams with openings
+    url: https://ph.pollub.pl/index.php/bia/article/download/2228/1889
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2228
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2228
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-analysis-of-deformation-states-high-strength-fibre
+    title: The analysis of deformation states high strength fibre-reinforced concrete
+      plates in flexural
+    url: https://ph.pollub.pl/index.php/bia/article/download/2229/1890
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2229
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2229
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-application-example-of-the-sensitivity-analysis-of
+    title: The application example of the sensitivity analysis of the solution to coefficients
+      of the k-ε model
+    url: https://ph.pollub.pl/index.php/bia/article/download/2230/1891
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2230
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2230
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-wind-structure-influence-on-surface-pressures-of-rectan
+    title: Wind structure influence on surface pressures of rectangular cylinders of
+      cross-section dimensions 10 cm x 20 cm
+    url: https://ph.pollub.pl/index.php/bia/article/download/2231/1892
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2231
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2231
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-wind-structure-influence-on-pressure-coefficient-distri
+    title: Wind structure influence on pressure coefficient distribution on the surface
+      of circular cylinder of the diameter 20 cm
+    url: https://ph.pollub.pl/index.php/bia/article/download/2232/1893
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2232
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2232
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-influence-of-the-wind-structure-definition-in-the-s
+    title: The influence of the wind structure definition in the standard k-ε model
+      of turbulence on the distribution of pressure coefficient on the façades of t
+    url: https://ph.pollub.pl/index.php/bia/article/download/2233/1894
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2233
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2233
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-equations-of-motion-of-the-main-structure-with-atta
+    title: The equations of motion of the main structure with attached multiple tuned
+      mass dampers
+    url: https://ph.pollub.pl/index.php/bia/article/download/2234/1895
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2234
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2234
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-solution-of-extended-kelvin-voigt-model
+    title: Solution of Extended Kelvin-Voigt Model
+    url: https://ph.pollub.pl/index.php/bia/article/download/2235/1896
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2235
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2235
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-traffic-forecasting-on-national-roads
+    title: Traffic forecasting on national roads
+    url: https://ph.pollub.pl/index.php/bia/article/download/2236/1897
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2236
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2236
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-present-methods-of-reconstruction-of-road-bridges-examp
+    title: Present methods of reconstruction of road bridges – examples of solutions
+    url: https://ph.pollub.pl/index.php/bia/article/download/2237/1898
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2012-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2237
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2237
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-shear-problem-of-t-sectional-composite-reinforced-concr
+    title: Shear problem of T-sectional composite reinforced concrete beams
+    url: https://ph.pollub.pl/index.php/bia/article/download/2238/1899
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2238
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2238
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-equations-of-motion-of-the-main-struct-2
+    title: The equations of motion of the main structure with attached dampers described
+      by standard rheological model
+    url: https://ph.pollub.pl/index.php/bia/article/download/2241/1900
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2241
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2241
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-analysis-of-thermal-properties-of-concrete-made-using-a
+    title: Analysis of thermal properties of concrete made using aggregate from sanitary
+      ceramic wastes
+    url: https://ph.pollub.pl/index.php/bia/article/download/2242/1901
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2242
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2242
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-procedure-of-complex-technical-assessment-of-the-an
+    title: The procedure of complex technical assessment of the ancient building described
+      on the example of the vicarage building in Wojsławice
+    url: https://ph.pollub.pl/index.php/bia/article/download/2243/1902
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2243
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2243
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-strength-properties-of-high-performance-concretes-with
+    title: Strength properties of high-performance concretes with carbonate coarse aggregate
+    url: https://ph.pollub.pl/index.php/bia/article/download/2244/1903
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2244
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2244
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-instantaneous-deformability-of-high-performance-concret
+    title: Instantaneous deformability of high performance concretes with crushed aggregates
+    url: https://ph.pollub.pl/index.php/bia/article/download/2246/1904
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2246
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2246
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-onkel-toms-h-tte-i-am-fischtal-settlements-in-berlin-as
+    title: Onkel-Toms-Hütte i Am Fischtal settlements in Berlin, as a reflection of
+      the relation between avant-garde nad continuation trends in German architectu
+    url: https://ph.pollub.pl/index.php/bia/article/download/2247/1905
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2247
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2247
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-architecture-respecting-the-place
+    title: Architecture respecting the place
+    url: https://ph.pollub.pl/index.php/bia/article/download/2251/1909
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2251
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2251
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-selection-of-criteria-in-pedestrian-wind-comfort-assess
+    title: Selection of criteria in pedestrian wind comfort assessment
+    url: https://ph.pollub.pl/index.php/bia/article/download/2254/1911
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-06-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2254
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2254
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-influence-of-boundary-condition-functions-on-the-qu
+    title: The influence of boundary condition functions on the quality of the solution
+      and its sensitivity to coefficients of k-ε turbulence models
+    url: https://ph.pollub.pl/index.php/bia/article/download/2255/1912
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2011-06-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2255
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2255
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-consequences-of-the-choice-of-design-standards-for
+    title: The consequences of the choice of design standards for the use of material
+      on the example of glued laminated roof beam
+    url: https://ph.pollub.pl/index.php/bia/article/download/2256/1913
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-06-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2256
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2256
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-consequences-of-the-choice-of-design-s-2
+    title: The consequences of the choice of design standards for the use of material
+      on the example of reinforced concrete flat ceiling
+    url: https://ph.pollub.pl/index.php/bia/article/download/2257/1914
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-06-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2257
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2257
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-numerical-research-of-capacity-of-nodes-in-modular
+    title: The numerical research of capacity of nodes in modular scaffolding system
+    url: https://ph.pollub.pl/index.php/bia/article/download/2258/1915
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-06-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2258
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2258
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-the-numerical-research-of-the-strength-of-scaffolding-b
+    title: The numerical research of the strength of scaffolding boards
+    url: https://ph.pollub.pl/index.php/bia/article/download/2259/1916
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-06-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2259
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2259
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-numerical-modelling-of-vandalistic-action-on-footbridge
+    title: Numerical modelling of vandalistic action on footbridge for pedestrians and
+      bicycles
+    url: https://ph.pollub.pl/index.php/bia/article/download/2260/1917
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-06-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2260
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2260
+    rights_verified_at: '2026-10-16'
+  - id: ojs-bia-application-of-the-tdr-measuring-technique-for-in-situ
+    title: Application of the TDR measuring technique for in-situ measurements using
+      surface probes
+    url: https://ph.pollub.pl/index.php/bia/article/download/2261/1918
+    source: ojs_bia
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: pl
+    published_at: '2011-06-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.35784/bud-arch.2261
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://ph.pollub.pl/index.php/bia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.ph.pollub.pl:article/2261
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-territorialidad-y-acci-n-p-blica-en-la-regi-n-metropol
+    title: Territorialidad y acción pública en la región metropolitana de Buenos Aires
+      (Universidad General Sarmiento., Argentina)
+    url: https://polired.upm.es/index.php/ciur/article/download/921/936
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/921
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Andrea Catenazzi)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-marcos-de-referencia-para-la-preservaci-n-del-patrimon
+    title: Marcos de referencia para la preservación del patrimonio natural y cultural
+      como base para un desarrollo sustentable del turismo. (Universidad Naciona
+    url: https://polired.upm.es/index.php/ciur/article/download/922/937
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/922
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Marta Casares, Gabriela Pastor)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-i-congreso-internacional-de-historia-urbana-universida
+    title: I Congreso Internacional de Historia Urbana. (Universidade Estadual Paulista,
+      Brasil)
+    url: https://polired.upm.es/index.php/ciur/article/download/923/938
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/923
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Donatella Calabi, Alberto da Silva Retto, Guido Zucconi, Heleni
+      Porfyriou)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-informe-de-la-investigaci-n-del-a-o-lectivo-2003-unive
+    title: Informe de la Investigación del año lectivo 2003. (Universidad de Chile)
+    url: https://polired.upm.es/index.php/ciur/article/download/924/939
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/924
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Alberto Gurovich)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-instituto-de-investigaciones-h-bitat-ciudad-y-territor
+    title: 'Instituto de Investigaciones: Hábitat, Ciudad y Territorio. (Universidad
+      Nacional de Colombia)'
+    url: https://polired.upm.es/index.php/ciur/article/download/925/940
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/925
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Carlos Alberto Torres Tobar, Alberto Gómez Cruz)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-construcci-n-de-escenarios-para-la-planificaci-n-de-la
+    title: Construcción de escenarios para la planificación de la ciudad-región. El
+      caso Bogotá-Cundinamarca. (Pontificia Universidad Javeriana, Colombia)
+    url: https://polired.upm.es/index.php/ciur/article/download/926/941
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/926
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Patricia Rentería Salazar, María del Pilar Umaña)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-planeamiento-urbano-y-transformaciones-espaciales-madr
+    title: Planeamiento Urbano y transformaciones espaciales, Madrid 1979-2000. La Reconstrucción
+      de un territorio urbano 'Normalizado'. (Universidad Politécnica
+    url: https://polired.upm.es/index.php/ciur/article/download/927/942
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/927
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Ramón López de Lucio)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-formaci-n-hist-rica-de-la-ciudad-de-puebla-como-ciu
+    title: La formación histórica de la Ciudad de Puebla como ciudad moderna. Analogías
+      y diferencias con el caso de algunas ciudades españolas. (Universidad Ibe
+    url: https://polired.upm.es/index.php/ciur/article/download/928/943
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/928
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Francisco Valverde)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-estudio-de-paisajes-hist-ricos-como-recursos-para-el-e
+    title: Estudio de paisajes históricos como recursos para el equilibrio ecológico
+      de las ciudades existentes. Programa de cooperación para la formación de esp
+    url: https://polired.upm.es/index.php/ciur/article/download/929/944
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/929
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Saúl Alcántara Onofre, Efrén Arturo Alavid Pérez, Félix Alfonso
+      Martínez Sánchez, Raúl Raya García)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-transformaciones-urbanas-y-nuevas-tendencias-del-habit
+    title: 'Transformaciones urbanas y nuevas tendencias del habitar en México: el caso
+      de la vivienda estatal planificada a partir de 1972. (Universidad Veracruz'
+    url: https://polired.upm.es/index.php/ciur/article/download/930/945
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/930
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Fernando Noel Winfiel Reyes)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-efectos-de-la-contaminaci-n-atmosf-rica-en-el-clima-ur
+    title: Efectos de la contaminación atmosférica en el clima urbano y calidad ambiental
+      de Arequipa. (Universidad Nacional San Agustín Arequipa, Perú)
+    url: https://polired.upm.es/index.php/ciur/article/download/931/946
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-04-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/931
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Josúe Llanque Chana)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-sobre-el-origen-el-uso-y-el-contenido-del-t-rmino-sost
+    title: Sobre el origen, el uso y el contenido del término sostenible.
+    url: https://polired.upm.es/index.php/ciur/article/download/1032/1051
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-12'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1032
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 José Manuel Naredo)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-tratamiento-de-los-residuos-s-lidos-urbanos
+    title: Tratamiento de los residuos sólidos urbanos.
+    url: https://polired.upm.es/index.php/ciur/article/download/1033/1052
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-12'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1033
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Alfonso del Val)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-el-transporte-columna-vertebral-de-la-globalizaci-n
+    title: El transporte, columna vertebral de la globalización.
+    url: https://polired.upm.es/index.php/ciur/article/download/1034/1053
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-12'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1034
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Ramón Fernández Durán)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-ciudades-sostenibles
+    title: Ciudades sostenibles.
+    url: https://polired.upm.es/index.php/ciur/article/download/1035/1054
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-12'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1035
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Mariano Vázquez Espí)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-arquitectura-integrada-en-el-medio-ambiente
+    title: Arquitectura integrada en el medio ambiente.
+    url: https://polired.upm.es/index.php/ciur/article/download/1036/1055
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-12'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1036
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Margarita de Luxán García de Diego)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-arquitectura-bioclim-tica-en-un-entorno-sostenible-bue
+    title: 'Arquitectura bioclimática en un entorno sostenible: buenas prácticas edificatorias.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1037/1056
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-12'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1037
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Francisco Javier Neila González)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-sostenibilidad-y-racionalidad-de-los-procesos-de-urban
+    title: Sostenibilidad y racionalidad de los procesos de urbanización.
+    url: https://polired.upm.es/index.php/ciur/article/download/1038/1057
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-20'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1038
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 José Fariña Tojo)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-ciudad-estructurada
+    title: La ciudad estructurada.
+    url: https://polired.upm.es/index.php/ciur/article/download/1040/1059
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-20'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1040
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Agustín Hernández Aja)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-calidad-de-vida-y-el-tercer-sector-nuevas-dimension
+    title: 'La calidad de vida y el tercer sector: nuevas dimensiones de la complejidad.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1042/1061
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-20'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1042
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Julio Alguacil Gómez)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-por-un-urbanismo-de-los-ciudadanos
+    title: Por un urbanismo de los ciudadanos.
+    url: https://polired.upm.es/index.php/ciur/article/download/1043/1062
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-20'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1043
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Carlos Verdaguer Viana-Cárdenas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-el-tiempo-de-las-cerezas-reflexiones-sobre-la-ciudad-d
+    title: El tiempo de las cerezas. Reflexiones sobre la ciudad desde el feminismo.
+    url: https://polired.upm.es/index.php/ciur/article/download/1044/1063
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-20'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1044
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Isabel Velázquez Valoria)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-reconstrucci-n-del-espacio-cotidiano
+    title: La reconstrucción del espacio cotidiano.
+    url: https://polired.upm.es/index.php/ciur/article/download/1045/1064
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2004-12-20'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1045
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Marta Román Rivas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-habitat-gesti-n-participaci-n-y-pobreza-desarrollo-de
+    title: Habitat, gestión, participación y pobreza. Desarrollo de pautas programáticas
+      para una política habitacional integral del AMGR, Provincia del Chaco, A
+    url: https://polired.upm.es/index.php/ciur/article/download/1047/1066
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1047
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Miguel Ángel Barreto)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-el-verde-en-la-ciudad-la-ciudad-en-el-verde
+    title: El verde en la ciudad, la ciudad en el verde.
+    url: https://polired.upm.es/index.php/ciur/article/download/1048/1067
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1048
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Saúl Alcántara Onofre)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-el-plan-del-ayuntamiento-para-el-desarrollo-de-la-ciud
+    title: El Plan del Ayuntamiento para el desarrollo de la ciudad de Puebla, México.
+    url: https://polired.upm.es/index.php/ciur/article/download/1049/1069
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1049
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Francisco Valverde)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-en-torno-a-la-pr-ctica-del-urbanismo-y-la-adopci-n-de
+    title: En torno a la práctica del urbanismo y la adopción de referentes extranjeros
+      en México 1876-2000.
+    url: https://polired.upm.es/index.php/ciur/article/download/1050/1070
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1050
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Fernando N. Winfield Reyes)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-requisitos-para-un-desarrollo-sostenible
+    title: Requisitos para un desarrollo sostenible.
+    url: https://polired.upm.es/index.php/ciur/article/download/1051/1071
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-28'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1051
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 José Fariña Tojo)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-planificaci-n-tur-stica-sustentable-en-la-regi-n-de-co
+    title: Planificación turística sustentable en la región de Coquimbo. Evaluación
+      y aportes metodológicos.
+    url: https://polired.upm.es/index.php/ciur/article/download/1053/1073
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-07-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1053
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Luz Elena Cornejo Ganga)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-introducci-n-al-simposio-de-la-serena-2009-desarrollo
+    title: Introducción al simposio de la Serena 2009. Desarrollo, ciudad y sostenibilidad.
+    url: https://polired.upm.es/index.php/ciur/article/download/1054/1074
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-07-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1054
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Agustín Hernández Aja, Mario del Castillo Oyarzún, Claudia Castillo
+      Haeger)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-capacidad-de-carga-como-herramienta-de-ordenaci-n-d
+    title: La capacidad de carga como herramienta de ordenación del Territorio.
+    url: https://polired.upm.es/index.php/ciur/article/download/1056/1076
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-07-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1056
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Sandra Cortés Chavez)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-las-aguas-en-la-estructura-urbana-de-santiago-de-chile
+    title: Las aguas en la estructura urbana de Santiago de Chile.
+    url: https://polired.upm.es/index.php/ciur/article/download/1057/1077
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-07-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1057
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Jonás Figueroa Salas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-redes-ecol-gicas-en-la-estructura-urbana-de-la-ciudad
+    title: Redes ecológicas en la estructura urbana de la ciudad de Medellín (Colombia).
+    url: https://polired.upm.es/index.php/ciur/article/download/1058/1078
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-07-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1058
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Ana María Monsalve Cuartas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-colchagua-un-paisaje-orden-ndose-en-torno-al-vino
+    title: Colchagua, un paisaje ordenándose en torno al vino.
+    url: https://polired.upm.es/index.php/ciur/article/download/1060/1080
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-09-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1060
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Carlos Muñoz Parra)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-caleta-modelo-isla-alejando-selkrik-archipi-lago-de-ju
+    title: 'Caleta modelo Isla Alejando Selkrik, archipiélago de Juan Fernández: Intervención
+      arquitectónica desde la protección del medio natural y la identidad '
+    url: https://polired.upm.es/index.php/ciur/article/download/1061/1081
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-09-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1061
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Pedro Orellana Agüero, Carolina Martínez Reyes, Daniel Portilla
+      Espinoza, Edilia Jaque Castillo, Alfonso archivo@upm.es Fernández Rivera,)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-ordenaci-n-del-territorio-en-la-prehistoria-el-caso
+    title: 'La ordenación del territorio en la Prehistoria: El caso de la Aldea ceremonial
+      de Orongo en Isla de Pascua.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1062/1082
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-09-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1062
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 María Eugenia Pallarés Torres)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-cruce-de-miradas-visibilidad-e-invisibilidad-del-paisa
+    title: Cruce de miradas. Visibilidad e invisibilidad del paisaje en territorios
+      sujetos a usos turísticos.
+    url: https://polired.upm.es/index.php/ciur/article/download/1063/1083
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-09-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1063
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Gabriela Claudia Pastor, Domingo Sánchez Fuentes)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-las-medidas-de-sustentabilidad-en-los-planes-para-sant
+    title: 'Las medidas de sustentabilidad en los planes para Santiago 1960 – 1994:
+      El caso de los corredores del Maipo-Mapocho y Andino Pedemontano.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1064/1085
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-09-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1064
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 María Isabel Pávez Reyes)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-an-lisis-comparativo-de-los-factores-naturales-y-urban
+    title: Análisis comparativo de los factores naturales y urbanos de las inundaciones
+      ocurridas en las ciudades costeras de Valparaíso y Florianópolis.
+    url: https://polired.upm.es/index.php/ciur/article/download/1065/1086
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-09-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1065
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Hugo Romero, Magaly Mendonça)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-campus-interuniversitario-para-el-desarrollo-sustentab
+    title: Campus interuniversitario para el desarrollo sustentable en Valparaíso.
+    url: https://polired.upm.es/index.php/ciur/article/download/1066/1087
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-09-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1066
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Pedro Serrano Rodríguez, Fernando Hammersley Robinson)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-participaci-n-desde-abajo-y-pol-ticas-p-blicas-la-reha
+    title: Participación desde abajo y políticas públicas. La rehabilitación del edificio
+      de la Población Obrera de la Unión de Valparaíso.
+    url: https://polired.upm.es/index.php/ciur/article/download/1069/1090
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-11-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1069
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 María José Castillo Couve)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-huella-construida-de-la-oportunidad
+    title: La huella construida de la oportunidad.
+    url: https://polired.upm.es/index.php/ciur/article/download/1070/1091
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-11-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1070
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Mario del Castillo Oyarzún, Claudia Andrea Castillo Haeger)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-sistemas-vegetales-que-mejoran-la-calidad-ambiental-de
+    title: Sistemas vegetales que mejoran la calidad ambiental de las ciudades.
+    url: https://polired.upm.es/index.php/ciur/article/download/1071/1092
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-11-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1071
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Mariana Chanampa, Javier Alonso Ojembarrena, Pilar Vidal Rivas,
+      Raquel Guerra Aragonés, Francesca Olivieri, F. Javier Neila González, Cés)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-aprendiendo-una-lecci-n-de-curitiba-efectos-perversos
+    title: Aprendiendo una lección de Curitiba. Efectos perversos de una política orientada
+      al transporte público y al medio ambiente.
+    url: https://polired.upm.es/index.php/ciur/article/download/1072/1093
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-11-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1072
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Roberto Ghidini)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-el-proyecto-como-met-fora-la-tica-de-la-sustenibilidad
+    title: 'El proyecto como metáfora: La ética de la sustenibilidad en el discurso
+      urbanístico de la experiencia chilena, 1835 - 1958.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1073/1094
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-11-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1073
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Alberto Gurovich Weisman)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-modelo-propositivo-de-sustentabilidad-socioecon-mica-u
+    title: Modelo propositivo de sustentabilidad socioeconómica - urbanística - arquitectónica.
+    url: https://polired.upm.es/index.php/ciur/article/download/1074/1095
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-11-29'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1074
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Jorge Alberto Lombardi, Carlos Gustavo Cremaschi, Karina Cortina,
+      Fernando García, Darío Medina, Ingrid Manzoni)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-los-instrumentos-de-redoblamiento-del-centro-de-santia
+    title: 'Los instrumentos de redoblamiento del centro de Santiago: SRU y SIT entre
+      1999 y 2005.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1076/1097
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-01-03'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1076
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Rodrigo Mora, Margarita Greene, Emilio Berrios)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-calle-entretejido-de-fragmentos-urbanos-en-la-ciuda
+    title: 'La calle: Entretejido de fragmentos urbanos en la ciudad híbrida.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1077/1098
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-01-03'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1077
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Carolina Quintero Sandrea, Mercedes Ferrer Arroyo, Tomás Pérez Valecillos)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-paisaje-cultural-imagen-identidad-y-memoria-a-trav-s-d
+    title: 'Paisaje cultural: Imagen, identidad y memoria a través del arbolado urbano.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1078/1099
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-01-03'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1078
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Héctor Ángel Reyes Reyes)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-asociaci-n-y-disociaci-n-de-la-imagen-de-la-pobreza-en
+    title: Asociación y disociación de la imagen de la pobreza en conjuntos urbanos
+      planificados y espontáneos de vivienda social.
+    url: https://polired.upm.es/index.php/ciur/article/download/1079/1100
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-01-03'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1079
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Juan Esteban Rodríguez Álvarez, Pedro Etchepare Ibarra, Marianela
+      Altamirano González)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-regeneraci-n-urbana-reflexiones-sobre-la-sustentabilid
+    title: Regeneración urbana. Reflexiones sobre la sustentabilidad urbana en el contexto
+      de las estrategias de recuperación barrial en Chile y Cataluña.
+    url: https://polired.upm.es/index.php/ciur/article/download/1080/1101
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-01-03'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1080
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Rubén Sepúlveda Ocampo, Jorge Larenas Salas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-sustentabilidad-en-espacios-colectivos-de-barrios-vuln
+    title: 'Sustentabilidad en espacios colectivos de barrios vulnerables: Lineamientos
+      para una política de espacios públicos, directrices de gestión, diseño y m'
+    url: https://polired.upm.es/index.php/ciur/article/download/1081/1102
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-01-03'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1081
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Luis Valenzuela, Catalina Justiniano, Consuelo Araos, Carolina Katz,
+      Martín Andrade, Magdalena Gática, Daniela Miranda, Catalina Torrent)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-chait-n-reconstruyendo-la-ciudad-desde-las-cenizas-pro
+    title: 'Chaitén. Reconstruyendo la ciudad desde las cenizas: Prototipos de viviendas
+      sostenibles para una Eco-Villa en el sur de Chile.'
+    url: https://polired.upm.es/index.php/ciur/article/download/1180/1199
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-05-16'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1180
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 María Isabel Ribera Barraza)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-los-programas-de-escuelas-taller-casas-de-oficios-y-ta
+    title: 'Los programas de escuelas taller, casas de oficios y talleres de empleo
+      en España: Un instrumento de formación, una herramienta para la conservación d'
+    url: https://polired.upm.es/index.php/ciur/article/download/1181/1200
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-05-16'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1181
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Natividad Sánchez Esteban)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-construyendo-la-sostenibilidad-a-partir-de-los-or-gene
+    title: Construyendo la sostenibilidad a partir de los orígenes. Una experiencia
+      de planeación urbana participativa en la periferia de la ciudad de México, el
+    url: https://polired.upm.es/index.php/ciur/article/download/1182/1201
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-05-16'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1182
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Alejandro Suárez Pareyón)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-eficiencia-energ-tica-tradici-n-versus-nuevas-solucion
+    title: Eficiencia energética. Tradición versus nuevas soluciones.
+    url: https://polired.upm.es/index.php/ciur/article/download/1183/1202
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-05-16'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1183
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Richard Varas Madrid)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-el-ayllu-reterritorializado-y-su-taypi-la-ciudad-de-el
+    title: El 'ayllu' reterritorializado, y su 'taypi'. La ciudad de El Alto.
+    url: https://polired.upm.es/index.php/ciur/article/download/1184/1203
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-05-16'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1184
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Orlando Augusto Yépez Mariaca)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-m-todos-de-certificaci-n-de-la-sostenibilidad-en-proye
+    title: Métodos de certificación de la sostenibilidad en proyectos urbanos
+    url: https://polired.upm.es/index.php/ciur/article/download/1521/1518
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2011-10-20'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1521
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Ricardo Alvira Baeza)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-democracia-y-participaci-n-el-plan-general-de-madrid-d
+    title: Democracia y participación. El Plan General de Madrid de 1985
+    url: https://polired.upm.es/index.php/ciur/article/download/1754/1767
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2011-11-15'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1754
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Carlos Fernández Salgado)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-urbanismo-y-reproducci-n-social-una-introducci-n-a-su
+    title: Urbanismo y reproducción social. Una introducción a su historia
+    url: https://polired.upm.es/index.php/ciur/article/download/1786/1800
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2012-03-14'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1786
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Alvaro Sevilla Buitrago)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-aspectos-cr-ticos-en-la-evaluaci-n-ambiental-de-planes
+    title: Aspectos críticos en la evaluación ambiental de planes urbanísticos
+    url: https://polired.upm.es/index.php/ciur/article/download/1817/1816
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2012-04-26'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1817
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Enrique de la Villa Polo)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-caracterizaci-n-de-patrones-bioclim-ticos-en-tejidos-u
+    title: Caracterización de patrones bioclimáticos en tejidos urbanos residenciales
+    url: https://polired.upm.es/index.php/ciur/article/download/1840/1841
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2012-05-30'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1840
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Luz Alicia Cárdenas Jirón)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-patagonia-antropizaci-n-de-un-territorio-natural
+    title: Patagonia, antropización de un territorio natural
+    url: https://polired.upm.es/index.php/ciur/article/download/1842/1842
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2012-07-19'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1842
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Luis Inostroza Pino)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-introducci-n-de-la-edificaci-n-abierta-en-valencia
+    title: La introducción de la edificación abierta en Valencia
+    url: https://polired.upm.es/index.php/ciur/article/download/1991/2031
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2012-11-12'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1991
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Javier Pérez Igualada)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-indicadores-morfol-gicos-y-funcionales-de-car-cter-ter
+    title: Indicadores morfológicos y funcionales de carácter territorial
+    url: https://polired.upm.es/index.php/ciur/article/download/1992/2032
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2013-05-12'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1992
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Manuel Doval Abad)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-c-sar-cort-y-la-cultura-urban-stica-de-su-tiempo
+    title: César Cort y la cultura urbanística de su tiempo
+    url: https://polired.upm.es/index.php/ciur/article/download/1993/2033
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2013-08-26'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1993
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 María Cristina García González)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-redes-verdes-y-planeamiento-urban-stico
+    title: Redes verdes y planeamiento urbanístico
+    url: https://polired.upm.es/index.php/ciur/article/download/1996/2034
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2013-09-21'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1996
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Francesca Lotta)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-reas-de-margen-de-lirios-urbanos-de-la-ciudad-contempo
+    title: 'Áreas de margen: de-lirios urbanos de la ciudad contemporánea'
+    url: https://polired.upm.es/index.php/ciur/article/download/2044/2092
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2013-11-10'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2044
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Giuseppe Parità)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-espacio-g-nero-y-pobreza-discursos-pr-cticas-y-subjeti
+    title: 'Espacio, género y pobreza: discursos, prácticas y subjetividades'
+    url: https://polired.upm.es/index.php/ciur/article/download/2098/2174
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2013-12-01'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2098
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Natalia Czytajlo)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-evaluaci-n-del-microespacio-urbano-en-clima-c-lido-h-m
+    title: Evaluación del microespacio urbano en clima cálido-húmedo
+    url: https://polired.upm.es/index.php/ciur/article/download/2394/2475
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2013-12-18'
+    document_type: journal-article
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2394
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Nersa Gómez de Perozo)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-transformaciones-urbanas-en-el-contexto-neoliberal-la
+    title: 'Transformaciones urbanas en el contexto neoliberal. La colonia Condesa en
+      Ciudad de México: un proceso de gentrificación'
+    url: https://polired.upm.es/index.php/ciur/article/download/2951/3011
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2014-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2014.93.2951
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2951
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Luis Alberto Salinas Arreortúa)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-citt-al-limite-per-una-trattazione-urbanistica-del-dis
+    title: Città al limite. Per una trattazione urbanistica del disastro
+    url: https://polired.upm.es/index.php/ciur/article/download/2952/3012
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2014-11-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2014.94.2952
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/2952
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Mattia Bertin)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-categor-as-de-an-lsis-de-un-modelo-de-planificaci-n-tu
+    title: Categorías de análsis de un modelo de planificación turística sustentable
+    url: https://polired.upm.es/index.php/ciur/article/download/3009/3068
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2014-03-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2014.95.3009
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3009
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Luz Elena Cornejo Ganga)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-the-urban-microclimate-in-open-space-case-studies-in-m
+    title: The urban microclimate in open space. Case studies in Madrid
+    url: https://polired.upm.es/index.php/ciur/article/download/3022/3081
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2014-04-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2014.96.3022
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3022
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Irina Tumini)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-antecedentes-y-formaci-n-del-plan-general-de-valencia
+    title: Antecedentes y formación del Plan General de Valencia de 1966
+    url: https://polired.upm.es/index.php/ciur/article/download/3089/5754
+    source: ojs_ciur
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2014-07-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2014.97.3089
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3089
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-pol-ticas-urbanas-de-la-uni-n-europea-desde-la-perspec
+    title: Políticas urbanas de la Unión Europea desde la perspectiva de la planificación
+      colaborativa
+    url: https://polired.upm.es/index.php/ciur/article/download/3090/3163
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-08-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2015.98.3090
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3090
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Sonia de Gregorio Hurtado)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-catalogaci-n-del-patrimonio-arquitect-nico-de-la-ci
+    title: La catalogación del patrimonio arquitectónico de la ciudad de Valencia
+    url: https://polired.upm.es/index.php/ciur/article/download/3130/3203
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-12-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2015.99.3130
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3130
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 María Teresa Broseta Palanca)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-cien-n-meros-de-cuadernos-de-investigaci-n-urban-stica
+    title: Cien números de Cuadernos de Investigación Urbanística
+    url: https://polired.upm.es/index.php/ciur/article/download/3148/3219
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2015.100.3148
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3148
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Departamento de Urbanística y Ordenación del Territorio DUyOT)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-cr-ditos-e-ndice-general
+    title: Créditos e índice general
+    url: https://polired.upm.es/index.php/ciur/article/download/3149/3220
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2015.100.3149
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3149
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Créditos DUyOT)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-la-regulaci-n-jur-dica-de-la-transformaci-n-de-la-ciud
+    title: La regulación jurídica de la transformación de la ciudad
+    url: https://polired.upm.es/index.php/ciur/article/download/3151/3222
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2015.100.3151
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3151
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Enrique Bardají Álvarez)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-urbanismo-ciencia-y-evoluci-n
+    title: Urbanismo, ciencia y evolución
+    url: https://polired.upm.es/index.php/ciur/article/download/3152/3223
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2015.100.3152
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3152
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Felipe Colavidas Espinosa)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-migraciones-globales-y-ciudad
+    title: Migraciones globales y ciudad
+    url: https://polired.upm.es/index.php/ciur/article/download/3153/3230
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2015.100.3153
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3153
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Fernando Fernández Alonso)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ciur-nulidad-parcial-del-pgou-97-implicaciones-de-las-sente
+    title: Nulidad parcial del PGOU 97. Implicaciones de las sentencias del Tribunal
+      Superior de Justicia y del Tribunal Supremo para la ciudad de Madrid
+    url: https://polired.upm.es/index.php/ciur/article/download/3154/3224
+    source: ojs_ciur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/ciur.2015.100.3154
+    license_evidence: 'https://polired.upm.es/index.php/ciur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3154
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2017 Rafael Córdoba Hernández)'
     rights_verified_at: '2026-10-16'
