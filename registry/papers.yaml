@@ -155607,3 +155607,19 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W389991997
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-48550-arxiv-2608-04546-871530ba
+    title: 'SceneBaker: Radio-Ready Scene Generation for Sionna Ray-Tracing'
+    url: https://arxiv.org/pdf/2608.04546
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-08-05'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2608.04546
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2608.04546;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2608.04546 openalex:W7196923796
+    resolution: 'sim1: openalex location'
