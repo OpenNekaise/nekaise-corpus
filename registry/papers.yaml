@@ -155572,3 +155572,21 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5194/isprs-archives-xlviii-m-9-2025-95-2025 openalex:W4414697588
     resolution: 'legacy: openalex location'
+  - id: oas-10-1080-13604813-2026-2735675-117b309e
+    title: 'Capitalising urban futures: digital twin cities and the simplification of
+      urban prototyping'
+    url: https://eprints.whiterose.ac.uk/id/eprint/246588/1/Capitalising%20urban%20futures%20%20digital%20twin%20cities%20and%20the%20simplification%20of%20urban%20prototyping.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-10-05'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/13604813.2026.2735675
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/id/eprint/246588/1/Capitalising%20urban%20futures%20%20digital%20twin%20cities%20and%20the%20simplification%20of%20urban%20prototyping.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/13604813.2026.2735675 openalex:W7220417876
+    resolution: 'sim1: openalex+unpaywall location'
