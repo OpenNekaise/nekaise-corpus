@@ -155694,3 +155694,53 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2111364805
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-48550-arxiv-2606-24138-b5d13d33
+    title: 'Sat2City v2: Native 3D City Asset Generation from a Single Satellite Image'
+    url: https://arxiv.org/pdf/2606.24138
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-06-23'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2606.24138
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2606.24138;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2606.24138 openalex:W7165785722
+    resolution: 'sim1: openalex location'
+  - id: oas-w7165816840
+    title: Urban Power Grid Topology and Hierarchy Identification from Open Data
+    url: https://arxiv.org/pdf/2606.21352
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    published_at: '2026-06-19'
+    document_type: preprint
+    persistent_id: https://openalex.org/W7165816840
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://arxiv.org/pdf/2606.21352; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7165816840
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2605-19826-fdef73d1
+    title: 'Explainable Wastewater Digital Twins: Adaptive Context-Conditioned Structured
+      Simulators with Self-Falsifying Decision Support'
+    url: https://arxiv.org/pdf/2605.19826
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-05-19'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2605.19826
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2605.19826;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2605.19826 openalex:W7161819994
+    resolution: 'sim1: openalex location'

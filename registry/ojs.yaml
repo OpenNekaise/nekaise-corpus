@@ -418447,20 +418447,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
       de autor 2020 Cuaderno de Notas)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-cuadernodenotas-cr-ditos-y-sumario
-    title: Créditos y Sumario
-    url: http://polired.upm.es/index.php/cuadernodenotas/article/download/4466/4651
-    source: ojs_cuadernodenotas
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: es
-    published_at: '2020-07-31'
-    document_type: journal-article
-    license_evidence: 'http://polired.upm.es/index.php/cuadernodenotas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4466
-      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
-      de autor 2020 Cuaderno de Notas)'
-    rights_verified_at: '2026-10-16'
   - id: ojs-cuadernodenotas-doctrina-mitos-y-fachadas-la-promoci-n-tota
     title: 'Doctrina, mitos y fachadas : la promoción totalitaria de los escenarios
       deportivos de masas en Italia, Alemania y España en la primera mitad del siglo'
@@ -418618,22 +418604,6 @@ sources:
     document_type: journal-article
     persistent_id: https://doi.org/10.20868/cn.2020.4477
     license_evidence: 'http://polired.upm.es/index.php/cuadernodenotas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4477
-      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
-      de autor 2020 Cuaderno de Notas)'
-    rights_verified_at: '2026-10-16'
-  - id: ojs-cuadernodenotas-jos-antonio-corrales-la-disoluci-n-del-l-mi
-    title: 'José Antonio Corrales : la disolución del límite = José Antonio Corrales
-      : The dissolution of the limit'
-    url: http://polired.upm.es/index.php/cuadernodenotas/article/download/4478/4649
-    source: ojs_cuadernodenotas
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: es
-    published_at: '2020-07-31'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.20868/cn.2020.4478
-    license_evidence: 'http://polired.upm.es/index.php/cuadernodenotas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4478
       : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
       de autor 2020 Cuaderno de Notas)'
     rights_verified_at: '2026-10-16'
@@ -419505,17 +419475,1998 @@ sources:
     license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: http://polired.upm.es/index.php/cuadernodenotas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5587
     rights_verified_at: '2026-10-16'
-  - id: ojs-cuadernodenotas-guidelines-for-authors
-    title: Guidelines for authors
-    url: http://polired.upm.es/index.php/cuadernodenotas/article/download/5590/5939
-    source: ojs_cuadernodenotas
-    license: cc-by-nc-nd
+  - id: ojs-proyectosarquitect-el-agregador-digital-como-mecanismo-de-p
+    title: El agregador digital como mecanismo de proyecto. El caso de BRUTHER = The
+      aggregator as a project. The case of BRUTHER
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4560/4745
+    source: ojs_proyectosarquitect
+    license: unverified
     topic: architecture
     format: pdf
     language: es
-    published_at: '2025-11-25'
+    published_at: '2020-12-30'
     document_type: journal-article
-    persistent_id: https://doi.org/10.20868/cn.2025.5590
-    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
-    license_evidence: http://polired.upm.es/index.php/cuadernodenotas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5590
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4560
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4560
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-whirlwind-i-arquitecturas-de-la-computac
+    title: 'Whirlwind I: arquitecturas de la computación como campos de pruebas para
+      los espacios de la modernidad = Whirlwind I: computer architectures as testin'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4561/4746
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4561
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4561
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-el-concepto-de-edificio-h-brido-caracter
+    title: 'El concepto de edificio híbrido. Caracterización topológica como recurso
+      de proyecto = The hybrid building concept. Topological characterisation as a '
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4562/4747
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4562
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4562
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-la-geometr-a-oculta-del-musac-sistemas-d
+    title: La geometría oculta del MUSAC. Sistemas de campo como origen de la forma
+      en el proyecto contemporáneo = The hidden geometry of MUSAC. Field systems as
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4563/4748
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4563
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4563
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-el-lenguaje-org-nico-de-arturo-soria-ant
+    title: 'El lenguaje orgánico de Arturo Soria: antecedente de una ecología de la
+      ciudad = The organic language of Arturo Soria: the antecedent of ecological ur'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4564/4749
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4564
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4564
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-public-intimacy-architecture-and-the-vis
+    title: Public intimacy. Architecture and the visual arts
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4571/4756
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4571
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4571
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-body-atmosphere-and-climatic-typology-to
+    title: 'Body, Atmosphere, and Climatic Typology: toward an Architecture for Everyday
+      Life'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4572/4757
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4572
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4572
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-thermodynamic-interventions-an-approach
+    title: 'Thermodynamic Interventions: an approach to thermodynamics as a tool for
+      intervention on built industrial heritage through the FRAC Nord-Pas de Calais'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4573/4758
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4573
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4573
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-aggregator-as-a-project-the-case-of
+    title: The aggregator as a project. The case of BRUTHER
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4574/4759
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4574
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4574
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-whirlwind-i-computer-architectures-as-te
+    title: 'Whirlwind I: computer architectures as testing grounds for the spaces of
+      modernity'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4575/4760
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4575
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4575
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-hybrid-building-concept-topological
+    title: The hybrid building concept. Topological characterisation as a project resource
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4576/4761
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4576
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4576
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-hidden-geometry-of-musac-field-syste
+    title: The hidden geometry of MUSAC. Field systems as the origin of form in the
+      contemporary project
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4577/4762
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4577
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4577
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-organic-language-of-arturo-soria-the
+    title: 'The organic language of Arturo Soria: the antecedent of ecological urban
+      planning'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4578/4763
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2020.10.4578
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4578
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2021 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-daidokoro-monogatari-historias-de-la-cas
+    title: 'Daidokoro Monogatari: historias de la casa japonesa desde la cocina'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4821/5029
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4821
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4821
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-diario-1969-acerca-del-relato-personal-d
+    title: 'Diario 1969: acerca del relato personal de Bernard Rudofsky sobre el descubrimiento
+      de Frigiliana'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4822/5030
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4822
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4822
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-el-yate-elevado-a-paquebote-historia-del
+    title: El ‘yate’ elevado a ‘paquebote’. Historia del Real Club Náutico de San Sebastián
+      más allá del mito ‘lecorbuseriano’, 1905-1929
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4823/5031
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4823
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4823
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-24-galer-as-un-museo-la-encuesta-como-in
+    title: '24 galerías, un museo: la encuesta como instrumento de diseño'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4824/5032
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4824
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4824
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-menos-yo-m-s-otros-a-prop-sito-de-dise-a
+    title: Menos yo, más otros. A propósito de diseñar el desorden. Experimentos y disrupciones
+      en la ciudad, de Pablo Sendra y Richard Sennett
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4825/5037
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4825
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4825
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-architect-s-brain-neuroscience-creat
+    title: The architect´s brain. Neuroscience, creativity and architecture, de Harry
+      Francis Mallgrave
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4826/5034
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4826
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4826
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-el-espacio-f-lmico-del-hotel-overlook-en
+    title: El espacio fílmico del Hotel Overlook en The Shining a través de sus decorados
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4827/5136
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4827
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4827
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-infrastructure-space-l-gicas-operativas
+    title: 'Infrastructure space: lógicas operativas en la práctica arquitectónica del
+      siglo XXI'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4828/5036
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4828
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4828
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-daidokoro-monogatari-stories-of-the-japa
+    title: 'Daidokoro Monogatari: Stories of the Japanese house from the kitchen'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4829/5038
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4829
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4829
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-diary-1969-bernard-rudofsky-s-personal-a
+    title: 'Diary 1969: Bernard Rudofsky’s personal account of his discovery of Frigiliana'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4830/5039
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4830
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4830
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-yacht-elevated-to-ocean-liner-1-hist
+    title: The ‘yacht’ elevated to ‘ocean liner’1. History of the Real Club Náutico
+      de San Sebastián beyond the Lecorbuserian myth, 1905–1929
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4831/5040
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4831
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4831
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-24-galleries-a-museum-the-survey-as-a-de
+    title: '24 Galleries, a museum: The Survey as a Design Tool'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4832/5041
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4832
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4832
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-filmic-space-of-the-overlook-hotel-i
+    title: The filmic space of the Overlook Hotel in the Shining through the sets
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4833/5042
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4833
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4833
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-less-me-more-others-on-designing-disorde
+    title: 'Less Me, More Others. On Designing Disorder: Experiments and Disruptions
+      in the City, by Pablo Sendra and Richard Sennett'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4835/5043
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4835
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4835
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-architect-s-brain-neuro-2
+    title: The Architect’s Brain. Neuroscience, Creativity and Architecture
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4836/5044
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4836
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4836
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-infrastructure-space-architectural-pract
+    title: 'Infrastructure Space: Architectural Practice and Operational Logics in the
+      21st Century'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4838/5046
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2021.11.4838
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4838
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-variaciones-en-la-obra-residencial-de-ma
+    title: Variaciones en la obra residencial de Mariano García Benito. Una terraza
+      en Madrid
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4952/5169
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4952
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4952
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-el-narkomfin-y-los-apartamentos-la-nao-a
+    title: El "Narkomfin" y los apartamentos "La Nao". Aportaciones de la sección 3-2
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4953/5166
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4953
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4953
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-infraestructuras-de-conectividad-como-ar
+    title: Infraestructuras de conectividad como articuladores transfronterizos. Análisis
+      transescalar de tres fronteras de la Unión
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4954/5167
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4954
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4954
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-activos-entr-picos-procesos-de-ocupaci-n
+    title: Activos Entrópicos. Procesos de ocupación habitacional en el Campo de Dalías
+      (Almería) en la segunda mitad del siglo XX
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4955/5168
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4955
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4955
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-hablar-para-habitar-herramientas-orales
+    title: 'Hablar para habitar: herramientas orales para la historia, el análisis y
+      el proyecto de la arquitectura'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4956/5170
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4956
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4956
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-la-capacidad-de-acci-n-de-los-espacios-a
+    title: La ´capacidad de acción´ de los espacios arquitectónicos. Estrategias proyectuales
+      de sistemas abiertos
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4957/5171
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4957
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4957
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-pedagog-as-radicales-una-investigaci-n-s
+    title: “Pedagogías Radicales”, una investigación sobre la enseñanza de la arquitectura
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4958/5172
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4958
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4958
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-variations-in-the-residential-work-of-ma
+    title: Variations in the residential work of Mariano García Benito. A terrace in
+      Madrid
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4959/5173
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4959
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4959
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-narkomfin-and-la-nao-apartments-cont
+    title: The "Narkomfin" and "La Nao" apartments. Contributions to section 3-2
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4960/5174
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4960
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4960
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-connective-infrastructures-as-transnatio
+    title: Connective infrastructures as transnational articulators Trans-scalar Analysis
+      of three European Union borders
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4961/5175
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4961
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4961
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-entropic-assets-housing-occupation-proce
+    title: Entropic Assets. Housing occupation processes in Campo de Dalías (Almería)
+      in the second half of the 20th century
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4962/5176
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4962
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4962
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-to-speak-in-order-to-inhabit-oral-tools
+    title: 'To speak in order to inhabit: oral tools for the history, analysis, and
+      design of architecture'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4963/5177
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4963
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4963
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-capacity-for-action-of-architectural
+    title: 'The ‘capacity for action’ of architectural spaces: open system design strategies'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4964/5178
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4964
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4964
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-radical-pedagogies-an-inquiry-onto-archi
+    title: Radical Pedagogies", an inquiry onto architectural education
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/4965/5179
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2022.12.4965
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/4965
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2022 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-una-noci-n-de-libertad-en-la-arquitectur
+    title: Una noción de libertad en la arquitectura de Le Corbusier
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5165/5409
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5165
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5165
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-consolidar-la-periferia-tres-conjuntos-r
+    title: Consolidar la periferia. Tres conjuntos residenciales del Grupo Z en Zaragoza
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5166/5410
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5166
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5166
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-bangkok-1999-2542-evaluando-el-legado-de
+    title: 'Bangkok: 1999-2542. Evaluando el legado de la Sexta Edición de “Cities on
+      the Move”'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5167/5411
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5167
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5167
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-la-materializaci-n-en-diagramas-arquitec
+    title: La materialización en diagramas arquitectónicos hápticos
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5168/5412
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5168
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5168
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-la-celebraci-n-de-la-modestia-el-institu
+    title: La celebración de la modestia. El Instituto Tajamar en Vallecas (1959-1966)
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5169/5413
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5169
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5169
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-chillida-en-am-rica-un-encuentro-con-la
+    title: Chillida en América. Un encuentro con la modernidad al otro lado del Atlántico
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5170/5414
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5170
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5170
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-history-in-the-making-lo-construido-y-lo
+    title: 'History in the Making Lo construido y lo pensado: a propósito de la historiografía
+      de la arquitectura'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5171/5415
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5171
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5171
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-consolidating-the-periphery-three-reside
+    title: 'Consolidating the periphery: three residential complexes in Zaragoza by
+      Grupo Z'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5174/5420
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5174
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5174
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-bangkok-1999-2542-examining-the-legacy-o
+    title: 'Bangkok: 1999- 2542. Examining the Legacy of the Sixth Edition of “Cities
+      on the Move”'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5175/5421
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5175
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5175
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-embodiment-in-haptic-architectural-diagr
+    title: Embodiment in haptic architectural diagrams
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5176/5422
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5176
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5176
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-history-in-the-making-built-and-thought
+    title: 'History in the making. Built and Thought: with regard to the Historiography
+      of Architecture'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5177/5423
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5177
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5177
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-review-of-the-book-la-cultura-arquitect
+    title: Review of the book La cultura arquitectónica en los años de la Transición
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5178/5427
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5178
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5178
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-a-notion-of-freedom-in-le-corbusier-s-ar
+    title: A notion of freedom in Le Corbusier’s architecture
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5179/5442
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5179
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5179
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-a-celebration-of-modesty-instituto-tajam
+    title: A celebration of modesty. Instituto Tajamar in Vallecas (1959–1966)
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5180/5425
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5180
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5180
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-chillida-in-america-an-encounter-with-mo
+    title: Chillida in America. An encounter with modernity on the other side of the
+      Atlantic
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5181/5426
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5181
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5181
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-la-cultura-arquitect-nica-durante-la-tra
+    title: La cultura arquitectónica durante la transición
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5182/5428
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2023.13.5182
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5182
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2023 Autor / BY-NC-ND)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-promises-of-san-rocco
+    title: The Promises of San Rocco
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5319/5662
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2024.14.5319
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5319
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2024 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-acknowledging-voices-in-architectural-et
+    title: Acknowledging Voices in Architectural Ethnography Architectural Behaviorology
+      / Ethnography of Design Practice
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5320/5663
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2024.14.5320
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5320
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2024 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-tourist-space-in-radical-architectures-a
+    title: Tourist space in radical architectures. Actif au Maroc as a paradigm
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5322/5664
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2024.14.5322
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5322
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2024 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-guggenheim-vs-helsinki-two-competitions
+    title: Guggenheim vs. Helsinki. Two Competitions for a Museum
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5323/5665
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2024.14.5323
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5323
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2024 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-architecture-for-large-families-during-d
+    title: 'Architecture for large families during developmentalism: Five houses in
+      Madrid'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5324/5666
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2024.14.5324
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5324
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2024 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-function-representativeness-and-spatial
+    title: Function, representativeness and spatial implications of form modelling in
+      Le Corbusier’s architecture
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5325/5669
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2024.14.5325
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5325
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2024 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-visual-materiality-and-haptic-visual
+    title: The visual materiality and haptic visuality of brick and its syntax through
+      the critical comparison of two works by Mies van der Rohe and Sigurd Lewer
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5326/5667
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2024.14.5326
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5326
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2024 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-ground-plan-and-its-pavement-as-an-a
+    title: The ground plan and its pavement as an architectural horizon
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5327/5668
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2024.14.5327
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5327
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2024 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-research-speculation-media-contemporary
+    title: Research, Speculation, Media. Contemporary agency of Architectural Photography
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5595/5966
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5595
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5595
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-between-model-tool-and-exhibition-piece
+    title: Between Model, Tool, and Exhibition Piece. The Mock-Upin Recent Architectural
+      Theory
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5596/5967
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5596
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5596
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-toward-a-modern-inhabit-peripheral-terri
+    title: Toward a Modern Inhabit. Peripheral Territories Casa Lucas Prieto. Oíza,
+      1959-64
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5597/5968
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5597
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5597
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-antonio-bonet-bungal-s-en-aigua-xelida-t
+    title: Antonio Bonet. Bungalós en Aigua Xelida, Tamariu (1968)
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5598/5970
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5598
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5598
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-transformation-of-the-immeuble-villa
+    title: The transformation of the Immeuble-Villa in the collective housing of Buenos
+      Aires. The building at 2043 Rodríguez Peña Street
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5599/5971
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5599
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5599
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-fallow-space-and-thearchitecture-of-the
+    title: Fallow space and thearchitecture of the legal fringe
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5600/5973
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5600
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5600
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-collective-use-as-a-way-for-spatial-tran
+    title: Collective Use as a Way for Spatial Transformation. Observation and description
+      of spatial practices in the European cultural projects Mercato Sonato,
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5601/5974
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5601
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5601
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-the-conflict-as-a-tectonic-strategy-dial
+    title: The Conflict as a Tectonic Strategy. Dialectic between Structure and Enclosure
+      in HermanHertzberger’s Muziekcentrum
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5603/5976
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5603
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5603
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-exhibitions-avoiding-permanence-as-a-pro
+    title: Exhibitions. Avoiding permanence as a project
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5604/5977
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5604
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5604
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-foreseen-ruins-and-spectral-artifacts-to
+    title: Foreseen ruins and spectral artifacts. Toyo Ito’s failed project for the
+      ‘Relaxation Park’ in Torrevieja, Spain
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5605/5975
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5605
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5605
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-edificio-en-ejercicio-el-antes-el-entonc
+    title: 'Edificio en ejercicio: el antes, el entonces y el ahora de la arquitectura
+      de las Viviendas para el Patronato de Casas Militares de Higueras y Miró (M'
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5606/5978
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5606
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5606
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-proyectosarquitect-and-now-for-something-completely-differe
+    title: And now for Something Completely Different
+    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/5607/5979
+    source: ojs_proyectosarquitect
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20868/cpa.2025.15.5607
+    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5607
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Autor / BY-NC-ND; http://creativecommons.org/licenses/by-nc-nd/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-affordable-futures-past-rethinking-contempora
+    title: 'Affordable Futures Past: Rethinking Contemporary Housing Production in Portugal
+      While Revisiting Former Logics'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4770/2599
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i1.4770
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4770
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-towards-generative-governance-co-creation-wit
+    title: 'Towards Generative Governance: Co‐Creation With Emerging Technologies to
+      Address Climate Challenges in Cities'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/10809/4497
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-07-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.10809
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/10809
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-from-desk-to-field-countering-agrourbanism-s
+    title: 'From Desk to Field: Countering Agrourbanism’s “Paper Landscapes” Through
+      Phenomenology, Thick Description, and Immersive Walking'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5591/2703
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-05-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i2.5591
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5591
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-smart-and-resilient-infrastructure-in-the-wak
+    title: Smart and Resilient Infrastructure in the Wake of Climate Change
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/11373/4727
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-10-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.11373
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/11373
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-car-use-a-matter-of-dependency-or-choice-the
+    title: 'Car Use: A Matter of Dependency or Choice? The Case of Commuting in Noord-Brabant'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6549/3262
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i3.6549
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6549
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-pathologies-of-porosity-looming-transitions-a
+    title: 'Pathologies of Porosity: Looming Transitions Along the Mississippi River
+      Ship Channel'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6954/3377
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-09-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i3.6954
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6954
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-berlin-s-manifold-strategies-towards-commerci
+    title: 'Berlin’s Manifold Strategies Towards Commercial and Industrial Spaces: The
+      Different Cases of Zukunftsorte'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4239/2292
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-09-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i3.4239
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4239
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-arrival-infrastructuring-at-a-southern-europe
+    title: 'Arrival Infrastructuring at a Southern European Gate: Public Action and
+      Spaces in Palermo, Italy'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/8474/4137
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-12-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.8474
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/8474
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-help-them-help-themselves-a-toolkit-to-facili
+    title: 'help Them help Themselves: A Toolkit to Facilitate Transformative Community‐Based
+      Climate Change Adaptation'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/9509/4359
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-04-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.9509
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/9509
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-planning-approaches-liaised-with-justificatio
+    title: 'Planning Approaches Liaised With Justification and Relation to Growth: Missing
+      Link in the Shrinkage Context?'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/10944/5043
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-04-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.10944
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/10944
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-dockers-in-poplar-the-legacy-of-the-london-co
+    title: 'Dockers in Poplar: The Legacy of the London County Council’s Replanning
+      of Poplar, East London'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6075/3040
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-02-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i1.6075
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6075
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-wanted-vs-unwanted-different-faces-of-suburba
+    title: '“Wanted” vs “Unwanted”: Different Faces of Suburbanisation in Polish Cities—The
+      Case of Gdańsk'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/12053/5218
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-08-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.12053
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/12053
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-gap-analysis-between-the-level-of-heat-wave-a
+    title: Gap Analysis Between the Level of Heat Wave Adaptation Policy and Heat Wave
+      Effects in South Korean Municipalities
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6414/3183
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-04-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i2.6414
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6414
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-experimental-governance-and-urban-planning-fu
+    title: 'Experimental Governance and Urban Planning Futures: Five Strategic Functions
+      for Municipalities in Local Innovation'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3396/2016
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-03-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i1.3396
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3396
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-arctic-tecture-teaching-sustainable-urban-pla
+    title: '“Arctic-tecture”: Teaching Sustainable Urban Planning and Architecture for
+      Ordinary Arctic Cities'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/8298/3882
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-08-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.8298
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/8298
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-flying-less-for-work-and-leisure-co-designing
+    title: Flying Less for Work and Leisure? Co-Designing a City-Wide Change Initiative
+      in Geneva
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3911/2134
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-06-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i2.3911
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3911
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-lessons-from-climate-and-pandemic-induced-dis
+    title: Lessons From Climate and Pandemic‐Induced Disruptions in Building Public
+      Transport Resilience
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/9943/4712
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-10-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.9943
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/9943
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-planning-for-lower-income-households-in-priva
+    title: Planning for Lower-Income Households in Privately Developed High-Density
+      Neighbourhoods in Sydney, Australia
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5699/2842
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i4.5699
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5699
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-planning-for-locally-embedded-economies-in-th
+    title: Planning for Locally Embedded Economies in the Productive City
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/11868/4852
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-12-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.11868
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/11868
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-opportunities-and-challenges-of-municipal-pla
+    title: Opportunities and Challenges of Municipal Planning in Shaping Vertical Neighbourhoods
+      in Greater London
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5757/2939
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i4.5757
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5757
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-next-generation-small-urban-manufacturing-app
+    title: 'Next Generation Small Urban Manufacturing: Apprentices’ Perspective on Location
+      Factors, Mixed-Use, and Shared Spaces'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/7040/3423
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i4.7040
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/7040
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-city-of-digital-social-innovators
+    title: The City of Digital Social Innovators
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3714/1783
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-10-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i4.3714
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3714
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-essential-means-for-urban-computing-specifica
+    title: 'Essential Means for Urban Computing: Specification of Web-Based Computing
+      Platforms for Urban Planning, a Hitchhiker’s Guide'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/1299/745
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-03-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v3i1.1299
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/1299
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-social-media-groups-in-interaction-with-conte
+    title: 'Social Media Groups in Interaction With Contested Urban Narratives: The
+      Case of Koper/Capodistria, Slovenia'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/7083/3571
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-01-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.7083
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/7083
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-it-oriented-infrastructural-development-urban
+    title: IT-Oriented Infrastructural Development, Urban Co-Dependencies, and the Reconfiguration
+      of Everyday Politics in Pune, India
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3506/1895
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i4.3506
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3506
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-welcome-city-refugees-in-three-german-cities
+    title: 'Welcome City: Refugees in Three German Cities'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/1668/950
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-12-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v3i4.1668
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/1668
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-interactions-between-pedestrians-and-street-v
+    title: 'Interactions Between Pedestrians and Street Vendors: Experiences From the
+      Global North and South'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/8910/4407
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-06-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.8910
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/8910
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-unlocking-grey-scientific-data-on-resident-be
+    title: Unlocking Grey Scientific Data on Resident Behaviour to Increase the Climate
+      Impact of Dutch Sustainable Housing
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4865/2643
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-04-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i2.4865
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4865
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-awaiting-recovery-the-role-of-outdoor-healthc
+    title: 'Awaiting Recovery: The Role of Outdoor Healthcare Spaces in Patient Self‐Care
+      in Ljubljana'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/10020/4581
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-08-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.10020
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/10020
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-co-creation-from-the-grassroots-listening-to
+    title: 'Co-Creation From the Grassroots: Listening to Arts-Based Community Organizing
+      in Little Tokyo'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5336/2772
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-09-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i3.5336
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5336
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-experiential-evaluation-to-create-risky-situa
+    title: Experiential Evaluation to Create Risky Situations and Address Tensions in
+      a Participatory Planning Process
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6370/3211
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i2.6370
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6370
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-digital-excavation-of-mediatized-urban-herita
+    title: 'Digital Excavation of Mediatized Urban Heritage: Automated Recognition of
+      Buildings in Image Sources'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3096/1604
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-06-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i2.3096
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3096
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-a-catalyst-approach-for-smart-ecological-urba
+    title: A Catalyst Approach for Smart Ecological Urban Corridors at Disused Waterways
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6866/3324
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-09-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i3.6866
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6866
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-ordinary-places-of-postmigrant-societies-deal
+    title: 'Ordinary Places of Postmigrant Societies: Dealing with Difference in West
+      and East German Neighbourhoods'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/2960/1660
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i3.2960
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/2960
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-children-s-perspectives-of-neighbourhood-spac
+    title: 'Children’s Perspectives of Neighbourhood Spaces: Gender-Based Insights From
+      Participatory Mapping and GIS Analysis'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/8499/4048
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.8499
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/8499
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-real-vs-virtual-city-planning-issues-in-a-dis
+    title: 'Real vs. Virtual City: Planning Issues in a Discontinuous Urban Area in
+      Budapest’s Inner City'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4446/2358
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-11-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i4.4446
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4446
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-leveraging-vgi-integrated-with-3d-spatial-tec
+    title: Leveraging VGI Integrated with 3D Spatial Technology to Support Urban Intensification
+      in Melbourne, Australia
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/623/356
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v1i2.623
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/623
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-self-management-of-housing-and-urban-commons
+    title: 'Self-Management of Housing and Urban Commons: New Belgrade and Reflections
+      on Commons Today'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4746/2560
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i1.4746
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4746
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-visualizing-conflict-possibilities-for-urban
+    title: 'Visualizing Conflict: Possibilities for Urban Research'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/880/526
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-04-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v2i1.880
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/880
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-incoming-metaverses-digital-mirrors-for-urban
+    title: 'Incoming Metaverses: Digital Mirrors for Urban Planning'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5193/2688
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-06-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i2.5193
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5193
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-variable-arrangements-between-residential-and
+    title: 'Variable Arrangements Between Residential and Productive Activities: Conceiving
+      Mixed-Use for Urban Development in Brussels'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4274/2287
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-09-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i3.4274
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4274
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-equity-in-urban-climate-change-adaptation-pla
+    title: 'Equity in Urban Climate Change Adaptation Planning: A Review of Research'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4399/2418
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-12-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i4.4399
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4399
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-urban-planning-academics-tweets-and-citations
+    title: 'Urban Planning Academics: Tweets and Citations'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3720/1980
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-02-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i1.3720
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3720
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-air-travel-and-urbanity-the-role-of-migration
+    title: 'Air Travel and Urbanity: The Role of Migration, Social Networks, Airport
+      Accessibility, and ‘Rebound’'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3983/2129
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-06-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i2.3983
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3983
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-innovation-within-the-context-of-local-econom
+    title: 'Innovation within the Context of Local Economic Development and Planning:
+      Perspectives of City Practitioners'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3100/1756
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-09-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i3.3100
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3100
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-expert-amateurs-and-smart-citizens-how-digita
+    title: 'Expert-Amateurs and Smart Citizens: How Digitalization Reconfigures Lima’s
+      Water Infrastructure'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3453/1889
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i4.3453
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3453
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-challenges-of-energy-renovation
+    title: Challenges of Energy Renovation
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5628/2638
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-04-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i2.5628
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5628
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-future-s-not-what-it-used-to-be-urban-wor
+    title: 'The Future’s Not What It Used To Be: Urban Wormholes, Simulation, Participation,
+      and Planning in the Metaverse'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5893/2739
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-06-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i2.5893
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5893
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-eu-smart-city-lighthouse-projects-between-top
+    title: 'EU Smart City Lighthouse Projects between Top-Down Strategies and Local
+      Legitimation: The Case of Hamburg'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/2531/1433
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i1.2531
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/2531
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-between-hospitality-and-inhospitality-the-jan
+    title: 'Between Hospitality and Inhospitality: The Janus-Faced ''Arrival Infrastructure'''
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/2941/1655
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i3.2941
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/2941
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-mapping-green-dublin-co-creating-a-greener-fu
+    title: 'Mapping Green Dublin: Co-Creating a Greener Future With Local Communities'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4533/2324
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-10-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i4.4533
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4533
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-urban-transformations-and-complex-values-insi
+    title: 'Urban Transformations and Complex Values: Insights From Beirut'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4851/2485
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-02-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i1.4851
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4851
     rights_verified_at: '2026-10-16'
