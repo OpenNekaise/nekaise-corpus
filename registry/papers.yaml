@@ -156029,3 +156029,94 @@ sources:
     rights_verified_at: '2026-10-16T19:59:09Z'
     origin_ids: doi:10.3389/frsc.2021.663269 openalex:W3174171722
     resolution: 'sim1: openalex location'
+  - id: oas-10-1007-s41064-024-00301-2-557b4ec9
+    title: 'Enabling Spatial Digital Twins: Technologies, Challenges, and Future Research
+      Directions'
+    url: https://arxiv.org/pdf/2306.06600
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-08-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s41064-024-00301-2
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2306.06600; version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s41064-024-00301-2 openalex:W4401350587
+    resolution: 'sim1: openalex location'
+  - id: oas-10-3390-infrastructures9070098-20687f89
+    title: 'Building Information Modelling in Hydropower Infrastructures: Design, Engineering
+      and Management Perspectives'
+    url: https://publications.aston.ac.uk/id/eprint/46432/1/infrastructures-09-00098.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-25'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/infrastructures9070098
+    license_evidence: no licence statement for this copy [copy https://publications.aston.ac.uk/id/eprint/46432/1/infrastructures-09-00098.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/infrastructures9070098 openalex:W4400122871
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1177-23998083241286030-cc55e8b8
+    title: Digital twin for supporting decision-making and stakeholder collaboration
+      in urban decarbonization processes. A participatory development in Gothenbur
+    url: https://research.chalmers.se/publication/543454/file/543454_Fulltext.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/23998083241286030
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://research.chalmers.se/publication/543454/file/543454_Fulltext.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/23998083241286030 openalex:W4403037491
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-prostr-2024-09-334-247d9b73
+    title: 'IoT and Digital Twin: a new perspective for Cultural Heritage predictive
+      maintenance'
+    url: http://bura.brunel.ac.uk/bitstream/2438/31246/1/FullText.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.prostr.2024.09.334
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy http://bura.brunel.ac.uk/bitstream/2438/31246/1/FullText.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.prostr.2024.09.334 openalex:W4404181632
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-dwelling-on-de-sitter
+    title: Dwelling on de Sitter
+    url: https://arxiv.org/pdf/hep-th/0208018v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2002-08-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.hep-th/0208018
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0208018&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:hep-th/0208018 (v3, the
+      current version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.1103/physrevd.66.124011
