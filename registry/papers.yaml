@@ -156120,3 +156120,22 @@ sources:
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-16'
     origin_ids: doi:10.1103/physrevd.66.124011
+  - id: oas-10-1016-j-softx-2026-103068-306a3474
+    title: 'BuildOcc: A large language model occupant agent platform for building energy
+      research'
+    url: https://arxiv.org/pdf/2609.02729
+    source: openalex_ai
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-25'
+    document_type: software-paper
+    persistent_id: https://doi.org/10.1016/j.softx.2026.103068
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://arxiv.org/pdf/2609.02729; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.softx.2026.103068 openalex:W7207605631
+    resolution: 'ai1: openalex+unpaywall location; resolution retry'
