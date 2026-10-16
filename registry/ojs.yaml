@@ -440814,22 +440814,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 1999 Maria da Graça Rodrigues Santos)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-posfau-p-s-gradua-o-da-fauusp-retrospectivas-e-prospectivas
-    title: Pós-Graduação da FAUUSP - Retrospectivas e Prospectivas
-    url: https://revistas.usp.br/posfau/article/download/137307/133048
-    source: ojs_posfau
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2000-12-19'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2317-2762.v0i8p9-87
-    license_evidence: 'https://revistas.usp.br/posfau/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/137307
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2000 Maria Irene de Q. F. Szmrecsanyi, Jorge Hajime Oseki, Wilson
-      Edson Jorge)'
-    rights_verified_at: '2026-10-16'
   - id: ojs-posfau-considera-es-sobre-o-curso-de-p-s-gradua-o-da-fauusp
     title: Considerações sobre o curso de Pós-Graduação da FAUUSP - 1973-1999
     url: https://revistas.usp.br/posfau/article/download/137308/133049
@@ -440859,22 +440843,6 @@ sources:
     license_evidence: 'https://revistas.usp.br/posfau/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/137310
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2000 Maria Ruth Amaral de Sampaio)'
-    rights_verified_at: '2026-10-16'
-  - id: ojs-posfau-tecnologia-da-arquitetura-e-a-p-s-na-fauusp-um-quart
-    title: 'Tecnologia da arquitetura e a pós na FAUUSP: um quarto de século atuando
-      no desenvolvimento das pesquisas em avaliação do desempenho ambiental'
-    url: https://revistas.usp.br/posfau/article/download/137311/133051
-    source: ojs_posfau
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2000-12-19'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2317-2762.v0i8p116-125
-    license_evidence: 'https://revistas.usp.br/posfau/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/137311
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2000 Sheila Walbe Ornstein, Ualfrido Del Cario)'
     rights_verified_at: '2026-10-16'
   - id: ojs-posfau-paisagismo-ensino-e-pesquisa-em-p-s-gradua-o
     title: 'Paisagismo: ensino e pesquisa em pós-graduação'
@@ -440920,21 +440888,6 @@ sources:
     license_evidence: 'https://revistas.usp.br/posfau/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/137334
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2000 Jorge Hajime Oseki)'
-    rights_verified_at: '2026-10-16'
-  - id: ojs-posfau-o-modelo-das-cidades-jardins-no-norte-do-novo-paran
-    title: O Modelo das cidades-jardins no norte do novo Paraná
-    url: https://revistas.usp.br/posfau/article/download/137335/133055
-    source: ojs_posfau
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2000-12-19'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2317-2762.v0i8p178-197
-    license_evidence: 'https://revistas.usp.br/posfau/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/137335
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2000 Maria Irene Szmrecsanyi)'
     rights_verified_at: '2026-10-16'
   - id: ojs-posfau-a-cidade-do-pensamento-nico-desmanchando-consenso
     title: 'A Cidade do Pensamento Único: Desmanchando Consenso'
@@ -442062,17 +442015,3034 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nd/4.0
     license_evidence: https://revistas.usp.br/posfau/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/167644
     rights_verified_at: '2026-10-16'
-  - id: ojs-risco-depoimento
-    title: Depoimento
-    url: https://revistas.usp.br/risco/article/download/223338/203465
-    source: ojs_risco
-    license: cc-by-nc-sa
-    topic: urban
+  - id: ojs-asubterraneas-diagn-stico-hidrogeol-gico-da-mina-osamu-utsu
+    title: Diagnóstico hidrogeológico da Mina Osamu Utsumi (Poços de Caldas - MG) por
+      meio de análise estrutural e ensaio geofísico
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29301/18904
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: pt
-    published_at: '2023-12-21'
+    published_at: '2021-09-01'
     document_type: journal-article
-    persistent_id: https://doi.org/10.11606/1984-4506.risco.2023.223338
-    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
-    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/223338
-    rights_verified_at: '2026-10-16'
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29301
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-caracteriza-o-geol-gico-geot-cnica-e-piezomet
+    title: CARACTERIZAÇÃO GEOLÓGICO-GEOTÉCNICA E PIEZOMETRIA DO AQUÍFERO SEMI-CONFINADO
+      BARREIRAS DO MUNICÍPIO DE NATAL – RN
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29309/18912
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29309
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-varia-o-temporal-de-par-metros-hidroqu-micos
+    title: VARIAÇÃO TEMPORAL DE PARÂMETROS HIDROQUÍMICOS DE ÁGUAS SUBTERRÂNEAS UTILIZADAS
+      PARA ABASTECIMENTO PÚBLICO EM SÃO CARLOS (SP)
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29332/18935
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29332
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-avalia-o-de-metais-potencialmente-t-xicos-em
+    title: AVALIAÇÃO DE METAIS POTENCIALMENTE TÓXICOS EM RIOS URBANOS NA CIDADE DE LAGES
+      (SC) EM REGIÃO DE RECARGA DO AQUÍFERO GUARANI
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29355/18957
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29355
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-avalia-o-de-metais-t-xicos-em-hortas-escolare
+    title: AVALIAÇÃO DE METAIS TÓXICOS EM HORTAS ESCOLARES URBANAS DE LAGES – SC EM
+      ÁREAS DE AFLORAMENTO DO AQUÍFERO GUARANI
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29358/18960
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29358
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-sistema-de-aquisi-o-de-dados-em-saneamento-ut
+    title: SISTEMA DE AQUISIÇÃO DE DADOS EM SANEAMENTO UTILIZANDO ARDUINO
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29364/18964
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29364
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-evolu-o-das-concentra-es-de-nitrato-nas-guas
+    title: EVOLUÇÃO DAS CONCENTRAÇÕES DE NITRATO NAS ÁGUAS SUBTERRÂNEAS NA CIDADE DE
+      URÂNIA/SP
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29365/18965
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29365
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-uso-de-mananciais-subterr-neos-e-superficiais
+    title: USO DE MANANCIAIS SUBTERRÂNEOS E SUPERFICIAIS COMO ALTERNATIVA PARA ABASTECIMENTO
+      PÚBLICO AO LONGO DO RIO DOCE
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29370/18972
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29370
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-inova-es-em-modelagem-num-rica-hidrogeol-gica
+    title: INOVAÇÕES EM MODELAGEM NUMÉRICA HIDROGEOLÓGICA INTEGRADA A GEOTECNIA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29375/18977
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29375
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-caracter-sticas-hidrogeol-gicas-da-rea-do-ate
+    title: CARACTERÍSTICAS HIDROGEOLÓGICAS DA ÁREA DO ATERRO SANITÁRIO DE MARITUBA (PA)
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29387/18989
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29387
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-qualidade-das-guas-naturais-da-rea-de-localiz
+    title: QUALIDADE DAS ÁGUAS NATURAIS DA ÁREA DE LOCALIZAÇÃO DA CENTRAL DE PROCESSAMENTO
+      E TRATAMENTO DE RESÍDUOS URBANOS DA REGIÃO METROPOLITANA DE BELÉM - PA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29388/18990
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29388
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-comportamento-do-fluxo-de-gua-subterr-nea-e-p
+    title: COMPORTAMENTO DO FLUXO DE ÁGUA SUBTERRÂNEA E POTENCIALIDADE HÍDRICA EM AQUÍFERO
+      CÁRSTICO A PARTIR DE ANÁLISE ESTRUTURAL E PARÂMETROS HIDROGEOLÓGICOS –
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29416/19018
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29416
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-metabolismo-urbano-e-o-nitrato-nas-guas-subte
+    title: METABOLISMO URBANO E O NITRATO NAS ÁGUAS SUBTERRÂNEAS DA CIDADE DE URÂNIA
+      (SP)
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29428/19029
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29428
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-potencial-hidrogeol-gico-da-cidade-de-uberaba
+    title: POTENCIAL HIDROGEOLÓGICO DA CIDADE DE UBERABA – MG
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29450/19051
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29450
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-occurrence-of-underground-waters-in-the-munic
+    title: 'Occurrence of underground waters in the municipality of Montes Claros -
+      MG: a case study using geotechnology'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29492/19077
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-02-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i1.29492
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29492
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-operating-conditions-of-reservoirs-in-indirec
+    title: 'Operating conditions of reservoirs in indirect water supply systems: Case
+      study in a University Campus'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29504/19082
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-03-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i1.29504
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29504
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-spatial-and-temporal-evolution-of-nitrate-con
+    title: Spatial and temporal evolution of nitrate contamination in the urban aquifer
+      of Urânia (SP)
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29524/19107
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i3.29524
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29524
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-vulnerability-and-risk-modeling-of-groundwate
+    title: Vulnerability and risk modeling of groundwater contamination in areas used
+      for urban solid waste disposal
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29526/19108
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-06-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i3.29526
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29526
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-sorption-of-sulfadiazine-in-urban-soil-experi
+    title: 'Sorption of sulfadiazine in urban soil: experimentation and modeling'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29543/19171
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-09-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i4.29543
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29543
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-proposal-for-sustainable-drainage-for-a-small
+    title: Proposal for sustainable drainage for a small municipality - Case study
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29553/19100
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-05-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i2.29553
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29553
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-water-supply-system-evaluation-with-approach
+    title: Water supply system evaluation with approach in the lowering of the dynamic
+      groundwater levels of the wells of the São Carlos city – Brazil
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29565/19243
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2020-03-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v34i1.29565
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29565
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-wastewater-treatment-in-surface-water-table-a
+    title: Wastewater treatment in surface water table areas - Case study
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29573/19110
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-07-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i3.29573
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29573
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-complementary-drainage-system-with-comparativ
+    title: Complementary drainage system with comparative of methods for Avenida Santos
+      Dumont, Criciuma, SC - Case study
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29574/19111
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-07-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i3.29574
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29574
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-hydraulic-characterization-of-the-layers-of-a
+    title: Hydraulic characterization of the layers of a permeable pavement
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29575/19315
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2020-06-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v34i2.29575
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29575
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-hazard-assessment-of-groundwater-contaminatio
+    title: Hazard assessment of groundwater contamination by point sources in the cities
+      of Vale do Taquari - RS
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29600/19119
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-09-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v33i4.29600
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29600
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-varia-o-sazonal-de-coliformes-em-po-os-de-gua
+    title: 'Variação sazonal de coliformes em poços de águas rasas: estudo de caso em
+      área urbana, Pará'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29633/19147
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-10-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v0i0.29633
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29633
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-temporal-soil-moisture-changes-under-differen
+    title: TEMPORAL SOIL MOISTURE CHANGES UNDER DIFFERENT LAND USES IN THE BRAZILIAN
+      CERRADO
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29644/19142
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-10-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v0i0.29644
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29644
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-an-lise-das-estruturas-r-pteis-e-suas-rela-es
+    title: ANÁLISE DAS ESTRUTURAS RÚPTEIS E SUAS RELAÇÕES COM A HIDROGEOLOGIA DO NÚCLEO
+      NOVA MARABÁ, CIDADE DE MARABÁ, SUDESTE DO ESTADO DO PARÁ
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29682/19183
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-10-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v0i0.29682
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29682
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-vulnerabilidade-natural-do-aquifero-itapecuru
+    title: VULNERABILIDADE NATURAL DO AQUIFERO ITAPECURU, NO BAIRRO DO AEROPORTO, NÚCLEO
+      CIDADE NOVA, CIDADE DE MARABÁ, SUDESTE DO ESTADO DO PARÁ
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29684/19185
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-10-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v0i0.29684
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29684
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-a-expans-o-urbana-e-seus-efeitos-no-sistema-a
+    title: A EXPANSÃO URBANA E SEUS EFEITOS NO SISTEMA AQUÍFERO DUNAS/BARREIRA, NO MUNICÍPIO
+      DE NÍSIA FLORESTA/RN
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29686/19187
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-10-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v0i0.29686
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29686
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-levantamento-e-classifica-o-de-fontes-de-abas
+    title: LEVANTAMENTO E CLASSIFICAÇÃO DE FONTES DE ABASTECIMENTO POR ÁGUAS SUBTERRÂNEAS
+      NO CURIMATAÚ ORIENTAL PARAIBANO
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29707/19207
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-10-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v0i0.29707
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29707
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-contaminantes-das-guas-subterr-neas-na-rea-ur
+    title: CONTAMINANTES DAS ÁGUAS SUBTERRÂNEAS NA ÁREA URBANA DO MUNICÍPIO DE FORTALEZA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29714/19214
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2019-10-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v0i0.29714
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29714
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-use-of-field-and-laboratory-methods-to-estima
+    title: Use of field and laboratory methods to estimate soil hydrodynamic properties
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29809/19313
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2020-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v34i2.29809
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29809
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-asubterraneas-an-lise-geoespacial-entre-lineamentos-e-a-pro
+    title: 'ANÁLISE GEOESPACIAL ENTRE LINEAMENTOS E A PRODUTIVIDADE HÍDRICA SUBTERRÂNEA
+      COM BASE EM GEOTECNOLOGIAS NA PORÇÃO SUL DA REGIÃO HIDROGRÁFICA II (BACIA '
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/29819/19253
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2021-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v0i0.29819
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/29819
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-visco-plastic-behaviour-of-clays-during-consolida
+    title: Visco-plastic behaviour of clays during consolidation processes
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11809/8662
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1973-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_7_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11809
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1973 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-portuguese-studies-on-engineering-properties-of-l
+    title: Portuguese studies on engineering properties of lateritic soils
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11812/8665
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1973-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_6_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11812
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1973 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-post-failure-behavior-of-rocks-under-uniaxial-com
+    title: Post-Failure Behavior of Rocks under Uniaxial Com­ pression, Obtained through
+      an Artificially Increased Stiffness Testing Machine
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11814/8667
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1973-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_6_5
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11814
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1973 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-undisturbed-sampling-of-soils
+    title: Undisturbed Sampling of Soils
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11816/8669
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1972-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_5_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11816
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1972 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-permeability-tests-in-rock-masses
+    title: Permeability tests in rock masses
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11817/8670
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1972-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_5_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11817
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1972 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-slope-stability-in-funil-hydroelectric-project
+    title: Slope Stability in Funil Hydroelectric Project
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11820/8673
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1972-07-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_4_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11820
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1972 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-notes-on-critical-states-soil-mechanics
+    title: Notes on Critical States Soil Mechanics
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11822/8675
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1972-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_3_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11822
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1972 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-the-seismic-method-of-geophysical-exploration-as
+    title: The Seismic Method of Geophysical Exploration as Applied to Road Studies
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11823/8676
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1972-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_3_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11823
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1972 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-notes-on-engineering-geology-of-dam-sites
+    title: Notes on Engineering Geology of Dam Sites
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11830/8681
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1971-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_2_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11830
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1971 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-remarks-on-the-behaviour-of-earth-dams-under-the
+    title: Remarks on the behaviour of earth dams under the action of earthquakes
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11831/8682
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1971-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_2_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11831
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1971 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-tunnel-4-porto-three-dimensional-finite-element-a
+    title: Tunnel 4 (Porto) - Three-dimensional finite element analysis
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11835/8687
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2003-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_99_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11835
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2003 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-simplified-design-of-soldier-piles-of-definitive
+    title: Simplified design of soldier piles of definitive Berlin-type retaining walls
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11836/8688
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2003-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_99_5
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11836
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2003 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-slopes-instabilised-by-percolation-and-visceral-c
+    title: Slopes instabilised by percolation, and visceral correction of current analysis
+      and significant stabilising drains
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11851/8710
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2004-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_100_6
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11851
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2004 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-soil-stiffness-interesting-the-serviceability-of
+    title: Soil stiffness interesting the serviceability of structures
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11866/8717
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2004-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_100_9
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11866
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2004 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-three-dimensional-stress-analysis-of-a-dam-and-it
+    title: 'Three dimensional stress analysis of a dam and its foundation: implications
+      on safety evaluation'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11871/8718
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2004-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_100_10
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11871
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2004 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-seismic-soil-amplification-effects-xviii-li-o-man
+    title: 'Seismic soil amplification effects: XVIII Lição Manuel Rocha, 2001'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11872/8722
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2003-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_97_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11872
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2003 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-pollutant-transport-modelling-of-the-urban-waste
+    title: Pollutant transport modelling of the urban waste disposal area, m Poços de
+      Caldas city, State of Minas Gerais (Brazil).
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11874/8724
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2003-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_97_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11874
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2003 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-performance-and-conception-of-underground-structu
+    title: 'Performance and conception of underground structures subjected to seismic
+      actions: a review'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11878/8727
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2002-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_94_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11878
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2002 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-preliminary-characterisation-of-soil-use-in-the-u
+    title: Preliminary characterisation of soil use in the urban area of Viçosa (MG),
+      Brasil
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11882/8731
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_90_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11882
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2000 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-numerical-simulation-of-the-consolidation-process
+    title: Numerical simulation of the consolidation processes in embankments on soft
+      soils
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11890/8735
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_89_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11890
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2000 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-static-puncture-behaviour-of-geotextiles-and-geom
+    title: Static puncture behaviour of geotextiles and geomembranes under degradation
+      agents
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11891/8736
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_89_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11891
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2000 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-the-hierarchization-of-the-heterogeneity-and-the
+    title: The hierarchization of the heterogeneity and the rock mass scale effect
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11892/8737
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2000-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_89_5
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11892
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2000 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-the-leaning-tower-of-pisa-xiv-li-o-manuel-rocha-1
+    title: 'The leaning tower of Pisa: XIV Lição Manuel Rocha, 1997'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11893/8738
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1999-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_85_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11893
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1999 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-tensile-behaviour-of-geotextiles-under-degradatio
+    title: Tensile behaviour of geotextiles under degradation agents
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11897/8741
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1999-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_85_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11897
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1999 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-some-earthquakes-focal-mechanism-analyses-by-mean
+    title: Some earthquakes focal mechanism analyses by means of the rate process model
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11900/8744
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1997-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_79_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11900
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1997 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-waste-and-waste-management-some-geotechnical-cons
+    title: 'Waste and waste management: some geotechnical considerations: XVII Lição
+      Manuel Rocha, 2001'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11905/8747
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '1995-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_75_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11905
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1995 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-utilisation-des-roches-tendres-et-des-roches-dure
+    title: 'Utilisation des roches tendres et des roches dures pour l''isolement des
+      dechets radioactifs: X Lição Manuel Rocha, 1993'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11909/8751
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1994-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_71_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11909
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1994 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-suggestions-for-an-approach-of-the-scale-effect-i
+    title: Suggestions for an approach of the scale effect in rock masses
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11915/8756
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1991-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_62_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11915
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1991 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-study-of-tunnels-in-environments-with-elastic-sym
+    title: Study of tunnels in environments with elastic symmetry
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11920/8761
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1991-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_61_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11920
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1991 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-suggested-new-methodology-for-lugeon-test
+    title: Suggested new methodology for Lugeon test
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11922/8763
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1987-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_50_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11922
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1987 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-the-organization-of-the-monitoring-activities-in
+    title: The Organization of the Monitoring Activities in the Portuguese Dams
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11924/8765
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1987-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_50_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11924
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1987 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-soil-nailing-in-support-of-excavations
+    title: Soil Nailing in Support of Excavations
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11929/8768
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1986-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_47_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11929
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1986 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-triaxial-tests-of-the-oporto-residual-soils
+    title: Triaxial Tests of the Oporto Residual Soils
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11931/8770
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1986-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_47_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11931
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1986 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-quality-assurance-in-building-i-li-o-manuel-rocha
+    title: 'Quality Assurance in Building: I Lição Manuel Rocha, 1984'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11932/8771
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_44_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11932
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-the-role-of-the-instrumentation-on-the-design-of
+    title: The Role of the Instrumentation on the Design of Embankment Dams
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11933/8772
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_44_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11933
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-proposal-for-a-geotechnical-classification-of-car
+    title: Proposal for a geotechnical classification of carbonate rocks
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11936/8775
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_44_5
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11936
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-safety-factor-of-strain-softing-slopes
+    title: Safety factor of strain-softing slopes
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11940/8777
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2004-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_100_13
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11940
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2004 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-preliminary-data-for-the-morphology-knowledge-of
+    title: Preliminary data for the morphology knowledge of the Kalahari base sediments
+      in Baixo Cunene area (Angola)
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11942/8778
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2004-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_100_14
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11942
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2004 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-seismic-behaviour-of-geotechnical-structures-what
+    title: Seismic behaviour of geotechnical structures. What lessons were learned
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11947/8783
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2004-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_100_19
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11947
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2004 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-limit-equilibrium-analysis-on-two-and-three-dimen
+    title: Limit equilibrium analysis on two- and three-dimensional models
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11950/9406
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2023-07-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_158_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11950
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2023 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-geotecnia-some-applications-of-numerical-limit-analysis-to
+    title: Some applications of numerical limit analysis to geotechnical problems
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11951/8793
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2004-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_100_22
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11951
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 2004 Geotecnia)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-effect-of-certain-petroleum-products-on-the-shear-str
+    title: Effect of Certain Petroleum Products on the Shear Strength of Clayey Soils
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1842/1476
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2005-03-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1842
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-water-hammer-analysis-for-najaf-kufa-water-supply-pro
+    title: Water Hammer Analysis for NAJAF-KUFA Water Supply Project
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1843/1477
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2005-03-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1843
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-optimum-operation-of-makhool-dam
+    title: Optimum Operation of Makhool Dam
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1844/1478
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2005-03-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1844
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-nonlinear-analysis-of-continuous-composite-beam-by-fi
+    title: Nonlinear Analysis of Continuous Composite Beam by Finite Element Method
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1851/1492
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2005-06-01'
+    document_type: journal-article
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1851
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-influence-of-steel-fibres-of-crimped-and-hooked-end-s
+    title: INFLUENCE OF STEEL FIBRES OF CRIMPED AND HOOKED-END SHAPE ON THE MECHANICAL
+      PROPERTIES OF PORTLAND CEMENT
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1854/1676
+    source: ojs_jeasd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.3.8
+    license_evidence: 'https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1854
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Nada Hamad Khalaf , Sahib M. Mahdi, Yasir Khalil Ibrahim  (Author); https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-evaluation-of-the-procurement-management-system-for-r
+    title: EVALUATION OF THE PROCUREMENT MANAGEMENT SYSTEM FOR RESIDENTIAL COMPLEX PROJECTS
+      IN ERBIL GOVERNORATE
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1867/1580
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.1.5
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1867
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-developing-a-hydraulic-simulation-model-to-detect-the
+    title: 'DEVELOPING A HYDRAULIC SIMULATION MODEL TO DETECT THE AGRICULTURAL LAND-USE
+      SERVED BY IRRIGATION CHANNELS: A CASE STUDY AL-KHORA RIVERS, SOUTH OF IRAQ'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1882/1500
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.26.5.8
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1882
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-stress-strain-diagram-of-self-consolidating-concrete
+    title: STRESS –STRAIN DIAGRAM OF SELF-CONSOLIDATING CONCRETE SUBJECTED TO CHEMICAL
+      ATTACK
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1884/1502
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.26.5.10
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1884
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-performance-of-concrete-slab-reinforced-by-cfrp-bars
+    title: PERFORMANCE OF CONCRETE SLAB REINFORCED BY CFRP BARS AND STRENGTHENED BY
+      DIFFERENT LAYOUT OF CFRP LAMINATES
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1887/1650
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.1.9
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1887
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-shear-capacity-of-reinforced-concrete-beams-without-s
+    title: 'SHEAR CAPACITY OF REINFORCED CONCRETE BEAMS WITHOUT SHEAR REINFORCEMENT:
+      A REVIEW'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1888/1604
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.5.3
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1888
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-mechanical-properties-of-sustainable-fiber-reinforced
+    title: MECHANICAL PROPERTIES OF SUSTAINABLE FIBER-REINFORCED LIGHTWEIGHT AGGREGATE
+      CONCRET
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1891/1623
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.6.11
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1891
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-curing-conditions-impact-the-properties-of-a-modified
+    title: CURING CONDITIONS IMPACT THE PROPERTIES OF A MODIFIED GEOPOLYMER MORTAR
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1899/1649
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.1.10
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1899
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-investigation-of-the-mechanical-performance-of-stone
+    title: INVESTIGATION OF THE MECHANICAL PERFORMANCE OF STONE MASTIC ASPHALT MIXTURES
+      MODIFIED BY RECYCLED WASTE POLYMERS
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1901/1593
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.4.2
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1901
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-review-of-the-use-of-sustainable-materials-in-the-pro
+    title: Review of the Use of Sustainable Materials in the Production of Building
+      Units
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1910/1697
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.4.14
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1910
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-a-review-study-of-the-use-of-calcium-chloride-in-conc
+    title: A REVIEW STUDY OF THE USE OF CALCIUM CHLORIDE IN CONCRETE
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1954/1584
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.3.4
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1954
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-performance-of-screw-horizontal-and-bridge-linkage-ph
+    title: PERFORMANCE OF SCREW HORIZONTAL AND BRIDGE LINKAGE PHOTOVOLTAIC ARRAY CONFIGURATIONS
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1957/1666
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.2.9
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1957
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-evaluation-of-the-level-of-service-provided-at-some-b
+    title: EVALUATION OF THE LEVEL OF SERVICE PROVIDED AT SOME BUS ROUTES IN BAGHDAD
+      CITY
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1958/1678
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.3.10
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1958
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-composite-beam-under-different-monotonic-and-dynamic
+    title: 'Composite Beam Under Different Monotonic and Dynamic Loading: A Review'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1979/1785
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.1979
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1979
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-enhancement-of-roadway-embankment-using-geofoam-block
+    title: 'Enhancement of Roadway Embankment Using Geofoam Blocks and Cement Columns:
+      Application of Three-Dimensional Plaxis Program'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1982/1726
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.6.14
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1982
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-traffic-state-comparison-of-signalized-intersections
+    title: Traffic State Comparison of Signalized Intersections Using SIDRA and SYNCHRO
+      Software
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/1983/1691
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.4.13
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/1983
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-flexural-behavior-of-rc-beams-contains-rubberized-pie
+    title: FLEXURAL BEHAVIOR OF RC BEAMS CONTAINS RUBBERIZED PIECES AND STRENGTHENED
+      WITH CFRP SHEETS
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2004/1595
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.4.4
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2004
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-risk-assessment-of-the-latifiya-expressway-segment-us
+    title: Risk Assessment of The Latifiya Expressway Segment Using a Proactive Approach
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2011/1702
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.5.5
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2011
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-evaluation-of-time-overruns-and-time-management-techn
+    title: EVALUATION OF TIME OVERRUNS AND TIME MANAGEMENT TECHNIQUES IN ROAD CONSTRUCTION
+      PROJECTS IN ERBIL CITY
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2015/1598
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.4.7
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2015
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-origami-antenna-array-shaped-mosque-of-muhammed-al-fa
+    title: ORIGAMI ANTENNA ARRAY SHAPED MOSQUE OF MUHAMMED AL-FATIH FOR VISUAL SIGHT
+      ENHANCEMENT IN MODREN 5G MIMO NETWORKS
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2019/1592
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.4.1
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2019
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-effects-of-area-of-walls-internal-corridors-and-stair
+    title: Effects of Area of Walls, Internal Corridors, and Stairs on the Built-Up
+      Area of Houses
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2020/1786
+    source: ojs_jeasd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2020
+    license_evidence: 'https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2020
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Hassan Fasel Jaafar, Abdulbaqi Ghazi Hussein, Ali Irzaige Sabur, Mustafa  Özakça
+      (Author); https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-evaluation-of-the-fatigue-behavior-of-stone-mastic-as
+    title: EVALUATION OF THE FATIGUE BEHAVIOR OF STONE MASTIC ASPHALT MODIFIED BY DOMESTIC
+      WASTE BIO-ASPHALT
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2028/1557
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2018.2.41
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2028
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-sustainability-of-the-concrete-by-using-recycled-wast
+    title: SUSTAINABILITY OF THE CONCRETE BY USING RECYCLED WASTE MATERIALS
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2030/1559
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2018.2.67
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2030
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-a-gis-assisted-prediction-travel-demand-on-metro-netw
+    title: A GIS- ASSISTED PREDICTION TRAVEL DEMAND ON METRO NETWORK (BAGHDAD CASE STUDY)
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2032/1561
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2018.2.51
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2032
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-the-effect-of-using-rubber-tier-and-glass-waste-on-th
+    title: THE EFFECT OF USING RUBBER TIER AND GLASS WASTE ON THE PROPERTIES OF CEMENT
+      MORTAR
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2033/1562
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2018.2.52
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2033
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-beneficial-role-of-glass-wastes-in-concrete-a-review
+    title: BENEFICIAL ROLE OF GLASS WASTES IN CONCRETE – A REVIEW
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2035/1564
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2018.2.75
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2035
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-sustainable-performance-of-reactive-powder-concrete-b
+    title: SUSTAINABLE PERFORMANCE OF REACTIVE POWDER CONCRETE BY USING NANO META KAOLIN
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2036/1565
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2018.2.86
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2036
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-flexural-behavior-of-slurry-infiltrated-fiber-concret
+    title: FLEXURAL BEHAVIOR OF SLURRY INFILTRATED FIBER CONCRETE (SIFCON) CONTAINING
+      SUPPLEMENTARY CEMENTITIOUSE MATERIALS
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2037/1566
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2018.2.32
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2037
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-identifying-barriers-to-the-use-of-sustainable-buildi
+    title: IDENTIFYING BARRIERS TO THE USE OF SUSTAINABLE BUILDING MATERIALS IN BUILDING
+      CONSTRUCTION
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2038/1567
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2018.2.87
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2038
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-spatio-temporal-analysis-of-travel-speed-for-urban-st
+    title: Spatio-Temporal Analysis of Travel Speed for Urban Streets
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2044/1845
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2044
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2044
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-experimental-comparison-of-flow-energy-loss-in-type-b
+    title: EXPERIMENTAL COMPARISON OF FLOW ENERGY LOSS IN TYPE-B AND -C TRAPEZOIDAL
+      PIANO KEY WEIRS (PKWS)
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2063/1648
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.1.4
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2063
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-revisiting-the-code-design-equations-for-concrete-col
+    title: Revisiting the Code Design Equations for Concrete Columns Reinforced with
+      GFRP Bars
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2070/1712
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.5.12
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2070
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-experimental-investigation-of-scour-downstream-of-a-c
+    title: EXPERIMENTAL INVESTIGATION OF SCOUR DOWNSTREAM OF A C-TYPE TRAPEZOIDAL PIANO
+      KEY WEIR WITH STILLING BASIN
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2083/1626
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.27.6.2
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2083
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-effect-of-relative-delay-rate-on-predicted-accident-a
+    title: 'Effect of Relative Delay Rate on Predicted Accident at Karbala City Arterial
+      Streets: A Simulation Study'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2092/1831
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2092
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2092
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-structural-behavior-of-composite-beam-subjected-to-im
+    title: Structural Behavior of Composite Beam Subjected to Impact Loading
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2100/1901
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2100
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2100
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-partial-replacement-of-cement-with-agricultural-waste
+    title: Partial Replacement of Cement with Agricultural Waste (Palm Ash) to Improve
+      the Concrete Properties
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2133/1772
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2133
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2133
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-a-freight-mode-choice-to-transport-oil-products-using
+    title: A Freight Mode Choice to Transport Oil Products Using an Artificial Neural
+      Network Model
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2137/1783
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2137
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2137
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-a-combined-ultrasonic-procedure-to-evaluate-damage-in
+    title: A COMBINED ULTRASONIC PROCEDURE TO EVALUATE DAMAGE IN CONCRETE BEAMS SUBJECTED
+      TO STATIC LOAD
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2149/1662
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.2.5
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2149
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-seismic-analysis-of-multistoried-open-ground-story-bu
+    title: SEISMIC ANALYSIS OF MULTISTORIED OPEN GROUND STORY BUILDING WITH DIAGONAL
+      STRUT AND SHEAR WALLS
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2199/1660
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.2.2
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2199
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-article-2212-1670
+    title: دراسة تجريبية لسلوك الخرسانة المحتوية على ألياف البولي بروبيلين والمشبك الفولاذي
+      على مقاومة الخرسانة للصدمات
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2212/1670
+    source: ojs_jeasd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.3.3
+    license_evidence: 'https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2212
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Ammar Muttar, Sana Taha Abdulhussain, Osamah Mohammed G. Al-Kerttani,
+      Omar Khalid (Author); https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-urban-context-analysis-according-to-the-concept-of-sp
+    title: 'URBAN CONTEXT ANALYSIS ACCORDING TO THE CONCEPT OF SPENCER''S BIOLOGICAL
+      THEORY USING GIS: BALAD CITY CASE STUDY'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2216/1661
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.2.4
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2216
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-behavior-of-concentrically-loaded-rpc-circular-column
+    title: Behavior of Concentrically Loaded RPC Circular Columns Reinforced Longitudinally
+      and Transversally with GFRP Bars
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2223/1863
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2223
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2223
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-article-2227-1841
+    title: آثار الهجوم الحامضي على أداء خرسانة المسحوق التفاعلي المضاف إليها مواد إسمنتية
+      تكميلية
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2227/1841
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2227
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2227
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-assessment-of-signalized-intersection-a-case-study-in
+    title: 'ASSESSMENT OF SIGNALIZED INTERSECTION: A CASE STUDY IN BAGHDAD City by USING
+      SIDRA SOFTWARE'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2229/1659
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.2.3
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2229
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-effect-of-the-strands-fixity-profile-shape-on-the-fle
+    title: EFFECT OF THE STRANDS FIXITY PROFILE SHAPE ON THE FLEXURAL BEHAVIOR OF STEEL
+      BEAMS
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2235/1672
+    source: ojs_jeasd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.3.5
+    license_evidence: 'https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2235
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Mohammed Mohammed Rasheed, Kamal Shahada Mahmoud, Mustafa Ahmed Yousif
+      , Ahmed F. Abdullah (Author); https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-identification-of-hazardous-intersections-based-on-cr
+    title: 'Identification of Hazardous Intersections Based on Crash Severity Level:
+      Case Study Baghdad City'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2252/1731
+    source: ojs_jeasd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2252
+    license_evidence: 'https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2252
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Hanan A. Khudhair , Abeer Khudhur Jameel, Samer Alsadik, Ahmed Shakir
+      Al_Bdairi, Raid Kraidi, Hayder Mohammed AL-Taweel , Zinah Ahmed Shukri )'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-interaction-of-curing-and-soaking-on-collapse-potenti
+    title: Interaction of Curing and Soaking on Collapse Potential of Nanoclay-Treated
+      Soil
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2268/1685
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.4.7
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2268
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-behavior-of-fibrous-high-strength-glass-fiber-reinfor
+    title: Behavior of Fibrous High-Strength Glass Fiber Reinforced Polymer Reinforced
+      Concrete Deep Beams
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2275/1882
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2275
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2275
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-hybrid-model-and-framework-for-predicting-air-polluta
+    title: HYBRID MODEL AND FRAMEWORK FOR PREDICTING AIR POLLUTANTS IN SMART CITIES
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2283/1677
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.3.9
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2283
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-bearing-capacity-of-sustainable-self-compacting-concr
+    title: Bearing Capacity of Sustainable Self-Compacting Concrete Walls
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2295/1858
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2295
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2295
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-flexural-behavior-of-reinforced-concrete-one-way-slab
+    title: Flexural Behavior of Reinforced Concrete One-way Slabs with Longitudinal
+      Hollows
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2310/1699
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.5.2
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2310
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-article-2321-1852
+    title: تأثير رقم موصل القص على سلوك الانحناء للعتبات الخرسانية المسلحة بالجيوبوليمر
+      المركبة ذات فتحات الويب المستعرضة الصغيرة
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2321/1852
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2321
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2321
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-environmental-monitoring-of-land-use-land-cover-by-in
+    title: Environmental Monitoring of Land Use/ Land Cover by Integrating Remote Sensing
+      and Machine Learning Algorithms
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2341/1682
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.4.4
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2341
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-using-grinded-cane-with-paraffin-wax-in-interior-insu
+    title: Using Grinded Cane with Paraffin Wax in Interior Insulation of Buildings
+      for Reducing Cooling Load
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2415/1725
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.6.13
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2415
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-enhancing-hydraulic-performance-and-discharge-efficie
+    title: Enhancing Hydraulic Performance and Discharge Efficiency of a Type-C Piano
+      Key Weir Through Stage Incorporation
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2441/1705
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.5.8
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2441
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-multi-objective-residential-load-scheduling-approach
+    title: Multi-Objective Residential Load Scheduling Approach Based Pelican Optimization
+      Algorithm with Multi-Criteria Decision Making
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2447/1754
+    source: ojs_jeasd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2447
+    license_evidence: 'https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2447
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Hiba Haider Taha, Haider Tarish (Author); https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-experimental-study-to-evaluate-the-load-bearing-capac
+    title: Experimental Study to Evaluate the Load-Bearing Capacity of Autoclaved Aerated
+      Concrete Block Walls
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2452/1877
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2452
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2452
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-sundial-in-traditional-architecture-shrine-of-imam-al
+    title: 'Sundial in Traditional Architecture: Shrine of Imam Ali in Najaf Al-Ashraf
+      as "Case Study"'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2459/1864
+    source: ojs_jeasd
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2459
+    license_evidence: 'https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2459
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Mahmood Rezooky Janjun, Neda Abdameer Mubarak, Rawaa Abd Munaf Al-Shlah
+      (Author); https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-selection-of-drone-locations-to-act-as-mobile-road-si
+    title: Selection of Drone Locations to Act as Mobile Road-Side Units in An Intelligent
+      Transportation System
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2508/1900
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2508
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2508
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-assessing-and-optimizing-traffic-congestion-in-muaska
+    title: Assessing and Optimizing Traffic Congestion in Muaskar Al-Rashid Highway
+      Interchange in Baghdad
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2514/1792
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2514
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2514
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-leveraging-maintenance-management-techniques-to-evalu
+    title: 'Leveraging Maintenance Management Techniques to Evaluate Pavement Condition
+      Index: Central Iraq Highway System'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2544/1758
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2544
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2544
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-experimental-investigation-study-into-the-mechanical
+    title: Experimental Investigation Study into the Mechanical Properties of Autoclaved
+      Aerated Concrete and Its Bond Material
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2548/1787
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2548
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2548
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-improving-energy-performance-in-smart-buildings-throu
+    title: 'Improving Energy Performance in Smart Buildings Through Information and
+      Communication Technology: A State-of-The-Art Review'
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2550/1778
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2550
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2550
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-development-of-fly-ash-based-geopolymer-lightweight-a
+    title: Development of Fly Ash-Based Geopolymer Lightweight Aggregates
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2559/1704
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.28.5.7
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2559
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-experimental-investigation-into-the-effects-of-rebar
+    title: Experimental Investigation into The Effects of Rebar Corrosion on The Behavior
+      of Reinforced Concrete Columns
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2564/1846
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2564
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2564
+    rights_verified_at: '2026-10-17'
+  - id: ojs-jeasd-parking-characteristics-and-exploring-the-utilization
+    title: Parking Characteristics and Exploring the Utilization of Rotary Smart Parking,
+      a Case Study
+    url: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/article/download/2592/1902
+    source: ojs_jeasd
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31272/jeasd.2592
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://jeasd.uomustansiriyah.edu.iq/index.php/jeasd/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.jeasd.uomustansiriyah.edu.iq:article/2592
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-a-study-of-the-effect-of-semi-angle-of-cone-on-the-vibr
+    title: A STUDY OF THE EFFECT OF SEMI-ANGLE OF CONE ON THE VIBRATION CHARACTERISTICS
+      OF CYLINDRICAL-CONICAL COUPLED SHELL STRUCTURE
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2146/1241
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.05.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2146
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-the-effect-of-curing-types-on-compressive-strength-of-h
+    title: The Effect Of Curing Types On Compressive Strength Of High Performance Concrete
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2149/1244
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.07.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2149
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-water-flow-visualization-and-velocity-measurement-using
+    title: Water Flow Visualization And Velocity Measurement Using Hydrogen Bubble Generation
+      Technique In Low Speed Open Channel
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2155/1250
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.07.07
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2155
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-preparation-of-design-charts-for-estimation-of-the-leng
+    title: Preparation of Design Charts for Estimation of the Length of an Upstream
+      Impervious Blanket in a Homogenous Earth Dam
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2157/1252
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.07.08
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2157
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-the-effect-of-different-types-of-aggregate-and-additive
+    title: The Effect of Different Types of Aggregate and Additives on the Properties
+      of Self-Compacting Lightweight Concrete
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2159/1254
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.08.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2159
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-effect-of-fire-flame-high-temperature-on-the-behaviour
+    title: Effect of Fire Flame (High Temperature) on the Behaviour of Axially loaded
+      Reinforced SCC Short Columns
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2160/1255
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.08.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2160
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-application-of-geographic-information-system-for-prepar
+    title: Application of Geographic Information System for Preparing the Bill of Quantities
+      of Construction Projects
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2167/1263
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.08.10
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2167
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-development-of-an-integrated-construction-management-sy
+    title: Development of an Integrated Construction Management System for Building
+      Estimation
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2169/1265
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.09.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2169
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-quality-evaluation-of-al-rasheed-ready-concrete-mixture
+    title: Quality Evaluation of Al-Rasheed Ready Concrete Mixture Plant By Using Six
+      Sigma Approach
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2170/1266
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.09.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2170
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-experimental-investigation-about-the-effects-of-blockag
+    title: Experimental Investigation about the Effects of Blockage on Upstream Box
+      Culverts
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2176/2081
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2024.01.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2176
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-effect-of-fire-flame-high-temperature-on-the-self-compa
+    title: Effect of Fire Flame (High Temperature) on the Self Compacted Concrete (SCC)
+      One Way Slabs
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2177/1273
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.10.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2177
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-analysis-of-mosul-and-haditha-dam-flow-data
+    title: Analysis of Mosul and Haditha Dam Flow Data
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2178/1272
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.05.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2178
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-a-study-of-the-effect-of-air-inlet-and-exit-on-indoor-a
+    title: A study of the Effect of Air Inlet and Exit on Indoor Air Movement
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2183/1278
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.05.07
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2183
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-effect-of-steel-fibers-on-the-properties-of-refractory
+    title: Effect of Steel Fibers on the Properties of Refractory Free Cement Concrete
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2189/1284
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.10.06
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2189
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-assessment-of-modified-asphalt-cement-properties
+    title: Assessment of Modified - Asphalt Cement Properties
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2191/1285
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.06.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2191
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-prediction-of-smear-effect-on-the-bearing-capacity-of-d
+    title: Prediction of Smear Effect on the Bearing Capacity of Driven Piles
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2192/1287
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.10.07
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2192
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-finite-element-analysis-of-reinforced-concrete-t-beams
+    title: Finite Element Analysis of Reinforced Concrete T-Beams with Multiple Web
+      Openings under Impact Loading
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2193/1286
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.06.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2193
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-energy-savings-in-thermal-insulations-for-sustainable-b
+    title: Energy Savings in Thermal Insulations for Sustainable Buildings
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2197/1290
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.06.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2197
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-replacement-of-line-loads-acting-on-slabs-to-equivalent
+    title: Replacement of Line Loads acting on slabs to equivalent uniformly Distributed
+      Loads
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2199/1293
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.11.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2199
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-effect-of-transverse-base-width-restraint-on-the-cracki
+    title: Effect of Transverse Base Width Restraint on the Cracking Behavior of Massive
+      Concrete
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2203/1296
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.11.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2203
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-surface-free-energy-for-the-evaluation-of-asphalt-binde
+    title: Surface Free Energy for the Evaluation of Asphalt Binder Stripping
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2216/1311
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.11.08
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2216
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-assessing-durability-of-roller-compacted-concrete
+    title: Assessing Durability of Roller Compacted Concrete
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2220/1315
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.07.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2220
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-a-proposed-management-system-for-construction-practices
+    title: A Proposed Management System for Construction Practices during Sustainable
+      Buildings Life Cycle
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2225/1317
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.07.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2225
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-soil-structure-interaction-of-retaining-walls-under-ear
+    title: Soil-Structure Interaction of Retaining Walls under Earthquake Loads
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2231/1332
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.07.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2231
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-experimental-studies-and-finite-element-modeling-of-pil
+    title: Experimental Studies and Finite Element Modeling of Piles and Pile Groups
+      in Dry Sand under Harmonic Excitation
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2232/1324
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.07.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2232
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-an-experimental-analysis-of-embankment-on-stone-columns
+    title: An Experimental Analysis of Embankment on Stone Columns
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2234/1327
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.07.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2234
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-nonlinear-finite-element-analysis-of-steel-fiber-reinfo
+    title: Nonlinear Finite Element Analysis of Steel Fiber Reinforced Concrete Deep
+      Beams With and Without Opening
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2236/1328
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.12.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2236
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-structural-behavior-of-reinforced-concrete-hollow-beams
+    title: Structural Behavior of Reinforced Concrete Hollow Beams under Partial Uniformly
+      Distributed Load
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2243/1335
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2014.07.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2243
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-behavior-of-reinforced-gypseous-soil-embankment-model-u
+    title: Behavior of Reinforced Gypseous Soil Embankment Model under Cyclic Loading
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2245/1339
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.07.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2245
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-retrofitting-reinforced-concrete-one-way-damaged-slabs
+    title: Retrofitting Reinforced Concrete One–Way Damaged Slabs Exposed to High Temperature
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2250/1346
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.07.06
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2250
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-the-impact-of-materials-technology-on-sustainability-of
+    title: The Impact of Materials’ Technology on Sustainability of Buildings
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2252/1349
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.11.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2252
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-improvement-of-soil-by-using-polymer-fiber-materials-un
+    title: Improvement of Soil by Using Polymer Fiber Materials Underneath Square Footing
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2253/1350
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.07.08
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2253
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-theoretical-study-of-the-effect-of-permeability-tensor
+    title: Theoretical Study of the Effect of Permeability Tensor upon Drainage of Soils
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2254/1351
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.07.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2254
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-effect-of-soil-structure-interaction-on-the-response-of
+    title: 'Effect of Soil-Structure Interaction on the Response of Machine Foundation
+      Subjected to Seismic Loading: A Review Study'
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2265/2472
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-04-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2024.04.10
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2265
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-historical-paths-and-the-growth-of-baghdad-old-center
+    title: Historical Paths and the Growth of Baghdad Old Center
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2272/1367
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.09.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2272
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-the-use-of-bracing-dampers-in-steel-buildings-under-sei
+    title: The Use of Bracing Dampers in Steel Buildings under Seismic Loading
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2273/1368
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.09.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2273
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-nonlinear-analysis-on-torsional-strengthening-of-rc-bea
+    title: Nonlinear Analysis on Torsional Strengthening Of Rc Beams Using Cfrp Laminates
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2274/1369
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.09.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2274
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-behavior-of-strengthened-rc-columns-with-cfrp-under-bia
+    title: Behavior of Strengthened RC Columns with CFRP under Biaxial Bending
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2275/1370
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.09.06
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2275
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-prediction-of-compressive-strength-of-reinforced-concre
+    title: Prediction of Compressive Strength of Reinforced Concrete Structural Elements
+      by Using Combined Non-Destructive Tests
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2281/1375
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.10.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2281
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-compressive-behavior-of-fiber-reinforced-concrete-colum
+    title: Compressive Behavior of Fiber Reinforced Concrete Columns Rehabilitated with
+      CFRP Warps
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2283/1377
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.10.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2283
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-potential-use-of-recycled-asphalt-pavement-rap-in-hot-m
+    title: Potential Use of Recycled Asphalt Pavement (RAP) in Hot MixAsphalt
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2284/1378
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.10.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2284
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-assessing-the-risk-and-potential-of-personal-exposure-t
+    title: ASSESSING THE RISK AND POTENTIAL OF PERSONAL EXPOSURE TO ROAD GENERATED POLLUTANT
+      EMISSIONS THROUGH URBAN TRANSPORTATION SYSTEM
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2286/1391
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2008.01.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2286
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-development-of-pavement-condition-index-model-for-flexi
+    title: DEVELOPMENT OF PAVEMENT CONDITION INDEX MODEL FOR FLEXIBLE PAVEMENT IN BAGHDAD
+      CITY
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2287/1392
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2008.01.06
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2287
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-the-influence-of-politics-on-architectural-thought-a-de
+    title: The Influence of Politics on Architectural Thought A Descriptive and Analytical
+      Study of the Effect of Political Ideology on the Achieved Architecture
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2289/1752
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2012.11.10
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2289
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-experimental-study-of-pre-cast-reinforced-concrete-deep
+    title: Experimental Study of Pre-Cast Reinforced Concrete Deep Beams (Hallow Core
+      section) Retrofitting with Carbon Fiber Reinforced Polymer (CFRP)
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2295/1744
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.12.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2295
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-strengthening-and-closing-cracks-for-existing-reinforce
+    title: Strengthening and Closing Cracks for Existing Reinforced Concrete Girders
+      Using Externally Post-Tensioned Tendons
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2296/1398
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.11.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2296
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-salinity-variation-of-euphrates-river-between-ashshinna
+    title: Salinity Variation of Euphrates River between Ashshinnafiyah and Assamawa
+      Cities
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2302/1404
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.11.07
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2302
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-analytical-solution-of-transient-heat-cond-2
+    title: Analytical Solution of Transient Heat Conduction through a Hollow Cylindrical
+      Thermal Insulation Material of a Temperature Dependant Thermal Conductiv
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2304/1406
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.11.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2304
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-serviceability-behavior-of-high-strength-concrete-i-bea
+    title: Serviceability behavior of High Strength Concrete I-beams reinforced with
+      Carbon Fiber Reinforced Polymer bars
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2307/1407
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.11.10
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2307
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-rhythm-as-creative-system-in-houses-architecture-compar
+    title: Rhythm As Creative System In Houses Architecture Comparative Application
+      Study Between Heritage And Contemporary Houses
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2310/1412
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.12.13
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2310
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-bearing-capacity-of-a-strip-model-footing-on-loose-sand
+    title: Bearing Capacity of a Strip Model Footing on Loose Sand Reinforced With Pomegranate
+      Sticks Mat
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2312/1414
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2013.12.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2312
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-two-dimensional-consolidation-analysis-of-partially-sat
+    title: TWO-DIMENSIONAL CONSOLIDATION ANALYSIS OF PARTIALLY SATURATED EARTH EMBANKMENT
+      UNDER ITS SELF WEIGHT BY USING THE FINITE ELEMENT METHOD
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2319/1421
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2008.01.14
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2319
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-nonlinear-analysis-of-renforced-fibrous-concrete-vieren
+    title: NONLINEAR ANALYSIS OF RENFORCED FIBROUS CONCRETE VIERENDEEL TRUSS
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2328/1430
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2008.02.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2328
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-coupled-finite-element-analysis-of-a-dam-reservoir-syst
+    title: COUPLED FINITE ELEMENT ANALYSIS OF A DAM-RESERVOIR SYSTEM UNDER DYNAMIC LOADING
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2334/1436
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2008.02.11
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2334
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-the-effect-of-different-curing-temperatures-on-properti
+    title: The Effect of Different Curing Temperatures on Properties of Reactive Powder
+      Concrete Reinforced by Micro Steel Fibers
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2343/2490
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2024.06.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2343
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-numerical-evaluation-of-pile-group-behavior-subject-to
+    title: Numerical Evaluation of Pile Group Behavior Subject to Earthquake Loads
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2344/2487
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2024.05.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2344
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-nonlinear-analysis-of-one-and-two-dimensional-consolida
+    title: NONLINEAR ANALYSIS OF ONE AND TWO DIMENSIONAL CONSOLIDATION PROBLEMS FOR
+      UNBOUNDED SATURATED SOIL MEDIA
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2346/1445
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2008.02.21
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2346
+    rights_verified_at: '2026-10-17'
+  - id: ojs-joe-porcelanite-rocks-as-a-dual-filter-media-in-water-treat
+    title: PORCELANITE ROCKS AS A DUAL FILTER MEDIA IN WATER TREATMENT PLANTS
+    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/2349/1448
+    source: ojs_joe
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.31026/j.eng.2008.03.08
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/2349
+    rights_verified_at: '2026-10-17'
