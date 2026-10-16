@@ -153906,23 +153906,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-15'
-  - id: oas-w389991997
-    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2007-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W389991997
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-15'
-    selected_version: submittedVersion
-    origin_ids: openalex:W389991997
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-functionals-of-brownian-bridges-arising-in-the
     title: Functionals of Brownian bridges arising in the current mismatch in D/A-converters
     url: https://arxiv.org/pdf/math/0606584v2
@@ -155095,3 +155078,133 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-16'
+  - id: oas-10-48550-arxiv-2009-14175-e846a56f
+    title: MPC Controller Tuning using Bayesian Optimization Techniques
+    url: https://arxiv.org/pdf/2009.14175
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-09-29'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2009.14175
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2009.14175;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2009.14175 openalex:W3090589902
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-apenergy-2022-119278-42642572
+    title: 'Estimating dynamic solar gains from on-site measured data: An ARX modelling
+      approach'
+    url: https://lirias.kuleuven.be/retrieve/852fbaba-0392-4e01-8458-dd011a9fd17f
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-06-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2022.119278
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/852fbaba-0392-4e01-8458-dd011a9fd17f;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2022.119278 openalex:W4281632182
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2020-109884-1de15d12
+    title: Short-term modeling of hybrid geothermal systems for Model Predictive Control
+    url: https://lirias.kuleuven.be/retrieve/7820c506-0b14-4209-83f7-030712b621f0
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-02-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2020.109884
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/7820c506-0b14-4209-83f7-030712b621f0;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2020.109884 openalex:W3007666795
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1007-s12273-023-1079-0-5c7ea44a
+    title: In search of optimal building behavior models for model predictive control
+      in the context of flexibility
+    url: https://lirias.kuleuven.be/retrieve/b9d5482b-a419-4f24-91ed-82fa827aa929
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-10-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s12273-023-1079-0
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/b9d5482b-a419-4f24-91ed-82fa827aa929;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s12273-023-1079-0 openalex:W4387642485
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-rser-2022-112337-d459221f
+    title: 'Time-dependent solar aperture estimation of a building: Comparing grey-box
+      and white-box approaches'
+    url: https://lirias.kuleuven.be/retrieve/8fac8305-a224-4ee7-b5df-03a930e55303
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-03-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rser.2022.112337
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/8fac8305-a224-4ee7-b5df-03a930e55303;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.rser.2022.112337 openalex:W4220913244
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1080-19401493-2022-2058087-b327c560
+    title: Chance constrained stochastic MPC for building climate control under combined
+      parametric and additive uncertainty
+    url: https://lirias.kuleuven.be/retrieve/112faaa6-0620-4b02-9cfc-f20b90927241
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-04-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/19401493.2022.2058087
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/112faaa6-0620-4b02-9cfc-f20b90927241;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/19401493.2022.2058087 openalex:W4225526239
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2024-114520-7a5fd4b2
+    title: Effect of prediction uncertainties on the performance of a white-box model
+      predictive controller for district heating networks
+    url: https://lirias.kuleuven.be/retrieve/82529878-13e8-4d52-a8d9-225760244f5e
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-07-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2024.114520
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/82529878-13e8-4d52-a8d9-225760244f5e;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2024.114520 openalex:W4400485922
+    resolution: 'sim1: openalex+unpaywall location'
