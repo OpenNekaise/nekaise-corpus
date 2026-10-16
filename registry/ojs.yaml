@@ -395017,20 +395017,6 @@ sources:
     license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
     license_evidence: https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/182444
     rights_verified_at: '2026-10-16'
-  - id: ojs-paam-percep-es-da-paisagem-da-serra-da-capivara-pi
-    title: Percepções da paisagem da Serra da Capivara-PI
-    url: https://revistas.usp.br/paam/article/download/182681/176709
-    source: ojs_paam
-    license: cc-by-nc-sa
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2021-10-26'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2021.182681
-    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
-    license_evidence: https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/182681
-    rights_verified_at: '2026-10-16'
   - id: ojs-paam-cultural-landscape-and-sustainability-a-look-at-two-la
     title: 'Cultural landscape and sustainability: a look at two Latin American examples
       Mexico And Brazil'
@@ -395060,20 +395046,6 @@ sources:
     persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2021.183164
     license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
     license_evidence: https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/183164
-    rights_verified_at: '2026-10-16'
-  - id: ojs-paam-paisagem-em-concertina-para-uma-educa-o-patrimonial
-    title: Paisagem em “concertina” para uma educação patrimonial
-    url: https://revistas.usp.br/paam/article/download/183393/177210
-    source: ojs_paam
-    license: cc-by-nc-sa
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2022-06-15'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2022.183393
-    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
-    license_evidence: https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/183393
     rights_verified_at: '2026-10-16'
   - id: ojs-paam-el-barrio-de-san-pedro-en-la-historia-de-valladolid-mo
     title: El barrio de San Pedro en la historia de Valladolid Morelia
@@ -395889,23 +395861,6 @@ sources:
     persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2024.226139
     license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
     license_evidence: https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/226139
-    rights_verified_at: '2026-10-16'
-  - id: ojs-paam-proposta-de-cria-o-de-uma-unidade-de-conserva-o-a-pedr
-    title: 'Proposta de criação de uma unidade de conservação: a Pedreira da Voldac,
-      um monumento natural'
-    url: https://revistas.usp.br/paam/article/download/228024/214880
-    source: ojs_paam
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2025-06-17'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.2359-5361.paam.2025.228024
-    license_evidence: 'https://revistas.usp.br/paam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/228024
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2025 Francisco Jácome Gurgel Júnior, Fernando Antônio Silva Pinto,
-      Sílvia Real e Silva, André Barbosa Vargas, Milena Sousa Nascimento Bent)'
     rights_verified_at: '2026-10-16'
   - id: ojs-paam-relationship-between-the-use-of-squares-and-urban-form
     title: Relationship between the use of squares and urban form in Palmas, Tocantins
@@ -399109,71 +399064,2218 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
     license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/222526
     rights_verified_at: '2026-10-16'
-  - id: ojs-ambienteconstruido-vibration-analysis-in-cross-laminated-ti
-    title: Vibration analysis in Cross Laminated Timber and concrete composite plates
-      for building floors
-    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/133674/93908
-    source: ojs_ambienteconstruido
-    license: cc-by
-    topic: construction
+  - id: ojs-asubterraneas-plano-diretor-de-drenagem-urbana-em-cidades-p
+    title: 'PLANO DIRETOR DE DRENAGEM URBANA EM CIDADES PLANEJADAS: PREMISSA DE ZONEAMENTO
+      BASEADO NO RISCO DE CONTAMINAÇÃO DA ÁGUA SUBTERRÂNEA'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/27965/18120
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: pt
-    published_at: '2024-11-30'
+    published_at: '2014-09-11'
     document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/133674
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/27965
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2014 Águas Subterrâneas)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-ambienteconstruido-valuation-of-waste-from-a-geopolymeric-c
-    title: Valuation of waste from a geopolymeric composite precast industry as a pozzolanic
-      addition
-    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/135301/92291
-    source: ojs_ambienteconstruido
-    license: cc-by
-    topic: construction
+  - id: ojs-asubterraneas-monitoramento-do-aquifero-fissural-na-rea-do
+    title: MONITORAMENTO DO AQUIFERO FISSURAL NA ÁREA DO ATERRO SANTIÁRIO DA CIDADE
+      DE FEIRA DE SANTANA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28033/18160
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: pt
-    published_at: '2024-06-17'
+    published_at: '2011-12-19'
     document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/135301
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28033
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-ambienteconstruido-wood-plastic-composite-using-polypropyle
-    title: Wood plastic composite using polypropylene and wood processing residues for
-      decks construction
-    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/135583/94992
-    source: ojs_ambienteconstruido
-    license: cc-by
-    topic: construction
+  - id: ojs-asubterraneas-proposta-de-zoneamento-para-cidades-planejada
+    title: PROPOSTA DE ZONEAMENTO PARA CIDADES PLANEJADAS BASEADO NO RISCO DE CONTAMINAÇÃO
+      DA ÁGUA SUBTERRÂNEA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28043/18169
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: pt
-    published_at: '2025-02-26'
+    published_at: '2011-12-20'
     document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/135583
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28043
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-ambienteconstruido-water-end-uses-in-construction-sites-a-c
-    title: 'Water end-uses in construction sites: a case study in Criciúma, SC'
-    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/138746/95010
-    source: ojs_ambienteconstruido
-    license: cc-by
-    topic: construction
+  - id: ojs-asubterraneas-nitrato-nas-guas-subterr-neas-dos-sistemas-aq
+    title: NITRATO NAS ÁGUAS SUBTERRÂNEAS DOS SISTEMAS AQUÍFEROS BAURU E GUARANI, ÁREA
+      URBANA DE BAURU-SP
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28062/18187
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: pt
-    published_at: '2025-02-26'
+    published_at: '2011-01-19'
     document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/138746
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28062
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-ambienteconstruido-urbanity-in-catastrophe-the-rejection-of
-    title: 'Urbanity in catastrophe: the rejection of vitality as a strategy'
-    url: https://seer.ufrgs.br/index.php/ambienteconstruido/article/download/138918/95642
-    source: ojs_ambienteconstruido
-    license: cc-by
-    topic: construction
+  - id: ojs-asubterraneas-coeficiente-de-distribui-o-kd-de-cobre-pot-ss
+    title: COEFICIENTE DE DISTRIBUIÇÃO (Kd) DE COBRE, POTÁSSIO E CLORETO EM SOLOS RESIDUAIS
+      DO SUBGRUPO ITARARÉ NO ESTADO DE SÃO PAULO
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28063/18188
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
     format: pdf
     language: pt
-    published_at: '2025-05-21'
+    published_at: '2011-01-19'
     document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://seer.ufrgs.br/index.php/ambienteconstruido/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:seer.ufrgs.br:article/138918
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28063
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-presen-a-residual-subterr-nea-de-hidrocarbone
+    title: PRESENÇA RESIDUAL SUBTERRÂNEA DE HIDROCARBONETOS POLIAROMÁTICOS EM ÁREAS
+      IMPACTADAS POR ACIDENTES RODOVIÁRIOS DE TRANSPORTE DE COMBUSTÍVEIS
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28067/18192
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-19'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28067
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-potenciais-fontes-pontuais-de-contamina-o-de
+    title: POTENCIAIS FONTES PONTUAIS DE CONTAMINAÇÃO DE ÁGUA SUBTERRÂNEA NA ÁREA URBANA
+      DE SÃO GABRIEL DO OESTE, MS
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28082/18207
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-20'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28082
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-avalia-o-dos-aspectos-t-cnico-e-antropol-gico
+    title: AVALIAÇÃO DOS ASPECTOS TÉCNICO E ANTROPOLÓGICOS EM BARRAGENS SUBTERRÂNEAS
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28090/18214
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-20'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28090
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-mapeamento-da-polui-o-difusa-em-micro-bacia-u
+    title: MAPEAMENTO DA POLUIÇÃO DIFUSA EM MICRO BACIA URBANA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28108/18232
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-20'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28108
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-hidroqu-mica-das-guas-de-subsuperf-cie-da-cid
+    title: Hidroquímica das águas de subsuperfície da cidade de São Gabriel da Cachoeira
+      - Amazonas - Brasil
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28125/18249
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-21'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28125
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-sandy-soil-contamination-with-coal-fly-ash-by
+    title: Sandy soil contamination with coal fly ash by long term leaching test
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28127/18251
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-21'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28127
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-avalia-o-de-compostos-nitrogenados-e-metais-p
+    title: AVALIAÇÃO DE COMPOSTOS NITROGENADOS E METAIS PESADOS NA ÁGUA SUBTERRÂNEA
+      DA CIDADE DE MARINGÁ-PR
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28140/18264
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-21'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28140
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-determina-o-do-par-metro-cn-geoprocessamento
+    title: 'DETERMINAÇÃO DO PARÂMETRO CN: GEOPROCESSAMENTO NA CLASSIFICAÇÃO DE USO E
+      OCUPAÇÃO DO SOLO EM BACIAS URBANAS'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28146/18270
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-22'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28146
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-uso-da-ferramenta-feflow-para-simular-as-cond
+    title: Uso da ferramenta Feflow para simular as condições de fluxo de um aqüífero
+      não confinado antes e depois da construção de um canal de drenagem na regiã
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28161/18285
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-22'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28161
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-avalia-o-f-sico-qu-mica-e-microbiol-gica-das
+    title: AVALIAÇÃO FÍSICO-QUÍMICA E MICROBIOLÓGICA DAS ÁGUAS SUBTERRÂNEAS NO ENTORNO
+      DO CEMITÉRIO DO BAIRRO DO AEROPORTO, NÚCLEO CIDADE NOVA, CIDADE DE MARABÁ,
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28168/18292
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-23'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28168
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-fl-or-em-gua-subterr-nea-usada-pelo-sistema-d
+    title: Flúor em Água Subterrânea usada pelo Sistema de Abastecimento Público do
+      Município de Serra do Ramalho, Bahia
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28171/18295
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-23'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28171
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-fe-iii-como-aceptor-de-el-trons-na-biodegrada
+    title: FE(III) COMO ACEPTOR DE ELÉTRONS NA BIODEGRADAÇÃO DE GASOLINA-ETANOL EM SOLO
+      RESIDUAL TROPICAL
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28173/18297
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-23'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28173
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-soil-vapour-intrusion-a-new-model-for-the-det
+    title: „Soil Vapour Intrusion“ – A new model for the determination of indoor air
+      concentrations
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28174/18298
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-23'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28174
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-constru-o-e-instrumenta-o-de-um-lis-metro-in
+    title: CONSTRUÇÃO E INSTRUMENTAÇÃO DE UM LISÍMETRO IN SITU PARA AVALIAÇÃO DA DEGRADAÇÃO
+      DE BENZENO E TOLUENO EM SOLO RESIDUAL DE GNAISSE
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28184/18307
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2011-01-23'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28184
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-proposta-para-uso-e-ocupa-o-do-solo-na-regi-o
+    title: PROPOSTA PARA USO E OCUPAÇÃO DO SOLO NA REGIÃO LOCALIZADA ENTRE A CIDADE
+      DE VAZANTE-MG E A MINA DE ZINCO DA VOTORANTIM METAIS
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28253/18371
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-19'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28253
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-po-os-tubulares-profundos-para-aumentar-o-for
+    title: POÇOS TUBULARES PROFUNDOS PARA AUMENTAR O FORNECIMENTO DE ÁGUA POTÁVEL DO
+      SISTEMA DE ABASTECIMENTO DA COSANPA NO LOTEAMENTO CDP.
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28271/18385
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-19'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28271
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-avalia-o-da-qualidade-da-gua-subterr-nea-util
+    title: AVALIAÇÃO DA QUALIDADE DA ÁGUA SUBTERRÂNEA UTILIZADA EM PROPRIEDADES RURAIS
+      PRODUTORAS DE HORTALIÇAS E NA ÁREA URBANA DA REGIÃO DE MARINGÁ - PR
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28277/18390
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-19'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28277
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-modelagem-de-transporte-reativo-para-gera-o-d
+    title: MODELAGEM DE TRANSPORTE REATIVO PARA GERAÇÃO DE DRENAGEM ÁCIDA EM PILHA DE
+      ESTÉRIL NA MINA OSAMU UTSUMI (MINAS GERAIS - BRASIL)
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28281/18394
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-20'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28281
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-controle-de-enchentes-com-a-implanta-o-de-res
+    title: CONTROLE DE ENCHENTES COM A IMPLANTAÇÃO DE RESERVATÓRIOS DE AMORTECIMENTO
+      NO MUNICÍPIO DE LAURO DE FREITAS (BA)
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28298/18410
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-21'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28298
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-aplica-o-de-m-todos-de-interpreta-o-de-imagen
+    title: 'APLICAÇÃO DE MÉTODOS DE INTERPRETAÇÃO DE IMAGENS NA CARACTERIZAÇÃO DE MODELO
+      DE CIRCULAÇÃO DAS ÁGUAS SUBTERRÂNEAS EM AQUÍFEROS FRATURADOS E AVALIAÇÃO '
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28302/18414
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-21'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28302
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-polui-o-das-guas-subterr-neas-por-merc-rio-em
+    title: 'POLUIÇÃO DAS ÁGUAS SUBTERRÂNEAS POR MERCÚRIO EM RIO GRANDE: UMA DECORRÊNCIA
+      DA CONTAMINAÇÃO PASSIVA DOS SOLOS DA CIDADE?'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28307/18417
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-23'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28307
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-barragem-subterr-nea-x-barragem-de-assoreamen
+    title: 'BARRAGEM SUBTERRÂNEA x BARRAGEM DE ASSOREAMENTO: Aspectos construtivos e
+      finalidades.'
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28311/18420
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-23'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28311
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-explota-o-do-aqu-fero-urucuia-na-rea-urbana-d
+    title: EXPLOTAÇÃO DO AQUÍFERO URUCUIA NA ÁREA URBANA DE LUÍS EDUARDO MAGALHÃES –
+      BA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28320/18427
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-24'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28320
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-compartimenta-o-hidrogeol-gica-da-rea-urbana
+    title: COMPARTIMENTAÇÃO HIDROGEOLÓGICA DA ÁREA URBANA DE BARREIRAS – BA
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28321/18428
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-24'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28321
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-uso-da-gua-subterr-nea-no-abastecimento-da-po
+    title: USO DA ÁGUA SUBTERRÂNEA NO ABASTECIMENTO DA POPULAÇÃO RURAL DOS MUNICÍPIOS
+      DA BACIA DO RIO SÃO JOSÉ DOS DOURADOS
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28335/18439
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-24'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28335
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-an-lise-do-abastecimento-de-gua-do-entorno-do
+    title: ANÁLISE DO ABASTECIMENTO DE ÁGUA DO ENTORNO DOS CEMITÉRIOS SÃO JOSÉ E SÃO
+      FRANCISCO - CASTANHAL-PARÁ
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28336/18440
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-24'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28336
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-asubterraneas-a-barragem-de-assoreamento
+    title: A BARRAGEM DE ASSOREAMENTO
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/28353/18454
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2015-02-24'
+    document_type: journal-article
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/28353
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-um-m-todo-de-equil-brio-limite-para-a-analise-da
+    title: Um método de equilíbrio limite para a analise da estabilidade de taludes
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11499/8410
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_57_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11499
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-tripotential-resistivity-techniques-in-the-detect
+    title: Tripotential resistivity techniques in the detection of cavities
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11503/8414
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_56_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11503
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-sensorial-control-of-fill-compaction
+    title: Sensorial control of fill compaction
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11505/8416
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_56_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11505
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-accumulation-of-energy-over-the-vicinity-of-t
+    title: The accumulation of energy over the vicinity of the underground excavations
+      and their stability
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11506/8417
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_56_5
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11506
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-influence-of-the-uniaxial-compression-stress
+    title: The influence of the uniaxial compression stress intervals on the rock deformability
+      anisotropy
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11507/8418
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_55_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11507
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-scale-effect-on-the-deformability-and-strength-ch
+    title: Scale effect on the deformability and strength characteristics of rock masses
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11510/8421
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_55_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11510
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-recent-advances-in-the-interpretation-of-the-smal
+    title: Recent advances in the interpretation of the small flat jack method
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11511/8422
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_55_5
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11511
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-rock-mass-classifications-for-tunnel-purposes-cor
+    title: Rock mass classifications for tunnel purposes. Correlations between the systems
+      proposed by Wickham et ai., Bieniawski and Rocha.
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11512/8426
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_55_6
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11512
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-rock-weathering-as-a-drillability-parameter
+    title: Rock weathering as a drillability parameter
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11517/8430
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_55_10
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11517
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-geomechanics-of-panasqueira-mine-portugal
+    title: The geomechanics of Panasqueira mine, Portugal
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11518/8431
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1989-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_55_11
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11518
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1989 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-uniaxial-compressive-strength-and-failure-process
+    title: Uniaxial compressive strength and failure process of granites tested on a
+      stiff machine
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11522/8434
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1988-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_54_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11522
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1988 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-study-of-the-rockfill-and-analysis-of-the-structu
+    title: Study of the rockfill and analysis of the structural · behaviour of Paradela
+      dam
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11525/8437
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1988-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_52_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11525
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1988 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-revised-on-the-classification-of-soils-for-en
+    title: The revised on the classification of soils for engineering purposes
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11529/8441
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1988-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_52_5
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11529
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1988 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-soil-masses-behaviour-under-the-action-of-earthqu
+    title: Soil masses behaviour under the action of earthquakes forces
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11530/8442
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1987-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_51_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11530
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1987 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-investigation-of-the-sea-water-fresh-water-in
+    title: The investigation of the sea water/fresh water interface by electrical methods
+      - An example Torreira/Aveiro
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11531/8443
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1987-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_51_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11531
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1987 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-experimental-alteration-of-rocks-the-contribu
+    title: The experimental alteration of rocks - The contribution of the Instituto
+      Superior Técnico
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11539/8451
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1986-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_48_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11539
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1986 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-treatment-of-dam-s-foundations-by-means-of-in
+    title: The Treatment of Dam' s Foundations by Means of Injections - Programming
+      and Contrai Techniques
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11542/8454
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1986-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_48_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11542
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1986 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-design-of-buried-conduits-and-culverts
+    title: The Design of Buried Conduits and Culverts
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11543/8456
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1986-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_48_5
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11543
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1986 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-site-investigations-design-and-construction-a-tun
+    title: Site investigations, design and construction - a tunnel case history
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11545/8458
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1986-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_46_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11545
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1986 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-soil-nailing-in-excavations-behaviour-and-design
+    title: 'Soil nailing in excavations: behaviour and design'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11547/8460
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1986-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_46_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11547
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1986 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-uplift-seepage-control-and-observed-behaviour-of
+    title: Uplift, seepage control and observed behaviour of Aguieira dam foundation
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11549/8462
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_45_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11549
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-tridimensional-seepage-through-a-dam-foundation
+    title: Tridimensional seepage through a dam foundation
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11551/8464
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_45_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11551
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-seepage-and-uplift-in-the-safety-control-of-varos
+    title: Seepage and uplift in the safety control of Varosa and Bouçã arch dams
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11552/8465
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_45_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11552
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-surface-stress-relief-zone-in-a-rock-mass-ldentif
+    title: Surface stress relief zone in a rock mass ldentified through water and grouting
+      tests
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11556/8469
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_43_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11556
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-tied-back-retaining-walls-bearing-capacity-of-the
+    title: 'Tied-Back Retaining Walls: Bearing Capacity of the Soil to Vertical Forces
+      Applied by the Anchors'
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11558/8471
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_43_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11558
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-superficial-settlements-caused-by-a-small-diamete
+    title: Superficial Settlements Caused by a Small Diameter Tunnel Excavated in a
+      Residual Sandy Soil
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11559/8472
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1985-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_43_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11559
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1985 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-rock-index-properties-for-prediction-of-rockfill
+    title: Rock index properties for prediction of rockfill behaviour
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11562/8475
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1984-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_42_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11562
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1984 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-soft-soils-from-s-andr-basin-sines-area-geology-a
+    title: Soft soils from S. André Basin (Sines Area) geology and geomechanic characterization
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11564/8477
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1984-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_42_4
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11564
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1984 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-new-stt-cell-and-its-interpretatio
+    title: The new STT cell and its interpretatio
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11566/8479
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1984-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_41_2
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11566
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1984 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-weathering-and-the-weatherability-quantificat
+    title: The weathering and the weatherability quantification of the rocks
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11570/8483
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1984-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_40_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11570
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1984 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-stresses-and-strains-forecast-of-beliche-dam-duri
+    title: Stresses and strains forecast of Beliche dam during construction
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11596/8492
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1983-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_39_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11596
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1983 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-three-dimensional-analysis-of-large-openings-in-p
+    title: Three dimensional analysis of large openings in power stations
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11599/8496
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1983-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_38_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11599
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1983 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-rockfill-modelling
+    title: Rockfill Modelling
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11600/8497
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1983-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_37_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11600
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1983 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-some-recent-brazilian-researches-in-the-field-of
+    title: Some recent Brazilian researches in the field of Geotechnics
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11602/8499
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1982-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_36_1
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11602
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1982 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-s-domingos-morgavel-tunnel-ano-geotechnique
+    title: The S. Domingos-morgavel tunnel ano geotechnique
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11603/8500
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1983-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_37_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11603
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1983 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-consideration-of-empty-inclusions-and-anysotr
+    title: The consideration of empty inclusions and anysotropy in a study on heterogeneity
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11605/8501
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1982-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_36_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11605
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1982 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-some-considerations-on-the-coefficient-of-earth-p
+    title: Some considerations on the coefficient of earth pressure at rest
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11608/8504
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1982-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_35_3
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11608
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1982 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-the-mechanism-of-eros10n-m-noncohesive-soils
+    title: The mechanism of eros10n m noncohesive soils
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11618/8515
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1981-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_33_6
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11618
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1981 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-geotecnia-shear-wave-velocity-measurement-by-the-crosshole
+    title: Shear wave velocity measurement by the crosshole method
+    url: https://impactum-journals.uc.pt/geotecnia/article/download/11619/8516
+    source: ojs_geotecnia
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '1981-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/2184-8394_33_7
+    license_evidence: 'https://impactum-journals.uc.pt/geotecnia/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11619
+      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
+      de Autor (c) 1981 Geotecnia)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-meridian-cities-today-from-cosenza-some-reflections-ab
+    title: Meridian Cities Today. From Cosenza, some Reflections about Possible Developments
+      of South Historic Centres
+    url: https://in-bo.unibo.it/article/download/14802/16024
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14802
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14802
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-observation-of-the-neighborhood-through-the-eyes-of-ad
+    title: Observation of the Neighborhood through the Eyes of Adolescents and Possibilities
+      of Space Transformation
+    url: https://in-bo.unibo.it/article/download/14806/16022
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14806
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14806
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-to-whom-does-the-city-belong-tools-of-re-appropriation
+    title: To Whom Does the City Belong? Tools of Re-appropriation of Public Space in
+      a City (Still) Designed by Men. The Case Study of CHEAP in Bologna
+    url: https://in-bo.unibo.it/article/download/14820/16015
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14820
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14820
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-sacred-creation-just-imagine-we-are-not-designing-alon
+    title: 'Sacred Creation: Just Imagine... We Are Not Designing Alone'
+    url: https://in-bo.unibo.it/article/download/14823/15139
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-12-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14823
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14823
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-democracy-in-practice-a-trajectory-towards-collaborati
+    title: Democracy in Practice? A Trajectory towards Collaboration in Bologna
+    url: https://in-bo.unibo.it/article/download/14834/16012
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14834
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14834
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-school-makes-city-the-role-of-school-and-neighborhood
+    title: School Makes City. The Role of School and Neighborhood Open Spaces in Democratic
+      Education Practices
+    url: https://in-bo.unibo.it/article/download/14836/16020
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14836
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14836
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-architecture-and-confiscated-assets-design-features-in
+    title: Architecture and Confiscated Assets. Design Features in the Territories of
+      the Conflict between Democracy and Crime
+    url: https://in-bo.unibo.it/article/download/14841/16023
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14841
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14841
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-to-the-rhythm-of-jazz-the-democratic-construction-site
+    title: To the Rhythm of Jazz. The Democratic Construction Site of Arquitetura Nova
+    url: https://in-bo.unibo.it/article/download/14842/16013
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14842
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14842
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-between-bigness-and-small-urbanity-the-villages-in-nor
+    title: 'Between bigness and small urbanity: the villages in north Messina'
+    url: https://in-bo.unibo.it/article/download/14844/16016
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14844
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14844
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-planning-education-and-sacred-spaces-re-establishing-a
+    title: Planning Education and Sacred Spaces. Re-establishing a Necessary Relationship
+    url: https://in-bo.unibo.it/article/download/14852/15132
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2022-12-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14852
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14852
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-police-de-l-esth-tique-self-government-and-control-of
+    title: Police de l’esthétique. Self-government and Control of Transformations on
+      the Built Heritage in Saint-Macaire
+    url: https://in-bo.unibo.it/article/download/14924/16014
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/14924
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14924
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-steps-to-a-planning-oriented-towards-territorializing
+    title: Steps to a Planning Oriented Towards Territorializing Immanence
+    url: https://in-bo.unibo.it/article/download/15147/16018
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/15147
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/15147
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-municipal-traditions-in-the-government-of-emilia-romag
+    title: Municipal Traditions in the Government of Emilia-Romagna Region and the Long-period
+      Changes in Urban Policies
+    url: https://in-bo.unibo.it/article/download/15239/16008
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/15239
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/15239
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-from-religious-to-sacred-architecture-pedagogy-as-ritu
+    title: From Religious to Sacred Architecture, Pedagogy as Ritual
+    url: https://in-bo.unibo.it/article/download/16079/15198
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-12-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16079
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16079
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-beyond-the-holiday-camp-before-mattei-the-meridiana-ho
+    title: 'Beyond the Holiday Camp, Before Mattei: The Meridiana Hotel by Edoardo Gellner
+      and the Montessori Method'
+    url: https://in-bo.unibo.it/article/download/16266/17989
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16266
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16266
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-teaching-freedom-the-italian-anti-fascist-holiday-camp
+    title: 'Teaching Freedom: The Italian Anti-Fascist Holiday Camp of Saint-Cergues
+      (1928–45)'
+    url: https://in-bo.unibo.it/article/download/16474/17988
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16474
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16474
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-freguesias-marinas-children-holiday-camps-in-lisbon-an
+    title: 'Freguesias marinas: Children Holiday Camps in Lisbon and the O Século program
+      (1931–45)'
+    url: https://in-bo.unibo.it/article/download/16480/17986
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16480
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16480
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-rome-by-the-sea-the-holiday-camp-at-ostia-lido-between
+    title: “Rome by the Sea:” The Holiday Camp at Ostia Lido, between Albergo dei Poveri
+      and Urban Hub
+    url: https://in-bo.unibo.it/article/download/16517/17985
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16517
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16517
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-an-architecture-for-new-education-roland-schweitzer-s
+    title: 'An Architecture for New Education: Roland Schweitzer’s Summer Camps (1958–74)'
+    url: https://in-bo.unibo.it/article/download/16524/17991
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16524
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16524
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-environments-of-care-two-children-s-village-projects-i
+    title: 'Environments of Care: Two Children’s Village Projects in Postwar Greece'
+    url: https://in-bo.unibo.it/article/download/16531/17983
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16531
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16531
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-palais-des-enfants-in-saint-hilaire-de-riez-france
+    title: 'The “Palais des enfants” in Saint-Hilaire-de-Riez (France): Towards a History
+      of Closed Holiday Camps'
+    url: https://in-bo.unibo.it/article/download/16532/17982
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16532
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16532
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-machine-and-the-camp-the-projectuality-of-the-holi
+    title: 'The Machine and the Camp: The Projectuality of the Holiday Spaces in the
+      Third Reich'
+    url: https://in-bo.unibo.it/article/download/16533/17981
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16533
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16533
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-on-the-traces-of-the-first-italian-holiday-camps-three
+    title: 'On the Traces of the First Italian Holiday Camps: Three Milanese Cases (1881–1910)'
+    url: https://in-bo.unibo.it/article/download/16548/17979
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16548
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16548
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-a-new-life-for-the-colonia-fara-in-chiavari-genoa-a-co
+    title: 'A New Life for the Colonia Fara in Chiavari (Genoa): A Complex History,
+      From Neglect to Restoration'
+    url: https://in-bo.unibo.it/article/download/16557/17978
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16557
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16557
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-when-a-masterpiece-is-auctioned-off-the-holiday-camp-r
+    title: 'When a Masterpiece is Auctioned Off: The Holiday Camp Rinaldo Piaggio in
+      Santo Stefano d’Aveto'
+    url: https://in-bo.unibo.it/article/download/16574/17977
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16574
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16574
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-daniele-calabi-s-seaside-holiday-camp-at-lido-di-venez
+    title: 'Daniele Calabi’s Seaside Holiday Camp at Lido di Venezia: From Knowledge
+      to Reuse Strategies'
+    url: https://in-bo.unibo.it/article/download/16614/17976
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16614
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16614
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-fascist-health-policies-and-propaganda-from-tuberculos
+    title: Fascist Health Policies and Propaganda, from Tuberculosis to Holiday Camps
+      (1928–1937)
+    url: https://in-bo.unibo.it/article/download/16697/17975
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/16697
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/16697
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-spatial-space-and-rights-the-kilometre-zero-city
+    title: 'Spatial Space and Rights: the Kilometre Zero City'
+    url: https://in-bo.unibo.it/article/download/17069/16010
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/17069
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/17069
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-cities-and-territories-of-democracy-a-reflection-on-ur
+    title: Cities and territories of democracy. A reflection on urban policies and practices
+      from the bottom up, on legacy and the evolution of urbanism
+    url: https://in-bo.unibo.it/article/download/17071/16007
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2023-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/17071
+    license_url: https://creativecommons.org/licenses/by-nc/3.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/17071
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-repairing-the-bodies-restoring-the-souls-kerdijk-the-f
+    title: 'Repairing the Bodies, Restoring the Souls: Kerdijk, The First Model Holiday
+      Camp in The Netherlands (1907)'
+    url: https://in-bo.unibo.it/article/download/17207/17974
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/17207
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/17207
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-religious-archaeology-new-community-spaces
+    title: Religious Archaeology. New Community Spaces
+    url: https://in-bo.unibo.it/article/download/19376/20163
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/19376
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19376
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-life-in-the-church-for-a-new-spiritual-landscape
+    title: Life in the Church. For a New Spiritual Landscape
+    url: https://in-bo.unibo.it/article/download/19592/20161
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/19592
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19592
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-church-s-mission-of-human-care-in-a-participatory
+    title: The Church's Mission of Human Care in a Participatory Network
+    url: https://in-bo.unibo.it/article/download/19609/20162
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/19609
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19609
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-parish-structures-and-the-urban-environment-considered
+    title: 'Parish Structures and the Urban Environment Considered Spatially:'
+    url: https://in-bo.unibo.it/article/download/19613/20164
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/19613
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19613
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-architectural-diversity-in-lithuanian-post-soviet-cath
+    title: Architectural Diversity in Lithuanian post-Soviet Catholic Churches (1988–91)
+    url: https://in-bo.unibo.it/article/download/19643/20166
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/19643
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19643
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-horizon-after-the-catastrophe-sciesopoli-from-fasc
+    title: The Horizon After the Catastrophe. Sciesopoli from Fascist Holiday Camp to
+      Centre for Young Jewish Refugees and Beyond
+    url: https://in-bo.unibo.it/article/download/19713/17973
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/19713
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19713
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-believe-obey-recover-the-political-purpose-of-the-ital
+    title: 'Believe, Obey, Recover: The Political Purpose of the Italian Fascist Colonie'
+    url: https://in-bo.unibo.it/article/download/19714/17972
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/19714
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19714
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-onmi-and-the-architecture-for-motherhood-and-child
+    title: 'The ONMI and the Architecture for Motherhood and Childhood (1925–75): A
+      Forgotten Heritage'
+    url: https://in-bo.unibo.it/article/download/19715/17971
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/19715
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19715
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-promises-of-holiday-camps-for-children
+    title: The Promises of Holiday Camps for Children
+    url: https://in-bo.unibo.it/article/download/19716/17970
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/19716
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19716
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-towards-new-summers-on-history-memory-and-ruins
+    title: 'Towards New Summers: On History, Memory, and Ruins'
+    url: https://in-bo.unibo.it/article/download/19717/17990
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/19717
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19717
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-churches-city-community-ambrosian-parish-complexes
+    title: Churches, City, Community. Ambrosian Parish Complexes
+    url: https://in-bo.unibo.it/article/download/19909/20167
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/19909
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19909
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-community-on-a-journey-for-a-church-that-rises-again
+    title: Community on a Journey for a Church that Rises Again
+    url: https://in-bo.unibo.it/article/download/19965/20169
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/19965
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/19965
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-multi-religious-houses-in-postsecular-cities-as-sign-o
+    title: Multi-religious Houses in Postsecular Cities as Sign of the Refiguration
+      of Religion in Late Modernity
+    url: https://in-bo.unibo.it/article/download/20349/20165
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/20349
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20349
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-beirut-street-museum
+    title: Beirut Street Museum
+    url: https://in-bo.unibo.it/article/download/20405/18549
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20405
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20405
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-re-reading-revaluing-residential-streets-exploring-nei
+    title: 'Re-reading, Revaluing Residential Streets: Exploring Neighbourhoods in Beirut’s
+      Suburbs'
+    url: https://in-bo.unibo.it/article/download/20406/18703
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20406
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20406
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-linking-the-in-between-a-strategy-for-the-integration
+    title: 'Linking the In-Between: A Strategy for the Integration of Urban Interstices
+      in Lisbon'
+    url: https://in-bo.unibo.it/article/download/20407/18704
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20407
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20407
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-streetscapes-as-collective-spaces-in-dar-es-salaam-s-i
+    title: Streetscapes as Collective Spaces in Dar es Salaam’s Informal Settlements
+    url: https://in-bo.unibo.it/article/download/20408/18705
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20408
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20408
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-regeneration-and-black-atlantic-music-in-the-london-bo
+    title: “Regeneration” and Black Atlantic Music in the London Borough of Lewisham
+    url: https://in-bo.unibo.it/article/download/20409/18706
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20409
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20409
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-street-imagery-in-the-work-of-team-10-detecting-the-ev
+    title: 'Street Imagery in the Work of Team 10: Detecting the Everyday'
+    url: https://in-bo.unibo.it/article/download/20410/18707
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20410
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20410
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-street-rhythms-in-dharavi-the-cyclical-flood-adaptatio
+    title: 'Street Rhythms in Dharavi: The Cyclical Flood Adaptation in Coastal Urban
+      Slums'
+    url: https://in-bo.unibo.it/article/download/20411/18708
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20411
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20411
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-eat-in-the-city-an-adaptive-process-of-transformation
+    title: EAT (in) THE CITY. An Adaptive Process of Transformation Applying the Tool
+      of the Food Metaphor
+    url: https://in-bo.unibo.it/article/download/20412/18709
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20412
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20412
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-public-and-the-private-in-the-street-making-joints
+    title: 'The Public and the Private in the Street-making: Joints, Links and Networks
+      in Lisbon’s Downtown'
+    url: https://in-bo.unibo.it/article/download/20413/18710
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20413
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20413
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-streets-love-aqueduct-guas-livres-aqueduct-in-lisbon
+    title: 'Streets Love Aqueduct: Águas Livres Aqueduct in Lisbon'
+    url: https://in-bo.unibo.it/article/download/20414/18711
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20414
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20414
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-on-the-time-of-streets
+    title: On the Time of Streets
+    url: https://in-bo.unibo.it/article/download/20415/18717
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20415
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20415
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-street-as-a-living-organism
+    title: The Street as a Living Organism
+    url: https://in-bo.unibo.it/article/download/20595/18718
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20595
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20595
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-expressions-of-spirituality-morphological-future-to-co
+    title: Expressions of Spirituality. Morphological Future to Come
+    url: https://in-bo.unibo.it/article/download/20688/20168
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/20688
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20688
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-lights-will-guide-you
+    title: The Lights will Guide You
+    url: https://in-bo.unibo.it/article/download/20716/18720
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.6092/issn.2036-1602/20716
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/20716
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-urban-ghosts-three-projects-for-rome
+    title: 'Urban Ghosts: Three Projects for Rome'
+    url: https://in-bo.unibo.it/article/download/22215/22179
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22215
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22215
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-financialisation-of-purpose-built-student-accomoda
+    title: 'The Financialisation of Purpose-built Student Accomodation. Public Assets
+      and Private PBSA: Bologna, Florence and Milan'
+    url: https://in-bo.unibo.it/article/download/22513/22181
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22513
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22513
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-conservation-and-transformation-of-modern-coastal-heri
+    title: 'Conservation and Transformation of Modern Coastal Heritage: Seafront Terrace
+      of Lignano Sabbiadoro Between Memory, Identity, and Innovation'
+    url: https://in-bo.unibo.it/article/download/22527/22182
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22527
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22527
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-new-processes-for-the-reuse-of-public-architectural-he
+    title: New Processes for the Reuse of Public Architectural Heritage. The Reuse Italy
+      Research Project
+    url: https://in-bo.unibo.it/article/download/22578/22180
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22578
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22578
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-mnad-milano-transformations-of-a-complex-heritage-betw
+    title: MNAD Milano. Transformations of a Complex Heritage, between Material and
+      Digital
+    url: https://in-bo.unibo.it/article/download/22647/22177
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22647
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22647
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-factories-of-knowledge-to-build-a-new-civitas
+    title: Factories of Knowledge to Build a New Civitas
+    url: https://in-bo.unibo.it/article/download/22666/22178
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22666
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22666
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-abandonment-and-circularity-an-integrated-model-for-di
+    title: 'Abandonment and Circularity: An Integrated Model for Disused Defences Systems'
+    url: https://in-bo.unibo.it/article/download/22688/22175
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22688
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22688
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-applied-research-for-piani-citt-programs-of-ancona-and
+    title: Applied Research for “Piani Città” Programs of Ancona and Ascoli Piceno Municipalities
+    url: https://in-bo.unibo.it/article/download/22691/22174
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22691
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22691
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-massimo-carmassi-the-public-architect-and-the-architec
+    title: Massimo Carmassi. The Public Architect and the Architectural Heritage of
+      Pisa
+    url: https://in-bo.unibo.it/article/download/22757/22173
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22757
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22757
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-reuse-of-cultural-heritage-in-bergamo-a-dialogue-betwe
+    title: 'Reuse of Cultural Heritage in Bergamo: A Dialogue between Public and Private'
+    url: https://in-bo.unibo.it/article/download/22759/22172
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22759
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22759
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-a-white-elephant-as-opportunity-transforming-the-appro
+    title: 'A White Elephant as Opportunity: Transforming the Approach to Public Real
+      Estate'
+    url: https://in-bo.unibo.it/article/download/22762/22171
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22762
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22762
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-inertia-in-urban-regeneration-of-abandoned-military-ba
+    title: Inertia in Urban Regeneration of Abandoned Military Barracks
+    url: https://in-bo.unibo.it/article/download/22926/22170
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22926
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22926
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-new-church-typologies-innovative-relationships-between
+    title: 'New Church Typologies: Innovative Relationships between Churches and Cities
+      in Germany'
+    url: https://in-bo.unibo.it/article/download/22962/20160
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22962
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22962
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-church-and-its-churches-between-polis-and-civitas
+    title: The Church and its Churches between Polis and Civitas
+    url: https://in-bo.unibo.it/article/download/22963/20159
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22963
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22963
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-ecclesial-communities-of-the-future-two-examples-in-co
+    title: Ecclesial Communities of the Future. Two Examples in Comparison
+    url: https://in-bo.unibo.it/article/download/22964/20171
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/22964
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/22964
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-spaces-of-gathering-in-the-post-secular-city
+    title: Spaces of Gathering in the Post-Secular City
+    url: https://in-bo.unibo.it/article/download/23078/20158
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2025-10-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/23078
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/23078
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-tower-within-the-tower-reuse-and-resemantization-o
+    title: The Tower within the Tower. Reuse and Resemantization of Torre Rinalda in
+      Lecce
+    url: https://in-bo.unibo.it/article/download/24945/22169
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/24945
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/24945
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-beroaldo-erp-a-paradigm-for-the-transformation-of-soci
+    title: 'Beroaldo ERP: A Paradigm for the Transformation of Social Housing'
+    url: https://in-bo.unibo.it/article/download/24958/22168
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/24958
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/24958
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-restoration-and-renovation-of-the-ex-fornaci-picci-ind
+    title: Restoration and Renovation of the Ex Fornaci Picci Industrial Complex in
+      Quartu Sant’Elena
+    url: https://in-bo.unibo.it/article/download/25178/22166
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/25178
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/25178
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-ex-staveco-bologna-and-ex-manifattura-tabacchi-torino
+    title: 'Ex-Staveco Bologna and Ex-Manifattura Tabacchi Torino: Industrial, Liminal
+      Spaces as Mediation Elements between Nature and City'
+    url: https://in-bo.unibo.it/article/download/25834/22165
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/25834
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/25834
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-the-production-of-abandonment-vulnerable-territories-a
+    title: The Production of Abandonment. Vulnerable Territories and New Extractive
+      Economies of Public Heritage in Italy
+    url: https://in-bo.unibo.it/article/download/25835/22163
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/25835
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/25835
+    rights_verified_at: '2026-10-16'
+  - id: ojs-inbo-public-heritage-in-transformation-atlas-of-a-changing
+    title: Public Heritage in Transformation. Atlas of a Changing City
+    url: https://in-bo.unibo.it/article/download/26067/22183
+    source: ojs_inbo
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: it
+    published_at: '2026-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.60923/issn.2036-1602/26067
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/26067
     rights_verified_at: '2026-10-16'
