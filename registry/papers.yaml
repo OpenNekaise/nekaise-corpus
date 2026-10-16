@@ -155461,3 +155461,114 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1049/iet-cta.2016.1400 openalex:W2550662066
     resolution: 'sim1: openalex+unpaywall location'
+  - id: ope-optimization-of-vr-application-in-texturing-cu
+    title: OPTIMIZATION OF VR APPLICATION IN TEXTURING CULTURAL HERITAGE
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-2-W4-2024/73/2024/isprs-archives-XLVIII-2-W4-2024-73-2024.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2024-02-14'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-2-w4-2024-73-2024
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-2-W4-2024/73/2024/isprs-archives-XLVIII-2-W4-2024-73-2024.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-16'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-2-w4-2024-73-2024 openalex:W4391805006
+    resolution: 'legacy: openalex location'
+  - id: ope-methodology-for-retrospectively-developing-a-b
+    title: Methodology for retrospectively developing a BIM model from point cloud scans
+      using ongoing building project as case study
+    url: https://researchonline.gcu.ac.uk/ws/files/82938059/79683415.pdf
+    source: openalex
+    license: cc-by-nc
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2024-01-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1108/jedt-07-2023-0325
+    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
+      [copy https://researchonline.gcu.ac.uk/ws/files/82938059/79683415.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1108/jedt-07-2023-0325 openalex:W4390979187
+    resolution: 'legacy: openalex location'
+  - id: ope-total-bim-on-the-construction-site-a-dynamic-s
+    title: 'Total BIM on the construction site: a dynamic single source of information'
+    url: https://research.chalmers.se/publication/538422/file/538422_Fulltext.pdf
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2023-09-22'
+    document_type: article
+    persistent_id: https://doi.org/10.36680/j.itcon.2023.027
+    license_evidence: no licence statement for this copy [copy https://research.chalmers.se/publication/538422/file/538422_Fulltext.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.36680/j.itcon.2023.027 openalex:W4386967030
+    resolution: 'legacy: openalex location'
+  - id: ope-knowledge-representation-of-built-heritage-map
+    title: 'KNOWLEDGE REPRESENTATION OF BUILT HERITAGE MAPPING AN AD HOC DATA MODEL
+      IN OGC STANDARDS: THE CASE STUDY OF PITTI PALACE IN FLORENCE, ITALY'
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-M-2-2023/281/2023/isprs-archives-XLVIII-M-2-2023-281-2023.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2023-06-24'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-m-2-2023-281-2023
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-M-2-2023/281/2023/isprs-archives-XLVIII-M-2-2023-281-2023.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-16'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-m-2-2023-281-2023 openalex:W4381929518
+    resolution: 'legacy: openalex location'
+  - id: ope-federated-hbim-models-for-cultural-heritage-su
+    title: 'FEDERATED HBIM MODELS FOR CULTURAL HERITAGE: SURVEY MODEL AND CONCEPTUAL
+      MODEL'
+    url: https://isprs-archives.copernicus.org/articles/XLVI-2-W1-2022/191/2022/isprs-archives-XLVI-2-W1-2022-191-2022.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2022-02-25'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlvi-2-w1-2022-191-2022
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVI-2-W1-2022/191/2022/isprs-archives-XLVI-2-W1-2022-191-2022.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlvi-2-w1-2022-191-2022 openalex:W4214654193
+    resolution: 'legacy: openalex location'
+  - id: ope-xr-technologies-for-enhanced-cultural-engageme
+    title: 'XR Technologies for Enhanced Cultural Engagement: from HBIM to a Comparative
+      Analysis of VR and WebVR Development Tools'
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-M-9-2025/95/2025/isprs-archives-XLVIII-M-9-2025-95-2025.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2025-10-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-m-9-2025-95-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-M-9-2025/95/2025/isprs-archives-XLVIII-M-9-2025-95-2025.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-16'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-m-9-2025-95-2025 openalex:W4414697588
+    resolution: 'legacy: openalex location'

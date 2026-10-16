@@ -149618,19 +149618,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1928', '1928']
     rights_verified_at: '2026-10-15'
-  - id: arc-tint-o-litecaseinpastepaint-215abc42
-    title: Tint-o-Lite (casein paste paint). (1940) [arc-tint-o-litecaseinpastepaint-215abc42]
-    url: https://archive.org/download/Tint-o-litecaseinPastePaint/Tint-O-Litec1940cm22p60001_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1940'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''c. 1940'', ''1940'']:
-      no licence and no certain publication date'
-    rights_verified_at: '2026-10-15'
   - id: arc-prattlamertthenewvitraliteenamel-12-45a0c859
     title: Pratt & Lambert the new Vitralite enamel.[12\ (1949) [arc-prattlamertthenewvitraliteenamel-12-45a0c859]
     url: https://archive.org/download/PrattLamertTheNewVitraliteEnamel.12/VitreliteEnamel1949cm22p80001_djvu.txt
@@ -150167,20 +150154,6 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1896', '1896']
-    rights_verified_at: '2026-10-15'
-  - id: arc-traveauxenferforgalbumgrave-e6fb49a3
-    title: 'Traveaux en fer forge: album grave. (1873) [arc-traveauxenferforgalbumgrave-e6fb49a3]'
-    url: https://archive.org/download/TraveauxEnFerForgAlbumGrave/Traveaux0001_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: fr
-    published_at: '1873'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1873', '1873']
     rights_verified_at: '2026-10-15'
   - id: arc-concretingincoldweather-360-e198bc2c
     title: Concreting in Cold Weather (1928) [arc-concretingincoldweather-360-e198bc2c]
@@ -157025,20 +156998,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1945', '1945']
     rights_verified_at: '2026-10-16'
-  - id: arc-tompkinskielmarblecocca92758-8db04648
-    title: Products of Tompkins-Kiel Marble Company. (1930) [arc-tompkinskielmarblecocca92758-8db04648]
-    url: https://archive.org/download/TompkinsKielMarbleCoCCA92758/Tompkins-Kiel%20Marble%20Co%20-%20CCA92758_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1930'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1930', '1930']
-    rights_verified_at: '2026-10-16'
   - id: arc-minnesotaminingandmanufacturingcocca14896-30c33900
     title: '3M Company : electrical products for maintenance and construction. (1960)
       [arc-minnesotaminingandmanufacturingcocca14896-30c33900]'
@@ -157466,35 +157425,6 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1926', '1926']
-    rights_verified_at: '2026-10-16'
-  - id: arc-tranecocca90b601-905eab15
-    title: Data for heating engineers and architects for the design of vapor heating
-      systems. (1917) [arc-tranecocca90b601-905eab15]
-    url: https://archive.org/download/TraneCoCCA90B601/Trane%20Co%20-%20CCA%2090-B601_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1917'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1917', '1917']
-    rights_verified_at: '2026-10-16'
-  - id: arc-tranecompanyofcanadaltdcca206023-0af45630
-    title: Trane centrifugal fans. (1947) [arc-tranecompanyofcanadaltdcca206023-0af45630]
-    url: https://archive.org/download/TraneCompanyOfCanadaLtdCCA206023/Trane%20Company%20of%20Canada%20Ltd%20CCA206023_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1947'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1947', '1947']
     rights_verified_at: '2026-10-16'
   - id: arc-unionradiatorcocca90b600-ef320ac3
     title: Concord steam and hot water radiators. (1907) [arc-unionradiatorcocca90b600-ef320ac3]
@@ -161622,4 +161552,804 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['c. 1919', '1919']
+    rights_verified_at: '2026-10-16'
+  - id: arc-nationallimeassoccca31049-e2c446f6
+    title: 'Test data on lime in concrete and mortar : a study of certain tests and
+      experiments upon t (1920) [arc-nationallimeassoccca31049-e2c446f6]'
+    url: https://archive.org/download/NationalLimeAssocCCA31049/National%20Lime%20Assoc%20CCA31049_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-16'
+  - id: arc-nationallumbermanufacturersassoccca36072-026a36d5
+    title: Planning and designing small houses. (1923) [arc-nationallumbermanufacturersassoccca36072-026a36d5]
+    url: https://archive.org/download/NationalLumberManufacturersAssocCCA36072/National%20Lumber%20Manufacturers%20Assoc%20CCA36072_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1923', '1923']
+    rights_verified_at: '2026-10-16'
+  - id: arc-newportrollingmillcocca29150-f159246d
+    title: Genuine open hearth iron" rust resisting sheet metal products. (1915) [arc-newportrollingmillcocca29150-f159246d]
+    url: https://archive.org/download/NewportRollingMillCoCCA29150/Newport%20Rolling%20Mill%20Co%20CCA29150_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1915', '1915']
+    rights_verified_at: '2026-10-16'
+  - id: arc-northamericancementcorpcca23183-af0b0ec3
+    title: The selective use of Portland cement. (1942) [arc-northamericancementcorpcca23183-af0b0ec3]
+    url: https://archive.org/download/NorthAmericanCementCorpCCA23183/North%20American%20Cement%20Corp%20CCA23183_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1942'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1942', '1942']
+    rights_verified_at: '2026-10-16'
+  - id: arc-nortonrefractorycementscca23189-f2f6bfa2
+    title: Refractory cements, Norton. (1939) [arc-nortonrefractorycementscca23189-f2f6bfa2]
+    url: https://archive.org/download/NortonRefractoryCementsCCA23189/Norton%20Refractory%20Cements%20CCA23189_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939', '1939']
+    rights_verified_at: '2026-10-16'
+  - id: arc-philadelphiaquartzco-3b974bfa
+    title: Silicate of soda for treating concrete. (1935) [arc-philadelphiaquartzco-3b974bfa]
+    url: https://archive.org/download/PhiladelphiaQuartzCo/Philadelphia%20Quartz%20Co_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1935', '1935']
+    rights_verified_at: '2026-10-16'
+  - id: arc-pittsburghdesmoinessteelcocca23505-03e6911e
+    title: Steel water tanks for public service. (1920) [arc-pittsburghdesmoinessteelcocca23505-03e6911e]
+    url: https://archive.org/download/PittsburghDesMoinesSteelCoCCA23505/Pittsburgh%20Des%20Moines%20Steel%20Co%20CCA23505_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1920', '1920']
+    rights_verified_at: '2026-10-16'
+  - id: arc-portlandcementassoccca22504-825ab3b9
+    title: 'A practical course in concrete : a text book for classroom and laboratory,
+      including demon (1935) [arc-portlandcementassoccca22504-825ab3b9]'
+    url: https://archive.org/download/PortlandCementAssocCCA22504/Portland%20Cement%20Assoc%20CCA22504_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1935', '1935']
+    rights_verified_at: '2026-10-16'
+  - id: arc-portlandcementassoccca22559-a5c8178b
+    title: Comparison of types of fireproof construction / by Chester L. Post. Analysis
+      of cost of ty (1924) [arc-portlandcementassoccca22559-a5c8178b]
+    url: https://archive.org/download/PortlandCementAssocCCA22559/Portland%20Cement%20Assoc%20CCA22559_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924', '1924']
+    rights_verified_at: '2026-10-16'
+  - id: arc-portlandcementassoccca30911-74cc279a
+    title: Suggested designs for concrete milk cooling houses. (1918) [arc-portlandcementassoccca30911-74cc279a]
+    url: https://archive.org/download/PortlandCementAssocCCA30911/Portland%20Cement%20Assoc%20CCA30911_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1918', '1918']
+    rights_verified_at: '2026-10-16'
+  - id: arc-searsrobuckhomescca98234-3c19b14a
+    title: Honor bilt modern homes. (1918) [arc-searsrobuckhomescca98234-3c19b14a]
+    url: https://archive.org/download/SearsRobuckHomesCCA98234/Sears%20Robuck%20Homes%20CCA98234_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1918', '1918']
+    rights_verified_at: '2026-10-16'
+  - id: arc-skillingsflintcca196560-4ffc7ed7
+    title: 'D.N. Skillings and D.B. Flint''s illustrated catalogue of portable sectional
+      buildings : pa (1862) [arc-skillingsflintcca196560-4ffc7ed7]'
+    url: https://archive.org/download/SkillingsFlintCCA196560/Skillings%20%26%20Flint%20CCA196560_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1862'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1862', '1862', '1852']
+    rights_verified_at: '2026-10-16'
+  - id: arc-southernpineassoccca36390-224f91c8
+    title: Southern yellow pine standards, specification and design information and
+      data for the use  (1926) [arc-southernpineassoccca36390-224f91c8]
+    url: https://archive.org/download/SouthernPineAssocCCA36390/Southern%20Pine%20Assoc%20CCA36390_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926', '1926']
+    rights_verified_at: '2026-10-16'
+  - id: arc-southernstatesportlandcementcocca30904-3a160114
+    title: Prospectus, Southern States Portland Cement Company. (1902) [arc-southernstatesportlandcementcocca30904-3a160114]
+    url: https://archive.org/download/SouthernStatesPortlandCementCoCCA30904/Southern%20States%20Portland%20Cement%20Co%20CCA30904_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1902', '1902']
+    rights_verified_at: '2026-10-16'
+  - id: arc-southwesternportlandcementcocca31109-032d4fea
+    title: Southwestern Portland Cement Co., El Paso, Texas. (1915) [arc-southwesternportlandcementcocca31109-032d4fea]
+    url: https://archive.org/download/SouthwesternPortlandCementCoCCA31109/Southwestern%20Portland%20Cement%20Co%20CCA31109_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1915', '1915']
+    rights_verified_at: '2026-10-16'
+  - id: arc-southwesternstatesportlandcementcocca31151-73f058ab
+    title: The Southwestern States Portland Cement Company ... (1907) [arc-southwesternstatesportlandcementcocca31151-73f058ab]
+    url: https://archive.org/download/SouthwesternStatesPortlandCementCoCCA31151/Southwestern%20States%20Portland%20Cement%20Co%20CCA31151_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1907', '1907']
+    rights_verified_at: '2026-10-16'
+  - id: arc-structuralgypsumcorpcca41543-30ceaa25
+    title: Gypsteel fireproof floors, including gypsteel poured-in-place roof construction,
+      suspensio (1925) [arc-structuralgypsumcorpcca41543-30ceaa25]
+    url: https://archive.org/download/StructuralGypsumCorpCCA41543/Structural%20Gypsum%20Corp%20CCA41543_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1925', '1925']
+    rights_verified_at: '2026-10-16'
+  - id: arc-unionmetalcolumnscca23615-693311db
+    title: Ancient beauty for modern buildings. (1923) [arc-unionmetalcolumnscca23615-693311db]
+    url: https://archive.org/download/UnionMetalColumnsCCA23615/Union%20Metal%20Columns%20CCA23615_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1923', '1923']
+    rights_verified_at: '2026-10-16'
+  - id: arc-unitedstatesgypsumcocca23178-79bad81e
+    title: Lime in building construction. (1936) [arc-unitedstatesgypsumcocca23178-79bad81e]
+    url: https://archive.org/download/UnitedStatesGypsumCoCCA23178/United%20States%20Gypsum%20Co%20CCA23178_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1936', '1936']
+    rights_verified_at: '2026-10-16'
+  - id: arc-unitedstatesgypsumcocca23179-d69e4dd6
+    title: How to make patterns and models with gypsum cement. (1944) [arc-unitedstatesgypsumcocca23179-d69e4dd6]
+    url: https://archive.org/download/UnitedStatesGypsumCoCCA23179/United%20States%20Gypsum%20Co%20CCA23179_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1944'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1944', '1944']
+    rights_verified_at: '2026-10-16'
+  - id: arc-universalportlandcementcocca29187-8282549f
+    title: Concrete surfaces. (1913) [arc-universalportlandcementcocca29187-8282549f]
+    url: https://archive.org/download/UniversalPortlandCementCoCCA29187/Universal%20Portland%20Cement%20Co%20CCA29187_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1913', '1913']
+    rights_verified_at: '2026-10-16'
+  - id: arc-universalportlandcementcocca30936-7887791f
+    title: 'Small farm buildings of concrete : a booklet of practical information for
+      the farmer and r (1912) [arc-universalportlandcementcocca30936-7887791f]'
+    url: https://archive.org/download/UniversalPortlandCementCoCCA30936/Universal%20Portland%20Cement%20Co%20CCA30936_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1912', '1912']
+    rights_verified_at: '2026-10-16'
+  - id: arc-universalportlandcementcocca31245-0a3faf2e
+    title: 'Plans for concrete residences : being a selected number of designs with
+      descriptions and e (1909) [arc-universalportlandcementcocca31245-0a3faf2e]'
+    url: https://archive.org/download/UniversalPortlandCementCoCCA31245/Universal%20Portland%20Cement%20Co%20CCA31245_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1909'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1909', '1909']
+    rights_verified_at: '2026-10-16'
+  - id: arc-usnavalacademycca29158-e48f8493
+    title: Concrete piles at the United States Naval Academy, Annapolis, Md. / by Walter
+      R. Harper. (1905) [arc-usnavalacademycca29158-e48f8493]
+    url: https://archive.org/download/USNavalAcademyCCA29158/US%20Naval%20Academy%20CCA29158_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1905', '1905']
+    rights_verified_at: '2026-10-16'
+  - id: arc-virginiaportlandcementcocca30773-c53822a7
+    title: How to use Portland cement / by Wm. G. Hartranft. (1901) [arc-virginiaportlandcementcocca30773-c53822a7]
+    url: https://archive.org/download/VirginiaPortlandCementCoCCA30773/Virginia%20Portland%20Cement%20Co%20CCA30773_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1901'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1901', '1901']
+    rights_verified_at: '2026-10-16'
+  - id: arc-waterlooconstructionmachinerycocca29516-6d9d1b3c
+    title: Handbook on mixing concrete. (1920) [arc-waterlooconstructionmachinerycocca29516-6d9d1b3c]
+    url: https://archive.org/download/WaterlooConstructionMachineryCoCCA29516/Waterloo%20Construction%20Machinery%20Co%20CCA29516_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1920', '1920']
+    rights_verified_at: '2026-10-16'
+  - id: arc-westernstatesportlandcementcocca30898-1db4425a
+    title: The Western States Portland Cement Company. (1903) [arc-westernstatesportlandcementcocca30898-1db4425a]
+    url: https://archive.org/download/WesternStatesPortlandCementCoCCA30898/Western%20States%20Portland%20Cement%20Co%20CCA30898_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1903'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1903', '1903']
+    rights_verified_at: '2026-10-16'
+  - id: arc-westinghouseelectriccca48766-6e95880b
+    title: Notes on incandescent street lighting. (1904) [arc-westinghouseelectriccca48766-6e95880b]
+    url: https://archive.org/download/WestinghouseElectricCCA48766/Westinghouse%20Electric%20CCA%2048766_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1904'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1904', '1904']
+    rights_verified_at: '2026-10-16'
+  - id: arc-aagriffingironco-1c45a348
+    title: Illustrated catalogue and price list of the A A Griffing Iron Co. sole manufactures
+      of the (1885) [arc-aagriffingironco-1c45a348]
+    url: https://archive.org/download/AAGriffingIronCo/A%20A%20Griffing%20Iron%20Co_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1885'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1885', '1885']
+    rights_verified_at: '2026-10-16'
+  - id: arc-peasewoodworkco-0001-c5c1b3ec
+    title: Pease pricer no. 327 for '57 (1957) [arc-peasewoodworkco-0001-c5c1b3ec]
+    url: https://archive.org/download/PeaseWoodworkCo.0001/PeaseWoodworkCo.0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1957'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1957', '1957']
+    rights_verified_at: '2026-10-16'
+  - id: arc-doublebungalowsandduplexes-f45080ee
+    title: Double Bungalows and Duplexes (1951) [arc-doublebungalowsandduplexes-f45080ee]
+    url: https://archive.org/download/DoubleBungalowsAndDuplexes/NWPlanService0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1951'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1951', '1951']
+    rights_verified_at: '2026-10-16'
+  - id: arc-youtoowilllikeaconcretehome-91440104
+    title: You too will like a concrete home (1952) [arc-youtoowilllikeaconcretehome-91440104]
+    url: https://archive.org/download/YouTooWillLikeAConcreteHome/PortlandCementAssociation0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1952', '1952']
+    rights_verified_at: '2026-10-16'
+  - id: arc-modernastomorrow-cb15d742
+    title: Modern as Tomorrow (1939) [arc-modernastomorrow-cb15d742]
+    url: https://archive.org/download/ModernAsTomorrow/EljerPlumbing0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939', '1939']
+    rights_verified_at: '2026-10-16'
+  - id: arc-cecocurtainwalls-2cf7774b
+    title: Ceco Curtain Walls (1963) [arc-cecocurtainwalls-2cf7774b]
+    url: https://archive.org/download/CecoCurtainWalls/CecoSteelProductsCorporation0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1963'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1963', '1963']
+    rights_verified_at: '2026-10-16'
+  - id: arc-smallhouseplanningbureau0001-6a198913
+    title: Designs for twenty-eight small homes (1948) [arc-smallhouseplanningbureau0001-6a198913]
+    url: https://archive.org/download/SmallHousePlanningBureau0001/SmallHousePlanningBureau0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1948'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1948', '1948']
+    rights_verified_at: '2026-10-16'
+  - id: arc-featherweightconcreteinsulatingroofslabs-13-35f01ed0
+    title: Featherweight concrete insulating roof slabs (1938) [arc-featherweightconcreteinsulatingroofslabs-13-35f01ed0]
+    url: https://archive.org/download/FeatherweightConcreteInsulatingRoofSlabs_13/FederalAmericanCementTileCo.0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938', '1938']
+    rights_verified_at: '2026-10-16'
+  - id: arc-lackawanasteelsheetpilingstraight-webarched-92d7c647
+    title: 'Lackawana steel sheet piling: straight-web; arched-web; deep-arch, catalog
+      120 (1929) [arc-lackawanasteelsheetpilingstraight-webarched-92d7c647]'
+    url: https://archive.org/download/LackawanaSteelSheetPilingStraight-webArched-webDeep-archCatalog120/BethlehemSteelCompany0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929', '1929']
+    rights_verified_at: '2026-10-16'
+  - id: arc-romalchiefrange-bfe051ca
+    title: Romal Chief Range (1924) [arc-romalchiefrange-bfe051ca]
+    url: https://archive.org/download/RomalChiefRange/TheBeckwithCompany0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924', '1924']
+    rights_verified_at: '2026-10-16'
+  - id: arc-flaxroofingmadeofflaxfibreandasphalt-8ab326e7
+    title: 'Flax roofing: made of flax fibre and asphalt (1890) [arc-flaxroofingmadeofflaxfibreandasphalt-8ab326e7]'
+    url: https://archive.org/download/FlaxRoofingMadeOfFlaxFibreAndAsphalt/McTearandCo.Roofing0002_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-16'
+  - id: arc-mctearandco-sroofing-0703ae54
+    title: McTear and Co.'s roofing (1890) [arc-mctearandco-sroofing-0703ae54]
+    url: https://archive.org/download/MctearAndCo.sRoofing/McTearandCo.Roofing0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-16'
+  - id: arc-e-h-staffordmfg-co-churchfurniture-manufact-bcd4d9bc
+    title: E.H. Stafford Mfg. Co. church furniture -- manufacturers and designers of
+      ecclesiastical f (1925) [arc-e-h-staffordmfg-co-churchfurniture-manufact-bcd4d9bc]
+    url: https://archive.org/download/E.h.StaffordMfg.Co.ChurchFurniture--ManufacturersAndDesignersOf/E.H.StratfordMfg.Co.ChurchFurniture0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920', '1925', '1900']
+    rights_verified_at: '2026-10-16'
+  - id: arc-standardizedinteriorwoodwork-735-6947bf47
+    title: Standardized Interior Woodwork (1932) [arc-standardizedinteriorwoodwork-735-6947bf47]
+    url: https://archive.org/download/StandardizedInteriorWoodwork_735/StandardizedInteriorWoodwork0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932', '1932']
+    rights_verified_at: '2026-10-16'
+  - id: arc-practicalwaystowakeupyourhomewithglass-e8b05eea
+    title: Practical ways to wake up your home with glass (1953) [arc-practicalwaystowakeupyourhomewithglass-e8b05eea]
+    url: https://archive.org/download/PracticalWaysToWakeUpYourHomeWithGlass/Practicalwaystowakeupyourhomewithglass0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1953'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1953', '1953']
+    rights_verified_at: '2026-10-16'
+  - id: arc-broanspecialistsinqualityventilatingequipme-cb3f603e
+    title: 'Broan: specialists in quality ventilating equipment for over 25 years, catalog
+      no. 581 (1958) [arc-broanspecialistsinqualityventilatingequipme-cb3f603e]'
+    url: https://archive.org/download/BroanSpecialistsInQualityVentilatingEquipmentForOver25YearsCatalog/BroanManufacturingCo.Inc0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1958', '1958']
+    rights_verified_at: '2026-10-16'
+  - id: arc-twindowtheworldsfinestinsulatingglass-cc3ec530
+    title: 'Twindow: the world''s finest insulating glass (1958) [arc-twindowtheworldsfinestinsulatingglass-cc3ec530]'
+    url: https://archive.org/download/TwindowTheWorldsFinestInsulatingGlass/Twindowtheworldsfinestinsulatingglass0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1958', '1958']
+    rights_verified_at: '2026-10-16'
+  - id: arc-figuredglassbymississippi-6bd671e3
+    title: Figured glass by Mississippi (1930) [arc-figuredglassbymississippi-6bd671e3]
+    url: https://archive.org/download/FiguredGlassByMississippi/MississippiGlassCompany0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1930', '1930']
+    rights_verified_at: '2026-10-16'
+  - id: arc-mississippiglassforindustrialcommercialscho-d706bce3
+    title: Mississippi Glass for industrial, commercial, school, residential use, catalog
+      no. 58-G (1958) [arc-mississippiglassforindustrialcommercialscho-d706bce3]
+    url: https://archive.org/download/MississippiGlassForIndustrialCommercialSchoolResidentialUse/MississippiGlassCo.0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1958', '1958']
+    rights_verified_at: '2026-10-16'
+  - id: arc-owens-illinoisglassblockresidentialcatalog-9b151b55
+    title: 'Owens-Illinois glass block: residential catalog (1955) [arc-owens-illinoisglassblockresidentialcatalog-9b151b55]'
+    url: https://archive.org/download/Owens-illinoisGlassBlockResidentialCatalog/OwensIllinoisGlassBlock0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-16'
+  - id: arc-todayssmartestfloorswearkentile-46d2252b
+    title: Today's smartest floors wear Kentile (1957) [arc-todayssmartestfloorswearkentile-46d2252b]
+    url: https://archive.org/download/TodaysSmartestFloorsWearKentile/KentileAsphaltTile0002_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1957'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1957', '1957']
+    rights_verified_at: '2026-10-16'
+  - id: arc-youngstownkitchensthehappiestroominyourhous-dcd4e8e0
+    title: 'Youngstown Kitchens: the happiest room in your house (1951) [arc-youngstownkitchensthehappiestroominyourhous-dcd4e8e0]'
+    url: https://archive.org/download/YoungstownKitchensTheHappiestRoomInYourHouse/YoungstownKitchens0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1951'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1951', '1951']
+    rights_verified_at: '2026-10-16'
+  - id: arc-ideasforyourkitchenandlaundrywithamerican-o-312aa4ad
+    title: Ideas for your kitchen and laundry with American-Olean ceramic tile (1956)
+      [arc-ideasforyourkitchenandlaundrywithamerican-o-312aa4ad]
+    url: https://archive.org/download/IdeasForYourKitchenAndLaundryWithAmerican-oleanCeramicTile/AmericanOleanTileCompany0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1956'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1956', '1956']
+    rights_verified_at: '2026-10-16'
+  - id: arc-newideasintile-fa12d2a4
+    title: New ideas in tile (1955) [arc-newideasintile-fa12d2a4]
+    url: https://archive.org/download/NewIdeasInTile/AmericanOleanTileCompanyNewIdeasinTile0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-16'
+  - id: arc-distinctiveroofapplicationsexclusivelyyours-040a8317
+    title: Distinctive roof applications exclusively yours with Red Cedar Shingles (1955)
+      [arc-distinctiveroofapplicationsexclusivelyyours-040a8317]
+    url: https://archive.org/download/DistinctiveRoofApplicationsExclusivelyYoursWithRedCedarShingles/RedCedarShingleBureau0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1955', '1955']
+    rights_verified_at: '2026-10-16'
+  - id: arc-ideasforhomesofbeautywithcedarshinglesandce-e20c841b
+    title: Ideas for homes of beauty with cedar shingles and cedar shakes (1950) [arc-ideasforhomesofbeautywithcedarshinglesandce-e20c841b]
+    url: https://archive.org/download/IdeasForHomesOfBeautyWithCedarShinglesAndCedarShakes/RedCedarShingleBureau0002_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1950', '1950']
+    rights_verified_at: '2026-10-16'
+  - id: arc-handsplitredcedarshakes-11dc9923
+    title: Handsplit red cedar shakes (1955) [arc-handsplitredcedarshakes-11dc9923]
+    url: https://archive.org/download/HandsplitRedCedarShakes/RedCedarShingleBureau0003_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1955', '1955']
+    rights_verified_at: '2026-10-16'
+  - id: arc-stovesrangesandfireplacefixturesno-674-e4064151
+    title: Stoves, ranges, and fire place fixtures, no. 674 (1929) [arc-stovesrangesandfireplacefixturesno-674-e4064151]
+    url: https://archive.org/download/StovesRangesAndFirePlaceFixturesNo.674/HibbardSpencerBartlettandCo.0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929', '1929']
     rights_verified_at: '2026-10-16'
