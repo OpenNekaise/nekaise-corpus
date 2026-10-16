@@ -19,6 +19,7 @@ def main() -> None:
     parser.add_argument("--token")
     parser.add_argument("--page")
     parser.add_argument("--exit-code", type=int, default=0)
+    parser.add_argument("--signal-after-append", type=int)
     parser.add_argument("--hold-rotation", action="store_true")
     parser.add_argument("--hold-note", default="fixture hold")
     parser.add_argument("--next-pointer")
@@ -46,6 +47,8 @@ def main() -> None:
         Path(os.environ["NEKAISE_BACKEND_EXHAUSTED_FILE"]).write_text(args.exhausted + "\n")
     if args.append:
         registry.append_entries(entries)
+    if args.signal_after_append:
+        os.kill(os.getpid(), args.signal_after_append)
 
 
 if __name__ == "__main__":

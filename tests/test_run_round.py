@@ -2,6 +2,7 @@ from contextlib import contextmanager
 from types import SimpleNamespace
 import json
 import os
+import signal
 import sys
 from pathlib import Path
 
@@ -725,7 +726,15 @@ def test_dynamic_finder_missing_next_cursor_fails_before_merge(tmp_path, monkeyp
     assert st.version() == version  # protocol failure precedes the discovery transaction
 
 
-def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, monkeypatch):
+@pytest.mark.parametrize("failure_args,returncode", [
+    (["--exit-code", "7"], 7),
+    (["--signal-after-append", str(signal.SIGTERM)], -signal.SIGTERM),
+    (["--signal-after-append", str(signal.SIGKILL)], -signal.SIGKILL),
+])
+def test_optional_finder_failure_is_reported_without_blocking_merge(
+    tmp_path, monkeypatch, failure_args, returncode,
+):
+    """Even death after staging rows and NEXT must preserve the saved dynamic cursor."""
     events = finder_env(tmp_path, monkeypatch)
     backends = {
         "good": {
@@ -739,12 +748,13 @@ def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, mo
             "script": "fake_finder.py",
             "args": [
                 "--id", "ost-bad", "--title", "Bad", "--url", "https://e.org/bad",
-                "--exit-code", "7",
+                "--next-pointer", "q=17 p=63 since=2026-10-12", *failure_args,
             ],
             "required": False,
         },
     }
-    state = {"volatile": {"flag": "--bucket", "next": "2022-W48"}}
+    state = {"volatile": {"flag": "--token", "next": "q=17 p=62 since=2026-10-12",
+                          "dynamic": True}}
     st = fixture_store(tmp_path, backends, state)
 
     with discovery_transaction(st) as transaction:
@@ -759,13 +769,17 @@ def test_optional_finder_failure_is_reported_without_blocking_merge(tmp_path, mo
         )
 
     assert registry_ids(st) == ["ost-good"]
-    assert ("fixture-run", "discovery_degraded", {"failures": {"volatile": 7}}) in events
+    assert ("fixture-run", "discovery_degraded", {
+        "failures": {"volatile": returncode},
+    }) in events
     assert ("fixture-run", "discovery_merged", {
         "candidates": 1,
         "accepted": {"good": 1, "volatile": 0},
     }) in events
     with st.read() as view:
-        assert view.rotation_get("volatile")["next"] == "2022-W48"  # failed: pointer kept
+        assert view.rotation_get("volatile") == state["volatile"]
+    assert not [e for e in events if e[1] == "rotation_advanced"]
+    assert not list((tmp_path / "workspace").glob("finder-proposals-*"))
 
 
 def test_required_finder_failure_still_blocks_merge(tmp_path, monkeypatch):

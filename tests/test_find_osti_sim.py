@@ -4,6 +4,7 @@ from types import SimpleNamespace
 
 import pytest
 
+import find_osti_aec
 import find_osti_sim
 import lint_registry
 import registry
@@ -261,6 +262,46 @@ def test_network_failure_exits_nonzero_without_append(monkeypatch, tmp_path):
         find_osti_sim.main()
     assert exc.value.code == 1
     assert appended == [] and not files["next"].exists()
+
+
+@pytest.mark.parametrize("family,cursor,next_cursor", [
+    (find_osti_aec.family(), "q=17 p=62 since=2026-10-12", "q=17 p=63 since=2026-10-12"),
+    (find_osti_sim.sim_family(), "watch:2026-10-15", "watch:2026-10-15:2026-10-16 q=0 p=2"),
+])
+@pytest.mark.parametrize("outcome", ["success", "connect_timeout", "read_timeout", "http500"])
+def test_saved_cursors_resume_without_skips_or_partial_proposals(
+    monkeypatch, tmp_path, family, cursor, next_cursor, outcome,
+):
+    monkeypatch.setattr(find_osti_sim, "ROWS", 1)
+    pages = [[REPORT]]
+    if outcome == "http500":
+        pages.append(SimpleNamespace(status_code=500))
+    elif outcome != "success":
+        error = (find_osti_sim.requests.ConnectTimeout if outcome == "connect_timeout"
+                 else find_osti_sim.requests.ReadTimeout)
+        pages.append(error("fixture timeout"))
+    calls, appended, files = _setup(monkeypatch, tmp_path, pages)
+    monkeypatch.setattr(find_osti_sim, "utc_today", lambda: date(2026, 10, 16))
+    argv = ["--cursor", cursor, "--pages", str(len(pages)), "--append"]
+    if outcome in {"connect_timeout", "read_timeout"}:
+        with pytest.raises(SystemExit) as exc:
+            find_osti_sim.run(family, argv)
+        assert exc.value.code == 1
+    else:
+        find_osti_sim.run(family, argv)
+
+    made = [c for c in calls if c != "sleep"]
+    q, first_page = (17, 62) if family.source == "osti_aec" else (0, 1)
+    assert [(c["q"], c["page"]) for c in made] == [
+        (family.queries[q], first_page + i) for i in range(len(pages))]
+    if outcome == "success":
+        assert len(appended) == 1
+        assert files["next"].read_text().strip() == next_cursor
+    else:
+        assert appended == []  # discard even the first successfully fetched page
+        assert not files["next"].exists()
+        assert files["hold"].exists() == (outcome == "http500")
+    assert not files["exhausted"].exists()
 
 
 @pytest.mark.parametrize("cursor", [
