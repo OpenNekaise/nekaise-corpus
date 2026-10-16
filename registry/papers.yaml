@@ -154086,24 +154086,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.buildenv.2005.07.020 openalex:W2016632691
     resolution: 'sim1: openalex+unpaywall location'
-  - id: oas-10-1184-r1-6716120-e4aa4787
-    title: Dynamic Optimization of Integrated Active - Passive Strategies for Building
-      Enthalpy Control
-    url: http://repository.cmu.edu/dissertations/404
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2014-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1184/r1/6716120
-    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/404;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-15'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1184/r1/6716120 openalex:W1895185220
-    resolution: 'sim1: openalex location'
   - id: oas-10-1016-j-buildenv-2010-10-018-4075e9e6
     title: Benchmark experiments for moisture transfer modelling in air and porous materials
     url: https://biblio.ugent.be/publication/1966332/file/6763328.pdf
@@ -155238,6 +155220,114 @@ sources:
     persistent_id: doi:10.48550/arxiv.0909.3202
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0909.3202 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-16'
+  - id: oas-10-1016-j-ifacol-2021-11-288-4c32bc7e
+    title: Model Predictive Control of Discrete-Continuous Energy Systems via Generalized
+      Disjunctive Programming
+    url: https://arxiv.org/pdf/2001.06181
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ifacol.2021.11.288
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2001.06181;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ifacol.2021.11.288 openalex:W3000329189
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2409-08750-64c77b0d
+    title: 'DexSim2Real$^{2}$: Building Explicit World Model for Precise Articulated
+      Object Dexterous Manipulation'
+    url: https://arxiv.org/pdf/2409.08750
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-09-13'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2409.08750
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2409.08750;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2409.08750 openalex:W4403662069
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2401-11483-47131aa4
+    title: 'Distributed Traffic Signal Control of Interconnected Intersections: A Two-Lane
+      Traffic Network Model'
+    url: https://arxiv.org/pdf/2401.11483
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-01-21'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2401.11483
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2401.11483;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2401.11483 openalex:W4391158197
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2305-00807-a2acb91f
+    title: A comparison of methods to eliminate regularization weight tuning from data-enabled
+      predictive control
+    url: https://arxiv.org/pdf/2305.00807
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-05-01'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2305.00807
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2305.00807; version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2305.00807 openalex:W4367701138
+    resolution: 'sim1: openalex location'
+  - id: arx-generalized-polygons-with-non-discrete-valuati
+    title: Generalized polygons with non-discrete valuation defined by two-dimensional
+      affine R-buildings
+    url: https://arxiv.org/pdf/0909.4962v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2009-09-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0909.4962
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0909.4962 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-16'
+  - id: arx-two-dimensional-affine-r-buildings-defined-by-
+    title: Two-dimensional affine R-buildings defined by generalized polygons with non-discrete
+      valuation
+    url: https://arxiv.org/pdf/0909.4967v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2009-09-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0909.4967
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0909.4967 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
