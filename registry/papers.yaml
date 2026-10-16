@@ -155208,3 +155208,37 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enbuild.2024.114520 openalex:W4400485922
     resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-affine-lambda-buildings-ii
+    title: Affine $\Lambda$-Buildings II
+    url: https://arxiv.org/pdf/0909.2059v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2009-09-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0909.2059
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0909.2059 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-16'
+  - id: arx-non-completeness-of-r-buildings-and-fixed-poin
+    title: (Non-)completeness of R-buildings and fixed point theorems
+    url: https://arxiv.org/pdf/0909.3202v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2009-09-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0909.3202
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0909.3202 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-16'
