@@ -156287,3 +156287,56 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.3390/buildings13041096 openalex:W4366772134
     resolution: 'legacy: openalex location'
+  - id: oas-10-48550-arxiv-2210-05250-68423486
+    title: 'Digital twins for city simulation: Automatic, efficient, and robust mesh
+      generation for large-scale city modeling and simulation'
+    url: https://arxiv.org/pdf/2210.05250
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-10-11'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2210.05250
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2210.05250;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2210.05250 openalex:W4305016502
+    resolution: 'sim1: openalex location'
+  - id: oas-10-34135-actaludologica-2024-7-1-18-36-8d2e9a6f
+    title: 'Game Based Worldbuilding: Planning, Models, Simulations and Digital Twins'
+    url: https://eprints.lancs.ac.uk/id/eprint/222144/9/AL_02_Cureton_Coulton_F_.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.34135/actaludologica.2024-7-1.18-36
+    license_evidence: no licence statement for this copy [copy https://eprints.lancs.ac.uk/id/eprint/222144/9/AL_02_Cureton_Coulton_F_.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.34135/actaludologica.2024-7-1.18-36 openalex:W4400210980
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3929-ethz-b-000557717-3684396c
+    title: 'The Hitchhiker''s Guide to Fused Twins: A Review of Access to Digital Twins
+      in situ in Smart Cities'
+    url: https://arxiv.org/pdf/2202.07104
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-02-15'
+    document_type: preprint
+    persistent_id: https://doi.org/10.3929/ethz-b-000557717
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2202.07104;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3929/ethz-b-000557717 openalex:W4282043048
+    resolution: 'sim1: openalex location'
