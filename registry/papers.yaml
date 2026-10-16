@@ -155827,3 +155827,37 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7205084948
     resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2511-11470-31fc4165
+    title: 'Sat2RealCity: Geometry-Aware and Appearance-Controllable 3D Urban Generation
+      from Satellite Imagery'
+    url: https://arxiv.org/pdf/2511.11470
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2025-11-14'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2511.11470
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2511.11470;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2511.11470 openalex:W7105886385
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2511-15711-c4c28f09
+    title: 'Integrated 4D/5D Digital-Twin Framework for Cost Estimation and Probabilistic
+      Schedule Control: A Texas Mid-Rise Case Study'
+    url: https://arxiv.org/pdf/2511.15711
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2025-11-04'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2511.15711
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2511.15711;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2511.15711 openalex:W4416549856
+    resolution: 'sim1: openalex location'
