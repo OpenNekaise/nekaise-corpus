@@ -155350,3 +155350,131 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W399462216
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-1016-j-enbuild-2017-07-027-d51b6f44
+    title: Impact of the controller model complexity on model predictive control performance
+      for buildings
+    url: https://lirias.kuleuven.be/retrieve/498e6786-2848-4f5f-8fb8-ff58f48c8398
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-07-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2017.07.027
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/498e6786-2848-4f5f-8fb8-ff58f48c8398;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2017.07.027 openalex:W2734611975
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-apenergy-2018-10-074-22091b05
+    title: Generalised control-oriented modelling framework for multi-energy systems
+    url: https://pure.manchester.ac.uk/ws/files/78448650/APEN_D_18_05871R1.pdf
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2018-11-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2018.10.074
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://pure.manchester.ac.uk/ws/files/78448650/APEN_D_18_05871R1.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.apenergy.2018.10.074 openalex:W2899764318
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2017-02-052-f130fdbf
+    title: Economic impact of persistent sensor and actuator faults in concrete core
+      activated office buildings
+    url: https://lirias.kuleuven.be/retrieve/d5171503-553c-4554-bd3c-2066ea6a6cfd
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-02-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2017.02.052
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/d5171503-553c-4554-bd3c-2066ea6a6cfd;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2017.02.052 openalex:W2592709964
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1109-tcst-2015-2445851-695dd4b0
+    title: Optimal Control Approaches for Analysis of Energy Use Minimization of Hybrid
+      Ground-Coupled Heat Pump Systems
+    url: https://lirias.kuleuven.be/retrieve/096da486-46ed-4464-965e-728724716750
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2015-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tcst.2015.2445851
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/096da486-46ed-4464-965e-728724716750;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/tcst.2015.2445851 openalex:W2274943345
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-ifacol-2017-08-2133-88a2542a
+    title: A hierarchical MPC scheme for interconnected systems
+    url: https://arxiv.org/pdf/1703.02739
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-07-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ifacol.2017.08.2133
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1703.02739;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ifacol.2017.08.2133 openalex:W2601832157
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-en10020196-5c83cb7e
+    title: Energy Conservation in an Office Building Using an Enhanced Blind System
+      Control
+    url: https://lirias.kuleuven.be/retrieve/50e80eb4-34e8-4869-a011-17807ddeb159
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-02-10'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en10020196
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/50e80eb4-34e8-4869-a011-17807ddeb159;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en10020196 openalex:W2587235328
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1049-iet-cta-2016-1400-acdf51b4
+    title: Supervisory output prediction for bilinear systems by reinforcement learning
+    url: https://arxiv.org/pdf/1611.02052
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-03-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1049/iet-cta.2016.1400
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1611.02052;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1049/iet-cta.2016.1400 openalex:W2550662066
+    resolution: 'sim1: openalex+unpaywall location'
