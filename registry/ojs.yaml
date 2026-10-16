@@ -389071,21 +389071,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
       de autor 2017 Cuaderno de Notas)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-cuadernodenotas-tres-art-culos-de-max-bill
-    title: Tres artículos de Max Bill
-    url: http://polired.upm.es/index.php/cuadernodenotas/article/download/3124/3196
-    source: ojs_cuadernodenotas
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: es
-    published_at: '2015-12-01'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.20868/cn.2015.3124
-    license_evidence: 'http://polired.upm.es/index.php/cuadernodenotas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3124
-      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
-      de autor 2017 Cuaderno de Notas)'
-    rights_verified_at: '2026-10-16'
   - id: ojs-cuadernodenotas-arquitectura-e-industria-una-exploraci-n-bi
     title: Arquitectura e industria. Una exploración bibliográfica en la biblioteca
       de la Escuela de Arquitectura de la Universidad Politécnica
@@ -389955,21 +389940,6 @@ sources:
     published_at: '2016-05-26'
     document_type: journal-article
     license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3219
-      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
-      de autor 2016 Autor / BY-NC-ND)'
-    rights_verified_at: '2026-10-16'
-  - id: ojs-proyectosarquitect-influencia-de-pessoa-en-el-discurso-de-f
-    title: Influencia de Pessoa en el discurso de Fernando Távora = Pessoa's influence
-      in Fernando Tavora's discourse
-    url: http://polired.upm.es/index.php/proyectos_arquitectonicos/article/download/3220/3302
-    source: ojs_proyectosarquitect
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: es
-    published_at: '2016-05-26'
-    document_type: journal-article
-    license_evidence: 'http://polired.upm.es/index.php/proyectos_arquitectonicos/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/3220
       : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
       de autor 2016 Autor / BY-NC-ND)'
     rights_verified_at: '2026-10-16'
@@ -392363,4 +392333,2451 @@ sources:
     persistent_id: https://doi.org/10.20868/tf.2025.23.5630
     license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: http://polired.upm.es/index.php/territoriosenformacion/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/5630
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-25-anos-da-revista-brasileira-de-estudos-urbanos-e-re
+    title: '25 anos da Revista Brasileira de Estudos Urbanos e Regionais: perspectivas
+      de futuro'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/7866/5639
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202443
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/7866
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-between-orality-and-writing-perspectives-on-brazilian
+    title: 'Between Orality and Writing: Perspectives on Brazilian Reality in the Subjectivation
+      of a Black Sense of Place'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/7904/5741
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-04-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.20261en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/7904
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-the-croma-n-memorial-site-argentina-a-history-in-the
+    title: 'The Cromañón Memorial Site (Argentina): A History in the Making'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/7919/5728
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2025-10-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202552
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/7919
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-rethinking-platform-urbanization-from-the-perspective
+    title: 'Rethinking Platform Urbanization from the Perspective of Latin American
+      Cities: Theoretical Insights and Empirical Contributions of Regional Research '
+    url: http://rbeur.anpur.org.br/rbeur/article/download/7951/5788
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-06-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202613en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/7951
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-editorial-the-poly-periphery-and-the-peripheral-turn
+    title: 'Editorial: The “poly-periphery” and the “peripheral turn” in urban studies'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/7975/5685
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202535pt
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/7975
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-african-peripheries-and-brazilian-circumstances
+    title: African peripheries and Brazilian circumstances
+    url: http://rbeur.anpur.org.br/rbeur/article/download/7980/5689
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-05-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202530pt
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/7980
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-between-compensation-and-silence-environmental-necrop
+    title: 'Between Compensation and Silence: Environmental Necropolitics in the Legal
+      Settlement for Full Reparation of the Mariana Disaster'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/7986/5730
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-03-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202607pt
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/7986
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-categories-and-ideas-informing-critical-thought-in-br
+    title: 'Categories and Ideas Informing Critical Thought in Brazilian Urban Studies:
+      Trajectories and Tensions'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8027/5812
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-10-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202631pt
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8027
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-community-urban-planner-in-latin-america-mediation-be
+    title: 'Community urban planner in Latin America: mediation between urban policy
+      and alternative ways of producing the city'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8029/5792
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2026-07-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202623
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8029
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-gentrification-in-amazonian-cities-conflict-over-soci
+    title: 'Gentrification in Amazonian cities: conflict over social housing at Portal
+      da Amazônia, Belém (PA)'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8073/5794
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-08-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202626
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8073
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-challenging-adult-centrism-children-s-participation-i
+    title: 'Challenging Adult-Centrism: Children’s Participation in the Urban Planning
+      of Jundiaí, São Paulo, Brazil'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8079/5799
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-08-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202627pt
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8079
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-financialization-of-the-real-estate-sector-and-costly
+    title: Financialization of the real estate sector and costly access to low-income
+      housing
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8098/5803
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-08-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202625pt
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8098
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-on-foucault-and-brazilian-urbanism-a-genealogy-of-cit
+    title: 'On Foucault and Brazilian Urbanism: A Genealogy of City Planning in Rio
+      de Janeiro and São Paulo (c. 1850s-1945)'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8105/5729
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-10-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202556
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8105
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-street-carnival-in-the-port-district-of-rio-de-janeir
+    title: 'Street Carnival in the Port District of Rio de Janeiro: Who Can “Turn the
+      World Upside Down” and Where? A Critical Approach to the Festive Phenomenon '
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8134/5809
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202629pt
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8134
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-racial-property-regimes-the-formation-of-downtown-bel
+    title: 'Racial Property Regimes: The Formation of Downtown Belo Horizonte'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8174/5807
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202628
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8174
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-review-an-urban-ecology-of-gino-germani-s-intellectua
+    title: 'Review: An urban ecology of Gino Germani''s intellectual life: contributions
+      to Latin American urban thought: TROVERO, J. I. Gino Germani y la cuestión'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8221/5793
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2026-08-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202624
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8221
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-the-works-of-alfred-agache-in-petr-polis-rio-de-janei
+    title: The works of Alfred Agache in Petrópolis (Rio de Janeiro, Brazil) during
+      the Estado Novo [New State] in Brazil (1937-1945)
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8266/5739
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-03-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202606en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8266
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-repositioning-urban-regional-planning-in-brazil-terri
+    title: 'Repositioning Urban–Regional Planning in Brazil: Territory and Scales'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8299/5764
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-05-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202614en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8299
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-henri-lefebvre-and-the-third-space-toward-another-cri
+    title: 'Henri Lefebvre and the Third Space: Toward Another Critical Reading of Latin
+      American Urbanization'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8300/5756
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202612en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8300
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-land-and-territory-in-discourses-on-buen-vivir-toward
+    title: 'Land and Territory in Discourses on Buen Vivir: Towards the Refounding of
+      Latin American Urban and Regional Thought'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8302/5760
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-05-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202620en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8302
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-reflections-on-latin-american-urban-thought-contribut
+    title: 'Reflections on Latin American Urban Thought: Contributions to a Political
+      Ecology of Urbanization'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8303/5763
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-05-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202619en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8303
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-decoloniality-liberatory-education-and-the-right-to-t
+    title: 'Decoloniality, Liberatory Education, and the Right to the City: The Praxis
+      of Technical Advisory Services by Extension Groups of the Red ULACAV in Bue'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8340/5771
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-05-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202616en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8340
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-new-determinants-of-regional-dynamics-and-interpretat
+    title: 'New Determinants of Regional Dynamics and Interpretative Frameworks in the
+      21st Century: Productive Deconcentration, Spatial Reconcentration or Region'
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8356/5784
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2026-06-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202615en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8356
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rbeur-spatial-dynamics-of-age-structure-the-demographic-win
+    title: Spatial Dynamics of Age Structure, the Demographic Window, and Formal Employment
+      in the Northern Semi-arid Region
+    url: http://rbeur.anpur.org.br/rbeur/article/download/8357/5787
+    source: ojs_rbeur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-06-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.22296/2317-1529.rbeur.202601en
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://rbeur.anpur.org.br/rbeur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.rbeur.anpur.org.br:article/8357
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-how-a-sustainable-renovation-influenced-the-e
+    title: How a Sustainable Renovation Influenced the Environmental Values of Those
+      Involved
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4972/2607
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-04-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i2.4972
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4972
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-a-switch-to-commons-the-evolution-of-the-regu
+    title: 'A Switch to Commons: The Evolution of the Regulation of Urban Agriculture
+      in Rome, Italy'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/9541/4539
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-08-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.9541
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/9541
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-minecraft-and-playful-public-participation-in
+    title: Minecraft and Playful Public Participation in Urban Design
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5229/2719
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-06-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i2.5229
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5229
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-how-does-ict-expansion-drive-smart-urban-grow
+    title: How Does ICT Expansion Drive “Smart” Urban Growth? A Case Study of Nanjing,
+      China
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/2561/1435
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i1.2561
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/2561
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-forks-market-cosmopolitan-canopy-convivia
+    title: 'The Forks Market: Cosmopolitan Canopy, Conviviality, and Class'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6478/3307
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-10-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i4.6478
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6478
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-accessing-resources-in-arrival-neighbourhoods
+    title: 'Accessing Resources in Arrival Neighbourhoods: How Foci-Aided Encounters
+      Offer Resources to Newcomers'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/2977/1657
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-07-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i3.2977
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/2977
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-maximising-the-degree-of-user-choice-a-simple
+    title: Maximising the Degree of User Choice. A Simple Tool to Measure Current Levels
+      of Quality of Life in Urban Environments
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/2006/1159
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v4i2.2006
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/2006
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-lud-as-an-instrument-for-sub-metropolitanizat
+    title: 'LUD as an Instrument for (Sub)Metropolitanization: The 1000-District in
+      Rishon-Lezion, Israel as a Case Study'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/2256/1305
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v4i4.2256
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/2256
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-mapping-the-flow-of-forest-migration-through
+    title: Mapping the Flow of Forest Migration through the City under Climate Change
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/1753/1027
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-02-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v4i1.1753
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/1753
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-transferring-circular-economy-solutions-acros
+    title: 'Transferring Circular Economy Solutions across Differentiated Territories:
+      Understanding and Overcoming the Barriers for Knowledge Transfer'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/2162/1238
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v4i3.2162
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/2162
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-from-social-barriers-to-transformative-planni
+    title: 'From Social Barriers to Transformative Planning in Energy Transitions: Learning
+      from Norwegian Planners'' Perspectives'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/8158/3807
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.8158
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/8158
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-transition-processes-in-dutch-spatial-plannin
+    title: 'Transition Processes in Dutch Spatial Planning and Water Management: A Shift
+      to the Natural'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/8056/3978
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-10-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.8056
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/8056
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-scaling-potential-of-experimental-knowled
+    title: The Scaling Potential of Experimental Knowledge in the Case of the Bauhaus.MobilityLab,
+      Erfurt (Germany)
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5329/2804
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-08-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i3.5329
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5329
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-aligning-heritage-conservation-and-climate-mi
+    title: Aligning Heritage Conservation and Climate Mitigation Through Adaptive Reuse
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/11732/4789
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-11-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.11732
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/11732
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-from-ephemeral-planning-to-permanent-urbanism
+    title: 'From Ephemeral Planning to Permanent Urbanism: An Urban Planning Theory
+      of Mega-Events'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/532/307
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v1i1.532
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/532
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-rethinking-the-contextual-factors-influencing
+    title: 'Rethinking the Contextual Factors Influencing Urban Mobility: A New Holistic
+      Conceptual Framework'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5784/2900
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-10-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i4.5784
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5784
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-experimenting-with-gamification-and-geogames
+    title: 'Experimenting With Gamification and Geogames in Urban Planning: A Systematic
+      Literature Review'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/10780/4971
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-03-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.10780
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/10780
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-urban-forms-and-future-cities-a-commentary
+    title: 'Urban Forms and Future Cities: A Commentary'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/863/482
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-02-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v2i1.863
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/863
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-spatial-integration-of-refugees-towards-a-pos
+    title: 'Spatial Integration of Refugees: Towards a Post-Migrant Approach'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/7080/3516
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-12-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i4.7080
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/7080
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-co-production-for-equitable-governance-in-com
+    title: 'Co-Production for Equitable Governance in Community Climate Adaptation:
+      Neighborhood Resilience in Houston, Texas'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/7338/3686
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.7338
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/7338
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-meanings-of-self-building-incrementality-empl
+    title: 'Meanings of Self-Building: Incrementality, Emplacement, and Erasure in Dar
+      es Salaam’s Traditional Swahili Neighborhoods'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4849/2602
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i1.4849
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4849
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-levers-for-sustainable-food-system-transforma
+    title: 'Levers for Sustainable Food System Transformation: How to Foster Biodiversity
+      and Organic and Local Food Through Public Catering'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/9676/4513
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-07-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.9676
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/9676
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-emancipatory-circuits-of-knowledge-for-urban
+    title: '“Emancipatory Circuits of Knowledge” for Urban Equality: Experiences From
+      Havana, Freetown, and Asia'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5319/2711
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-08-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i3.5319
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5319
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-crowdsourced-quantification-and-visualization
+    title: Crowdsourced Quantification and Visualization of Urban Mobility Space Inequality
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/1209/742
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-03-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v3i1.1209
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/1209
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-cooking-caring-and-commoning-grassroots-commu
+    title: 'Cooking, Caring, and Commoning: Grassroots Community Kitchens Across Five
+      European Cities'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/10145/4667
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-09-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.10145
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/10145
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-planning-the-ideal-refugee-camp-a-critical-in
+    title: Planning the Ideal Refugee Camp? A Critical Interrogation of Recent Planning
+      Innovations in Jordan and Germany
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/1726/947
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-12-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v3i4.1726
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/1726
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-a-lefebvrian-analysis-of-public-spaces-in-man
+    title: A Lefebvrian Analysis of Public Spaces in Mangaung, South Africa
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/1363/792
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v3i3.1363
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/1363
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-combining-paid-work-and-care-work-in-suburbia
+    title: Combining Paid Work and Care Work in Suburbia? Planning Perspectives and
+      Everyday Experiences in Munich‐Freiham (Germany)
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/12062/5237
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-08-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.12062
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/12062
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-territorial-inequality-driven-by-tourism-a-qu
+    title: 'Territorial Inequality Driven by Tourism: A Queer Mapping of Urban Space
+      in Acapulco, Mexico'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6425/3196
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-05-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i2.6425
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6425
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-heating-standards-and-obsolescence-in-post-wa
+    title: Heating Standards and Obsolescence in Post-War Britain’s Homes for Today
+      and Tomorrow
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/7754/3750
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-04-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.7754
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/7754
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-role-of-the-cities-for-change-in-protecti
+    title: The Role of the ‘Cities for Change’ in Protecting the Rights of Irregular
+      Migrants in Spain
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3811/2066
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-04-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i2.3811
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3811
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-prevailing-issues-and-actions-in-urban-best-p
+    title: Prevailing Issues and Actions in Urban Best Practices Across Latin America
+      and the Caribbean
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/8130/3916
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-09-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.8130
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/8130
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-straddling-the-fence-land-use-patterns-in-and
+    title: 'Straddling the Fence: Land Use Patterns in and around Ports as Hidden Designers'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/4101/2202
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-07-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v6i3.4101
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/4101
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-reviewing-environmental-benefits-of-urban-man
+    title: 'Reviewing Environmental Benefits of Urban Manufacturing: Arguments and Evidence
+      for Carbon, Resource, and Space Efficiency'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/10039/4739
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-10-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.10039
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/10039
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-co-creation-and-the-city-arts-based-methods-a
+    title: 'Co-Creation and the City: Arts-Based Methods and Participatory Approaches
+      in Urban Planning'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6106/2859
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-09-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i3.6106
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6106
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-can-she-handle-it-women-delivery-drivers-and
+    title: “Can She Handle It?” Women Delivery Drivers and the Gendered Politics of
+      Hanoi’s Streets
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/10896/4903
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-01-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.10896
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/10896
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-role-of-the-body-in-pandemic-geographies
+    title: 'The Role of the Body in Pandemic Geographies of Encounter: Anti-Restriction
+      Protesters Between Collective Action and Political Violence'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6562/3445
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-10-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v8i4.6562
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6562
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-liminality-of-subcultural-spaces-tokyo-s
+    title: 'The Liminality of Subcultural Spaces: Tokyo’s Gaming Arcades as Boundary
+      Between Social Isolation and Integration'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/6969/3613
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-03-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.6969
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/6969
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-shifting-approaches-to-planning-theory-global
+    title: 'Shifting Approaches to Planning Theory: Global North and South'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/727/464
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-12-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v1i4.727
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/727
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-comparing-the-landscape-fragmentation-and-acc
+    title: Comparing the Landscape Fragmentation and Accessibility of Green Spaces in
+      Territories-in-Between across Europe
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/1122/692
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-12-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v2i4.1122
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/1122
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-social-mix-as-sustainability-fix-exploring-so
+    title: ‘Social Mix’ as ‘Sustainability Fix’? Exploring Social Sustainability in
+      the French Suburbs
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/1675/897
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v3i4.1675
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/1675
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-inclusion-and-exclusion-in-urban-public-space
+    title: 'Inclusion and Exclusion in Urban Public Space: Contemporary Challenges in
+      Vienna and Helsinki'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/8291/3949
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.8291
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/8291
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-between-decentralization-and-recentralization
+    title: 'Between Decentralization and Recentralization: Conflicts in Intramunicipal
+      and Intermunicipal Governance in Tokyo’s Shrinking Suburbs'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5268/2781
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-07-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i3.5268
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5268
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-future-urban-sustainability-lessons-learnt-fr
+    title: 'Future Urban Sustainability: Lessons Learnt From the SDGs and Perspectives
+      for a Post‐2030 Agenda'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/11526/4764
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-11-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.11526
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/11526
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-negotiating-vertical-urbanization-at-the-publ
+    title: 'Negotiating Vertical Urbanization at the Public–Private Nexus: On the Institutional
+      Embeddedness of Planning Committees'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5566/2881
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-11-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i4.5566
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5566
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-differential-inclusion-and-the-socio-ecologic
+    title: Differential Inclusion and the Socio‐Ecological Superdiversification of Tokyo
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/11167/4921
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-02-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.11167
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/11167
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-refugees-right-to-the-center-of-the-city
+    title: 'The Refugees’ Right to the Center of the City and Spatial Justice: Gentrification
+      vs Commoning Practices in Tarlabaşı-Istanbul'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3098/1721
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i3.3098
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3098
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-revealing-the-community-s-interpretation-of-p
+    title: 'Revealing the Community’s Interpretation of Place: Integrated Digital Support
+      to Embed Photovoice Into Placemaking Processes'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/7074/3478
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-01-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.7074
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/7074
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-guilt-tripping-on-the-relation-between-ethica
+    title: 'Guilt-Tripping: On the Relation between Ethical Decisions, Climate Change
+      and the Built Environment'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/3301/1829
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-11-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v5i4.3301
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/3301
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-economic-sanitation-environmental-dis-connect
+    title: 'Economic–Sanitation–Environmental (Dis)Connections in Brazil: A Trans-Scale
+      Perspective From Minas Gerais State and BH Microregion'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/7048/3665
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-03-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.7048
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/7048
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-urban-structure-energy-and-planning-findings
+    title: 'Urban Structure, Energy and Planning: Findings from Three Cities in Sweden,
+      Finland and Estonia'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/506/306
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-03-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v1i1.506
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/506
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-climate-change-implications-for-the-assumptio
+    title: 'Climate Change: Implications for the Assumptions, Goals and Methods of Urban
+      Environmental Planning'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/771/480
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-12-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v1i4.771
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/771
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-making-green-work-implementation-strategies-i
+    title: 'Making Green Work: Implementation Strategies in a New Generation of Urban
+      Forests'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5039/2572
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-05-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i2.5039
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5039
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-from-policy-to-practice-tracing-the-evolution
+    title: 'From Policy to Practice: Tracing the Evolution of Urban Food Policies Across
+      London and Rotterdam'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/9575/4457
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-07-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.9575
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/9575
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-working-from-home-and-covid-19-where-could-re
+    title: 'Working From Home and Covid-19: Where Could Residents Move to?'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/5306/2689
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-07-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.v7i3.5306
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/5306
+    rights_verified_at: '2026-10-16'
+  - id: ojs-urbanplanning-the-caring-with-practitioner-diffracting-prac
+    title: 'The Caring‐With Practitioner: Diffracting Practice‐Research Dynamics in
+      Urban Care'
+    url: http://www.cogitatiopress.com/urbanplanning/article/download/10055/4643
+    source: ojs_urbanplanning
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-09-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.17645/up.10055
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.cogitatiopress.com/urbanplanning/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.cogitatiopress.com:article/10055
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-a-review-of-the-application-of-the-simulated-annealing
+    title: A review of the application of the simulated annealing algorithm in structural
+      health monitoring (1995-2021)
+    url: http://www.fracturae.com/index.php/fis/article/download/3851/3778
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3851
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-numerical-nonlinear-analysis-of-rc-beans-with-un-streng
+    title: Numerical nonlinear analysis of RC beans with un-strengthened and CFRP-strengthened
+      opening drilled under service loads within shear zones
+    url: http://www.fracturae.com/index.php/fis/article/download/3857/3753
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-12-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.63.17
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3857
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-numerical-analysis-of-reinforced-concrete-circular-colu
+    title: Numerical Analysis of Reinforced Concrete Circular Columns Strengthening
+      With CFRP under Concentric and Eccentric Loadings
+    url: http://www.fracturae.com/index.php/fis/article/download/3892/3751
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-12-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.63.16
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3892
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-mechanical-and-fractured-surface-characterization-of-ep
+    title: Mechanical and Fractured surface characterization of epoxy/red mud/fly ash/
+      aluminium powder filled hybrid composites for automotive applications
+    url: http://www.fracturae.com/index.php/fis/article/download/3897/3783
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.06
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3897
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-structural-behavior-of-damaged-reinforced-concrete-beam
+    title: Structural behavior of damaged reinforced concrete beams under static cyclic
+      loading
+    url: http://www.fracturae.com/index.php/fis/article/download/3904/3761
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-12-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.63.20
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3904
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-effect-of-date-palm-and-polypropylene-fibers-on-the-cha
+    title: 'Effect of date palm and polypropylene fibers on the characteristics of self-compacting
+      concretes: comparative study'
+    url: http://www.fracturae.com/index.php/fis/article/download/3910/3776
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3910
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-experimental-and-numerical-investigations-of-the-flexur
+    title: Experimental and numerical investigations of the flexural behaviour ‎of Green
+      - Ultra High Performance Fiber Reinforced Concrete ‎beams under repeated
+    url: http://www.fracturae.com/index.php/fis/article/download/3924/3791
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.10
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3924
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-degradation-of-the-first-frequency-of-an-rc-frame-with
+    title: Degradation of the first frequency of an RC frame with damage levels
+    url: http://www.fracturae.com/index.php/fis/article/download/3960/3782
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3960
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-the-impact-of-utilizing-uhpfrc-in-beam-column-joints-wi
+    title: The impact of utilizing UHPFRC in beam-column joints with different patterns
+      of transverse reinforcement
+    url: http://www.fracturae.com/index.php/fis/article/download/3995/3774
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/3995
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-efficiency-of-shape-memory-alloy-seismic-restrainers-fo
+    title: Efficiency of shape memory alloy seismic restrainers for several conditions
+      of bridge joints
+    url: http://www.fracturae.com/index.php/fis/article/download/4030/3785
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.07
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4030
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-fracture-behaviour-of-concrete-with-different-replaceme
+    title: Fracture behaviour of concrete with different replacement rates of iron tailings
+      sand based on double-K criterion
+    url: http://www.fracturae.com/index.php/fis/article/download/4033/3793
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.11
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4033
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-the-influence-of-notch-connection-location-on-the-short
+    title: The influence of notch connection location on the short-term behaviour of
+      timber-concrete composite beams, modelling of TCC beams and research for opt
+    url: http://www.fracturae.com/index.php/fis/article/download/4053/3795
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.12
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4053
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-experimental-and-numerical-inspection-of-cracks-in-ferr
+    title: Experimental and numerical inspection of cracks in ferrule cracking of BK1
+      cement crusher
+    url: http://www.fracturae.com/index.php/fis/article/download/4054/3815
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4054
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-mechanisms-for-introduction-of-pseudo-ductility-in-fibe
+    title: Mechanisms for Introduction of Pseudo Ductility in Fiber Reinforced Polymer
+      Composites- A Review
+    url: http://www.fracturae.com/index.php/fis/article/download/4090/3811
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4090
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-an-assessment-of-hdpe-fillers-and-fiber-wrapping-on-the
+    title: An assessment of HDPE fillers and Fiber Wrapping on the strength of Reinforced
+      Concrete
+    url: http://www.fracturae.com/index.php/fis/article/download/4094/3803
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.16
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4094
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-glass-fiber-for-improved-behavior-of-light-expanded-cla
+    title: 'Glass Fiber for Improved Behavior of Light Expanded Clay Aggregate Concrete
+      Beams: An Experimental Study'
+    url: http://www.fracturae.com/index.php/fis/article/download/4114/3809
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4114
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-free-vibration-analysis-of-the-structural-integrity-on
+    title: Free vibration analysis of the structural integrity on the porous functionally
+      graded plates using a novel Quasi-3D hyperbolic high order shear deform
+    url: http://www.fracturae.com/index.php/fis/article/download/4117/3807
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.18
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4117
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-experimental-and-numerical-investigations-of-masonry-be
+    title: Experimental and numerical investigations of masonry ‎ beams performance
+      under bending loads
+    url: http://www.fracturae.com/index.php/fis/article/download/4119/3851
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.66.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4119
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-optimization-of-s-n-curve-fitting-based-on-neighborhood
+    title: Optimization of S-N curve fitting based on neighborhood rough set reduction
+      with improved firefly algorithm
+    url: http://www.fracturae.com/index.php/fis/article/download/4122/3805
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.64.17
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4122
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-structural-health-evaluation-of-arch-bridge-by-field-te
+    title: Structural Health Evaluation of Arch Bridge by Field Test and Optimized BPNN
+      Algorithm
+    url: http://www.fracturae.com/index.php/fis/article/download/4146/3829
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.11
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4146
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-modelling-of-fresh-properties-and-strength-activity-ind
+    title: Modelling of fresh properties and strength activity index with microstructure
+      characterisation of ternary cement incorporating waste glass and granula
+    url: http://www.fracturae.com/index.php/fis/article/download/4151/3858
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.66.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4151
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-experimental-studies-to-evaluate-tensile-and-bond-stren
+    title: Experimental studies to evaluate tensile and bond strength of Stainless-Steel
+      Wire Mesh (SSWM)
+    url: http://www.fracturae.com/index.php/fis/article/download/4210/3841
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.17
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4210
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-damage-and-restoration-of-historical-urban-walls-litera
+    title: 'Damage and restoration of historical urban walls: literature review and
+      case of studies'
+    url: http://www.fracturae.com/index.php/fis/article/download/4213/3833
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.13
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4213
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-automatic-detection-of-concrete-cracks-from-images-usin
+    title: Automatic detection of concrete cracks from images using Adam-SqueezeNet
+      deep learning model
+    url: http://www.fracturae.com/index.php/fis/article/download/4216/3845
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.19
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4216
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-experimental-and-numerical-investigation-the-effect-of
+    title: Experimental and numerical investigation the effect of concrete strength
+      and area of steel reinforcement on mechanical performance of functionally gra
+    url: http://www.fracturae.com/index.php/fis/article/download/4230/3843
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.18
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4230
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-multi-level-uncertain-fatigue-analysis-of-a-truss-under
+    title: Multi-level Uncertain Fatigue Analysis of a Truss under Incomplete Available
+      Information
+    url: http://www.fracturae.com/index.php/fis/article/download/4238/3852
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.66.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4238
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-impacts-of-nano-clay-particles-and-heat-treating-on-out
+    title: Impacts of nano-clay particles and heat-treating on out-of-phase thermo-mechanical
+      fatigue characteristics in piston aluminum-silicon alloys
+    url: http://www.fracturae.com/index.php/fis/article/download/4278/3837
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.15
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4278
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-behavior-of-a-multi-story-steel-structure-with-eccentri
+    title: Behavior of a Multi-Story Steel Structure with Eccentric X-Brace
+    url: http://www.fracturae.com/index.php/fis/article/download/4294/3884
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.66.17
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4294
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-crack-simulation-for-the-cover-of-the-landfill-a-seismi
+    title: Crack simulation for the cover of the landfill – A seismic design
+    url: http://www.fracturae.com/index.php/fis/article/download/4315/3825
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.65.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4315
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-towards-long-term-monitoring-of-the-structural-health-o
+    title: Towards Long-Term Monitoring of the Structural Health of Deep Rock Tunnels
+      with Remote Sensing Techniques
+    url: http://www.fracturae.com/index.php/fis/article/download/4381/3856
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.66.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4381
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-the-behavior-of-reinforced-lightweight-concrete-beams-w
+    title: The behavior of reinforced lightweight concrete beams with initial cracks
+    url: http://www.fracturae.com/index.php/fis/article/download/4428/3886
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.66.18
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4428
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-the-effect-of-beam-width-and-crack-depth-ratio-on-mode
+    title: 'The effect of beam width and crack-depth ratio on mode I fracture toughness
+      of RCB: an experimental and numerical study'
+    url: http://www.fracturae.com/index.php/fis/article/download/4458/3898
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4458
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-nonlinearity-of-mechanical-behavior-of-3d-reinforced-co
+    title: Nonlinearity of mechanical behavior of 3D-reinforced composites under compression
+    url: http://www.fracturae.com/index.php/fis/article/download/4466/3888
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.66.19
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4466
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-experimental-work-of-effect-of-openings-on-the-post-ten
+    title: Experimental work of effect of openings on the post-tensioned flat slab
+    url: http://www.fracturae.com/index.php/fis/article/download/4476/3937
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.21
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4476
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-compressive-study-on-recycled-concrete-experiment-and-n
+    title: 'Compressive study on recycled concrete: experiment and numerical homogenization
+      modelling'
+    url: http://www.fracturae.com/index.php/fis/article/download/4480/3902
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4480
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-effect-of-granular-waste-compact-disc-on-bond-strength
+    title: Effect of Granular Waste Compact Disc on Bond Strength between Steel Bars
+      and Surrounding Concrete
+    url: http://www.fracturae.com/index.php/fis/article/download/4498/3904
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.06
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4498
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-impact-of-earthquake-s-epicenter-distance-to-failure-of
+    title: Impact of earthquake’s epicenter distance to failure of the embankment –
+      A seismic prediction
+    url: http://www.fracturae.com/index.php/fis/article/download/4517/3910
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4517
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-enhancement-of-punching-shear-behavior-of-reinforced-co
+    title: Enhancement of punching shear behavior of reinforced concrete flat slabs
+      using GFRP grating
+    url: http://www.fracturae.com/index.php/fis/article/download/4521/3980
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-02-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.68.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4521
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-structural-integrity-analysis-of-the-pre-stressed-concr
+    title: Structural integrity analysis of the pre-stressed concrete dome of the Belgrade
+      fair hall 1
+    url: http://www.fracturae.com/index.php/fis/article/download/4525/3943
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.24
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4525
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-fracture-simulation-of-concrete-beams-to-assess-softeni
+    title: Fracture Simulation of Concrete Beams to assess softening behavior by varying
+      different fractions of Aggregates
+    url: http://www.fracturae.com/index.php/fis/article/download/4530/3900
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4530
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-retrofitting-of-box-section-concrete-beams-to-resist-sh
+    title: Retrofitting of Box Section Concrete Beams to Resist Shear and Torsion Using
+      Near-Surface-Mount (NSM) GFRP Stirrups
+    url: http://www.fracturae.com/index.php/fis/article/download/4532/3941
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.23
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4532
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-effect-of-bacillus-subtilis-bacteria-on-the-mechanical
+    title: Effect of Bacillus Subtilis Bacteria on The Mechanical Properties of Corroded
+      Self-Healing Concrete
+    url: http://www.fracturae.com/index.php/fis/article/download/4537/3987
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-02-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.68.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4537
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-performance-of-reinforced-concrete-flat-slabs-having-gf
+    title: Performance of Reinforced Concrete Flat Slabs Having GFRP Gratings
+    url: http://www.fracturae.com/index.php/fis/article/download/4544/3931
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.18
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4544
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-an-investigation-of-cracks-caused-by-concrete-shrinkage
+    title: An investigation of cracks caused by concrete shrinkage and temperature difference
+      in common reinforced concrete bridge structures.
+    url: http://www.fracturae.com/index.php/fis/article/download/4559/3994
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-02-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.68.16
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4559
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-finite-element-simulation-of-residual-stresses-induced
+    title: Finite-element simulation of residual stresses induced by laser shock peening
+      in TC4 samples structurally similar to a turbine blade
+    url: http://www.fracturae.com/index.php/fis/article/download/4592/3894
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4592
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-exploring-strength-and-ductility-responses-of-beam-colu
+    title: Exploring strength and ductility responses of beam-column joints using UHPC
+      and UHPFRC employing concrete damaged plasticity
+    url: http://www.fracturae.com/index.php/fis/article/download/4621/3983
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-02-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.68.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4621
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-fatigue-assessment-of-a-fsae-car-rear-upright-by-a-clos
+    title: Fatigue assessment of a FSAE car rear upright by a closed form solution of
+      the critical plane method
+    url: http://www.fracturae.com/index.php/fis/article/download/4626/3914
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.67.11
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4626
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-civil-structural-health-monitoring-and-machine-learning
+    title: 'Civil Structural Health Monitoring and Machine Learning: A Comprehensive
+      Review'
+    url: http://www.fracturae.com/index.php/fis/article/download/4789/4095
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-04-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4789
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-methodology-to-minimize-the-dynamic-response-of-tall-bu
+    title: Methodology to minimize the dynamic response of tall buildings under wind
+      load controlled through semi-active magneto-rheological dampers
+    url: http://www.fracturae.com/index.php/fis/article/download/4821/4038
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-04-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.07
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4821
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-titanium-frp-hybrid-sandwich-in-plane-flexural-behaviou
+    title: 'Titanium/FRP hybrid sandwich: in-plane flexural behaviour of short beam
+      specimens'
+    url: http://www.fracturae.com/index.php/fis/article/download/4830/4041
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-04-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4830
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-effectiveness-of-partial-wrapping-of-stainless-steel-wi
+    title: Effectiveness of Partial Wrapping of Stainless-Steel Wire Mesh on Compression
+      Behavior of Concrete Cylinders
+    url: http://www.fracturae.com/index.php/fis/article/download/4833/4045
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-04-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.06
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4833
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-about-measuring-the-stress-intensity-factor-of-cracks-i
+    title: About Measuring the Stress Intensity Factor of Cracks in Curved, Brittle
+      Shells
+    url: http://www.fracturae.com/index.php/fis/article/download/4859/4054
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-04-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4859
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-assessing-structural-integrity-of-non-homogeneous-syste
+    title: Assessing structural integrity of non-homogeneous systems by means of Acoustic
+      Emissions and Non-Extensive Statistical Mechanics
+    url: http://www.fracturae.com/index.php/fis/article/download/4870/4021
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.68.29
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4870
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-influence-of-soil-salinity-on-the-bearing-capacity-of-t
+    title: Influence of soil salinity on the bearing capacity of the frozen wall
+    url: http://www.fracturae.com/index.php/fis/article/download/4878/4046
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-04-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.08
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4878
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-degradation-analysis-of-dynamic-properties-for-plain-co
+    title: Degradation analysis of dynamic properties for plain concrete structures
+      under mixed-mode fracture conditions via an improved cohesive crack approach
+    url: http://www.fracturae.com/index.php/fis/article/download/4892/4019
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.68.28
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4892
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-a-numerical-study-on-predicting-bond-slip-relationship
+    title: A Numerical Study on Predicting Bond-Slip Relationship of Reinforced Concrete
+      using Surface Based Cohesive Behavior
+    url: http://www.fracturae.com/index.php/fis/article/download/4904/4055
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.12
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4904
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-introduction-and-application-of-a-drive-by-damage-detec
+    title: Introduction and application of a drive-by damage detection methodology for
+      bridges using variational mode decomposition
+    url: http://www.fracturae.com/index.php/fis/article/download/4929/4067
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.70.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4929
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-the-impact-of-nanoparticles-b4c-al2o3-on-mechanical-wea
+    title: The Impact of nanoparticles (B4C-Al2O3) on mechanical, wear, fracture behavior
+      and machining properties of formwork grade Al7075 composites
+    url: http://www.fracturae.com/index.php/fis/article/download/4938/4062
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.15
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4938
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-enhancing-the-flexural-performance-of-lightweight-concr
+    title: 'Enhancing the flexural performance of lightweight concrete slabs with CFRP
+      Sheets: an experimental analysis'
+    url: http://www.fracturae.com/index.php/fis/article/download/4955/4057
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.69.13
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/4955
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-correlation-coefficients-of-vibration-signals-and-machi
+    title: Correlation coefficients of vibration signals and machine learning algorithm
+      for structural damage assessment in beams under moving load
+    url: http://www.fracturae.com/index.php/fis/article/download/5017/4070
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.70.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5017
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-numerical-study-of-the-influence-of-the-parameters-of-s
+    title: Numerical study of the influence of the parameters of statistical distribution
+      of the structural elements’ ultimate strength on deformable bodies’ fra
+    url: http://www.fracturae.com/index.php/fis/article/download/5062/4076
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-08-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.70.06
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5062
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-optimization-of-the-internal-structure-of-3d-printed-co
+    title: Optimization of the internal structure of 3D-printed components for architectural
+      restoration
+    url: http://www.fracturae.com/index.php/fis/article/download/5072/4090
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.70.13
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5072
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-an-interface-based-microscopic-model-for-the-failure-an
+    title: An interface-based microscopic model for the failure analysis of masonry
+      structures reinforced with timber retrofit solutions
+    url: http://www.fracturae.com/index.php/fis/article/download/5089/4088
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.70.12
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5089
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-rubberized-reinforced-concrete-columns-under-axial-and
+    title: Rubberized reinforced concrete columns under axial and cyclic loading
+    url: http://www.fracturae.com/index.php/fis/article/download/5092/4100
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.70.17
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5092
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-integrating-ai-and-statistical-methods-for-enhancing-ci
+    title: 'Integrating AI and statistical methods for enhancing civil structural practices:
+      current trends, practical issues, and future direction'
+    url: http://www.fracturae.com/index.php/fis/article/download/5120/4152
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.71.12
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5120
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-the-axial-behaviour-of-concrete-filled-double-skinned-s
+    title: The Axial behaviour of Concrete Filled Double Skinned Steel Tubular (CFDST)
+      column with concrete imperfections
+    url: http://www.fracturae.com/index.php/fis/article/download/5152/4173
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.01
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5152
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-low-carbon-cementitious-composite-incorporated-with-bio
+    title: 'Low-carbon cementitious composite incorporated with biochar and recycled
+      fines suitable for 3D printing applications: hydration, shrinkage and early-a'
+    url: http://www.fracturae.com/index.php/fis/article/download/5156/4148
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.71.08
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5156
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-reuse-of-sheep-wool-fibers-in-the-production-of-ultrali
+    title: 'Reuse of sheep wool fibers in the production of ultralightweight foamed
+      concrete: effect of fiber treatment, length, and content on the mechanical pro'
+    url: http://www.fracturae.com/index.php/fis/article/download/5158/4168
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.71.23
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5158
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-investigating-the-repair-of-cracks-through-bacterial-se
+    title: Investigating the repair of cracks through bacterial self-healing for sustainable
+      concrete in aggressive sulfate attack environments
+    url: http://www.fracturae.com/index.php/fis/article/download/5172/4154
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.71.14
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5172
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-improved-flexural-behaviour-of-reinforced-concrete-beam
+    title: Improved flexural behaviour of reinforced concrete beam strengthened using
+      stainless steel wire mesh
+    url: http://www.fracturae.com/index.php/fis/article/download/5173/4214
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5173
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-long-term-development-of-mechanical-properties-of-concr
+    title: Long-term development of mechanical properties of concrete with different
+      water to cement ratio and internal curing ability
+    url: http://www.fracturae.com/index.php/fis/article/download/5181/4160
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.71.19
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5181
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-stochastic-modeling-of-structural-fatigue-damage-in-hig
+    title: Stochastic Modeling of Structural Fatigue Damage in High Strength Steel Structures
+    url: http://www.fracturae.com/index.php/fis/article/download/5191/4162
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.71.20
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5191
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-mechanical-testing-of-miniature-carbon-fiber-reinforced
+    title: Mechanical testing of miniature carbon fiber reinforced polymer (CFRP) samples
+      under digital light microscopy
+    url: http://www.fracturae.com/index.php/fis/article/download/5260/4157
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.71.17
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5260
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-a-digital-twin-framework-with-mobilenetv2-for-damage-de
+    title: A digital twin framework with MobileNetV2 for damage detection in slab structures
+    url: http://www.fracturae.com/index.php/fis/article/download/5273/4189
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-02-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.09
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5273
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-phase-field-modeling-for-investigating-the-effect-of-re
+    title: Phase-field modeling for investigating the effect of rebar positioning and
+      uniform versus non-uniform corrosion on concrete fracture
+    url: http://www.fracturae.com/index.php/fis/article/download/5278/4250
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.73.12
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5278
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-investigation-on-the-characterization-and-modelling-of
+    title: Investigation on the characterization and modelling of Fracture Process Zone
+      behavior in Concrete Beams subjected to Three-Point Loading Tests
+    url: http://www.fracturae.com/index.php/fis/article/download/5302/4185
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-02-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.07
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5302
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-a-simplified-nonlinear-model-for-bamboo-reinforced-conc
+    title: A simplified nonlinear model for bamboo-reinforced concrete beams based on
+      lumped damage mechanics
+    url: http://www.fracturae.com/index.php/fis/article/download/5324/4217
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.73.02
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5324
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-structural-behavior-of-gfrp-concrete-composite-beams
+    title: Structural behavior of GFRP-concrete composite beams
+    url: http://www.fracturae.com/index.php/fis/article/download/5346/4199
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.14
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5346
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-experimental-and-theoretical-study-of-used-gfrp-i-profi
+    title: Experimental and theoretical study of used GFRP I-profile composite columns
+    url: http://www.fracturae.com/index.php/fis/article/download/5347/4209
+    source: ojs_fis
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.19
+    license_evidence: 'http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5347
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Ata El-Kariem Shoeib, Mohammed M. Salem, Alaa Gamal Sheriff, Mohammed
+      Abdel-Rahman M. Khalil; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-comparative-assessment-of-the-acoustic-activity-and-the
+    title: Comparative assessment of the acoustic activity and the Pressure Stimulated
+      Voltage in marble specimens under compression
+    url: http://www.fracturae.com/index.php/fis/article/download/5357/4197
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.13
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5357
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-application-of-perforated-peek-framework-for-improving
+    title: Application of perforated PEEK framework for improving strength of a bases
+      of removable complete denture for maxilla
+    url: http://www.fracturae.com/index.php/fis/article/download/5371/4213
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.20
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5371
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-size-effect-in-concrete-beams-a-numerical-investigation
+    title: 'Size Effect in Concrete Beams: A Numerical Investigation Based on the Size
+      Effect Law'
+    url: http://www.fracturae.com/index.php/fis/article/download/5392/4219
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.73.03
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5392
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-flood-induced-load-effects-on-real-scale-structures-a-3
+    title: 'Flood-induced load effects on real-scale structures: a 3D multilevel dynamic
+      analysis'
+    url: http://www.fracturae.com/index.php/fis/article/download/5393/4233
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.73.05
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5393
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-effect-of-fracture-energy-estimation-on-the-predictions
+    title: Effect of fracture energy estimation on the predictions of mode II behavior
+      of bonded joints using cohesive zone models
+    url: http://www.fracturae.com/index.php/fis/article/download/5399/4205
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.72.17
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5399
+    rights_verified_at: '2026-10-16'
+  - id: ojs-fis-experimental-investigation-on-mechanical-behavior-of-sa
+    title: Experimental investigation on mechanical behavior of sandwich structures
+      using Digital Image Correlation (DIC)
+    url: http://www.fracturae.com/index.php/fis/article/download/5402/4221
+    source: ojs_fis
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3221/igf-esis.73.04
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5402
     rights_verified_at: '2026-10-16'

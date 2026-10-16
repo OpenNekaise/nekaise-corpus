@@ -22908,9 +22908,9 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-tds-pcuk-en-4-8-02-937e1181
-    title: 'SpecifiedBy (UK manufacturer documents): tds-pcuk-en-4-8-02_937e1181.pdf'
-    url: https://www.specifiedby.com/foamglas-insulation/foamglas-invatherm-non-combustible-insulation-for-inverted-roof-terraces-with-paving-on-pedestals/tds-pcuk-en-4-8-02_937e1181.pdf
+  - id: vnd-specifiedby-tds-4-7-2-uk-c1c0a3e3
+    title: 'SpecifiedBy (UK manufacturer documents): tds-4-7-2-uk_c1c0a3e3.pdf'
+    url: https://www.specifiedby.com/foamglas-insulation/foamglas-photovoltaic-laminate-roof-system-on-profiled-metal-deck-structure/tds-4-7-2-uk_c1c0a3e3.pdf
     source: vendor_specifiedby
     license: open
     topic: materials
@@ -22922,9 +22922,24 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-pds-foamglas-t4plus-uk-6f2e9fd1
-    title: 'SpecifiedBy (UK manufacturer documents): pds-foamglas-t4plus-uk_6f2e9fd1.pdf'
-    url: https://www.specifiedby.com/foamglas-insulation/foamglas-service-maintenance-roof-with-uv-resistant-membrane-on-concrete-structure/pds-foamglas-t4plus-uk_6f2e9fd1.pdf
+  - id: vnd-specifiedby-tds-pcuk-en-4-6-02-1eafbea4
+    title: 'SpecifiedBy (UK manufacturer documents): tds-pcuk-en-4-6-02_1eafbea4.pdf'
+    url: https://www.specifiedby.com/foamglas-insulation/foamglas-photovoltaic-roof-system-on-profiled-metal-deck-structure/tds-pcuk-en-4-6-02_1eafbea4.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-sds-slabs-and-tapered-en-02313e9f
+    title: 'SpecifiedBy (UK manufacturer documents): sds-slabs-and-tapered-en_02313e9f.PDF
+      (foamglas below ground wall — sds slabs and tapered en 02313e9f)'
+    url: https://www.specifiedby.com/foamglas-insulation/foamglas-below-ground-wall/sds-slabs-and-tapered-en_02313e9f.PDF
     source: vendor_specifiedby
     license: open
     topic: materials

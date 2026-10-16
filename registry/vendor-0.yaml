@@ -21673,9 +21673,23 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-tds-pcuk-en-4-5-03-bae6c48e
-    title: 'SpecifiedBy (UK manufacturer documents): tds-pcuk-en-4-5-03_bae6c48e.pdf'
-    url: https://www.specifiedby.com/foamglas-insulation/foamglas-service-maintenance-roof-with-asphalt-waterproofing-on-concrete-structure/tds-pcuk-en-4-5-03_bae6c48e.pdf
+  - id: vnd-specifiedby-sds-invatherm-uk-11ca1f29
+    title: 'SpecifiedBy (UK manufacturer documents): sds-invatherm-uk_11ca1f29.pdf'
+    url: https://www.specifiedby.com/foamglas-insulation/foamglas-invatherm-non-combustible-insulation-for-inverted-roofs-for-pedestrian-use-with-paving-on-pedestals/sds-invatherm-uk_11ca1f29.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-pds-tapered-s3-uk-05e52738
+    title: 'SpecifiedBy (UK manufacturer documents): pds-tapered-s3-uk_05e52738.pdf'
+    url: https://www.specifiedby.com/foamglas-insulation/foamglas-compact-roof-system-green-roof-intensive-on-timber-structure/pds-tapered-s3-uk_05e52738.pdf
     source: vendor_specifiedby
     license: open
     topic: materials

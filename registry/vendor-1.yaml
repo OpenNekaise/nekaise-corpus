@@ -21638,9 +21638,37 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-sds-slabs-and-tapered-en-0587e9bc
-    title: 'SpecifiedBy (UK manufacturer documents): sds-slabs-and-tapered-en_0587e9bc.PDF'
-    url: https://www.specifiedby.com/foamglas-insulation/foamglas-service-maintenance-roof-with-uv-resistant-membrane-on-concrete-structure/sds-slabs-and-tapered-en_0587e9bc.PDF
+  - id: vnd-specifiedby-tds-pcuk-en-4-4-03-d6633602
+    title: 'SpecifiedBy (UK manufacturer documents): tds-pcuk-en-4-4-03_d6633602.pdf'
+    url: https://www.specifiedby.com/foamglas-insulation/foamglas-roof-system-green-roof-intensive-on-profiled-metal-deck-structure/tds-pcuk-en-4-4-03_d6633602.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-tds-pcuk-en-4-4-04-23b90885
+    title: 'SpecifiedBy (UK manufacturer documents): tds-pcuk-en-4-4-04_23b90885.pdf'
+    url: https://www.specifiedby.com/foamglas-insulation/foamglas-roof-system-green-roof-extensive-on-profiled-metal-deck-structure/tds-pcuk-en-4-4-04_23b90885.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-tds-pcuk-en-4-1-03-d13b007a
+    title: 'SpecifiedBy (UK manufacturer documents): tds-pcuk-en-4-1-03_d13b007a.pdf'
+    url: https://www.specifiedby.com/foamglas-insulation/service-maintenance-roof-with-uv-protective-membrane-on-profiled-metal-deck-structure/tds-pcuk-en-4-1-03_d13b007a.pdf
     source: vendor_specifiedby
     license: open
     topic: materials

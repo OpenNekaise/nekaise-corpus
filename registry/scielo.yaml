@@ -160826,54 +160826,6 @@ sources:
       (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=2317-1529)'
     rights_verified_at: '2026-10-12'
     origin_ids: doi:10.22296/2317-1529.rbeur.202605
-  - id: sci-s2317-15292026000101012
-    title: 'Entre a oralidade e a escrita: uma perspectiva da realidade brasileira na
-      subjetivação de um sentido negro de lugar'
-    url: https://www.scielo.br/pdf/rbeur/v28/2317-1529-rbeur-28-e202610.pdf
-    source: scielo_scl
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S2317-15292026000101012
-    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S2317-15292026000101012&format=json);
-      context only, not evidence for this article: the journal record''s current licence
-      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=2317-1529)'
-    rights_verified_at: '2026-10-12'
-    origin_ids: doi:10.22296/2317-1529.rbeur.202610pt
-  - id: sci-s2317-15292026000100207
-    title: 'Novos determinantes da dinâmica regional e as linhas de interpretação no
-      século XXI: desconcentração produtiva, reconcentração espacial ou fragmentaçã'
-    url: https://www.scielo.br/pdf/rbeur/v28/2317-1529-rbeur-28-e202615.pdf
-    source: scielo_scl
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S2317-15292026000100207
-    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S2317-15292026000100207&format=json);
-      context only, not evidence for this article: the journal record''s current licence
-      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=2317-1529)'
-    rights_verified_at: '2026-10-12'
-    origin_ids: doi:10.22296/2317-1529.rbeur.202615pt
-  - id: sci-s2317-15292026000101013
-    title: 'Repensando a urbanização por plataformas a partir das cidades latino-americanas:
-      inovações teóricas e contribuições empíricas de uma pesquisa regional'
-    url: https://www.scielo.br/pdf/rbeur/v28/2317-1529-rbeur-28-e202613.pdf
-    source: scielo_scl
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    document_type: journal-article
-    persistent_id: S2317-15292026000101013
-    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S2317-15292026000101013&format=json);
-      context only, not evidence for this article: the journal record''s current licence
-      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=2317-1529)'
-    rights_verified_at: '2026-10-12'
-    origin_ids: doi:10.22296/2317-1529.rbeur.202613pt
   - id: sci-s2007-68352015000100003
     title: 'Microestructura y propiedades mecánicas de cementos compuestos: Efecto de
       la reactividad de adiciones puzolánicas e hidráulicas'
@@ -238708,3 +238660,432 @@ sources:
       (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
     rights_verified_at: '2026-10-16'
     origin_ids: doi:10.4136/ambi-agua.2148
+  - id: sci-s1980-993x2018000200301
+    title: Production of energy (biodiesel) and recovery of materials (biochar) from
+      pyrolysis of urban waste sludge
+    url: https://www.scielo.br/pdf/ambiagua/v13n2/1980-993X-ambiagua-13-02-e2128.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000200301
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000200301&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2128
+  - id: sci-s1980-993x2018000200300
+    title: Surface albedo in different land-use and cover types in Amazon forest region
+    url: https://www.scielo.br/pdf/ambiagua/v13n2/1980-993X-ambiagua-13-02-e2120.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000200300
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000200300&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2120
+  - id: sci-s1980-993x2018000200302
+    title: Characterization of controlled landfill leachate from the city of Guaratinguetá
+      - SP, Brazil
+    url: https://www.scielo.br/pdf/ambiagua/v13n2/1980-993X-ambiagua-13-02-e2136.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000200302
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000200302&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2136
+  - id: sci-s1980-993x2018000200305
+    title: 'Assessment of the water quality and trophic state of the Ribeirão Guaraçau
+      Watershed, Guarulhos (SP): a comparative analysis between rural and urban a'
+    url: https://www.scielo.br/pdf/ambiagua/v13n2/1980-993X-ambiagua-13-02-e2170.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000200305
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000200305&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2170
+  - id: sci-s1980-993x2018000200310
+    title: Combined use of O3/H2O2 and O3/Mn2+ in flotation of dairy wastewater
+    url: https://www.scielo.br/pdf/ambiagua/v13n2/1980-993X-ambiagua-13-02-e2078.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000200310
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000200310&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2078
+  - id: sci-s1980-993x2018000200313
+    title: 'Urban solid waste challenges in the BRICS countries: a systematic literature
+      review'
+    url: https://www.scielo.br/pdf/ambiagua/v13n2/1980-993X-ambiagua-13-02-e2157.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000200313
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000200313&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2157
+  - id: sci-s1980-993x2018000300301
+    title: Estimation of plant productivity and nutrient extraction capacity along the
+      length of horizontal subsurface flow constructed wetland treating swine wa
+    url: https://www.scielo.br/pdf/ambiagua/v13n3/1980-993X-ambiagua-13-03-e1979.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000300301
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000300301&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.1979
+  - id: sci-s1980-993x2018000300311
+    title: Composting of household organic waste and its effects on growth and mineral
+      composition of cherry tomato
+    url: https://www.scielo.br/pdf/ambiagua/v13n3/1980-993X-ambiagua-13-03-e2141.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000300311
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000300311&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2141
+  - id: sci-s1980-993x2018000300312
+    title: Interaction between soil salinity and nitrogen on growth and gaseous exchanges
+      in guava
+    url: https://www.scielo.br/pdf/ambiagua/v13n3/1980-993X-ambiagua-13-03-e2130.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000300312
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000300312&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2130
+  - id: sci-s1980-993x2018000300314
+    title: Evaluation of the Use of Fly Ash as a Low Cost Technology for Phosphorus
+      Removal in Wastewater Treatment
+    url: https://www.scielo.br/pdf/ambiagua/v13n3/1980-993X-ambiagua-13-03-e2166.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000300314
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000300314&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2166
+  - id: sci-s1980-993x2018000300313
+    title: Effects of saline water and potassium fertilization on photosynthetic pigments,
+      growth and production of West Indian Cherry
+    url: https://www.scielo.br/pdf/ambiagua/v13n3/1980-993X-ambiagua-13-03-e2164.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000300313
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000300313&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2164
+  - id: sci-s1980-993x2018000400304
+    title: Water quality of springs in areas under different land uses in the southern
+      highlands of Santa Catarina
+    url: https://www.scielo.br/pdf/ambiagua/v13n4/1980-993X-ambiagua-13-04-e2201.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000400304
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000400304&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2201
+  - id: sci-s1980-993x2018000400303
+    title: Mobile transect for identification of intra-urban heat islands in Uberlandia,
+      Brazil
+    url: https://www.scielo.br/pdf/ambiagua/v13n4/1980-993X-ambiagua-13-04-e2187.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000400303
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000400303&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2187
+  - id: sci-s1980-993x2018000500303
+    title: Optimization of nitrogen and phosphorus removal from pig slaughterhouse and
+      packing plant wastewater through electrocoagulation in a batch reactor
+    url: https://www.scielo.br/pdf/ambiagua/v13n5/1980-993X-ambiagua-13-05-e2233.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000500303
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000500303&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2233
+  - id: sci-s1980-993x2018000500301
+    title: Use of statistical multivariate analysis to identify sources emitting particulate
+      matter in Belo Horizonte, Brazil
+    url: https://www.scielo.br/pdf/ambiagua/v13n5/1980-993X-ambiagua-13-05-e2202.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000500301
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000500301&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2202
+  - id: sci-s1980-993x2018000500304
+    title: Estimation of corrosive and scaling trend in drinking water systems in the
+      city of Azogues, Ecuador
+    url: https://www.scielo.br/pdf/ambiagua/v13n5/1980-993X-ambiagua-13-05-e2237.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000500304
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000500304&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2237
+  - id: sci-s1980-993x2018000500306
+    title: Future scenarios of thermal bioclimatic conditions in a humid tropical city
+      under urban development
+    url: https://www.scielo.br/pdf/ambiagua/v13n5/1980-993X-ambiagua-13-05-e2092.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000500306
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000500306&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2092
+  - id: sci-s1980-993x2018000500310
+    title: 'Incêndios no Pantanal de Corumbá, MS: modelagem e previsão a partir das
+      técnicas de análise multivariada'
+    url: https://www.scielo.br/pdf/ambiagua/v13n5/1980-993X-ambiagua-13-05-e2024.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1980-993X2018000500310
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000500310&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2024
+  - id: sci-s1980-993x2018000600305
+    title: Growth and special structures production of Nostoc paludosum (Nostocaceae,
+      Cyanobacteria) under nutrient starvation and different light intensities
+    url: https://www.scielo.br/pdf/ambiagua/v13n6/1980-993X-ambiagua-13-06-e2191.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000600305
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000600305&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2191
+  - id: sci-s1980-993x2018000600310
+    title: Sensitivity analysis of the Soil and Water Assessment Tools (SWAT) model
+      in streamflow modeling in a rural river basin
+    url: https://www.scielo.br/pdf/ambiagua/v13n6/1980-993X-ambiagua-13-06-e2221.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2018000600310
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000600310&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2221
+  - id: sci-s1980-993x2018000600313
+    title: Variabilidade espacial do estoque de carbono e atributos físicos do solo
+      em terra preta arqueológica sob pastagem
+    url: https://www.scielo.br/pdf/ambiagua/v13n6/1980-993X-ambiagua-13-06-e2002.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    document_type: journal-article
+    persistent_id: S1980-993X2018000600313
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2018000600313&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2002
+  - id: sci-s1980-993x2019000100301
+    title: Histopathological and hematological biomarkers in tambaqui Colossoma macropomum
+      (Cuvier, 1816) from an environmental protection area of Maranhão, Braz
+    url: https://www.scielo.br/pdf/ambiagua/v14n1/1980-993X-ambiagua-14-01-e2266.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2019000100301
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2019000100301&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2266
+  - id: sci-s1980-993x2019000100304
+    title: Losses of soil, water, organic carbon and nutrients caused by water erosion
+      in different crops and natural savannah in the northern Amazon
+    url: https://www.scielo.br/pdf/ambiagua/v14n1/1980-993X-ambiagua-14-01-e2126.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2019000100304
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2019000100304&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2126
+  - id: sci-s1980-993x2019000100307
+    title: Wastewater treatment using adsorption process in column for agricultural
+      purposes
+    url: https://www.scielo.br/pdf/ambiagua/v14n1/1980-993X-ambiagua-14-01-e2178.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2019000100307
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2019000100307&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2178
+  - id: sci-s1980-993x2019000100308
+    title: Quantification study of Azithromycin drugs in soil, by the infrared technique
+      with Fourier Transform (IFTR)
+    url: https://www.scielo.br/pdf/ambiagua/v14n1/1980-993X-ambiagua-14-01-e2268.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2019000100308
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2019000100308&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2268
+  - id: sci-s1980-993x2019000100314
+    title: Sewage sludge compost in zoysia grass sod production
+    url: https://www.scielo.br/pdf/ambiagua/v14n1/1980-993X-ambiagua-14-01-e2301.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2019000100314
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2019000100314&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2301
+  - id: sci-s1980-993x2019000200307
+    title: Technical contributions to territorial planning and the use of ecosystemic
+      services in a hydrographic basin with a water deficit in the Atlantic Rainf
+    url: https://www.scielo.br/pdf/ambiagua/v14n2/1980-993X-ambiagua-14-02-e2296.pdf
+    source: scielo_scl
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    document_type: journal-article
+    persistent_id: S1980-993X2019000200307
+    license_evidence: 'SciELO ArticleMeta: the article record states no licence (https://articlemeta.scielo.org/api/v1/article/?collection=scl&code=S1980-993X2019000200307&format=json);
+      context only, not evidence for this article: the journal record''s current licence
+      (v541) is ''BY'' (https://articlemeta.scielo.org/api/v1/journal/?collection=scl&issn=1980-993X)'
+    rights_verified_at: '2026-10-16'
+    origin_ids: doi:10.4136/ambi-agua.2296
