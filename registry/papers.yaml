@@ -154916,3 +154916,182 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-15'
     origin_ids: doi:10.1615/intjmultcompeng.v7.i2.70
+  - id: oas-10-1016-j-arcontrol-2020-09-001-7419ce0a
+    title: All you need to know about model predictive control for buildings
+    url: https://lirias.kuleuven.be/retrieve/41873569-4bf4-44de-abff-657bee4cfe30
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.arcontrol.2020.09.001
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/41873569-4bf4-44de-abff-657bee4cfe30;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.arcontrol.2020.09.001 openalex:W3090789943
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1038-s41586-022-04988-4-a7e5c708
+    title: Aerial additive manufacturing with multiple autonomous robots
+    url: https://purehost.bath.ac.uk/ws/files/249350093/Paper_preprint_Compressed.pdf
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-09-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1038/s41586-022-04988-4
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://purehost.bath.ac.uk/ws/files/249350093/Paper_preprint_Compressed.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1038/s41586-022-04988-4 openalex:W4296552195
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-apenergy-2022-120187-4f794f37
+    title: 'Economic model predictive control of integrated energy systems: A multi-time-scale
+      framework'
+    url: https://arxiv.org/pdf/2205.10433
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-10-31'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2022.120187
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2205.10433; version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2022.120187 openalex:W4281482072
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-energy-2021-119958-ce1f88b6
+    title: Artificial-neural-network-based model predictive control to exploit energy
+      flexibility in multi-energy systems comprising district cooling
+    url: https://lirias.kuleuven.be/retrieve/44768bf7-c552-41a5-9298-d82fe1c66f3a
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-01-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2021.119958
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/44768bf7-c552-41a5-9298-d82fe1c66f3a;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2021.119958 openalex:W3125934159
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-apenergy-2024-122874-bd49bee4
+    title: Mixed-integer non-linear model predictive control of district heating networks
+    url: https://lirias.kuleuven.be/retrieve/12cd3cb4-a677-422a-a0f8-3211280ab87b
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-02-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2024.122874
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/12cd3cb4-a677-422a-a0f8-3211280ab87b;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2024.122874 openalex:W4392076945
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1007-s42524-022-0216-2-6e3e3b1b
+    title: 'Revisiting digital twins: Origins, fundamentals, and practices'
+    url: https://arxiv.org/pdf/2203.12867
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-10-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s42524-022-0216-2
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2203.12867;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s42524-022-0216-2 openalex:W4307292196
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-applthermaleng-2023-120030-ee332607
+    title: Optimal control of a fourth generation district heating network using an
+      integrated non-linear model predictive controller
+    url: https://lirias.kuleuven.be/retrieve/a6a3589f-c672-4635-9107-9f7021234c01
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-01-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.applthermaleng.2023.120030
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/a6a3589f-c672-4635-9107-9f7021234c01;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.applthermaleng.2023.120030 openalex:W4313856525
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-scs-2024-105531-88c11b7a
+    title: Experimental implementation of an emission-aware prosumer with online flexibility
+      quantification and provision
+    url: https://arxiv.org/pdf/2110.12831
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-05-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.scs.2024.105531
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2110.12831;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.scs.2024.105531 openalex:W4398147646
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-jobe-2022-105056-a977e209
+    title: Review on research progress of metal-plate-connected wood joints
+    url: https://discovery.ucl.ac.uk/10157685/1/Lorenzo_20220724Review_on_research_progress_of_metal_plate_connected_wood.pdf
+    source: openalex_sim
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-08-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2022.105056
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10157685/1/Lorenzo_20220724Review_on_research_progress_of_metal_plate_connected_wood.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2022.105056 openalex:W4293152226
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-effect-of-the-open-roof-on-low-frequency-acous
+    title: Effect of the open roof on low frequency acoustic propagation in street canyons
+    url: https://arxiv.org/pdf/0907.0605v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2009-07-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0907.0605
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0907.0605 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-16'

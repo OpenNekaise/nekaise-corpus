@@ -362520,22 +362520,6 @@ sources:
     license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
     license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/159488
     rights_verified_at: '2026-10-15'
-  - id: ojs-risco-habita-o-e-habitat-campon-s-em-debate-no-iau-usp-o-i
-    title: 'Habitação e habitat camponês em debate no IAU-USP. O Iº Seminário Regional
-      do Habitat Rural: moradia, produção e a questão agrária no oeste paulista'
-    url: https://revistas.usp.br/risco/article/download/159534/154284
-    source: ojs_risco
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2019-06-30'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/issn.1984-4506.v17i1p4-9
-    license_evidence: 'https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/159534
-      : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
-      autorais (c) 2019 João Marcos de Almeida Lopes, Akemi Ino)'
-    rights_verified_at: '2026-10-15'
   - id: ojs-risco-from-test-to-hybrid-policy-the-new-york-city-plaza-pr
     title: 'From test to hybrid policy: the New York City Plaza Program'
     url: https://revistas.usp.br/risco/article/download/159706/184261
@@ -363469,20 +363453,6 @@ sources:
     license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
     license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/171061
     rights_verified_at: '2026-10-15'
-  - id: ojs-risco-el-dise-o-espacio-del-di-logo
-    title: 'El diseño: espacio del diálogo'
-    url: https://revistas.usp.br/risco/article/download/171123/175597
-    source: ojs_risco
-    license: cc-by-nc-sa
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2021-09-07'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/1984-4506.risco.2021.171123
-    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
-    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/171123
-    rights_verified_at: '2026-10-15'
   - id: ojs-risco-entrevista-com-paulo-mendes-da-rocha
     title: Entrevista com Paulo Mendes da Rocha
     url: https://revistas.usp.br/risco/article/download/171176/175614
@@ -363731,20 +363701,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Direitos
       autorais (c) 2021 Rafael Augusto Urano de Carvalho Frajndlich, Prof. Alexandre
       Benoit; http://creativecommons.org/licenses/by-nc-sa/4.0)'
-    rights_verified_at: '2026-10-15'
-  - id: ojs-risco-acessibilidade-em-jardins-zool-gicos-um-estudo-no-par
-    title: 'Acessibilidade em Jardins Zoológicos: um estudo no Parque Zoológico da FZB/RS'
-    url: https://revistas.usp.br/risco/article/download/181575/183294
-    source: ojs_risco
-    license: cc-by-nc-sa
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2022-06-22'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.11606/1984-4506.risco.2022.181575
-    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
-    license_evidence: https://revistas.usp.br/risco/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:revistas.usp.br:article/181575
     rights_verified_at: '2026-10-15'
   - id: ojs-risco-a-documenta-o-hist-rica-arquitet-nica-conceitos-histo
     title: 'A documentação histórica arquitetônica: conceitos historiográficos para
@@ -365242,22 +365198,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2020 Andrea Conti)'
     rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-simone-sfriso-the-architect-must-be-at-the-service-of
-    title: 'Simone Sfriso: The Architect Must Be at the Service of the Place and the
-      People'
-    url: https://in-bo.unibo.it/article/download/10142/10749
-    source: ojs_inbo
-    license: unverified
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2020-04-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/10142
-    license_evidence: 'https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/10142
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2020 Francesca Cremasco)'
-    rights_verified_at: '2026-10-16'
   - id: ojs-inbo-a-narrative-of-the-compact-city-mario-de-renzi-through
     title: A Narrative of the Compact City. Mario De Renzi through the Sequences of
       A Special Day
@@ -365533,21 +365473,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/3.0
     license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12353
     rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-religious-house-from-the-common-life-to-the-protec
-    title: 'The Religious House: From the Common Life to the Protection of the Ecclesiastical
-      Good. Canonical Itineraries'
-    url: https://in-bo.unibo.it/article/download/12354/13145
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-09-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12354
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12354
-    rights_verified_at: '2026-10-16'
   - id: ojs-inbo-reusing-monastic-properties-real-estate-valuation
     title: 'Reusing Monastic Properties: Real Estate Valuation'
     url: https://in-bo.unibo.it/article/download/12355/13146
@@ -365561,21 +365486,6 @@ sources:
     persistent_id: https://doi.org/10.6092/issn.2036-1602/12355
     license_url: https://creativecommons.org/licenses/by-nc/3.0
     license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12355
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-former-augustinian-monastery-in-vicopelago-lucca-f
-    title: 'The Former Augustinian Monastery in Vicopelago, Lucca: From a Villa of the
-      Buonvisi Family to a Place of Contemplative Life'
-    url: https://in-bo.unibo.it/article/download/12356/13147
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-09-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12356
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12356
     rights_verified_at: '2026-10-16'
   - id: ojs-inbo-process-proposal-for-adaptive-reuse-and-social-promoti
     title: Process Proposal for Adaptive Reuse and Social Promotion of Ecclesiastical
@@ -365635,64 +365545,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/3.0
     license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12457
     rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-magnificent-temple-becomes-a-military-structure-tr
-    title: 'The Magnificent Temple Becomes a Military Structure: Transformations and
-      Models in Mondovì and Savona between the 16th and 17th Centuries'
-    url: https://in-bo.unibo.it/article/download/12615/13557
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12615
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12615
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-factory-of-concord-the-first-perspective-view-of-f
-    title: 'The Factory of Concord: The First Perspective View of Fabriano'
-    url: https://in-bo.unibo.it/article/download/12718/13566
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12718
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12718
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-devotion-of-saint-oronzo-and-the-triumphant-counte
-    title: The Devotion of Saint Oronzo and the Triumphant Counter-Reformation in Terra
-      d’Otranto
-    url: https://in-bo.unibo.it/article/download/12724/13553
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12724
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12724
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-granada-of-ambrosio-de-vico-imago-urbis-between-my
-    title: 'The Granada of Ambrosio de Vico: Imago Urbis between Myth and Reality'
-    url: https://in-bo.unibo.it/article/download/12771/13550
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12771
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12771
-    rights_verified_at: '2026-10-16'
   - id: ojs-inbo-medieval-ecclesiastical-structures-dynasty-and-communi
     title: 'Medieval Ecclesiastical Structures, Dynasty and Community: The Historical
       Stratification of Religious Centers in the Representations of Theatrum Sabau'
@@ -365708,65 +365560,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/3.0
     license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12782
     rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-roma-ignaziana-the-jesuits-strategic-adaptation-of-chr
-    title: 'Roma Ignaziana: The Jesuits’ Strategic Adaptation of Christian Rome in Cartographic
-      Form'
-    url: https://in-bo.unibo.it/article/download/12836/13561
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: en
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12836
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12836
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-cities-of-the-barnabites-some-urban-settlements-of
-    title: 'The Cities of the Barnabites: Some Urban Settlements of the Congregation
-      Between the Sixteenth and Seventeenth Century'
-    url: https://in-bo.unibo.it/article/download/12840/13562
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12840
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12840
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-topography-of-the-sacred-rovigo-between-orthodoxy
-    title: 'The Topography of the Sacred. Rovigo: Between Orthodoxy and Heterodoxy'
-    url: https://in-bo.unibo.it/article/download/12849/13558
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12849
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12849
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-control-over-boundaries-of-sacred-space-ecclesiast
-    title: 'The Control over Boundaries of Sacred Space: Ecclesiastical Architecture
-      and Cities in Eighteenth-Century Savoyard State'
-    url: https://in-bo.unibo.it/article/download/12857/13551
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/12857
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12857
-    rights_verified_at: '2026-10-16'
   - id: ojs-inbo-the-most-ancient-representations-of-cusco-sacred-affai
     title: 'The Most Ancient Representations of Cusco: Sacred Affairs and Cultural Dynamics
       in the First Colonial Phase'
@@ -365781,50 +365574,6 @@ sources:
     persistent_id: https://doi.org/10.6092/issn.2036-1602/12867
     license_url: https://creativecommons.org/licenses/by-nc/3.0
     license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/12867
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-venetia-reflected-in-water-hypotheses-and-new-proposal
-    title: 'Venetia Reflected in Water: Hypotheses and New Proposals'
-    url: https://in-bo.unibo.it/article/download/13015/13559
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/13015
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/13015
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-carmelite-civitas-sancta-conventual-foundations-an
-    title: 'The Carmelite Civitas Sancta: Conventual foundations and urban redesign
-      in early 17th-century Rome'
-    url: https://in-bo.unibo.it/article/download/13215/13565
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/13215
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/13215
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-common-house-communities-of-consecrated-life-towar
-    title: 'The Common House: Communities of Consecrated Life, towards the Enhancement
-      of Their Houses and Heritage'
-    url: https://in-bo.unibo.it/article/download/13222/13141
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-09-09'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/13222
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/13222
     rights_verified_at: '2026-10-16'
   - id: ojs-inbo-babel-s-limits-lexical-forms-and-urban-planning-conten
     title: Babel’s Limits. Lexical Forms and Urban Planning Content
@@ -365854,50 +365603,6 @@ sources:
     persistent_id: https://doi.org/10.6092/issn.2036-1602/13926
     license_url: https://creativecommons.org/licenses/by-nc/3.0
     license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/13926
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-sacred-cartographies-rome-1575-1616
-    title: 'Sacred Cartographies: Rome, 1575–1616'
-    url: https://in-bo.unibo.it/article/download/13927/13569
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/13927
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/13927
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-three-babylons-by-henri-estienne-maarten-van-heems
-    title: The Three Babylons by Henri Estienne, Maarten van Heemskerck and Athanasius
-      Kircher
-    url: https://in-bo.unibo.it/article/download/13928/13568
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/13928
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/13928
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-the-paradox-of-the-true-portrait-power-and-other-impli
-    title: 'The Paradox of the True Portrait: Power and Other Implications in Late-Renaissance
-      City-Views'
-    url: https://in-bo.unibo.it/article/download/13934/13572
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2021-12-21'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/13934
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/13934
     rights_verified_at: '2026-10-16'
   - id: ojs-inbo-the-kind-of-sacred-the-city-needs-a-teaching-experienc
     title: The Kind of Sacred the City Needs. A Teaching Experience of Architectural
@@ -365970,21 +365675,6 @@ sources:
     persistent_id: https://doi.org/10.6092/issn.2036-1602/14765
     license_url: https://creativecommons.org/licenses/by-nc/3.0
     license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14765
-    rights_verified_at: '2026-10-16'
-  - id: ojs-inbo-sacred-space-and-contemporaneity-tools-methods-and-per
-    title: Sacred Space and Contemporaneity. Tools, Methods and Perspectives for Teaching
-      Architecture
-    url: https://in-bo.unibo.it/article/download/14784/15140
-    source: ojs_inbo
-    license: cc-by-nc
-    topic: urban
-    format: pdf
-    language: it
-    published_at: '2022-12-22'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.6092/issn.2036-1602/14784
-    license_url: https://creativecommons.org/licenses/by-nc/3.0
-    license_evidence: https://in-bo.unibo.it/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:journals.unibo.it:article/14784
     rights_verified_at: '2026-10-16'
   - id: ojs-inbo-atmospheres-for-living-reportage-between-the-roman-hou
     title: Atmospheres for Living. Reportage between the Roman Houses
@@ -366070,20 +365760,6 @@ sources:
     document_type: journal-article
     persistent_id: https://doi.org/10.24135/ijara.vi.674
     license_evidence: 'https://interstices.ac.nz/index.php/Interstices/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:interstices.ojs.aut.ac.nz:article/674
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-16'
-  - id: ojs-interstices-what-reading-spinoza-s-ethics-out-loud-brings-t
-    title: What reading Spinoza’s Ethics out loud brings to and takes from the text
-    url: https://interstices.ac.nz/index.php/Interstices/article/download/675/625
-    source: ojs_interstices
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2021-11-22'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.24135/ijara.vi.675
-    license_evidence: 'https://interstices.ac.nz/index.php/Interstices/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:interstices.ojs.aut.ac.nz:article/675
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-16'
   - id: ojs-interstices-bare-architecture-a-schizoanalysis-by-chris-l-s
@@ -369357,20 +369033,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/1652
     rights_verified_at: '2026-10-16'
-  - id: ojs-joe-water-quality-assessment-of-al-najaf-city-potable-water
-    title: Water Quality Assessment of Al-Najaf City Potable Water Network
-    url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/1663/1062
-    source: ojs_joe
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2023-04-01'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.31026/j.eng.2023.04.02
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/1663
-    rights_verified_at: '2026-10-16'
   - id: ojs-joe-traffic-noise-in-arterial-streets-case-of-kirkuk-city
     title: 'Traffic Noise in Arterial Streets: Case of Kirkuk City'
     url: https://joe.uobaghdad.edu.iq/index.php/main/article/download/1664/1022
@@ -369502,4 +369164,2922 @@ sources:
     persistent_id: https://doi.org/10.31026/j.eng.2023.04.07
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://joe.uobaghdad.edu.iq/index.php/main/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.joe.uobaghdad.edu.iq:article/1692
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-an-investigation-into-geopolymer-adhesive-as-a-viable-s
+    title: AN INVESTIGATION INTO GEOPOLYMER ADHESIVE AS A VIABLE SUSTAINABLE MATERIAL
+      FOR NSM STRENGTHENING OF RC BEAMS IN SHEAR
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/18771/16009
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/160433
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/18771
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-numerical-modeling-of-reinforced-earth-walls-influence
+    title: 'NUMERICAL MODELING OF REINFORCED EARTH WALLS: INFLUENCE OF SOIL CONSTITUTIVE
+      MODELS ON STRUCTURAL BEHAVIOR AND DISPLACEMENT'
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/18805/16442
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-02-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170114
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/18805
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-investigating-multi-directional-seismic-effects-on-elev
+    title: 'INVESTIGATING MULTI-DIRECTIONAL SEISMIC EFFECTS ON ELEVATED WATER TANKS:
+      METHODOLOGY AND RESULTS'
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/18994/16471
+    source: ojs_kje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-02-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170129
+    license_evidence: 'https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/18994
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Raihana M.  Ejam, Dr. Hatem Hadi, Dr. Hussein Talab Nhabih; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-experimental-investigation-of-flexural-performance-of-t
+    title: EXPERIMENTAL INVESTIGATION OF FLEXURAL PERFORMANCE OF T-SHAPED HYBRID CONCRETE
+      BEAMS RETROFITTED WITH NSM TECHNIQUE USING GFRP BARS
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/18998/16449
+    source: ojs_kje
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-02-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170121
+    license_evidence: 'https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/18998
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Eng. Meqdam Y. Y. Al-Jabban, Prof. Dr. Haider A. A. Al-Katib; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-experimental-investigation-of-the-performance-of-fibrou
+    title: EXPERIMENTAL INVESTIGATION OF THE PERFORMANCE OF FIBROUS REINFORCED CONCRETE
+      DEEP BEAM WITH VARIOUS SIZE OF SQUARE WEB-OPENING
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/19038/16015
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/160439
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/19038
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-performance-evaluation-of-slag-modified-concrete-using
+    title: PERFORMANCE EVALUATION OF SLAG MODIFIED CONCRETE USING MACHINE LEARNING TECHNIQUES
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/19212/17144
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170302
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/19212
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-dynamic-response-analysis-of-pre-twisted-beams-under-ha
+    title: DYNAMIC RESPONSE ANALYSIS OF PRE-TWISTED BEAMS UNDER HARMONIC LOADING
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/19245/16476
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-02-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170134
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/19245
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-the-application-of-cfrp-bars-and-sheets-in-reinforced-c
+    title: 'THE APPLICATION OF CFRP BARS AND SHEETS IN REINFORCED CONCRETE STRUCTURES:
+      A REVIEW'
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/19398/16479
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-02-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170137
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/19398
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-packet-error-rate-enhancement-of-smart-city-iot-network
+    title: PACKET ERROR RATE ENHANCEMENT OF SMART CITY IOT NETWORKS VIA PEER-ASSISTED
+      RETRANSMISSION
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/19454/16765
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170227
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/19454
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-enhancing-value-engineering-adoption-in-the-jordanian-c
+    title: 'ENHANCING VALUE ENGINEERING ADOPTION IN THE JORDANIAN CONSTRUCTION INDUSTRY:
+      AN ANALYSIS OF BARRIERS AND DRIVERS'
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/19670/16755
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170219
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/19670
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-the-psychological-connection-to-ahl-al-bayt-and-its-rol
+    title: THE PSYCHOLOGICAL CONNECTION TO AHL AL-BAYT AND ITS ROLE IN THE SUSTAINABILITY
+      OF RELIGIOUS BUILDINGS IN THE HOLY CITY OF KARBALA
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/19826/17145
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170303
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/19826
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-sustainable-cement-mortar-using-rice-husk-ash-and-solve
+    title: Sustainable Cement Mortar Using Rice Husk Ash and Solvent-Treated Expanded
+      Polystyrene as Partial Replacements
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/19836/16756
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170220
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/19836
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-slope-stability-analysis-using-limit-equilibrium-and-fi
+    title: 'SLOPE STABILITY ANALYSIS USING LIMIT EQUILIBRIUM AND FINITE ELEMENT METHODS:
+      A CASE STUDY OF THE KHERRATA LANDSLIDE, ALGERIA'
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20036/17149
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170307
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20036
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-evaluation-of-coating-materials-used-to-enhance-the-pro
+    title: EVALUATION OF COATING MATERIALS USED TO ENHANCE THE PROPERTIES OF LIGHTWEIGHT
+      AGGREGATE
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20122/16767
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170229
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20122
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-reasons-hindering-the-use-of-artificial-intelligence-in
+    title: REASONS HINDERING THE USE OF ARTIFICIAL INTELLIGENCE IN CONSTRUCTION PROJECTS
+      IN IRAQ
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20245/17157
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170315
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20245
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-assessment-of-chloride-ion-penetration-of-coconut-shell
+    title: Assessment of Chloride Ion Penetration of Coconut Shell and Rice Husk Ash
+      Modified Concrete
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20274/16761
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170224
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20274
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-pile-raft-foundations-a-review-of-soil-structure-intera
+    title: 'PILE-RAFT FOUNDATIONS: A REVIEW OF SOIL-STRUCTURE INTERACTION AND BEARING
+      CAPACITY ANALYSIS FOR CLAYEY SOILS IN AL-NASIRIYA, IRAQ"'
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20470/16773
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170235
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20470
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-improvement-of-the-cyclic-loading-response-of-stabilize
+    title: IMPROVEMENT OF THE CYCLIC LOADING RESPONSE OF STABILIZED EXPANSIVE SOILS
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20483/17160
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170318
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20483
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-bridging-the-gap-advancing-bim-adoption-in-the-jordania
+    title: 'BRIDGING THE GAP: ADVANCING BIM ADOPTION IN THE JORDANIAN CONSTRUCTION SECTOR'
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20577/17163
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170321
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20577
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-design-and-implementation-a-prototype-of-solar-car-park
+    title: DESIGN AND IMPLEMENTATION A PROTOTYPE OF SOLAR CAR PARKING FOR LIGHTING LOAD
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20690/17185
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170342
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20690
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-evaluating-the-quality-of-public-transport-service-in-a
+    title: EVALUATING THE QUALITY OF PUBLIC TRANSPORT SERVICE IN AL-RASHEED MUNICIPALITY,
+      BAGHDAD
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20793/17164
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170322
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20793
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-person-re-identification-based-on-deep-learning-network
+    title: 'PERSON RE-IDENTIFICATION BASED ON DEEP LEARNING NETWORKS: A SURVEY'
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/20844/17174
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170332
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/20844
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-utilization-of-the-glass-waste-as-a-sintering-agent-and
+    title: UTILIZATION OF THE GLASS WASTE AS A SINTERING AGENT AND SILICA SOURCE TO
+      PRODUCE CERAMIC PRODUCTS
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/21212/17166
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170324
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/21212
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-comparison-of-total-harmonic-distortion-thd-in-three-le
+    title: Comparison of Total Harmonic Distortion (THD) in Three-Level, Three-Phase
+      Inverters Using Cascaded H-Bridge (CHB) and Neutral-Point-Clamped (NPC) Topo
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/21574/17187
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170344
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/21574
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-hepatitis-c-virus-stages-classification-using-transit-s
+    title: HEPATITIS C VIRUS STAGES CLASSIFICATION USING TRANSIT SEARCH ALGORITHM AND
+      LONG SHORT TERM MEMORY
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/22114/17179
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170336
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/22114
+    rights_verified_at: '2026-10-16'
+  - id: ojs-kje-effect-of-pg-76-10-polymer-modified-asphalt-on-cracking
+    title: EFFECT OF PG 76-10 POLYMER-MODIFIED ASPHALT ON CRACKING AND MOISTURE RESISTANCE
+      IN PAVEMENT STRUCTURAL LAYERS
+    url: https://journal.uokufa.edu.iq/index.php/kje/article/download/22471/17183
+    source: ojs_kje
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.30572/2018/kje/170340
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journal.uokufa.edu.iq/index.php/kje/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journal.uokufa.edu.iq:article/22471
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-favelas-rurais-e-favelas-urbanas-no-brasil-construindo
+    title: 'FAVELAS RURAIS E FAVELAS URBANAS NO BRASIL: CONSTRUINDO UM INDICADOR DE
+      PRECARIZAÇÃO SOCIAL'
+    url: https://journalppc.com/RPPC/article/download/1247/759
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-243-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1247
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-estrat-gias-para-aproveitamento-de-res-duos-s-lidos-ge
+    title: 'ESTRATÉGIAS PARA APROVEITAMENTO DE RESÍDUOS SÓLIDOS GERADOS NO MUNICÍPIO
+      DE FOZ DO IGUAÇU, PARANÁ: INCINERAÇÃO VS RECICLAGEM'
+    url: https://journalppc.com/RPPC/article/download/1248/672
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-249-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1248
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-the-process-of-urbanization-and-urban-patterns-in-the
+    title: 'THE PROCESS OF URBANIZATION AND URBAN PATTERNS IN THE DELTA OF THE AMAZON
+      RIVER: AN AXIAL ANALYSIS'
+    url: https://journalppc.com/RPPC/article/download/1252/751
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-318-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1252
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-a-in-visibilidade-das-mulheres-na-agricultura-familiar
+    title: 'A (IN)VISIBILIDADE DAS MULHERES NA AGRICULTURA FAMILIAR: DESAFIOS E OPORTUNIDADES
+      PARA O DESENVOLVIMENTO TERRITORIAL NA BAHIA'
+    url: https://journalppc.com/RPPC/article/download/1254/1341
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-08-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v14n5-41-2025
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1254
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-intelig-ncia-artificial-na-educa-o-entre-a-inova-o-tec
+    title: 'INTELIGÊNCIA ARTIFICIAL NA EDUCAÇÃO: ENTRE A INOVAÇÃO TECNOLÓGICA E O DESAFIO
+      ÉTICO'
+    url: https://journalppc.com/RPPC/article/download/1257/678
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-255-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1257
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-proposta-de-ensino-de-estrat-gias-em-leitura-com-aluno
+    title: PROPOSTA DE ENSINO DE ESTRATÉGIAS EM LEITURA COM ALUNOS DO ENSINO FUNDAMENTAL
+      I – PEEL FI NA AMAZÔNIA AMAPAENSE
+    url: https://journalppc.com/RPPC/article/download/1259/671
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-248-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1259
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-os-poss-veis-impactos-da-reforma-tribut-ria-nos-roteir
+    title: 'OS POSSÍVEIS IMPACTOS DA REFORMA TRIBUTÁRIA NOS ROTEIROS TURÍSTICOS GASTRONÔMICOS
+      DE CACHAÇA: O IMPOSTO SELETIVO E OS DESAFIOS PARA A AGRICULTURA FAMI'
+    url: https://journalppc.com/RPPC/article/download/1261/649
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-10-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-226-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1261
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-o-magistrado-como-gestor-da-atividade-administrativa-e
+    title: O MAGISTRADO COMO GESTOR DA ATIVIDADE ADMINISTRATIVA EXERCIDA NO CAMPO JURISDICIONAL
+    url: https://journalppc.com/RPPC/article/download/1262/708
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-278-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1262
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-justi-a-militar-do-estado-do-par-hist-rico-compet-ncia
+    title: 'JUSTIÇA MILITAR DO ESTADO DO PARÁ: HISTÓRICO, COMPETÊNCIA E ESTRUTURA'
+    url: https://journalppc.com/RPPC/article/download/1264/691
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-264-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1264
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-mapeamento-cient-fico-da-rela-o-entre-nanotecnologia-e
+    title: MAPEAMENTO CIENTÍFICO DA RELAÇÃO ENTRE NANOTECNOLOGIA E O ENFRENTAMENTO DA
+      COVID-19 A PARTIR DA ANÁLISE DE INDICADORES BIBLIOMÉTRICOS DE ARTIGOS (2019
+    url: https://journalppc.com/RPPC/article/download/1265/931
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-254-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1265
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-a-participa-o-da-sociedade-civil-nas-pol-ticas-p-blica
+    title: A PARTICIPAÇÃO DA SOCIEDADE CIVIL NAS POLÍTICAS PÚBLICAS MUNICIPAIS PARA
+      O DESENVOLVIMENTO SOCIAL
+    url: https://journalppc.com/RPPC/article/download/1270/710
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-280-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1270
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-estado-permanente-de-justi-a-da-efetividade-na-da-lei
+    title: 'ESTADO PERMANENTE DE JUSTIÇA: DA EFETIVIDADE NA / DA LEI À COMPETÊNCIA JURÍDICA'
+    url: https://journalppc.com/RPPC/article/download/1271/720
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-287-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1271
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-influ-ncia-do-espa-amento-vertical-reduzido-entre-refo
+    title: INFLUÊNCIA DO ESPAÇAMENTO VERTICAL REDUZIDO ENTRE REFORÇOS NO DESEMPENHO
+      DE MACIÇOS DE SOLOS REFORÇADOS COM GEOSSINTÉTICOS
+    url: https://journalppc.com/RPPC/article/download/1275/707
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-277-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1275
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-os-desafios-da-guarda-compartilhada-em-decis-es-provis
+    title: OS DESAFIOS DA GUARDA COMPARTILHADA EM DECISÕES PROVISÓRIAS
+    url: https://journalppc.com/RPPC/article/download/1277/650
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-10-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-227-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1277
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-o-uso-do-sistema-de-blocos-de-concreto-articulados-e-p
+    title: O USO DO SISTEMA DE BLOCOS DE CONCRETO ARTICULADOS E PRÉ-MOLDADOS NA MITIGAÇÃO
+      DE DANOS CAUSADOS PELA EROSÃO COSTEIRA
+    url: https://journalppc.com/RPPC/article/download/1278/748
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-315-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1278
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-princ-pios-sobre-a-forma-o-humana-integral-a-partir-da
+    title: PRINCÍPIOS SOBRE A FORMAÇÃO HUMANA INTEGRAL A PARTIR DAS PERSPECTIVAS DE
+      ESTUDIOSOS BRASILEIROS
+    url: https://journalppc.com/RPPC/article/download/1281/692
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-265-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1281
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-rotatividade-de-funcion-rios-em-uma-institui-o-de-ensi
+    title: 'ROTATIVIDADE DE FUNCIONÁRIOS EM UMA INSTITUIÇÃO DE ENSINO: UM ESTUDO DE
+      CASO EM UMA INSTITUIÇÃO DE ENSINO SUPERIOR EM MONTES CLAROS – MG'
+    url: https://journalppc.com/RPPC/article/download/1283/702
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-273-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1283
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-uma-an-lise-das-rela-es-interdisciplinares-entre-infor
+    title: UMA ANÁLISE DAS RELAÇÕES INTERDISCIPLINARES ENTRE INFORMAÇÃO E GESTÃO E SUAS
+      CONEXÕES COM A CIÊNCIA EM INFORMAÇÃO
+    url: https://journalppc.com/RPPC/article/download/1285/700
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-271-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1285
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-aplica-o-e-uso-do-swmm-e-qgis-para-a-elabora-o-de-mapa
+    title: APLICAÇÃO E USO DO SWMM E QGIS PARA A ELABORAÇÃO DE MAPAS DE ALAGAMENTO NA
+      REGIÃO METROPOLITANA DE BELÉM DO PARÁ
+    url: https://journalppc.com/RPPC/article/download/1286/722
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-289-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1286
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-o-aumento-da-urbaniza-o-e-os-impactos-na-mobilidade-ur
+    title: O AUMENTO DA URBANIZAÇÃO E OS IMPACTOS NA MOBILIDADE URBANA E NO MEIO AMBIENTE
+      NA CIDADE DE NITERÓI- RJ - DE 1990 ATÉ O PRESENTE
+    url: https://journalppc.com/RPPC/article/download/1287/739
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-306-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1287
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-qualidade-de-vida-no-trabalho-uma-perspectiva-para-med
+    title: 'QUALIDADE DE VIDA NO TRABALHO: UMA PERSPECTIVA PARA MEDIR A SATISFAÇÃO DO
+      TRABALHADOR EM UMA INSTITUIÇÃO DE ENSINO NA CIDADE DE MONTES CLAROS/MG'
+    url: https://journalppc.com/RPPC/article/download/1289/701
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-272-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1289
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-o-protagonismo-juvenil-no-contexto-dos-itiner-rios-for
+    title: 'O PROTAGONISMO JUVENIL NO CONTEXTO DOS ITINERÁRIOS FORMATIVOS NO NOVO ENSINO
+      MÉDIO: UM OLHAR A PARTIR DAS LENTES DA Therapeutic jurisprudence'
+    url: https://journalppc.com/RPPC/article/download/1290/695
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-268-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1290
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-rela-o-entre-vegeta-o-urbana-e-temperatura-de-superf-c
+    title: RELAÇÃO ENTRE VEGETAÇÃO URBANA E TEMPERATURA DE SUPERFÍCIE ATRAVÉS DE UMA
+      CORRELAÇÃO NDVI – LST
+    url: https://journalppc.com/RPPC/article/download/1291/897
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-01-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v14n1-28-2025
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1291
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-perspectivas-bibliom-tricas-sobre-o-sensoriamento-remo
+    title: PERSPECTIVAS BIBLIOMÉTRICAS SOBRE O SENSORIAMENTO REMOTO NA CLASSIFICAÇÃO
+      DO SOLO URBANO
+    url: https://journalppc.com/RPPC/article/download/1292/895
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-01-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v14n1-26-2025
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1292
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-impacto-da-resolu-o-espacial-em-abordagens-classificad
+    title: IMPACTO DA RESOLUÇÃO ESPACIAL EM ABORDAGENS CLASSIFICADORAS POR PIXEL E GEOBIA
+    url: https://journalppc.com/RPPC/article/download/1293/896
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-01-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v14n1-27-2025
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1293
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-um-olhar-sobre-as-v-timas-o-movimento-vitimol-gico-nas
+    title: 'UM OLHAR SOBRE AS VÍTIMAS: O MOVIMENTO VITIMOLÓGICO NAS LEGISLAÇÕES PENAIS
+      BRASILEIRAS'
+    url: https://journalppc.com/RPPC/article/download/1294/733
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-300-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1294
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-trabalho-remoto-e-a-luta-pela-desconex-o-em-um-cen-rio
+    title: TRABALHO REMOTO E A LUTA PELA DESCONEXÃO EM UM CENÁRIO DE PRESSÃO CONTÍNUA
+    url: https://journalppc.com/RPPC/article/download/1297/685
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-262-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1297
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-os-desafios-para-inser-o-do-peixe-na-alimenta-o-escola
+    title: 'OS DESAFIOS PARA INSERÇÃO DO PEIXE NA ALIMENTAÇÃO ESCOLAR NO PARÁ: UMA ANÁLISE
+      DOS ENTREVES POLÍTICO INSTITUCIONAIS, ADMINISTRATIVOS E OPERACIONAIS'
+    url: https://journalppc.com/RPPC/article/download/1299/734
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-301-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1299
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-caracteriza-o-espectral-de-esp-cies-florestais-nativas
+    title: CARACTERIZAÇÃO ESPECTRAL DE ESPÉCIES FLORESTAIS NATIVAS E A DETERMINAÇÃO
+      DE ÍNDICES DE VEGETAÇÃO OBTIDA POR GEOPROCESSAMENTO
+    url: https://journalppc.com/RPPC/article/download/1300/737
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-304-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1300
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-ambiente-urbano-e-a-caminhabilidade-entre-pessoas-idos
+    title: AMBIENTE URBANO E A CAMINHABILIDADE ENTRE PESSOAS IDOSAS
+    url: https://journalppc.com/RPPC/article/download/1301/744
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-311-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1301
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-precipita-o-pluviom-trica-na-cultura-do-trigo-em-casca
+    title: 'PRECIPITAÇÃO PLUVIOMÉTRICA NA CULTURA DO TRIGO EM CASCAVEL-PR: IMPACTOS
+      E CORRELAÇÕES'
+    url: https://journalppc.com/RPPC/article/download/1302/735
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-302-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1302
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-aproveitamento-de-res-duo-de-poda-de-rvore-urbana-uma
+    title: 'APROVEITAMENTO DE RESÍDUO DE PODA DE ÁRVORE URBANA: UMA VIA TECNOLOGICAMENTE
+      VIÁVEL PARA PRODUÇÃO DE BIOETANOL E BIOENERGIA'
+    url: https://journalppc.com/RPPC/article/download/1304/805
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-360-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1304
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-pol-tica-nacional-de-enfrentamento-viol-ncia-contra-a
+    title: 'POLÍTICA NACIONAL DE ENFRENTAMENTO À VIOLÊNCIA CONTRA A MULHER: UMA REVISÃO
+      DE LITERATURA'
+    url: https://journalppc.com/RPPC/article/download/1307/736
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-303-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1307
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-reforma-gerencial-do-estado-no-brasil-impactos-e-desaf
+    title: 'REFORMA GERENCIAL DO ESTADO NO BRASIL: IMPACTOS E DESAFIOS NAS INSTITUIÇÕES
+      FEDERAIS DE ENSINO TÉCNICO-PROFISSIONAL'
+    url: https://journalppc.com/RPPC/article/download/1310/725
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-292-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1310
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-participar-pra-qu-se-eu-tenho-muito-o-que-fazer-contra
+    title: 'PARTICIPAR PRA QUÊ, SE EU TENHO MUITO O QUE FAZER: CONTRADIÇÕES E DESAFIOS
+      SOBRE A GESTÃO PARTICIPATIVA EM UMA INSTITUIÇÃO DE ENSINO SUPERIOR'
+    url: https://journalppc.com/RPPC/article/download/1312/724
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-291-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1312
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-princ-pios-norteadores-da-teoria-da-a-o-comunicativa-d
+    title: 'PRINCÍPIOS NORTEADORES DA TEORIA DA AÇÃO COMUNICATIVA: DESAFIOS E POSSIBILIDADES
+      PARA A GESTÃO PARTICIPATIVA'
+    url: https://journalppc.com/RPPC/article/download/1313/726
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-293-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1313
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-assist-ncia-farmac-utica-aos-pacientes-diab-ticos-do-m
+    title: ASSISTÊNCIA FARMACÊUTICA AOS PACIENTES DIABÉTICOS DO MUNICÍPIO DE GOIÂNIA
+      - GOIÁS
+    url: https://journalppc.com/RPPC/article/download/1315/741
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-308-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1315
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-dormindo-ao-relento-a-realidade-das-pessoas-em-situa-o
+    title: 'DORMINDO AO RELENTO: A REALIDADE DAS PESSOAS EM SITUAÇÃO DE RUA E AS POLÍTICAS
+      PÚBLICAS NO ABCD PAULISTA'
+    url: https://journalppc.com/RPPC/article/download/1316/771
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-332-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1316
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-programa-de-aquisi-o-de-alimentos-paa-em-pia-abu-u-al
+    title: 'PROGRAMA DE AQUISIÇÃO DE ALIMENTOS (PAA) EM PIAÇABUÇU-AL: UMA ANÁLISE DA
+      ATUAÇÃO DO PROGRAMA NO CONTEXTO DO MUNICÍPIO'
+    url: https://journalppc.com/RPPC/article/download/1318/705
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-275-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1318
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-sa-de-mental-dos-professores-em-contextos-de-precariza
+    title: 'SAÚDE MENTAL DOS PROFESSORES EM CONTEXTOS DE PRECARIZAÇÃO: PERSPECTIVAS
+      SOBRE A EDUCAÇÃO CONTEMPORÂNEA'
+    url: https://journalppc.com/RPPC/article/download/1320/750
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-317-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1320
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-o-direito-sa-de-de-crian-as-e-adolescentes-no-amap-con
+    title: 'O DIREITO À SAÚDE DE CRIANÇAS E ADOLESCENTES NO AMAPÁ: CONVÊNIOS PARA MEDICAMENTOS
+      DE BAIXO CUSTO E A ATUAÇÃO DA DEFENSORIA PÚBLICA'
+    url: https://journalppc.com/RPPC/article/download/1321/742
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-309-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1321
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-an-lise-das-manifesta-es-patol-gicas-em-uma-estrutura
+    title: ANÁLISE DAS MANIFESTAÇÕES PATOLÓGICAS EM UMA ESTRUTURA DE CONTENÇÃO NO BAIRRO
+      DE LINHA DO TIRO - RECIFE/PE
+    url: https://journalppc.com/RPPC/article/download/1324/706
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-276-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1324
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-impacts-of-climate-variability-on-hospitalizations-and
+    title: IMPACTS OF CLIMATE VARIABILITY ON HOSPITALIZATIONS AND MORTALITY FROM WATERBORNE
+      DISEASES IN NORTHERN BRAZIL
+    url: https://journalppc.com/RPPC/article/download/1325/765
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-326-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1325
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-avalia-o-da-fertilidade-do-solo-em-propriedades-agr-co
+    title: AVALIAÇÃO DA FERTILIDADE DO SOLO EM PROPRIEDADES AGRÍCOLAS COM INTERESSE
+      NA PRODUÇÃO DE PLANTAS MEDICINAIS EM ITAPURANGA EM GOIÁS
+    url: https://journalppc.com/RPPC/article/download/1326/716
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-270-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1326
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-o-protagonismo-do-aluno-nas-metodologias-ativas-caminh
+    title: 'O PROTAGONISMO DO ALUNO NAS METODOLOGIAS ATIVAS: CAMINHOS PARA UMA EDUCAÇÃO
+      SIGNIFICATIVA'
+    url: https://journalppc.com/RPPC/article/download/1330/752
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-319-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1330
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-curriculariza-o-do-esporte-orienta-o
+    title: CURRICULARIZAÇÃO DO ESPORTE ORIENTAÇÃO
+    url: https://journalppc.com/RPPC/article/download/1333/766
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-327-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1333
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-fatores-cr-ticos-de-sucesso-para-digitaliza-o-do-proce
+    title: FATORES CRÍTICOS DE SUCESSO PARA DIGITALIZAÇÃO DO PROCESSO DE LICENCIAMENTO
+      DE OBRAS
+    url: https://journalppc.com/RPPC/article/download/1338/793
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-348-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1338
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-aplica-o-de-redes-neurais-artificiais-para-predi-o-de
+    title: APLICAÇÃO DE REDES NEURAIS ARTIFICIAIS PARA PREDIÇÃO DE DESLIZAMENTOS DE
+      TERRA INDUZIDOS POR CHUVAS
+    url: https://journalppc.com/RPPC/article/download/1344/906
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-399-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1344
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-o-impacto-da-influ-ncia-afetiva-e-cognitiva-na-rela-o
+    title: O IMPACTO DA INFLUÊNCIA AFETIVA E COGNITIVA NA RELAÇÃO ENTRE ADOLESCENTES
+      E PROFESSORES
+    url: https://journalppc.com/RPPC/article/download/1346/769
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-330-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1346
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-tica-e-pol-tica-um-di-logo-entre-a-antiguidade-e-a-atu
+    title: 'ÉTICA E POLÍTICA: UM DIÁLOGO ENTRE A ANTIGUIDADE E A ATUALIDADE'
+    url: https://journalppc.com/RPPC/article/download/1347/786
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-299-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1347
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-transfer-ncia-do-conhecimento-no-sistema-nico-de-segur
+    title: 'TRANSFERÊNCIA DO CONHECIMENTO NO SISTEMA ÚNICO DE SEGURANÇA PÚBLICA (SUSP):
+      LEVANTAMENTO PROSPECTIVO SOB A PERSPECTIVA DA TECNOLOGIA'
+    url: https://journalppc.com/RPPC/article/download/1348/909
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-01-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v14n1-38-2025
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1348
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-intelig-ncia-artificial-contextos-evolu-es-tecnol-gica
+    title: 'INTELIGÊNCIA ARTIFICIAL: CONTEXTOS, EVOLUÇÕES TECNOLÓGICAS E O POTENCIAL
+      TRANSFORMADOR DA IA PARA ARQUITETURA, URBANISMO E DESIGN'
+    url: https://journalppc.com/RPPC/article/download/1349/789
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-298-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1349
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-resili-ncia-social-na-amaz-nia-um-caso-de-sucesso
+    title: 'RESILIÊNCIA SOCIAL NA AMAZÔNIA: UM CASO DE SUCESSO'
+    url: https://journalppc.com/RPPC/article/download/1350/792
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-347-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1350
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-trabalho-docente-na-amaz-nia-contempor-nea-compreens-e
+    title: 'TRABALHO DOCENTE NA AMAZÔNIA CONTEMPORÂNEA: COMPREENSÕES FUNDAMENTAIS PARA
+      O PROFESSOR-PESQUISADOR'
+    url: https://journalppc.com/RPPC/article/download/1352/768
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-329-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1352
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-estudo-de-caso-a-implementa-o-do-sistema-integrado-de
+    title: 'ESTUDO DE CASO: A IMPLEMENTAÇÃO DO SISTEMA INTEGRADO DE GESTÃO ELETRÔNICA
+      DE DOCUMENTOS (SIGED) NOS PROCESSOS ADMINISTRATIVOS DA ESCOLA SUPERIOR DE CI'
+    url: https://journalppc.com/RPPC/article/download/1354/767
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-328-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1354
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-condi-es-higi-nico-sanit-rias-relacionadas-aos-produto
+    title: CONDIÇÕES HIGIÊNICO-SANITÁRIAS RELACIONADAS AOS PRODUTOS CÁRNEOS BOVINOS
+      E AOS ESTABELECIMENTOS COMERCIALIZADORES
+    url: https://journalppc.com/RPPC/article/download/1356/727
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-294-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1356
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-caracteriza-o-da-fauna-flebotom-nica-diptera-psychodid
+    title: 'CARACTERIZAÇÃO DA FAUNA FLEBOTOMÍNICA (DIPTERA: PSYCHODIDAE) TRANSMISSORA
+      DAS LEISHMANIOSES NO MUNICÍPIO DE MINEIROS/GO – RESULTADOS PARCIAIS'
+    url: https://journalppc.com/RPPC/article/download/1357/728
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-295-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1357
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-principais-fontes-de-contamina-o-da-carne-de-frango-po
+    title: PRINCIPAIS FONTES DE CONTAMINAÇÃO DA CARNE DE FRANGO POR Salmonella spp.
+      DURANTE O ABATE
+    url: https://journalppc.com/RPPC/article/download/1366/730
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-297-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1366
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-mapeamento-do-risco-de-contamina-o-das-guas-subterr-ne
+    title: MAPEAMENTO DO RISCO DE CONTAMINAÇÃO DAS ÁGUAS SUBTERRÂNEAS DA REGIÃO DE PIRES
+      DO RIO, GOIÁS, BRASIL
+    url: https://journalppc.com/RPPC/article/download/1369/780
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-334-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1369
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-a-import-ncia-da-governan-a-de-tecnologia-da-informa-o
+    title: A IMPORTÂNCIA DA GOVERNANÇA DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO NO
+      DESEMPENHO ORGANIZACIONAL DO PODER JUDICIÁRIO DO ESTADO DO AMAZONAS
+    url: https://journalppc.com/RPPC/article/download/1379/774
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-335-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1379
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-management-of-solid-waste-from-construction-in-vicente
+    title: 'MANAGEMENT OF SOLID WASTE FROM CONSTRUCTION IN VICENTE PIRES, DF: MAPPING,
+      CHARACTERIZATION OF DISPOSAL AREAS AND EVALUATION OF PUBLIC POLICIES'
+    url: https://journalppc.com/RPPC/article/download/1382/855
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-406-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1382
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-plano-diretor-participativo-do-munic-pio-de-pedro-afon
+    title: 'PLANO DIRETOR PARTICIPATIVO DO MUNICÍPIO DE PEDRO AFONSO: UMA ANÁLISE DAS
+      ATIVIDADES ECONÔMICAS DO MEIO RURAL'
+    url: https://journalppc.com/RPPC/article/download/1383/816
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-370-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1383
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-o-sistema-interamericano-de-direitos-humanos-e-sua-int
+    title: O SISTEMA INTERAMERICANO DE DIREITOS HUMANOS E SUA INTERSEÇÃO COM POLÍTICAS
+      PÚBLICAS NA EFETIVAÇÃO DOS DIREITOS HUMANOS NA AMÉRICA LATINA
+    url: https://journalppc.com/RPPC/article/download/1384/755
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-11-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-322-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1384
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-avalia-o-de-im-veis-urbanos-para-desapropria-o-de-rea
+    title: AVALIAÇÃO DE IMÓVEIS URBANOS PARA DESAPROPRIAÇÃO DE ÁREA DE PRESERVAÇÃO PERMANENTE
+      EM BARRA DE JANGADA, JABOATÃO DOS GUARARAPES-PE
+    url: https://journalppc.com/RPPC/article/download/1385/799
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-354-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1385
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-cultura-na-era-da-educa-o-5-0
+    title: CULTURA NA ERA DA EDUCAÇÃO 5.0
+    url: https://journalppc.com/RPPC/article/download/1386/801
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-356-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1386
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-portugues
+    title: portugues
+    url: https://journalppc.com/RPPC/article/download/1389/927
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-02-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v14n1-54-2025
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1389
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-uso-de-fosforitos-do-grupo-bambu-como-remineralizadore
+    title: USO DE FOSFORITOS DO GRUPO BAMBUÍ COMO REMINERALIZADORES E ANÁLISE DOS SEUS
+      BENEFICIOS SOCIO-AMBIENTAIS
+    url: https://journalppc.com/RPPC/article/download/1393/960
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-02-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v14n1-83-2025
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1393
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-alvenaria-estrutural-sistema-construtivo
+    title: 'ALVENARIA ESTRUTURAL: SISTEMA CONSTRUTIVO'
+    url: https://journalppc.com/RPPC/article/download/1396/885
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2025-01-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v14n1-16-2025
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1396
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-adequa-o-habitacional-a-caracteriza-o-da-moradia-de-qu
+    title: 'ADEQUAÇÃO HABITACIONAL: A CARACTERIZAÇÃO DA MORADIA DE QUALIDADE NO BRASIL'
+    url: https://journalppc.com/RPPC/article/download/1397/814
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-369-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1397
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-preval-ncia-de-sobrepeso-obesidade-e-adiposidade-subcu
+    title: PREVALÊNCIA DE SOBREPESO, OBESIDADE E ADIPOSIDADE SUBCUTÂNEA EM ADOLESCENTES
+      ESCOLARES DO MUNICÍPIO DE RIO VERDE-GO
+    url: https://journalppc.com/RPPC/article/download/1398/803
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-358-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1398
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-separa-o-de-poderes-e-o-sequestro-da-democracia-repres
+    title: SEPARAÇÃO DE PODERES E O SEQUESTRO DA DEMOCRACIA REPRESENTATIVA PELO PARLAMENTO
+      HODIERNO
+    url: https://journalppc.com/RPPC/article/download/1399/775
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-336-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1399
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-religi-o-e-direito-a-din-mica-do-controle-social-nas-e
+    title: 'RELIGIÃO E DIREITO: A DINÂMICA DO CONTROLE SOCIAL NAS ESFERAS MORAL E JURÍDICA'
+    url: https://journalppc.com/RPPC/article/download/1401/818
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-372-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1401
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-compliance-gap-a-medida-da-inefic-cia-da-arrecada-o-pa
+    title: 'COMPLIANCE GAP: A MEDIDA DA INEFICÁCIA DA ARRECADAÇÃO PARA A ADMINISTRAÇÃO
+      TRIBUTÁRIA'
+    url: https://journalppc.com/RPPC/article/download/1404/844
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-397-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1404
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-hidrog-nio-verde-no-brasil-potencial-e-desafios-na-tra
+    title: 'HIDROGÊNIO VERDE NO BRASIL: POTENCIAL E DESAFIOS NA TRANSIÇÃO ENERGÉTICA'
+    url: https://journalppc.com/RPPC/article/download/1405/808
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-16'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-363-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1405
+    rights_verified_at: '2026-10-16'
+  - id: ojs-rppc-cidades-inteligentes-e-o-desafio-da-inclus-o-an-lise-d
+    title: 'CIDADES INTELIGENTES E O DESAFIO DA INCLUSÃO: ANÁLISE DOS PROJETOS E AÇÕES
+      DO ITAIPU PARQUETEC NA CIDADE DE FOZ DO IGUAÇU/PR'
+    url: https://journalppc.com/RPPC/article/download/1407/847
+    source: ojs_rppc
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-12-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.23900/2359-1552v13n2-400-2024
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: https://journalppc.com/RPPC/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journalppc.com:article/1407
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-spatial-effect-of-market-sentiment-on-housing-price-e
+    title: 'Spatial effect of market sentiment on housing price: evidence from social
+      media data in China'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16255/10976
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-01-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16255
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16255
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-evaluation-of-infrastructure-projects-by-a-decision-m
+    title: Evaluation of infrastructure projects by a decision model based on RPR, MABAC,
+      and WASPAS methods with interval-valued intuitionistic fuzzy sets
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16476/11026
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-02-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16476
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16476
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-path-analysis-on-escalation-of-commitment-of-investor
+    title: Path analysis on escalation of commitment of investors in different project
+      scenarios of PPPs
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16477/11043
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-04-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16477
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16477
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-the-impacts-of-task-complexity-overconfidence-confirm
+    title: The impacts of task complexity, overconfidence, confirmation bias, customer
+      influence, and anchoring on variations in real estate valuations
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16704/11104
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-04-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16704
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16704
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-forecasting-spatially-correlated-targets-simultaneous
+    title: 'Forecasting spatially correlated targets: simultaneous prediction of housing
+      market activity across multiple areas'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16786/11135
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-04-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16786
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16786
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-pass-through-business-entity-choice-and-earnings-mana
+    title: 'Pass-through business entity choice and earnings management: evidence from
+      UK real estate investment trust conversion'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16834/11159
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-05-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16834
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16834
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-property-management-enabled-by-artificial-intelligenc
+    title: 'Property management enabled by artificial intelligence post Covid-19: an
+      exploratory review and future propositions'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16923/11174
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-05-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16923
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16923
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-organizational-isomorphism-and-property-investment-de
+    title: 'Organizational isomorphism and property investment decision-making amidst
+      disruptions: evidence from listed property trusts in New Zealand'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16947/11175
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-08-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16947
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16947
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-impact-of-major-events-on-housing-prices-in-hangzhou
+    title: Impact of major events on housing prices in Hangzhou based on regression
+      discontinuity
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16970/11187
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-06-02'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16970
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16970
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-house-age-and-housing-prices-a-viewpoint-of-the-optim
+    title: 'House age and housing prices: a viewpoint of the optimal time for land redevelopment'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/16984/11193
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-05-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.16984
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16984
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-analysis-of-collaborative-innovation-behavior-of-mega
+    title: Analysis of collaborative innovation behavior of megaproject participants
+      under the reward and punishment mechanism
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17151/11285
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-08-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17151
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17151
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-the-motivations-of-chinese-individual-foreign-investo
+    title: The motivations of Chinese individual foreign investors in the Australian
+      residential real estate market
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17154/11245
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-07-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17154
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17154
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-exploring-hotel-appraisal-determinants-amid-sales-tre
+    title: 'Exploring hotel appraisal determinants amid sales trend during COVID-19
+      pandemic: using a DANP-mV model'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17168/11260
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17168
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17168
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-land-marketization-secondary-land-market-and-effects
+    title: Land marketization, secondary land market, and effects on industrial land
+      price
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17587/11339
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-10-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17587
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17587
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-research-on-property-service-mode-innovation-in-the-c
+    title: Research on property service mode innovation in the context of transformation
+      and upgrading
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17588/11343
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-11-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17588
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17588
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-does-machine-learning-prediction-dampen-the-informati
+    title: Does machine learning prediction dampen the information asymmetry for non-local
+      investors?
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17590/11341
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-11-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17590
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17590
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-quantitative-view-assessment-quvias-method-for-window
+    title: Quantitative View Assessment (QUVIAS) method for window visibility analysis
+      utilizing BIM, GIS and Web environments
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17754/11382
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-10-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17754
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17754
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-a-meta-analysis-of-the-public-private-partnership-lit
+    title: 'A meta-analysis of the public-private partnership literature reviews: exploring
+      the identity of the field'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17860/11406
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-11-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17860
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17860
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-combination-of-machine-learning-based-automatic-valua
+    title: Combination of machine learning-based automatic valuation models for residential
+      properties in South Korea
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17909/11420
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-11-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17909
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17909
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-a-multicriteria-evaluation-system-for-large-real-esta
+    title: A multicriteria evaluation system for large real estate investments
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/17922/11418
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-11-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.17922
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/17922
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-the-covid-19-pandemic-and-office-space-demand-dynamic
+    title: The COVID-19 pandemic and office space demand dynamics
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18003/11445
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-03-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.18003
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18003
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-impact-of-access-to-sunlight-on-residential-property
+    title: 'Impact of access to sunlight on residential property values: an empirical
+      analysis of the housing market in Shanghai'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18004/11472
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-12-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.18004
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18004
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-power-pyramid-hidden-debt-and-china-s-urban-expansion
+    title: Power pyramid, hidden debt, and China’s urban expansion
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18155/11497
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.18155
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18155
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-world-heritage-designation-and-property-the-impact-of
+    title: 'World heritage designation and property: the impact of preservation on the
+      price of historic assets'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18156/11479
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-12-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.18156
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18156
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-ranking-residential-neighborhoods-based-on-their-sust
+    title: 'Ranking residential neighborhoods based on their sustainability: a CM-BWM
+      approach'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18310/11516
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-12-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.18310
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18310
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-impacts-of-social-capital-on-housing-prices-the-case
+    title: 'Impacts of social capital on housing prices: the case of special relationship-based
+      transactions'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18330/11528
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-03-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.18330
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18330
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-investment-in-infrastructure-as-a-key-to-sustainable
+    title: 'Investment in infrastructure as a key to sustainable economic recovery:
+      the role of the building industry'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18430/11552
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2022.18430
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18430
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-housing-preference-structures-in-east-asia-an-empiric
+    title: 'Housing preference structures in East Asia: an empirical study and non-paradigmatic
+      shifts between nearby metropoles'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18628/11615
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-03-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.18628
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18628
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-residential-spatial-differentiation-at-the-community
+    title: Residential spatial differentiation at the community level in Hangzhou, China
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18708/11630
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.18708
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18708
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-the-wakeup-call-of-covid-19-perceptions-of-crisis-imp
+    title: 'The wakeup call of COVID-19: perceptions of crisis impacts in the real estate
+      market'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18842/11684
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-04-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.18842
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18842
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-bilateral-matching-decision-making-in-property-tradin
+    title: 'Bilateral matching decision-making in property trading platform: a method
+      considering intermediary moral hazard'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/18990/11711
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-05-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.18990
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/18990
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-does-local-economic-uncertainty-matter-for-risk-of-pr
+    title: Does local economic uncertainty matter for risk of property companies? Evidence
+      from US REITs
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19092/11731
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-05-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19092
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19092
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-urban-quality-of-life-evaluation-using-land-price-wit
+    title: Urban quality of life evaluation using land price with Status-Quality Trade-Off
+      theory and ecosystem services
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19124/11737
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-05-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19124
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19124
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-urban-rural-differences-in-primary-school-resources-i
+    title: 'Urban–rural differences in primary school resources in China: a case study
+      of Yuncheng County'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19142/11742
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-06-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19142
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19142
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-performance-based-payment-structural-design-for-infra
+    title: Performance-based payment structural design for infrastructure PPP projects
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19180/11744
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-06-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19180
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19180
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-how-to-make-urban-renewal-sustainable-pathway-analysi
+    title: How to make urban renewal sustainable? Pathway analysis based on fuzzy-set
+      qualitative comparative analysis (fsQCA)
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19352/11806
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-07-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19352
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19352
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-are-we-there-or-do-we-have-more-to-do-metaverse-in-fa
+    title: Are we there or do we have more to do? Metaverse in facility management and
+      future prospects
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19516/11828
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-08-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19516
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19516
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-emphasizing-access-to-health-and-treatment-services-i
+    title: Emphasizing access to health and treatment services in order to identify
+      the key factors influencing an age-friendly city
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19865/11885
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-09-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19865
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19865
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-analysis-of-tax-assessment-by-assembly-and-property-d
+    title: Analysis of tax assessment by assembly and property development activities
+      in fragmented urban lands – Gwangjin District, Seoul, South Korea
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19889/11903
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-09-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19889
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19889
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-effect-of-urban-innovation-on-land-finance-dependence
+    title: 'Effect of urban innovation on land finance dependence: evidence from 233
+      Chinese cities'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19922/11899
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-09-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19922
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19922
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-price-changes-of-repeat-sales-houses-in-kaohsiung-cit
+    title: 'Price changes of repeat-sales houses in Kaohsiung city: analyses based on
+      hierarchical linear growth models'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19935/11929
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-11-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19935
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19935
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-scientometric-review-of-smart-water-management-litera
+    title: Scientometric review of smart water management literature from the sustainable
+      development goal perspective
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/19936/11916
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-09-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.19936
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/19936
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-investigating-the-influence-of-homebuyers-sociodemogr
+    title: Investigating the influence of homebuyers’ sociodemographic factors on preferences
+      of sustainable affordable housing
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20200/11970
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20200
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20200
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-the-inter-relationships-among-mobility-housing-prices
+    title: 'The inter-relationships among mobility, housing prices and innovation: evidence
+      from China’s cities'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20202/11971
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-10-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20202
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20202
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-efficiency-and-challenges-in-public-real-estate-manag
+    title: 'Efficiency and challenges in public real estate management: insights from
+      Lithuania'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20362/11998
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-11-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20362
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20362
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-path-selection-of-spatial-econometric-model-for-mass
+    title: 'Path selection of spatial econometric model for mass appraisal of real estate:
+      evidence from Yinchuan, China'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20376/12003
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-11-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20376
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20376
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-housing-types-population-attributes-and-the-developme
+    title: Housing types, population attributes and the development path of housing
+      in large cities – a case study of Zhengzhou, China
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20425/12013
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-12-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20425
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20425
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-evading-danger-the-crisis-impact-framework-for-real-e
+    title: 'Evading danger: the crisis impact framework for real estate'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20444/12019
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-12-07'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20444
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20444
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-exploring-some-spatially-constrained-delineation-meth
+    title: Exploring some spatially constrained delineation methods in segmenting the
+      Malaysian commercial property market
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20498/12033
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-12-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20498
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20498
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-how-do-different-noise-pollution-sources-affect-apart
+    title: How do different noise pollution sources affect apartment prices?
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20563/12049
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20563
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20563
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-sustainability-in-property-taxation-an-application-fo
+    title: 'Sustainability in property taxation: an application for revenue stability
+      and fairness perspectives, the City of Buffalo, NY'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20564/12059
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-12-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20564
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20564
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-evaluation-of-urban-livability-based-on-spatial-distr
+    title: Evaluation of urban livability based on spatial distribution and functional
+      radius of land uses
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20580/12054
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-12-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20580
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20580
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-analyzing-the-underlying-relationship-between-monetar
+    title: Analyzing the underlying relationship between monetary policy and residential
+      property prices in China
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20662/12077
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-12-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2023.20662
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20662
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-the-effects-of-transaction-hotspots-and-flipping-hots
+    title: The effects of transaction hotspots and flipping hotspots on housing prices
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20899/12187
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-02-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.20899
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20899
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-do-chinese-government-policies-affect-performance-of
+    title: Do Chinese government policies affect performance of real estate enterprises?
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/20944/12157
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-02-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.20944
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/20944
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-incentive-mechanism-of-government-overcommitment-in-p
+    title: Incentive mechanism of government overcommitment in PPPs based on investors’
+      fairness preference
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21028/12172
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-03-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21028
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21028
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-business-model-transformation-of-reits-in-the-senior
+    title: Business model transformation of REITs in the senior housing sector
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21095/12210
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-03-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21095
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21095
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-a-dynamic-performance-based-payment-mechanism-for-pub
+    title: 'A dynamic performance-based payment mechanism for Public-Private Partnership
+      projects: An integrated model for principal-agent and multi-objective opt'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21183/12238
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-05-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21183
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21183
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-capitalization-effects-of-rivers-in-urban-housing-sub
+    title: Capitalization effects of rivers in urban housing submarkets – A case study
+      of the Yangtze River
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21184/12240
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-04-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21184
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21184
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-alleviating-surveyor-bias-in-real-estate-an-applicati
+    title: 'Alleviating surveyor bias in real estate: An application to vacancy and
+      property prices'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21214/12244
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-04-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21214
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21214
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-livability-and-futures-studies-of-worn-out-urban-text
+    title: 'Livability and futures studies of worn-out urban textures: Scenario analysis
+      for evaluating the livability system and achieving sustainability'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21341/12294
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-04-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21341
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21341
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-extracting-and-prioritizing-the-attractiveness-parame
+    title: Extracting and prioritizing the attractiveness parameters of shopping centers
+      under intuitionistic fuzzy numbers
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21376/12299
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-05-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21376
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21376
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-bibliometric-review-of-research-on-green-building-ass
+    title: Bibliometric review of research on green building assessment method by CiteSpace
+      and HistCite
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21455/12305
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-05-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21455
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21455
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-real-estate-brokerage-and-endowment-effects-in-the-ho
+    title: 'Real estate brokerage and endowment effects in the housing market: Evidence
+      from Poland'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21456/12303
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-05-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21456
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21456
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-land-supply-marketization-economic-fluctuations-and-w
+    title: 'Land supply marketization, economic fluctuations and welfare: A quantitative
+      analysis for China'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21457/12308
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-05-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21457
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21457
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-the-impact-of-the-digital-economy-on-urban-house-pric
+    title: 'The impact of the digital economy on urban house prices: Comprehensive explorations'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21474/12311
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-05-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21474
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21474
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-incentive-mechanisms-of-an-experimental-resource-shar
+    title: Incentive mechanisms of an experimental resource-sharing platform considering
+      reputation effects for megaprojects
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21557/12368
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21557
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21557
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-housing-price-family-structures-and-household-consump
+    title: 'Housing price, family structures and household consumption: Empirical evidence
+      of Taiwan'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21675/12411
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-07-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21675
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21675
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-developing-a-model-software-to-determine-the-effect-o
+    title: Developing a model software to determine the effect of High Voltage Transmission
+      Lines (HVTL) on the residential land value by using AHP method
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21810/12407
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-08-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21810
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21810
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-the-incentive-effects-of-project-governance-elements
+    title: The incentive effects of project governance elements on agents in agent-led
+      construction of social security housing projects
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21814/12406
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-09-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21814
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21814
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-investors-rational-conformity-to-government-s-excessi
+    title: 'Investors’ rational conformity to government’s excessive behavior in PPP
+      project: Forms and measurement'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21824/12409
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-09-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21824
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21824
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-elevating-property-management-in-public-housing-a-sys
+    title: 'Elevating property management in public housing: A systematic literature
+      review'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/21856/12448
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-09-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.21856
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/21856
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-willingness-analysis-of-middle-aged-and-older-people
+    title: Willingness analysis of middle-aged and older people’s participation in reverse
+      mortgage schemes
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22231/12491
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22231
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22231
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-spatial-heterogeneity-and-interaction-effect-of-urban
+    title: Spatial heterogeneity and interaction effect of urban blue and green spaces
+      on housing prices
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22232/12517
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-10-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22232
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22232
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-proactive-pricing-strategies-for-on-street-parking-ma
+    title: Proactive pricing strategies for on-street parking management with physics-informed
+      neural networks
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22233/12500
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-10-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22233
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22233
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-predictors-of-investment-intention-in-real-estate-ext
+    title: 'Predictors of investment intention in real estate: Extending the theory
+      of planned behavior'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22234/12531
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-10-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22234
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22234
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-mapping-the-landscape-a-systematic-literature-review
+    title: 'Mapping the landscape: A systematic literature review on automated valuation
+      models and strategic applications in real estate'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22251/12508
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22251
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22251
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-urban-housing-prices-and-consumption-structure-upgrad
+    title: 'Urban housing prices and consumption structure upgrading: Different relationships
+      in urban and rural China'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22449/12548
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-10-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22449
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22449
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-human-made-sounds-in-informal-learning-spaces-on-a-un
+    title: Human-made sounds in informal learning spaces on a university campus
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22471/12553
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22471
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22471
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-assessing-the-economic-premium-of-additional-elevator
+    title: 'Assessing the economic premium of additional elevator: PSM hedonic analysis
+      in Beijing, China'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22606/12580
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-11-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22606
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22606
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-multidimensional-house-price-prediction-with-sota-rnn
+    title: Multidimensional house price prediction with SOTA RNNs
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22661/12599
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-11-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22661
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22661
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-property-appraisal-via-lens-of-property-registration
+    title: Property appraisal via lens of property registration abundance – real estate
+      market asymmetry assessment
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/22686/12610
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-11-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2024.22686
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/22686
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-does-china-s-housing-supply-demand-relationship-impac
+    title: Does China’s housing supply-demand relationship impact urban innovation capability
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23234/12739
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-02-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23234
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23234
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-residential-satisfaction-indicator-latin-american-evi
+    title: 'Residential satisfaction indicator: Latin American evidence'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23241/12749
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-03-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23241
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23241
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-land-purchasing-behavior-of-real-estate-enterprises-a
+    title: 'Land purchasing behavior of real estate enterprises: An organizational status
+      perspective'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23306/12760
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23306
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23306
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-supply-decision-of-existing-apartment-case-study-of-a
+    title: 'Supply decision of existing apartment: Case study of apartment transactions
+      in Gangdong district, Seoul, Korea'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23317/12761
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-02-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23317
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23317
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-evaluating-smart-city-technology-efficiency-and-citiz
+    title: Evaluating smart city technology efficiency and citizen satisfaction using
+      data envelopment analysis
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23584/12813
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-04-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23584
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23584
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-development-drivers-for-urban-regeneration-and-livabi
+    title: Development drivers for urban regeneration and livability in worn-out neighborhoods
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23585/12831
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-04-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23585
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23585
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-a-study-on-house-price-index-performance-mix-adjustme
+    title: 'A study on house price index performance: Mix adjustment and hierarchical
+      linear growth repeat-sales models'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23638/12856
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-08-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23638
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23638
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-spatiotemporal-patterns-and-prediction-of-multi-regio
+    title: Spatiotemporal patterns and prediction of multi-region house prices via functional
+      mixed effects model
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23639/12842
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-04-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23639
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23639
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-property-price-and-anti-social-behaviour-an-empirical
+    title: 'Property price and anti-social behaviour: An empirical study of Northern
+      Ireland'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/23983/12911
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-12-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.23983
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/23983
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-estimating-spatiotemporal-heterogeneous-effects-of-ha
+    title: Estimating spatiotemporal heterogeneous effects of haze pollution on housing
+      rents in China
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/24010/12910
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-06-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.24010
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/24010
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-a-dual-hesitation-fuzzy-vikor-method-with-incomplete
+    title: A dual hesitation fuzzy VIKOR method with incomplete attribute weights for
+      property service quality evaluation
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/24035/12928
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.24035
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/24035
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-impact-of-financial-market-development-on-housing-pri
+    title: 'Impact of financial market development on housing prices: Evidence from
+      China'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/24036/12917
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-06-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.24036
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/24036
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-quo-vadis-urban-areas-re-thinking-the-future-of-urban
+    title: '“Quo Vadis urban areas?”: (Re)thinking the future of urban areas using interpretive
+      structural modeling'
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/24051/12935
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-06-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.24051
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/24051
+    rights_verified_at: '2026-10-16'
+  - id: ojs-ijspm-forecasting-pandemic-induced-changes-in-real-estate-m
+    title: Forecasting pandemic-induced changes in real estate market values through
+      machine learning approaches
+    url: https://journals.vilniustech.lt/index.php/IJSPM/article/download/24063/12955
+    source: ojs_ijspm
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/ijspm.2025.24063
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://journals.vilniustech.lt/index.php/IJSPM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/24063
     rights_verified_at: '2026-10-16'
