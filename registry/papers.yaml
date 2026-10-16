@@ -155316,23 +155316,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2001.07448 openalex:W3002226646
     resolution: 'sim1: openalex location'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-16'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-10-1016-j-enbuild-2017-07-027-d51b6f44
     title: Impact of the controller model complexity on model predictive control performance
       for buildings
@@ -155826,4 +155809,21 @@ sources:
     rights_verified_at: '2026-10-16'
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2601.11318 openalex:W7124759659
+    resolution: 'sim1: openalex location'
+  - id: oas-w7205084948
+    title: DT4PED Dialogue and Quality Assurance Support for PEDs by Digital Twin District
+      Energy Models - Final report Swedish national project part
+    url: https://research.chalmers.se/publication/551161/file/551161_Fulltext.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7205084948
+    license_evidence: no licence statement for this copy [copy https://research.chalmers.se/publication/551161/file/551161_Fulltext.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7205084948
     resolution: 'sim1: openalex location'
