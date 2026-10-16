@@ -155896,3 +155896,136 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621987907
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-1061-asce-me-1943-5479-0000763-8b0a9a86
+    title: 'Developing a Digital Twin at Building and City Levels: Case Study of West
+      Cambridge Campus'
+    url: https://discovery.ucl.ac.uk/10085012/3/Lu_Developing%20a%20Digital%20Twin%20at%20Building%20and%20City%20Levels_AAM.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1061/(asce)me.1943-5479.0000763
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10085012/3/Lu_Developing%20a%20Digital%20Twin%20at%20Building%20and%20City%20Levels_AAM.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1061/(asce)me.1943-5479.0000763 openalex:W3007058815
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1109-mic-2021-3060962-3d6cd208
+    title: 'DUET: A Framework for Building Interoperable and Trusted Digital Twins of
+      Smart Cities'
+    url: https://lirias.kuleuven.be/retrieve/af304536-31af-416f-b2a0-e1ae5f4eacba
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-02-24'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/mic.2021.3060962
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://lirias.kuleuven.be/retrieve/af304536-31af-416f-b2a0-e1ae5f4eacba;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/mic.2021.3060962 openalex:W3134058792
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2023-113810-2b2ab551
+    title: A study of deep learning-based multi-horizon building energy forecasting
+    url: https://liu.diva-portal.org/smash/get/diva2:1817945/FULLTEXT01
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2023.113810
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://liu.diva-portal.org/smash/get/diva2:1817945/FULLTEXT01;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2023.113810 openalex:W4389220939
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1109-tap-2022-3151354-51121773
+    title: Building a Smart EM Environment - AI-Enhanced Aperiodic Micro-Scale Design
+      of Passive EM Skins
+    url: https://arxiv.org/pdf/2110.09183
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-02-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/tap.2022.3151354
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2110.09183;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/tap.2022.3151354 openalex:W3207728175
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-su15064955-6d9c0b77
+    title: Architectural Reply for Smart Building Design Concepts Based on Artificial
+      Intelligence Simulation Models and Digital Twins
+    url: https://hj.diva-portal.org/smash/get/diva2:1743137/FULLTEXT01
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-03-10'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su15064955
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://hj.diva-portal.org/smash/get/diva2:1743137/FULLTEXT01;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su15064955 openalex:W4324059113
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-compind-2024-104112-67c761d2
+    title: Enabling Building Information Model-driven human-robot collaborative construction
+      workflows with closed-loop digital twins
+    url: https://arxiv.org/pdf/2306.09639
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.compind.2024.104112
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://arxiv.org/pdf/2306.09639; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-16'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.compind.2024.104112 openalex:W4399425314
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3389-frsc-2021-663269-5c89c58b
+    title: 'Digital Twin for Accelerating Sustainability in Positive Energy District:
+      A Review of Simulation Tools and Applications'
+    url: https://www.frontiersin.org/articles/10.3389/frsc.2021.663269/pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-06-21'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/frsc.2021.663269
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/frsc.2021.663269/pdf
+      do not transfer to https://www.frontiersin.org/journals/sustainable-cities/articles/10.3389/frsc.2021.663269/pdf;
+      payload sha256=d9bd1b9b08ce215f0a5b89d4085706eb87ed270f02df5ed7ead3c75ee275dc78;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/frsc.2021.663269/pdf;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-16",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-16T19:59:09Z'
+    origin_ids: doi:10.3389/frsc.2021.663269 openalex:W3174171722
+    resolution: 'sim1: openalex location'
