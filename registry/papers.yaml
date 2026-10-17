@@ -156398,3 +156398,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2607.05773 openalex:W7167726642
     resolution: 'sim1: openalex location'
+  - id: arx-architectural-design-activities-for-jas
+    title: Architectural Design Activities for JAS
+    url: https://arxiv.org/pdf/0912.0983v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2009-12-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0912.0983
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0912.0983 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-17'
