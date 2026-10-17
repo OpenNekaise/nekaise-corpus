@@ -165975,20 +165975,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1956', '1956']
     rights_verified_at: '2026-10-16'
-  - id: arc-userpricesvirdenlighting-a359df64
-    title: User Prices (1963) [arc-userpricesvirdenlighting-a359df64]
-    url: https://archive.org/download/UserPricesVirdenLighting/User%20Prices%20Virden%20Lighting_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1963'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1963', '1963']
-    rights_verified_at: '2026-10-16'
   - id: arc-coburnhardwarefortincladfireproofdoors-8251e137
     title: 'Hardware for tin-clad fireproof doors : catalog no. 210 (1948) [arc-coburnhardwarefortincladfireproofdoors-8251e137]'
     url: https://archive.org/download/CoburnHardwareForTinCladFireproofDoors/Coburn%20Hardware%20for%20Tin-clad%20Fireproof%20Doors_djvu.txt
@@ -173119,20 +173105,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1919'', ''[1919]'']:
       no licence and no certain publication date'
     rights_verified_at: '2026-10-16'
-  - id: arc-usefulinformatio00phoe-0-ffa8e841
-    title: Useful information for architects, engineers, and workers in wrought iron.
-      (1886) [arc-usefulinformatio00phoe-0-ffa8e841]
-    url: https://archive.org/download/usefulinformatio00phoe_0/usefulinformatio00phoe_0_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1886'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1886'', ''1886, c1885'']:
-      no licence and no certain publication date'
-    rights_verified_at: '2026-10-16'
   - id: arc-catalogueofironw00pier-3120ac79
     title: 'Catalogue of iron work for buildings : spiral stairs. (1913) [arc-catalogueofironw00pier-3120ac79]'
     url: https://archive.org/download/catalogueofironw00pier/catalogueofironw00pier_djvu.txt
@@ -177243,21 +177215,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1938', '1938']
     rights_verified_at: '2026-10-17'
-  - id: arc-jonesandlaughlinsteelcompany0001-ab7c2c2f
-    title: Jones and Laughlin Steel Company, American iron and steel workers, manufacturers
-      of Bessem (1910) [arc-jonesandlaughlinsteelcompany0001-ab7c2c2f]
-    url: https://archive.org/download/JonesAndLaughlinSteelCompany0001/Jones%20and%20Laughlin%20Steel%20Company0001_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
-    language: en
-    published_at: '1910'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1910', '1910']
-    rights_verified_at: '2026-10-17'
   - id: arc-pitandquarrycombined-0255a97c
     title: Pit and quarry handbook...useful and practical information for the sand,
       gravel, stone, ce (1923) [arc-pitandquarrycombined-0255a97c]
@@ -177575,4 +177532,631 @@ sources:
     license_url: http://creativecommons.org/licenses/by-nc/3.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
       date/year ['1868', '1868']
+    rights_verified_at: '2026-10-17'
+  - id: arc-18889cataloguepr00thos-0-f12635bb
+    title: '1888-9 catalogue and price list of the Kelly self-acting water closets :
+      the Kelly stop an (1888) [arc-18889cataloguepr00thos-0-f12635bb]'
+    url: https://archive.org/download/18889cataloguepr00thos_0/18889cataloguepr00thos_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1888'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1888'']: published
+      in 1888, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-17'
+  - id: arc-morris31711-ee84e898
+    title: Metal casements, stained glass, decorative ironwork / William Morris and
+      Company (Ruskin H (1910) [arc-morris31711-ee84e898]
+    url: https://archive.org/download/Morris31711/Morris_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-17'
+  - id: arc-hollway14207-0197091c
+    title: '1910 price list of John Hollway & Sons : tin, iron, copper and brass workers,
+      spouting and (1910) [arc-hollway14207-0197091c]'
+    url: https://archive.org/download/Hollway14207/Hollway_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-17'
+  - id: arc-beard29586-7d8d05fe
+    title: 'Your home completely furnished for 100, 150, 250, or 350 : four schemes
+      which will interes (1915) [arc-beard29586-7d8d05fe]'
+    url: https://archive.org/download/Beard29586/Beard_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1915', '1915']
+    rights_verified_at: '2026-10-17'
+  - id: arc-cartlidge30470-6e41b3b2
+    title: Designs for tesselated and encaustic tile pavements / manufactured by the
+      Australian Roman (1914) [arc-cartlidge30470-6e41b3b2]
+    url: https://archive.org/download/Cartlidge30470/Cartlidge_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1914'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1914', '1914']
+    rights_verified_at: '2026-10-17'
+  - id: arc-riley6947-b59c5e8a
+    title: 'G.W. Riley : illustrated catalogue of latest designs in rustic work (1895)
+      [arc-riley6947-b59c5e8a]'
+    url: https://archive.org/download/Riley6947/Riley_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1895'', ''1895'']:
+      published in 1895, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-17'
+  - id: arc-hudson2075-201710-30f0d99a
+    title: Cottage homes / George Hudson & Son Ltd. (1915) [arc-hudson2075-201710-30f0d99a]
+    url: https://archive.org/download/Hudson2075_201710/Hudson1915_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1915', '1915']
+    rights_verified_at: '2026-10-17'
+  - id: arc-hudson4073-d0a17a61
+    title: 'Hudson''s "Ready-Cut" homes : the latest original design book of beautiful
+      bungalows at sma (1930) [arc-hudson4073-d0a17a61]'
+    url: https://archive.org/download/Hudson4073/Hudson1930_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-17'
+  - id: arc-hudson06123-07af369f
+    title: A selection of modern bungalow designs / George Hudson Pty. Ltd. (1939) [arc-hudson06123-07af369f]
+    url: https://archive.org/download/Hudson06123/Hudson39_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1939', '1939', '1930']
+    rights_verified_at: '2026-10-17'
+  - id: arc-stewharl36310-2d9432c7
+    title: '"Sun" foundry illustrated catalogue : architectural, sanitary and general
+      castings and wro (1897) [arc-stewharl36310-2d9432c7]'
+    url: https://archive.org/download/StewHarl36310/StewHarl_djvu.txt
+    source: internet_archive
+    license: cc0
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1897'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/zero/1.0/']
+      date/year ['1897', '1897']
+    rights_verified_at: '2026-10-17'
+  - id: arc-spartaceramicco-131eb91c
+    title: Spartan ceramics portfolio. (1927) [arc-spartaceramicco-131eb91c]
+    url: https://archive.org/download/SpartaCeramicCo./Sparta%20Ceramic%20Co._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1927', '1927']
+    rights_verified_at: '2026-10-17'
+  - id: arc-fingerlelumberco-61c5f11c
+    title: 1954 catalogue Fingerle Lumber Co. (1954) [arc-fingerlelumberco-61c5f11c]
+    url: https://archive.org/download/FingerleLumberCo./Fingerle%20Lumber%20Co._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1954'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1954', '1954']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sparklingkitchens-8fec0bf7
+    title: Sparkling kitchens for modern homemakers. (1954) [arc-sparklingkitchens-8fec0bf7]
+    url: https://archive.org/download/SparklingKitchens/Sparkling%20kitchens_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1954'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1954', '1954']
+    rights_verified_at: '2026-10-17'
+  - id: arc-powrkrafttools-201710-3afd4db6
+    title: Announcing the new POWER-KRAFT power tools. (1958) [arc-powrkrafttools-201710-3afd4db6]
+    url: https://archive.org/download/PowrKraftTools_201710/Powr-Kraft%20Tools_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1958', '1958']
+    rights_verified_at: '2026-10-17'
+  - id: arc-vanbros10935-68710cb2
+    title: Illustrated catalogue, price list and specifications of popular homes / offered
+      by Vandyke (1927) [arc-vanbros10935-68710cb2]
+    url: https://archive.org/download/Vanbros10935/Vanbros_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1927', '1927']
+    rights_verified_at: '2026-10-17'
+  - id: arc-metters10901-1e19ca7c
+    title: 'Metters Limited : makers of ornamental verandah castings, ventilation friezes,
+      crestings,  (1913) [arc-metters10901-1e19ca7c]'
+    url: https://archive.org/download/Metters10901/Metters_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1908', '1908', '1903', '1913']
+    rights_verified_at: '2026-10-17'
+  - id: arc-redtopkeenescement-b139b687
+    title: Red top Keene's cement. (1933) [arc-redtopkeenescement-b139b687]
+    url: https://archive.org/download/RedTopKeenesCement./RedTopKeenesCement2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1933']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sheetrockpyrofillandweatherwoodpyrofillroof-094cf780
+    title: Sheetrock Pyrofill and Weatherwood Pyrofill roof construction. (1938) [arc-sheetrockpyrofillandweatherwoodpyrofillroof-094cf780]
+    url: https://archive.org/download/SheetrockPyrofillAndWeatherwoodPyrofillRoofConstruction./Sheetrock%20Pyrofill%20and%20weatherwood%20Pyrofill%20roof%20construction._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938']
+    rights_verified_at: '2026-10-17'
+  - id: arc-pyobargypsumshortspanrooftile-07dfbfe1
+    title: Pyobar gypsum short span roof tile. (1938) [arc-pyobargypsumshortspanrooftile-07dfbfe1]
+    url: https://archive.org/download/PyobarGypsumShortSpanRoofTile./Pyobar%20gypsum%20short%20span%20roof%20tile._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938', '1938']
+    rights_verified_at: '2026-10-17'
+  - id: arc-fireproofroofdecks-e57a4662
+    title: Fireproof roof decks. (1947) [arc-fireproofroofdecks-e57a4662]
+    url: https://archive.org/download/FireproofRoofDecks./FireproofRoofDecks2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgtechnicalinformation1948-6dfd9258
+    title: USG technical information 1948. (1948) [arc-usgtechnicalinformation1948-6dfd9258]
+    url: https://archive.org/download/USGTechnicalInformation1948./USG%20Technical%20Information%201948._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1948'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1948', '1948']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgtechnicalinformation1949-6ff96c52
+    title: USG Technical Information 1949. (1949) [arc-usgtechnicalinformation1949-6ff96c52]
+    url: https://archive.org/download/USGTechnicalInformation1949./USG%20technical%20information%201949._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgtechnicalinformation19501952-0a1e0bb8
+    title: USG technical information 1950 - 1952. (1950) [arc-usgtechnicalinformation19501952-0a1e0bb8]
+    url: https://archive.org/download/USGTechnicalInformation19501952./USG%20technical%20information%201950-1952._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgtechnicalinformation1953-3cbb4c3a
+    title: USG technical information 1953. (1953) [arc-usgtechnicalinformation1953-3cbb4c3a]
+    url: https://archive.org/download/USGTechnicalInformation1953./USG%20technical%20information%201953._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1953'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1953', '1953']
+    rights_verified_at: '2026-10-17'
+  - id: arc-soundabsorptioncoefficient-847b3a75
+    title: Sound absorption coefficients of architectural acoustical materials. (1953)
+      [arc-soundabsorptioncoefficient-847b3a75]
+    url: https://archive.org/download/SoundAbsorptionCoefficient./Sound%20absorption%20coefficient._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1953'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1953', '1953']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgtechnicalinformation1954-30d10ead
+    title: USG technical information 1954. (1954) [arc-usgtechnicalinformation1954-30d10ead]
+    url: https://archive.org/download/USGTechnicalInformation1954./USG%20technical%20information%201954._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1954'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1954', '1954']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgtechnicalinformation1955-f5a47553
+    title: USG technical information 1955. (1955) [arc-usgtechnicalinformation1955-f5a47553]
+    url: https://archive.org/download/USGTechnicalInformation1955/USG%20technical%20information%201955_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgtechnicalinformation1956-5d03e607
+    title: USG technical information 1956. (1956) [arc-usgtechnicalinformation1956-5d03e607]
+    url: https://archive.org/download/USGTechnicalInformation1956/USG%20technical%20information%201956_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1956'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1956', '1956']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgconstructionselector1967-30310bcc
+    title: USG Construction Selector 1967 (1967) [arc-usgconstructionselector1967-30310bcc]
+    url: https://archive.org/download/USGConstructionSelector1967/USG%20construction%20selector%201967_djvu.txt
+    source: internet_archive
+    license: cc-by-nd
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1967'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nd/3.0/']
+      date/year ['1967', '1967']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgproductbulletins1967-a03cfb20
+    title: USG Product Bulletins 1967 (1967) [arc-usgproductbulletins1967-a03cfb20]
+    url: https://archive.org/download/USGProductBulletins1967/USG%20product%20bulletins%201967_djvu.txt
+    source: internet_archive
+    license: cc-by-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1967'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nd/3.0/']
+      date/year ['1967', '1967']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgspecificationbulletin1967-4537a617
+    title: USG Specification Bulletin 1967 (1967) [arc-usgspecificationbulletin1967-4537a617]
+    url: https://archive.org/download/USGSpecificationBulletin1967/USG%20Specification%20Bulletin%201967_djvu.txt
+    source: internet_archive
+    license: cc-by-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1967'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nd/3.0/']
+      date/year ['1967', '1967']
+    rights_verified_at: '2026-10-17'
+  - id: arc-wallbros48885-452326cd
+    title: 'Wallach Bros. design book : for every description of modern furniture of
+      the styles in gen (1884) [arc-wallbros48885-452326cd]'
+    url: https://archive.org/download/WallBros48885/WallBros_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1884'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1880', '1880', '1884']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgsystemfolder1971-457843ac
+    title: USG System Folder 1971 (1971) [arc-usgsystemfolder1971-457843ac]
+    url: https://archive.org/download/USGSystemFolder1971/USG%20System%20Folder%201971_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1971'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1971', '1971']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgconstructionselector1966-d95b65e0
+    title: USG Construction Selector 1966 (1966) [arc-usgconstructionselector1966-d95b65e0]
+    url: https://archive.org/download/USGConstructionSelector1966/USG%20Construction%20Selector%201966_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1966'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1966']
+    rights_verified_at: '2026-10-17'
+  - id: arc-horderns48328-a660eebc
+    title: Your general catalogue for 1954 (1954) [arc-horderns48328-a660eebc]
+    url: https://archive.org/download/Horderns48328/AntHord_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1954'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1954', '1954']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgproductbulletins1966-ae1300f8
+    title: USG Product Bulletins 1966 (1966) [arc-usgproductbulletins1966-ae1300f8]
+    url: https://archive.org/download/USGProductBulletins1966/USG%20Product%20Bulletins%201966_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1966'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1966', '1966']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgspecificationtbulletin1966-d0bcc1cc
+    title: USG Specification Bulletin 1966 (1966) [arc-usgspecificationtbulletin1966-d0bcc1cc]
+    url: https://archive.org/download/USGSpecificationtBulletin1966/USG%20Specificationt%20Bulletin%201966_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1966'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1966', '1966']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgconstructionselector1968-74290e6c
+    title: USG Construction Selector 1968 (1968) [arc-usgconstructionselector1968-74290e6c]
+    url: https://archive.org/download/USGConstructionSelector1968/USG%20Construction%20Selector%201968_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1968'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1968', '1968']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgspecificationbulletin1968-9513c081
+    title: USG Specification Bulletin 1968 (1968) [arc-usgspecificationbulletin1968-9513c081]
+    url: https://archive.org/download/USGSpecificationBulletin1968/USG%20Specification%20Bulletin%201968_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1968'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1968', '1968']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgproductbulletin1968-e36ffa07
+    title: USG Product Bulletin 1968 (1968) [arc-usgproductbulletin1968-e36ffa07]
+    url: https://archive.org/download/USGProductBulletin1968/USG%20Product%20Bulletin%201968_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1968'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1968', '1968']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgconstructionselector1969-a17c61cf
+    title: USG Construction Selector 1969 (1969) [arc-usgconstructionselector1969-a17c61cf]
+    url: https://archive.org/download/USGConstructionSelector1969/USG%20Construction%20Selector%201969_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1969'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1969']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgproductbulletin1969-41155812
+    title: USG Product Bulletin 1969 (1969) [arc-usgproductbulletin1969-41155812]
+    url: https://archive.org/download/USGProductBulletin1969/USG%20Product%20Bulletin%201969_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1969'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1969']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgspecificationbulletin1969-a15dcec4
+    title: USG Specification Bulletin 1969 (1969) [arc-usgspecificationbulletin1969-a15dcec4]
+    url: https://archive.org/download/USGSpecificationBulletin1969/USG%20Specification%20Bulletin%201969_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1969'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1969', '1969']
+    rights_verified_at: '2026-10-17'
+  - id: arc-usgconstructionselector1971-bfc02afd
+    title: USG Construction Selector 1971 (1971) [arc-usgconstructionselector1971-bfc02afd]
+    url: https://archive.org/download/USGConstructionSelector1971/USG%20Construction%20Selector%201971_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1971'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc-nd/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc-nd/3.0/']
+      date/year ['1971', '1971']
     rights_verified_at: '2026-10-17'
