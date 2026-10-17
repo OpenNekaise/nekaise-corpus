@@ -156346,3 +156346,57 @@ sources:
     rights_verified_at: '2026-10-17T02:25:50Z'
     origin_ids: doi:10.1016/s2542-5196(24)00310-3 openalex:W4406641222
     resolution: 'legacy: openalex location'
+  - id: oas-10-48550-arxiv-2106-15502-cebd6422
+    title: Attentive Neural Processes and Batch Bayesian Optimization for Scalable Calibration
+      of Physics-Informed Digital Twins
+    url: https://arxiv.org/pdf/2106.15502
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-06-29'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2106.15502
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2106.15502;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2106.15502 openalex:W3176500072
+    resolution: 'sim1: openalex location'
+  - id: oas-10-5194-ica-abs-7-93-2024-e2e4d53f
+    title: A virtual environment designed for testing location-based services based
+      on navigation simulation in the digital twin
+    url: https://ica-abs.copernicus.org/articles/7/93/2024/ica-abs-7-93-2024.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-02'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/ica-abs-7-93-2024
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://ica-abs.copernicus.org/articles/7/93/2024/ica-abs-7-93-2024.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-17'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/ica-abs-7-93-2024 openalex:W4402119887
+    resolution: 'sim1: openalex location'
+  - id: oas-w399462216
+    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W399462216
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: openalex:W399462216
+    resolution: 'sim1: openalex location; resolution retry'
