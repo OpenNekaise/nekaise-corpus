@@ -179263,20 +179263,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1955', '1955']
     rights_verified_at: '2026-10-17'
-  - id: arc-themosaictileco-38bb5ecd
-    title: The Mosaic Tile Company (1920) [arc-themosaictileco-38bb5ecd]
-    url: https://archive.org/download/TheMosaicTileCo/TheMosaicTileCo_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1920'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['c. 1920', '1920']
-    rights_verified_at: '2026-10-17'
   - id: arc-fiftyonebeautifulhomes-6830e2d5
     title: Fifty-one beautiful homes. (1925) [arc-fiftyonebeautifulhomes-6830e2d5]
     url: https://archive.org/download/FiftyOneBeautifulHomes/FiftyOneBeautifulHomes_djvu.txt
@@ -179421,21 +179407,6 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1959', '1959']
-    rights_verified_at: '2026-10-17'
-  - id: arc-theorders0001-8d803c35
-    title: 'The Orders: fifty-eight plates illustrating the five orders of architecture
-      : I Tuscan, II (1906) [arc-theorders0001-8d803c35]'
-    url: https://archive.org/download/TheOrders0001/TheOrders0001_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1906'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1906', '1906']
     rights_verified_at: '2026-10-17'
   - id: arc-aec1951summerbell20001-c7e1731b
     title: Summerbell Roof Structures (1951) [arc-aec1951summerbell20001-c7e1731b]
@@ -182024,40 +181995,12 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1932', '1932']
     rights_verified_at: '2026-10-17'
-  - id: arc-sweetb-201807-3c8ba986
-    title: 'Sweet''s catalog file : volume b. (1932) [arc-sweetb-201807-3c8ba986]'
-    url: https://archive.org/download/SweetB_201807/SweetB_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1932'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1932', '1932']
-    rights_verified_at: '2026-10-17'
   - id: arc-sweet1932mosaic270001-b8ce3948
     title: Real tiles for all architectural and decorative purposes. (1932) [arc-sweet1932mosaic270001-b8ce3948]
     url: https://archive.org/download/Sweet1932mosaic270001/Sweet1932mosaic270001_djvu.txt
     source: internet_archive
     license: public-domain
     topic: architecture
-    format: txt
-    language: en
-    published_at: '1932'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1932', '1932']
-    rights_verified_at: '2026-10-17'
-  - id: arc-sweetsc-09c4c43f
-    title: 'Sweet''s catalog file : volume C. (1932) [arc-sweetsc-09c4c43f]'
-    url: https://archive.org/download/SweetsC/SweetsC_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
     format: txt
     language: en
     published_at: '1932'
@@ -182534,4 +182477,503 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1932', '1932']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1932bline180001-2d9967b9
+    title: 'Gas boilers : hot water, vapor steam ; catalog no. 604. (1932) [arc-sweet1932bline180001-2d9967b9]'
+    url: https://archive.org/download/Sweet1932bline180001/Sweet1932bline180001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932', '1932']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1932herman160001-38e22ee5
+    title: Heating and ventilation equipment. (1932) [arc-sweet1932herman160001-38e22ee5]
+    url: https://archive.org/download/Sweet1932herman160001/Sweet1932herman160001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932', '1932']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1932grinnell200001-45d726a9
+    title: Pipe hangers and supports. (1932) [arc-sweet1932grinnell200001-45d726a9]
+    url: https://archive.org/download/Sweet1932grinnell200001/Sweet1932grinnell200001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932', '1932']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1932macbeth240001-c861bccd
+    title: Macbeth lighting glassware. (1932) [arc-sweet1932macbeth240001-c861bccd]
+    url: https://archive.org/download/Sweet1932macbeth240001/Sweet1932macbeth240001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932', '1932']
+    rights_verified_at: '2026-10-17'
+  - id: arc-vines32782-be806e84
+    title: F.L. Vines' gardening guide, seed annual and catalogue of fruit trees, pot
+      plants, palms,  (1903) [arc-vines32782-be806e84]
+    url: https://archive.org/download/Vines32782/Vines_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1903'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/4.0/']
+      date/year ['1903', '1903']
+    rights_verified_at: '2026-10-17'
+  - id: arc-townandcountry0001-ffa05b7c
+    title: Town and country buildings. (1919) [arc-townandcountry0001-ffa05b7c]
+    url: https://archive.org/download/townandcountry0001/townandcountry0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1919'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1919', '1919']
+    rights_verified_at: '2026-10-17'
+  - id: arc-american0001-9acd394b
+    title: American pressed metal sash pulleys and grant overhead pulleys. (1900) [arc-american0001-9acd394b]
+    url: https://archive.org/download/american0001/american0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-17'
+  - id: arc-grandrapids0001-a596ec8a
+    title: Grand rapids all-steel sash pulleys. (1930) [arc-grandrapids0001-a596ec8a]
+    url: https://archive.org/download/grandrapids0001/grandrapids0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c. 1930', '1930']
+    rights_verified_at: '2026-10-17'
+  - id: arc-national0001-e9ac182c
+    title: Hardware specialties. (1907) [arc-national0001-e9ac182c]
+    url: https://archive.org/download/national0001/national0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907', '1907']
+    rights_verified_at: '2026-10-17'
+  - id: arc-pullman0001-f3eb8f27
+    title: Pullman ; unit sash balances. (1939) [arc-pullman0001-f3eb8f27]
+    url: https://archive.org/download/pullman0001/pullman0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939', '1939']
+    rights_verified_at: '2026-10-17'
+  - id: arc-readingline-a7a2383f
+    title: 'The reading line : no 12 catalog of complete line, 1923-1924. (1923) [arc-readingline-a7a2383f]'
+    url: https://archive.org/download/ReadingLine/ReadingLine_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1923', '1923']
+    rights_verified_at: '2026-10-17'
+  - id: arc-zouri0001-ce192a8f
+    title: Full size transparent details. (1916) [arc-zouri0001-ce192a8f]
+    url: https://archive.org/download/zouri0001/Zouri_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1916']
+    rights_verified_at: '2026-10-17'
+  - id: arc-obavery0001-26bcaaee
+    title: Construction-municipal industrial equipment and supplies. (1955) [arc-obavery0001-26bcaaee]
+    url: https://archive.org/download/obavery0001/obavery0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-upholstery0001-a2b16961
+    title: 'Catalog "J" : upholstery, furniture & decorative fabrics ; drapery & cabinet
+      hardware ; up (1952) [arc-upholstery0001-a2b16961]'
+    url: https://archive.org/download/upholstery0001/upholstery0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1952', '1952']
+    rights_verified_at: '2026-10-17'
+  - id: arc-mechanical-201808-d1cd622c
+    title: Mechanical catalog. (1934) [arc-mechanical-201808-d1cd622c]
+    url: https://archive.org/download/Mechanical_201808/Mechanical_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1934', '1934']
+    rights_verified_at: '2026-10-17'
+  - id: arc-american-201808-0410f656
+    title: 'The American school and university : a yearbook devoted to the design, construction,
+      equip (1941) [arc-american-201808-0410f656]'
+    url: https://archive.org/download/American_201808/American_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941', '1941']
+    rights_verified_at: '2026-10-17'
+  - id: arc-v218720001-4009251e
+    title: Price list of U.S. standard boxwood and ivory rules, levels, try squares,
+      gauges, iron and (1872) [arc-v218720001-4009251e]
+    url: https://archive.org/download/v218720001/v218720001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1872'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1872']
+    rights_verified_at: '2026-10-17'
+  - id: arc-v218740001-8f09f483
+    title: Price list of U.S. standard boxwood and ivory rules, levels, try squares,
+      gauges, iron and (1874) [arc-v218740001-8f09f483]
+    url: https://archive.org/download/v218740001/v218740001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1874'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1874']
+    rights_verified_at: '2026-10-17'
+  - id: arc-v218840001-a2813d19
+    title: Price list of U.S. standard boxwood and ivory rules, levels, try squares,
+      gauges, iron and (1884) [arc-v218840001-a2813d19]
+    url: https://archive.org/download/v218840001/v218840001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1884'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1884']
+    rights_verified_at: '2026-10-17'
+  - id: arc-v21877-04d7468b
+    title: Price list of U.S. standard boxwood and ivory rules, levels, try squares,
+      gauges, iron and (1877) [arc-v21877-04d7468b]
+    url: https://archive.org/download/v21877/v21877_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1877'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1877']
+    rights_verified_at: '2026-10-17'
+  - id: arc-v218920001-2060f5d0
+    title: Price list of U.S. standard boxwood and ivory rules, levels, try squares,
+      gauges, iron and (1892) [arc-v218920001-2060f5d0]
+    url: https://archive.org/download/v218920001/v218920001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1892'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1892']
+    rights_verified_at: '2026-10-17'
+  - id: arc-v218760001-2690e374
+    title: Patent adjustable iron bench planes, try squares and bevels. (1876) [arc-v218760001-2690e374]
+    url: https://archive.org/download/v218760001/v218760001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1876'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1876']
+    rights_verified_at: '2026-10-17'
+  - id: arc-v218830001-bd74c6ad
+    title: Patent adjustable iron bench planes, try squares, bevels, spoke shaves, box
+      scrapers, etc. (1883) [arc-v218830001-bd74c6ad]
+    url: https://archive.org/download/v218830001/v218830001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1883'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1883']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955raynor70-13eb88ed
+    title: Raynor wood sectional overhead door. (1955) [arc-sweet1955raynor70-13eb88ed]
+    url: https://archive.org/download/Sweet1955raynor70/Sweet1955raynor70_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955rowe72-8a996808
+    title: Ro-way residential garage doors. (1955) [arc-sweet1955rowe72-8a996808]
+    url: https://archive.org/download/Sweet1955rowe72/Sweet1955rowe72_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955rowe73-46f8387d
+    title: Ro-way electric operator model 70 for residential garage doors. (1955) [arc-sweet1955rowe73-46f8387d]
+    url: https://archive.org/download/Sweet1955rowe73/Sweet1955rowe73_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955aluminum75-0f2304ac
+    title: 'Duralite : aluminum vista walls ; aluminum casement windows. (1955) [arc-sweet1955aluminum75-0f2304ac]'
+    url: https://archive.org/download/Sweet1955aluminum75/Sweet1955aluminum75_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955apco76-6ed22e62
+    title: Apco aluminum windows. (1955) [arc-sweet1955apco76-6ed22e62]
+    url: https://archive.org/download/Sweet1955apco76/Sweet1955apco76_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955arnold79-75566991
+    title: Arnold awning windows. (1955) [arc-sweet1955arnold79-75566991]
+    url: https://archive.org/download/Sweet1955arnold79/Sweet1955arnold79_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955artex80-1690c007
+    title: Aluminum skin window walls. (1955) [arc-sweet1955artex80-1690c007]
+    url: https://archive.org/download/Sweet1955artex80/Sweet1955artex80_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955dension82-61ab44db
+    title: Denison aluminum awning windows. (1955) [arc-sweet1955dension82-61ab44db]
+    url: https://archive.org/download/Sweet1955dension82/Sweet1955dension82_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955gatecity83-2304e5f3
+    title: Gate city permanized aluminum awning windows. (1955) [arc-sweet1955gatecity83-2304e5f3]
+    url: https://archive.org/download/Sweet1955gatecity83/Sweet1955gatecity83_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955ludman84-41edc106
+    title: Ludman aluminum windows. (1955) [arc-sweet1955ludman84-41edc106]
+    url: https://archive.org/download/Sweet1955ludman84/Sweet1955ludman84_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955national86-4784a8a0
+    title: Mitchel national aluminum windows. (1955) [arc-sweet1955national86-4784a8a0]
+    url: https://archive.org/download/Sweet1955national86/Sweet1955national86_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-17'
+  - id: arc-sweet1955perfit88-54401d85
+    title: Great aluminum windows. (1955) [arc-sweet1955perfit88-54401d85]
+    url: https://archive.org/download/Sweet1955perfit88/Sweet1955perfit88_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
     rights_verified_at: '2026-10-17'
