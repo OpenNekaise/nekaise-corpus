@@ -156839,3 +156839,53 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-17'
     origin_ids: doi:10.1155/2010/383420
+  - id: oas-w621987907
+    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-12-15'
+    document_type: article
+    persistent_id: https://openalex.org/W621987907
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: openalex:W621987907
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-48550-arxiv-2610-18511-97677e0a
+    title: 'The Smart Buildings Challenge: Learning Foundation Models for Real-World
+      Optimization at Scale'
+    url: https://arxiv.org/pdf/2610.18511
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-10-13'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.18511
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.18511;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.18511 openalex:W7221827270
+    resolution: 'ai1: openalex location'
+  - id: arx-dynamic-replanning-in-uncertain-environments-f
+    title: Dynamic replanning in uncertain environments for a sewer inspection robot
+    url: https://arxiv.org/pdf/cs/0412051v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2004-12-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.cs/0412051
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:cs/0412051&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:cs/0412051 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-17'
