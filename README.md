@@ -13,14 +13,14 @@ locally and retain their original licenses.
 | | |
 |---|---|
 | **Training tokens** | **≈19.411B** (cleaned, training-ready) |
-| **Documents** | **1,647,073** |
-| **Extracted text** | ≈20.404B tokens (~81.617B chars) |
+| **Documents** | **1,647,104** |
+| **Extracted text** | ≈20.405B tokens (~81.618B chars) |
 | **Raw originals** | ~1.2T (PDF / HTML / source code) |
 | **Topics** | 12 |
 
-**By topic:** equipment_systems 536,128 · construction 433,926 · building_energy 219,920 · structures_civil 175,353 · materials 114,924 · infrastructure 76,012 · architecture 49,183 · standards_protocols 12,986 · controls_bas 10,577 · urban 9,180 · simulation_modeling 8,467 · commissioning_fdd 417.
+**By topic:** equipment_systems 536,133 · construction 433,928 · building_energy 219,920 · structures_civil 175,353 · materials 114,927 · infrastructure 76,012 · architecture 49,192 · standards_protocols 12,986 · controls_bas 10,577 · urban 9,192 · simulation_modeling 8,467 · commissioning_fdd 417.
 
-_The default training view, auto-generated from the manifest. Another **78,923** rows (collected and kept) stay outside it: policy-held or restricted licences. The bytes are not shipped; run the loader to fetch your own copy._
+_The default training view, auto-generated from the manifest. Another **79,017** rows (collected and kept) stay outside it: policy-held or restricted licences. The bytes are not shipped; run the loader to fetch your own copy._
 <!-- STATS:END -->
 
 ## Quick start

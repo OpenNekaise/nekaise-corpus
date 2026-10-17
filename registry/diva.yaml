@@ -109847,20 +109847,6 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-17'
-  - id: dva-urbana-trender-trendbegrepp-och-planering-i-nutida-s
-    title: 'Urbana Trender: Trendbegrepp och planering i nutida svenskt stadsbyggande'
-    url: https://www.diva-portal.org/smash/get/diva2:832565/FULLTEXT01.pdf
-    source: diva
-    license: unverified
-    topic: urban
-    format: pdf
-    language: sv
-    published_at: '2012'
-    document_type: thesis
-    persistent_id: diva2:832565
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-17'
   - id: dva-glappet-mellan-samh-llets-akt-rer-och-individen-en-f
     title: 'Glappet mellan samhällets aktörer och individen: en fallstudie av hyrcykelsystemet
       Styr & Ställ'
@@ -117536,21 +117522,6 @@ sources:
     published_at: '2023'
     document_type: thesis
     persistent_id: diva2:1766286
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-17'
-  - id: dva-urbana-ekosystemtj-nster-i-stadsplanering-ett-kombin
-    title: 'Urbana ekosystemtjänster i stadsplanering: Ett kombinerat vetenskapligt
-      och gestaltande arbete om hur konflikten mellan förtätning och hantering av ur'
-    url: https://www.diva-portal.org/smash/get/diva2:1765035/FULLTEXT01.pdf
-    source: diva
-    license: unverified
-    topic: urban
-    format: pdf
-    language: sv
-    published_at: '2023'
-    document_type: thesis
-    persistent_id: diva2:1765035
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-17'
@@ -137566,20 +137537,6 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-17'
-  - id: dva-uppskattar-kunderna-n-tm-klartj-nsten
-    title: Uppskattar kunderna nätmäklartjänsten?
-    url: https://www.diva-portal.org/smash/get/diva2:231418/FULLTEXT01.pdf
-    source: diva
-    license: unverified
-    topic: construction
-    format: pdf
-    language: sv
-    published_at: '2009'
-    document_type: thesis
-    persistent_id: diva2:231418
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-17'
   - id: dva-marknadsf-ring-av-milj-arbete-gentemot-hyresg-sterna
     title: Marknadsföring av miljöarbete gentemot hyresgästerna i fastighetsaktiebolaget
       Norrporten
@@ -137609,9 +137566,66 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-17'
-  - id: dva-underlag-f-r-marknadsplan-f-r-vsk-bandy
-    title: Underlag för marknadsplan för VSK bandy
-    url: https://www.diva-portal.org/smash/get/diva2:284319/FULLTEXT02.pdf
+  - id: dva-bostadsg-rden-som-m-tesplats
+    title: Bostadsgården som mötesplats
+    url: https://www.diva-portal.org/smash/get/diva2:282571/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:282571
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-utformning-av-riktlinjer-f-r-trafiks-kerhet-i-mindre
+    title: 'Utformning av riktlinjer för trafiksäkerhet i mindre stadscentrum: fallstudier
+      i Bollnäs och Sandviken'
+    url: https://www.diva-portal.org/smash/get/diva2:281933/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:281933
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-vindkraftverks-st-rande-effekt-p-sm-husfastigheter
+    title: Vindkraftverks störande effekt på småhusfastigheter
+    url: https://www.diva-portal.org/smash/get/diva2:276909/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:276909
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-ett-funktionellt-boende-f-rslagsritningar-till-ett-f
+    title: 'Ett funktionellt boende: Förslagsritningar till ett funkishus'
+    url: https://www.diva-portal.org/smash/get/diva2:234564/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:234564
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-konsekvenser-vid-fastighetsf-rv-rv-med-s-k-paketerin
+    title: Konsekvenser vid fastighetsförvärv med s.k paketering –AB till BRF
+    url: https://www.diva-portal.org/smash/get/diva2:285569/FULLTEXT01.pdf
     source: diva
     license: unverified
     topic: construction
@@ -137619,7 +137633,596 @@ sources:
     language: sv
     published_at: '2010'
     document_type: thesis
-    persistent_id: diva2:284319
+    persistent_id: diva2:285569
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-energy-demand-and-indoor-climate-of-a-traditional-lo
+    title: Energy demand and indoor climate of a traditional low-energy building in
+      a hot climate
+    url: https://www.diva-portal.org/smash/get/diva2:281829/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:281829
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-t-thet-i-timmerhus-orsaker-till-luftl-ckage-genom-v-
+    title: 'Täthet i timmerhus: orsaker till luftläckage genom väggar av liggtimmer
+      och hur det påverkar ventilation och energianvändning'
+    url: https://www.diva-portal.org/smash/get/diva2:280876/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:280876
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-stora-bostadsfastigheter-p-landsbygden-med-skogsskif
+    title: 'Stora bostadsfastigheter på landsbygden med skogsskiften. Hur påverkar förändrad
+      tillämpning av fastighetsbildningslagen bosättningen på landsbygden?:'
+    url: https://www.diva-portal.org/smash/get/diva2:234607/FULLTEXT04.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: sv
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:234607
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-design-of-a-solar-water-heating-system-in-a-resident
+    title: DESIGN OF A SOLAR WATER HEATING SYSTEM IN A RESIDENTIAL BUILDING
+    url: https://www.diva-portal.org/smash/get/diva2:227069/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:227069
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-framst-llning-av-digitala-terr-ngmodeller-med-totals
+    title: Framställning av digitala terrängmodeller med totalstation respektive terrester
+      laserskanner
+    url: https://www.diva-portal.org/smash/get/diva2:227846/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:227846
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-district-heating-to-replace-an-electrical-installati
+    title: District heating to replace an electrical installation
+    url: https://www.diva-portal.org/smash/get/diva2:225011/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:225011
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-fastighetsm-klarstudenters-kunskap-om-m-klarbransche
+    title: Fastighetsmäklarstudenters kunskap om mäklarbranschens anställningsvillkor
+    url: https://www.diva-portal.org/smash/get/diva2:359734/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:359734
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-ombyggnation-fr-n-s-gverkslokal-till-restaurang-anto
+    title: Ombyggnation, från sågverkslokal till restaurang. antonio ziakoulis
+    url: https://www.diva-portal.org/smash/get/diva2:345963/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:345963
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-datormodellering-av-en-v-rmelagrande-betongv-ggs-inv
+    title: Datormodellering av en värmelagrande betongväggs inverkan på det termiska
+      klimatet i ett växthus
+    url: https://www.diva-portal.org/smash/get/diva2:329415/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:329415
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-en-j-mf-relse-mellan-ett-kollektivt-respektive-ett-i
+    title: En jämförelse mellan ett kollektivt respektive ett individuellt provisionsbaserat
+      lönesystem i fastighetsmäklarföretag
+    url: https://www.diva-portal.org/smash/get/diva2:327628/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:327628
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-n-tm-klare-flipp-eller-flopp
+    title: Nätmäklare - flipp eller flopp?!
+    url: https://www.diva-portal.org/smash/get/diva2:349519/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:349519
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-granskning-av-varnade-och-avregistrerade-fastighetsm
+    title: Granskning av varnade och avregistrerade fastighetsmäklare
+    url: https://www.diva-portal.org/smash/get/diva2:347071/FULLTEXT03.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:347071
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-en-analys-av-prisutvecklingen-p-fastigheter-i-hudiks
+    title: En analys av prisutvecklingen på fastigheter i Hudiksvall
+    url: https://www.diva-portal.org/smash/get/diva2:311485/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:311485
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-em-f-rmedling-av-kommersiella-fastigheter-i-skuggan-
+    title: <em>Förmedling av kommersiella fastigheter i skuggan av finanskris</em>
+    url: https://www.diva-portal.org/smash/get/diva2:311059/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:311059
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-villa-rnen
+    title: Villa Örnen
+    url: https://www.diva-portal.org/smash/get/diva2:370816/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:370816
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-en-j-mf-relsestudie-av-koldioxidsl-pp-f-r-en-byggnad
+    title: En jämförelsestudie av koldioxidsläpp för en byggnad med trä- respektive
+      betongstomme ur ett livscykelperspektiv
+    url: https://www.diva-portal.org/smash/get/diva2:354044/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:354044
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-analysis-of-energy-saving-proposals-at-st-louis-coun
+    title: Analysis of Energy Saving Proposals at St. Louis County Jail
+    url: https://www.diva-portal.org/smash/get/diva2:349558/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:349558
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-varf-r-v-ljer-fastighetsm-klare-att-byta-yrke-en-stu
+    title: 'Varför väljer fastighetsmäklare att byta yrke?: En studie om frivilliga
+      avregistreringars omfattning och orsaker'
+    url: https://www.diva-portal.org/smash/get/diva2:328435/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:328435
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-fastighetsbranschen-och-energibesparing
+    title: Fastighetsbranschen och energibesparing
+    url: https://www.diva-portal.org/smash/get/diva2:328467/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:328467
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-programutveckling-f-r-tekniska-kontorets-fastighetsf
+    title: Programutveckling för Tekniska kontorets fastighetsförvaltning
+    url: https://www.diva-portal.org/smash/get/diva2:329377/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:329377
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-ekonomisk-fastighetsf-rvaltning-med-bostadsr-ttsf-re
+    title: Ekonomisk fastighetsförvaltning med bostadsrättsföreningar som kund.
+    url: https://www.diva-portal.org/smash/get/diva2:326704/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:326704
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-fastighetsm-klarens-roll-som-opartisk-mellanman-en-s
+    title: 'Fastighetsmäklarens roll som opartisk mellanman: en studie om tjänstekvalitet'
+    url: https://www.diva-portal.org/smash/get/diva2:326744/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:326744
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-energideklarationer-i-flerbostadshus-i-g-vle
+    title: Energideklarationer i flerbostadshus i Gävle
+    url: https://www.diva-portal.org/smash/get/diva2:343537/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:343537
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-v-rdet-av-stora-sm-hustomter-i-lansbygdsomr-den
+    title: Värdet av stora småhustomter i lansbygdsområden
+    url: https://www.diva-portal.org/smash/get/diva2:343037/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:343037
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-v-lkommen-hem-till-oss-en-studie-om-varf-r-kunden-v-
+    title: 'Välkommen hem till oss!: En studie om varför kunden väljer att bjuda hem
+      ett visst fastighetsmäklarföretag och dess varumärke'
+    url: https://www.diva-portal.org/smash/get/diva2:331144/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:331144
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-hush-lls-efterfr-gan-p-specifika-bostadsr-ttsattribu
+    title: Hushålls efterfrågan på specifika bostadsrättsattribut
+    url: https://www.diva-portal.org/smash/get/diva2:327748/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:327748
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-l-genergihus-i-ralph-erskines-anda-g-strike-hammarby
+    title: 'Lågenergihus i Ralph Erskines anda: Gästrike Hammarby'
+    url: https://www.diva-portal.org/smash/get/diva2:326630/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:326630
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-fri-lek-i-f-rskolan-barns-valm-jligheter-i-f-rskolan
+    title: 'Fri lek i förskolan: barns valmöjligheter i förskolans inomhusmiljö'
+    url: https://www.diva-portal.org/smash/get/diva2:359043/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:359043
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-hur-bygger-fastighetsbolagen-relationer-med-sina-hyr
+    title: Hur bygger fastighetsbolagen relationer med sina hyresgäster?
+    url: https://www.diva-portal.org/smash/get/diva2:324567/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:324567
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-determination-of-free-stand-alone-photovoltaic-poten
+    title: DETERMINATION OF FREE STAND-ALONE PHOTOVOLTAIC POTENTIAL IN GERMANY BY GIS-BASED
+      SITE RANKING
+    url: https://www.diva-portal.org/smash/get/diva2:321452/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:321452
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-sv-rdsj-stugan-och-corvus-corones-plats-utveckling-i
+    title: 'Svärdsjöstugan och Corvus corones plats: Utveckling i centrum'
+    url: https://www.diva-portal.org/smash/get/diva2:353422/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:353422
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-trafiks-kerhet-ur-barns-perspektiv-em-em-fallstudie-
+    title: 'TRAFIKSÄKERHET UR BARNS PERSPEKTIV: <em><em>fallstudie vid Brynässkolan
+      och Hagaströms skola, Gävle kommun</em></em>'
+    url: https://www.diva-portal.org/smash/get/diva2:344789/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:344789
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-fastighetsv-rdering-processen-att-fastst-lla-ett-mar
+    title: 'Fastighetsvärdering: - processen att fastställa ett marknadsvärde'
+    url: https://www.diva-portal.org/smash/get/diva2:326500/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:326500
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-nglar-och-demoner-g-ms-under-samma-p-f-ljd-em-ett-ny
+    title: 'Änglar och Demoner göms under samma påföljd: <em>- Ett nytt påföljdssystem
+      måste utvecklas.</em>'
+    url: https://www.diva-portal.org/smash/get/diva2:326501/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:326501
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-egenproducerad-solel-i-ett-sm-husomr-de
+    title: Egenproducerad solel i ett småhusområde
+    url: https://www.diva-portal.org/smash/get/diva2:323417/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:323417
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-hur-pandemin-har-p-verkat-arbetsmetoder-inom-fastigh
+    title: Hur pandemin har påverkat arbetsmetoder inom fastighetsmäklarbranschen
+    url: https://www.diva-portal.org/smash/get/diva2:1979700/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: diva2:1979700
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-energy-analysis-of-the-heating-system-of-a-1960-s-mu
+    title: Energy analysis of the heating system of a 1960's multi-storey commercial
+      building
+    url: https://www.diva-portal.org/smash/get/diva2:1977350/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: diva2:1977350
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-kombination-av-deep-learning-och-obia-f-r-byggnadsde
+    title: Kombination av Deep Learning och OBIA för byggnadsdetektering i ortofoton
+    url: https://www.diva-portal.org/smash/get/diva2:1977590/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: diva2:1977590
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-planering-f-r-skyddsrum-samh-llsplaneringens-f-rm-ga
+    title: 'Planering för skyddsrum: Samhällsplaneringens förmåga att bidra till motståndskraftigare
+      samhällen'
+    url: https://www.diva-portal.org/smash/get/diva2:1978077/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: sv
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: diva2:1978077
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-adaptiv-f-rs-ljning-v-gen-till-framg-ng-eller-emotio
+    title: 'Adaptiv försäljning: Vägen till framgång eller emotionell utmattning'
+    url: https://www.diva-portal.org/smash/get/diva2:1970591/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: diva2:1970591
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-17'
+  - id: dva-sj-lvf-rm-ga-r-min-inre-trygghet-en-studie-om-hur-ju
+    title: '”Självförmåga är min inre trygghet”: En studie om hur juniora fastighetsmäklare
+      upplever sin arbetsrelaterade självförmåga'
+    url: https://www.diva-portal.org/smash/get/diva2:1970594/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: diva2:1970594
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-17'
