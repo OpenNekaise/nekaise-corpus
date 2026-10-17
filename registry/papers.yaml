@@ -155643,23 +155643,6 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.5194/bg-21-473-2024 openalex:W4391243967
     resolution: 'legacy: openalex location'
-  - id: oas-w2111364805
-    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2005-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2111364805
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-16'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2111364805
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-10-48550-arxiv-2606-24138-b5d13d33
     title: 'Sat2City v2: Native 3D City Asset Generation from a Single Satellite Image'
     url: https://arxiv.org/pdf/2606.24138
