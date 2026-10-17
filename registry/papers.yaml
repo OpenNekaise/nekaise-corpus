@@ -156734,3 +156734,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.memsci.2019.01.016 openalex:W2910996623
     resolution: 'legacy: openalex location'
+  - id: arx-equilibrium-morphologies-and-effective-spring-
+    title: Equilibrium morphologies and effective spring constants of capillary bridges
+    url: https://arxiv.org/pdf/1011.1743v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-11-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1011.1743
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1011.1743 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-17'
