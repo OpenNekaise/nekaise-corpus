@@ -156942,3 +156942,79 @@ sources:
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-17'
     origin_ids: doi:10.5121/ijdps.2011.2201
+  - id: ope-innovations-in-earthquake-risk-reduction-for-r
+    title: 'Innovations in earthquake risk reduction for resilience: Recent advances
+      and challenges'
+    url: https://strathprints.strath.ac.uk/76191/1/Freddi_etal_IJDRR_2021_Innovations_in_earthquake_risk_reduction_for_resilience.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-04-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ijdrr.2021.102267
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/76191/1/Freddi_etal_IJDRR_2021_Innovations_in_earthquake_risk_reduction_for_resilience.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ijdrr.2021.102267 openalex:W3155257921
+    resolution: 'legacy: openalex location'
+  - id: ope-the-quest-for-improved-air-quality-may-push-ch
+    title: The quest for improved air quality may push China to continue its CO 2 reduction
+      beyond the Paris Commitment
+    url: https://eprints.qut.edu.au/207693/1/XING_Quest_improved_AQ_China_PNAS.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1073/pnas.2013297117
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://eprints.qut.edu.au/207693/1/XING_Quest_improved_AQ_China_PNAS.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1073/pnas.2013297117 openalex:W3105060452
+    resolution: 'legacy: openalex location'
+  - id: arx-metamodel-based-importance-sampling-for-struct
+    title: Metamodel-based importance sampling for structural reliability analysis
+    url: https://arxiv.org/pdf/1105.0562v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2011-05-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1105.0562
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1105.0562 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-17'
+  - id: ope-dynamic-stability-of-soil-carbon-reassessing-t
+    title: 'Dynamic Stability of Soil Carbon: Reassessing the “Permanence” of Soil Carbon
+      Sequestration'
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2020.514701/pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-13'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fenvs.2020.514701
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fenvs.2020.514701/pdf
+      do not transfer to https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2020.514701/pdf;
+      payload sha256=a55663b15bde32f85ee69cf1bc6f59d82fcfc52856a738261392d22433bd823c;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fenvs.2020.514701/pdf;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-17",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-17T21:26:32Z'
+    origin_ids: doi:10.3389/fenvs.2020.514701 openalex:W3105485802
+    resolution: 'legacy: openalex location'
