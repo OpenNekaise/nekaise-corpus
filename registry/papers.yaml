@@ -156539,3 +156539,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.renene.2023.119599 openalex:W4388592532
     resolution: 'legacy: openalex location'
+  - id: arx-time-frequency-analysis-of-transitory-permanen
+    title: Time-frequency analysis of Transitory/Permanent frequency decrease in civil
+      engineering structures during earthquakes
+    url: https://arxiv.org/pdf/0803.1779v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-03-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0803.1779
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0803.1779 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-17'
+    origin_ids: doi:10.1177/1475921709352146
