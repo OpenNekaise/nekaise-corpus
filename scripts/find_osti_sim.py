@@ -353,8 +353,10 @@ def run(family: Family, argv: list[str] | None = None) -> None:
             print(f"# 0 NEW OSTI {label} records (unexpected answer)")
             return
         except Exception as exc:
-            print(f"# ERROR: OSTI request failed at {at}: {exc}; refusing a partial "
-                  "append so rotation does not advance", file=sys.stderr)
+            reason = (f"OSTI request failed ({type(exc).__name__}) at {at}: {exc}; "
+                      "refusing a partial append so rotation does not advance")
+            report.hold(reason)
+            print(f"# ERROR: {reason}", file=sys.stderr)
             raise SystemExit(1)
         requests_made += 1
         entries = [e for e in (candidate(r, today, family, q) for r in records) if e]

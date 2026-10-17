@@ -262,6 +262,7 @@ def test_network_failure_exits_nonzero_without_append(monkeypatch, tmp_path):
         find_osti_sim.main()
     assert exc.value.code == 1
     assert appended == [] and not files["next"].exists()
+    assert "TimeoutError" in files["hold"].read_text()
 
 
 @pytest.mark.parametrize("family,cursor,next_cursor", [
@@ -269,11 +270,12 @@ def test_network_failure_exits_nonzero_without_append(monkeypatch, tmp_path):
     (find_osti_sim.sim_family(), "watch:2026-10-15", "watch:2026-10-15:2026-10-16 q=0 p=2"),
 ])
 @pytest.mark.parametrize("outcome", ["success", "connect_timeout", "read_timeout", "http500"])
+@pytest.mark.parametrize("after_successful_page", [False, True])
 def test_saved_cursors_resume_without_skips_or_partial_proposals(
-    monkeypatch, tmp_path, family, cursor, next_cursor, outcome,
+    monkeypatch, tmp_path, family, cursor, next_cursor, outcome, after_successful_page,
 ):
     monkeypatch.setattr(find_osti_sim, "ROWS", 1)
-    pages = [[REPORT]]
+    pages = [[REPORT]] if after_successful_page or outcome == "success" else []
     if outcome == "http500":
         pages.append(SimpleNamespace(status_code=500))
     elif outcome != "success":
@@ -300,7 +302,14 @@ def test_saved_cursors_resume_without_skips_or_partial_proposals(
     else:
         assert appended == []  # discard even the first successfully fetched page
         assert not files["next"].exists()
-        assert files["hold"].exists() == (outcome == "http500")
+        detail = files["hold"].read_text()
+        failed_at = find_osti_sim.Position(q, first_page + len(pages) - 1,
+                                          date(2026, 10, 12) if family.source == "osti_aec"
+                                          else date(2026, 10, 15),
+                                          None if family.source == "osti_aec"
+                                          else date(2026, 10, 16)).cursor()
+        assert failed_at in detail
+        assert ("HTTP 500" if outcome == "http500" else error.__name__) in detail
     assert not files["exhausted"].exists()
 
 

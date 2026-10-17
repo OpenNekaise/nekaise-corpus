@@ -782,6 +782,60 @@ def test_optional_finder_failure_is_reported_without_blocking_merge(
     assert not list((tmp_path / "workspace").glob("finder-proposals-*"))
 
 
+@pytest.mark.parametrize("round_outcome", ["run_completed", "run_failed"])
+def test_failed_finder_hold_reaches_health_without_accepting_its_output(
+    tmp_path, monkeypatch, round_outcome,
+):
+    import maintainer
+
+    events = finder_env(tmp_path, monkeypatch)
+    detail = "OSTI request failed (ConnectTimeout) at q=17 p=62 since=2026-10-12"
+    backends = {"volatile": {
+        "script": "fake_finder.py", "enabled": True, "required": False,
+        "args": ["--id", "ost-bad", "--title", "Bad", "--url", "https://e.org/bad",
+                 "--hold-rotation", "--hold-note", detail,
+                 "--next-pointer", "q=17 p=63 since=2026-10-12",
+                 "--signal-after-append", str(signal.SIGTERM)],
+    }}
+    state = {"volatile": {"flag": "--token", "next": "q=17 p=62 since=2026-10-12",
+                          "dynamic": True}}
+    st = fixture_store(tmp_path, backends, state)
+    with discovery_transaction(st) as transaction:
+        run_round.run_finders_parallel(["volatile"], backends, state, os.environ.copy(),
+                                      "fixture-run", 1, transaction)
+
+    assert registry_ids(st) == []  # even staged proposals and NEXT from a failed process lose
+    with st.read() as view:
+        assert view.rotation_get("volatile") == state["volatile"]
+    assert ("fixture-run", "discovery_degraded", {
+        "failures": {"volatile": -signal.SIGTERM},
+    }) in events
+    assert ("fixture-run", "rotation_held", {
+        "backend": "volatile", "reason": "finder_failed", "detail": detail,
+        "returncode": -signal.SIGTERM,
+    }) in events
+    history = tmp_path / "history.jsonl"
+    rows = [
+        {"run_id": "old", "event": "rotation_held", "backend": "volatile",
+         "reason": "finder_requested", "detail": "old HTTP 500"},
+        {"run_id": "old", "event": "run_completed"},
+        *({"run_id": run, "event": event, "at": "2026-10-17T05:00:00Z", **fields}
+          for run, event, fields in events),
+        {"run_id": "fixture-run", "event": round_outcome},
+    ]
+    history.write_text("".join(json.dumps(row) + "\n" for row in rows))
+    health = maintainer.summarize_backend_health(history, backends)["backends"]["volatile"]
+    if round_outcome == "run_completed":
+        assert health["last_hold_detail"] == detail
+        assert health["last_hold_reason"] == "finder_failed"
+        assert health["last_rotation"]["at"] == "2026-10-17T05:00:00Z"
+        assert health["consecutive_degraded_rounds"] == 1
+    else:
+        assert health["last_hold_detail"] == "old HTTP 500"  # rolled-back round is ignored
+        assert health["consecutive_degraded_rounds"] == 0
+    assert health["pointer_advanced_in_window"] is False
+
+
 def test_required_finder_failure_still_blocks_merge(tmp_path, monkeypatch):
     finder_env(tmp_path, monkeypatch)
     backends = {

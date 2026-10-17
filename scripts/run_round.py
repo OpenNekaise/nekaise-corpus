@@ -730,6 +730,14 @@ def check_finder_results(results: list[dict], backends: dict, rotation_state: di
         shown = ", ".join(f"{name} ({code})" for name, code in failures.items())
         print(f"discovery degraded: optional finder failure(s): {shown}", flush=True)
         ops.run_event(run_id, "discovery_degraded", failures=failures)
+        # A failed finder can explain why it kept the cursor. Retain that bounded
+        # diagnostic without accepting its proposals/NEXT or hiding the failed exit.
+        for result in optional_failed:
+            name = result["name"]
+            if backends[name].get("rotation", True) and result.get("rotation_hold"):
+                ops.run_event(run_id, "rotation_held", backend=name, reason="finder_failed",
+                              detail=result["rotation_hold_detail"],
+                              returncode=result["returncode"])
 
     successful = [r for r in results if not r["returncode"]]
     for result in successful:
