@@ -148460,20 +148460,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1912', '1912']
     rights_verified_at: '2026-10-15'
-  - id: arc-veluminaflatwallpaint-ef7c8aba
-    title: Velumina flat wall paint. (1925) [arc-veluminaflatwallpaint-ef7c8aba]
-    url: https://archive.org/download/VeluminaFlatWallPaint/PittsburghVeluminaPaintc1925cm20p40001_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1925'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1925', '1925']
-    rights_verified_at: '2026-10-15'
   - id: arc-powerpaintingwithspray-74e58e0c
     title: Power painting with spray. (1956) [arc-powerpaintingwithspray-74e58e0c]
     url: https://archive.org/download/PowerPaintingWithSpray/PowerPaintingWithSpray19569560001_djvu.txt
@@ -152481,20 +152467,6 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['[1955]', '1955']
-    rights_verified_at: '2026-10-15'
-  - id: arc-vaughansspringfloweringbulbs-de1c290c
-    title: Vaughan's spring flowering bulbs. (1926) [arc-vaughansspringfloweringbulbs-de1c290c]
-    url: https://archive.org/download/VaughansSpringFloweringBulbs/VaughnsSpringFloweringBulbs0001_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1926'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1926', '1926']
     rights_verified_at: '2026-10-15'
   - id: arc-acmebathroomcabinetsandfixtures-9b5339da
     title: Acme bathroom cabinets and fixtures. (1926) [arc-acmebathroomcabinetsandfixtures-9b5339da]
@@ -198423,6 +198395,595 @@ sources:
     source: internet_archive
     license: public-domain
     topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-airette-manufacturing-co-44018b6f
+    title: 'Now... the first portable Air Conditioner: Airette [arc-airette-manufacturing-co-44018b6f]'
+    url: https://archive.org/download/airette-manufacturing-co./Airette_Manufacturing_Co._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-independent-stove-company-d6dff352
+    title: 'Renown Circulating Heater: Refinement Elegance Utility [arc-the-independent-stove-company-d6dff352]'
+    url: https://archive.org/download/the-independent-stove-company/The_Independent_Stove_Company_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-industrial-requirements-co-50eac485
+    title: 'Miniature Catalog of Swartwout Steam Specialties: Sixth Edition [arc-industrial-requirements-co-50eac485]'
+    url: https://archive.org/download/industrial-requirements-co./Industrial_Requirements_Co._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-industrial-requirements-co-0001-48daa8a2
+    title: Miniature Catalog of Swartwout Steam Specialties 151-A [arc-industrial-requirements-co-0001-48daa8a2]
+    url: https://archive.org/download/industrial-requirements-co.-0001/Industrial_Requirements_Co.0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-makin-heating-co-2437c809
+    title: Makin-Kelsey Heating [arc-the-makin-heating-co-2437c809]
+    url: https://archive.org/download/the-makin-heating-co./The_Makin_Heating_Co._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-boston-belting-co-61841b1b
+    title: Garden Hose Catalogue. (1896) [arc-boston-belting-co-61841b1b]
+    url: https://archive.org/download/boston-belting-co./Boston_Belting_Co._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1896'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1896', '1896']
+    rights_verified_at: '2026-10-17'
+  - id: arc-anchor-supply-co-1f7c654d
+    title: 'Anchor Supply Co.: Manufacturers of Awnings, Covers, Tents (1928) [arc-anchor-supply-co-1f7c654d]'
+    url: https://archive.org/download/anchor-supply-co./Anchor_Supply_Co._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1928', '1928']
+    rights_verified_at: '2026-10-17'
+  - id: arc-tomkins-brothers-f903b462
+    title: 'Tomkins Brothers: Wholesale, Masons, Materials, And Metal Specialties [arc-tomkins-brothers-f903b462]'
+    url: https://archive.org/download/tomkins-brothers/Tomkins_Brothers_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-adams-bros-mfg-co-inc-fca2681d
+    title: Cheerful Gas And Electric Heating Stoves [arc-adams-bros-mfg-co-inc-fca2681d]
+    url: https://archive.org/download/adams-bros.-mfg.-co.-inc./Adams_Bros._Mfg._Co._%28Inc.%29_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-eagle-picher-c0fd6e74
+    title: Eagle Tinting and Mixing Chart [arc-eagle-picher-c0fd6e74]
+    url: https://archive.org/download/eagle-picher/Eagle-Picher_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-shell-oil-company-inc-b6ef65d2
+    title: The Oil Burner Owner's Guide (1941) [arc-shell-oil-company-inc-b6ef65d2]
+    url: https://archive.org/download/shell-oil-company-inc./Shell_Oil_Company%2C_Inc._djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941', '1941']
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-tropical-paint-oil-company-dd9ad78b
+    title: Elastikote The Universal Paint Reinforced with Bakelite (1941) [arc-the-tropical-paint-oil-company-dd9ad78b]
+    url: https://archive.org/download/the-tropical-paint-oil-company/The_Tropical_Paint_%26_Oil_Company_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941', '1941']
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-tropical-paint-oil-company-0002-1ef4a187
+    title: Floorkote Four Hour Type For Interior or Exterior, Wood or Concrete, Floors
+      (1942) [arc-the-tropical-paint-oil-company-0002-1ef4a187]
+    url: https://archive.org/download/the-tropical-paint-oil-company-0002/The_Tropical_Paint_%26_Oil_Company0002_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1942'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1942', '1942']
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-readybuilt-products-company-84f26c15
+    title: Readybuilt Fireplaces (1957) [arc-the-readybuilt-products-company-84f26c15]
+    url: https://archive.org/download/the-readybuilt-products-company/The_Readybuilt_Products_Company_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1957'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1957', '1957']
+    rights_verified_at: '2026-10-17'
+  - id: arc-berger-bros-company-pdf-a-f0c9c146
+    title: Catalog No. 9 Berger Bros. Company [arc-berger-bros-company-pdf-a-f0c9c146]
+    url: https://archive.org/download/berger-bros.-company-pdf-a/Berger_Bros._CompanyPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-carpenter-steel-company-pdf-a-6b869526
+    title: 'The Carpenter Steel Company: Manufacturers of High-Grade Steels and Wire,
+      Hot-Rolled, Hamm (1914) [arc-the-carpenter-steel-company-pdf-a-6b869526]'
+    url: https://archive.org/download/the-carpenter-steel-company-pdf-a/The_Carpenter_Steel_CompanyPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1914'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1914', '1914']
+    rights_verified_at: '2026-10-17'
+  - id: arc-carmen-bronson-co-pdf-a-adb8c9f0
+    title: Plastics and Plywood Catalog No. 8 (1946) [arc-carmen-bronson-co-pdf-a-adb8c9f0]
+    url: https://archive.org/download/carmen-bronson-co.-pdf-a/Carmen-Bronson_Co.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1946', '1946']
+    rights_verified_at: '2026-10-17'
+  - id: arc-vermont-marble-company-pdf-a-5499ce5b
+    title: 'Miracles In Marble: A Story of Modern Methods Applied to One of America''s
+      Oldest Industrie (1940) [arc-vermont-marble-company-pdf-a-5499ce5b]'
+    url: https://archive.org/download/vermont-marble-company-pdf-a/Vermont_Marble_CompanyPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-17'
+  - id: arc-park-publishing-company-pdf-a-56c8c3d2
+    title: Wiring Simplified by H.P. Richten (1951) [arc-park-publishing-company-pdf-a-56c8c3d2]
+    url: https://archive.org/download/park-publishing-company-pdf-a/Park_Publishing_CompanyPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1951'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1951', '1951']
+    rights_verified_at: '2026-10-17'
+  - id: arc-magee-furnace-company-pdf-a-fb3068b1
+    title: 'Catalogue Furnaces: Magee Furnace Company [arc-magee-furnace-company-pdf-a-fb3068b1]'
+    url: https://archive.org/download/magee-furnace-company-pdf-a/Magee_Furnace_CompanyPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-technical-press-limited-pdf-a-6a46ae0c
+    title: Modern Shopfront Construction (1949) [arc-the-technical-press-limited-pdf-a-6a46ae0c]
+    url: https://archive.org/download/the-technical-press-limited-pdf-a/The_Technical_Press_LimitedPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-general-fireproofing-co-pdf-a-6f2ac581
+    title: GF Steel Lumber A Hand Book of data on the uses of GF Steel Lumber and Herringbone
+      Rigid M (1926) [arc-the-general-fireproofing-co-pdf-a-6f2ac581]
+    url: https://archive.org/download/the-general-fireproofing-co.-pdf-a/The_General_Fireproofing_Co.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926', '1926']
+    rights_verified_at: '2026-10-17'
+  - id: arc-new-york-d-van-nostrand-company-inc-pdf-a-6d53f1af
+    title: 'Masonry: A Handbook of Tools, Materials, Methods, and Directions (1947)
+      [arc-new-york-d-van-nostrand-company-inc-pdf-a-6d53f1af]'
+    url: https://archive.org/download/new-york-d.-van-nostrand-company-inc.-pdf-a/New_York_D._Van_Nostrand_Company%2C_Inc.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-17'
+  - id: arc-whitehead-metal-products-co-of-new-york-inc-0b59468a
+    title: 'May 1st, 1929, Catalog: Whitehead Metal Products Co. Of New York, Inc. (1929)
+      [arc-whitehead-metal-products-co-of-new-york-inc-0b59468a]'
+    url: https://archive.org/download/whitehead-metal-products-co.-of-new-york-inc.-pdf-a/Whitehead_Metal_Products_Co._Of_New_York%2C_Inc.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929', '1929']
+    rights_verified_at: '2026-10-17'
+  - id: arc-tubular-heating-and-ventilating-co-1-pdf-a-334080e5
+    title: 'Catalogue F: The Forbes Furnace A Heater Of Homes (1918) [arc-tubular-heating-and-ventilating-co-1-pdf-a-334080e5]'
+    url: https://archive.org/download/tubular-heating-and-ventilating-co.-1-pdf-a/Tubular_Heating_and_Ventilating_Co.1PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1918', '1918']
+    rights_verified_at: '2026-10-17'
+  - id: arc-tubular-heating-and-ventilating-co-2-pdf-a-3eda19de
+    title: 'The Forbes Furnace: An Interesting Proposition: A perfect Heating and Ventilating
+      System For Home [arc-tubular-heating-and-ventilating-co-2-pdf-a-3eda19de]'
+    url: https://archive.org/download/tubular-heating-and-ventilating-co.-2-pdf-a/Tubular_Heating_and_Ventilating_Co.2PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-blanchard-lumber-company-pdf-a-a3a30ffd
+    title: Do-it-yourself ideas for decorative gates and fences (1954) [arc-blanchard-lumber-company-pdf-a-a3a30ffd]
+    url: https://archive.org/download/blanchard-lumber-company-pdf-a/Blanchard_Lumber_CompanyPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1954'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1954', '1954']
+    rights_verified_at: '2026-10-17'
+  - id: arc-the-wikes-corporation-pdf-a-912df601
+    title: Shopper's Guide Of Building Values (1962) [arc-the-wikes-corporation-pdf-a-912df601]
+    url: https://archive.org/download/the-wikes-corporation-pdf-a/The_Wikes_CorporationPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1962'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1962', '1962']
+    rights_verified_at: '2026-10-17'
+  - id: arc-nationaline-pdf-a-3e3d8500
+    title: 'Home Comfort Reflections: Nationaline Planalog [arc-nationaline-pdf-a-3e3d8500]'
+    url: https://archive.org/download/nationaline-pdf-a/NationalinePDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-wike-building-systems-inc-pdf-a-7342bf2b
+    title: Tomorrow's Home Today! Wick Homes [arc-wike-building-systems-inc-pdf-a-7342bf2b]
+    url: https://archive.org/download/wike-building-systems-inc.-pdf-a/Wike_Building_Systems_Inc.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-carrier-engineering-corporation-pdf-a-707bed24
+    title: Bulletin No. 101 Carrier Dehumidifying Apparatus (1916) [arc-carrier-engineering-corporation-pdf-a-707bed24]
+    url: https://archive.org/download/carrier-engineering-corporation-pdf-a/Carrier_Engineering_CorporationPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1916', '1916']
+    rights_verified_at: '2026-10-17'
+  - id: arc-fir-plywood-pdf-a-17afec49
+    title: 'Fir Plywood "Do-it-Together" Plans Folder No. 2: Ideas for Outdoor Living
+      (1956) [arc-fir-plywood-pdf-a-17afec49]'
+    url: https://archive.org/download/fir-plywood-pdf-a/Fir_PlywoodPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1956'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1956', '1956']
+    rights_verified_at: '2026-10-17'
+  - id: arc-red-cedar-shingle-bureau-pdf-a-cb4b51dd
+    title: With Cedar Shingle Roofs and Cedar Shake or Shingle Walls dream homes come
+      true [arc-red-cedar-shingle-bureau-pdf-a-cb4b51dd]
+    url: https://archive.org/download/red-cedar-shingle-bureau-pdf-a/Red_Cedar_Shingle_BureauPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-woodcraft-structures-pdf-a-60e64c4d
+    title: The Book Of Woodcraft Homes [arc-woodcraft-structures-pdf-a-60e64c4d]
+    url: https://archive.org/download/woodcraft-structures-pdf-a/Woodcraft_StructuresPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-miles-homes-pdf-a-921cfba7
+    title: There's A Miles Home In Your Future [arc-miles-homes-pdf-a-921cfba7]
+    url: https://archive.org/download/miles-homes-pdf-a/Miles_HomesPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-unique-balance-company-unique-window-balanc-0c2010d5
+    title: Unique Balanced Window Products [arc-unique-balance-company-unique-window-balanc-0c2010d5]
+    url: https://archive.org/download/unique-balance-company-unique-window-balance-corp.-pdf-a/Unique_Balance_Company_%26_Unique_Window_Balance_Corp.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-united-chromium-incorporated-pdf-a-729bd972
+    title: Ucilon Protective Coating Systems For Corrosion Control [arc-united-chromium-incorporated-pdf-a-729bd972]
+    url: https://archive.org/download/united-chromium-incorporated-pdf-a/United_Chromium%2C_IncorporatedPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-roderick-payne-inc-pdf-a-8dea2d37
+    title: Bird Houses And Garden Accessories [arc-roderick-payne-inc-pdf-a-8dea2d37]
+    url: https://archive.org/download/roderick-payne-inc.-pdf-a/Roderick_Payne_Inc.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-phillips-pump-tank-co-pdf-a-fefe12a2
+    title: Phillips Equipment For The Service Station [arc-phillips-pump-tank-co-pdf-a-fefe12a2]
+    url: https://archive.org/download/phillips-pump-tank-co.-pdf-a/Phillips_Pump_%26_Tank_Co.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-southwest-pump-company-0004-pdf-a-b0a69970
+    title: 'Modernize with Southwest: "Your pump is the pint of contact with your customer.
+      Keep it modern to [arc-southwest-pump-company-0004-pdf-a-b0a69970]'
+    url: https://archive.org/download/southwest-pump-company-0004-pdf-a/Southwest_Pump_Company0004PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-steelways-pdf-a-2b047f9b
+    title: Steelways (1961) [arc-steelways-pdf-a-2b047f9b]
+    url: https://archive.org/download/steelways-pdf-a/SteelwaysPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1961'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1961', '1961']
+    rights_verified_at: '2026-10-17'
+  - id: arc-georgia-pacific-pdf-a-b3482ba6
+    title: 'How to Better your Living: A Complete Guide To Remodeling [arc-georgia-pacific-pdf-a-b3482ba6]'
+    url: https://archive.org/download/georgia-pacific-pdf-a/Georgia_PacificPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-17'
+  - id: arc-gold-seal-congoleum-nairn-inc-pdf-a-fd808a9a
+    title: 'My Home: easier living issue [arc-gold-seal-congoleum-nairn-inc-pdf-a-fd808a9a]'
+    url: https://archive.org/download/gold-seal-congoleum-nairn-inc.-pdf-a/Gold_Seal_Congoleum-Nairn_Inc.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
     format: txt
     language: en
     document_type: trade-literature

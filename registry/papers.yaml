@@ -156751,3 +156751,37 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-17'
+  - id: oas-10-48550-arxiv-2603-25783-1ec6c1b4
+    title: 'Set the Night on FIRE: Building an Empirical Local Dark Matter Velocity
+      Distribution'
+    url: https://arxiv.org/pdf/2603.25783
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-03-26'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2603.25783
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2603.25783;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2603.25783 openalex:W7143318728
+    resolution: 'sim1: openalex location'
+  - id: arx-on-flips-of-unitary-buildings-i-classification
+    title: 'On flips of unitary buildings I: Classification of flips'
+    url: https://arxiv.org/pdf/1012.2301v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2010-12-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1012.2301
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1012.2301 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-17'
