@@ -156785,3 +156785,39 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-17'
+  - id: oas-10-1016-j-enbuild-2026-117029-73c560de
+    title: A data-driven approach to identifying cost-effective retrofits, predicting
+      energy ratings, and evaluating national retrofit CO2 savings in UK homes
+    url: https://eprints.leedsbeckett.ac.uk/id/eprint/12711/1/ADatadrivenApproachToIdentifyingCosteffectiveRetrofitsPredictingEnergyRatingsAndEvaluatingNationalRetrofitCo%E2%82%82SavingsInUkHomesPV-SALEEM.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2026.117029
+    license_evidence: no licence statement for this copy [copy https://eprints.leedsbeckett.ac.uk/id/eprint/12711/1/ADatadrivenApproachToIdentifyingCosteffectiveRetrofitsPredictingEnergyRatingsAndEvaluatingNationalRetrofitCo%E2%82%82SavingsInUkHomesPV-SALEEM.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2026.117029 openalex:W7124688485
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-strongly-and-weyl-transitive-group-actions-on-
+    title: Strongly and Weyl transitive group actions on buildings arising from Chevalley
+      groups
+    url: https://arxiv.org/pdf/1101.1113v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2011-01-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1101.1113
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1101.1113 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-17'

@@ -502406,21 +502406,6 @@ sources:
     license_url: http://creativecommons.org/licenses/by/4.0
     license_evidence: https://journals.vilniustech.lt/index.php/JCEM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/13751
     rights_verified_at: '2026-10-17'
-  - id: ojs-jcem-the-association-between-emotions-and-public-acceptance
-    title: The association between emotions and public acceptance of recycled water
-      for urban residents
-    url: https://journals.vilniustech.lt/index.php/JCEM/article/download/13754/10218
-    source: ojs_jcem
-    license: cc-by
-    topic: construction
-    format: pdf
-    language: en
-    published_at: '2021-02-10'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.3846/jcem.2021.13754
-    license_url: http://creativecommons.org/licenses/by/4.0
-    license_evidence: https://journals.vilniustech.lt/index.php/JCEM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/13754
-    rights_verified_at: '2026-10-17'
   - id: ojs-jcem-development-of-k-bim-e-submission-prototypical-system
     title: Development of K-BIM e-Submission prototypical system for the openBIM-based
       building permit framework
@@ -503371,17 +503356,1661 @@ sources:
     license_url: http://creativecommons.org/licenses/by/4.0
     license_evidence: https://journals.vilniustech.lt/index.php/JCEM/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.journals.vilniustech.lt:article/16156
     rights_verified_at: '2026-10-17'
-  - id: ojs-khg-article-3399-3379
-    title: СОСТАВЛЕНИЕ ГРАФИКА РАБОТЫ ПОДВИЖНОГО СОСТАВА НА МАРШРУТАХ ГОРОДСКОГО ПАССАЖИРСКОГО
-      ТРАНСПОРТА С УЧЕТОМ СОСТОЯНИЯ ВОДИТЕЛЯ
-    url: https://khg.kname.edu.ua/index.php/khg/article/download/3399/3379
-    source: ojs_khg
+  - id: ojs-rur-book-review-of-gurr-jens-martin-parr-rolf-hardt-dennis
+    title: 'Book review of: Gurr, Jens Martin; Parr, Rolf; Hardt, Dennis (eds.) (2022):
+      Metropolitan Research: Methods and Approaches'
+    url: https://rur.oekom.de/index.php/rur/article/download/1996/4145
+    source: ojs_rur
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-12-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.1996
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/1996
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-umweltvertr-glichkeitspr-fung-und-stra-enbau-einige-ver
+    title: Umweltverträglichkeitsprüfung und Straßenbau – einige verwaltungswissenschaftliche
+      Überlegungen
+    url: https://rur.oekom.de/index.php/rur/article/download/1997/2977
+    source: ojs_rur
     license: unverified
     topic: urban
     format: pdf
-    language: ru
-    published_at: '2013-11-25'
+    language: de
+    published_at: '1990-01-31'
     document_type: journal-article
-    license_evidence: 'https://khg.kname.edu.ua/index.php/khg/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.khg.kname.edu.ua:article/3399
+    persistent_id: https://doi.org/10.14512/rur.1997
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/1997
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-die-wirtschaft-polens-in-der-krisenlage-unter-besondere
+    title: Die Wirtschaft Polens in der Krisenlage, unter besonderer Berücksichtigung
+      der räumlichen Aspekte
+    url: https://rur.oekom.de/index.php/rur/article/download/1999/2981
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.1999
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/1999
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-regionalpolitik-und-entwicklung-in-bulgarien-probleme-e
+    title: 'Regionalpolitik und -entwicklung in Bulgarien: Probleme, Erfahrungen, Lösungsansätze'
+    url: https://rur.oekom.de/index.php/rur/article/download/2001/2985
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2001
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2001
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-diskussionsgrundlage-zur-institutionalisierung-von-raum
+    title: Diskussionsgrundlage zur Institutionalisierung von Raumordnung, Regionalplanung
+      und Umweltgestaltung in der gesellschaftlichen Entwicklung der DDR
+    url: https://rur.oekom.de/index.php/rur/article/download/2004/2991
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2004
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2004
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-werner-ernst-80-jahre-bericht-ber-die-vortragsveranstal
+    title: 'Werner Ernst 80 Jahre: Bericht über die Vortragsveranstaltung anläßlich
+      des 80. Geburtstages von Staatssekretär a. D. Prof. Dr. Werner Ernst am 6. Feb'
+    url: https://rur.oekom.de/index.php/rur/article/download/2005/2993
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2005
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2005
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-sicherung-kologischer-vorranggebiete-im-grenzbereich-zw
+    title: Sicherung ökologischer Vorranggebiete im Grenzbereich zwischen Schleswig-Holstein
+      und Mecklenburg
+    url: https://rur.oekom.de/index.php/rur/article/download/2010/3003
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2010
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2010
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-technologief-rderung-als-regionalpolitische-strategie
+    title: Technologieförderung als regionalpolitische Strategie?
+    url: https://rur.oekom.de/index.php/rur/article/download/2013/3009
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2013
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2013
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-marktdurchsetzung-von-windenergie-in-norddeutschland-st
+    title: 'Marktdurchsetzung von Windenergie in Norddeutschland: Standorte und Einspeisepreise'
+    url: https://rur.oekom.de/index.php/rur/article/download/2014/3011
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2014
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2014
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-studenten-und-universit-tsabsolventen-im-westlichen-nie
+    title: Studenten und Universitätsabsolventen im westlichen Niedersachsen beim Übertritt
+      ins Beschäftigungssystem und ihre berufliche Flexibilität und räumlic
+    url: https://rur.oekom.de/index.php/rur/article/download/2015/3013
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2015
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2015
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zur-sicherung-einer-geordneten-r-umlichen-entwicklung-i
+    title: Zur Sicherung einer geordneten räumlichen Entwicklung in beiden Teilen Deutschlands
+    url: https://rur.oekom.de/index.php/rur/article/download/2016/3015
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2016
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2016
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-bauliche-und-r-umliche-auswirkungen-von-ver-nderungen-i
+    title: Bauliche und räumliche Auswirkungen von Veränderungen im Bürosektor
+    url: https://rur.oekom.de/index.php/rur/article/download/2017/3017
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2017
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2017
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-regionale-strategien-zum-recycling-von-industriebrachen
+    title: Regionale Strategien zum Recycling von Industriebrachen in Frankreich
+    url: https://rur.oekom.de/index.php/rur/article/download/2018/3019
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2018
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2018
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-die-r-umliche-situation-in-den-ddr-regionen-anforderung
+    title: 'Die räumliche Situation in den DDR-Regionen: Anforderungen an eine neue
+      Raumplanung'
+    url: https://rur.oekom.de/index.php/rur/article/download/2021/3025
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2021
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2021
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zu-ausgew-hlten-ergebnissen-der-r-umlichen-forschung-de
+    title: Zu ausgewählten Ergebnissen der räumlichen Forschung der DDR aus der Sicht
+      des Bauwesens
+    url: https://rur.oekom.de/index.php/rur/article/download/2022/3027
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2022
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2022
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-stadtentwicklung-in-der-ddr-hauptprobleme-potentiale-un
+    title: 'Stadtentwicklung in der DDR: Hauptprobleme, Potentiale und Erfordernisse
+      der Entwicklung der Städte'
+    url: https://rur.oekom.de/index.php/rur/article/download/2023/3029
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2023
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2023
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-regional-und-stadtplanung-an-der-hochschule-f-r-archite
+    title: Regional- und Stadtplanung an der Hochschule für Architektur und Bauwesen
+      Weimar
+    url: https://rur.oekom.de/index.php/rur/article/download/2025/3033
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2025
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2025
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-aspekte-der-regionalplanung-in-theorie-und-ausbildung-a
+    title: Aspekte der Regionalplanung in Theorie und Ausbildung an der Hochschule für
+      Architektur und Bauwesen Weimar
+    url: https://rur.oekom.de/index.php/rur/article/download/2026/3035
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2026
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2026
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-siedlungsstrukturforschung-und-planung-auf-dem-gebiet-d
+    title: 'Siedlungsstrukturforschung und -planung auf dem Gebiet der DDR: Gedanken
+      zur bisherigen Entwicklung und über künftige Aufgaben'
+    url: https://rur.oekom.de/index.php/rur/article/download/2027/3037
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2027
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2027
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zur-politisch-administrativen-neugliederung-des-gebiets
+    title: 'Zur politisch-administrativen Neugliederung des Gebiets der DDR: Politische
+      und historische, geographische und raumordnerische Aspekte'
+    url: https://rur.oekom.de/index.php/rur/article/download/2028/3039
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2028
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2028
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zu-ausgew-hlten-fragen-der-rohstoffsicherung-in-der-lan
+    title: Zu ausgewählten Fragen der Rohstoffsicherung in der Landesplanung und Raumordnung
+      der DDR
+    url: https://rur.oekom.de/index.php/rur/article/download/2029/3041
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2029
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2029
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-bewertungsgrundlagen-f-r-die-raum-und-umweltplanung-dur
+    title: Bewertungsgrundlagen für die Raum- und Umweltplanung durch Umweltinformationssysteme
+    url: https://rur.oekom.de/index.php/rur/article/download/2035/3053
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2035
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2035
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zur-bedeutung-der-wohnungspolitik-f-r-die-regionalpolit
+    title: Zur Bedeutung der Wohnungspolitik für die Regionalpolitik und Raumordnung
+    url: https://rur.oekom.de/index.php/rur/article/download/2036/3055
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2036
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2036
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zur-gegenw-rtigen-und-k-nftigen-rolle-des-schienenverke
+    title: Zur gegenwärtigen und künftigen Rolle des Schienenverkehrs im ländlichen
+      Raum
+    url: https://rur.oekom.de/index.php/rur/article/download/2037/3057
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2037
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2037
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-wirkung-und-akzeptanz-von-wohnumfeldprogrammen-am-beisp
+    title: Wirkung und Akzeptanz von Wohnumfeldprogrammen am Beispiel der Offenburger
+      Oststadt
+    url: https://rur.oekom.de/index.php/rur/article/download/2038/3059
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2038
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2038
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-ressourcensch-tzende-raumordnungskonzepte-als-m-glichke
+    title: Ressourcenschützende Raumordnungskonzepte als Möglichkeit für eine umweltschonendere
+      Freizeit- und Erholungsnutzung
+    url: https://rur.oekom.de/index.php/rur/article/download/2039/3061
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1990-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2039
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2039
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1990 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-einsatz-und-verwendung-von-bioindikatoren-in-der-stadtp
+    title: Einsatz und Verwendung von Bioindikatoren in der Stadtplanung am Beispiel
+      von Esslingen am Neckar
+    url: https://rur.oekom.de/index.php/rur/article/download/2043/3069
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2043
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2043
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-territoriale-strukturen-und-regionale-arbeitsmarktungle
+    title: 'Territoriale Strukturen und regionale Arbeitsmarktungleichgewichte: Eine
+      empirische Studie zur Situation von Akademikern im östlichen Ruhrgebiet'
+    url: https://rur.oekom.de/index.php/rur/article/download/2044/3071
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2044
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2044
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-ursachen-und-folgen-des-telekommunikationsnotstandes-in
+    title: Ursachen und Folgen des Telekommunikationsnotstandes in den neuen Bundesländern
+    url: https://rur.oekom.de/index.php/rur/article/download/2045/3073
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2045
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2045
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-minderungen-verkehrsbedingter-umweltbelastungen-tagunge
+    title: 'Minderungen verkehrsbedingter Umweltbelastungen: Tagungen in Karlsruhe und
+      Berlin'
+    url: https://rur.oekom.de/index.php/rur/article/download/2047/3077
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2047
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2047
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-umstrukturierungsprobleme-in-den-neuen-bundesl-ndern-un
+    title: 'Umstrukturierungsprobleme in den neuen Bundesländern und Erfahrungsmuster
+      altindustrieller Regionen: Parallelen und Unterschiede'
+    url: https://rur.oekom.de/index.php/rur/article/download/2048/3079
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2048
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2048
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-strukturwandel-altindustrialisierter-regionen-in-den-ne
+    title: 'Strukturwandel altindustrialisierter Regionen in den neuen Bundesländern:
+      Bedingungen und Probleme'
+    url: https://rur.oekom.de/index.php/rur/article/download/2049/3081
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2049
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2049
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-raumordnung-und-recht
+    title: Raumordnung und Recht
+    url: https://rur.oekom.de/index.php/rur/article/download/2051/3085
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2051
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2051
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zur-quantifizierung-direkter-und-indirekter-effekte-von
+    title: Zur Quantifizierung direkter und indirekter Effekte von Messen für die regionale
+      und lokale Wirtschaft, dargestellt am Beispiel Hannover
+    url: https://rur.oekom.de/index.php/rur/article/download/2052/3087
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2052
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2052
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-neuere-aspekte-der-regionalen-wohnungspolitik-in-der-bu
+    title: Neuere Aspekte der regionalen Wohnungspolitik in der Bundesrepublik Deutschland
+    url: https://rur.oekom.de/index.php/rur/article/download/2053/3089
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2053
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2053
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-wohnungspolitik-und-ihre-folgen
+    title: Wohnungspolitik und ihre Folgen
+    url: https://rur.oekom.de/index.php/rur/article/download/2054/3091
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2054
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2054
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-wohnkosten-haushaltsverm-gen-und-f-rderungseffizienz-st
+    title: 'Wohnkosten, Haushaltsvermögen und Förderungseffizienz: Strategien für einen
+      intergenerationellen Lastenausgleich'
+    url: https://rur.oekom.de/index.php/rur/article/download/2055/3093
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2055
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2055
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-wohnungswirtschaft-und-wohnungspolitik-in-wien-internat
+    title: 'Wohnungswirtschaft und Wohnungspolitik in Wien: Internationale Trends und
+      lokale Besonderheiten'
+    url: https://rur.oekom.de/index.php/rur/article/download/2056/3095
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2056
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2056
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-stadterneuerungspolitik-in-einer-wachsenden-stadt-der-w
+    title: 'Stadterneuerungspolitik in einer wachsenden Stadt: Der Wiener Altbauwohnungsmarkt'
+    url: https://rur.oekom.de/index.php/rur/article/download/2057/3097
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2057
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2057
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-aktivierende-beratung-als-instrument-zukunftsweisender
+    title: 'Aktivierende Beratung als Instrument zukunftsweisender Regionalentwicklung:
+      Beispiel "Fondation Rurale de Wallonie” (Belgien)'
+    url: https://rur.oekom.de/index.php/rur/article/download/2059/3101
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2059
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2059
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-verkn-pfung-der-regionalen-wirtschaftsf-rderung-mit-ins
+    title: Verknüpfung der regionalen Wirtschaftsförderung mit Instrumenten der Gewässergütepolitik
+    url: https://rur.oekom.de/index.php/rur/article/download/2061/3105
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2061
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2061
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zentralistisches-wirtschaftsordnungsmodell-raumordnungs
+    title: 'Zentralistisches Wirtschaftsordnungsmodell: Raumordnungspolitische Auswirkungen
+      und Erfordernisse einer Modellneugestaltung am Beispiel Bulgariens'
+    url: https://rur.oekom.de/index.php/rur/article/download/2064/3111
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2064
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2064
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-wahmehmungsmuster-und-bewu-tseinsformen-als-qualitative
+    title: 'Wahmehmungsmuster und Bewußtseinsformen als qualitative Faktoren der Regionalentwicklung:
+      Fallstudie Ruhrgebiet'
+    url: https://rur.oekom.de/index.php/rur/article/download/2065/3113
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2065
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2065
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-die-r-umliche-ordnung-auf-dem-weg-in-die-dienstleistung
+    title: Die räumliche Ordnung auf dem Weg in die Dienstleistungsgesellschaft
+    url: https://rur.oekom.de/index.php/rur/article/download/2066/3115
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2066
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2066
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-perspektiven-f-r-regionen-an-den-eg-binnengrenzen
+    title: Perspektiven für Regionen an den EG-Binnengrenzen
+    url: https://rur.oekom.de/index.php/rur/article/download/2067/3117
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-07-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2067
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2067
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-schadstoffemissionen-des-stra-enverkehrs-in-den-alten-u
+    title: Schadstoffemissionen des Straßenverkehrs in den alten und neuen Ländern der
+      Bundesrepublik Deutschland
+    url: https://rur.oekom.de/index.php/rur/article/download/2069/3121
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2069
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2069
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-kommunale-entwicklungsf-rderung-von-einzelma-nahmen-zu
+    title: 'Kommunale Entwicklungsförderung: Von Einzelmaßnahmen zu integrierter Maßnahmenkonzeption'
+    url: https://rur.oekom.de/index.php/rur/article/download/2073/3129
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2073
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2073
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zum-regionalstatistischen-datenbedarf-r-umlich-orientie
+    title: Zum regionalstatistischen Datenbedarf räumlich orientierter Politik in Deutschland
+    url: https://rur.oekom.de/index.php/rur/article/download/2076/3135
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2076
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2076
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-nichtadministrative-gebietsgliederungen-und-kategorien
+    title: 'Nichtadministrative Gebietsgliederungen und -kategorien für die Regionalstatistik:
+      Die siedlungsstrukturelle Gebietstypisierung der BfLR'
+    url: https://rur.oekom.de/index.php/rur/article/download/2079/3141
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2079
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2079
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-regionalstatistisches-mindestprogramm-ein-instrument-zu
+    title: Regionalstatistisches Mindestprogramm – ein Instrument zur Verbesserung der
+      regionalstatistischen Datengrundlagen
+    url: https://rur.oekom.de/index.php/rur/article/download/2080/3143
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2080
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2080
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-zur-regionalstatistischen-bedeutung-des-mikrozensus-in
+    title: Zur regionalstatistischen Bedeutung des Mikrozensus in den neuen Ländern
+    url: https://rur.oekom.de/index.php/rur/article/download/2081/3145
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2081
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2081
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-umfragen-als-instrument-vergleichender-regionalforschun
+    title: Umfragen als Instrument vergleichender Regionalforschung
+    url: https://rur.oekom.de/index.php/rur/article/download/2082/3147
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2082
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2082
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-st-dtebauliche-und-regionalplanerische-auswirkungen-ver
+    title: Städtebauliche und regionalplanerische Auswirkungen veränderter Ladenschlußzeiten
+    url: https://rur.oekom.de/index.php/rur/article/download/2084/3151
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1991-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2084
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2084
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1991 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-raumordnungspolitischer-orientierungsrahmen-des-bundes
+    title: Raumordnungspolitischer Orientierungsrahmen des Bundes
+    url: https://rur.oekom.de/index.php/rur/article/download/2085/3153
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2085
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2085
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-regionale-identit-t-berlegungen-zum-politischen-charakt
+    title: 'Regionale Identität: Überlegungen zum politischen Charakter einer psychosozialen
+      Raumkategorie'
+    url: https://rur.oekom.de/index.php/rur/article/download/2086/3155
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2086
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2086
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-transrapid-eine-chance
+    title: Transrapid – eine Chance!
+    url: https://rur.oekom.de/index.php/rur/article/download/2088/3159
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2088
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2088
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-th-ringer-regionen-im-wettbewerb-des-europ-ischen-binne
+    title: „Thüringer Regionen im Wettbewerb des Europäischen Binnenmarktes 1993“
+    url: https://rur.oekom.de/index.php/rur/article/download/2090/3163
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2090
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2090
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-konzeptionelle-ans-tze-einer-umwelt-vertr-glichen-regio
+    title: Konzeptionelle Ansätze einer umwelt-verträglichen regionalen Entwicklung
+      des Sächsischen Vogtlandes in seinen grenzübergreifenden Beziehungen zu Nordo
+    url: https://rur.oekom.de/index.php/rur/article/download/2091/3165
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-01-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2091
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2091
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-raumordnerisches-strukturkonzept-f-r-das-land-brandenbu
+    title: 'Raumordnerisches Strukturkonzept für das Land Brandenburg: Ergebnisse eines
+      Gutachtens'
+    url: https://rur.oekom.de/index.php/rur/article/download/2097/3177
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2097
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2097
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-raum-und-siedlungsstrukturelle-probleme-und-konzepte-f
+    title: Raum- und siedlungsstrukturelle Probleme und Konzepte für die peripheren
+      ländlichen Gebiete im Lande Brandenburg
+    url: https://rur.oekom.de/index.php/rur/article/download/2099/3181
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2099
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2099
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-stand-der-institutionellen-zusammenarbeit-zwischen-berl
+    title: Stand der institutionellen Zusammenarbeit zwischen Berlin und Brandenburg
+    url: https://rur.oekom.de/index.php/rur/article/download/2100/3183
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2100
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2100
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-rur-raumordnung-als-indirekte-verkehrspolitik-f-r-mittel-un
+    title: 'Raumordnung als indirekte Verkehrspolitik für Mittel- und Osteuropa: 24
+      Thesen'
+    url: https://rur.oekom.de/index.php/rur/article/download/2102/3187
+    source: ojs_rur
+    license: unverified
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '1993-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14512/rur.2102
+    license_evidence: 'https://rur.oekom.de/index.php/rur/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:rur.oekom.de:article/2102
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 1993 by the RuR Editors; re-published by oekom 2023)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-colour-avant-garde-a-living-space-and-a
+    title: 'The Colour Avant-Garde: a Living Space and a Concept for Style Formation
+      in the New Epoch'
+    url: https://projectbaikal.com/index.php/pb/article/download/1547/1505
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1547
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1547
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-stylistic-dynamics-of-the-russian-soviet-av
+    title: Stylistic Dynamics of the Russian (Soviet) Avant-Garde in the Architecture
+      of Novosibirsk
+    url: https://projectbaikal.com/index.php/pb/article/download/1549/1506
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1549
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1549
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-architecture-of-russian-avant-garde-and-jap
+    title: 'Architecture of Russian Avant-Garde and Japanese Metabolism: Parallels of
+      Forms and Meanings'
+    url: https://projectbaikal.com/index.php/pb/article/download/1552/1508
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1552
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1552
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-past-interprets-us
+    title: The Past Interprets Us
+    url: https://projectbaikal.com/index.php/pb/article/download/1553/1509
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1553
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1553
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-le-corbusier
+    title: Le Corbusier
+    url: https://projectbaikal.com/index.php/pb/article/download/1554/1510
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1554
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1554
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-there-is-such-avant-garde
+    title: “…There Is Such Avant-Garde”
+    url: https://projectbaikal.com/index.php/pb/article/download/1555/1511
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1555
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1555
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-art-deco-and-soviet-architecture
+    title: Art Deco and Soviet Architecture
+    url: https://projectbaikal.com/index.php/pb/article/download/1558/1514
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1558
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1558
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-art-deco-and-vienna
+    title: Art Deco and Vienna
+    url: https://projectbaikal.com/index.php/pb/article/download/1560/1516
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1560
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1560
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-precious-girth-of-russia
+    title: The Precious Girth of Russia
+    url: https://projectbaikal.com/index.php/pb/article/download/1563/1519
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1563
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1563
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-krapivna-rehabilitation-attempt
+    title: Krapivna. Rehabilitation Attempt
+    url: https://projectbaikal.com/index.php/pb/article/download/1564/1520
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1564
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1564
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-military-towns-as-the-basis-for-the-formati
+    title: '"Military Towns" as the Basis for the Formation of the Military-Strategic
+      Function of the Cities of Western Siberia (Omsk and Novo-Nikolaevsk) at the '
+    url: https://projectbaikal.com/index.php/pb/article/download/1566/1522
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1566
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1566
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-small-and-historic-towns-of-siberia-olyokmi
+    title: 'Small and Historic Towns of Siberia: Olyokminsk'
+    url: https://projectbaikal.com/index.php/pb/article/download/1567/1523
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2019-12-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.62.1567
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1567
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-urban-development-of-ulan-bator
+    title: Urban Development of Ulan Bator
+    url: https://projectbaikal.com/index.php/pb/article/download/1579/1526
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1579
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1579
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-celebration-building
+    title: celebration building
+    url: https://projectbaikal.com/index.php/pb/article/download/1588/1533
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1588
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1588
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-winter-city
+    title: winter city
+    url: https://projectbaikal.com/index.php/pb/article/download/1589/1534
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1589
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1589
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-winter-as-a-source-of-economic-growth
+    title: Winter as a Source of Economic Growth
+    url: https://projectbaikal.com/index.php/pb/article/download/1590/1535
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1590
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1590
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-style-and-environment
+    title: Style and Environment
+    url: https://projectbaikal.com/index.php/pb/article/download/1592/1537
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1592
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1592
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-volgograd-arena-modern-design-and-architect
+    title: '"Volgograd Arena": Modern Design and Architectural Solutions for the Cable-Stayed
+      Roof System of the Multifunctional Sports Complex'
+    url: https://projectbaikal.com/index.php/pb/article/download/1593/1538
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1593
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1593
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-iceland-competitions
+    title: Iceland Competitions
+    url: https://projectbaikal.com/index.php/pb/article/download/1594/1539
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1594
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1594
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-city-s-celebration-and-the-city-of-cele
+    title: The City's Celebration and the City of Celebration
+    url: https://projectbaikal.com/index.php/pb/article/download/1597/1542
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1597
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1597
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-ritual-transformations
+    title: Ritual Transformations
+    url: https://projectbaikal.com/index.php/pb/article/download/1598/1543
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1598
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1598
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-animal-style
+    title: The Animal Style
+    url: https://projectbaikal.com/index.php/pb/article/download/1599/1544
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1599
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1599
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-bunte-republik-neustadt-strengthening-urban
+    title: '"Bunte Republik Neustadt": Strengthening Urban Identity as Means of Preservation
+      of Historico-Cultural Environment'
+    url: https://projectbaikal.com/index.php/pb/article/download/1601/1547
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1601
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1601
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-welcome-winter-dressed-in-white
+    title: Welcome Winter Dressed in White…
+    url: https://projectbaikal.com/index.php/pb/article/download/1603/1549
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1603
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1603
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-tower
+    title: The Tower
+    url: https://projectbaikal.com/index.php/pb/article/download/1606/1552
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1606
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1606
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-small-and-historic-cities-of-zabaikalye-arc
+    title: 'Small and Historic Cities of Zabaikalye: Architectural Heritage of Troitskosavsk-Kyakhta'
+    url: https://projectbaikal.com/index.php/pb/article/download/1607/1553
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1607
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1607
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-three-utopias-dedicated-to-the-memory-of-th
+    title: Three Utopias (Dedicated to the Memory of the USSR)
+    url: https://projectbaikal.com/index.php/pb/article/download/1609/1555
+    source: ojs_projectbaikalpb
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-03-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.63.1609
+    license_evidence: 'https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1609
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-regional-schools
+    title: regional schools
+    url: https://projectbaikal.com/index.php/pb/article/download/1616/2451
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-04-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1616
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1616
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-interview-with-yann-fran-oise-on-climate-ac
+    title: Interview with Yann Françoise on climate action plans
+    url: https://projectbaikal.com/index.php/pb/article/download/1626/2454
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1626
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1626
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-architecture-schools-and-regional-practices
+    title: Architecture schools and regional practices. Notes of the eyewitness
+    url: https://projectbaikal.com/index.php/pb/article/download/1631/2459
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1631
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1631
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-sevastopol-the-integrity-of-the-ensemble
+    title: 'Sevastopol: the integrity of the ensemble'
+    url: https://projectbaikal.com/index.php/pb/article/download/1635/2463
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1635
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1635
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-soft-power-of-vladimir-bukh-on-the-occasion
+    title: Soft power of Vladimir Bukh. On the occasion of the architect’s 85th anniversary
+    url: https://projectbaikal.com/index.php/pb/article/download/1638/2466
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1638
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1638
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-impact-of-irkutsk-architecture-school-o
+    title: The impact of Irkutsk architecture school on its masters’ unique manner
+    url: https://projectbaikal.com/index.php/pb/article/download/1640/2468
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1640
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1640
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-school-as-narrative
+    title: School as narrative
+    url: https://projectbaikal.com/index.php/pb/article/download/1643/2471
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-09-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1643
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1643
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-siberian-architecture-and-art-school-yester
+    title: 'Siberian architecture and art school: yesterday and today'
+    url: https://projectbaikal.com/index.php/pb/article/download/1645/2473
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1645
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1645
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-residents-satisfaction-with-the-city-space
+    title: Residents’ satisfaction with the city space
+    url: https://projectbaikal.com/index.php/pb/article/download/1646/2474
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1646
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1646
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-novosibirsk-school-of-parametric-urban-plan
+    title: Novosibirsk school of parametric urban planning
+    url: https://projectbaikal.com/index.php/pb/article/download/1647/2475
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1647
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1647
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-renovation-of-the-63-64-quarters-in-the-his
+    title: Renovation of the 63–64 quarters in the historical center of Irkutsk
+    url: https://projectbaikal.com/index.php/pb/article/download/1650/2478
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1650
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1650
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-winter-university-2020-redevelopment
+    title: 'Winter University 2020: Redevelopment'
+    url: https://projectbaikal.com/index.php/pb/article/download/1651/2479
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-05-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1651
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1651
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-team-a-plan-for-eco-zhilkino
+    title: 'TEAM A: ”Plan for eco-Zhilkino”'
+    url: https://projectbaikal.com/index.php/pb/article/download/1653/2480
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-09-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1653
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1653
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-team-b-pathificity
+    title: 'TEAM B: ”Pathificity”'
+    url: https://projectbaikal.com/index.php/pb/article/download/1654/2481
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-09-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1654
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1654
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-team-c-re-zhilkino
+    title: 'TEAM C: ”Re-Zhilkino”'
+    url: https://projectbaikal.com/index.php/pb/article/download/1655/2482
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-09-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1655
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1655
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-team-d-zhilkino-the-heart-of-the-six-cities
+    title: 'TEAM D: ”Zhilkino – The heart of the six cities”'
+    url: https://projectbaikal.com/index.php/pb/article/download/1656/2483
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-09-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1656
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1656
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-student-conceptual-competition-in-architect
+    title: Student Conceptual Competition in Architectural Design
+    url: https://projectbaikal.com/index.php/pb/article/download/1657/2484
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2020-09-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7480/projectbaikal.64.1657
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1657
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-city-and-emptiness
+    title: The city and emptiness
+    url: https://projectbaikal.com/index.php/pb/article/download/1666/2488
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2021-01-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.51461/projectbaikal.65.1666
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1666
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-smart-city-of-the-22-century-a-closing-circ
+    title: 'Smart city of the 22 century: a closing circle'
+    url: https://projectbaikal.com/index.php/pb/article/download/1667/2489
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2021-01-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.51461/projectbaikal.65.1667
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1667
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-the-bitter-specter-of-dislike
+    title: The bitter specter of dislike
+    url: https://projectbaikal.com/index.php/pb/article/download/1672/2494
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2021-01-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.51461/projectbaikal.65.1672
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1672
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-small-and-historic
+    title: small and historic
+    url: https://projectbaikal.com/index.php/pb/article/download/1673/2495
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-01-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.51461/projectbaikal.65.1673
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1673
+    rights_verified_at: '2026-10-17'
+  - id: ojs-projectbaikalpb-restoration-of-i-o-shenderov-s-house-in-ros
+    title: Restoration of I. O. Shenderov’s House in Rostov-on-Don
+    url: https://projectbaikal.com/index.php/pb/article/download/1676/2498
+    source: ojs_projectbaikalpb
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: ru
+    published_at: '2021-01-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.51461/projectbaikal.65.1676
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://projectbaikal.com/index.php/pb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:projectbaikal.com:article/1676
     rights_verified_at: '2026-10-17'
