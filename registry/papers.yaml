@@ -156383,3 +156383,37 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W399462216
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-4108-eetiot-14884-414bbdaf
+    title: 'The Immutable Tensor Architecture: A Pure Dataflow Approach for Secure,
+      Energy-Efficient AI Inference'
+    url: https://arxiv.org/pdf/2511.22889
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    published_at: '2026-09-21'
+    document_type: article
+    persistent_id: https://doi.org/10.4108/eetiot.14884
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2511.22889;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: doi:10.4108/eetiot.14884 openalex:W4416949873
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2607-05773-0daf82e2
+    title: 'Beyond Static Evaluation: Building Simulation Environments for Scalable
+      Agentic Reinforcement Learning'
+    url: https://arxiv.org/pdf/2607.05773
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    published_at: '2026-07-07'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2607.05773
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://arxiv.org/pdf/2607.05773; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-17'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2607.05773 openalex:W7167726642
+    resolution: 'sim1: openalex location'
