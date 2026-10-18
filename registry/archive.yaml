@@ -198240,20 +198240,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1940', '1940']
     rights_verified_at: '2026-10-17'
-  - id: arc-park-publishing-company-pdf-a-56c8c3d2
-    title: Wiring Simplified by H.P. Richten (1951) [arc-park-publishing-company-pdf-a-56c8c3d2]
-    url: https://archive.org/download/park-publishing-company-pdf-a/Park_Publishing_CompanyPDF-A_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1951'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1951', '1951']
-    rights_verified_at: '2026-10-17'
   - id: arc-magee-furnace-company-pdf-a-fb3068b1
     title: 'Catalogue Furnaces: Magee Furnace Company [arc-magee-furnace-company-pdf-a-fb3068b1]'
     url: https://archive.org/download/magee-furnace-company-pdf-a/Magee_Furnace_CompanyPDF-A_djvu.txt
@@ -206735,20 +206721,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1909', '1909']
     rights_verified_at: '2026-10-18'
-  - id: arc-kc-pressed-brick-co-1892-89223877
-    title: Pocket catalogue 1892 Kansas City Hydraulic Press Brick Company. (1892) [arc-kc-pressed-brick-co-1892-89223877]
-    url: https://archive.org/download/kc-pressed-brick-co-1892/KC%20Pressed%20Brick%20Co%201892_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1892'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1892', '1892']
-    rights_verified_at: '2026-10-18'
   - id: arc-american-terra-cotta-wall-block-1930-93bfa6d3
     title: American wall block. (1930) [arc-american-terra-cotta-wall-block-1930-93bfa6d3]
     url: https://archive.org/download/american-terra-cotta-wall-block-1930/American%20terra%20cotta%20Wall%20block%201930_djvu.txt
@@ -206833,4 +206805,597 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-gentilet-bourdet-1910-aab027c4
+    title: Manuel d'application des gres de Gentil & Bourdet ceramistes. (1910) [arc-gentilet-bourdet-1910-aab027c4]
+    url: https://archive.org/download/gentilet-bourdet-1910/Gentilet%20Bourdet%201910_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-conkling-armstrong-terra-cotta-1898-1a4757ff
+    title: '[Catalogue] Conkling-Armstrong Terra Cotta Co. (1898) [arc-conkling-armstrong-terra-cotta-1898-1a4757ff]'
+    url: https://archive.org/download/conkling-armstrong-terra-cotta-1898/Conkling%20Armstrong%20%20terra%20cotta%201898_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1898'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1898', '1898', '1896']
+    rights_verified_at: '2026-10-18'
+  - id: arc-nw-terra-cotta-1882-e2f95ac4
+    title: 'Architectural catalogue 1882: North Western Terra Cotta Works. (1882) [arc-nw-terra-cotta-1882-e2f95ac4]'
+    url: https://archive.org/download/nw-terra-cotta-1882/NW%20Terra%20Cotta%20%201882_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1882'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1882', '1882']
+    rights_verified_at: '2026-10-18'
+  - id: arc-union-iron-foundry-c-1890-2-0ccfef24
+    title: Union Iron & Foundry. (1890) [arc-union-iron-foundry-c-1890-2-0ccfef24]
+    url: https://archive.org/download/union-iron-foundry-c-1890-2/Union%20Iron%20Foundry%20c1890%202_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-18'
+  - id: arc-omaha-press-brick-co-1902-8732ed8d
+    title: Catalogue and price list of bricks. (1902) [arc-omaha-press-brick-co-1902-8732ed8d]
+    url: https://archive.org/download/omaha-press-brick-co-1902/Omaha%20Press%20Brick%20Co%201902_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1902', '1902']
+    rights_verified_at: '2026-10-18'
+  - id: arc-la-pressed-brick-1910-a-0887469f
+    title: '[Catalogue] Los Angeles Pressed Brick Company (1910) [arc-la-pressed-brick-1910-a-0887469f]'
+    url: https://archive.org/download/la-pressed-brick-1910-a/LA%20Pressed%20Brick%201910A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-architectural-terra-cotta-1931-a-af4bebb0
+    title: Architectural terra cotta. (1931) [arc-architectural-terra-cotta-1931-a-af4bebb0]
+    url: https://archive.org/download/architectural-terra-cotta-1931-a/Architectural%20terra%20cotta%201931A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931', '1931']
+    rights_verified_at: '2026-10-18'
+  - id: arc-anonyme-des-houilleres-1900-a-1f0beeec
+    title: Briques Schiste-calcaires. (1900) [arc-anonyme-des-houilleres-1900-a-1f0beeec]
+    url: https://archive.org/download/anonyme-des-houilleres-1900-a/Anonyme%20des%20Houilleres%201900A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-belden-brick-floors-1955-a-78fc1151
+    title: Belden acid-proof brick floors. (1955) [arc-belden-brick-floors-1955-a-78fc1151]
+    url: https://archive.org/download/belden-brick-floors-1955-a/Belden%20brick%20floors%201955A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-18'
+  - id: arc-coffeyville-brick-1910-a-d1546627
+    title: Brick mantel catalogue. (1910) [arc-coffeyville-brick-1910-a-d1546627]
+    url: https://archive.org/download/coffeyville-brick-1910-a/coffeyville%20brick%201910A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-conkling-armstrong-terra-cotta-1930-a-d8d2f7d7
+    title: '[Catalogue] Conkling-Armstrong Terra Cotta Co. (1930) [arc-conkling-armstrong-terra-cotta-1930-a-d8d2f7d7]'
+    url: https://archive.org/download/conkling-armstrong-terra-cotta-1930-a/Conkling%20ArmstrongTerra%20Cotta%201930A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-corning-terra-cotta-1930-a-0944d4c1
+    title: '[Catalogue] Corning Terra Cotta Co. (1930) [arc-corning-terra-cotta-1930-a-0944d4c1]'
+    url: https://archive.org/download/corning-terra-cotta-1930-a/Corning%20Terra%20Cotta%201930A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-crossley-sons-1937-a-aded84ba
+    title: '[Catalogue] Crossley & Sons Ltd. (1937) [arc-crossley-sons-1937-a-aded84ba]'
+    url: https://archive.org/download/crossley-sons-1937-a/Crossley%20%26%20Sons%201937A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937', '1937']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fiske-and-coleman-1881-a-82c0b950
+    title: '[Catalogue] Fiske & Coleman (1878) [arc-fiske-and-coleman-1881-a-82c0b950]'
+    url: https://archive.org/download/fiske-and-coleman-1881-a/Fiske%20and%20Coleman%201881A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1878'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1878', '1878']
+    rights_verified_at: '2026-10-18'
+  - id: arc-general-shale-1960-a-f15a6f6f
+    title: Fine facing brick. (1960) [arc-general-shale-1960-a-f15a6f6f]
+    url: https://archive.org/download/general-shale-1960-a/General%20Shale%201960A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-gladding-mc-bean-1923-a-7a426254
+    title: Gladding, McBean & Co. clay products. (1923) [arc-gladding-mc-bean-1923-a-7a426254]
+    url: https://archive.org/download/gladding-mc-bean-1923-a/Gladding%20McBean%201923A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1923', '1923']
+    rights_verified_at: '2026-10-18'
+  - id: arc-hanley-glazed-tile-1950-a-befb9290
+    title: Hanley glazed facing tile, glazed brick, face brick. (1950) [arc-hanley-glazed-tile-1950-a-befb9290]
+    url: https://archive.org/download/hanley-glazed-tile-1950-a/Hanley%20glazed%20tile%201950A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-midwest-brick-1931-a-87596f5c
+    title: Ristokrat. (1931) [arc-midwest-brick-1931-a-87596f5c]
+    url: https://archive.org/download/midwest-brick-1931-a/Midwest%20brick%201931A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931', '1931']
+    rights_verified_at: '2026-10-18'
+  - id: arc-montgomery-terra-cotta-1870-a-abb9a3de
+    title: Catalogue of terra cotta ware. (1870) [arc-montgomery-terra-cotta-1870-a-abb9a3de]
+    url: https://archive.org/download/montgomery-terra-cotta-1870-a/Montgomery%20terra%20cotta%201870A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1870'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1870', '1870']
+    rights_verified_at: '2026-10-18'
+  - id: arc-new-york-terra-cotta-1888-a-b93bd3e6
+    title: '[Catalogue]: New York Architectural Terra Cotta Co. (1888) [arc-new-york-terra-cotta-1888-a-b93bd3e6]'
+    url: https://archive.org/download/new-york-terra-cotta-1888-a/New%20York%20%20terra%20cotta%201888A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1888'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1888', '1888']
+    rights_verified_at: '2026-10-18'
+  - id: arc-perrusson-1900-a-a65359f3
+    title: Grand tuileries réunies. (1887) [arc-perrusson-1900-a-a65359f3]
+    url: https://archive.org/download/perrusson-1900-a/Perrusson%20%201900A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1887'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1887', '1887']
+    rights_verified_at: '2026-10-18'
+  - id: arc-portland-stone-ware-1888-a-a32ca5d9
+    title: Illustrated catalogue of the Portland Stone Ware Co. (1887) [arc-portland-stone-ware-1888-a-a32ca5d9]
+    url: https://archive.org/download/portland-stone-ware-1888-a/Portland%20stone%20ware%201888A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1887'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1887', '1887']
+    rights_verified_at: '2026-10-18'
+  - id: arc-portland-stone-ware-1895-a-642632a0
+    title: Illustrated catalogue of the Portland Stone Ware Co. (1888) [arc-portland-stone-ware-1895-a-642632a0]
+    url: https://archive.org/download/portland-stone-ware-1895-a/Portland%20stone%20ware%201895A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1888'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1888', '1888']
+    rights_verified_at: '2026-10-18'
+  - id: arc-russsell-engineering-1930-a-defe9de9
+    title: Arches and circles calculation formulae. (1930) [arc-russsell-engineering-1930-a-defe9de9]
+    url: https://archive.org/download/russsell-engineering-1930-a/Russsell%20Engineering%20%201930A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-stark-tile-1955-38fe57fc
+    title: Stark modular facing tile. (1955) [arc-stark-tile-1955-38fe57fc]
+    url: https://archive.org/download/stark-tile-1955/Stark%20tile%201955_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-18'
+  - id: arc-western-brick-1932-a-c60ad7d4
+    title: Recapturing the charm of old brick. (1932) [arc-western-brick-1932-a-c60ad7d4]
+    url: https://archive.org/download/western-brick-1932-a/Western%20brick%201932A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932', '1932']
+    rights_verified_at: '2026-10-18'
+  - id: arc-william-thomas-co-1891-a-c9d47134
+    title: William Thomas & Company, Ltd. patent steam-powered brick, tile, pottery
+      and terra cotta w (1888) [arc-william-thomas-co-1891-a-c9d47134]
+    url: https://archive.org/download/william-thomas-co-1891-a/William%20Thomas%20Co%201891%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1888'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1888', '1888']
+    rights_verified_at: '2026-10-18'
+  - id: arc-hytex-swimming-pools-1929-a-e3bae2c6
+    title: Details and notes on construction of Hy-tex standard swimming pools. (1929)
+      [arc-hytex-swimming-pools-1929-a-e3bae2c6]
+    url: https://archive.org/download/hytex-swimming-pools-1929-a/Hytex%20swimming%20pools%201929%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929', '1929']
+    rights_verified_at: '2026-10-18'
+  - id: arc-charles-of-london-1920s-a-86c08931
+    title: Charles of London ; specialists in early English interior decoration. (1913)
+      [arc-charles-of-london-1920s-a-86c08931]
+    url: https://archive.org/download/charles-of-london-1920s-a/Charles%20of%20London%201920s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1913', '1913']
+    rights_verified_at: '2026-10-18'
+  - id: arc-wedgewood-1912-a-c9edfdb4
+    title: Jasper placques. (1912) [arc-wedgewood-1912-a-c9edfdb4]
+    url: https://archive.org/download/wedgewood-1912-a/Wedgewood%201912%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1912', '1912']
+    rights_verified_at: '2026-10-18'
+  - id: arc-colorblende-roof-1918-a-173add4b
+    title: Colorblende roof of Johns-Manville asbestos shingles. (1918) [arc-colorblende-roof-1918-a-173add4b]
+    url: https://archive.org/download/colorblende-roof-1918-a/Colorblende%20roof%201918%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1918', '1918']
+    rights_verified_at: '2026-10-18'
+  - id: arc-guide-to-good-stucco-1918-a-5aa617e3
+    title: Guide to good stucco including a new method of toning stucco with color aggregates;
+      also c (1918) [arc-guide-to-good-stucco-1918-a-5aa617e3]
+    url: https://archive.org/download/guide-to-good-stucco-1918-a/Guide%20to%20good%20stucco%201918%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1918', '1918']
+    rights_verified_at: '2026-10-18'
+  - id: arc-building-a-bungalow-1918-a-36b17f64
+    title: Building a bungalow. (1918) [arc-building-a-bungalow-1918-a-36b17f64]
+    url: https://archive.org/download/building-a-bungalow-1918-a/Building%20a%20bungalow%201918%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1918', '1918']
+    rights_verified_at: '2026-10-18'
+  - id: arc-story-of-georgia-marble-1946-a-8dbd93d2
+    title: The story of Georgia marble. (1946) [arc-story-of-georgia-marble-1946-a-8dbd93d2]
+    url: https://archive.org/download/story-of-georgia-marble-1946-a/Story%20of%20Georgia%20Marble%201946%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1946', '1946']
+    rights_verified_at: '2026-10-18'
+  - id: arc-romance-georgia-marble-1927-7e072a63
+    title: The romance of Georgia marble. (1922) [arc-romance-georgia-marble-1927-7e072a63]
+    url: https://archive.org/download/romance-georgia-marble-1927/Romance%20Georgia%20Marble%201927_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1922', '1922']
+    rights_verified_at: '2026-10-18'
+  - id: arc-georgia-marble-examples-1920s-a-a4e7afdb
+    title: Examples of work in Georgia marble. (1920) [arc-georgia-marble-examples-1920s-a-a4e7afdb]
+    url: https://archive.org/download/georgia-marble-examples-1920s-a/Georgia%20Marble%20examples%201920s%20%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-cast-stone-specs-1930-a-f8e102eb
+    title: Complete architectural specification for cast stone. (1930) [arc-cast-stone-specs-1930-a-f8e102eb]
+    url: https://archive.org/download/cast-stone-specs-1930-a/Cast%20stone%20specs%201930%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930-04', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-indiana-limestone-homes-1927-a-9d8fcbb4
+    title: Portfolio of designs for moderate cost Indiana limestone homes. (1927) [arc-indiana-limestone-homes-1927-a-9d8fcbb4]
+    url: https://archive.org/download/indiana-limestone-homes-1927-a/Indiana%20Limestone%20Homes%201927%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1927', '1927']
+    rights_verified_at: '2026-10-18'
+  - id: arc-chase-architectural-bronze-1960s-a-75f19bca
+    title: Chase architectural shapes in bronze and nickel silver. (1960) [arc-chase-architectural-bronze-1960s-a-75f19bca]
+    url: https://archive.org/download/chase-architectural-bronze-1960s-a/Chase%20Architectural%20bronze%201960s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-elgin-metal-trim-1920s-a-cbbaaef5
+    title: Elgin nu-wa metal trim for interior and exterior fireproof construction.
+      (1920) [arc-elgin-metal-trim-1920s-a-cbbaaef5]
+    url: https://archive.org/download/elgin-metal-trim-1920s-a/Elgin%20metal%20trim%201920s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'', ''1920'']:
+      published in 1920, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-hammond-sheet-metal-1910s-a-60a1c01d
+    title: '[Catalog]: Hammond Sheet Metal Co. (1910) [arc-hammond-sheet-metal-1910s-a-60a1c01d]'
+    url: https://archive.org/download/hammond-sheet-metal-1910s-a/Hammond%20Sheet%20metal%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1910'', ''1910'']:
+      published in 1910, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-hammond-sheet-metal-ceilings-1910s-a-3be8d853
+    title: Modern metal ceiling designs. (1910) [arc-hammond-sheet-metal-ceilings-1910s-a-3be8d853]
+    url: https://archive.org/download/hammond-sheet-metal-ceilings-1910s-a/Hammond%20sheet%20metal%20ceilings%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
     rights_verified_at: '2026-10-18'

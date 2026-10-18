@@ -157548,3 +157548,59 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jclepro.2024.142746 openalex:W4399284043
     resolution: 'legacy: openalex location'
+  - id: oas-10-1016-j-gerr-2024-100113-34abeb5c
+    title: Potentials and effects of electricity cogeneration via ORC integration in
+      small-scale biomass district heating system
+    url: https://lnu.diva-portal.org/smash/get/diva2:1923752/FULLTEXT01
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-12-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.gerr.2024.100113
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lnu.diva-portal.org/smash/get/diva2:1923752/FULLTEXT01;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.gerr.2024.100113 openalex:W4405865356
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-2478-rtuect-2023-0001-4a2b1441
+    title: Comparison of Suitable Business Models for the 5 th Generation District Heating
+      System Implementation through Game Theory Approach
+    url: https://du.diva-portal.org/smash/get/diva2:1734247/FULLTEXT01
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.2478/rtuect-2023-0001
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://du.diva-portal.org/smash/get/diva2:1734247/FULLTEXT01;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.2478/rtuect-2023-0001 openalex:W4313693902
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-48550-arxiv-2010-04209-cc109e43
+    title: Towards the Detection of Building Occupancy with Synthetic Environmental
+      Data
+    url: https://arxiv.org/pdf/2010.04209
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-08'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2010.04209
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2010.04209;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2010.04209 openalex:W3092030295
+    resolution: 'sim1: openalex location'
