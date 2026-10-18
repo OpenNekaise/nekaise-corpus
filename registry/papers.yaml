@@ -157400,3 +157400,58 @@ sources:
       version and the copy this URL names): no licence element -> arxiv-nonexclusive
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-18'
+  - id: oas-10-1016-j-engstruct-2021-112352-d2f8eca6
+    title: Designing bending-active gridshells as falsework for concrete shells through
+      numerical optimization
+    url: https://lirias.kuleuven.be/retrieve/0ad835a5-8d2f-4d90-83e4-803f3c1e3e78
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-05-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2021.112352
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/0ad835a5-8d2f-4d90-83e4-803f3c1e3e78;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2021.112352 openalex:W3157978914
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-buildenv-2023-110619-b85d1bdc
+    title: Probabilistic hygrothermal assessment of various timber frame wall compositions
+    url: https://lirias.kuleuven.be/retrieve/be20c11b-f248-452e-b774-41b3ee9b4767
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2023.110619
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://lirias.kuleuven.be/retrieve/be20c11b-f248-452e-b774-41b3ee9b4767;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2023.110619 openalex:W4384432060
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-the-influence-of-line-tension-on-the-formation
+    title: The influence of line tension on the formation of liquid bridges
+    url: https://arxiv.org/pdf/1005.2311v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2010-05-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1005.2311
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1005.2311 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+    origin_ids: doi:10.1063/1.3469770
