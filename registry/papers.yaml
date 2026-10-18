@@ -158419,3 +158419,38 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-18'
+  - id: oas-10-1002-bapi-201800022-a9b8b79e
+    title: Revisiting the benefits of diversity representation in window operation models
+      for building performance simulation
+    url: https://discovery.ucl.ac.uk/10067992/1/Tahmasebi_BauSIM_Beitrag_1129.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: de
+    published_at: '2019-02-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/bapi.201800022
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10067992/1/Tahmasebi_BauSIM_Beitrag_1129.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/bapi.201800022 openalex:W2911284437
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-some-points-on-vervaat-s-transform-of-brownian
+    title: Some points on Vervaat's transform of Brownian bridges and Brownian motion
+    url: https://arxiv.org/pdf/1308.3759v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013-08-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1308.3759
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1308.3759 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
