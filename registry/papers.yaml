@@ -156522,23 +156522,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-17'
     origin_ids: doi:10.1177/1475921709352146
-  - id: oas-w389991997
-    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2007-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W389991997
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-17'
-    selected_version: submittedVersion
-    origin_ids: openalex:W389991997
-    resolution: 'sim1: openalex location; resolution retry'
   - id: ope-highly-integrated-breathable-metalized-phase-c
     title: 'Highly integrated, breathable, metalized phase change fibrous membranes
       based on hierarchical coaxial fiber structure for multimodal personal thermal '
@@ -157054,3 +157037,112 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-17'
+  - id: ope-performance-assessment-of-tariff-based-air-sou
+    title: Performance assessment of tariff-based air source heat pump load shifting
+      in a UK detached dwelling featuring phase change-enhanced buffering
+    url: https://strathprints.strath.ac.uk/46715/2/Kelly_NJ_et_al_Pure_Performance_assessment_of_tariff_based_air_source_heat_pump_load_shifting..._phase_change_enhanced_buffering_Dec_2013pdf.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-06-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.applthermaleng.2013.12.019
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/46715/2/Kelly_NJ_et_al_Pure_Performance_assessment_of_tariff_based_air_source_heat_pump_load_shifting..._phase_change_enhanced_buffering_Dec_2013pdf.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.applthermaleng.2013.12.019 openalex:W2073505656
+    resolution: 'legacy: openalex location'
+  - id: ope-developing-novel-approaches-to-tracking-domest
+    title: Developing Novel Approaches to Tracking Domestic Water Demand Under Uncertainty—A
+      Reflection on the “Up Scaling” of Social Science Approaches in the U
+    url: https://pure.manchester.ac.uk/ws/files/24242810/POST-PEER-REVIEW-NON-PUBLISHERS.PDF
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-08-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s11269-012-0117-y
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://pure.manchester.ac.uk/ws/files/24242810/POST-PEER-REVIEW-NON-PUBLISHERS.PDF;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s11269-012-0117-y openalex:W2147182341
+    resolution: 'legacy: openalex location'
+  - id: ope-optimal-operation-of-water-energy-microgrids-a
+    title: Optimal operation of water-energy microgrids; a mixed integer linear programming
+      formulation
+    url: https://scholarsphere.psu.edu/resources/5696ca24-e511-425c-ac21-01687e235757/downloads/13747
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2020.122776
+    license_evidence: no licence statement for this copy [copy https://scholarsphere.psu.edu/resources/5696ca24-e511-425c-ac21-01687e235757/downloads/13747;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2020.122776 openalex:W3043176901
+    resolution: 'legacy: openalex location'
+  - id: ope-life-cycle-assessment-of-energy-conservation-m
+    title: 'Life cycle assessment of energy conservation measures during early stage
+      office building design: A case study in London, UK'
+    url: https://discovery.ucl.ac.uk/1552588/1/Mavrogianni_MANUSCRIPT_FINAL.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-04'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2016.12.089
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/1552588/1/Mavrogianni_MANUSCRIPT_FINAL.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2016.12.089 openalex:W2571083291
+    resolution: 'legacy: openalex location'
+  - id: ope-global-climate-forcing-of-aerosols-embodied-in
+    title: Global climate forcing of aerosols embodied in international trade
+    url: https://ueaeprints.uea.ac.uk/id/eprint/60765/1/Accepted_manuscript.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-09-05'
+    document_type: article
+    persistent_id: https://doi.org/10.1038/ngeo2798
+    license_evidence: no licence statement for this copy [copy https://ueaeprints.uea.ac.uk/id/eprint/60765/1/Accepted_manuscript.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1038/ngeo2798 openalex:W2510226494
+    resolution: 'legacy: openalex location'
+  - id: ope-an-integrated-review-of-automation-and-robotic
+    title: An integrated review of automation and robotic technologies for structural
+      prefabrication and construction
+    url: https://researchmgt.monash.edu/ws/files/370433362/343522956_oa.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1093/tse/tdaa007
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://researchmgt.monash.edu/ws/files/370433362/343522956_oa.pdf; version
+      acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1093/tse/tdaa007 openalex:W3033648183
+    resolution: 'legacy: openalex location'
