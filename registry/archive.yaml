@@ -214452,19 +214452,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1889'']: published
       in 1889, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-lightingfixtures00ceph-62b10453
-    title: Lighting fixtures (1937) [arc-lightingfixtures00ceph-62b10453]
-    url: https://archive.org/download/lightingfixtures00ceph/lightingfixtures00ceph_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1937'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
-      states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-glassglazing00unse-86d8ce24
     title: Glass and glazing (1916) [arc-glassglazing00unse-86d8ce24]
     url: https://archive.org/download/glassglazing00unse/glassglazing00unse_djvu.txt
@@ -214761,6 +214748,629 @@ sources:
   - id: arc-blakesleekitchen00gsbl-5e9c0526
     title: Blakeslee Kitchen Machines (1950) [arc-blakesleekitchen00gsbl-5e9c0526]
     url: https://archive.org/download/blakesleekitchen00gsbl/blakesleekitchen00gsbl_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-tombstonesmonume00sear-e620960f
+    title: Tombstones and monuments (1910) [arc-tombstonesmonume00sear-e620960f]
+    url: https://archive.org/download/tombstonesmonume00sear/tombstonesmonume00sear_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-stewartfences00stew-0-0ab617fe
+    title: Stewart Fences (1950) [arc-stewartfences00stew-0-0ab617fe]
+    url: https://archive.org/download/stewartfences00stew_0/stewartfences00stew_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-pcglassblocks00pitt-357f96c4
+    title: PC Glass Blocks (1958) [arc-pcglassblocks00pitt-357f96c4]
+    url: https://archive.org/download/pcglassblocks00pitt/pcglassblocks00pitt_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1958'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-manshomeishiscas00anth-8456fcde
+    title: A man's home is his castle (1936) [arc-manshomeishiscas00anth-8456fcde]
+    url: https://archive.org/download/manshomeishiscas00anth/manshomeishiscas00anth_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-youaskedforitpra00nati-1bd9be5b
+    title: 'You asked for it : practical down-to-earth training in heating salesmanship
+      (1945) [arc-youaskedforitpra00nati-1bd9be5b]'
+    url: https://archive.org/download/youaskedforitpra00nati/youaskedforitpra00nati_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1945'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1945'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-locksbuildershar00norw-0-da10fcdb
+    title: Locks and builders' hardware (1950) [arc-locksbuildershar00norw-0-da10fcdb]
+    url: https://archive.org/download/locksbuildershar00norw_0/locksbuildershar00norw_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-howtoselectright00cran-f0024232
+    title: How to select the right heating system for your home (1947) [arc-howtoselectright00cran-f0024232]
+    url: https://archive.org/download/howtoselectright00cran/howtoselectright00cran_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1947'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-airconditioninga00carr-21705de4
+    title: Air Conditioning and Automatic Heating for the Home (1936) [arc-airconditioninga00carr-21705de4]
+    url: https://archive.org/download/airconditioninga00carr/airconditioninga00carr_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-glassbymississip00miss-0-23581d06
+    title: 'Glass by Mississippi : polished wire glass, polished figured wire glass,
+      plain figured wir (1930) [arc-glassbymississip00miss-0-23581d06]'
+    url: https://archive.org/download/glassbymississip00miss_0/glassbymississip00miss_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-yourmodernkitche00jbmo-7a15ba08
+    title: 'Your modern kitchen : sectional wood cabinets produced by master craftsmen
+      (1952) [arc-yourmodernkitche00jbmo-7a15ba08]'
+    url: https://archive.org/download/yourmodernkitche00jbmo/yourmodernkitche00jbmo_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1952'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-threegallcopperl00grub-db10cf0a
+    title: '"Three G" all copper lanterns : portfolio no. 31 (1931) [arc-threegallcopperl00grub-db10cf0a]'
+    url: https://archive.org/download/threegallcopperl00grub/threegallcopperl00grub_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1931'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-usairconditionin00unit-a6e2d479
+    title: 'US air-conditioning : registers and vent faces (1936) [arc-usairconditionin00unit-a6e2d479]'
+    url: https://archive.org/download/usairconditionin00unit/usairconditionin00unit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-summerhomeslodge00nati-7d0ff3e1
+    title: Summer homes and lodges (1941) [arc-summerhomeslodge00nati-7d0ff3e1]
+    url: https://archive.org/download/summerhomeslodge00nati/summerhomeslodge00nati_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1941'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-peerlessgasheate00peer-4863a9e5
+    title: 'Peerless gas heaters and circulators : for use with natural or artificial
+      gas (1937) [arc-peerlessgasheate00peer-4863a9e5]'
+    url: https://archive.org/download/peerlessgasheate00peer/peerlessgasheate00peer_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-frantzguaranteed00fran-c9367ebd
+    title: Frantz guaranteed builders hardware (1937) [arc-frantzguaranteed00fran-c9367ebd]
+    url: https://archive.org/download/frantzguaranteed00fran/frantzguaranteed00fran_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-buttjointglazing00libb-5fffd4d7
+    title: Butt-Joint Glazing (1960) [arc-buttjointglazing00libb-5fffd4d7]
+    url: https://archive.org/download/buttjointglazing00libb/buttjointglazing00libb_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1960'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-steelbucksfordry00stee-0e6aaad0
+    title: Steel bucks for drywall partitions (1950) [arc-steelbucksfordry00stee-0e6aaad0]
+    url: https://archive.org/download/steelbucksfordry00stee/steelbucksfordry00stee_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-hotwaterautomati00moto-d04ec21d
+    title: 'Hot water automatically - economically : the beautiful new Duo-Therm fuel
+      oil water heater (1946) [arc-hotwaterautomati00moto-d04ec21d]'
+    url: https://archive.org/download/hotwaterautomati00moto/hotwaterautomati00moto_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1946'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-corningsteubenar00corn-6333e62e
+    title: Corning-Steuben architectural glass [arc-corningsteubenar00corn-6333e62e]
+    url: https://archive.org/download/corningsteubenar00corn/corningsteubenar00corn_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata without a date: the item states
+      no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-popularhomesidea00unit-6e32a5b7
+    title: 'Popular home''s ideas galore : how to build, buy, modernize and decorate
+      (1946) [arc-popularhomesidea00unit-6e32a5b7]'
+    url: https://archive.org/download/popularhomesidea00unit/popularhomesidea00unit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1946'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-keelertypecpstea00ekee-3adf3a61
+    title: Keeler type "CP" steam generator (1948) [arc-keelertypecpstea00ekee-3adf3a61]
+    url: https://archive.org/download/keelertypecpstea00ekee/keelertypecpstea00ekee_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1948'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1948'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-heatingwithunith00modi-5b8148af
+    title: Heating with unit heaters (1937) [arc-heatingwithunith00modi-5b8148af]
+    url: https://archive.org/download/heatingwithunith00modi/heatingwithunith00modi_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-pcglassblocks00pitt-0-28a4b1be
+    title: PC glass blocks (1957) [arc-pcglassblocks00pitt-0-28a4b1be]
+    url: https://archive.org/download/pcglassblocks00pitt_0/pcglassblocks00pitt_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1957'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1957'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-glassbymississip00miss-19679f50
+    title: 'Glass by Mississippi : polished wire glass, polished figured wire glass,
+      polished figured  (1929) [arc-glassbymississip00miss-19679f50]'
+    url: https://archive.org/download/glassbymississip00miss/glassbymississip00miss_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1929'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-glassblockspract00pitt-93b33480
+    title: 'Glass blocks : a practical, money-saving material for industry construction
+      (1946) [arc-glassblockspract00pitt-93b33480]'
+    url: https://archive.org/download/glassblockspract00pitt/glassblockspract00pitt_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1946'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-ornamentalironzi00jwfi-974b69a2
+    title: Ornamental iron and zinc fountains (1936) [arc-ornamentalironzi00jwfi-974b69a2]
+    url: https://archive.org/download/ornamentalironzi00jwfi/ornamentalironzi00jwfi_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-modernlightingfi00glob-f62b7b7f
+    title: 'Modern lighting fixtures : substitute for the sun (1937) [arc-modernlightingfi00glob-f62b7b7f]'
+    url: https://archive.org/download/modernlightingfi00glob/modernlightingfi00glob_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-modernanthracite00anth-c79d92f8
+    title: 'Modern anthracite equipment : newest developments in automatic heat and
+      air conditioning (1937) [arc-modernanthracite00anth-c79d92f8]'
+    url: https://archive.org/download/modernanthracite00anth/modernanthracite00anth_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-catalogueb00gill-77009a5d
+    title: Catalogue "B" (1920) [arc-catalogueb00gill-77009a5d]
+    url: https://archive.org/download/catalogueb00gill/catalogueb00gill_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-nationalhotelcaf00exce-6034a32a
+    title: National hotel and cafe ranges (1946) [arc-nationalhotelcaf00exce-6034a32a]
+    url: https://archive.org/download/nationalhotelcaf00exce/nationalhotelcaf00exce_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1946'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-floorbeautythats00wood-1b0bc65b
+    title: Floor beauty that sells on sight (1950) [arc-floorbeautythats00wood-1b0bc65b]
+    url: https://archive.org/download/floorbeautythats00wood/floorbeautythats00wood_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-gaselectriccombi00albe-603f4cdf
+    title: 'Gas, electric and combination fixtures : catalogue no. 12 (1910) [arc-gaselectriccombi00albe-603f4cdf]'
+    url: https://archive.org/download/gaselectriccombi00albe/gaselectriccombi00albe_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-cataloguetbronze00gorh-d76d0cdb
+    title: 'Catalogue T : bronze tablets, directory boards and letters ... executed
+      by the Gorham Co., (1918) [arc-cataloguetbronze00gorh-d76d0cdb]'
+    url: https://archive.org/download/cataloguetbronze00gorh/cataloguetbronze00gorh_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1918'']: published
+      in 1918, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-pcglassblocksmod00pitt-22c8e680
+    title: 'PC glass blocks, a modular product : the mark of a modern building (1947)
+      [arc-pcglassblocksmod00pitt-22c8e680]'
+    url: https://archive.org/download/pcglassblocksmod00pitt/pcglassblocksmod00pitt_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1947'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-memorialstodayfo00deac-c377529e
+    title: Memorials to-day for to-morrow (1928) [arc-memorialstodayfo00deac-c377529e]
+    url: https://archive.org/download/memorialstodayfo00deac/memorialstodayfo00deac_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-niagaragravitywi00fore-798a9ec0
+    title: 'Niagara : gravity and winter air conditioning heating units (1947) [arc-niagaragravitywi00fore-798a9ec0]'
+    url: https://archive.org/download/niagaragravitywi00fore/niagaragravitywi00fore_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1947'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-decoratorssupply00deco-b9a65962
+    title: 'Decorators Supply Company : [catalog] (1910) [arc-decoratorssupply00deco-b9a65962]'
+    url: https://archive.org/download/decoratorssupply00deco/decoratorssupply00deco_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-elevatorentrance00artm-786abed4
+    title: Elevator entrances (1946) [arc-elevatorentrance00artm-786abed4]
+    url: https://archive.org/download/elevatorentrance00artm/elevatorentrance00artm_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1946'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-pickscataloge5400albe-b7d506bd
+    title: Pick's catalog E-54 (1949) [arc-pickscataloge5400albe-b7d506bd]
+    url: https://archive.org/download/pickscataloge5400albe/pickscataloge5400albe_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1949'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-distinctiveeleva00rich-afc16e1f
+    title: Distinctive Elevator Door Hardware (1928) [arc-distinctiveeleva00rich-afc16e1f]
+    url: https://archive.org/download/distinctiveeleva00rich/distinctiveeleva00rich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-steelroofingsidi00penn-c70c180b
+    title: Steel roofing and siding, charcoal sheet iron roofing and siding (1890) [arc-steelroofingsidi00penn-c70c180b]
+    url: https://archive.org/download/steelroofingsidi00penn/steelroofingsidi00penn_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1890'']: published
+      in 1890, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-jeannettecommerc00jean-1-6d3e6c07
+    title: 'Jeannette commercial and residential lighting : catalog 35 (1937) [arc-jeannettecommerc00jean-1-6d3e6c07]'
+    url: https://archive.org/download/jeannettecommerc00jean_1/jeannettecommerc00jean_1_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-3waystoroof00bilc-423e7531
+    title: 3 Ways to the Roof (1960) [arc-3waystoroof00bilc-423e7531]
+    url: https://archive.org/download/3waystoroof00bilc/3waystoroof00bilc_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1960'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-verresimprimesve00manu-850b230e
+    title: Verres imprimés, verres armés, verres de toitures (1933) [arc-verresimprimesve00manu-850b230e]
+    url: https://archive.org/download/verresimprimesve00manu/verresimprimesve00manu_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1933'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1933'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-residentiallight00kopp-87df047c
+    title: 'Residential lighting glassware for shaded lights : catalog no. 32 (1927)
+      [arc-residentiallight00kopp-87df047c]'
+    url: https://archive.org/download/residentiallight00kopp/residentiallight00kopp_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1927'']: published
+      in 1927, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-richardswilcoxid00rich-bf9ff12d
+    title: Richards-Wilcox ideal elevator door equipment and checking devices (1920)
+      [arc-richardswilcoxid00rich-bf9ff12d]
+    url: https://archive.org/download/richardswilcoxid00rich/richardswilcoxid00rich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-rivnailfornailin00espr-fb39a8bb
+    title: Riv-nail for nailing insulation to metal decks (1950) [arc-rivnailfornailin00espr-fb39a8bb]
+    url: https://archive.org/download/rivnailfornailin00espr/rivnailfornailin00espr_djvu.txt
     source: internet_archive
     license: unverified
     topic: materials
