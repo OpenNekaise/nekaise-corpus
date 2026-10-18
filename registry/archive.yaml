@@ -217502,20 +217502,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1930', '1930', 'c. 1930']
     rights_verified_at: '2026-10-18'
-  - id: arc-rust-sash-door-co-1944-bec0a6ec
-    title: '[Catalogue] Rust millwork price guide. (1944) [arc-rust-sash-door-co-1944-bec0a6ec]'
-    url: https://archive.org/download/rust-sash-door-co.-1944/Rust%20Sash%20%26%20Door%20Co.%201944_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1944'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1944', '1944']
-    rights_verified_at: '2026-10-18'
   - id: arc-s-c-johnson-son-1942-1f0c862a
     title: Johnson's wax-fortified paints. (1942) [arc-s-c-johnson-son-1942-1f0c862a]
     url: https://archive.org/download/s.-c.-johnson-son-1942/S.%20C.%20Johnson%20%26%20Son%201942_djvu.txt
@@ -217600,4 +217586,595 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-sherwin-williams-1940s-d11f74b6
+    title: 'Sherwin-Williams Save-Lite : facts about white paint and better illumination.
+      (1940) [arc-sherwin-williams-1940s-d11f74b6]'
+    url: https://archive.org/download/sherwin-williams-1940s/Sherwin-Williams%201940s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-sherwin-williams-1950s-73e6abb8
+    title: 'Sherwin-Williams Enameloid : the decorative enamel for interior surfaces
+      and porch furnitu (1950) [arc-sherwin-williams-1950s-73e6abb8]'
+    url: https://archive.org/download/sherwin-williams-1950s/Sherwin-Williams%201950s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-st-louis-woodwork-co-1920s-acb92378
+    title: '[Catalogue] Premier built-in conveniences. (1920) [arc-st-louis-woodwork-co-1920s-acb92378]'
+    url: https://archive.org/download/st.-louis-woodwork-co.-1920s/St.%20Louis%20Woodwork%20Co.%201920s_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'', ''1920'',
+      ''c. 1920'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-18'
+  - id: arc-steelcote-manufacturing-co-1950-54d0130e
+    title: Steelcote rubber enamel still leads the parade. (1950) [arc-steelcote-manufacturing-co-1950-54d0130e]
+    url: https://archive.org/download/steelcote-manufacturing-co.-1950/Steelcote%20Manufacturing%20Co.%201950_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-rolscreen-company-pella-1950s-ac04dc40
+    title: '[Catalogue] Pella products : rolscreens, venetian blinds, casements. (1950)
+      [arc-the-rolscreen-company-pella-1950s-ac04dc40]'
+    url: https://archive.org/download/the-rolscreen-company-pella-1950s/The%20Rolscreen%20Company%20Pella%201950s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950', 'c. 1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-todhunter-1930-4b4bccf8
+    title: A pine paneled room from the inns of court. (1930) [arc-todhunter-1930-4b4bccf8]
+    url: https://archive.org/download/todhunter-1930/Todhunter%201930_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930', 'c. 1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-tropical-paint-oil-co-1940s-79967089
+    title: Tropical Velvet Sheen rubber base wall paint for interior walls and ceilings.
+      (1940) [arc-tropical-paint-oil-co-1940s-79967089]
+    url: https://archive.org/download/tropical-paint-oil-co.-1940s/Tropical%20Paint%20%26%20Oil%20Co.%201940s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-tropical-paint-and-oil-co-1946-c739f9ef
+    title: Colorful durable enamel reinforced with Bakelite. (1946) [arc-tropical-paint-and-oil-co-1946-c739f9ef]
+    url: https://archive.org/download/tropical-paint-and-oil-co.-1946/Tropical%20Paint%20and%20Oil%20Co.%201946_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1946', '1946']
+    rights_verified_at: '2026-10-18'
+  - id: arc-trussbilt-steel-doors-1912-0217bfc6
+    title: Trussbilt flush doors. (1912) [arc-trussbilt-steel-doors-1912-0217bfc6]
+    url: https://archive.org/download/trussbilt-steel-doors-1912/Trussbilt%20Steel%20Doors%201912_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1912', '1912']
+    rights_verified_at: '2026-10-18'
+  - id: arc-weber-brothers-manufacturing-co-1920s-8df736ff
+    title: '[Catalogue] Weber Brothers Manufacturing Co. : manufacturers of wood carving
+      and turning,  (1920) [arc-weber-brothers-manufacturing-co-1920s-8df736ff]'
+    url: https://archive.org/download/weber-brothers-manufacturing-co.-1920s/Weber%20Brothers%20Manufacturing%20Co.%201920s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920', 'c. 1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-wilson-venetian-blinds-1915-97996e80
+    title: Wilson venetian blinds & awnings. (1915) [arc-wilson-venetian-blinds-1915-97996e80]
+    url: https://archive.org/download/wilson-venetian-blinds-1915/Wilson%20Venetian%20Blinds%201915_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1915', '1915']
+    rights_verified_at: '2026-10-18'
+  - id: arc-woolliscroft39746-17fbefba
+    title: '[Catalogue] / George Woolliscroft & Son (1905) [arc-woolliscroft39746-17fbefba]'
+    url: https://archive.org/download/Woolliscroft39746/Recno39746_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc/4.0/']
+      date/year ['1893-1905', '1893', '1905']
+    rights_verified_at: '2026-10-18'
+  - id: arc-wragge42476-9406b6b1
+    title: 'George Wragge, Wardry Metal Works, Salford, Manchester : metal casements
+      and frames, wroug (1898) [arc-wragge42476-9406b6b1]'
+    url: https://archive.org/download/Wragge42476/Recno42476_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1898'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1898', '1898']
+    rights_verified_at: '2026-10-18'
+  - id: arc-thompsongiles42661-f090cd7b
+    title: Autumn fashions / Thompson & Giles (1888) [arc-thompsongiles42661-f090cd7b]
+    url: https://archive.org/download/ThompsonGiles42661/Recno42661_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1888'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc/4.0/']
+      date/year ['1888', '1888']
+    rights_verified_at: '2026-10-18'
+  - id: arc-mcmillan30142-94b42bf9
+    title: 'Illustrated catalogue : March 1907 / McMillan & Co. (1907) [arc-mcmillan30142-94b42bf9]'
+    url: https://archive.org/download/McMillan30142/Recno30142_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907', '1907']
+    rights_verified_at: '2026-10-18'
+  - id: arc-bebarfalds33646-874d8491
+    title: Furnishing suggestions / Bebarfalds Ltd. (1920) [arc-bebarfalds33646-874d8491]
+    url: https://archive.org/download/Bebarfalds33646/Recno33646_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc/4.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-crane48884-15c65bb1
+    title: The Crane art metal manufactures. General catalogue, No. 22. (1912) [arc-crane48884-15c65bb1]
+    url: https://archive.org/download/Crane48884/Recno48884_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc/4.0/']
+      date/year ['1912', '1912']
+    rights_verified_at: '2026-10-18'
+  - id: arc-watsoncrane42072-a4e8b2bf
+    title: 'Catalogue of up-to-date gas pendants and brackets, incandescent burners,
+      &c : catalogue no (1907) [arc-watsoncrane42072-a4e8b2bf]'
+    url: https://archive.org/download/WatsonCrane42072/Recno42072_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907', '1907']
+    rights_verified_at: '2026-10-18'
+  - id: arc-eagle12747-6066c8ce
+    title: The Eagle fire grate / Eagle Range & Foundry Company (1886) [arc-eagle12747-6066c8ce]
+    url: https://archive.org/download/Eagle12747/Recno12747_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1886'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['c1886', '1886', '1880']
+    rights_verified_at: '2026-10-18'
+  - id: arc-coalbrookdale14252-fbd3fd09
+    title: Coalbrook-Dale castings and iron work (1886) [arc-coalbrookdale14252-fbd3fd09]
+    url: https://archive.org/download/CoalbrookDale14252/Recno14252_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1886'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1886', '1886']
+    rights_verified_at: '2026-10-18'
+  - id: arc-midland57505-57693503
+    title: A few suggestions of furniture and furnishing at the Midland Salons / Midland
+      Furnishing C (1917) [arc-midland57505-57693503]
+    url: https://archive.org/download/Midland57505/Recno57505_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1917'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910', '1917']
+    rights_verified_at: '2026-10-18'
+  - id: arc-lassetter4133-4e2a1c43
+    title: Furniture catalogue (1905) [arc-lassetter4133-4e2a1c43]
+    url: https://archive.org/download/Lassetter4133/Recno4133_redone_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900', '1905']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ramsay4915-0e51a76a
+    title: 'Ramsay''s architectural and engineering catalogue : a compendium and filing
+      system of catal (1932) [arc-ramsay4915-0e51a76a]'
+    url: https://archive.org/download/Ramsay4915/Recno4915_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932', '1932']
+    rights_verified_at: '2026-10-18'
+  - id: arc-light5211-3392435f
+    title: 'Cabinet furniture : designs and catalogue of cabinet & upholstery furniture,
+      looking glass (1880) [arc-light5211-3392435f]'
+    url: https://archive.org/download/Light5211/Recno5211_redone_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1880'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1880', '1880']
+    rights_verified_at: '2026-10-18'
+  - id: arc-bebarfald5745-fc17a95c
+    title: Where and how to furnish / B. Bebarfald & Co Ltd. (1905) [arc-bebarfald5745-fc17a95c]
+    url: https://archive.org/download/Bebarfald5745/Recno5745_redone_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1905', '1905', '1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-whiteley6176-e298c6ee
+    title: William Whiteley's illustrated catalogue & price list comprising every article
+      necessary f (1885) [arc-whiteley6176-e298c6ee]
+    url: https://archive.org/download/Whiteley6176/Recno6176_redone_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1885'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1880', '1885']
+    rights_verified_at: '2026-10-18'
+  - id: arc-boulton6980-d0ee0d92
+    title: Boulton & Paul, manufacturers, Rose Lane Works, Norwich. No. 88 April 1896
+      (1896) [arc-boulton6980-d0ee0d92]
+    url: https://archive.org/download/Boulton6980/Recno6980_redone_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1896'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1896', '1896']
+    rights_verified_at: '2026-10-18'
+  - id: arc-main11417-bb6c4d13
+    title: 'Illustrated catalogue no. 141 : patent continuous iron fencing, strained
+      wire fencing, rai (1898) [arc-main11417-bb6c4d13]'
+    url: https://archive.org/download/Main11417/Recno11417_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1898'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1898', '1898']
+    rights_verified_at: '2026-10-18'
+  - id: arc-piercy11419-4c03f31e
+    title: '[Trade catalogue] : Piercy Brick & Tile Works, West Bromwich, Staffordshire
+      / Joseph Hamblet [arc-piercy11419-4c03f31e]'
+    url: https://archive.org/download/Piercy11419/Recno11419_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-18'
+  - id: arc-auxiliary14027-a7f49159
+    title: Complete furnishing catalogue / Army & Navy Auxiliary Cooperative Supply
+      Ltd. (1890) [arc-auxiliary14027-a7f49159]
+    url: https://archive.org/download/Auxiliary14027/Recno14027_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-18'
+  - id: arc-croggon14027-0a581995
+    title: 'Croggon & Co. Limited : manufacturers, builders of galvanized and corrugated
+      iron churches (1895) [arc-croggon14027-0a581995]'
+    url: https://archive.org/download/Croggon14027/Recno14744_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895', '1895']
+    rights_verified_at: '2026-10-18'
+  - id: arc-hordern15027-d8c06878
+    title: Anthony Hordern & Sons Ltd. general catalogue (1914) [arc-hordern15027-d8c06878]
+    url: https://archive.org/download/Hordern15027/Recno15027_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1914'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1914', '1914']
+    rights_verified_at: '2026-10-18'
+  - id: arc-douglas-fir-plywood-association-1960s-19f5d238
+    title: 'Handy plans : child''s table & stools. (1960) [arc-douglas-fir-plywood-association-1960s-19f5d238]'
+    url: https://archive.org/download/douglas-fir-plywood-association-1960s/Douglas%20Fir%20Plywood%20Association%201960s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960', 'c. 1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-douglas-fir-plywood-association-1960s-2-e81d2892
+    title: 'Handy plans : storage divider. (1960) [arc-douglas-fir-plywood-association-1960s-2-e81d2892]'
+    url: https://archive.org/download/douglas-fir-plywood-association-1960s-2/Douglas%20Fir%20Plywood%20Association%201960s%202_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960', 'c. 1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-douglas-fir-plywood-association-1960s-4-42dfe666
+    title: 'Handy plans : room divider - with storage. (1960) [arc-douglas-fir-plywood-association-1960s-4-42dfe666]'
+    url: https://archive.org/download/douglas-fir-plywood-association-1960s-4/Douglas%20Fir%20Plywood%20Association%201960s%204_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960', 'c. 1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-douglas-fir-plywood-association-1960s-3-4989f2c0
+    title: 'Handy plans : buffet storage chest. (1960) [arc-douglas-fir-plywood-association-1960s-3-4989f2c0]'
+    url: https://archive.org/download/douglas-fir-plywood-association-1960s-3/Douglas%20Fir%20Plywood%20Association%201960s%203_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960', 'c. 1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-l-sonneborn-sons-inc-1949-3c1986a0
+    title: Sonneborn building construction and maintenance handbook. (1949) [arc-l-sonneborn-sons-inc-1949-3c1986a0]
+    url: https://archive.org/download/l.-sonneborn-sons-inc.-1949/L.%20Sonneborn%20Sons%2C%20Inc.%201949_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
+    rights_verified_at: '2026-10-18'
+  - id: arc-monsanto-chemical-co-1948-b9bd80f6
+    title: 'Pentachlorophenol : fence posts won''t last unless you "make them last"
+      with... "penta" pro (1948) [arc-monsanto-chemical-co-1948-b9bd80f6]'
+    url: https://archive.org/download/monsanto-chemical-co.-1948/Monsanto%20Chemical%20Co.%201948_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1948'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1948', '1948']
+    rights_verified_at: '2026-10-18'
+  - id: arc-monsanto-chemical-co-1949-27bc7677
+    title: Monsanto Santophen 20 pentachlorophenol for preserving wood in industrial
+      construction. (1949) [arc-monsanto-chemical-co-1949-27bc7677]
+    url: https://archive.org/download/monsanto-chemical-co.-1949/Monsanto%20Chemical%20Co.%201949_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
+    rights_verified_at: '2026-10-18'
+  - id: arc-monsanto-chemical-co-1949-2-b5c917ff
+    title: 'Preserve your posts with penta : by C. S. Walters. (1949) [arc-monsanto-chemical-co-1949-2-b5c917ff]'
+    url: https://archive.org/download/monsanto-chemical-co.-1949-2/Monsanto%20Chemical%20Co.%201949%202_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
+    rights_verified_at: '2026-10-18'
+  - id: arc-monsanto-chemical-co-1949-3-24a624e7
+    title: 'Pentachlorophenol ...the best protection for poles and cross arms : Monsanto''s
+      Santophen 2 (1949) [arc-monsanto-chemical-co-1949-3-24a624e7]'
+    url: https://archive.org/download/monsanto-chemical-co.-1949-3/Monsanto%20Chemical%20Co.%201949%203_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
     rights_verified_at: '2026-10-18'
