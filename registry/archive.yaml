@@ -214891,19 +214891,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1952'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-threegallcopperl00grub-db10cf0a
-    title: '"Three G" all copper lanterns : portfolio no. 31 (1931) [arc-threegallcopperl00grub-db10cf0a]'
-    url: https://archive.org/download/threegallcopperl00grub/threegallcopperl00grub_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1931'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1931'']: the item
-      states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-usairconditionin00unit-a6e2d479
     title: 'US air-conditioning : registers and vent faces (1936) [arc-usairconditionin00unit-a6e2d479]'
     url: https://archive.org/download/usairconditionin00unit/usairconditionin00unit_djvu.txt
@@ -215495,21 +215482,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc/4.0/
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc/4.0/']
       date/year ['c1893', '1893']
-    rights_verified_at: '2026-10-18'
-  - id: arc-goodlet45004-ccf148e3
-    title: 'Goodlet & Smith''s price list of building materials, for March, 1884 : issued
-      monthly / Goo (1898) [arc-goodlet45004-ccf148e3]'
-    url: https://archive.org/download/Goodlet45004/Recno45004_djvu.txt
-    source: internet_archive
-    license: cc-by-nc
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1898'
-    document_type: trade-literature
-    license_url: https://creativecommons.org/licenses/by-nc/4.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc/4.0/']
-      date/year ['1884', '1884', '1898']
     rights_verified_at: '2026-10-18'
   - id: arc-hordern56439-fa3a15cf
     title: 'Garden goods : Anthony Horderns'' catalogue / Anthony Hordern & Sons, Ltd.
@@ -216108,4 +216080,780 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1961', '1961']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-closet-doors-1961-a-6fcab08b
+    title: Truscon steel folding closet doors. (1961) [arc-truscon-closet-doors-1961-a-6fcab08b]
+    url: https://archive.org/download/truscon-closet-doors-1961-a/Truscon%20closet%20doors%201961%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1961'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1961', '1961']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-doors-and-window-price-list-1938-a-efcd5cd0
+    title: Truscon dealer price list ; steel window and steel door commodities. (1938)
+      [arc-truscon-doors-and-window-price-list-1938-a-efcd5cd0]
+    url: https://archive.org/download/truscon-doors-and-window-price-list-1938-a/Truscon%20doors%20and%20window%20price%20list%201938%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938', '1938']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-doors-and-window-price-list-1937-a-8e315f22
+    title: Truscon steel window and door commodities price list. (1937) [arc-truscon-doors-and-window-price-list-1937-a-8e315f22]
+    url: https://archive.org/download/truscon-doors-and-window-price-list-1937-a/Truscon%20doors%20and%20window%20price%20list%201937%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937', '1937']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-steel-windows-1934-a-57e7fd90
+    title: Truscon steel windows ; commercial projected the. (1934) [arc-truscon-steel-windows-1934-a-57e7fd90]
+    url: https://archive.org/download/truscon-steel-windows-1934-a/Truscon%20steel%20windows%201934%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1934', '1934']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-residential-windows-1940s-a-e06b5951
+    title: Truscon residential steel windows; double-hung and casement types. (1940)
+      [arc-truscon-residential-windows-1940s-a-e06b5951]
+    url: https://archive.org/download/truscon-residential-windows-1940s-a/Truscon%20residential%20windows%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-bonderized-windows-1947-a-9375ed1e
+    title: Truscon steel windows ; bonderized resists rust. (1947) [arc-truscon-bonderized-windows-1947-a-9375ed1e]
+    url: https://archive.org/download/truscon-bonderized-windows-1947-a/Truscon%20bonderized%20windows%201947%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-steel-products-1949-a-2696145c
+    title: Truscon steel building products carried in warehouse stocks. (1947) [arc-truscon-steel-products-1949-a-2696145c]
+    url: https://archive.org/download/truscon-steel-products-1949-a/Truscon%20steel%20products%201949%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-dura-war-windows-1942-a-cc5e1995
+    title: Dura-war windows ; the wood window with a steel background. (1942) [arc-truscon-dura-war-windows-1942-a-cc5e1995]
+    url: https://archive.org/download/truscon-dura-war-windows-1942-a/Truscon%20dura-war%20windows%201942%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1942'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1942', '1942']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-pivot-steel-windows-1930-a-6b9a886d
+    title: Truscon pivoted steel windows. (1930) [arc-truscon-pivot-steel-windows-1930-a-6b9a886d]
+    url: https://archive.org/download/truscon-pivot-steel-windows-1930-a/Truscon%20pivot%20steel%20windows%201930%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-mechical-operators-1924-a-acfcc529
+    title: Truscon mechanical operators. (1924) [arc-truscon-mechical-operators-1924-a-acfcc529]
+    url: https://archive.org/download/truscon-mechical-operators-1924-a/Truscon%20mechical%20operators%201924%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924', '1924']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-mechical-operators-1924-a-202206-9896dda1
+    title: Daylighting & ventilating power houses with Truscon steel windows and mechanical
+      operators (1925) [arc-truscon-mechical-operators-1924-a-202206-9896dda1]
+    url: https://archive.org/download/truscon-mechical-operators-1924-a_202206/Truscon%20mechical%20operators%201924%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1925', '1925']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-steel-windows-and-doors-1952-a-93619282
+    title: Truscon steel windows and doors. (1952) [arc-truscon-steel-windows-and-doors-1952-a-93619282]
+    url: https://archive.org/download/truscon-steel-windows-and-doors-1952-a/Truscon%20steel%20windows%20and%20doors%201952%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1952', '1952']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-steel-products-1941-a-5438abb9
+    title: Truscon steel building products. (1941) [arc-truscon-steel-products-1941-a-5438abb9]
+    url: https://archive.org/download/truscon-steel-products-1941-a/Truscon%20steel%20products%201941%20A2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941', '1941']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-steel-products-1958-a-0102517b
+    title: Truscon metal windows and doors. (1958) [arc-truscon-steel-products-1958-a-0102517b]
+    url: https://archive.org/download/truscon-steel-products-1958-a/Truscon%20steel%20products%201958%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1958', '1958']
+    rights_verified_at: '2026-10-18'
+  - id: arc-truscon-industrial-steel-doors-and-frames-1-434fe6e2
+    title: Truscon industrial steel does and frames. (1962) [arc-truscon-industrial-steel-doors-and-frames-1-434fe6e2]
+    url: https://archive.org/download/truscon-industrial-steel-doors-and-frames-1962-a/Truscon%20industrial%20steel%20doors%20and%20frames%201962%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1962'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1962', '1962']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-architectural-competition-1930s-a-59c230cd
+    title: Fenestra architectural competition. (1930) [arc-fenestra-architectural-competition-1930s-a-59c230cd]
+    url: https://archive.org/download/fenestra-architectural-competition-1930s-a/Fenestra%20architectural%20competition%201930s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-blue-book-industrial-1930-a-4ac630b1
+    title: Fenestra ; The blue book for steel windows for industrial buildings. (1930)
+      [arc-fenestra-blue-book-industrial-1930-a-4ac630b1]
+    url: https://archive.org/download/fenestra-blue-book-industrial-1930-a/Fenestra%20blue%20book%20industrial%201930%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-res-casements-1941-a-01318d41
+    title: Fenestra residential steel casements. (1941) [arc-fenestra-res-casements-1941-a-01318d41]
+    url: https://archive.org/download/fenestra-res-casements-1941-a/Fenestra%20res%20casements%201941%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941', '1941']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-detail-supplement-1937-a-490020d6
+    title: Detail supplement ; Fenestra. (1937) [arc-fenestra-detail-supplement-1937-a-490020d6]
+    url: https://archive.org/download/fenestra-detail-supplement-1937-a/Fenestra%20detail%20supplement%201937%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937', '1937']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-fireshield-doors-1938-a-bf583fa0
+    title: Fenestra fireshield doors. (1938) [arc-fenestra-fireshield-doors-1938-a-bf583fa0]
+    url: https://archive.org/download/fenestra-fireshield-doors-1938-a/Fenestra%20fireshield%20doors%201938%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-stock-products-1950-a-a11616f0
+    title: Fenestra stock products. (1950) [arc-fenestra-stock-products-1950-a-a11616f0]
+    url: https://archive.org/download/fenestra-stock-products-1950-a/Fenestra%20stock%20products%201950%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-bldg-panels-1950-a-03563ead
+    title: Fenestra steel and aluminum building panels. (1950) [arc-fenestra-bldg-panels-1950-a-03563ead]
+    url: https://archive.org/download/fenestra-bldg-panels-1950-a/Fenestra%20bldg%20panels%201950%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-hollow-doors-1950-a-055344d9
+    title: Fenestra hollow metal doors. (1950) [arc-fenestra-hollow-doors-1950-a-055344d9]
+    url: https://archive.org/download/fenestra-hollow-doors-1950-a/Fenestra%20hollow%20doors%201950%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-bay-windows-1930s-a-8dedf550
+    title: A portfolio of bay windows. (1930) [arc-fenestra-bay-windows-1930s-a-8dedf550]
+    url: https://archive.org/download/fenestra-bay-windows-1930s-a/Fenestra%20bay%20windows%201930s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-fenestra-floor-and-roof-panels-1963-a-a7af2277
+    title: Fenestrafloor and roof panel systems. (1963) [arc-fenestra-floor-and-roof-panels-1963-a-a7af2277]
+    url: https://archive.org/download/fenestra-floor-and-roof-panels-1963-a/Fenestra%20floor%20and%20roof%20panels%201963%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1963'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1963', '1963']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-steel-windows-1941-a-71eb86fd
+    title: Ceco steel windows. (1941) [arc-ceco-steel-windows-1941-a-71eb86fd]
+    url: https://archive.org/download/ceco-steel-windows-1941-a/Ceco%20steel%20windows%201941%20a_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941', '1941']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-products-1930s-a-8790277e
+    title: A complete line of quality products. (1930) [arc-ceco-products-1930s-a-8790277e]
+    url: https://archive.org/download/ceco-products-1930s-a/Ceco%20products%201930s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-steel-products-1940s-a-604283ac
+    title: Steel building products for structures of the 194x by Ceco. (1940) [arc-ceco-steel-products-1940s-a-604283ac]
+    url: https://archive.org/download/ceco-steel-products-1940s-a/Ceco%20steel%20products%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-metal-lath-1950s-a-c0eee8db
+    title: Ceco metal lath and accessories. (1950) [arc-ceco-metal-lath-1950s-a-c0eee8db]
+    url: https://archive.org/download/ceco-metal-lath-1950s-a/Ceco%20metal%20lath%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-products-1947-a-5cae24aa
+    title: Ceco metal window and doors. (1947) [arc-ceco-products-1947-a-5cae24aa]
+    url: https://archive.org/download/ceco-products-1947-a/Ceco%20products%201947%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-screens-1940s-a-51a9920d
+    title: Screens in steel, bronze and aluminum. (1940) [arc-ceco-screens-1940s-a-51a9920d]
+    url: https://archive.org/download/ceco-screens-1940s-a/Ceco%20screens%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-doors-1958-a-ee227c02
+    title: Ceco hollow metal doors. (1950) [arc-ceco-doors-1958-a-ee227c02]
+    url: https://archive.org/download/ceco-doors-1958-a/Ceco%20doors%201958%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-steelforms-1956-a-0a648bd2
+    title: Ceco-Meyer steelforms. (1956) [arc-ceco-steelforms-1956-a-0a648bd2]
+    url: https://archive.org/download/ceco-steelforms-1956-a/Ceco%20steelforms%201956%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1956'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1956', '1956']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-closet-doors-1958-a-236546d6
+    title: Ceco folding closet doors. (1958) [arc-ceco-closet-doors-1958-a-236546d6]
+    url: https://archive.org/download/ceco-closet-doors-1958-a/Ceco%20closet%20doors%201958%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1958', '1958']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceco-aluminum-windows-1956-a-7dbf9117
+    title: Ceco Sterling aluminum sliding windows. (1956) [arc-ceco-aluminum-windows-1956-a-7dbf9117]
+    url: https://archive.org/download/ceco-aluminum-windows-1956-a/Ceco%20aluminum%20windows%201956%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1956'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1956', '1956']
+    rights_verified_at: '2026-10-18'
+  - id: arc-bayley-aluminum-windows-1947-a-a04794c1
+    title: Bayley projected aluminum windows. (1957) [arc-bayley-aluminum-windows-1947-a-a04794c1]
+    url: https://archive.org/download/bayley-aluminum-windows-1947-a/Bayley%20aluminum%20windows%201947%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1957'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1957', '1957']
+    rights_verified_at: '2026-10-18'
+  - id: arc-superior-aluminum-casements-1955-a-bdfa8745
+    title: Superior aluminum casement windows. (1955) [arc-superior-aluminum-casements-1955-a-bdfa8745]
+    url: https://archive.org/download/superior-aluminum-casements-1955-a/Superior%20aluminum%20casements%201955%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-18'
+  - id: arc-aluminum-window-specs-1957-a-6a88847c
+    title: Aluminum window specifications. (1957) [arc-aluminum-window-specs-1957-a-6a88847c]
+    url: https://archive.org/download/aluminum-window-specs-1957-a/aluminum%20window%20specs%201957%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1957'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1957', '1957']
+    rights_verified_at: '2026-10-18'
+  - id: arc-aluminum-window-1958-a-36ac057b
+    title: Quality approved aluminum windows. (1958) [arc-aluminum-window-1958-a-36ac057b]
+    url: https://archive.org/download/aluminum-window-1958-a/aluminum%20window%201958%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1958', '1958']
+    rights_verified_at: '2026-10-18'
+  - id: arc-timm-aluminum-window-1950s-a-5e569022
+    title: Timm aluminum windows. (1950) [arc-timm-aluminum-window-1950s-a-5e569022]
+    url: https://archive.org/download/timm-aluminum-window-1950s-a/Timm%20aluminum%20window%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-alesco-aluminum-window-1950s-a-803b74ea
+    title: Aluminum windows by Alcasco. (1950) [arc-alesco-aluminum-window-1950s-a-803b74ea]
+    url: https://archive.org/download/alesco-aluminum-window-1950s-a/Alesco%20aluminum%20window%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-kewanee-aluminum-windows-1955-a-267dc964
+    title: Kewanee aluminum horizontal sliding windows. (1955) [arc-kewanee-aluminum-windows-1955-a-267dc964]
+    url: https://archive.org/download/kewanee-aluminum-windows-1955-a/Kewanee%20aluminum%20windows%201955%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-18'
+  - id: arc-thorn-window-1940s-a-dbc0e05d
+    title: Thorn windows ; aluminum & steel. (1940) [arc-thorn-window-1940s-a-dbc0e05d]
+    url: https://archive.org/download/thorn-window-1940s-a/Thorn%20window%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-sterling-alum-window-1950s-a-bfc9bf01
+    title: Sterling aluminum double hung windows. (1950) [arc-sterling-alum-window-1950s-a-bfc9bf01]
+    url: https://archive.org/download/sterling-alum-window-1950s-a/Sterling%20alum%20window%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-miami-alum-window-1951-a-c7f7034e
+    title: Miami aluminum awning windows. (1951) [arc-miami-alum-window-1951-a-c7f7034e]
+    url: https://archive.org/download/miami-alum-window-1951-a/Miami%20alum%20window%201951%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1951'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1951', '1951']
+    rights_verified_at: '2026-10-18'
+  - id: arc-metalart-alum-window-1952-a-347a25a8
+    title: Metalart extruded aluminum double-hung windows. (1952) [arc-metalart-alum-window-1952-a-347a25a8]
+    url: https://archive.org/download/metalart-alum-window-1952-a/Metalart%20alum%20window%201952%20A2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1952']
+    rights_verified_at: '2026-10-18'
+  - id: arc-reynolds-alum-window-1952-a-eba86225
+    title: Reynolds aluminum residential windows. (1952) [arc-reynolds-alum-window-1952-a-eba86225]
+    url: https://archive.org/download/reynolds-alum-window-1952-a/Reynolds%20alum%20window%201952%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1952', '1952']
+    rights_verified_at: '2026-10-18'
+  - id: arc-abc-alum-casement-window-1950s-a-497527aa
+    title: ABC aluminum casement windows and aluminum screens. (1950) [arc-abc-alum-casement-window-1950s-a-497527aa]
+    url: https://archive.org/download/abc-alum-casement-window-1950s-a/ABC%20alum%20casement%20window%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-premier-alum-window-1947-a-fe67bb5a
+    title: Premier double-hung aluminum windows with aluminum or wood frames. (1947)
+      [arc-premier-alum-window-1947-a-fe67bb5a]
+    url: https://archive.org/download/premier-alum-window-1947-a/Premier%20alum%20window%201947%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-18'
+  - id: arc-valco-alum-window-1956-a-1eb12c35
+    title: Valco aluminum windows. (1956) [arc-valco-alum-window-1956-a-1eb12c35]
+    url: https://archive.org/download/valco-alum-window-1956-a/Valco%20alum%20window%201956%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1956'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1956', '1956']
+    rights_verified_at: '2026-10-18'
+  - id: arc-alwinite-alum-window-1955-a-3005677d
+    title: Alwinite aluminum windows. (1955) [arc-alwinite-alum-window-1955-a-3005677d]
+    url: https://archive.org/download/alwinite-alum-window-1955-a/Alwinite%20alum%20window%201955%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1955'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1955', '1955']
+    rights_verified_at: '2026-10-18'
+  - id: arc-cupples-curtain-walls-1957-a-4a07eea0
+    title: Cupples curtain walls. (1957) [arc-cupples-curtain-walls-1957-a-4a07eea0]
+    url: https://archive.org/download/cupples-curtain-walls-1957-a/Cupples%20curtain%20walls%201957%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1957'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1957', '1957']
+    rights_verified_at: '2026-10-18'
+  - id: arc-cupples-aluminum-windows-1940s-a-20886ad3
+    title: Cupples aluminum windows of Alcoa aluminum. (1940) [arc-cupples-aluminum-windows-1940s-a-20886ad3]
+    url: https://archive.org/download/cupples-aluminum-windows-1940s-a/Cupples%20aluminum%20windows%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-lupton-automatic-windows-1903-a-f9fde3ed
+    title: Catalogs automatic hollow sheetmetal fire-proof window frame with revolving,
+      sliding and p (1903) [arc-lupton-automatic-windows-1903-a-f9fde3ed]
+    url: https://archive.org/download/lupton-automatic-windows-1903-a/Lupton%20automatic%20windows%201903%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1903'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1903', '1903']
+    rights_verified_at: '2026-10-18'
+  - id: arc-lupton-shelving-1927-a-6d0dc186
+    title: Lupton steel shelving. (1927) [arc-lupton-shelving-1927-a-6d0dc186]
+    url: https://archive.org/download/lupton-shelving-1927-a/Lupton%20shelving%201927%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1927', '1927']
     rights_verified_at: '2026-10-18'
