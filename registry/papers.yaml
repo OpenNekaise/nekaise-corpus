@@ -157987,3 +157987,72 @@ sources:
     rights_verified_at: '2026-10-18T11:11:36Z'
     origin_ids: doi:10.1016/j.resconrec.2021.105955 openalex:W3205770205
     resolution: 'legacy: openalex location'
+  - id: arx-non-embeddability-of-geometric-lattices-and-bu
+    title: Non-embeddability of geometric lattices and buildings
+    url: https://arxiv.org/pdf/1211.2409v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-11-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1211.2409
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1211.2409 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-selected-topics-in-homogenization-of-transport
+    title: Selected topics in homogenization of transport processes in historical masonry
+      structures
+    url: https://arxiv.org/pdf/1204.6199v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2012-04-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1204.6199
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1204.6199 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+    origin_ids: doi:10.2174/1874149501206010148
+  - id: arx-a-novel-algorithm-for-real-time-procedural-gen
+    title: A Novel Algorithm for Real-time Procedural Generation of Building Floor Plans
+    url: https://arxiv.org/pdf/1211.5842v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-11-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1211.5842
+    license_url: http://creativecommons.org/licenses/by-nc-sa/3.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1211.5842 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/3.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-18'
+  - id: arx-division-algebras-and-transitivity-of-group-ac
+    title: Division algebras and transitivity of group actions on buildings
+    url: https://arxiv.org/pdf/1105.1965v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2011-05-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1105.1965
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1105.1965 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
