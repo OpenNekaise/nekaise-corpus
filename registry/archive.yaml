@@ -211947,19 +211947,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1885'']: published
       in 1885, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-specializedlight00gard-aab836dc
-    title: 'Specialized lighting equipment : catalog 36 (1936) [arc-specializedlight00gard-aab836dc]'
-    url: https://archive.org/download/specializedlight00gard/specializedlight00gard_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1936'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
-      states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-gorhammemorialta00gorh-e74cf41a
     title: Gorham memorial tablets made in bronze, brass, marble, mosaic and other materials
       (1905) [arc-gorhammemorialta00gorh-e74cf41a]
@@ -212165,9 +212152,492 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1949'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-illuminatingglas00ersk-c60b756d
-    title: 'Illuminating glassware and specialites : catalogue no. 7 (1935) [arc-illuminatingglas00ersk-c60b756d]'
-    url: https://archive.org/download/illuminatingglas00ersk/illuminatingglas00ersk_djvu.txt
+  - id: arc-concreteimprovem00port-a3067c58
+    title: Concrete improvements around the home (1944) [arc-concreteimprovem00port-a3067c58]
+    url: https://archive.org/download/concreteimprovem00port/concreteimprovem00port_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1944'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1944'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-superluxunitsill00ersk-5f12d92d
+    title: 'Super lux units and illuminating glassware for commercial and residential
+      lighting : catal (1934) [arc-superluxunitsill00ersk-5f12d92d]'
+    url: https://archive.org/download/superluxunitsill00ersk/superluxunitsill00ersk_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1934'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-residentiallight00fran-0e547d9f
+    title: Residential lighting by Frankford (1939) [arc-residentiallight00fran-0e547d9f]
+    url: https://archive.org/download/residentiallight00fran/residentiallight00fran_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-floodlightinginc00gene-0ed823aa
+    title: 'Floodlighting : including searchlight & airport lighting (1927) [arc-floodlightinginc00gene-0ed823aa]'
+    url: https://archive.org/download/floodlightinginc00gene/floodlightinginc00gene_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1927'']: published
+      in 1927, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-ivanhoemetalrefl00gene-c7b7c29e
+    title: Ivanhoe metal reflectors and fittings for multiple Mazda lamps (1916) [arc-ivanhoemetalrefl00gene-c7b7c29e]
+    url: https://archive.org/download/ivanhoemetalrefl00gene/ivanhoemetalrefl00gene_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1916'']: published
+      in 1916, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-illuminatingglas00gill-6ec9242e
+    title: 'Illuminating glassware : general catalog no. 14, section l : Hyperion glassware
+      for commer (1926) [arc-illuminatingglas00gill-6ec9242e]'
+    url: https://archive.org/download/illuminatingglas00gill/illuminatingglas00gill_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1926'']: published
+      in 1926, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-glasswarelightin00gill-0-d7ed81ee
+    title: 'Glassware and lighting fixtures : commerical lighting, residential lighting
+      (1932) [arc-glasswarelightin00gill-0-d7ed81ee]'
+    url: https://archive.org/download/glasswarelightin00gill_0/glasswarelightin00gill_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1932'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-electricalmetalp00elec-5a2df7a9
+    title: Electrical Metal Products (1940) [arc-electricalmetalp00elec-5a2df7a9]
+    url: https://archive.org/download/electricalmetalp00elec/electricalmetalp00elec_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-durockchinabrass00efco-05aeb5bc
+    title: Durock china-brass chrome lighting fixtures by Efcolite (1937) [arc-durockchinabrass00efco-05aeb5bc]
+    url: https://archive.org/download/durockchinabrass00efco/durockchinabrass00efco_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-goldenglowkeysto00elec-0-2f4a5251
+    title: 'Golden Glow and Keystone floodlighting equipment : bulletin no. 340 (1933)
+      [arc-goldenglowkeysto00elec-0-2f4a5251]'
+    url: https://archive.org/download/goldenglowkeysto00elec_0/goldenglowkeysto00elec_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1933'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-apollolighttrium00holo-93df86c7
+    title: 'The Apollo : the light triumphant (1921) [arc-apollolighttrium00holo-93df86c7]'
+    url: https://archive.org/download/apollolighttrium00holo/apollolighttrium00holo_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1921'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1921'']: published
+      in 1921, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-decorativelighti00john-0-dea2f604
+    title: 'Decorative lighting : catalog no. 36 (1936) [arc-decorativelighti00john-0-dea2f604]'
+    url: https://archive.org/download/decorativelighti00john_0/decorativelighti00john_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-twinrayscientifi00faye-8364c5c8
+    title: Twinray scientific illumination (1934) [arc-twinrayscientifi00faye-8364c5c8]
+    url: https://archive.org/download/twinrayscientifi00faye/twinrayscientifi00faye_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1934'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-ironroofingsidin00tcsn-bd26d5ec
+    title: 'Iron roofing, siding and ceiling, plain corrugated, crimped and beaded :
+      made of charcoal  (1885) [arc-ironroofingsidin00tcsn-bd26d5ec]'
+    url: https://archive.org/download/ironroofingsidin00tcsn/ironroofingsidin00tcsn_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1885'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1885'']: published
+      in 1885, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-cataloguepriceli00chas-f45a6d78
+    title: Catalogue and price list of designs and supplies for the granite and marble
+      trade (1900) [arc-cataloguepriceli00chas-f45a6d78]
+    url: https://archive.org/download/cataloguepriceli00chas/cataloguepriceli00chas_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-betterwaylasting00east-4b0853dc
+    title: 'The Better Way : lasting as the pyramids (1911) [arc-betterwaylasting00east-4b0853dc]'
+    url: https://archive.org/download/betterwaylasting00east/betterwaylasting00east_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1911'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-glasswarelightin00gill-1-6d1b7e6a
+    title: 'Glassware and lighting fixtures : commercial lighting : residential lighting
+      (1940) [arc-glasswarelightin00gill-1-6d1b7e6a]'
+    url: https://archive.org/download/glasswarelightin00gill_1/glasswarelightin00gill_1_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lighttolivewithp00gene-e7335af4
+    title: 'The light to live with : publication no. DP-108 (1920) [arc-lighttolivewithp00gene-e7335af4]'
+    url: https://archive.org/download/lighttolivewithp00gene/lighttolivewithp00gene_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-distinctivelight00halc-a4557a31
+    title: Distinctive lighting equipment (1937) [arc-distinctivelight00halc-a4557a31]
+    url: https://archive.org/download/distinctivelight00halc/distinctivelight00halc_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-cataloguea00gill-7d0c07a9
+    title: Catalogue "A" (1920) [arc-cataloguea00gill-7d0c07a9]
+    url: https://archive.org/download/cataloguea00gill/cataloguea00gill_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lightingglasswar00gill-b117f420
+    title: 'Lighting glassware : catalog no. 34 (1934) [arc-lightingglasswar00gill-b117f420]'
+    url: https://archive.org/download/lightingglasswar00gill/lightingglasswar00gill_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1934'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-glasswarelightin00gill-62239dd6
+    title: 'Glassware and lighting fixtures : catalog no. 16 for commercial and residential
+      lighting (1929) [arc-glasswarelightin00gill-62239dd6]'
+    url: https://archive.org/download/glasswarelightin00gill/glasswarelightin00gill_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1929'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lightconditionin00halc-0-5be72c6a
+    title: 'Light conditioning for decorative beauty : presenting a complete selection
+      of light condit (1939) [arc-lightconditionin00halc-0-5be72c6a]'
+    url: https://archive.org/download/lightconditionin00halc_0/lightconditionin00halc_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-humphreyarccatal00gene-a5dd7686
+    title: 'The Humphrey arc : [catalog] (1900) [arc-humphreyarccatal00gene-a5dd7686]'
+    url: https://archive.org/download/humphreyarccatal00gene/humphreyarccatal00gene_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-holophanedatalog00holo-1d6ef722
+    title: Holophane datalog (1925) [arc-holophanedatalog00holo-1d6ef722]
+    url: https://archive.org/download/holophanedatalog00holo/holophanedatalog00holo_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-bronzememorialsh00gene-5bf8208e
+    title: 'Bronze memorials and honor roll tablets : General Bronze Corporation (1946)
+      [arc-bronzememorialsh00gene-5bf8208e]'
+    url: https://archive.org/download/bronzememorialsh00gene/bronzememorialsh00gene_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1946'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-ivanhoemetalrefl00gene-0-b46cdcaf
+    title: 'Ivanhoe metal reflectors and fittings for industrial illumination : how
+      to plan a lighting (1923) [arc-ivanhoemetalrefl00gene-0-b46cdcaf]'
+    url: https://archive.org/download/ivanhoemetalrefl00gene_0/ivanhoemetalrefl00gene_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-newlineofdecorat00glea-6f312fd2
+    title: 'A new line of decorated Celestialite globes : architecturally correct (1927)
+      [arc-newlineofdecorat00glea-6f312fd2]'
+    url: https://archive.org/download/newlineofdecorat00glea/newlineofdecorat00glea_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1927'']: published
+      in 1927, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-stylebooknumber100glob-c9e90c60
+    title: Style book number 15 (1936) [arc-stylebooknumber100glob-c9e90c60]
+    url: https://archive.org/download/stylebooknumber100glob/stylebooknumber100glob_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lighttolivewithp00gene-0-c71f1fcd
+    title: 'The light to live with : publication no. DP-12 (1920) [arc-lighttolivewithp00gene-0-c71f1fcd]'
+    url: https://archive.org/download/lighttolivewithp00gene_0/lighttolivewithp00gene_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-americasfinestli00fede-8e17f061
+    title: 'America''s finest lighting for 1942 : the fluorescent of tomorrow--today
+      (1942) [arc-americasfinestli00fede-8e17f061]'
+    url: https://archive.org/download/americasfinestli00fede/americasfinestli00fede_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1942'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1942'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-whateveryhomebui00erbe-3344da0b
+    title: What every home builder should know about decorative lighting (1930) [arc-whateveryhomebui00erbe-3344da0b]
+    url: https://archive.org/download/whateveryhomebui00erbe/whateveryhomebui00erbe_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-ornamentalnovalu00gene-4d074b55
+    title: Ornamental Novalux (1927) [arc-ornamentalnovalu00gene-4d074b55]
+    url: https://archive.org/download/ornamentalnovalu00gene/ornamentalnovalu00gene_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1927'']: published
+      in 1927, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-fluorescentlight00efco-fe8648a4
+    title: Fluorescent lighting by Efcolite (1940) [arc-fluorescentlight00efco-fe8648a4]
+    url: https://archive.org/download/fluorescentlight00efco/fluorescentlight00efco_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lightingfixtures00froe-e634dc55
+    title: 'Lighting fixtures : authentic period reproductions fashioned by master craftsmen
+      for the h (1939) [arc-lightingfixtures00froe-e634dc55]'
+    url: https://archive.org/download/lightingfixtures00froe/lightingfixtures00froe_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-illuminationdesi00harr-d62f7efe
+    title: 'Illumination design data for industrial and commercial interiors : a handbook
+      for lighting (1928) [arc-illuminationdesi00harr-d62f7efe]'
+    url: https://archive.org/download/illuminationdesi00harr/illuminationdesi00harr_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-threeglightingca00grub-db6ac0f9
+    title: 'T̀hree G lighting'' : catalogue no. 35 (1935) [arc-threeglightingca00grub-db6ac0f9]'
+    url: https://archive.org/download/threeglightingca00grub/threeglightingca00grub_djvu.txt
     source: internet_archive
     license: unverified
     topic: equipment_systems
