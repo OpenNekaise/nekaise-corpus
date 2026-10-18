@@ -157146,3 +157146,21 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.1093/tse/tdaa007 openalex:W3033648183
     resolution: 'legacy: openalex location'
+  - id: arx-3-phase-recognition-approach-to-pseudo-3d-buil
+    title: 3-Phase Recognition Approach to Pseudo 3D Building Generation from 2D Floor
+      Plan
+    url: https://arxiv.org/pdf/1107.3680v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2011-07-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1107.3680
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1107.3680 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
