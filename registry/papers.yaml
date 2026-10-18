@@ -158577,3 +158577,37 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621987907
     resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-home-energy-management-in-smart-grid
+    title: Home Energy Management in Smart Grid
+    url: https://arxiv.org/pdf/1311.5385v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-11-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1311.5385
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1311.5385 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-harmonic-maps-to-buildings-and-singular-pertur
+    title: Harmonic Maps to Buildings and Singular Perturbation Theory
+    url: https://arxiv.org/pdf/1311.7101v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-11-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1311.7101
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1311.7101 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
