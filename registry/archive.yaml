@@ -222561,19 +222561,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1959'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-roomstorememberw00arms-95e1b397
-    title: Rooms to remember when you decorate (1944) [arc-roomstorememberw00arms-95e1b397]
-    url: https://archive.org/download/roomstorememberw00arms/roomstorememberw00arms_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1944'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1944'']: the item
-      states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-faiencetilingits00muel-c5ba6106
     title: 'Faience tiling and its application : with especial reference to the exterior
       and interior  (1920) [arc-faiencetilingits00muel-c5ba6106]'
@@ -223416,19 +223403,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1875', '1875']
     rights_verified_at: '2026-10-18'
-  - id: arc-seng57910-e56b265b
-    title: 'The Seng book : 1930 annual / published by the Seng Company. (1930) [arc-seng57910-e56b265b]'
-    url: https://archive.org/download/Seng57910/57910_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1930'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1930'', ''1930'']:
-      the item states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-10930-images-9536e613
     title: Refrigerators, meat safes, water coolers and woodenware / L.H. Mace & Co.
       [trade catalogue (1876) [arc-10930-images-9536e613]
@@ -223487,4 +223461,572 @@ sources:
     license_url: https://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1883', '1883']
+    rights_verified_at: '2026-10-18'
+  - id: arc-silber-fleming14340-8a8c3ce3
+    title: Complete house furnishers / Silber & Fleming (1885) [arc-silber-fleming14340-8a8c3ce3]
+    url: https://archive.org/download/Silber-fleming14340/14340_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1885'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1885', '1885']
+    rights_verified_at: '2026-10-18'
+  - id: arc-storys-designs-of-furniture-g-m-h-j-story20-972d2983
+    title: Storys' designs of furniture / G. M. & H. J. Story, Cabinet Manufacturers
+      (1880) [arc-storys-designs-of-furniture-g-m-h-j-story20-972d2983]
+    url: https://archive.org/download/storys-designs-of-furniture-g.-m.-h.-j.-story2043/2043_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1880'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1880', '1880']
+    rights_verified_at: '2026-10-18'
+  - id: arc-maw-and-co-44707-4185f5c3
+    title: Geometrical and Roman mosaic Encaustic Tile Pavements and Enamelled Wall
+      Decorations/Patte (1872) [arc-maw-and-co-44707-4185f5c3]
+    url: https://archive.org/download/maw-and-co.44707/44707_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1872'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1872', '1872']
+    rights_verified_at: '2026-10-18'
+  - id: arc-coalbrookdale-company-ltd6954-1161a58f
+    title: Coalbrook-Dale castings (1875) [arc-coalbrookdale-company-ltd6954-1161a58f]
+    url: https://archive.org/download/coalbrookdale-company-ltd6954/6954_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1875'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1875', '1875']
+    rights_verified_at: '2026-10-18'
+  - id: arc-minton-hollins-co-4173-af3fc40c
+    title: Minton Hollins & Co. Patent Tile Works, Stoke Upon Trent (1875) [arc-minton-hollins-co-4173-af3fc40c]
+    url: https://archive.org/download/minton-hollins-co.4173/4173_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1875'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1875', '1875']
+    rights_verified_at: '2026-10-18'
+  - id: arc-maw-company-12700-4412398b
+    title: Geometrical and Roman mosaic Encaustic Tile Pavements and Enamelled Wall
+      Decorations/Patte (1879) [arc-maw-company-12700-4412398b]
+    url: https://archive.org/download/maw-company.12700/12700_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1879'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1879', '1879']
+    rights_verified_at: '2026-10-18'
+  - id: arc-42480-b21ec8b9
+    title: Geometrical and Roman mosaic Encaustic Tile Pavements and Enamelled Wall
+      Decorations/Patte (1882) [arc-42480-b21ec8b9]
+    url: https://archive.org/download/42480/42480_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1882'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1882', '1882']
+    rights_verified_at: '2026-10-18'
+  - id: arc-charles-meeking-co-48852-27fb046a
+    title: Charles Meeking & Co.'s illustrated and priced catalogue of furniture, bedding,
+      carpets, e (1858) [arc-charles-meeking-co-48852-27fb046a]
+    url: https://archive.org/download/charles-meeking-co.48852/48852_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1858'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1858', '1858']
+    rights_verified_at: '2026-10-18'
+  - id: arc-hems-son2264-b562ecfe
+    title: A catalogue of articles manufactured and sold wholesale, retail & for exportation
+      / by Hem (1845) [arc-hems-son2264-b562ecfe]
+    url: https://archive.org/download/hems-son2264/2264_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1845'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1845', '1845']
+    rights_verified_at: '2026-10-18'
+  - id: arc-t-c-clark-co-5850-27ef28d1
+    title: T. & C. Clark & Co.'s miniature pattern book for Melbourne Exhibition (1880)
+      [arc-t-c-clark-co-5850-27ef28d1]
+    url: https://archive.org/download/t.-c.-clark-co.5850/5850_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1880'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1880', '1880']
+    rights_verified_at: '2026-10-18'
+  - id: arc-steinhardt3778-4056c3e6
+    title: The illustrated guide to the manufacturers, engineers, and merchants of England,
+      Scotland, (1869) [arc-steinhardt3778-4056c3e6]
+    url: https://archive.org/download/Steinhardt3778/Recno3778_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1869'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1869', '1869']
+    rights_verified_at: '2026-10-18'
+  - id: arc-barbee14330-5aa1826d
+    title: 'Lawn furniture and cemetery goods : catalogue no. "B" 61 / Barbee Wire and
+      Iron Works (1899) [arc-barbee14330-5aa1826d]'
+    url: https://archive.org/download/Barbee14330/Recno14330_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1899'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1899', '1899']
+    rights_verified_at: '2026-10-18'
+  - id: arc-stpancras46355-b6961805
+    title: Iron gates and railings / St. Pancras Iron-Work Company (1870) [arc-stpancras46355-b6961805]
+    url: https://archive.org/download/StPancras46355/Recno46355_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1870'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1870']
+    rights_verified_at: '2026-10-18'
+  - id: arc-maw34101-dd161da9
+    title: 'Maw & Co., Ltd. : patterns of majolica and enamelled tiles, white and variously
+      tinted gla (1890) [arc-maw34101-dd161da9]'
+    url: https://archive.org/download/Maw34101/Recno34101_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890']
+    rights_verified_at: '2026-10-18'
+  - id: arc-thomasbrawn12994-895b10ea
+    title: 'Thomas Brawn, no.64, Clement Street, Birmingham : manufacturer of ecclesiastical
+      and domes (1880) [arc-thomasbrawn12994-895b10ea]'
+    url: https://archive.org/download/ThomasBrawn12994/Recno12994_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1880'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1880']
+    rights_verified_at: '2026-10-18'
+  - id: arc-macfarlane7905-65c6ac52
+    title: Examples book of Macfarlane's castings / Walter Macfarlane & Co. (1876) [arc-macfarlane7905-65c6ac52]
+    url: https://archive.org/download/Macfarlane7905/Recno7905_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1876'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1876', '1876']
+    rights_verified_at: '2026-10-18'
+  - id: arc-wrinch10408-bcf2974b
+    title: 'Catalogue, 1878 : Garden furniture etc. Seats, chairs, tables, arches, lounges,
+      step chair (1878) [arc-wrinch10408-bcf2974b]'
+    url: https://archive.org/download/Wrinch10408/Recno10408_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1878'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1878']
+    rights_verified_at: '2026-10-18'
+  - id: arc-tylorpace45005-3db9bf9d
+    title: 'Tylor & Pace''s illustrated catalogue of iron & brass bedsteads, &c, &c.
+      : International Ex (1862) [arc-tylorpace45005-3db9bf9d]'
+    url: https://archive.org/download/TylorPace45005/Recno45005_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1862'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1862', '1862']
+    rights_verified_at: '2026-10-18'
+  - id: arc-plimpton12350-5cfce721
+    title: Illustrated catalogue of the Plimpton sofa beds / manufactured only by H.
+      R. Plimpton & Co (1890) [arc-plimpton12350-5cfce721]
+    url: https://archive.org/download/Plimpton12350/Recno12350_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-18'
+  - id: arc-eagle12735-5ebc408b
+    title: The Eagle range / Eagle Range & Foundry Company (1886) [arc-eagle12735-5ebc408b]
+    url: https://archive.org/download/Eagle12735/Recno12735_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1886'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1886', '1886']
+    rights_verified_at: '2026-10-18'
+  - id: arc-willer13447-17b847b9
+    title: 'Catalogue no.10, pocket edition : The "Willer" sliding blinds, the "Willer"
+      folding blinds (1890) [arc-willer13447-17b847b9]'
+    url: https://archive.org/download/Willer13447/Recno13447_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-18'
+  - id: arc-benham5853-469d88c6
+    title: '[Abridged illustrated catalogue] / Benham and Sons, manufacturing and furnishing
+      ironmonge (1864) [arc-benham5853-469d88c6]'
+    url: https://archive.org/download/Benham5853/Recno5853_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1864'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1864']
+    rights_verified_at: '2026-10-18'
+  - id: arc-barbee14322-96a12885
+    title: All steel settees for parks, other public grounds, residence lawns, cemeteries.
+      etc. / man (1890) [arc-barbee14322-96a12885]
+    url: https://archive.org/download/Barbee14322/Recno14322_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-18'
+  - id: arc-brawn55234-60884481
+    title: 'Thomas Brawn, no.64, Clement Street, Birmingham : manufacturer of ecclesiastical
+      and domes (1865) [arc-brawn55234-60884481]'
+    url: https://archive.org/download/Brawn55234/Recno55234_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1865'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1865', '1865']
+    rights_verified_at: '2026-10-18'
+  - id: arc-smee46520-20c7c8f0
+    title: 'William Smee & Sons'' designs of furniture : a stock of which is always
+      kept ready for sale (1850) [arc-smee46520-20c7c8f0]'
+    url: https://archive.org/download/Smee46520/Recno46520_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1850'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1850']
+    rights_verified_at: '2026-10-18'
+  - id: arc-adams4200-74a824b5
+    title: Estimates for the outfit of kitchens / Adams and Son (1860) [arc-adams4200-74a824b5]
+    url: https://archive.org/download/Adams4200/Recno4200_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1860'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1860']
+    rights_verified_at: '2026-10-18'
+  - id: arc-flavel31784-21012e36
+    title: 'Sidney Flavel & Compy. : inventors & sole manufacturers of Flavel''s patented
+      prize kitchen (1860) [arc-flavel31784-21012e36]'
+    url: https://archive.org/download/Flavel31784/Recno31784_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1860'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1860']
+    rights_verified_at: '2026-10-18'
+  - id: arc-mallory34115-86cd1fe9
+    title: Door locks, knobs, padlocks, etc., illustrated and described / Mallory, Wheeler
+      & Co. (suc (1871) [arc-mallory34115-86cd1fe9]
+    url: https://archive.org/download/Mallory34115/Recno34115_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1871'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1871']
+    rights_verified_at: '2026-10-18'
+  - id: arc-feltex12930-3f7cdaf2
+    title: Colour harmony in the home with Feltex / Felt & Textiles of Aust. Ltd. (1940)
+      [arc-feltex12930-3f7cdaf2]
+    url: https://archive.org/download/Feltex12930/Recno12930_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-russell3759-9cb5c7c9
+    title: Russell's patent "Herald" range / S. Warhurst, wholesale and retail ironmonger,
+      Ulverston  (1895) [arc-russell3759-9cb5c7c9]
+    url: https://archive.org/download/Russell3759/Recno3759_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895']
+    rights_verified_at: '2026-10-18'
+  - id: arc-smee4538-26c83f66
+    title: 'W. A. & S. Smee''s designs of furniture : a stock of which is always kept
+      ready for sale at (1871) [arc-smee4538-26c83f66]'
+    url: https://archive.org/download/Smee4538/Recno4538_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1871'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1871']
+    rights_verified_at: '2026-10-18'
+  - id: arc-glasshistorymanu00pitt-cf779151
+    title: Glass, history, manufacture and its universal application (1923) [arc-glasshistorymanu00pitt-cf779151]
+    url: https://archive.org/download/glasshistorymanu00pitt/glasshistorymanu00pitt_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-newideasforbuild00bett-c1756eb2
+    title: 'New ideas for building your home : special new and improved edition (1940)
+      [arc-newideasforbuild00bett-c1756eb2]'
+    url: https://archive.org/download/newideasforbuild00bett/newideasforbuild00bett_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-catalogueofbooks00btba-71419a40
+    title: A catalogue of books chiefly relating to architecture, decoration, building,
+      etc (1915) [arc-catalogueofbooks00btba-71419a40]
+    url: https://archive.org/download/catalogueofbooks00btba/catalogueofbooks00btba_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1915'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-catalogueofburma00wilc-e586b856
+    title: 'A catalogue of Burmantofts faience and decorative terra-cotta : November,
+      1882 (1882) [arc-catalogueofburma00wilc-e586b856]'
+    url: https://archive.org/download/catalogueofburma00wilc/catalogueofburma00wilc_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1882'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1882'']: published
+      in 1882, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-bookofbildcostga00unse-4d0b9665
+    title: The book of Bildcost gardened-home plans (1939) [arc-bookofbildcostga00unse-4d0b9665]
+    url: https://archive.org/download/bookofbildcostga00unse/bookofbildcostga00unse_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-heatingventilati00bake-7706001c
+    title: Heating, ventilation, power equipment, industrial piping and air conditioning
+      installation (1943) [arc-heatingventilati00bake-7706001c]
+    url: https://archive.org/download/heatingventilati00bake/heatingventilati00bake_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1943'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1943'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-souvenirofopenin00acme-769560d4
+    title: 'Souvenir of the opening of the Administration Building : observations of
+      our factory manag (1906) [arc-souvenirofopenin00acme-769560d4]'
+    url: https://archive.org/download/souvenirofopenin00acme/souvenirofopenin00acme_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1906'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1906'']: published
+      in 1906, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-yourhomeinterior00fsch-87e9d896
+    title: 'Your home & the interior decorator : an expert service that costs you nothing
+      (1925) [arc-yourhomeinterior00fsch-87e9d896]'
+    url: https://archive.org/download/yourhomeinterior00fsch/yourhomeinterior00fsch_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-18'
