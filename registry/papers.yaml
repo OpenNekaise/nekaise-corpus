@@ -157664,3 +157664,37 @@ sources:
     rights_verified_at: '2026-10-18T05:27:20Z'
     origin_ids: doi:10.1016/j.tsep.2024.102906 openalex:W4402587371
     resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-meta-models-for-structural-reliability-and-unc
+    title: Meta-models for structural reliability and uncertainty quantification
+    url: https://arxiv.org/pdf/1203.2062v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-03-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1203.2062
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1203.2062 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-a-lower-bound-for-the-amplitude-of-traveling-w
+    title: A lower bound for the amplitude of traveling waves of suspension bridges
+    url: https://arxiv.org/pdf/1203.4058v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-03-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1203.4058
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1203.4058 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'

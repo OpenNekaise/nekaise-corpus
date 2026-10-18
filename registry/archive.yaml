@@ -206793,20 +206793,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1930', '1930']
     rights_verified_at: '2026-10-18'
-  - id: arc-gentilet-bourdet-1910-aab027c4
-    title: Manuel d'application des gres de Gentil & Bourdet ceramistes. (1910) [arc-gentilet-bourdet-1910-aab027c4]
-    url: https://archive.org/download/gentilet-bourdet-1910/Gentilet%20Bourdet%201910_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: fr
-    published_at: '1910'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1910', '1910']
-    rights_verified_at: '2026-10-18'
   - id: arc-conkling-armstrong-terra-cotta-1898-1a4757ff
     title: '[Catalogue] Conkling-Armstrong Terra Cotta Co. (1898) [arc-conkling-armstrong-terra-cotta-1898-1a4757ff]'
     url: https://archive.org/download/conkling-armstrong-terra-cotta-1898/Conkling%20Armstrong%20%20terra%20cotta%201898_djvu.txt
@@ -208052,4 +208038,810 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1923', '1923']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ludowici-roofing-tile-1902-a-82778fed
+    title: Practical interlocking roofing tiles in plane and glazed tera cotta. (1902)
+      [arc-ludowici-roofing-tile-1902-a-82778fed]
+    url: https://archive.org/download/ludowici-roofing-tile-1902-a/Ludowici%20roofing%20tile%201902%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1902', '1902']
+    rights_verified_at: '2026-10-18'
+  - id: arc-mound-city-roofing-tile-1911-a-b40d2542
+    title: 'Catalogue D: Mound City Roofing Tile Co. (1911) [arc-mound-city-roofing-tile-1911-a-b40d2542]'
+    url: https://archive.org/download/mound-city-roofing-tile-1911-a/Mound%20City%20Roofing%20tile%201911%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1911'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1911', '1911']
+    rights_verified_at: '2026-10-18'
+  - id: arc-mound-city-roofing-tile-1915-a-fc8410f9
+    title: 'Catalogue E: Mound City Roofing Tile Co. (1915) [arc-mound-city-roofing-tile-1915-a-fc8410f9]'
+    url: https://archive.org/download/mound-city-roofing-tile-1915-a/Mound%20City%20Roofing%20tile%201915%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1915', '1915']
+    rights_verified_at: '2026-10-18'
+  - id: arc-celedon-roofing-1900s-a-8bf9cf59
+    title: Artistic Roofing Tiles. (1900) [arc-celedon-roofing-1900s-a-8bf9cf59]
+    url: https://archive.org/download/celedon-roofing-1900s-a/Celedon%20Roofing%201900s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-celedon-roofing-1910s-a-0ca45831
+    title: '[Catalogue] Celedon Roofing Tile Co. (1910) [arc-celedon-roofing-1910s-a-0ca45831]'
+    url: https://archive.org/download/celedon-roofing-1910s-a/Celedon%20roofing%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-roof-beautiful-1921-a-85090980
+    title: The roof beautiful. (1921) [arc-the-roof-beautiful-1921-a-85090980]
+    url: https://archive.org/download/the-roof-beautiful-1921-a/The%20Roof%20Beautiful%201921%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1921'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1921', '1921']
+    rights_verified_at: '2026-10-18'
+  - id: arc-hawthorne-roofing-1910-a-dcbd0728
+    title: Hawthorne roofing tile. (1920) [arc-hawthorne-roofing-1910-a-dcbd0728]
+    url: https://archive.org/download/hawthorne-roofing-1910-a/Hawthorne%20roofing%201910%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'', ''1920'']:
+      published in 1920, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-mifflin-hood-clay-tile-roofing-1926-a-7a5ae580
+    title: Roofing -- tile, clay. (1926) [arc-mifflin-hood-clay-tile-roofing-1926-a-7a5ae580]
+    url: https://archive.org/download/mifflin-hood-clay-tile-roofing-1926-a/Mifflin%20Hood%20clay%20tile%20roofing%201926%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926', '1926']
+    rights_verified_at: '2026-10-18'
+  - id: arc-national-fire-proofing-clay-tile-1910s-a-f754df92
+    title: terra cotta hollow tile fireproofing as used in the construction of standard
+      steel frame f (1910) [arc-national-fire-proofing-clay-tile-1910s-a-f754df92]
+    url: https://archive.org/download/national-fire-proofing-clay-tile-1910s-a/National%20Fire%20proofing%20clay%20tile%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-natco-structural-clay-tile-1950s-a-92256c7b
+    title: NATCO structural clay tile. (1950) [arc-natco-structural-clay-tile-1950s-a-92256c7b]
+    url: https://archive.org/download/natco-structural-clay-tile-1950s-a/NATCO%20structural%20clay%20tile%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-natco-vitritile-1961-a-55a96baa
+    title: NATCO ceramic glazed Vitritile. (1966) [arc-natco-vitritile-1961-a-55a96baa]
+    url: https://archive.org/download/natco-vitritile-1961-a/NATCO%20vitritile%201961%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1966'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1966', '1961']
+    rights_verified_at: '2026-10-18'
+  - id: arc-natco-standard-fireproofing-1924-a-5b2bf40e
+    title: NATCO standard fireproofing. (1924) [arc-natco-standard-fireproofing-1924-a-5b2bf40e]
+    url: https://archive.org/download/natco-standard-fireproofing-1924-a/NATCO%20standard%20fireproofing%201924%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924', '1924']
+    rights_verified_at: '2026-10-18'
+  - id: arc-modular-facing-tile-handbook-1947-a-41768e54
+    title: Modular facing tile handbook. (1947) [arc-modular-facing-tile-handbook-1947-a-41768e54]
+    url: https://archive.org/download/modular-facing-tile-handbook-1947-a/Modular%20Facing%20tile%20handbook%201947%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-interlocker-1916-18-a-c075c7e3
+    title: The interlocker. (1916) [arc-the-interlocker-1916-18-a-c075c7e3]
+    url: https://archive.org/download/the-interlocker-1916-18-a/The%20Interlocker%201916-18%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1916', '1916']
+    rights_verified_at: '2026-10-18'
+  - id: arc-penco-hollow-tile-1914-a-c4e9dca3
+    title: Penco hollow tile. (1914) [arc-penco-hollow-tile-1914-a-c4e9dca3]
+    url: https://archive.org/download/penco-hollow-tile-1914-a/Penco%20hollow%20tile%201914%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1914'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1914', '1914']
+    rights_verified_at: '2026-10-18'
+  - id: arc-hollow-building-tile-practice-1924-a-ddbcce4f
+    title: 'Simplified practice recommendation no. 12 : Hollow building tile. (1924)
+      [arc-hollow-building-tile-practice-1924-a-ddbcce4f]'
+    url: https://archive.org/download/hollow-building-tile-practice-1924-a/Hollow%20building%20tile%20practice%201924%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924', '1924']
+    rights_verified_at: '2026-10-18'
+  - id: arc-new-mfg-co-1890s-a-05eb2cb5
+    title: '[Catalogue] New Mfg. Co. (1890) [arc-new-mfg-co-1890s-a-05eb2cb5]'
+    url: https://archive.org/download/new-mfg-co-1890s-a/New%20Mfg%20Co%201890s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890']
+    rights_verified_at: '2026-10-18'
+  - id: arc-brick-tile-future-1950s-a-c0267fb1
+    title: Brick and tile and your future. (1950) [arc-brick-tile-future-1950s-a-c0267fb1]
+    url: https://archive.org/download/brick-tile-future-1950s-a/Brick%20%26%20tile%20future%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-facing-tile-1947-a-76be094e
+    title: Facing tile. (1947) [arc-facing-tile-1947-a-76be094e]
+    url: https://archive.org/download/facing-tile-1947-a/Facing%20tile%201947%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-18'
+  - id: arc-macomb-clay-tile-1924-a-59f9b077
+    title: Economical buildings for farm and city. (1924) [arc-macomb-clay-tile-1924-a-59f9b077]
+    url: https://archive.org/download/macomb-clay-tile-1924-a/Macomb%20clay%20tile%201924%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924', '1924']
+    rights_verified_at: '2026-10-18'
+  - id: arc-birmingham-tile-1919-a-2b92ff07
+    title: Birmingham vitrified salt glazed hollow building blocks for permanent buildings.
+      (1919) [arc-birmingham-tile-1919-a-2b92ff07]
+    url: https://archive.org/download/birmingham-tile-1919-a/Birmingham%20tile%201919%20A%20_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1919'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1919', '1919']
+    rights_verified_at: '2026-10-18'
+  - id: arc-shaw-tile-1940-a-06f2d266
+    title: High grade structural burned clay and shale products. (1940) [arc-shaw-tile-1940-a-06f2d266]
+    url: https://archive.org/download/shaw-tile-1940-a/Shaw%20tile%201940%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ar-ke-tex-tile-1928-a-4ef46c2b
+    title: 'Ar-Ke-Tex : the standard of textured tiles. (1928) [arc-ar-ke-tex-tile-1928-a-4ef46c2b]'
+    url: https://archive.org/download/ar-ke-tex-tile-1928-a/Ar-ke-tex%20tile%201928%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1928', '1928']
+    rights_verified_at: '2026-10-18'
+  - id: arc-glazed-brick-handbook-1940s-a-533e32d4
+    title: 'Handbook : standardized glazed brick and tile. (1940) [arc-glazed-brick-handbook-1940s-a-533e32d4]'
+    url: https://archive.org/download/glazed-brick-handbook-1940s-a/Glazed%20brick%20handbook%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-le-chatelier-pyrometer-1901-a-a5f33629
+    title: Le Chatelier pyrometer form measuring temperatures between 0-1600 celsius
+      (1901) [arc-le-chatelier-pyrometer-1901-a-a5f33629]
+    url: https://archive.org/download/le-chatelier-pyrometer-1901-a/Le%20Chatelier%20Pyrometer%201901%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1901'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1901', '1901']
+    rights_verified_at: '2026-10-18'
+  - id: arc-natco-handbook-1924-a-3443535f
+    title: NATCO handbook. (1924) [arc-natco-handbook-1924-a-3443535f]
+    url: https://archive.org/download/natco-handbook-1924-a/NATCO%20handbook%201924%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924', '1924']
+    rights_verified_at: '2026-10-18'
+  - id: arc-roessler-hasslacher-1930s-a-ccf488a4
+    title: 'Ceramic chemicals : minerals and oxides. (1930) [arc-roessler-hasslacher-1930s-a-ccf488a4]'
+    url: https://archive.org/download/roessler-hasslacher-1930s-a/Roessler%20%26%20Hasslacher%201930s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ceramic-materials-1912-8a519b43
+    title: Ceramic department price list no. 12. (1912) [arc-ceramic-materials-1912-8a519b43]
+    url: https://archive.org/download/ceramic-materials-1912/Ceramic%20materials%201912_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1912', '1912']
+    rights_verified_at: '2026-10-18'
+  - id: arc-eimer-amend-1896-a-9bea8c8f
+    title: Special list of chemical stone-ware. (1896) [arc-eimer-amend-1896-a-9bea8c8f]
+    url: https://archive.org/download/eimer-amend-1896-a/Eimer%20%26%20Amend%201896%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1896'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1896', '1896']
+    rights_verified_at: '2026-10-18'
+  - id: arc-bidtel-ceramics-1907-a-1bd1a1b1
+    title: 'Metallic oxides and sundries : raw materials. (1907) [arc-bidtel-ceramics-1907-a-1bd1a1b1]'
+    url: https://archive.org/download/bidtel-ceramics-1907-a/Bidtel%20ceramics%201907%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907', '1907']
+    rights_verified_at: '2026-10-18'
+  - id: arc-factory-glazes-1908-a-8cf03bd2
+    title: Factory glazes for ceramic engineers. (1908) [arc-factory-glazes-1908-a-8cf03bd2]
+    url: https://archive.org/download/factory-glazes-1908-a/Factory%20glazes%201908%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1908'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1908', '1908']
+    rights_verified_at: '2026-10-18'
+  - id: arc-pulsometer-1910-a-a78dd2d7
+    title: Pulsometer steam pump. (1910) [arc-pulsometer-1910-a-a78dd2d7]
+    url: https://archive.org/download/pulsometer-1910-a/Pulsometer%201910%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-bay-city-dredge-works-1920-a-d417060a
+    title: One man excavator for clay, sand, and grave pits. (1920) [arc-bay-city-dredge-works-1920-a-d417060a]
+    url: https://archive.org/download/bay-city-dredge-works-1920-a/Bay%20City%20Dredge%20Works%201920%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-thwing-instrument-1910s-a-f970b090
+    title: Pyrometers for clay burners. (1910) [arc-thwing-instrument-1910s-a-f970b090]
+    url: https://archive.org/download/thwing-instrument-1910s-a/Thwing%20instrument%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-taplin-rice-1922-a-a0d97c8d
+    title: Pioneer clay working machinery (1922) [arc-taplin-rice-1922-a-a0d97c8d]
+    url: https://archive.org/download/taplin-rice-1922-a/Taplin-rice%201922%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1922', '1922']
+    rights_verified_at: '2026-10-18'
+  - id: arc-mathews-brick-conveyers-1910s-a-f7a5f15a
+    title: Mathews gravity carriers and automatic elevators. (1910) [arc-mathews-brick-conveyers-1910s-a-f7a5f15a]
+    url: https://archive.org/download/mathews-brick-conveyers-1910s-a/Mathews%20brick%20conveyers%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-wellington-machine-1911-7ff35ad6
+    title: Brick machinery. (1911) [arc-wellington-machine-1911-7ff35ad6]
+    url: https://archive.org/download/wellington-machine-1911/Wellington%20machine%201911_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1911'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1911', '1911']
+    rights_verified_at: '2026-10-18'
+  - id: arc-chambers-brick-machinery-1920s-fa8bf9e4
+    title: Brickmaking machinery, clay grinding and mixing machines. (1920) [arc-chambers-brick-machinery-1920s-fa8bf9e4]
+    url: https://archive.org/download/chambers-brick-machinery-1920s/Chambers%20brick%20machinery%201920s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-buhler-bros-brick-machinery-1910s-a-85c4423c
+    title: Brickmaking machinery (1910) [arc-buhler-bros-brick-machinery-1910s-a-85c4423c]
+    url: https://archive.org/download/buhler-bros-brick-machinery-1910s-a/Buhler%20Bros%20brick%20machinery%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-bonnot-clay-machinery-1914-a-2b1b05a9
+    title: Modern brick machinery. (1914) [arc-bonnot-clay-machinery-1914-a-2b1b05a9]
+    url: https://archive.org/download/bonnot-clay-machinery-1914-a/Bonnot%20Clay%20machinery%201914%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1914'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1914', '1914']
+    rights_verified_at: '2026-10-18'
+  - id: arc-potts-co-1923-a-e46ba5d3
+    title: Clay making machinery. (1923) [arc-potts-co-1923-a-e46ba5d3]
+    url: https://archive.org/download/potts-co-1923-a/Potts%20Co%201923%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1923', '1923']
+    rights_verified_at: '2026-10-18'
+  - id: arc-international-clay-dryer-cars-1920s-a-77e26b2c
+    title: International dryers ; brick, tile hollowware and other products. (1920)
+      [arc-international-clay-dryer-cars-1920s-a-77e26b2c]
+    url: https://archive.org/download/international-clay-dryer-cars-1920s-a/International%20Clay%20dryer%20cars%201920s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-boyd-brick-press-1920s-500ce370
+    title: Boyd brick press and accessories for the manufacture of pressed brick, also
+      a few suggesti (1920) [arc-boyd-brick-press-1920s-500ce370]
+    url: https://archive.org/download/boyd-brick-press-1920s/Boyd%20brick%20press%201920s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-chicago-brick-machine-1900s-a-18b03562
+    title: Dry press brick machinery. (1900) [arc-chicago-brick-machine-1900s-a-18b03562]
+    url: https://archive.org/download/chicago-brick-machine-1900s-a/Chicago%20Brick%20Machine%201900s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-mueller-bros-brick-machinery-1920s-a-84435e9a
+    title: '[Catalogue] Mueller Brothers (1920) [arc-mueller-bros-brick-machinery-1920s-a-84435e9a]'
+    url: https://archive.org/download/mueller-bros-brick-machinery-1920s-a/Mueller%20Bros%20brick%20machinery%201920s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ziegelei-maschinen-1910s-a-ba1df365
+    title: Moderne ziegelei maschinen und Einrichtungen.n (1910) [arc-ziegelei-maschinen-1910s-a-ba1df365]
+    url: https://archive.org/download/ziegelei-maschinen-1910s-a/Ziegelei%20Maschinen%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-sachsenberg-bros-1900s-a-e7c7574d
+    title: Illustrated price list of brickmaking machinery. (1900) [arc-sachsenberg-bros-1900s-a-e7c7574d]
+    url: https://archive.org/download/sachsenberg-bros-1900s-a/Sachsenberg%20Bros%201900s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-philadelphia-brick-machines-1900s-a-3351e213
+    title: 'Catalog : Philadelphia brick machine works. (1900) [arc-philadelphia-brick-machines-1900s-a-3351e213]'
+    url: https://archive.org/download/philadelphia-brick-machines-1900s-a/Philadelphia%20brick%20machines%201900s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-new-brick-machine-1857-a-9ba0b528
+    title: New brick machine. (1857) [arc-new-brick-machine-1857-a-9ba0b528]
+    url: https://archive.org/download/new-brick-machine-1857-a/New%20brick%20machine%201857%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1857'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1857', '1857']
+    rights_verified_at: '2026-10-18'
+  - id: arc-brewer-co-brick-machinery-1910s-a-845fe7c3
+    title: Clay working machines. (1910) [arc-brewer-co-brick-machinery-1910s-a-845fe7c3]
+    url: https://archive.org/download/brewer-co-brick-machinery-1910s-a/Brewer%20Co%20brick%20machinery%201910s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-robinson-co-1926-a-a7799659
+    title: Dryer cars and clay working equipment. (1926) [arc-robinson-co-1926-a-a7799659]
+    url: https://archive.org/download/robinson-co-1926-a/Robinson%20Co%201926%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926', '1926']
+    rights_verified_at: '2026-10-18'
+  - id: arc-biehl-iron-works-1919-a-cc8e43c4
+    title: 'Biehl industrial cars and equipment: catalog No. 8. (1919) [arc-biehl-iron-works-1919-a-cc8e43c4]'
+    url: https://archive.org/download/biehl-iron-works-1919-a/Biehl%20Iron%20Works%201919%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1919'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1919', '1919']
+    rights_verified_at: '2026-10-18'
+  - id: arc-crossley-clay-machinery-1940s-a-cd12c6bc
+    title: 'Bullerin No. 1 : clay working machinery for laboratory and school equipment.
+      (1940) [arc-crossley-clay-machinery-1940s-a-cd12c6bc]'
+    url: https://archive.org/download/crossley-clay-machinery-1940s-a/Crossley%20clay%20machinery%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-bonnot-co-brick-1930s-a-fc033ec7
+    title: Combined brick machines and pug mills, brick and tile cutters. (1930) [arc-bonnot-co-brick-1930s-a-fc033ec7]
+    url: https://archive.org/download/bonnot-co-brick-1930s-a/Bonnot%20Co%20Brick%201930s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-international-clay-furnaces-1930s-a-f9b7b76b
+    title: The Furnace gas producer. (1930) [arc-international-clay-furnaces-1930s-a-f9b7b76b]
+    url: https://archive.org/download/international-clay-furnaces-1930s-a/International%20Clay%20furnaces%201930s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-raymond-clay-machinery-1912-a-c4aae027
+    title: Catalog of clay making machinery. (1912) [arc-raymond-clay-machinery-1912-a-c4aae027]
+    url: https://archive.org/download/raymond-clay-machinery-1912-a/Raymond%20clay%20machinery%201912%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1912', '1912']
+    rights_verified_at: '2026-10-18'
+  - id: arc-international-brick-and-tile-machinery-1950-5a416323
+    title: Brick and tile machinery. (1950) [arc-international-brick-and-tile-machinery-1950-5a416323]
+    url: https://archive.org/download/international-brick-and-tile-machinery-1950s-a/International%20Brick%20and%20Tile%20machinery%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
     rights_verified_at: '2026-10-18'
