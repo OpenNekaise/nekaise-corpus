@@ -157604,3 +157604,63 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2010.04209 openalex:W3092030295
     resolution: 'sim1: openalex location'
+  - id: oas-10-3390-buildings13030821-a9f1016b
+    title: Sharing Is Saving? Building Costs Simulation of Collaborative and Mainstream
+      Housing Designs
+    url: https://repository.tudelft.nl/file/File_15a13c26-ec4b-4326-b4d9-ecfe46ca2b03
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-03-21'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings13030821
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://repository.tudelft.nl/file/File_15a13c26-ec4b-4326-b4d9-ecfe46ca2b03;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/buildings13030821 openalex:W4353067011
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-global-weak-solutions-for-coupled-transport-pr
+    title: Global weak solutions for coupled transport processes in concrete walls at
+      high temperatures
+    url: https://arxiv.org/pdf/1202.0998v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2012-02-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1202.0998
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1202.0998 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: oas-10-1016-j-tsep-2024-102906-e5ba049e
+    title: Hybrid solar-biomass residential micro – Combined Heat and Power systems
+      driven by the Partially Evaporating Organic Rankine Cycle – A case study in S
+    url: https://biblio.ugent.be/publication/01JACT40FKKJ27FMWEYN30TW9C/file/01JAFDT9XF4Y0ET0MYNNVBTC5V.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.tsep.2024.102906
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/01JACT40FKKJ27FMWEYN30TW9C/file/01JAFDT9XF4Y0ET0MYNNVBTC5V.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/01JACT40FKKJ27FMWEYN30TW9C/01JAFDT9XF4Y0ET0MYNNVBTC5V;
+      payload sha256=b8d12fe14fbd9fb9279f5ed246bef799a36d54f0530c9e322284b91413900518;
+      original evidence: {"license": "unverified", "license_evidence": "openalex.license=other-oa;
+      openalex.license_id=https://openalex.org/licenses/other-oa; unpaywall.license=other-oa
+      [copy https://biblio.ugent.be/publication/01JACT40FKKJ27FMWEYN30TW9C/file/01JAFDT9XF4Y0ET0MYNNVBTC5V.pdf;
+      version submittedVersion; rights unknown]", "rights_verified_at": "2026-10-18",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-18T05:27:20Z'
+    origin_ids: doi:10.1016/j.tsep.2024.102906 openalex:W4402587371
+    resolution: 'sim1: openalex+unpaywall location'

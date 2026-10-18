@@ -205298,19 +205298,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
       in 1911, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-ugine-electric-steels-pdf-a-688cd0fe
-    title: Ugine Electric Steel Works [arc-ugine-electric-steels-pdf-a-688cd0fe]
-    url: https://archive.org/download/ugine-electric-steels-pdf-a/Ugine_Electric_SteelsPDF-A_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      without a date
-    rights_verified_at: '2026-10-18'
   - id: arc-holdenlinefluore00dean-52534f10
     title: 'Holdenline : fluorescent fixtures of all kinds, lumiline brackets, specialty
       fixtures (1939) [arc-holdenlinefluore00dean-52534f10]'
@@ -206848,20 +206835,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1882', '1882']
     rights_verified_at: '2026-10-18'
-  - id: arc-union-iron-foundry-c-1890-2-0ccfef24
-    title: Union Iron & Foundry. (1890) [arc-union-iron-foundry-c-1890-2-0ccfef24]
-    url: https://archive.org/download/union-iron-foundry-c-1890-2/Union%20Iron%20Foundry%20c1890%202_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1890'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1890', '1890']
-    rights_verified_at: '2026-10-18'
   - id: arc-omaha-press-brick-co-1902-8732ed8d
     title: Catalogue and price list of bricks. (1902) [arc-omaha-press-brick-co-1902-8732ed8d]
     url: https://archive.org/download/omaha-press-brick-co-1902/Omaha%20Press%20Brick%20Co%201902_djvu.txt
@@ -207398,4 +207371,685 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-newmanco-storefronts-1930-a-7b3b142c
+    title: Newmanco bronze storefronts. (1930) [arc-newmanco-storefronts-1930-a-7b3b142c]
+    url: https://archive.org/download/newmanco-storefronts-1930-a/Newmanco%20storefronts%201930%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-nulock-storefronts-1940s-0001-f12af56d
+    title: Nulock [storefronts]. (1940) [arc-nulock-storefronts-1940s-0001-f12af56d]
+    url: https://archive.org/download/nulock-storefronts-1940s-0001/Nulock%20storefronts%201940s0001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-sellew-co-1883-a-974b97e5
+    title: Tin plate and metals. (1883) [arc-sellew-co-1883-a-974b97e5]
+    url: https://archive.org/download/sellew-co-1883-a/Sellew%20%26%20Co%201883%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1883'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1883', '1883']
+    rights_verified_at: '2026-10-18'
+  - id: arc-sheet-steel-cornices-1920-a-7453dfef
+    title: Standard specifications for the fabrication and setting of sheet steel cornices.
+      (1920) [arc-sheet-steel-cornices-1920-a-7453dfef]
+    url: https://archive.org/download/sheet-steel-cornices-1920-a/Sheet%20steel%20cornices%201920%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'', ''1920'']:
+      published in 1920, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-standard-storefronts-1931-a-9e07367c
+    title: Standard announces a new storefront construction. (1931) [arc-standard-storefronts-1931-a-9e07367c]
+    url: https://archive.org/download/standard-storefronts-1931-a/Standard%20storefronts%201931%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931', '1931']
+    rights_verified_at: '2026-10-18'
+  - id: arc-tuf-flex-doors-1960-a-f7545ba6
+    title: Tuf-Flex doors of plate glass for modern entrances and interiors. (1960)
+      [arc-tuf-flex-doors-1960-a-f7545ba6]
+    url: https://archive.org/download/tuf-flex-doors-1960-a/Tuf%20flex%20doors%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-van-kennal-1939-a-418a03b5
+    title: Around the world with Van Kannel. (1939) [arc-van-kennal-1939-a-418a03b5]
+    url: https://archive.org/download/van-kennal-1939-a/Van%20Kennal%201939%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939', '1939']
+    rights_verified_at: '2026-10-18'
+  - id: arc-watkins-metalcraft-1930s-a-d4380bb5
+    title: Treatment for aluminum window frames and shop fronts. (1940) [arc-watkins-metalcraft-1930s-a-d4380bb5]
+    url: https://archive.org/download/watkins-metalcraft-1930s-a/Watkins%20metalcraft%201930s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-wheeling-steel-floors-1950-a-99b589d7
+    title: Wheeling steel floors and roof systems. (1950) [arc-wheeling-steel-floors-1950-a-99b589d7]
+    url: https://archive.org/download/wheeling-steel-floors-1950-a/Wheeling%20steel%20floors%201950%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-wheeling-super-rib-deck-1950s-a-615047a1
+    title: Wheeling super-rib steel roof decking. (1962) [arc-wheeling-super-rib-deck-1950s-a-615047a1]
+    url: https://archive.org/download/wheeling-super-rib-deck-1950s-a/Wheeling%20super%20rib%20deck%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1962'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1962', '1962']
+    rights_verified_at: '2026-10-18'
+  - id: arc-willis-1911-a-fb6a24bc
+    title: Catalog of the Willis Manufacturing Co. (1911) [arc-willis-1911-a-fb6a24bc]
+    url: https://archive.org/download/willis-1911-a/Willis%201911%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1911'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1911', '1911']
+    rights_verified_at: '2026-10-18'
+  - id: arc-zouri-buying-a-storefronts-1926-a-ad997a7d
+    title: The business of buying a storefront. (1926) [arc-zouri-buying-a-storefronts-1926-a-ad997a7d]
+    url: https://archive.org/download/zouri-buying-a-storefronts-1926-a/Zouri%20Buying%20a%20storefronts%201926%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926', '1926']
+    rights_verified_at: '2026-10-18'
+  - id: arc-zouri-dubl-wate-storefronts-1931-a-215b59f5
+    title: The distinctive quality of Zouri Dubl-Wate is manifested in this beautiful
+      storefront. (1931) [arc-zouri-dubl-wate-storefronts-1931-a-215b59f5]
+    url: https://archive.org/download/zouri-dubl-wate-storefronts-1931-a/Zouri%20dubl-wate%20storefronts%201931%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931']
+    rights_verified_at: '2026-10-18'
+  - id: arc-zouri-international-storefronts-1926-a-f8a23ebb
+    title: Zouri safety key-set and international store front construction. (1920) [arc-zouri-international-storefronts-1926-a-f8a23ebb]
+    url: https://archive.org/download/zouri-international-storefronts-1926-a/Zouri%20international%20storefronts%201926%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-portland-cement-concrete-1927-a-13d7c9c4
+    title: Portland cement concrete of unusual character... (1927) [arc-portland-cement-concrete-1927-a-13d7c9c4]
+    url: https://archive.org/download/portland-cement-concrete-1927-a/Portland%20cement%20concrete%201927%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1927', '1927']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-building-units-1932-a-f2183bac
+    title: Haydite building unit walls - how they lead the way to lower costs. (1932)
+      [arc-haydite-building-units-1932-a-f2183bac]
+    url: https://archive.org/download/haydite-building-units-1932-a/Haydite%20building%20units%201932%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-aggregates-for-concrete-1944-a-96f39d03
+    title: Haydite lightweight aggregates for structural, fill, and refractory concrete.
+      (1944) [arc-haydite-aggregates-for-concrete-1944-a-96f39d03]
+    url: https://archive.org/download/haydite-aggregates-for-concrete-1944-a/Haydite%20aggregates%20for%20concrete%201944%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1944'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1944', '1944']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-walls-units-1931-a-7700758b
+    title: Haydite walls for better homes. (1931) [arc-haydite-walls-units-1931-a-7700758b]
+    url: https://archive.org/download/haydite-walls-units-1931-a/Haydite%20walls%20units%201931%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931', '1931']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-insulation-refractories-1940s-a-777011bd
+    title: Advantages of insulation Haydite refractories. (1930) [arc-haydite-insulation-refractories-1940s-a-777011bd]
+    url: https://archive.org/download/haydite-insulation-refractories-1940s-a/Haydite%20insulation%20refractories%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-manual-1940-a-a594db84
+    title: A data book for designing engineers and architects. (1940) [arc-haydite-manual-1940-a-a594db84]
+    url: https://archive.org/download/haydite-manual-1940-a/Haydite%20manual%201940%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', '1040']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-units-bulletin-1-1930-a-c1b30e79
+    title: Featherweight Haydite building units. (1930) [arc-haydite-units-bulletin-1-1930-a-c1b30e79]
+    url: https://archive.org/download/haydite-units-bulletin-1-1930-a/Haydite%20units%20Bulletin%201%201930%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-concrete-mix-1950s-a-5e35a445
+    title: Design and control of Haydite concrete mixtures. (1940) [arc-haydite-concrete-mix-1950s-a-5e35a445]
+    url: https://archive.org/download/haydite-concrete-mix-1950s-a/Haydite%20concrete%20mix%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-lightweight-aggregate-1950s-a-6368af3e
+    title: Haydite ; the original lIghtweight aggregate. (1950) [arc-haydite-lightweight-aggregate-1950s-a-6368af3e]
+    url: https://archive.org/download/haydite-lightweight-aggregate-1950s-a/Haydite%20LIghtweight%20aggregate%201950s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-lightweight-aggregates-1944-a-036cc226
+    title: Haydite ; the original lightweight aggregates. (1944) [arc-haydite-lightweight-aggregates-1944-a-036cc226]
+    url: https://archive.org/download/haydite-lightweight-aggregates-1944-a/Haydite%20lightweight%20aggregates%201944%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1944'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1944', '1944']
+    rights_verified_at: '2026-10-18'
+  - id: arc-precast-slab-1945-a-5a6681ff
+    title: Precast lightweight reinforced concrete roof and floor slabs. (1950) [arc-precast-slab-1945-a-5a6681ff]
+    url: https://archive.org/download/precast-slab-1945-a/Precast%20slab%201945%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-haydite-building-units-1940s-a-4ff1be40
+    title: 'Haydite : the lightweight aggregate building units. (1940) [arc-haydite-building-units-1940s-a-4ff1be40]'
+    url: https://archive.org/download/haydite-building-units-1940s-a/Haydite%20building%20units%201940s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-ambler-olson-1936-a-0f15f651
+    title: The Ambler Olson System (1936) [arc-ambler-olson-1936-a-0f15f651]
+    url: https://archive.org/download/ambler-olson-1936-a/Ambler%20Olson%201936%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1936', '1936']
+    rights_verified_at: '2026-10-18'
+  - id: arc-stran-steel-1948-a-46d6db4a
+    title: 'Stran-Steel : a system of light steel framing for homes, apartment, commercial
+      buildings a (1948) [arc-stran-steel-1948-a-46d6db4a]'
+    url: https://archive.org/download/stran-steel-1948-a/Stran-steel%201948%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1948'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1948', '1948']
+    rights_verified_at: '2026-10-18'
+  - id: arc-stran-steel-reference-1960-a-74f4dd7e
+    title: 'Architects'' reference : collateral material usage for tropic details for
+      Stran-Steel baila (1960) [arc-stran-steel-reference-1960-a-74f4dd7e]'
+    url: https://archive.org/download/stran-steel-reference-1960-a/Stran-steel%20reference%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-stran-steel-nailable-framing-1953-a-c6a5424e
+    title: Stran-Steel nailable framing. (1953) [arc-stran-steel-nailable-framing-1953-a-c6a5424e]
+    url: https://archive.org/download/stran-steel-nailable-framing-1953-a/Stran%20steel%20nailable%20framing%201953%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1953'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1953', '1953']
+    rights_verified_at: '2026-10-18'
+  - id: arc-milcor-nailing-strip-1931-a-f1df58f4
+    title: Milcor continuous nailing strip. (1930) [arc-milcor-nailing-strip-1931-a-f1df58f4]
+    url: https://archive.org/download/milcor-nailing-strip-1931-a/Milcor%20nailing%20strip%201931%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-small-frame-house-1930-a-5ae9751f
+    title: Architects and builders manual. (1930) [arc-small-frame-house-1930-a-5ae9751f]
+    url: https://archive.org/download/small-frame-house-1930-a/Small%20frame%20house%201930%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-h-c-registers-1920s-a-000117b4
+    title: Pocket guide to the finest registers for every type of installation. (1920)
+      [arc-h-c-registers-1920s-a-000117b4]
+    url: https://archive.org/download/h-c-registers-1920s-a/H%20%26%20C%20registers%201920s%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-18'
+  - id: arc-hendrick-1957-a-2f4724de
+    title: Hendrick bulators, perforated metal grilles, air conditioning grilles and
+      registers... (1957) [arc-hendrick-1957-a-2f4724de]
+    url: https://archive.org/download/hendrick-1957-a/Hendrick%201957%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1957'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1957', '1957']
+    rights_verified_at: '2026-10-18'
+  - id: arc-standard-stamping-1954-a-bbc6e74f
+    title: Registers and grilles, catalog no. 54. (1954) [arc-standard-stamping-1954-a-bbc6e74f]
+    url: https://archive.org/download/standard-stamping-1954-a/Standard%20stamping%201954%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1954'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1954', '1954']
+    rights_verified_at: '2026-10-18'
+  - id: arc-tuttle-bailey-1925-a-94d0717e
+    title: Registers, grilles, and radiator cabinets. (1925) [arc-tuttle-bailey-1925-a-94d0717e]
+    url: https://archive.org/download/tuttle-bailey-1925-a/Tuttle%20%26%20Bailey%201925%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1925', '1925']
+    rights_verified_at: '2026-10-18'
+  - id: arc-harrington-grilles-1932-a-6a96b30a
+    title: 'Grilles of perforated metals : catalog and hand book. (1932) [arc-harrington-grilles-1932-a-6a96b30a]'
+    url: https://archive.org/download/harrington-grilles-1932-a/Harrington%20grilles%201932%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932', '1932']
+    rights_verified_at: '2026-10-18'
+  - id: arc-borden-decor-panel-1960-a-1732f54b
+    title: Borden architectural decor panel. (1960) [arc-borden-decor-panel-1960-a-1732f54b]
+    url: https://archive.org/download/borden-decor-panel-1960-a/Borden%20decor%20panel%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-beemam-letters-1960-a-3d47b96e
+    title: A. C. Beemam company tablets, plaques, honor roles, name plates. (1960) [arc-beemam-letters-1960-a-3d47b96e]
+    url: https://archive.org/download/beemam-letters-1960-a/Beemam%20letters%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-metal-arts-1960-a-4d888468
+    title: 3 dimensional letters. (1960) [arc-metal-arts-1960-a-4d888468]
+    url: https://archive.org/download/metal-arts-1960-a/Metal%20arts%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-cincinnati-metalcrafts-1960-a-154b7982
+    title: Finer hand-chased tablets. (1960) [arc-cincinnati-metalcrafts-1960-a-154b7982]
+    url: https://archive.org/download/cincinnati-metalcrafts-1960-a/Cincinnati%20metalcrafts%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-watkins-metal-1960-a-360143bd
+    title: Metal lettering omnibus. (1960) [arc-watkins-metal-1960-a-360143bd]
+    url: https://archive.org/download/watkins-metal-1960-a/Watkins%20metal%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-nelco-letters-1960-a-f02da4ec
+    title: Metal letters. (1960) [arc-nelco-letters-1960-a-f02da4ec]
+    url: https://archive.org/download/nelco-letters-1960-a/Nelco%20letters%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-wonderly-letters-1960-a-cfe7774c
+    title: Wonderly metal letters and tablets. (1960) [arc-wonderly-letters-1960-a-cfe7774c]
+    url: https://archive.org/download/wonderly-letters-1960-a/Wonderly%20letters%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-livers-railings-1960-a-84494624
+    title: Livers bronze, aluminum railings, sunshades, grillers, plaques, metal letters.
+      (1960) [arc-livers-railings-1960-a-84494624]
+    url: https://archive.org/download/livers-railings-1960-a/Livers%20railings%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-art-in-bronze-1960-a-973ba518
+    title: Art In bronze. (1960) [arc-art-in-bronze-1960-a-973ba518]
+    url: https://archive.org/download/art-in-bronze-1960-a/Art%20in%20bronze%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-lake-shore-signs-1960-a-9ba45b99
+    title: Lake Shore permanent aluminum signs and markers for every purpose. [arc-lake-shore-signs-1960-a-9ba45b99]
+    url: https://archive.org/download/lake-shore-signs-1960-a/Lake%20shore%20signs%201960%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-18'
+  - id: arc-chicago-bronze-1923-a-a1c6f4cf
+    title: Specimens of bronze work. (1923) [arc-chicago-bronze-1923-a-a1c6f4cf]
+    url: https://archive.org/download/chicago-bronze-1923-a/Chicago%20bronze%201923%20A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1923', '1923']
     rights_verified_at: '2026-10-18'
