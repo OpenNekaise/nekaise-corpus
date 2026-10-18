@@ -158072,24 +158072,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-18'
     origin_ids: doi:10.5120/9718-3663
-  - id: oas-10-1080-14733315-2011-11683954-da689e67
-    title: Natural Personalised Ventilation - A Novel Approach
-    url: https://figshare.com/articles/journal_contribution/Natural_personalised_ventilation_a_novel_approach/9453215
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2011-12-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1080/14733315.2011.11683954
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
-      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Natural_personalised_ventilation_a_novel_approach/9453215;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-18'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1080/14733315.2011.11683954 openalex:W1684182508
-    resolution: 'sim1: openalex+unpaywall location'
   - id: arx-artificial-decision-making-under-uncertainty-i
     title: Artificial Decision Making Under Uncertainty in Intelligent Buildings
     url: https://arxiv.org/pdf/1301.6680v1
@@ -158641,6 +158623,23 @@ sources:
     persistent_id: doi:10.48550/arxiv.1401.8136
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1401.8136 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-regeneration-tests-of-a-room-temperature-magne
+    title: Regeneration tests of a room temperature magnetic refrigerator and heat pump
+    url: https://arxiv.org/pdf/1402.3343v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2014-02-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1402.3343
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1402.3343 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
