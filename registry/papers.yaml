@@ -157166,25 +157166,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1177/1744259121989388 openalex:W3129972156
     resolution: 'legacy: openalex location'
-  - id: ope-market-adoption-of-healthy-buildings-in-the-of
-    title: 'Market Adoption of Healthy Buildings in the Office Sector: A Global Study
-      from the Owner’s Perspective'
-    url: https://dspace.mit.edu/bitstream/1721.1/156673/2/v24-no2-4_Market-Adoption-of-Healthy-Buildings-in-the-Office-Sector_A-Global-Study-from-the-Owners-Perspective.pdf
-    source: openalex
-    license: cc-by-nc
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2021-01-01'
-    document_type: preprint
-    persistent_id: https://doi.org/10.2139/ssrn.3784793
-    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
-      [copy https://dspace.mit.edu/bitstream/1721.1/156673/2/v24-no2-4_Market-Adoption-of-Healthy-Buildings-in-the-Office-Sector_A-Global-Study-from-the-Owners-Perspective.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-18'
-    selected_version: submittedVersion
-    origin_ids: doi:10.2139/ssrn.3784793 openalex:W3130135373
-    resolution: 'legacy: openalex location'
   - id: ope-double-skin-fa-ade-dsf-technologies-for-uk-off
     title: Double skin façade (DSF) technologies for UK office refurbishments
     url: https://cris.brighton.ac.uk/ws/files/394679/SS-04-2015-0025%20(5)%20(1)%20(1).pdf
@@ -158073,3 +158054,57 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-18'
+  - id: oas-10-48550-arxiv-1510-01970-e962e1c7
+    title: Towards a general framework for an observation and knowledge based model
+      of occupant behaviour in office buildings
+    url: https://arxiv.org/pdf/1510.01970
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-10-07'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.1510.01970
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1510.01970;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.1510.01970 openalex:W2267566244
+    resolution: 'sim1: openalex location'
+  - id: arx-a-genetic-algorithm-applied-to-the-validation-
+    title: A genetic algorithm applied to the validation of building thermal models
+    url: https://arxiv.org/pdf/1212.5250v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-12-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1212.5250
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1212.5250 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-investigating-the-performance-of-correspondenc
+    title: Investigating the performance of Correspondence Algorithms in Vision based
+      Driver-assistance in Indoor Environment
+    url: https://arxiv.org/pdf/1301.0435v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-01-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1301.0435
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1301.0435 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+    origin_ids: doi:10.5120/9718-3663
