@@ -157402,25 +157402,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.cemconcomp.2023.105178 openalex:W4380235101
     resolution: 'legacy: openalex location'
-  - id: ope-identifying-parameters-for-a-performance-based
-    title: 'Identifying parameters for a performance-based framework: Towards prioritising
-      underutilised historical buildings for adaptive reuse in New Zealand'
-    url: https://figshare.com/articles/journal_contribution/Identifying_parameters_for_a_performance-based_framework_Towards_prioritising_underutilised_historical_buildings_for_adaptive_reuse_in_New_Zealand/16443930
-    source: openalex
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2020-05-05'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.cities.2020.102756
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://figshare.com/articles/journal_contribution/Identifying_parameters_for_a_performance-based_framework_Towards_prioritising_underutilised_historical_buildings_for_adaptive_reuse_in_New_Zealand/16443930;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-18'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.cities.2020.102756 openalex:W3023011957
-    resolution: 'legacy: openalex location'
   - id: ope-quantifying-the-carbon-footprint-reduction-pot
     title: Quantifying the carbon footprint reduction potential of lifestyle choices
       in Japan

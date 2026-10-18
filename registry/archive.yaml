@@ -217788,20 +217788,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc/4.0/']
       date/year ['1888', '1888']
     rights_verified_at: '2026-10-18'
-  - id: arc-mcmillan30142-94b42bf9
-    title: 'Illustrated catalogue : March 1907 / McMillan & Co. (1907) [arc-mcmillan30142-94b42bf9]'
-    url: https://archive.org/download/McMillan30142/Recno30142_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1907'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1907', '1907']
-    rights_verified_at: '2026-10-18'
   - id: arc-bebarfalds33646-874d8491
     title: Furnishing suggestions / Bebarfalds Ltd. (1920) [arc-bebarfalds33646-874d8491]
     url: https://archive.org/download/Bebarfalds33646/Recno33646_djvu.txt
@@ -217872,35 +217858,6 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1886', '1886']
-    rights_verified_at: '2026-10-18'
-  - id: arc-midland57505-57693503
-    title: A few suggestions of furniture and furnishing at the Midland Salons / Midland
-      Furnishing C (1917) [arc-midland57505-57693503]
-    url: https://archive.org/download/Midland57505/Recno57505_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1917'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1910', '1910', '1917']
-    rights_verified_at: '2026-10-18'
-  - id: arc-lassetter4133-4e2a1c43
-    title: Furniture catalogue (1905) [arc-lassetter4133-4e2a1c43]
-    url: https://archive.org/download/Lassetter4133/Recno4133_redone_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1905'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1900', '1900', '1905']
     rights_verified_at: '2026-10-18'
   - id: arc-ramsay4915-0e51a76a
     title: 'Ramsay''s architectural and engineering catalogue : a compendium and filing
@@ -218004,21 +217961,6 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       without a date
-    rights_verified_at: '2026-10-18'
-  - id: arc-auxiliary14027-a7f49159
-    title: Complete furnishing catalogue / Army & Navy Auxiliary Cooperative Supply
-      Ltd. (1890) [arc-auxiliary14027-a7f49159]
-    url: https://archive.org/download/Auxiliary14027/Recno14027_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1890'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1890', '1890']
     rights_verified_at: '2026-10-18'
   - id: arc-croggon14027-0a581995
     title: 'Croggon & Co. Limited : manufacturers, builders of galvanized and corrugated
@@ -218149,20 +218091,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1949', '1949']
     rights_verified_at: '2026-10-18'
-  - id: arc-monsanto-chemical-co-1949-2-b5c917ff
-    title: 'Preserve your posts with penta : by C. S. Walters. (1949) [arc-monsanto-chemical-co-1949-2-b5c917ff]'
-    url: https://archive.org/download/monsanto-chemical-co.-1949-2/Monsanto%20Chemical%20Co.%201949%202_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1949'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1949', '1949']
-    rights_verified_at: '2026-10-18'
   - id: arc-monsanto-chemical-co-1949-3-24a624e7
     title: 'Pentachlorophenol ...the best protection for poles and cross arms : Monsanto''s
       Santophen 2 (1949) [arc-monsanto-chemical-co-1949-3-24a624e7]'
@@ -218177,4 +218105,699 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1949', '1949']
+    rights_verified_at: '2026-10-18'
+  - id: arc-national-lead-company-1933-a813eed2
+    title: A painter and his profits. (1933) [arc-national-lead-company-1933-a813eed2]
+    url: https://archive.org/download/national-lead-company-1933/National%20Lead%20Company%201933_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1933', '1933']
+    rights_verified_at: '2026-10-18'
+  - id: arc-national-lead-company-1950-568cfd9f
+    title: The handbook on painting. (1950) [arc-national-lead-company-1950-568cfd9f]
+    url: https://archive.org/download/national-lead-company-1950/National%20Lead%20Company%201950_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-porter-paint-co-1940s-2184a5d8
+    title: Porter perfect highest professional quality casein paint. [Catalogue] (1940)
+      [arc-porter-paint-co-1940s-2184a5d8]
+    url: https://archive.org/download/porter-paint-co.-1940s/Porter%20Paint%20Co.%201940s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-porter-paint-co-1940s-2-d6d464e4
+    title: The painter's friend tinting chart. (1940) [arc-porter-paint-co-1940s-2-d6d464e4]
+    url: https://archive.org/download/porter-paint-co.-1940s-2/Porter%20Paint%20Co.%201940s%202_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-rockford-screw-products-co-1959-3d84180c
+    title: 'Portable planter : hobby-neering with Rockford Screw Products. (1959) [arc-rockford-screw-products-co-1959-3d84180c]'
+    url: https://archive.org/download/rockford-screw-products-co.-1959/Rockford%20Screw%20Products%20Co.%201959_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1959'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1959-05', '1959']
+    rights_verified_at: '2026-10-18'
+  - id: arc-rockford-screw-products-co-1960-f475ad8a
+    title: 'Suet feeder : hobby-neering with Rockford Screw Products. (1960) [arc-rockford-screw-products-co-1960-f475ad8a]'
+    url: https://archive.org/download/rockford-screw-products-co.-1960/Rockford%20Screw%20Products%20Co.%201960_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960-01', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-rockford-screw-products-co-1960-5-6a90c97c
+    title: 'Pergola : hobby-neering with Rockford Screw Products. (1960) [arc-rockford-screw-products-co-1960-5-6a90c97c]'
+    url: https://archive.org/download/rockford-screw-products-co.-1960-5/Rockford%20Screw%20Products%20Co.%201960%205_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960-05', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-rockford-screw-products-co-1960-6-f910e6fe
+    title: 'Picnic table : hobby-neering with Rockford Screw Products. (1960) [arc-rockford-screw-products-co-1960-6-f910e6fe]'
+    url: https://archive.org/download/rockford-screw-products-co.-1960-6/Rockford%20Screw%20Products%20Co.%201960%206_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1960-03', '1960']
+    rights_verified_at: '2026-10-18'
+  - id: arc-rust-oleum-corporation-1940s-d8e5a2d7
+    title: Paint... your rust troubles away with Rust-Oleum. (1940) [arc-rust-oleum-corporation-1940s-d8e5a2d7]
+    url: https://archive.org/download/rust-oleum-corporation-1940s/Rust-Oleum%20Corporation%201940s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-sears-roebuck-co-1905-3f85054b
+    title: Catalogue of mill work. (1905) [arc-sears-roebuck-co-1905-3f85054b]
+    url: https://archive.org/download/sears-roebuck-co.-1905/Sears%2C%20Roebuck%20%26%20Co.%201905_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1905', '1905']
+    rights_verified_at: '2026-10-18'
+  - id: arc-steelcote-manufacturing-co-1950s-81341cdb
+    title: Super-elastic Steelcote rubber enamel. (1950) [arc-steelcote-manufacturing-co-1950s-81341cdb]
+    url: https://archive.org/download/steelcote-manufacturing-co.-1950s/Steelcote%20Manufacturing%20Co.%201950s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950', 'c. 1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-american-asbestos-products-co-1940s-5db7e3a3
+    title: 'Amaspro quality products satisfaction guaranteed : what to use & why. (1940)
+      [arc-the-american-asbestos-products-co-1940s-5db7e3a3]'
+    url: https://archive.org/download/the-american-asbestos-products-co.-1940s/The%20American%20Asbestos%20Products%20Co.%201940s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1930s-13561f5b
+    title: Sherwin-Williams poster panel greens. (1930) [arc-the-sherwin-williams-co-1930s-13561f5b]
+    url: https://archive.org/download/the-sherwin-williams-co.-1930s/The%20Sherwin-Williams%20Co.%201930s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930', 'c. 1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1940s-2-06a21f8d
+    title: Sherwin-Williams machine tool finishes. (1940) [arc-the-sherwin-williams-co-1940s-2-06a21f8d]
+    url: https://archive.org/download/the-sherwin-williams-co.-1940s-2/The%20Sherwin-Williams%20Co.%201940s%202_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1940s-3-f1a3c065
+    title: Sherwin-Williams high gloss kem lustral "42" lustral "67" opex lacquer "36".
+      (1940) [arc-the-sherwin-williams-co-1940s-3-f1a3c065]
+    url: https://archive.org/download/the-sherwin-williams-co.-1940s-3/The%20Sherwin-Williams%20Co.%201940s%203_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1940s-4-1d4a9c54
+    title: Sherwin-Williams Kromik metal primer and Metalastic. (1940) [arc-the-sherwin-williams-co-1940s-4-1d4a9c54]
+    url: https://archive.org/download/the-sherwin-williams-co.-1940s-4/The%20Sherwin-Williams%20Co.%201940s%204_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1940s-5b5c837b
+    title: Sherwin-Williams industrial maintenance paint and color guide. (1940) [arc-the-sherwin-williams-co-1940s-5b5c837b]
+    url: https://archive.org/download/the-sherwin-williams-co.-1940s/The%20Sherwin-Williams%20Co.%201940s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940', 'c. 1940']
+    rights_verified_at: '2026-10-18'
+  - id: arc-collectionof152o00card-e369e60c
+    title: A collection of 152 original monumental designs (1883) [arc-collectionof152o00card-e369e60c]
+    url: https://archive.org/download/collectionof152o00card/collectionof152o00card_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1883'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1883'', ''1883'']:
+      published in 1883, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1950s-2-aa24d643
+    title: 'Sherwin-Williams kem finishes : chemically evolved materials. (1950) [arc-the-sherwin-williams-co-1950s-2-aa24d643]'
+    url: https://archive.org/download/the-sherwin-williams-co.-1950s-2/The%20Sherwin-Williams%20Co.%201950s%202_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950', 'c. 1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1950s-3-8e9693ca
+    title: Kem screen process colors. (1950) [arc-the-sherwin-williams-co-1950s-3-8e9693ca]
+    url: https://archive.org/download/the-sherwin-williams-co.-1950s-3/The%20Sherwin-Williams%20Co.%201950s%203_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950', 'c. 1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1950s-4-5f2fade3
+    title: Sherwin-Williams kem bulletin colors. (1950) [arc-the-sherwin-williams-co-1950s-4-5f2fade3]
+    url: https://archive.org/download/the-sherwin-williams-co.-1950s-4/The%20Sherwin-Williams%20Co.%201950s%204_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950', 'c. 1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-sherwin-williams-co-1950s-28eace82
+    title: First quality fluid tinting colors. (1950) [arc-the-sherwin-williams-co-1950s-28eace82]
+    url: https://archive.org/download/the-sherwin-williams-co.-1950s/The%20Sherwin-Williams%20Co.%201950s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-18'
+  - id: arc-davidjones30160-cd6a8943
+    title: How to furnish the home / David Jones Ltd. (1909) [arc-davidjones30160-cd6a8943]
+    url: https://archive.org/download/DavidJones30160/Recno30160_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1909'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc/4.0/']
+      date/year ['1909', '1909']
+    rights_verified_at: '2026-10-18'
+  - id: arc-youngmarten34116-08fdecfc
+    title: '[Trade catalogue] / Young & Marten Ltd. [arc-youngmarten34116-08fdecfc]'
+    url: https://archive.org/download/YoungMarten34116/Recno34116_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-18'
+  - id: arc-maple37037-b2eeaac7
+    title: Maple & Co's illustrated catalogue of furniture / Maple & Co. (1895) [arc-maple37037-b2eeaac7]
+    url: https://archive.org/download/Maple37037/Recno37037_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1891', '1891', '1885', '1895']
+    rights_verified_at: '2026-10-18'
+  - id: arc-falkirk38286-c615dc0a
+    title: Falkirk Iron Company's book of patterns (1895) [arc-falkirk38286-c615dc0a]
+    url: https://archive.org/download/Falkirk38286/Recno38286_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890', '1890', '1895']
+    rights_verified_at: '2026-10-18'
+  - id: arc-acme-contracting-company-1938-efe97ecc
+    title: Termites. (1938) [arc-acme-contracting-company-1938-efe97ecc]
+    url: https://archive.org/download/acme-contracting-company-1938/Acme%20Contracting%20Company%201938_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938', '1938']
+    rights_verified_at: '2026-10-18'
+  - id: arc-akron-sewer-pipe-co-c-1900-b83b15a3
+    title: '[Catalogue] Akron Sewer Pipe Co. (1900) [arc-akron-sewer-pipe-co-c-1900-b83b15a3]'
+    url: https://archive.org/download/akron-sewer-pipe-co.-c-1900/Akron%20Sewer%20Pipe%20Co.%20c1900_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900', 'c. 1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-blackmer-post-pipe-co-1902-f801d02f
+    title: '[Catalogue] Blackmer & Post Pipe Co. : manufacturers of vitrified pipe.
+      (1902) [arc-blackmer-post-pipe-co-1902-f801d02f]'
+    url: https://archive.org/download/blackmer-post-pipe-co.-1902/Blackmer%20%26%20Post%20Pipe%20Co.%201902_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1902', '1902']
+    rights_verified_at: '2026-10-18'
+  - id: arc-blackmer-post-pipe-co-1909-2c401b86
+    title: '[Catalogue] Blackmer & Post Pipe Co. : manufacturers of vitrified sewer
+      pipe and other cla (1909) [arc-blackmer-post-pipe-co-1909-2c401b86]'
+    url: https://archive.org/download/blackmer-post-pipe-co.-1909/Blackmer%20%26%20Post%20Pipe%20Co.%201909_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1909'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1909', '1909']
+    rights_verified_at: '2026-10-18'
+  - id: arc-blackmer-post-pipe-co-1918-57f0268e
+    title: 'Vitrified sewer pipe and other clay products : Blackmer & Post Pipe Company
+      1918 short cat (1918) [arc-blackmer-post-pipe-co-1918-57f0268e]'
+    url: https://archive.org/download/blackmer-post-pipe-co.-1918/Blackmer%20%26%20Post%20Pipe%20Co.%201918_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1918', '1918']
+    rights_verified_at: '2026-10-18'
+  - id: arc-blackmer-and-post-pipe-co-c-1910-b516b0d9
+    title: Blackmer and Post Pipe Co. septic tank. (1910) [arc-blackmer-and-post-pipe-co-c-1910-b516b0d9]
+    url: https://archive.org/download/blackmer-and-post-pipe-co.-c-1910/Blackmer%20and%20Post%20Pipe%20Co.%20c1910_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910', 'c. 1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-bruce-terminix-inc-1939-fb1430fb
+    title: Termite control specifications. (1939) [arc-bruce-terminix-inc-1939-fb1430fb]
+    url: https://archive.org/download/bruce-terminix-inc.-1939/Bruce%20Terminix%2C%20Inc.%201939_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939', '1939']
+    rights_verified_at: '2026-10-18'
+  - id: arc-california-redwood-association-1947-33d1a962
+    title: California redwood... its properties and uses. (1947) [arc-california-redwood-association-1947-33d1a962]
+    url: https://archive.org/download/california-redwood-association-1947/California%20Redwood%20Association%201947_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947', '1947']
+    rights_verified_at: '2026-10-18'
+  - id: arc-chandler-co-c-1900-64be5750
+    title: '[Catalogue] Chandler & Co. : sewer pipe and drain or farm tile. (1900) [arc-chandler-co-c-1900-64be5750]'
+    url: https://archive.org/download/chandler-co.-c-1900/Chandler%20%26%20Co.%20c1900_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900', 'c. 1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-clay-products-association-1925-68817792
+    title: '[Catalogue] Vitrified salt glazed clay sewer pipe : the everlasting material
+      for sewerage  (1925) [arc-clay-products-association-1925-68817792]'
+    url: https://archive.org/download/clay-products-association-1925/Clay%20Products%20Association%201925_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1925', '1925']
+    rights_verified_at: '2026-10-18'
+  - id: arc-clay-products-association-1936-1-791d3d0f
+    title: Tests of jointing materials for vitrified clay pipe. (1936) [arc-clay-products-association-1936-1-791d3d0f]
+    url: https://archive.org/download/clay-products-association-1936-1/Clay%20Products%20Association%201936%201_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1936', '1936']
+    rights_verified_at: '2026-10-18'
+  - id: arc-clay-products-association-1936-2-f3c8a699
+    title: Asphaltic jointing compounds. (1936) [arc-clay-products-association-1936-2-f3c8a699]
+    url: https://archive.org/download/clay-products-association-1936-2/Clay%20Products%20Association%201936%202_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1936', '1936']
+    rights_verified_at: '2026-10-18'
+  - id: arc-clay-products-association-1937-1a042028
+    title: Tentative standards for vitrified clay products. (1937) [arc-clay-products-association-1937-1a042028]
+    url: https://archive.org/download/clay-products-association-1937/Clay%20Products%20Association%201937_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937', '1937']
+    rights_verified_at: '2026-10-18'
+  - id: arc-denny-renton-clay-coal-co-c-1910-258c407d
+    title: 'Hints on farm drainage : the proper methods and results of draining land.
+      (1910) [arc-denny-renton-clay-coal-co-c-1910-258c407d]'
+    url: https://archive.org/download/denny-renton-clay-coal-co.-c-1910/Denny-Renton%20Clay%20%26%20Coal%20Co.%20c1910_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910', 'c. 1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-e-l-bruce-co-1930-66975009
+    title: Plank floors as crafted by Bruce. (1930) [arc-e-l-bruce-co-1930-66975009]
+    url: https://archive.org/download/e.-l.-bruce-co.-1930/E.%20L.%20Bruce%20Co.%201930_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-18'
+  - id: arc-evens-howard-fire-brick-co-1908-b6c60dc9
+    title: '[Catalogue] Fire brick and sewer pipe. (1908) [arc-evens-howard-fire-brick-co-1908-b6c60dc9]'
+    url: https://archive.org/download/evens-howard-fire-brick-co.-1908/Evens%20%26%20Howard%20Fire%20Brick%20Co.%201908_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1908'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1908', '1908']
+    rights_verified_at: '2026-10-18'
+  - id: arc-evens-howard-fire-brick-co-c-1900-a8492e54
+    title: '[Catalogue] Evens & Howard : manufacturers of fire brick, gas retorts, cupola
+      and furnace  (1900) [arc-evens-howard-fire-brick-co-c-1900-a8492e54]'
+    url: https://archive.org/download/evens-howard-fire-brick-co.-c-1900/Evens%20%26%20Howard%20Fire%20Brick%20Co.%20c1900_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900', '1900', 'c. 1900']
+    rights_verified_at: '2026-10-18'
+  - id: arc-evens-howard-fire-brick-co-c-1916-c310121d
+    title: '[Catalogue] Evens & Howard Fire Brick Co. (1916) [arc-evens-howard-fire-brick-co-c-1916-c310121d]'
+    url: https://archive.org/download/evens-howard-fire-brick-co.-c-1916/Evens%20%26%20Howard%20Fire%20Brick%20Co.%20c1916_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1916', '1916', 'c. 1916']
+    rights_verified_at: '2026-10-18'
+  - id: arc-harbor-plywood-corporation-1938-d3238588
+    title: Handbook of Douglas fir plywood. (1938) [arc-harbor-plywood-corporation-1938-d3238588]
+    url: https://archive.org/download/harbor-plywood-corporation-1938/Harbor%20Plywood%20Corporation%201938_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938', '1938']
+    rights_verified_at: '2026-10-18'
+  - id: arc-imse-schilling-sash-door-co-1931-71c6eb79
+    title: Why women want Sellers kitchen furniture units. (1931) [arc-imse-schilling-sash-door-co-1931-71c6eb79]
+    url: https://archive.org/download/imse-schilling-sash-door-co.-1931/Imse-Schilling%20Sash%20%26%20Door%20Co.%201931_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931', '1931']
+    rights_verified_at: '2026-10-18'
+  - id: arc-j-j-fitzgerald-co-1910-0314ccbb
+    title: Catalogue of J. J. Fitzgerald & Co. sewer pipe. (1910) [arc-j-j-fitzgerald-co-1910-0314ccbb]
+    url: https://archive.org/download/j.-j.-fitzgerald-co.-1910/J.%20J.%20Fitzgerald%20%26%20Co.%201910_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910', '1910']
+    rights_verified_at: '2026-10-18'
+  - id: arc-jackson-fire-clay-co-1873-d5d02aaa
+    title: 'Illustrated catalogue : practical hints upon drainage sewers, sewer pipe
+      and fire brick. (1873) [arc-jackson-fire-clay-co-1873-d5d02aaa]'
+    url: https://archive.org/download/jackson-fire-clay-co.-1873/Jackson%20Fire%20Clay%20Co.%201873_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1873'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1873', '1873']
+    rights_verified_at: '2026-10-18'
+  - id: arc-julius-seidel-lumber-co-1926-4e27edc0
+    title: 'Price list : Julius Seidel Lumber Co. (1926) [arc-julius-seidel-lumber-co-1926-4e27edc0]'
+    url: https://archive.org/download/julius-seidel-lumber-co.-1926/Julius%20Seidel%20Lumber%20Co.%201926_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926', '1926']
     rights_verified_at: '2026-10-18'
