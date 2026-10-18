@@ -157455,3 +157455,96 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-18'
     origin_ids: doi:10.1063/1.3469770
+  - id: ope-effect-of-carbonation-treatment-on-fracture-be
+    title: Effect of carbonation treatment on fracture behavior of low-carbon mortar
+      with recycled sand and recycled powder
+    url: https://discovery.ucl.ac.uk/10171802/1/Accepted%20Version.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cemconcomp.2023.105178
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10171802/1/Accepted%20Version.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.cemconcomp.2023.105178 openalex:W4380235101
+    resolution: 'legacy: openalex location'
+  - id: ope-identifying-parameters-for-a-performance-based
+    title: 'Identifying parameters for a performance-based framework: Towards prioritising
+      underutilised historical buildings for adaptive reuse in New Zealand'
+    url: https://figshare.com/articles/journal_contribution/Identifying_parameters_for_a_performance-based_framework_Towards_prioritising_underutilised_historical_buildings_for_adaptive_reuse_in_New_Zealand/16443930
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-05'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cities.2020.102756
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://figshare.com/articles/journal_contribution/Identifying_parameters_for_a_performance-based_framework_Towards_prioritising_underutilised_historical_buildings_for_adaptive_reuse_in_New_Zealand/16443930;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.cities.2020.102756 openalex:W3023011957
+    resolution: 'legacy: openalex location'
+  - id: ope-quantifying-the-carbon-footprint-reduction-pot
+    title: Quantifying the carbon footprint reduction potential of lifestyle choices
+      in Japan
+    url: https://nagasaki-u.repo.nii.ac.jp/record/2000395/files/ERL16_064022.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-04-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1088/1748-9326/abfc07
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://nagasaki-u.repo.nii.ac.jp/record/2000395/files/ERL16_064022.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1088/1748-9326/abfc07 openalex:W3157766324
+    resolution: 'legacy: openalex location'
+  - id: ope-maximising-the-circular-economy-and-sustainabi
+    title: 'Maximising the circular economy and sustainability outcomes: An end-of-life
+      tyre recycling outlets selection model'
+    url: https://pure.coventry.ac.uk/ws/files/53188462/Binder1.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ijpe.2020.107965
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://pure.coventry.ac.uk/ws/files/53188462/Binder1.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ijpe.2020.107965 openalex:W3094220259
+    resolution: 'legacy: openalex location'
+  - id: ope-enhancing-mix-proportion-design-of-low-carbon-
+    title: Enhancing mix proportion design of low carbon concrete for shield segment
+      using a combination of Bayesian optimization-NGBoost and NSGA-III algorithm
+    url: https://publications.aston.ac.uk/id/eprint/46379/1/Enhancing_mix_proportion_design_of_low_carbon_concrete_for_shield_segment_using_a_combination_of_Bayesian_optimization-NGBoost_and_NSGA-III_algorithm.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-03'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2024.142746
+    license_evidence: no licence statement for this copy [copy https://publications.aston.ac.uk/id/eprint/46379/1/Enhancing_mix_proportion_design_of_low_carbon_concrete_for_shield_segment_using_a_combination_of_Bayesian_optimization-NGBoost_and_NSGA-III_algorithm.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2024.142746 openalex:W4399284043
+    resolution: 'legacy: openalex location'
