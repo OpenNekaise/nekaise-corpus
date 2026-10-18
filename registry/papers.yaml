@@ -157294,23 +157294,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.applthermaleng.2022.119912 openalex:W4312071453
     resolution: 'sim1: openalex+unpaywall location'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-18'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-development-of-a-cost-efficient-autonomous-mav
     title: Development of a Cost-efficient Autonomous MAV for an Unstructured Indoor
       Environment
@@ -158162,3 +158145,87 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-18'
     origin_ids: doi:10.1155/2011/762486
+  - id: ope-estimating-data-center-water-use-best-practice
+    title: 'Estimating data center water use: Best practices and critical questions'
+    url: https://arxiv.org/pdf/2610.04735
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    published_at: '2026-09-23'
+    document_type: preprint
+    persistent_id: https://doi.org/10.5281/zenodo.22920995
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.04735;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5281/zenodo.22920995 openalex:W7214126335
+    resolution: 'legacy: openalex location'
+  - id: oas-w389991997
+    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W389991997
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: openalex:W389991997
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-buildings-extensions-and-volume-growth-entropy
+    title: Buildings, Extensions, and Volume Growth Entropy
+    url: https://arxiv.org/pdf/1210.0801v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-10-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1210.0801
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1210.0801 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-a-haagerup-inequality-for-ta-1-times-ta-1-and-
+    title: A Haagerup Inequality for $\tA_1\times\tA_1$ and $\tA_2$ Buildings
+    url: https://arxiv.org/pdf/1302.5598v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-02-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1302.5598
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1302.5598 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-type-iii-actions-on-boundaries-of-tilde-a-n-bu
+    title: Type III actions on boundaries of $\tilde A_n$ buildings
+    url: https://arxiv.org/pdf/1302.5781v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-02-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1302.5781
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1302.5781 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
