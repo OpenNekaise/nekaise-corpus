@@ -204865,19 +204865,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-symbolofhighqual00cres-252e0669
-    title: 'Symbol of high quality : portfolio 39 (1939) [arc-symbolofhighqual00cres-252e0669]'
-    url: https://archive.org/download/symbolofhighqual00cres/symbolofhighqual00cres_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1939'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
-      states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-almosthalfcentvr00mcne-83982187
     title: Almost half a centvry devoted to creating and bvilding fine monvments and
       mavsolevms (1932) [arc-almosthalfcentvr00mcne-83982187]
@@ -205000,19 +204987,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1938'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-lightingfixtures00gros-0-a3f50e5c
-    title: Lighting fixtures catalog no. 220 (1939) [arc-lightingfixtures00gros-0-a3f50e5c]
-    url: https://archive.org/download/lightingfixtures00gros_0/lightingfixtures00gros_0_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1939'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
-      states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-followingillustr00amer-3fb87b64
     title: The following illustrations cover a few conspicuous examples of buildings
       built or buildin (1907) [arc-followingillustr00amer-3fb87b64]
@@ -205118,5 +205092,550 @@ sources:
     published_at: '1939'
     document_type: trade-literature
     license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-barberschairsbar00koke-df96a5f5
+    title: 'Barbers'' chairs and barber shop equipment : illustrated catalog (1928)
+      [arc-barberschairsbar00koke-df96a5f5]'
+    url: https://archive.org/download/barberschairsbar00koke/barberschairsbar00koke_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-cahners-pub-co-pdf-a-57d5c111
+    title: Ceramic Data Book (1959) [arc-cahners-pub-co-pdf-a-57d5c111]
+    url: https://archive.org/download/cahners-pub-co.-pdf-a/Cahners_Pub_Co.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1959'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1958-1959', '1958']
+    rights_verified_at: '2026-10-18'
+  - id: arc-goshenamericasfi00gosh-03706ec0
+    title: 'Goshen : America''s finest outdoor furniture, home play equipment, Blue
+      Ribbon ladders (1951) [arc-goshenamericasfi00gosh-03706ec0]'
+    url: https://archive.org/download/goshenamericasfi00gosh/goshenamericasfi00gosh_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1951'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1951'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-abcofinstallingp00pres-ee35991d
+    title: 'The A.B.C. of installing prism lighting : no mystery about the use of Imperial
+      Plate Prism (1900) [arc-abcofinstallingp00pres-ee35991d]'
+    url: https://archive.org/download/abcofinstallingp00pres/abcofinstallingp00pres_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-publicbuildingco00fibr-2b12c215
+    title: 'Public building, commercial, residential lighting : catalog no. 2 (1923)
+      [arc-publicbuildingco00fibr-2b12c215]'
+    url: https://archive.org/download/publicbuildingco00fibr/publicbuildingco00fibr_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-catalogueno10ofp00peer-269bfc86
+    title: Catalogue No. 10 of the Peerless Manufacturing Co. (1905) [arc-catalogueno10ofp00peer-269bfc86]
+    url: https://archive.org/download/catalogueno10ofp00peer/catalogueno10ofp00peer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
+      in 1905, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-helpfulhintsforp00hays-f5fffe6c
+    title: Helpful hints for prospective builders (1914) [arc-helpfulhintsforp00hays-f5fffe6c]
+    url: https://archive.org/download/helpfulhintsforp00hays/helpfulhintsforp00hays_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1914'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1914'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-wartimelightingf00kurt-007866b8
+    title: War time lighting for top efficiency around the clock (1942) [arc-wartimelightingf00kurt-007866b8]
+    url: https://archive.org/download/wartimelightingf00kurt/wartimelightingf00kurt_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1942'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1942'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lightingfixtures00jose-1645a5d5
+    title: 'Lighting fixtures and parts : catalog no. 25 (1920) [arc-lightingfixtures00jose-1645a5d5]'
+    url: https://archive.org/download/lightingfixtures00jose/lightingfixtures00jose_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-engineeredfluore00artm-cb722132
+    title: Engineered fluorescent lighting (1941) [arc-engineeredfluore00artm-cb722132]
+    url: https://archive.org/download/engineeredfluore00artm/engineeredfluore00artm_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1941'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-housingindustry00nati-2cc40f83
+    title: Housing and industry (1918) [arc-housingindustry00nati-2cc40f83]
+    url: https://archive.org/download/housingindustry00nati/housingindustry00nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1918'']: published
+      in 1918, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-the-interstate-sash-door-co-pdf-a-ecf360ad
+    title: The Interstate Sash & Door Company Catalogue No. 41 (1949) [arc-the-interstate-sash-door-co-pdf-a-ecf360ad]
+    url: https://archive.org/download/the-interstate-sash-door-co.-pdf-a/The_Interstate_Sash_%26_Door_Co.PDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
+    rights_verified_at: '2026-10-18'
+  - id: arc-flaxlinumcorrect00flax-3c208d4e
+    title: 'Flax-li-num : the correct building insulation and sound control material
+      : a treatise on i (1927) [arc-flaxlinumcorrect00flax-3c208d4e]'
+    url: https://archive.org/download/flaxlinumcorrect00flax/flaxlinumcorrect00flax_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1927'']: published
+      in 1927, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-finehardwoodfloo00wilk-b84395ef
+    title: 'Fine hardwood floors and parquetry. : made by the Wilke Manufacturing Company,
+      Anderson, I (1904) [arc-finehardwoodfloo00wilk-b84395ef]'
+    url: https://archive.org/download/finehardwoodfloo00wilk/finehardwoodfloo00wilk_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1904'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1904'', ''1904'']:
+      published in 1904, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-honorbilthomesle00sear-80b1e885
+    title: 'Honor bilt homes : leading eastern and western designs of bungalows, houses,
+      cottages, fla (1916) [arc-honorbilthomesle00sear-80b1e885]'
+    url: https://archive.org/download/honorbilthomesle00sear/honorbilthomesle00sear_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1916'', ''1916'']:
+      published in 1916, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-modernartitsgrea00publ-4223fe80
+    title: 'Modern art : its greatest appeal is in lighting equipment (1930) [arc-modernartitsgrea00publ-4223fe80]'
+    url: https://archive.org/download/modernartitsgrea00publ/modernartitsgrea00publ_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-woodmantelsfirep00cbat-df1343d2
+    title: Wood mantels and fire-place fixtures (1911) [arc-woodmantelsfirep00cbat-df1343d2]
+    url: https://archive.org/download/woodmantelsfirep00cbat/woodmantelsfirep00cbat_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1911'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-ugine-electric-steels-pdf-a-688cd0fe
+    title: Ugine Electric Steel Works [arc-ugine-electric-steels-pdf-a-688cd0fe]
+    url: https://archive.org/download/ugine-electric-steels-pdf-a/Ugine_Electric_SteelsPDF-A_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      without a date
+    rights_verified_at: '2026-10-18'
+  - id: arc-holdenlinefluore00dean-52534f10
+    title: 'Holdenline : fluorescent fixtures of all kinds, lumiline brackets, specialty
+      fixtures (1939) [arc-holdenlinefluore00dean-52534f10]'
+    url: https://archive.org/download/holdenlinefluore00dean/holdenlinefluore00dean_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-somearchitectura00mont-fb9aec24
+    title: 'Some architectural designs in metal for roofing and siding : from the Montross
+      Metal Shing (1909) [arc-somearchitectura00mont-fb9aec24]'
+    url: https://archive.org/download/somearchitectura00mont/somearchitectura00mont_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1909'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-michaelsproducts00mich-73450b24
+    title: 'Michaels products in bronze, aluminum, stainless steel, and other metals
+      : storefronts, do (1950) [arc-michaelsproducts00mich-73450b24]'
+    url: https://archive.org/download/michaelsproducts00mich/michaelsproducts00mich_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-everlastingdigni00unit-a894b71b
+    title: 'Everlasting, dignified : bronze tablets for Synagogues and other Jewish
+      Institutions (1952) [arc-everlastingdigni00unit-a894b71b]'
+    url: https://archive.org/download/everlastingdigni00unit/everlastingdigni00unit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1952'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-touchedbymagicwa00bras-2a4bf696
+    title: 'Touched by the magic wand, Brasco : a portfolio of successful designs (1921)
+      [arc-touchedbymagicwa00bras-2a4bf696]'
+    url: https://archive.org/download/touchedbymagicwa00bras/touchedbymagicwa00bras_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1921'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1921'']: published
+      in 1921, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-coppesnapaneecus00copp-0455816d
+    title: 'Coppes Napanee custombuilt kitchens : for discriminating homes where the
+      beauty and econom (1939) [arc-coppesnapaneecus00copp-0455816d]'
+    url: https://archive.org/download/coppesnapaneecus00copp/coppesnapaneecus00copp_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-morellorestauran00more-117f43dc
+    title: Morello Restaurant & Pizzeria Equipment Corporation (1970) [arc-morellorestauran00more-117f43dc]
+    url: https://archive.org/download/morellorestauran00more/morellorestauran00more_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1970'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1970'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-fromforesttofloo00indi-e0c6a6bd
+    title: From forest to floor (1930) [arc-fromforesttofloo00indi-e0c6a6bd]
+    url: https://archive.org/download/fromforesttofloo00indi/fromforesttofloo00indi_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-cataloguecmkinne00cmki-becc7800
+    title: '[Catalogue] : C. M. Kinney Co., successor to U. S. Changeable Sign Co. ...
+      New York : pate (1913) [arc-cataloguecmkinne00cmki-becc7800]'
+    url: https://archive.org/download/cataloguecmkinne00cmki/cataloguecmkinne00cmki_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lightingequipmen00artm-3fc8a955
+    title: Lighting equipment with engineered illumination for commercial applications
+      (1941) [arc-lightingequipmen00artm-3fc8a955]
+    url: https://archive.org/download/lightingequipmen00artm/lightingequipmen00artm_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1941'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lightingequipmen00artm-0-dc538b87
+    title: Lighting equipment with engineered illumination for residential applications
+      (1941) [arc-lightingequipmen00artm-0-dc538b87]
+    url: https://archive.org/download/lightingequipmen00artm_0/lightingequipmen00artm_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1941'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-slateitsuseshand00genu-d17beb79
+    title: 'Slate and its uses : a handy book of helpful facts for all interested in
+      building (1906) [arc-slateitsuseshand00genu-d17beb79]'
+    url: https://archive.org/download/slateitsuseshand00genu/slateitsuseshand00genu_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1906'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1906'']: published
+      in 1906, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-bothsidesofstory00unit-e191c2ac
+    title: Both sides of the story elastic Elastic U.S. Naugahyde the finest in vinyl
+      upholstery (1950) [arc-bothsidesofstory00unit-e191c2ac]
+    url: https://archive.org/download/bothsidesofstory00unit/bothsidesofstory00unit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'', ''1950'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-samazo00sams-07c2261d
+    title: Samazo (1950) [arc-samazo00sams-07c2261d]
+    url: https://archive.org/download/samazo00sams/samazo00sams_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-robinsonlaplokwa00robi-7a0c19f5
+    title: Robinson lap-lok wall coping (1956) [arc-robinsonlaplokwa00robi-7a0c19f5]
+    url: https://archive.org/download/robinsonlaplokwa00robi/robinsonlaplokwa00robi_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1956'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1956'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-steeltexfloorlat00pitt-dcbc93ee
+    title: Steeltex floor lath for concrete floors and roofs and Piitsburgh welded wire
+      reinformcemen (1959) [arc-steeltexfloorlat00pitt-dcbc93ee]
+    url: https://archive.org/download/steeltexfloorlat00pitt/steeltexfloorlat00pitt_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1959'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1959'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-fisherallmetalsk00fish-9bc2b36f
+    title: Fisher all metal skylights (1958) [arc-fisherallmetalsk00fish-9bc2b36f]
+    url: https://archive.org/download/fisherallmetalsk00fish/fisherallmetalsk00fish_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1958'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-essentialsofgood00faci-3af34a06
+    title: Essentials of good structural clay facing tile workmanship, mortar and layout
+      (1950) [arc-essentialsofgood00faci-3af34a06]
+    url: https://archive.org/download/essentialsofgood00faci/essentialsofgood00faci_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-newmancostorefro00newm-2eac8f82
+    title: Newmanco storefronts deluxe, bronze, monel, nickel and aluminum (1930) [arc-newmancostorefro00newm-2eac8f82]
+    url: https://archive.org/download/newmancostorefro00newm/newmancostorefro00newm_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-armcoaluminizeds00armc-2f4d21f0
+    title: Armco aluminized steel type 2 (1958) [arc-armcoaluminizeds00armc-2f4d21f0]
+    url: https://archive.org/download/armcoaluminizeds00armc/armcoaluminizeds00armc_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1958'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1958'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-whatourcustomers00geol-fd100e43
+    title: 'What our customers think of us : testimonials : specialists in architectural
+      iron work & s (1905) [arc-whatourcustomers00geol-fd100e43]'
+    url: https://archive.org/download/whatourcustomers00geol/whatourcustomers00geol_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
+      in 1905, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-barkonfrinklinol00frin-118eb3a7
+    title: 'Barkon-Frink Linolite : the ultimate in fluorescent lighting (1941) [arc-barkonfrinklinol00frin-118eb3a7]'
+    url: https://archive.org/download/barkonfrinklinol00frin/barkonfrinklinol00frin_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1941'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'

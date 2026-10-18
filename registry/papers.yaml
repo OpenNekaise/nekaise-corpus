@@ -157312,3 +157312,91 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-18'
     origin_ids: doi:10.1103/physreve.84.031122
+  - id: oas-10-1016-j-apenergy-2023-121539-2a115f7a
+    title: An optimal design method for communication topology of wireless sensor networks
+      to implement fully distributed optimal control in IoT-enabled smart bu
+    url: https://discovery.ucl.ac.uk/10176339/2/Tang_Optimal%20design%20for%20communication%20topology_R1_untracked.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2023.121539
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10176339/2/Tang_Optimal%20design%20for%20communication%20topology_R1_untracked.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2023.121539 openalex:W4385366765
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-applthermaleng-2022-119912-601ff79f
+    title: Thermo-hydraulic coupled analysis of long-distance district heating systems
+      based on a fully-dynamic model
+    url: https://discovery.ucl.ac.uk/10162314/2/Wei_Thermo-hydraulic%20coupled%20analysis%20of%20long-distance%20district%20heating%20systems%20based%20on%20a%20fully-dynamic%20model_AAM.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-12-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.applthermaleng.2022.119912
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10162314/2/Wei_Thermo-hydraulic%20coupled%20analysis%20of%20long-distance%20district%20heating%20systems%20based%20on%20a%20fully-dynamic%20model_AAM.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.applthermaleng.2022.119912 openalex:W4312071453
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-w399462216
+    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W399462216
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: openalex:W399462216
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-development-of-a-cost-efficient-autonomous-mav
+    title: Development of a Cost-efficient Autonomous MAV for an Unstructured Indoor
+      Environment
+    url: https://arxiv.org/pdf/1111.0500v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2011-11-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1111.0500
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1111.0500 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-buffer-insertion-for-bridges-and-optimal-buffe
+    title: Buffer Insertion for Bridges and Optimal Buffer Sizing for Communication
+      Sub-System of Systems-on-Chip
+    url: https://arxiv.org/pdf/0710.4638v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2007-10-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0710.4638
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:0710.4638&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0710.4638 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-18'
