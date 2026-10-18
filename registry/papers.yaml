@@ -157164,3 +157164,39 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-18'
+  - id: oas-10-1016-j-landurbplan-2022-104576-966546a0
+    title: The impact of urban vegetation morphology on urban building energy consumption
+      during summer and winter seasons in Nanjing, China
+    url: https://discovery.ucl.ac.uk/10156137/2/Wei_manuscript_revised_20220826.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-09-12'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.landurbplan.2022.104576
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10156137/2/Wei_manuscript_revised_20220826.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.landurbplan.2022.104576 openalex:W4297820061
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-su13031195-90af0e29
+    title: Application of Sustainable Prefabricated Wall Technology for Energy Efficient
+      Social Housing
+    url: https://researchonline.ljmu.ac.uk/id/eprint/14339/1/Application%20of%20Sustainable%20Prefabricated%20Wall%20Technology%20for%20Energy%20Efficient%20Social%20Housing.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-01-23'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su13031195
+    license_evidence: no licence statement for this copy [copy https://researchonline.ljmu.ac.uk/id/eprint/14339/1/Application%20of%20Sustainable%20Prefabricated%20Wall%20Technology%20for%20Energy%20Efficient%20Social%20Housing.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/su13031195 openalex:W3124271414
+    resolution: 'sim1: openalex+unpaywall location'
