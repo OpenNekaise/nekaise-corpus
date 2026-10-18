@@ -157841,3 +157841,109 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-18'
+  - id: oas-10-1007-s12053-019-09832-9-1afee570
+    title: Thermo-economic and environmental analysis of integrating renewable energy
+      sources in a district heating and cooling network
+    url: https://publications.aston.ac.uk/id/eprint/41118/1/Thermo_economic.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-12-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s12053-019-09832-9
+    license_evidence: no licence statement for this copy [copy https://publications.aston.ac.uk/id/eprint/41118/1/Thermo_economic.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s12053-019-09832-9 openalex:W2995254176
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1177-1744259118792582-b2fb710f
+    title: A novel coupling control with decision-maker and PID controller for minimizing
+      heating energy consumption and ensuring indoor environmental quality
+    url: https://researchonline.ljmu.ac.uk/id/eprint/9260/8/Manuscripat_BP_REF2021.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-08-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/1744259118792582
+    license_evidence: no licence statement for this copy [copy https://researchonline.ljmu.ac.uk/id/eprint/9260/8/Manuscripat_BP_REF2021.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/1744259118792582 openalex:W2885187144
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-en12081450-3af6d560
+    title: Improving Building Energy Efficiency through Measurement of Building Physics
+      Properties Using Dynamic Heating Tests
+    url: https://uhra.herts.ac.uk/id/eprint/7775/1/energies_12_01450.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-04-16'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en12081450
+    license_evidence: no licence statement for this copy [copy https://uhra.herts.ac.uk/id/eprint/7775/1/energies_12_01450.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/en12081450 openalex:W2936268374
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-ifacol-2019-09-123-8161770c
+    title: A thermal–electrical analogy model of a four–floor building with occupancy
+      estimation for heating system control
+    url: https://eprints.lancs.ac.uk/id/eprint/133997/1/carter_icons.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ifacol.2019.09.123
+    license_evidence: no licence statement for this copy [copy https://eprints.lancs.ac.uk/id/eprint/133997/1/carter_icons.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ifacol.2019.09.123 openalex:W2971788851
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-crowdinside-automatic-construction-of-indoor-f
+    title: 'CrowdInside: Automatic Construction of Indoor Floorplans'
+    url: https://arxiv.org/pdf/1209.3794v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2012-09-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1209.3794
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1209.3794 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
+  - id: arx-some-steps-on-short-bridges-non-metrizable-sur
+    title: 'Some steps on short bridges: Non-metrizable surfaces and CW-complexes'
+    url: https://arxiv.org/pdf/1103.3710v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2011-03-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1103.3710
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1103.3710 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
