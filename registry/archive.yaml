@@ -225356,20 +225356,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1887']
     rights_verified_at: '2026-10-18'
-  - id: arc-practicalsuggest00jane-e2f74dc3
-    title: Practical suggestions from the retailers' exclusive line for 1907 (1907)
-      [arc-practicalsuggest00jane-e2f74dc3]
-    url: https://archive.org/download/practicalsuggest00jane/practicalsuggest00jane_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1907'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
-      in 1907, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-concretecurtainw00port-ad0508ea
     title: Concrete curtain walls (1959) [arc-concretecurtainw00port-ad0508ea]
     url: https://archive.org/download/concretecurtainw00port/concretecurtainw00port_djvu.txt
@@ -225809,19 +225795,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-perfectdecoratio00mlun-7466ea86
-    title: 'Perfect decorations : fall styles for nineteen fifteen (1915) [arc-perfectdecoratio00mlun-7466ea86]'
-    url: https://archive.org/download/perfectdecoratio00mlun/perfectdecoratio00mlun_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1915'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1915'']: published
-      in 1915, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-johnsmanvilletra00john-9ef0b5c0
     title: 'Johns Manville : transite walls (1935) [arc-johnsmanvilletra00john-9ef0b5c0]'
     url: https://archive.org/download/johnsmanvilletra00john/johnsmanvilletra00john_djvu.txt
@@ -226023,19 +225996,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1935'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-georgehalbertfin00geor-1c856f48
-    title: 'George Halbert : fine wall paper and decorations (1882) [arc-georgehalbertfin00geor-1c856f48]'
-    url: https://archive.org/download/georgehalbertfin00geor/georgehalbertfin00geor_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1882'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1882'']: published
-      in 1882, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-101practicalsugg00john-1-7de273c3
     title: 101 practical suggestions for home improvements (1935) [arc-101practicalsugg00john-1-7de273c3]
     url: https://archive.org/download/101practicalsugg00john_1/101practicalsugg00john_1_djvu.txt
@@ -226047,5 +226007,699 @@ sources:
     published_at: '1935'
     document_type: trade-literature
     license_evidence: 'Internet Archive item metadata date/year [''1935'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-aladdinreadicuth00alad-1-6f9700e3
+    title: Aladdin readi-cut houses are not prefabricated (1953) [arc-aladdinreadicuth00alad-1-6f9700e3]
+    url: https://archive.org/download/aladdinreadicuth00alad_1/aladdinreadicuth00alad_1_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1953'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1953'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-asconqualityfloo00asco-dc9f036f
+    title: 'Ascon Quality Floors Introduces : a sensational new flooring that actually
+      improves with u (1960) [arc-asconqualityfloo00asco-dc9f036f]'
+    url: https://archive.org/download/asconqualityfloo00asco/asconqualityfloo00asco_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1960'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-ournewhomeisfire00port-07e792af
+    title: '"Our new home is fireproof" (1933) [arc-ournewhomeisfire00port-07e792af]'
+    url: https://archive.org/download/ournewhomeisfire00port/ournewhomeisfire00port_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1933'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-vitroliteeverlas00vitr-4-24ab0757
+    title: Vitrolite everlasting slab material applied to retail stores (1923) [arc-vitroliteeverlas00vitr-4-24ab0757]
+    url: https://archive.org/download/vitroliteeverlas00vitr_4/vitroliteeverlas00vitr_4_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-colorfultilekitc00upso-72e8daed
+    title: A colorful tile kitchen or bath is yours at surprisingly low cost (1930)
+      [arc-colorfultilekitc00upso-72e8daed]
+    url: https://archive.org/download/colorfultilekitc00upso/colorfultilekitc00upso_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-alundumceramicmo00nort-57480333
+    title: 'Alundum ceramic mosaic tile : catalog data and specifications : (catalog
+      b) (1933) [arc-alundumceramicmo00nort-57480333]'
+    url: https://archive.org/download/alundumceramicmo00nort/alundumceramicmo00nort_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1933'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-permutitpresents00perm-54ab282c
+    title: 'Permutit presents : the home appliance that turns hard water soft (1945)
+      [arc-permutitpresents00perm-54ab282c]'
+    url: https://archive.org/download/permutitpresents00perm/permutitpresents00perm_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1945'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1945'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-itpaystohavegood00perm-279c6f5f
+    title: 'It pays to have good water in your restaurant : Permutit water conditioning
+      helps to build (1950) [arc-itpaystohavegood00perm-279c6f5f]'
+    url: https://archive.org/download/itpaystohavegood00perm/itpaystohavegood00perm_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-beautifulhomeela00amer-0b44e1fd
+    title: 'A beautiful home : Elastica, the ideal wall covering : insures permanence,
+      beauty, comfort (1924) [arc-beautifulhomeela00amer-0b44e1fd]'
+    url: https://archive.org/download/beautifulhomeela00amer/beautifulhomeela00amer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1924'']: published
+      in 1924, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-roofdeckvaporbar00stre-9e9c0f7a
+    title: Roof deck vapor barriers (1972) [arc-roofdeckvaporbar00stre-9e9c0f7a]
+    url: https://archive.org/download/roofdeckvaporbar00stre/roofdeckvaporbar00stre_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1972'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1972'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lincolnquarriesi00glad-1da8b1ff
+    title: 'Lincoln quarries : illustrating various patterns which may be made up of
+      stock sizes for f (1930) [arc-lincolnquarriesi00glad-1da8b1ff]'
+    url: https://archive.org/download/lincolnquarriesi00glad/lincolnquarriesi00glad_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-marshtilebeautif00mars-a0268ce9
+    title: 'Marshtile : the beautiful, modern, low cost tile wall finish : for home
+      and commercial use (1930) [arc-marshtilebeautif00mars-a0268ce9]'
+    url: https://archive.org/download/marshtilebeautif00mars/marshtilebeautif00mars_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-onestandardframe00ande-4f63973a
+    title: 'One Standard Frame for Any Wall : Andersen white pine frames (1930) [arc-onestandardframe00ande-4f63973a]'
+    url: https://archive.org/download/onestandardframe00ande/onestandardframe00ande_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-federalseaboardt00fede-0-c893aeeb
+    title: 'Federal Seaboard Terra Cotta Corporation : Enduro-ashlar (1933) [arc-federalseaboardt00fede-0-c893aeeb]'
+    url: https://archive.org/download/federalseaboardt00fede_0/federalseaboardt00fede_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1933'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-comfortablesmall00bawd-9b26073f
+    title: 'Comfortable small homes : happiness ahead (1939) [arc-comfortablesmall00bawd-9b26073f]'
+    url: https://archive.org/download/comfortablesmall00bawd/comfortablesmall00bawd_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-artisticdwelling00alle-1-47a007c9
+    title: Artistic dwellings (1902) [arc-artisticdwelling00alle-1-47a007c9]
+    url: https://archive.org/download/artisticdwelling00alle_1/artisticdwelling00alle_1_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-lordelectricwind00char-3b91ec70
+    title: Lord electric wind indicator (1928) [arc-lordelectricwind00char-3b91ec70]
+    url: https://archive.org/download/lordelectricwind00char/lordelectricwind00char_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-alundumstairfloo00nort-cd1d5a4d
+    title: 'Alundum stair and floor tiles : catalog data and specifications : (catalog
+      A revised) (1936) [arc-alundumstairfloo00nort-cd1d5a4d]'
+    url: https://archive.org/download/alundumstairfloo00nort/alundumstairfloo00nort_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-beavergypsumlath00cert-68a805b8
+    title: 'Beaver Gypsum Lath : a Certain-teed product (1939) [arc-beavergypsumlath00cert-68a805b8]'
+    url: https://archive.org/download/beavergypsumlath00cert/beavergypsumlath00cert_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1939'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-konprufnewtypeof00peno-340b33a4
+    title: 'Konpruf : a new type of coating for swimming pools (1935) [arc-konprufnewtypeof00peno-340b33a4]'
+    url: https://archive.org/download/konprufnewtypeof00peno/konprufnewtypeof00peno_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1935'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-vitroliteeverlas00vitr-8119f0f5
+    title: Vitrolite everlasting slab material applied to eating places (1923) [arc-vitroliteeverlas00vitr-8119f0f5]
+    url: https://archive.org/download/vitroliteeverlas00vitr/vitroliteeverlas00vitr_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-beaverboard3beav00cert-72779574
+    title: 'Beaver board 3 : Beaver Bent board, Beaver Colo board, Beaver Peb-met board
+      : new exclusiv (1937) [arc-beaverboard3beav00cert-72779574]'
+    url: https://archive.org/download/beaverboard3beav00cert/beaverboard3beav00cert_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-completelyfinish00cher-0e16a7a2
+    title: Completely finished Cherokee homes (1960) [arc-completelyfinish00cher-0e16a7a2]
+    url: https://archive.org/download/completelyfinish00cher/completelyfinish00cher_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1960'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1960'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-heathersweatherv00rche-62cd1967
+    title: 'Heather''s weather vanes : for the home, stable, garage or on top of flag
+      poles (1920) [arc-heathersweatherv00rche-62cd1967]'
+    url: https://archive.org/download/heathersweatherv00rche/heathersweatherv00rche_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-marliteforcreati00mars-b424d64b
+    title: Marlite for creating beautiful home interiors (1938) [arc-marliteforcreati00mars-b424d64b]
+    url: https://archive.org/download/marliteforcreati00mars/marliteforcreati00mars_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1938'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-newwindowvogue00detr-fff69c55
+    title: The new window vogue (1920) [arc-newwindowvogue00detr-fff69c55]
+    url: https://archive.org/download/newwindowvogue00detr/newwindowvogue00detr_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-amenlastwordinen00amer-a2e9a04c
+    title: 'AM-EN the last word in enameled brick : suggestions for the use of AM-EN
+      paper brick (1920) [arc-amenlastwordinen00amer-a2e9a04c]'
+    url: https://archive.org/download/amenlastwordinen00amer/amenlastwordinen00amer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-absoluteprotecti00whbu-cfd60577
+    title: 'Absolute protection : fire and burglar-proof safes (1886) [arc-absoluteprotecti00whbu-cfd60577]'
+    url: https://archive.org/download/absoluteprotecti00whbu/absoluteprotecti00whbu_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1886'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1886'']: published
+      in 1886, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-whataboutyourwin00ande-9f636abb
+    title: What about your window frames (1930) [arc-whataboutyourwin00ande-9f636abb]
+    url: https://archive.org/download/whataboutyourwin00ande/whataboutyourwin00ande_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-bookofcabins55be00home-81de13d2
+    title: 'The book of cabins : 55 beautiful designs (1941) [arc-bookofcabins55be00home-81de13d2]'
+    url: https://archive.org/download/bookofcabins55be00home/bookofcabins55be00home_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1941'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-rusticantiquecam00nati-de801083
+    title: Rustic and antique cames (1920) [arc-rusticantiquecam00nati-de801083]
+    url: https://archive.org/download/rusticantiquecam00nati/rusticantiquecam00nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-testedapprovedse00thio-d721485a
+    title: Tested and approved sealants (1975) [arc-testedapprovedse00thio-d721485a]
+    url: https://archive.org/download/testedapprovedse00thio/testedapprovedse00thio_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1975'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1975'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-permutityouransw00perm-2ee2995c
+    title: 'Permutit : your answer to any water trouble (1940) [arc-permutityouransw00perm-2ee2995c]'
+    url: https://archive.org/download/permutityouransw00perm/permutityouransw00perm_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-alphaaidsissuedi00alph-1e38d663
+    title: 'Alpha aids : issued in the interest of buyers, sellers and users of Portland
+      cement / by A (1910) [arc-alphaaidsissuedi00alph-1e38d663]'
+    url: https://archive.org/download/alphaaidsissuedi00alph/alphaaidsissuedi00alph_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-threefourroomfac00amer-f1ca5367
+    title: Three and four room face brick bungalow and small house plans (1923) [arc-threefourroomfac00amer-f1ca5367]
+    url: https://archive.org/download/threefourroomfac00amer/threefourroomfac00amer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-robertsonplanati00robe-5bd75e06
+    title: 'Robertson planatile series : set-back caps, plastagard cap, buttress base
+      (1929) [arc-robertsonplanati00robe-5bd75e06]'
+    url: https://archive.org/download/robertsonplanati00robe/robertsonplanati00robe_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1929'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-ownyourhome00bart-cbafb170
+    title: Own your home (1920) [arc-ownyourhome00bart-cbafb170]
+    url: https://archive.org/download/ownyourhome00bart/ownyourhome00bart_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-gypsumpartitiont00gyps-00ef87da
+    title: Gypsum partition tile and fireproofing (1940) [arc-gypsumpartitiont00gyps-00ef87da]
+    url: https://archive.org/download/gypsumpartitiont00gyps/gypsumpartitiont00gyps_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-johnsmanvillefle00john-9c580a96
+    title: Johns Manville flexboard, wall board and wainscoting (1936) [arc-johnsmanvillefle00john-9c580a96]
+    url: https://archive.org/download/johnsmanvillefle00john/johnsmanvillefle00john_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-beachcontractors00beac-683d1eb1
+    title: Beach contractors self-contained single and double arbor rip and cut-off
+      saw rigs (1925) [arc-beachcontractors00beac-683d1eb1]
+    url: https://archive.org/download/beachcontractors00beac/beachcontractors00beac_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-meskersaintlouis00mesk-0-0b2b0a36
+    title: Mesker Saint Louis presents guildhall residence casements (1930) [arc-meskersaintlouis00mesk-0-0b2b0a36]
+    url: https://archive.org/download/meskersaintlouis00mesk_0/meskersaintlouis00mesk_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-thingsyououghtto00case-74039476
+    title: Things you ought to know about casement windows (1937) [arc-thingsyououghtto00case-74039476]
+    url: https://archive.org/download/thingsyououghtto00case/thingsyououghtto00case_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-beyourownweather00arno-a5ffdd5d
+    title: 'Be your own weather prophet : Arnold-Dain weathervanes for home, barn, garage
+      and garden h (1950) [arc-beyourownweather00arno-a5ffdd5d]'
+    url: https://archive.org/download/beyourownweather00arno/beyourownweather00arno_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-andersencomplete00ande-cac01ab3
+    title: 'Andersen Complete Window Units : casement windows : Narroline double hung
+      windows : baseme (1930) [arc-andersencomplete00ande-cac01ab3]'
+    url: https://archive.org/download/andersencomplete00ande/andersencomplete00ande_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-littlebookshowin00flin-cf8dc6da
+    title: 'A little book showing maiolica faience : and divers kindred tile pieces
+      made quite by hand (1929) [arc-littlebookshowin00flin-cf8dc6da]'
+    url: https://archive.org/download/littlebookshowin00flin/littlebookshowin00flin_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1929'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-waterdampresista00weat-27db0e89
+    title: Water and damp resistant compounds (1959) [arc-waterdampresista00weat-27db0e89]
+    url: https://archive.org/download/waterdampresista00weat/waterdampresista00weat_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1959'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1959'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-independentofall00jane-445b2de8
+    title: Independent of all wall paper combinations (1884) [arc-independentofall00jane-445b2de8]
+    url: https://archive.org/download/independentofall00jane/independentofall00jane_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1884'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1884'']: published
+      in 1884, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-steelwindows00mesk-021ce142
+    title: Steel windows (1925) [arc-steelwindows00mesk-021ce142]
+    url: https://archive.org/download/steelwindows00mesk/steelwindows00mesk_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-holfordcasements00hope-fd0dcd65
+    title: Holford casements (1935) [arc-holfordcasements00hope-fd0dcd65]
+    url: https://archive.org/download/holfordcasements00hope/holfordcasements00hope_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1935'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-weathervanesdeco00natu-5543f14b
+    title: 'Weathervanes : decorative and useful (1920) [arc-weathervanesdeco00natu-5543f14b]'
+    url: https://archive.org/download/weathervanesdeco00natu/weathervanesdeco00natu_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-facebrickbungalo00amer-6c9b04cd
+    title: Face brick bungalow and small house plans (1921) [arc-facebrickbungalo00amer-6c9b04cd]
+    url: https://archive.org/download/facebrickbungalo00amer/facebrickbungalo00amer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1921'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1921'']: published
+      in 1921, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-18'
+  - id: arc-bestwallfireproo00cert-1dc03497
+    title: 'Bestwall : fire proof for Better walls (1938) [arc-bestwallfireproo00cert-1dc03497]'
+    url: https://archive.org/download/bestwallfireproo00cert/bestwallfireproo00cert_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1938'']: the item
       states no licence'
     rights_verified_at: '2026-10-18'
