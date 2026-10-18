@@ -157752,3 +157752,92 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-18'
     origin_ids: doi:10.1515/crelle.2010.075
+  - id: oas-10-1051-0004-6361-201936463-6e743a57
+    title: Influence of sub- and super-solar metallicities on the composition of solid
+      planetary building blocks
+    url: https://arxiv.org/pdf/1911.09725
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-11-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1051/0004-6361/201936463
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1911.09725;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1051/0004-6361/201936463 openalex:W2990448463
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-atmosenv-2017-06-035-64267058
+    title: 'Air flow and pollution in a real, heterogeneous urban street canyon: A field
+      and laboratory study'
+    url: https://discovery.ucl.ac.uk/1560306/1/Malki-Epshtein_Air%20flow%20pollution%20real%20heterogeneous%20urban%20street%20canyon%20Submit.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-06-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.atmosenv.2017.06.035
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/1560306/1/Malki-Epshtein_Air%20flow%20pollution%20real%20heterogeneous%20urban%20street%20canyon%20Submit.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.atmosenv.2017.06.035 openalex:W2672826517
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-1016-j-enbuild-2015-01-007-5c107056
+    title: LCA implementation in the selection of thermal enhanced mortars for energetic
+      rehabilitation of school buildings
+    url: https://researchonline.ljmu.ac.uk/id/eprint/11648/1/lca%20paper%20accepted.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-01-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enbuild.2015.01.007
+    license_evidence: no licence statement for this copy [copy https://researchonline.ljmu.ac.uk/id/eprint/11648/1/lca%20paper%20accepted.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enbuild.2015.01.007 openalex:W1989381996
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3390-en11051219-ed56f2af
+    title: 'Comparison and Evaluation of the Potential Energy, Carbon Emissions, and
+      Financial Impacts from the Incorporation of CHP and CCHP Systems in Existing '
+    url: https://repository.uwl.ac.uk/id/eprint/4976/1/CCHP%20paper-%20MDPI%20energies-11-01219.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-05-10'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/en11051219
+    license_evidence: no licence statement for this copy [copy https://repository.uwl.ac.uk/id/eprint/4976/1/CCHP%20paper-%20MDPI%20energies-11-01219.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/en11051219 openalex:W2802890269
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-connectivity-of-chamber-graphs-of-buildings-an
+    title: Connectivity of chamber graphs of buildings and related complexes
+    url: https://arxiv.org/pdf/0907.0325v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2009-07-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0907.0325
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0907.0325 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-18'
