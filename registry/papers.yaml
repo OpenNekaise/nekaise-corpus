@@ -159140,3 +159140,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.enpol.2012.08.040 openalex:W2101745732
     resolution: 'legacy: openalex location'
+  - id: ope-analysis-of-financial-benefits-for-energy-retr
+    title: Analysis of financial benefits for energy retrofits of owner-occupied single-family
+      houses in Germany
+    url: https://publikationen.bibliothek.kit.edu/1000141760/139714716
+    source: openalex
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-12-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2021.108722
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://publikationen.bibliothek.kit.edu/1000141760/139714716; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2021.108722 openalex:W4206143444
+    resolution: 'legacy: openalex location'
+  - id: ope-methodology-for-developing-economically-effici
+    title: 'Methodology for developing economically efficient strategies for net zero
+      energy buildings: A case study of a prototype building in the Yangtze River '
+    url: https://discovery.ucl.ac.uk/10133719/1/1-s2.0-S0959652621030456-main.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-08-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2021.128849
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10133719/1/1-s2.0-S0959652621030456-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2021.128849 openalex:W3197940289
+    resolution: 'legacy: openalex location'
