@@ -159177,3 +159177,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jclepro.2021.128849 openalex:W3197940289
     resolution: 'legacy: openalex location'
+  - id: oas-10-1145-3842434-3844958-344b6709
+    title: 'HalifaxDT: A Wireless Digital Twin from Open Geospatial Data'
+    url: https://arxiv.org/pdf/2609.05793
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-28'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.1145/3842434.3844958
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2609.05793;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1145/3842434.3844958 openalex:W7212044205
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
