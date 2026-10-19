@@ -182452,21 +182452,6 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-19'
-  - id: dva-internal-erosion-and-dam-stability-analysis-of-the-i
-    title: 'Internal Erosion and Dam Stability: Analysis of the internal erosion effects
-      on stability of an embankment dam'
-    url: https://www.diva-portal.org/smash/get/diva2:1202768/FULLTEXT02.pdf
-    source: diva
-    license: unverified
-    topic: infrastructure
-    format: pdf
-    language: en
-    published_at: '2018'
-    document_type: thesis
-    persistent_id: diva2:1202768
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-19'
   - id: dva-samisk-arkitekturpr-gel-i-teori-och-gestaltning
     title: Samisk arkitekturprägel i teori och gestaltning
     url: https://www.diva-portal.org/smash/get/diva2:1201478/FULLTEXT01.pdf
@@ -182641,9 +182626,38 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-19'
-  - id: dva-integrering-av-bim-och-gis-data-p-semantiska-webben
-    title: Integrering av BIM- och GIS-data på semantiska webben
-    url: https://www.diva-portal.org/smash/get/diva2:1253421/FULLTEXT01.pdf
+  - id: dva-anv-ndning-av-bim-inom-f-rvaltningen-f-r-v-rdbyggnad
+    title: 'Användning av BIM inom förvaltningen för vårdbyggnader: <em>utveckla förvaltningen
+      med hjälp av BIM</em>'
+    url: https://www.diva-portal.org/smash/get/diva2:1260021/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1260021
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-visuell-planering-inom-projektering
+    title: Visuell planering inom projektering
+    url: https://www.diva-portal.org/smash/get/diva2:1240360/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1240360
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-l-mplighet-f-r-skumbitumenstabilisering-i-det-svensk
+    title: Lämplighet för skumbitumenstabilisering i det svenska vägnätet
+    url: https://www.diva-portal.org/smash/get/diva2:1245265/FULLTEXT01.pdf
     source: diva
     license: unverified
     topic: infrastructure
@@ -182651,7 +182665,775 @@ sources:
     language: sv
     published_at: '2018'
     document_type: thesis
-    persistent_id: diva2:1253421
+    persistent_id: diva2:1245265
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-live-work-units-in-subarctic-climate-as-a-part-of-su
+    title: 'Live-work units in subarctic climate as a part of sustainable city development:
+      A design proposal'
+    url: https://www.diva-portal.org/smash/get/diva2:1249435/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1249435
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-utveckling-av-metod-f-r-studier-av-sprickrisker-i-be
+    title: 'Utveckling av metod för studier av sprickrisker i betong: Effekter av krympning
+      och temperaturrörelser'
+    url: https://www.diva-portal.org/smash/get/diva2:1242514/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1242514
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-infart-kv-vargen-30
+    title: Infart Kv. Vargen 30
+    url: https://www.diva-portal.org/smash/get/diva2:1317792/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1317792
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-h-lrumsvariationer-vid-asfalttillverkning-en-fallstu
+    title: 'Hålrumsvariationer vid asfalttillverkning: En fallstudie vid Skanska enligt
+      DMAIC avseende förbättringsmöjligheter vid kalltillsatt asfaltåtervinning'
+    url: https://www.diva-portal.org/smash/get/diva2:1263995/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1263995
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-fines-content-and-density-effects-on-tailings-behavi
+    title: 'Fines Content and Density Effects on Tailings Behaviour: A Laboratory Study
+      on Geotechnical Properties'
+    url: https://www.diva-portal.org/smash/get/diva2:1264678/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1264678
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-prioritering-av-f-rnyelseomr-den-va-n-t-v-rderingsmo
+    title: 'Prioritering av förnyelseområden VA-nät: Värderingsmodell för optimering
+      av långsiktig kundservice baserad på driftstörningsstatistik, öppen programva'
+    url: https://www.diva-portal.org/smash/get/diva2:1240610/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1240610
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-optimization-of-the-steel-fiber-dosage-in-shotcrete-
+    title: Optimization of the steel-fiber dosage in shotcrete used in the Kankberg
+      mine
+    url: https://www.diva-portal.org/smash/get/diva2:1261578/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1261578
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-bron-som-aldrig-byggts-em-en-unders-kning-av-samh-ll
+    title: '"Bron som aldrig byggts": <em>En undersökning av samhällsdebatten angående
+      bron till Sandön i Luleå skärgård år 1960-2018.</em>'
+    url: https://www.diva-portal.org/smash/get/diva2:1261429/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1261429
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-ett-attraktivt-och-offentligt-passivhus-gestaltning-
+    title: Ett attraktivt och offentligt passivhus - gestaltning av kulturhus i Örnsköldsvik
+      centrum
+    url: https://www.diva-portal.org/smash/get/diva2:1269591/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1269591
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-mikrotj-nst-arkitektur-och-dess-skalbarhet
+    title: Mikrotjänst-arkitektur och dess skalbarhet
+    url: https://www.diva-portal.org/smash/get/diva2:1269145/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1269145
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-residual-stresses-induced-by-welding-in-high-perform
+    title: Residual Stresses Induced by Welding in High Performance Steel
+    url: https://www.diva-portal.org/smash/get/diva2:1270383/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1270383
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-soil-nailing-a-monte-carlo-simulation-of-soil-parame
+    title: 'Soil Nailing: a Monte Carlo Simulation of Soil Parameters'
+    url: https://www.diva-portal.org/smash/get/diva2:1277242/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1277242
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-digitala-hj-lpmedel-f-r-granskning-och-pr-vning-av-b
+    title: Digitala hjälpmedel för granskning och prövning av bygglovshandlingar
+    url: https://www.diva-portal.org/smash/get/diva2:1299156/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1299156
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-kad-riskmedvetenhet-hos-allm-nheten-genom-riktade-ko
+    title: 'Ökad riskmedvetenhet hos allmänheten genom riktade kommunikationsinsatser
+      med fokus på hembesök: -En intervjustudie'
+    url: https://www.diva-portal.org/smash/get/diva2:1287096/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1287096
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-field-damage-investigation-and-evaluation-of-numeric
+    title: Field damage investigation and evaluation of numerical model using the collected
+      data at Kemi Mine
+    url: https://www.diva-portal.org/smash/get/diva2:1293944/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1293944
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-ndsk-rmsbro-mer-bro-f-r-pengarna
+    title: 'Ändskärmsbro: mer bro för pengarna'
+    url: https://www.diva-portal.org/smash/get/diva2:1267308/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1267308
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-till-mpning-av-dr-nare-f-r-tillst-ndsbed-mning-av-j-
+    title: Tillämpning av drönare för tillståndsbedömning av järnvägsterräng
+    url: https://www.diva-portal.org/smash/get/diva2:1267007/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1267007
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-ice-metodikens-inverkan-pa-projektering-en-kartla-gg
+    title: 'ICE-metodikens inverkan på projektering: En kartläggning av ICE-metodiken
+      i stora komplexa anläggningsprojekt'
+    url: https://www.diva-portal.org/smash/get/diva2:1273880/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1273880
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-samordning-mellan-arkitekt-och-vvs-projekt-r-i-progr
+    title: 'Samordning mellan arkitekt och vvs-projektör i programskede: En undersökning,
+      ett förslag till arbetsmetod och ett gestaltningsexperiment.'
+    url: https://www.diva-portal.org/smash/get/diva2:1288146/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1288146
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-utredning-av-potentiella-prosumenter-anslutna-till-h
+    title: Utredning av potentiella prosumenter anslutna till Härnösands fjärrvärmenät
+    url: https://www.diva-portal.org/smash/get/diva2:1302156/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1302156
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-uppf-ljning-av-absoluta-tj-lr-relser-en-fallstudie-a
+    title: 'Uppföljning av absoluta tjälrörelser: En fallstudie av väg E10 i Kiruna'
+    url: https://www.diva-portal.org/smash/get/diva2:1272313/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1272313
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-green-roof-performance-in-cold-climates-a-study-on-h
+    title: 'Green Roof Performance in Cold Climates: A study on how different plants
+      suited for the subarctic climate in northernSweden affects the performances o'
+    url: https://www.diva-portal.org/smash/get/diva2:1291663/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1291663
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-improvement-strategies-in-construction-sites-develop
+    title: 'Improvement Strategies in Construction Sites: Development of Rapid Site
+      Assessment for House-building Industry'
+    url: https://www.diva-portal.org/smash/get/diva2:1291644/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1291644
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-temperature-distribution-in-air-tight-cavities-of-st
+    title: Temperature distribution in air tight cavities of steel framed modular buildings
+      when exposed to fire
+    url: https://www.diva-portal.org/smash/get/diva2:1296917/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1296917
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-byggbranschen-m-ste-ocks-plastbanta-en-fallstudie-om
+    title: 'Byggbranschen måste också plastbanta: En fallstudie om plaster i dagens
+      byggande och dess hälso- och miljöpåverkan'
+    url: https://www.diva-portal.org/smash/get/diva2:1296877/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1296877
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-utv-rdering-av-erfarenheter-med-gummimodifierad-asfa
+    title: Utvärdering av erfarenheter med gummimodifierad asfalt i Sverige
+    url: https://www.diva-portal.org/smash/get/diva2:1275350/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1275350
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-arkitektoniska-kvaliteter-i-ett-arktiskt-klimat-ett-
+    title: 'Arkitektoniska kvaliteter i ett arktiskt klimat: Ett gestaltningsförslag
+      baserat på principer och strategier för klimatanpassat bostadsbyggande'
+    url: https://www.diva-portal.org/smash/get/diva2:1286616/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1286616
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-byggregler-fo-r-flerbostadshus-en-studie-av-konsekve
+    title: 'Byggregler för flerbostadshus: en studie av konsekvenser och möjligheter
+      att skapa kvalitativa bostäder genom riktad problemlösning i byggprocessen'
+    url: https://www.diva-portal.org/smash/get/diva2:1293103/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1293103
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-cirkul-r-ekonomi-inom-industriell-produktion-av-fler
+    title: Cirkulär ekonomi inom industriell produktion av flerbostadshus i trä
+    url: https://www.diva-portal.org/smash/get/diva2:1299070/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1299070
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-balkonger-i-tr-hus-systematisering-av-konstruktionsa
+    title: 'Balkonger i trähus: Systematisering av konstruktionsarbete'
+    url: https://www.diva-portal.org/smash/get/diva2:1298506/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1298506
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-utveckling-av-p-byggnadssk-p-till-pickup-bil
+    title: Utveckling av påbyggnadsskåp till pickup-bil
+    url: https://www.diva-portal.org/smash/get/diva2:1303140/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1303140
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-brandskydd-efter-tid-uppfylls-funktionen-av-brandsky
+    title: Brandskydd efter tid - Uppfylls funktionen av brandskyddsinstallationer efter
+      tid de krav som förutsätts vid nybyggnation?
+    url: https://www.diva-portal.org/smash/get/diva2:1282908/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1282908
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-konstruktionsskador-i-samband-med-br-nder-i-h-ga-tr-
+    title: 'Konstruktionsskador i samband med bränder i höga träbyggnader: En statistisk
+      analys av förhållandet mellan brand-, rök- och vattenskador i byggnader i'
+    url: https://www.diva-portal.org/smash/get/diva2:1282939/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1282939
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-probabilistic-non-linear-finite-element-analysis-of-
+    title: Probabilistic non-linear finite element analysis of concrete buttress dams
+    url: https://www.diva-portal.org/smash/get/diva2:1282901/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1282901
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-analytisk-dimensionering-av-brandsektioner
+    title: Analytisk dimensionering av brandsektioner
+    url: https://www.diva-portal.org/smash/get/diva2:1289719/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1289719
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-anv-ndning-av-livscykelanalys-f-r-beslut-vid-nybyggn
+    title: 'Användning av livscykelanalys för beslut vid nybyggnation av flerbostadshus?:
+      En intervjustudie med fastighetsbolag verksamma i norr- och västerbotten'
+    url: https://www.diva-portal.org/smash/get/diva2:1289708/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1289708
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-det-finns-inga-hinder-bara-m-jligheter-hantering-av-
+    title: '"Det finns inga hinder, bara möjligheter": Hantering av inomhusmiljöns anpassning
+      för barn i behov av särskilt stöd'
+    url: https://www.diva-portal.org/smash/get/diva2:1289672/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1289672
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-indirect-methods-as-quality-control-of-cemented-hydr
+    title: 'Indirect methods as quality control of cemented hydraulic fill: Renström
+      mine, Boliden mineral AB'
+    url: https://www.diva-portal.org/smash/get/diva2:1290481/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1290481
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-gnss-m-tning-idag-och-i-framtiden
+    title: 'GNSS-mätning: idag och i framtiden'
+    url: https://www.diva-portal.org/smash/get/diva2:1299871/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: diva2:1299871
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-framtidens-studentboende-en-studie-om-studentens-beh
+    title: 'Framtidens studentboende: En studie om studentens behov och krav på sitt
+      framtida boende med ett gestaltningsförslag i passivhusstandard'
+    url: https://www.diva-portal.org/smash/get/diva2:1018976/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2012'
+    document_type: thesis
+    persistent_id: diva2:1018976
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-lean-som-utvecklingsm-jlighet-f-r-ncc-s-koncept-h-ll
+    title: Lean som utvecklingsmöjlighet för NCC:s koncept Hållbar Renovering
+    url: https://www.diva-portal.org/smash/get/diva2:1018974/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2011'
+    document_type: thesis
+    persistent_id: diva2:1018974
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-sj-lvkompakterande-betong
+    title: Självkompakterande betong
+    url: https://www.diva-portal.org/smash/get/diva2:1019066/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: sv
+    published_at: '2011'
+    document_type: thesis
+    persistent_id: diva2:1019066
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-lule-boden-2070-visionsstudie-f-r-lule-och-boden-r-2
+    title: 'Luleå-Boden 2070: Visionsstudie för Luleå och Boden år 2070'
+    url: https://www.diva-portal.org/smash/get/diva2:1019056/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2015'
+    document_type: thesis
+    persistent_id: diva2:1019056
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-presplitting-at-aitik-mine
+    title: Presplitting at Aitik Mine
+    url: https://www.diva-portal.org/smash/get/diva2:1018948/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2014'
+    document_type: thesis
+    persistent_id: diva2:1018948
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-utilization-of-stabilized-soil-in-landfill-construct
+    title: Utilization of stabilized soil in landfill constructions
+    url: https://www.diva-portal.org/smash/get/diva2:1019081/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:1019081
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-nybyggnation-av-gc-v-g-och-bro-mellan-bj-rkskatan-oc
+    title: Nybyggnation av GC-väg och bro mellan Björkskatan och Björsbyn
+    url: https://www.diva-portal.org/smash/get/diva2:1019311/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2005'
+    document_type: thesis
+    persistent_id: diva2:1019311
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-linjestudie-f-r-j-rnv-gsdragning-storuman-mo-i-rana
+    title: Linjestudie för järnvägsdragning Storuman – Mo i Rana
+    url: https://www.diva-portal.org/smash/get/diva2:1019271/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2011'
+    document_type: thesis
+    persistent_id: diva2:1019271
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-storskaliga-skjuvf-rs-k-p-grovkornig-jord
+    title: Storskaliga skjuvförsök på grovkornig jord
+    url: https://www.diva-portal.org/smash/get/diva2:1019378/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2009'
+    document_type: thesis
+    persistent_id: diva2:1019378
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-f-rdjupad-versiktsplan-f-r-uth-llig-utveckling-karun
+    title: 'Fördjupad översiktsplan för uthållig utveckling: Karungi by, Haparanda stad'
+    url: https://www.diva-portal.org/smash/get/diva2:1019384/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: sv
+    published_at: '2004'
+    document_type: thesis
+    persistent_id: diva2:1019384
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-developing-project-of-the-under-open-pit-reserves-of
+    title: Developing project of the under open pit reserves of the mine Centralny
+    url: https://www.diva-portal.org/smash/get/diva2:1019568/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2010'
+    document_type: thesis
+    persistent_id: diva2:1019568
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-friktionsjords-kornform-inverkan-p-geotekniska-egens
+    title: 'Friktionsjords kornform: Inverkan på geotekniska egenskaper, beskrivande
+      storheter och bestämningsmetoder'
+    url: https://www.diva-portal.org/smash/get/diva2:1019466/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2011'
+    document_type: thesis
+    persistent_id: diva2:1019466
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-transition-zones-for-railway-bridges-a-study-of-the-
+    title: 'Transition Zones for Railway Bridges: A Study of the Sikån Bridge'
+    url: https://www.diva-portal.org/smash/get/diva2:1019460/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2014'
+    document_type: thesis
+    persistent_id: diva2:1019460
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-19'
+  - id: dva-utmattning-av-j-rnv-gsbroar-av-armerad-betong-j-mf-r
+    title: 'Utmattning av järnvägsbroar av armerad betong: Jämförande beräkning för
+      två befintliga plattrambroar'
+    url: https://www.diva-portal.org/smash/get/diva2:1019443/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2015'
+    document_type: thesis
+    persistent_id: diva2:1019443
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-19'
