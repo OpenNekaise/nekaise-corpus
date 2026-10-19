@@ -159249,3 +159249,76 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-19'
     origin_ids: doi:10.1111/mice.12051
+  - id: ope-a-deep-learning-framework-for-heat-demand-fore
+    title: A deep learning framework for heat demand forecasting using time–frequency
+      representations of decomposed features
+    url: https://arxiv.org/pdf/2603.01137
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-02-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyai.2026.100704
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2603.01137; version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyai.2026.100704 openalex:W7131077287
+    resolution: 'legacy: openalex location'
+  - id: ope-barriers-and-enablers-to-dual-use-of-transport
+    title: Barriers and enablers to dual use of transportation tunnels for heating and
+      cooling decarbonisation
+    url: https://eprints.whiterose.ac.uk/id/eprint/235453/9/jcien.25.00042en.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-02-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1680/jcien.25.00042
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/id/eprint/235453/9/jcien.25.00042en.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1680/jcien.25.00042 openalex:W7128813890
+    resolution: 'legacy: openalex location'
+  - id: ope-multiscale-factors-of-urban-heat-islands-using
+    title: 'Multiscale Factors of Urban Heat Islands using Geomatics: Implications for
+      Civil Engineering Education and practices for Mitigation of urban heat isla'
+    url: https://isprs-annals.copernicus.org/articles/X-3-W3-2025/135/2026/isprs-annals-X-3-W3-2025-135-2026.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-20'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-annals-x-3-w3-2025-135-2026
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-annals.copernicus.org/articles/X-3-W3-2025/135/2026/isprs-annals-X-3-W3-2025-135-2026.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-19'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-annals-x-3-w3-2025-135-2026 openalex:W7124843891
+    resolution: 'legacy: openalex location'
+  - id: arx-requirement-analysis-architectural-design-and-
+    title: Requirement analysis, Architectural design and Formal verification of a multi-agent
+      based University Information Management System
+    url: https://arxiv.org/pdf/1501.01273v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2015-01-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1501.01273
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1501.01273 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-19'
