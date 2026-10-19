@@ -159339,3 +159339,55 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-19'
+  - id: oas-10-32286-0002004710-4dbfa75b
+    title: 荒川＋ギンズにおける手続き型建築について
+    url: https://kansai-u.repo.nii.ac.jp/record/2004710/files/KU-1100-20260918-04.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2026-09-18'
+    document_type: article
+    persistent_id: https://doi.org/10.32286/0002004710
+    license_evidence: no licence statement for this copy [copy https://kansai-u.repo.nii.ac.jp/record/2004710/files/KU-1100-20260918-04.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.32286/0002004710 openalex:W7222849599
+    resolution: 'sim1: openalex location'
+  - id: arx-structural-instability-of-nonlinear-plates-mod
+    title: 'Structural instability of nonlinear plates modelling suspension bridges:
+      mathematical answers to some long-standing questions'
+    url: https://arxiv.org/pdf/1502.05851v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-02-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1502.05851
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1502.05851 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-19'
+  - id: arx-constructing-buildings-and-harmonic-maps
+    title: Constructing Buildings and Harmonic Maps
+    url: https://arxiv.org/pdf/1503.00989v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-03-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1503.00989
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1503.00989 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-19'
