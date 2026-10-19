@@ -159642,3 +159642,39 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-19'
     origin_ids: doi:10.1214/ejp.v20-3744
+  - id: oas-w7221481425
+    title: 局部座屈崩壊形式を考慮した H 形断面梁部材の構造性能評価
+    url: https://isct.repo.nii.ac.jp/record/2003214/files/1757035592885.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2025-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7221481425
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://isct.repo.nii.ac.jp/record/2003214/files/1757035592885.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7221481425
+    resolution: 'sim1: openalex location'
+  - id: oas-w7221487927
+    title: 部材形状と板要素材端の境界条件が冷間成形溝形断面部材の弾性座屈耐力と最大耐力の関係性に及ぼす影響
+    url: https://isct.repo.nii.ac.jp/record/2003203/files/1754306693803.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2025-07-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7221487927
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://isct.repo.nii.ac.jp/record/2003203/files/1754306693803.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7221487927
+    resolution: 'sim1: openalex location'
