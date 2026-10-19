@@ -158192,24 +158192,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.1210.7034 openalex:W1943520194
     resolution: 'sim1: openalex location'
-  - id: oas-10-1184-r1-6716120-e4aa4787
-    title: Dynamic Optimization of Integrated Active - Passive Strategies for Building
-      Enthalpy Control
-    url: http://repository.cmu.edu/dissertations/404
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2014-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1184/r1/6716120
-    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/404;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-18'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1184/r1/6716120 openalex:W1895185220
-    resolution: 'sim1: openalex location'
   - id: oas-w7146783334
     title: 区画火災の避難行動に及ぼすスプリンクラーの影響
     url: https://nagoya.repo.nii.ac.jp/record/22148/files/125_2.pdf
@@ -158699,3 +158681,54 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-18'
+  - id: ope-the-teapot-in-a-city-a-paradigm-shift-in-urban
+    title: 'The “teapot in a city”: A paradigm shift in urban climate modeling'
+    url: https://arxiv.org/pdf/2204.14227
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2022-07-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1126/sciadv.abp8934
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2204.14227;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1126/sciadv.abp8934 openalex:W4285350238
+    resolution: 'legacy: openalex location'
+  - id: ope-a-simplified-thermoregulation-model-of-the-hum
+    title: A simplified thermoregulation model of the human body in warm conditions
+    url: https://centaur.reading.ac.uk/68981/1/JERG%20R3%20submissionCTRN.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2016-10-12'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apergo.2016.09.010
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/68981/1/JERG%20R3%20submissionCTRN.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apergo.2016.09.010 openalex:W2530458401
+    resolution: 'legacy: openalex location'
+  - id: ope-temperature-boundary-condition-models-for-conc
+    title: Temperature Boundary Condition Models for Concrete Bridge Members
+    url: https://krex.k-state.edu/bitstreams/9f24ec99-6e4d-4118-9b5d-8fb5cf48810e/download
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2007-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.14359/18827
+    license_evidence: no licence statement for this copy [copy https://krex.k-state.edu/bitstreams/9f24ec99-6e4d-4118-9b5d-8fb5cf48810e/download;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-18'
+    selected_version: submittedVersion
+    origin_ids: doi:10.14359/18827 openalex:W1571503868
+    resolution: 'legacy: openalex location'
