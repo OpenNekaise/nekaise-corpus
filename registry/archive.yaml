@@ -227233,20 +227233,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
       in 1920, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-tonwarenabteilun00kkpr-877d5dc3
-    title: 'Tonwarenabteilung : der Fiale der K.K. Priv. Österreichischen Creditanstalt
-      fur Handel u. (1905) [arc-tonwarenabteilun00kkpr-877d5dc3]'
-    url: https://archive.org/download/tonwarenabteilun00kkpr/tonwarenabteilun00kkpr_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: de
-    published_at: '1905'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
-      in 1905, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-leisuretimelivin00nati-8cf22995
     title: 'Leisure time living second homes : including year around living homes (1968)
       [arc-leisuretimelivin00nati-8cf22995]'
@@ -228553,21 +228539,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1935']
     rights_verified_at: '2026-10-18'
-  - id: arc-upholsterers43679-d31dc7f7
-    title: One hundred and ten capital new designs, being all the most approved patterns
-      of houshold  (1764) [arc-upholsterers43679-d31dc7f7]
-    url: https://archive.org/download/upholsterers43679/43679_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1764'
-    document_type: trade-literature
-    license_url: https://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1764']
-    rights_verified_at: '2026-10-18'
   - id: arc-yokohama54010-a7828d51
     title: Descriptive catalogue of the Yokohama Nursery Co., Limited, for 1901 (1901)
       [arc-yokohama54010-a7828d51]
@@ -229005,3 +228976,787 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1924'']: published
       in 1924, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-18'
+  - id: arc-garlandstovesran00mich-f29621a0
+    title: '"Garland" : stoves, ranges (1908) [arc-garlandstovesran00mich-f29621a0]'
+    url: https://archive.org/download/garlandstovesran00mich/garlandstovesran00mich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1908'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1908'', ''1908'']:
+      published in 1908, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-generalhousesinc00gene-585a03a6
+    title: 'General Houses, Inc. : 220 South Street, Chicago [arc-generalhousesinc00gene-585a03a6]'
+    url: https://archive.org/download/generalhousesinc00gene/generalhousesinc00gene_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata without a date: the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-interestingsmall00unit-32a85a82
+    title: 'Interesting small homes : suggestions for those who would take advantage
+      of the most favor (1937) [arc-interestingsmall00unit-32a85a82]'
+    url: https://archive.org/download/interestingsmall00unit/interestingsmall00unit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-artistichomessum00hamm-84f2555e
+    title: 'Artistic homes : summer 1937 (1937) [arc-artistichomessum00hamm-84f2555e]'
+    url: https://archive.org/download/artistichomessum00hamm/artistichomessum00hamm_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-proofofpudding00gord-acb0d3a4
+    title: The proof of the pudding (1926) [arc-proofofpudding00gord-acb0d3a4]
+    url: https://archive.org/download/proofofpudding00gord/proofofpudding00gord_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1926'']: published
+      in 1926, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-onepinehome00wagn-678a631a
+    title: One pine home (1930) [arc-onepinehome00wagn-678a631a]
+    url: https://archive.org/download/onepinehome00wagn/onepinehome00wagn_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-aluminumforarchi00brit-1613b1f0
+    title: Aluminum for architecture (1932) [arc-aluminumforarchi00brit-1613b1f0]
+    url: https://archive.org/download/aluminumforarchi00brit/aluminumforarchi00brit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1932'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-ournewbookofsumm00hall-2f15fb48
+    title: Our new book of summer homes (1930) [arc-ournewbookofsumm00hall-2f15fb48]
+    url: https://archive.org/download/ournewbookofsumm00hall/ournewbookofsumm00hall_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-illustrationsofp00detr-095828de
+    title: Illustrations of painting with Detroit White Lead Works' liquid paints, showing
+      30 differe (1884) [arc-illustrationsofp00detr-095828de]
+    url: https://archive.org/download/illustrationsofp00detr/illustrationsofp00detr_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1884'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1884'', ''1884'']:
+      published in 1884, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-whathomebuilders00gord-a2b578ce
+    title: What the home builders say about Gordon-Van Tine Co (1912) [arc-whathomebuilders00gord-a2b578ce]
+    url: https://archive.org/download/whathomebuilders00gord/whathomebuilders00gord_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1912'']: published
+      in 1912, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-cozyhomes00chiv-74430ddd
+    title: Cozy homes (1900) [arc-cozyhomes00chiv-74430ddd]
+    url: https://archive.org/download/cozyhomes00chiv/cozyhomes00chiv_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-distinctivehomes00dern-c4940da0
+    title: Distinctive homes (1924) [arc-distinctivehomes00dern-c4940da0]
+    url: https://archive.org/download/distinctivehomes00dern/distinctivehomes00dern_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1924'']: published
+      in 1924, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-homeofyourown00grif-86ff198b
+    title: A home of your own (1920) [arc-homeofyourown00grif-86ff198b]
+    url: https://archive.org/download/homeofyourown00grif/homeofyourown00grif_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-littlebungalowst00ewst-bdef7ebe
+    title: 'Little bungalows : twenty-five very small low cost homes, three-, four-
+      and five-room litt (1913) [arc-littlebungalowst00ewst-bdef7ebe]'
+    url: https://archive.org/download/littlebungalowst00ewst/littlebungalowst00ewst_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-distinctivesmall00dier-abfaa69a
+    title: Distinctive small homes of the "New Decade." (1940) [arc-distinctivesmall00dier-abfaa69a]
+    url: https://archive.org/download/distinctivesmall00dier/distinctivesmall00dier_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-westcoastbungalo00ewst-0-ba94de97
+    title: West coast bungalows (1911) [arc-westcoastbungalo00ewst-0-ba94de97]
+    url: https://archive.org/download/westcoastbungalo00ewst_0/westcoastbungalo00ewst_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1911'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-modernhomesselec00hayw-9f48bd50
+    title: 'Modern homes : a selection of designs from our plan service (1920) [arc-modernhomesselec00hayw-9f48bd50]'
+    url: https://archive.org/download/modernhomesselec00hayw/modernhomesselec00hayw_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'', ''1920'']:
+      published in 1920, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-bookletofeconomi00bran-b79f2ae5
+    title: A booklet of economical homes and summer cottages (1920) [arc-bookletofeconomi00bran-b79f2ae5]
+    url: https://archive.org/download/bookletofeconomi00bran/bookletofeconomi00bran_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-littlebungalowsb00ewst-86054886
+    title: 'Little bungalows : a book of ninety-seven 3, 4 and 5 room plans for eighty
+      inexpensive hom (1925) [arc-littlebungalowsb00ewst-86054886]'
+    url: https://archive.org/download/littlebungalowsb00ewst/littlebungalowsb00ewst_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-towncountryhomes00alli-aa4d35f6
+    title: Town and country homes to fit your budget (1952) [arc-towncountryhomes00alli-aa4d35f6]
+    url: https://archive.org/download/towncountryhomes00alli/towncountryhomes00alli_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1952'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1952'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-garlinghousechoi00garl-0adc602b
+    title: Garlinghouse choice selected homes (1950) [arc-garlinghousechoi00garl-0adc602b]
+    url: https://archive.org/download/garlinghousechoi00garl/garlinghousechoi00garl_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-yournexthomephot00comm-0-56c1e25c
+    title: 'Your next home : photographs and plans of fifty-seven beautiful homes (1925)
+      [arc-yournexthomephot00comm-0-56c1e25c]'
+    url: https://archive.org/download/yournexthomephot00comm_0/yournexthomephot00comm_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-beautyinbrickpla00finz-3feec383
+    title: Beauty in brick ; a plan book of Forestblend face brick homes (1928) [arc-beautyinbrickpla00finz-3feec383]
+    url: https://archive.org/download/beautyinbrickpla00finz/beautyinbrickpla00finz_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-representativeca00ewst-1-5210a4e9
+    title: 'Representative California homes : a book of two-story and one-story homes
+      of moderate cost (1917) [arc-representativeca00ewst-1-5210a4e9]'
+    url: https://archive.org/download/representativeca00ewst_1/representativeca00ewst_1_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1917'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1917'']: published
+      in 1917, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-representativeca00ewst-0-ef53603b
+    title: Representative California homes (1913) [arc-representativeca00ewst-0-ef53603b]
+    url: https://archive.org/download/representativeca00ewst_0/representativeca00ewst_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-specialplansstil00ewst-d85251c0
+    title: Special plans, Stillwell successful homes (1918) [arc-specialplansstil00ewst-d85251c0]
+    url: https://archive.org/download/specialplansstil00ewst/specialplansstil00ewst_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1918'']: published
+      in 1918, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-homesofcomfort7900brow-925f2f8c
+    title: 'Homes of comfort : 79 designs of moderately priced homes : a wide selection
+      of modern, art (1927) [arc-homesofcomfort7900brow-925f2f8c]'
+    url: https://archive.org/download/homesofcomfort7900brow/homesofcomfort7900brow_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1927'']: published
+      in 1927, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-californiagarden00gard-79c3eea3
+    title: 'California Garden City homes, MCMXV : a book of stock plans designed by
+      Walter S. Davis, H (1915) [arc-californiagarden00gard-79c3eea3]'
+    url: https://archive.org/download/californiagarden00gard/californiagarden00gard_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1915'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1915'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-harrishomesbuild00harr-94c2f266
+    title: 'Harris homes, building materials-- and garages! : catalog no. 555 (1929)
+      [arc-harrishomesbuild00harr-94c2f266]'
+    url: https://archive.org/download/harrishomesbuild00harr/harrishomesbuild00harr_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1929'', ''1929'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-artistichomeshow00geof-9b7ad5d8
+    title: 'Artistic homes : how to plan and how to build them (1894) [arc-artistichomeshow00geof-9b7ad5d8]'
+    url: https://archive.org/download/artistichomeshow00geof/artistichomeshow00geof_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1894'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-hallmarkhomes00hiaw-20db5fe3
+    title: Hallmark homes (1976) [arc-hallmarkhomes00hiaw-20db5fe3]
+    url: https://archive.org/download/hallmarkhomes00hiaw/hallmarkhomes00hiaw_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1976'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1976'', ''1976'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-harrishomessumme00harr-ac81c139
+    title: 'Harris homes, summer cottages-- and garages! : catalog no. 554 (1928) [arc-harrishomessumme00harr-ac81c139]'
+    url: https://archive.org/download/harrishomessumme00harr/harrishomessumme00harr_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1928'', ''1928'']:
+      published in 1928, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-yournexthomephot00comm-b9195cc2
+    title: 'Your next home : photographs and plans of sixty beautiful homes (1922) [arc-yournexthomephot00comm-b9195cc2]'
+    url: https://archive.org/download/yournexthomephot00comm/yournexthomephot00comm_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1922'']: published
+      in 1922, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-buildingplansfor00brie-a7fc09e5
+    title: Building plans for practical low-cost houses (1886) [arc-buildingplansfor00brie-a7fc09e5]
+    url: https://archive.org/download/buildingplansfor00brie/buildingplansfor00brie_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1886'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1886'']: published
+      in 1886, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-beautifulmodernh00gene-b5d6bb40
+    title: Beautiful modern homes for modern living (1937) [arc-beautifulmodernh00gene-b5d6bb40]
+    url: https://archive.org/download/beautifulmodernh00gene/beautifulmodernh00gene_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-bookofhomes00gord-3bfab0b2
+    title: Book of homes (1935) [arc-bookofhomes00gord-3bfab0b2]
+    url: https://archive.org/download/bookofhomes00gord/bookofhomes00gord_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1935'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-sunroomforyourho00exch-93465aa0
+    title: A sun room for your home [arc-sunroomforyourho00exch-93465aa0]
+    url: https://archive.org/download/sunroomforyourho00exch/sunroomforyourho00exch_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata without a date: the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-ournewbookofbuil00dern-112135c4
+    title: 'Our new book of building suggestions : 100 plans from which to choose [arc-ournewbookofbuil00dern-112135c4]'
+    url: https://archive.org/download/ournewbookofbuil00dern/ournewbookofbuil00dern_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata without a date: the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-bookof100homeswh00brow-d0562427
+    title: 'The book of 100 homes : which contains the designs and floor plans of one
+      hundred homes : bungalo [arc-bookof100homeswh00brow-d0562427]'
+    url: https://archive.org/download/bookof100homeswh00brow/bookof100homeswh00brow_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata without a date: the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-planbookofharris00harr-0-39ef2263
+    title: A plan book of Harris homes (1916) [arc-planbookofharris00harr-0-39ef2263]
+    url: https://archive.org/download/planbookofharris00harr_0/planbookofharris00harr_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1916'']: published
+      in 1916, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-bookofhomes00gord-0-6555de4a
+    title: Book of homes (1935) [arc-bookofhomes00gord-0-6555de4a]
+    url: https://archive.org/download/bookofhomes00gord_0/bookofhomes00gord_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1935'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-gemstatelumberco00gems-c29fb086
+    title: Gem State Lumber Co. Incorporated (1929) [arc-gemstatelumberco00gems-c29fb086]
+    url: https://archive.org/download/gemstatelumberco00gems/gemstatelumberco00gems_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1929'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-bookofhomeplansr00diam-b5347a43
+    title: A book of home plans and remodeling suggestions [arc-bookofhomeplansr00diam-b5347a43]
+    url: https://archive.org/download/bookofhomeplansr00diam/bookofhomeplansr00diam_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata without a date: the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-tothosewhowouldb00clbo-01d2eebf
+    title: To those who would build (1925) [arc-tothosewhowouldb00clbo-01d2eebf]
+    url: https://archive.org/download/tothosewhowouldb00clbo/tothosewhowouldb00clbo_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'', ''1925'']:
+      published in 1925, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-fullingtonsbooko00emfu-206e7578
+    title: Fullington's book of new homes (1920) [arc-fullingtonsbooko00emfu-206e7578]
+    url: https://archive.org/download/fullingtonsbooko00emfu/fullingtonsbooko00emfu_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-gordonvantinehom00gord-0-f3a744f6
+    title: Gordon-Van Tine homes (1925) [arc-gordonvantinehom00gord-0-f3a744f6]
+    url: https://archive.org/download/gordonvantinehom00gord_0/gordonvantinehom00gord_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-gordonvantinehom00gord-2-115e8205
+    title: Gordon-Van Tine homes (1928) [arc-gordonvantinehom00gord-2-115e8205]
+    url: https://archive.org/download/gordonvantinehom00gord_2/gordonvantinehom00gord_2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1928'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-wigwarmportableh00efho-0-2fda6b60
+    title: Wigwarm portable houses (1905) [arc-wigwarmportableh00efho-0-2fda6b60]
+    url: https://archive.org/download/wigwarmportableh00efho_0/wigwarmportableh00efho_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1905'', ''1905'']:
+      published in 1905, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-lowcosthomesappr00fawc-94d2b6b2
+    title: 'Low cost homes : approved by Today''s woman magazine (1951) [arc-lowcosthomesappr00fawc-94d2b6b2]'
+    url: https://archive.org/download/lowcosthomesappr00fawc/lowcosthomesappr00fawc_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1951'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1951'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-newcolonialsplan00ewst-cda7e142
+    title: 'The new colonials : a plan book of 47 two-story houses, 4 one-story houses
+      (1925) [arc-newcolonialsplan00ewst-cda7e142]'
+    url: https://archive.org/download/newcolonialsplan00ewst/newcolonialsplan00ewst_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-homesofyear00blit-8f7fe97a
+    title: Homes of the year (1940) [arc-homesofyear00blit-8f7fe97a]
+    url: https://archive.org/download/homesofyear00blit/homesofyear00blit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-multilevelhomepl00garl-ea2ab519
+    title: Multi-level home plans (1989) [arc-multilevelhomepl00garl-ea2ab519]
+    url: https://archive.org/download/multilevelhomepl00garl/multilevelhomepl00garl_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1989'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1989'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-haywardhomesmont00hayw-6ac23e98
+    title: 'Hayward homes : a monthly publication for home lovers (1932) [arc-haywardhomesmont00hayw-6ac23e98]'
+    url: https://archive.org/download/haywardhomesmont00hayw/haywardhomesmont00hayw_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1932'', ''1932'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-gordonvantinehom00gord-d83489e1
+    title: Gordon-Van Tine homes (1917) [arc-gordonvantinehom00gord-d83489e1]
+    url: https://archive.org/download/gordonvantinehom00gord/gordonvantinehom00gord_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1917'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1917'']: published
+      in 1917, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-plexiglas-1940s-12-c63a5dda
+    title: Rohm & Hass Plexiglas acrylic plastic. (1940) [arc-plexiglas-1940s-12-c63a5dda]
+    url: https://archive.org/download/plexiglas-1940s-12/Plexiglas%201940s%2012_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940', '1940']
+    rights_verified_at: '2026-10-19'
+  - id: arc-naylor-line-pipe-1934-50-7e056c92
+    title: Naylor line pipe. (1934) [arc-naylor-line-pipe-1934-50-7e056c92]
+    url: https://archive.org/download/naylor-line-pipe-1934-50/Naylor%20line%20pipe%201934%2050_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1934', '1934']
+    rights_verified_at: '2026-10-19'
+  - id: arc-bingham-architectural-hardware-1930s-154-4fbb90ad
+    title: Architectural hardware. (1930) [arc-bingham-architectural-hardware-1930s-154-4fbb90ad]
+    url: https://archive.org/download/bingham-architectural-hardware-1930s-154/Bingham%20architectural%20hardware%201930s%20154_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1930', '1930']
+    rights_verified_at: '2026-10-19'
+  - id: arc-insulated-buildings-1951-124-7f0bd1e0
+    title: Design of insulated buildings for various climates. (1951) [arc-insulated-buildings-1951-124-7f0bd1e0]
+    url: https://archive.org/download/insulated-buildings-1951-124/Insulated%20buildings%201951%20124_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1951'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1951', '1951']
+    rights_verified_at: '2026-10-19'
+  - id: arc-perma-stone-1949-145-421876c4
+    title: Perma-Stone. (1949) [arc-perma-stone-1949-145-421876c4]
+    url: https://archive.org/download/perma-stone-1949-145/Perma-stone%201949%20145_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1949'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1949', '1949']
+    rights_verified_at: '2026-10-19'
