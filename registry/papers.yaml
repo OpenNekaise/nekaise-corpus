@@ -159535,3 +159535,39 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-19'
+  - id: oas-w2111364805
+    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W2111364805
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2111364805
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-a-two-level-approach-to-large-mixed-integer-pr
+    title: A Two-Level Approach to Large Mixed-Integer Programs with Application to
+      Cogeneration in Energy-Efficient Buildings
+    url: https://arxiv.org/pdf/1504.04589v1
+    source: arxiv
+    license: public-domain
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-04-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1504.04589
+    license_url: http://creativecommons.org/licenses/publicdomain/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1504.04589 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/publicdomain/
+      -> public-domain (CC Public Domain Dedication (retired CC tool; jurisdiction:
+      US law — a dedication under US copyright law, possibly limited elsewhere; not
+      CC0))'
+    rights_verified_at: '2026-10-19'
