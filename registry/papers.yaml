@@ -159391,3 +159391,20 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-19'
+  - id: oas-10-48550-arxiv-2610-19790-b2a8a2fa
+    title: 'One Agent per Zone: Decentralised Active Inference under Partial Observability
+      for Multi-Zone HVAC Control on Edge Hardware'
+    url: https://arxiv.org/pdf/2610.19790
+    source: openalex_ai
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    published_at: '2026-10-14'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.19790
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.19790;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.19790 openalex:W7222144949
+    resolution: 'ai1: openalex location'
