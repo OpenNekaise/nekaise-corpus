@@ -158769,3 +158769,39 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-19'
+  - id: ope-techno-economic-feasibility-study-of-coupling-
+    title: Techno-economic feasibility study of coupling low-temperature evaporation
+      desalination plant with advanced pressurized water reactor
+    url: https://bura.brunel.ac.uk/bitstream/2438/28517/3/FullText.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2024-02-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.nucengdes.2024.113030
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://bura.brunel.ac.uk/bitstream/2438/28517/3/FullText.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.nucengdes.2024.113030 openalex:W4392123003
+    resolution: 'legacy: openalex location'
+  - id: arx-integration-of-legacy-appliances-into-home-ene
+    title: Integration of Legacy Appliances into Home Energy Management Systems
+    url: https://arxiv.org/pdf/1406.3252v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-06-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1406.3252
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1406.3252 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-19'
