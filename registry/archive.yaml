@@ -238547,21 +238547,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1886']
     rights_verified_at: '2026-10-19'
-  - id: arc-wallpaper43323-baee1127
-    title: 'Ideal papers for ideal homes : Ideal Home Exhibition, Olympia 1927 / The
-      Wall Paper Manufa (1927) [arc-wallpaper43323-baee1127]'
-    url: https://archive.org/download/Wallpaper43323/43323_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1927'
-    document_type: trade-literature
-    license_url: https://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1927']
-    rights_verified_at: '2026-10-19'
   - id: arc-w-a-wilson-sons-1915-fbc13a4a
     title: Wood Mantels (1915) [arc-w-a-wilson-sons-1915-fbc13a4a]
     url: https://archive.org/download/w.-a.-wilson-sons-1915/W.A.%20Wilson%20%26%20Sons%2C%201915_djvu.txt
@@ -238773,17 +238758,580 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1910']
     rights_verified_at: '2026-10-19'
-  - id: arc-newcomb-macklin-co-1913-a67760b2
-    title: Catalog, May 1913 (1913) [arc-newcomb-macklin-co-1913-a67760b2]
-    url: https://archive.org/download/newcomb-macklin-co-1913/Newcomb-Macklin%20Co%2C%201913_djvu.txt
+  - id: arc-hendrick-manufacturing-company-1929-ce711bee
+    title: 'Perforated metals : elevator buckets, light and heavy steel plate construction
+      (1929) [arc-hendrick-manufacturing-company-1929-ce711bee]'
+    url: https://archive.org/download/hendrick-manufacturing-company-1929/Hendrick%20Manufacturing%20Company%2C%201929_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wadsworth-howland-co-1902-dffa2f92
+    title: 1902 Price list of house, coach, car, fresco, scenic, enamel paints, varnishes,
+      Japans, sh (1902) [arc-wadsworth-howland-co-1902-dffa2f92]
+    url: https://archive.org/download/wadsworth-howland-co-1902/Wadsworth%2C%20Howland%2C%20%26%20Co%2C%201902_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1902']
+    rights_verified_at: '2026-10-19'
+  - id: arc-anshutz-bradberry-company-1893-3a669f9f
+    title: Illustrated catalogue and price list of the Tremont stove works / Anshutz-Bradberry
+      Compan (1893) [arc-anshutz-bradberry-company-1893-3a669f9f]
+    url: https://archive.org/download/anshutz-bradberry-company-1893/Anshutz-Bradberry%20Company%2C%201893_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1893'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1893']
+    rights_verified_at: '2026-10-19'
+  - id: arc-metters57927-07e53e48
+    title: 'Metters N.S.W. retail (including sales tax) price list : electrical appliance
+      section, app (1940) [arc-metters57927-07e53e48]'
+    url: https://archive.org/download/Metters57927/57927_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940']
+    rights_verified_at: '2026-10-19'
+  - id: arc-ideal12297-d088a685
+    title: Official souvenir catalogue and programme of the Ideal Homes Exhibition,
+      July to October,  (1926) [arc-ideal12297-d088a685]
+    url: https://archive.org/download/Ideal12297/12297_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926']
+    rights_verified_at: '2026-10-19'
+  - id: arc-central-brass-manufacturing-co-1907-cab88612
+    title: Catalog C, 1907 / the Central Brass Manufacturing Company (1907) [arc-central-brass-manufacturing-co-1907-cab88612]
+    url: https://archive.org/download/central-brass-manufacturing-co-1907/Central%20Brass%20Manufacturing%20Co%2C%201907_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907']
+    rights_verified_at: '2026-10-19'
+  - id: arc-tobey-furniture-company-1902-a53be64d
+    title: '"Russmore" furniture / the Tobey Furniture Co. (1902) [arc-tobey-furniture-company-1902-a53be64d]'
+    url: https://archive.org/download/tobey-furniture-company-1902/Tobey%20Furniture%20Company%2C%201902_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1902'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1902']
+    rights_verified_at: '2026-10-19'
+  - id: arc-king-mantel-company-1905-4bd91cda
+    title: '"Evidence" : a book of proof in which pen and camera play an important part
+      regarding the  (1905) [arc-king-mantel-company-1905-4bd91cda]'
+    url: https://archive.org/download/king-mantel-company-1905/King%20Mantel%20Company%2C%201905_djvu.txt
     source: internet_archive
     license: public-domain
     topic: materials
     format: txt
     language: en
-    published_at: '1913'
+    published_at: '1905'
     document_type: trade-literature
     license_url: https://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1913']
+      date/year ['1905']
+    rights_verified_at: '2026-10-19'
+  - id: arc-sears-robuck-and-company-1905-6f8bca07
+    title: Sample book of wall paper / Sears, Roebuck and Co. (1905) [arc-sears-robuck-and-company-1905-6f8bca07]
+    url: https://archive.org/download/sears-robuck-and-company-1905/Sears%2C%20Robuck%2C%20and%20Company%2C%201905_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1905']
+    rights_verified_at: '2026-10-19'
+  - id: arc-henry-bosch-company-1906-41cd4219
+    title: 'Suggestions for modern interior decoration : compiled for use in connection
+      with our line  (1906) [arc-henry-bosch-company-1906-41cd4219]'
+    url: https://archive.org/download/henry-bosch-company-1906/Henry%20Bosch%20Company%2C%201906_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1906'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1906']
+    rights_verified_at: '2026-10-19'
+  - id: arc-robertson-art-tile-company-1907-abe13a33
+    title: Ceramic mosaics (1907) [arc-robertson-art-tile-company-1907-abe13a33]
+    url: https://archive.org/download/robertson-art-tile-company-1907/Robertson%20Art%20Tile%20Company%2C%201907_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907']
+    rights_verified_at: '2026-10-19'
+  - id: arc-bloom-studios-inc-1908-c8a6e1e9
+    title: 'Contracting plasterers : specialists on scagliola, art marble, caen stone,
+      limestone, trav (1908) [arc-bloom-studios-inc-1908-c8a6e1e9]'
+    url: https://archive.org/download/bloom-studios-inc-1908/Bloom%20Studios%20Inc%2C%201908_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1908'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1908']
+    rights_verified_at: '2026-10-19'
+  - id: arc-peaslee-gaulbert-company-1910-c74f0f69
+    title: 'Pee Gee mastic paint : highest grade ready-mixed house paint (1910) [arc-peaslee-gaulbert-company-1910-c74f0f69]'
+    url: https://archive.org/download/peaslee-gaulbert-company-1910/Peaslee-Gaulbert%20Company%2C%201910_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910']
+    rights_verified_at: '2026-10-19'
+  - id: arc-j-h-day-company-1910-dca18119
+    title: Day high grade paint machinery / J. H. Day Company (1910) [arc-j-h-day-company-1910-dca18119]
+    url: https://archive.org/download/j.-h.-day-company-1910/J.H.%20Day%20Company%2C%201910_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1910']
+    rights_verified_at: '2026-10-19'
+  - id: arc-benham13152-0a90f516
+    title: 'Supplement no.1 to general catalogue : also catalogues of pedestal and other
+      lamps, wrough (1895) [arc-benham13152-0a90f516]'
+    url: https://archive.org/download/Benham13152/13152_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895']
+    rights_verified_at: '2026-10-19'
+  - id: arc-vaucluse43079-1939-41-45d30349
+    title: Minute book of Vaucluse Park Trust from 17th June 1939 to 9th August 1941
+      (1939) [arc-vaucluse43079-1939-41-45d30349]
+    url: https://archive.org/download/Vaucluse43079-1939-41/43079_1939-41_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939']
+    rights_verified_at: '2026-10-19'
+  - id: arc-e-aspinall-1890-d9e675f7
+    title: Guide to Aspinalling / by a lady (1890) [arc-e-aspinall-1890-d9e675f7]
+    url: https://archive.org/download/e.-aspinall-1890/E.%20Aspinall%2C%201890_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wadsworth-howland-co-1890-765b7361
+    title: Pure linseed oil liquid paints (1890) [arc-wadsworth-howland-co-1890-765b7361]
+    url: https://archive.org/download/wadsworth-howland-co-1890/Wadsworth%2C%20Howland%20%26%20Co%2C%201890_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890']
+    rights_verified_at: '2026-10-19'
+  - id: arc-butler-hardware-co-1890-a9f44157
+    title: '[Catalog of Emerick''s patent hand elevators and dumb waiters] (1890) [arc-butler-hardware-co-1890-a9f44157]'
+    url: https://archive.org/download/butler-hardware-co-1890/Butler%20Hardware%20Co%2C%201890_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890']
+    rights_verified_at: '2026-10-19'
+  - id: arc-burlington-blind-co-1891-f3eb34a0
+    title: 'Catalogue of Baldwin''s patent improved inside sliding and Venetian blinds
+      : the ordinary E (1891) [arc-burlington-blind-co-1891-f3eb34a0]'
+    url: https://archive.org/download/burlington-blind-co-1891/Burlington%20Blind%20Co%2C%201891_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1891'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1891']
+    rights_verified_at: '2026-10-19'
+  - id: arc-oneonta-mineral-paint-works-1892-333721b2
+    title: 'An old reliable paint : dry, ready mixed and in paste form. (1892) [arc-oneonta-mineral-paint-works-1892-333721b2]'
+    url: https://archive.org/download/oneonta-mineral-paint-works-1892/Oneonta%20Mineral%20Paint%20Works%2C%201892_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1892'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1892']
+    rights_verified_at: '2026-10-19'
+  - id: arc-alfred-peats-co-1893-9a7adb46
+    title: 'Guide, how to paper : and economy in home decorations, with wall papers
+      and how to apply t (1893) [arc-alfred-peats-co-1893-9a7adb46]'
+    url: https://archive.org/download/alfred-peats-co-1893/Alfred%20Peats%20Co%2C%201893_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1893'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1893']
+    rights_verified_at: '2026-10-19'
+  - id: arc-still-stove-works-1895-1bd149dd
+    title: The new sterling range has no equal. (1895) [arc-still-stove-works-1895-1bd149dd]
+    url: https://archive.org/download/still-stove-works-1895/Still%20Stove%20Works%2C%201895_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895']
+    rights_verified_at: '2026-10-19'
+  - id: arc-paine-furniture-co-1895-a7c54067
+    title: A mantel book / published by the Paine Furniture Company. (1895) [arc-paine-furniture-co-1895-a7c54067]
+    url: https://archive.org/download/paine-furniture-co-1895/Paine%20Furniture%20Co%2C%201895_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895']
+    rights_verified_at: '2026-10-19'
+  - id: arc-maryland-meter-manufacturing-co-1896-f885d7ff
+    title: Perfect gas ranges. (1896) [arc-maryland-meter-manufacturing-co-1896-f885d7ff]
+    url: https://archive.org/download/maryland-meter-manufacturing-co-1896/Maryland%20Meter%20%26%20Manufacturing%20Co%2C%201896_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1896'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1896']
+    rights_verified_at: '2026-10-19'
+  - id: arc-national-x-ray-reflector-company-1919-19e01ef4
+    title: 'Lighting from concealed sources : a practical treatment of lighting problems
+      to obtain sat (1919) [arc-national-x-ray-reflector-company-1919-19e01ef4]'
+    url: https://archive.org/download/national-x-ray-reflector-company-1919/National%20X-Ray%20Reflector%20Company%2C%201919_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1919'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1919']
+    rights_verified_at: '2026-10-19'
+  - id: arc-westinghouse-lamp-company-1925-e245329c
+    title: The vogue in home lighting / issued by Westinghouse Lamp Company (1925) [arc-westinghouse-lamp-company-1925-e245329c]
+    url: https://archive.org/download/westinghouse-lamp-company-1925/Westinghouse%20Lamp%20Company%2C%201925_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1925']
+    rights_verified_at: '2026-10-19'
+  - id: arc-william-g-ostendorf-1900-20391932
+    title: Mantels, grates, tiles, etc. / William G. Ostendorf (1900) [arc-william-g-ostendorf-1900-20391932]
+    url: https://archive.org/download/william-g.-ostendorf-1900/William%20G.%20Ostendorf%2C%201900_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900']
+    rights_verified_at: '2026-10-19'
+  - id: arc-metropolitan-furniture-co-1900-16dbfd4d
+    title: Supplement catalogue (1900) [arc-metropolitan-furniture-co-1900-16dbfd4d]
+    url: https://archive.org/download/metropolitan-furniture-co-1900/Metropolitan%20Furniture%20Co%2C%201900_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1900']
+    rights_verified_at: '2026-10-19'
+  - id: arc-national-building-publications-1931-202505-098f44f7
+    title: National builders catalog (1931) [arc-national-building-publications-1931-202505-098f44f7]
+    url: https://archive.org/download/national-building-publications-1931_202505/National%20Building%20Publications%2C%201931_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wm-whiteley-ltd-1885-ae5b5c78
+    title: 'William Whiteley''s illustrated catalogue & price list : comprising every
+      article necessary (1885) [arc-wm-whiteley-ltd-1885-ae5b5c78]'
+    url: https://archive.org/download/wm.-whiteley-ltd-1885/Wm.%20Whiteley%20Ltd%2C%201885_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1885'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1885']
+    rights_verified_at: '2026-10-19'
+  - id: arc-stratton-terstegge-co-1898-459bb460
+    title: Burning facts / Anchor Stoves and Ranges. (1898) [arc-stratton-terstegge-co-1898-459bb460]
+    url: https://archive.org/download/stratton-terstegge-co-1898/Stratton%20%26%20Terstegge%20Co%2C%201898_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1898'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1898']
+    rights_verified_at: '2026-10-19'
+  - id: arc-alcott-ross-scully-co-1899-28b73226
+    title: 'Mantels in wood : suggestions for the decorative treatment of the mantel
+      and fireplace / A (1899) [arc-alcott-ross-scully-co-1899-28b73226]'
+    url: https://archive.org/download/alcott-ross-scully-co-1899/Alcott%2C%20Ross%2C%20%26%20Scully%20Co%2C%201899_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1899'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1899']
+    rights_verified_at: '2026-10-19'
+  - id: arc-frank-w-williams-co-1905-619787d4
+    title: Our complete catalogue number twenty-one, 1905. (1905) [arc-frank-w-williams-co-1905-619787d4]
+    url: https://archive.org/download/frank-w.-williams-co-1905/Frank%20W.%20Williams%20Co%2C%201905_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1905']
+    rights_verified_at: '2026-10-19'
+  - id: arc-acme-white-lead-color-works-1908-b679a033
+    title: 'Selection and use of paints and finishes : what to use and how to use it.
+      (1908) [arc-acme-white-lead-color-works-1908-b679a033]'
+    url: https://archive.org/download/acme-white-lead-color-works-1908/Acme%20White%20Lead%20%26%20Color%20Works%2C%201908_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1908'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1908']
+    rights_verified_at: '2026-10-19'
+  - id: arc-gerstendorfer-bros-1920-ca67805d
+    title: 'Sapolin varnishes : enamels, japans, driers. (1920) [arc-gerstendorfer-bros-1920-ca67805d]'
+    url: https://archive.org/download/gerstendorfer-bros-1920/Gerstendorfer%20Bros%2C%201920_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920']
+    rights_verified_at: '2026-10-19'
+  - id: arc-prince-bass-1871-8f873974
+    title: Prince's metallic paint. (1871) [arc-prince-bass-1871-8f873974]
+    url: https://archive.org/download/prince-bass-1871/Prince%20%26%20Bass%2C%201871_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1871'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1871']
+    rights_verified_at: '2026-10-19'
+  - id: arc-national-mixed-paint-co-1875-5cec5fe5
+    title: The paint itself. (1875) [arc-national-mixed-paint-co-1875-5cec5fe5]
+    url: https://archive.org/download/national-mixed-paint-co-1875/National%20Mixed%20Paint%20Co%2C%201875_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1875'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1875']
+    rights_verified_at: '2026-10-19'
+  - id: arc-george-p-bissell-co-1876-887e99cf
+    title: '"Peerless" radiator shaking grate / manufactured solely by Bissell & Co..
+      (1876) [arc-george-p-bissell-co-1876-887e99cf]'
+    url: https://archive.org/download/george-p.-bissell-co-1876/George%20P.%20Bissell%20%26%20Co%2C%201876_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1876'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1876']
+    rights_verified_at: '2026-10-19'
+  - id: arc-pittsburgh-iron-paint-company-1876-36dcd2a5
+    title: Pittsburgh Iron Paint. (1876) [arc-pittsburgh-iron-paint-company-1876-36dcd2a5]
+    url: https://archive.org/download/pittsburgh-iron-paint-company-1876/Pittsburgh%20Iron%20Paint%20Company%2C%201876_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1876'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1876']
     rights_verified_at: '2026-10-19'
