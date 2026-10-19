@@ -247393,34 +247393,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1927']
     rights_verified_at: '2026-10-19'
-  - id: arc-vve-turgis-1910-0a98c232
-    title: '[Catalog of alphabets] (1910) [arc-vve-turgis-1910-0a98c232]'
-    url: https://archive.org/download/vve-turgis-1910/Vve%20Turgis%2C%201910_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: fr
-    published_at: '1910'
-    document_type: trade-literature
-    license_url: https://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1910']
-    rights_verified_at: '2026-10-19'
-  - id: arc-waddell-manufacturing-company-1898-4003e80e
-    title: Catalogue no. 18 (1898) [arc-waddell-manufacturing-company-1898-4003e80e]
-    url: https://archive.org/download/waddell-manufacturing-company-1898/Waddell%20Manufacturing%20Company%2C%201898_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1898'
-    document_type: trade-literature
-    license_url: https://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1898']
-    rights_verified_at: '2026-10-19'
   - id: arc-attractive-small-homes-of-concrete-masonry-d8c63cd9
     title: Attractive Small Homes of Concrete Masonry (1929) [arc-attractive-small-homes-of-concrete-masonry-d8c63cd9]
     url: https://archive.org/download/attractive-small-homes-of-concrete-masonry-1929/Attractive%20Small%20Homes%20of%20Concrete%20Masonry%2C%201929_djvu.txt
@@ -250131,12 +250103,513 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1907']
     rights_verified_at: '2026-10-19'
-  - id: arc-vosz2192-03b90274
-    title: Art in the home / H.L. Vosz. (1901) [arc-vosz2192-03b90274]
-    url: https://archive.org/download/Vosz2192/2192_djvu.txt
+  - id: arc-lawson61589-3af8ab68
+    title: Catalogue of the valuable household furniture, appointments and effects at
+      "Inverness", 47 (1920) [arc-lawson61589-3af8ab68]
+    url: https://archive.org/download/Lawson61589/61589_djvu.txt
     source: internet_archive
     license: public-domain
     topic: architecture
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920']
+    rights_verified_at: '2026-10-19'
+  - id: arc-lawson63109-a9624796
+    title: The collection of genuine Stuart & period furniture, old china, brass, clocks,
+      early Engli (1922) [arc-lawson63109-a9624796]
+    url: https://archive.org/download/Lawson63109/63109_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1922']
+    rights_verified_at: '2026-10-19'
+  - id: arc-lawson61928-1ea056b2
+    title: Catalogue of the artistic modern furniture … contained throughout … Glen
+      Mervyn, 39 Carr S (1937) [arc-lawson61928-1ea056b2]
+    url: https://archive.org/download/Lawson61928/61928_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich57968-9c9ef536
+    title: Wartime products, Metalworking Division / Wunderlich Limited (1946) [arc-wunderlich57968-9c9ef536]
+    url: https://archive.org/download/Wunderlich57968/57968_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1946']
+    rights_verified_at: '2026-10-19'
+  - id: arc-art-metal-craft-1937-c6c3601e
+    title: Art Metal Craft (1937) [arc-art-metal-craft-1937-c6c3601e]
+    url: https://archive.org/download/art-metal-craft-1937/Art%20Metal%20Craft%201937_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937']
+    rights_verified_at: '2026-10-19'
+  - id: arc-ornaamental-iron-mfgr-asspc-1927-e18bf5c8
+    title: Ornamental iron manufacturers association. (1927) [arc-ornaamental-iron-mfgr-asspc-1927-e18bf5c8]
+    url: https://archive.org/download/ornaamental-iron-mfgr-asspc-1927/Ornaamental%20iron%20mfgr%20asspc%201927_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1927']
+    rights_verified_at: '2026-10-19'
+  - id: arc-buckeye-specialties-1920-364e109a
+    title: Buckeye iron and brass specialties. (1920) [arc-buckeye-specialties-1920-364e109a]
+    url: https://archive.org/download/buckeye-specialties-1920/Buckeye%20specialties%201920_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920']
+    rights_verified_at: '2026-10-19'
+  - id: arc-buckeye-valves-1953-3171e7e8
+    title: Buckeye valves & fittings catalog no. 14., gas stations. bulk plants, tank
+      trucks, airport (1953) [arc-buckeye-valves-1953-3171e7e8]
+    url: https://archive.org/download/buckeye-valves-1953/Buckeye%20valves%201953_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1953'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1953']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich44711-e218d776
+    title: Wunderlich roofing tiles. (1921) [arc-wunderlich44711-e218d776]
+    url: https://archive.org/download/Wunderlich44711/44711_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1921'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1921']
+    rights_verified_at: '2026-10-19'
+  - id: arc-michel-pfeffer-iron-works-1927-202609-5b595795
+    title: A master thinks in iron. (1927) [arc-michel-pfeffer-iron-works-1927-202609-5b595795]
+    url: https://archive.org/download/michel-pfeffer-iron-works-1927_202609/Michel%20%26%20Pfeffer%20Iron%20works%201927_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1927']
+    rights_verified_at: '2026-10-19'
+  - id: arc-lawson61881-6cb58666
+    title: Highly attractive sale by auction on Tuesday, 2nd May, 1916 … under instructions
+      from Phil (1916) [arc-lawson61881-6cb58666]
+    url: https://archive.org/download/Lawson61881/61881_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1916'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1916']
+    rights_verified_at: '2026-10-19'
+  - id: arc-lawson61859-40d733c9
+    title: Catalogue of the … whole of the household appointments and effects contained
+      in the reside (1938) [arc-lawson61859-40d733c9]
+    url: https://archive.org/download/Lawson61859/61859_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938']
+    rights_verified_at: '2026-10-19'
+  - id: arc-stillwell75-845eba77
+    title: 'West coast bungalows: a book of fifty-one one-story inexpensive homes with
+      plans / E. W. S (1914) [arc-stillwell75-845eba77]'
+    url: https://archive.org/download/Stillwell75/75_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1914'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1914']
+    rights_verified_at: '2026-10-19'
+  - id: arc-sears-mobile-home-1980-2960bfed
+    title: 1890 catalog of accessories for mobile homes. (1980) [arc-sears-mobile-home-1980-2960bfed]
+    url: https://archive.org/download/sears-mobile-home-1980/Sears%20Mobile%20home%201980_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1980'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1980'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-perfection-refrigeration-1939-677a2e6a
+    title: Perfection refrigeration parts catalog no. 39. (1939) [arc-perfection-refrigeration-1939-677a2e6a]
+    url: https://archive.org/download/perfection-refrigeration-1939/Perfection%20refrigeration%201939_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939']
+    rights_verified_at: '2026-10-19'
+  - id: arc-standard-industrial-bldgs-1929-c8e47386
+    title: Specifications for standard industrial buildings. (1929) [arc-standard-industrial-bldgs-1929-c8e47386]
+    url: https://archive.org/download/standard-industrial-bldgs-1929/Standard%20industrial%20bldgs%201929_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1929']
+    rights_verified_at: '2026-10-19'
+  - id: arc-detroit-lubricator-1940s-67c8560d
+    title: 'Condensed catalog no. 200: expansion valves, solenoid valves, controls etc
+      for refrigerati (1940) [arc-detroit-lubricator-1940s-67c8560d]'
+    url: https://archive.org/download/detroit-lubricator-1940s/Detroit%20Lubricator%201940s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940']
+    rights_verified_at: '2026-10-19'
+  - id: arc-penn-electric-switch-co-1939-7f1b6aef
+    title: Penn Automatic controls for refrigeration and air conditioning. (1939) [arc-penn-electric-switch-co-1939-7f1b6aef]
+    url: https://archive.org/download/penn-electric-switch-co-1939/Penn%20Electric%20Switch%20Co%201939_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939']
+    rights_verified_at: '2026-10-19'
+  - id: arc-ranco-refrigeration-1939-6e6c3bfe
+    title: Ranco refrigeration controls. (1939) [arc-ranco-refrigeration-1939-6e6c3bfe]
+    url: https://archive.org/download/ranco-refrigeration-1939/Ranco%20refrigeration%201939_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1939'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1939']
+    rights_verified_at: '2026-10-19'
+  - id: arc-white-rogers-electric-co-1940-32f4c26e
+    title: Condensed control catalog and price list for refrigeration. (1940) [arc-white-rogers-electric-co-1940-32f4c26e]
+    url: https://archive.org/download/white-rogers-electric-co-1940/White-Rogers%20Electric%20Co%201940_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940']
+    rights_verified_at: '2026-10-19'
+  - id: arc-sears-home-improvement-1974-55863749
+    title: Sears home improvement catalog for 1974. (1974) [arc-sears-home-improvement-1974-55863749]
+    url: https://archive.org/download/sears-home-improvement-1974/Sears%20home%20improvement%201974_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1974'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1974'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-armstrong-bldg-materials-1954-9e1ffd7f
+    title: Armstrong's building materials. (1954) [arc-armstrong-bldg-materials-1954-9e1ffd7f]
+    url: https://archive.org/download/armstrong-bldg-materials-1954/Armstrong%20bldg%20materials%201954_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1954'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1954']
+    rights_verified_at: '2026-10-19'
+  - id: arc-horrocks-wire-partitions-1926-cde80a17
+    title: Horrocks wire partitions, window guards, machinery guards for every industrial
+      and commerc (1926) [arc-horrocks-wire-partitions-1926-cde80a17]
+    url: https://archive.org/download/horrocks-wire-partitions-1926/Horrocks%20Wire%20Partitions%201926_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926']
+    rights_verified_at: '2026-10-19'
+  - id: arc-horrocks-wire-work-tribute-1920s-46ee32e8
+    title: A tribute to wire work. (1920) [arc-horrocks-wire-work-tribute-1920s-46ee32e8]
+    url: https://archive.org/download/horrocks-wire-work-tribute-1920s/Horrocks%20%20wire%20Work%20Tribute%201920s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920']
+    rights_verified_at: '2026-10-19'
+  - id: arc-mc-cabe-hanger-1930s-e1eab6fe
+    title: McCabe door hangers. (1920) [arc-mc-cabe-hanger-1930s-e1eab6fe]
+    url: https://archive.org/download/mc-cabe-hanger-1930s/McCabe%20Hanger%201930s_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920']
+    rights_verified_at: '2026-10-19'
+  - id: arc-flockhardt-foundry-1932-9465efe5
+    title: Standard construction castings catalogue 108. (1932) [arc-flockhardt-foundry-1932-9465efe5]
+    url: https://archive.org/download/flockhardt-foundry-1932/Flockhardt%20Foundry%201932_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932']
+    rights_verified_at: '2026-10-19'
+  - id: arc-sears-home-improvement-1973-938f7d1a
+    title: Sears home improvement catalog for 1973. (1973) [arc-sears-home-improvement-1973-938f7d1a]
+    url: https://archive.org/download/sears-home-improvement-1973/Sears%20home%20improvement%201973_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1973'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1973'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-jim-walter-homes-1971-34babfeb
+    title: Invest in your future with a home of your own. (1971) [arc-jim-walter-homes-1971-34babfeb]
+    url: https://archive.org/download/jim-walter-homes-1971/Jim%20Walter%20homes%201971_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1971'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1971'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-kopps-company-1965-88648875
+    title: 'Gold book of perfect fit homes: 3, 4, and 5 bedrooms. (1965) [arc-kopps-company-1965-88648875]'
+    url: https://archive.org/download/kopps-company-1965/Kopp%27s%20Company%201965_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1965'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1965'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-lawson61454-e9d53bd6
+    title: Catalogue of the artistic furniture … & effects throughout the residence
+      "Bundarra" Captai (1931) [arc-lawson61454-e9d53bd6]
+    url: https://archive.org/download/Lawson61454/61454_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931']
+    rights_verified_at: '2026-10-19'
+  - id: arc-lawson61578-5ac415c8
+    title: Catalogue of the valuable furniture and effects ... to be sold by auction
+      by the direction (1913) [arc-lawson61578-5ac415c8]
+    url: https://archive.org/download/Lawson61578/61578_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1913']
+    rights_verified_at: '2026-10-19'
+  - id: arc-white11428-475b2511
+    title: 'Catalogue of wood chimney pieces : no.7 October 1903 / John P. White, The
+      Pyghtle Works, B (1903) [arc-white11428-475b2511]'
+    url: https://archive.org/download/White11428/11428_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1903'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1903']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4492-02ce0525
+    title: 'Wunderlich kitchen unit : sink, drainer, cabinet / Wunderlich Limited (1947)
+      [arc-wunderlich4492-02ce0525]'
+    url: https://archive.org/download/Wunderlich4492/4492_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947']
+    rights_verified_at: '2026-10-19'
+  - id: arc-lawson63137-8b7116d4
+    title: Important auction sale at Belhaven, Victoria Road, Bellevue Hill, as instructed
+      by and for (1923) [arc-lawson63137-8b7116d4]
+    url: https://archive.org/download/Lawson63137/63137_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1923']
+    rights_verified_at: '2026-10-19'
+  - id: arc-lawson61623-245ca369
+    title: Catalogue of the artistic modern furniture … contained in the residence,
+      "Rathven", 61 St. (1926) [arc-lawson61623-245ca369]
+    url: https://archive.org/download/Lawson61623/61623_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926']
+    rights_verified_at: '2026-10-19'
+  - id: arc-boyle11529-a52760c3
+    title: Boyle's latest patent "air-pump" ventilators & other ventilating appliances
+      / Robert Boyle (1901) [arc-boyle11529-a52760c3]
+    url: https://archive.org/download/Boyle11529/11529_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
     format: txt
     language: en
     published_at: '1901'
@@ -250144,4 +250617,93 @@ sources:
     license_url: https://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1901']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4505-a1754228
+    title: Durabestos (asbestos-cement) building sheets and roofing slates / manufactured
+      by Wunderli (1924) [arc-wunderlich4505-a1754228]
+    url: https://archive.org/download/Wunderlich4505/4505_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924']
+    rights_verified_at: '2026-10-19'
+  - id: arc-yoho57279-997eb916
+    title: 'Craftsman bungalows : a collection of the latest designs, dedicated to "the
+      lover of a con (1919) [arc-yoho57279-997eb916]'
+    url: https://archive.org/download/Yoho57279/57279_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1919'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1919']
+    rights_verified_at: '2026-10-19'
+  - id: arc-823140326-cle-01-automobile-and-machinery-i-3c23d335
+    title: Automobile and machinery illustrations [Trade catalogs of automobiles and
+      the automotive i (1907) [arc-823140326-cle-01-automobile-and-machinery-i-3c23d335]
+    url: https://archive.org/download/823140326-cle-01-automobile-and-machinery-illustrations/823140326_CLE_01_AutomobileAndMachineryIllustrations_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1907'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
+      in 1907, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-48155318-cle-01-ancient-beauty-for-modern-b-549fb676
+    title: Ancient beauty for modern buildings catalog no. 50-D [Trade catalogs of ironwork
+      and brass (1931) [arc-48155318-cle-01-ancient-beauty-for-modern-b-549fb676]
+    url: https://archive.org/download/48155318-cle-01-ancient-beauty-for-modern-buildings-catalog-no-50-d/48155318_CLE_01_AncientBeautyForModernBuildingsCatalogNo50-D_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931']
+    rights_verified_at: '2026-10-19'
+  - id: arc-48155318-cle-01-catalogue-and-description-o-23a888d2
+    title: Catalogue and description of saw and file proof jail and station-house work
+      [Trade catalog (1889) [arc-48155318-cle-01-catalogue-and-description-o-23a888d2]
+    url: https://archive.org/download/48155318-cle-01-catalogue-and-description-of-jail-and-station-house-work/48155318_CLE_01_CatalogueAndDescriptionOfJailAndStationHouseWork_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1889'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1889']
+    rights_verified_at: '2026-10-19'
+  - id: arc-48155318-cle-01-catalog-no-11-c-plain-and-o-40120fa3
+    title: Catalog no. 11-C plain and ornamental wire, iron, brass and bronze [Trade
+      catalogs of iron (1890) [arc-48155318-cle-01-catalog-no-11-c-plain-and-o-40120fa3]
+    url: https://archive.org/download/48155318-cle-01-catalog-no-11-c-plain-and-ornamental-wire/48155318_CLE_01_CatalogNo11-CPlainAndOrnamentalWire_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1890']
     rights_verified_at: '2026-10-19'
