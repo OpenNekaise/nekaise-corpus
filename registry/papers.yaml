@@ -159068,3 +159068,75 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-19'
     origin_ids: doi:10.2140/gt.2014.18.2375
+  - id: ope-cooled-solar-pv-panels-for-output-energy-effic
+    title: Cooled solar PV panels for output energy efficiency optimisation
+    url: https://uhra.herts.ac.uk/id/eprint/6537/1/Accepted_Manuscript.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-07-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enconman.2017.07.007
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://uhra.herts.ac.uk/id/eprint/6537/1/Accepted_Manuscript.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enconman.2017.07.007 openalex:W2734442866
+    resolution: 'legacy: openalex location'
+  - id: ope-integration-of-large-scale-heat-pumps-in-the-d
+    title: Integration of large-scale heat pumps in the district heating systems of
+      Greater Copenhagen
+    url: https://backend.orbit.dtu.dk/ws/files/128685692/HeatPump_Bach_etal_2016_postprint.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-04-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2016.04.029
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://backend.orbit.dtu.dk/ws/files/128685692/HeatPump_Bach_etal_2016_postprint.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2016.04.029 openalex:W2343203136
+    resolution: 'legacy: openalex location'
+  - id: ope-potential-environmental-impacts-of-floating-so
+    title: Potential environmental impacts of floating solar photovoltaic systems
+    url: https://strathprints.strath.ac.uk/89330/7/Benjamins-etal-RSER-2024-Potential-environmental-impacts-of-floating-solar-photovoltaic.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-05-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rser.2024.114463
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/89330/7/Benjamins-etal-RSER-2024-Potential-environmental-impacts-of-floating-solar-photovoltaic.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.rser.2024.114463 openalex:W4396785850
+    resolution: 'legacy: openalex location'
+  - id: ope-the-evolution-of-electricity-demand-and-the-ro
+    title: The evolution of electricity demand and the role for demand side participation,
+      in buildings and transport
+    url: https://strathprints.strath.ac.uk/45470/1/1_s2.0_S0301421512007227_main.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-09-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enpol.2012.08.040
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/45470/1/1_s2.0_S0301421512007227_main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enpol.2012.08.040 openalex:W2101745732
+    resolution: 'legacy: openalex location'
