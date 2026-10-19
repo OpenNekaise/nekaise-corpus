@@ -158593,24 +158593,6 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.3390/su16010271 openalex:W4390341219
     resolution: 'legacy: openalex location'
-  - id: ope-comparing-airborne-infectious-aerosol-exposure
-    title: Comparing airborne infectious aerosol exposures in sparsely occupied large
-      spaces utilizing large-diameter ceiling fans
-    url: https://scholarsphere.psu.edu/resources/ddad4870-671f-40e9-af03-d6d492acc789/downloads/22109
-    source: openalex
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2023-01-19'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.buildenv.2023.110022
-    license_evidence: no licence statement for this copy [copy https://scholarsphere.psu.edu/resources/ddad4870-671f-40e9-af03-d6d492acc789/downloads/22109;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-18'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.buildenv.2023.110022 openalex:W4317473797
-    resolution: 'legacy: openalex location'
   - id: arx-simple-simulation-of-diffusion-bridges-with-ap
     title: Simple simulation of diffusion bridges with application to likelihood inference
       for diffusions
@@ -159213,3 +159195,21 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/buildings14051312 openalex:W4396693442
     resolution: 'legacy: openalex location'
+  - id: arx-the-flat-closing-problem-for-buildings
+    title: The flat closing problem for buildings
+    url: https://arxiv.org/pdf/1402.5554v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-02-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1402.5554
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1402.5554 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-19'
+    origin_ids: doi:10.2140/agt.2014.14.3089
