@@ -159408,3 +159408,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2610.19790 openalex:W7222144949
     resolution: 'ai1: openalex location'
+  - id: ope-organic-waste-to-energy-resource-potential-and
+    title: 'Organic waste to energy: Resource potential and barriers to uptake in Chile'
+    url: http://bura.brunel.ac.uk/bitstream/2438/25893/1/FullText.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-08-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.spc.2021.08.017
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy http://bura.brunel.ac.uk/bitstream/2438/25893/1/FullText.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.spc.2021.08.017 openalex:W3197390130
+    resolution: 'legacy: openalex location'
+  - id: ope-integrating-long-term-temporal-changes-in-the-
+    title: Integrating long term temporal changes in the Belgian electricity mix in
+      environmental attributional life cycle assessment of buildings
+    url: https://lirias.kuleuven.be/retrieve/96211c9e-fec2-4ad1-92c3-df863db8a1c8
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-03-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2021.126624
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/96211c9e-fec2-4ad1-92c3-df863db8a1c8;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2021.126624 openalex:W3134676344
+    resolution: 'legacy: openalex location'
