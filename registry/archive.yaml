@@ -240053,21 +240053,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc-nd/4.0/']
       date/year ['1978']
     rights_verified_at: '2026-10-19'
-  - id: arc-vaucluse-43079-1978-79-bc99d906
-    title: Minute book of Vaucluse House Historic Site from 20th July 1978 to 25th June
-      1979 (1978) [arc-vaucluse-43079-1978-79-bc99d906]
-    url: https://archive.org/download/Vaucluse-43079-1978-79/43079_1978-79_djvu.txt
-    source: internet_archive
-    license: cc-by-nc-nd
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1978'
-    document_type: trade-literature
-    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc-nd/4.0/']
-      date/year ['1978']
-    rights_verified_at: '2026-10-19'
   - id: arc-david10636-53bc5152
     title: Plafonds et peintures murales / par Ernest David, peintre decorateur (1890)
       [arc-david10636-53bc5152]
@@ -243119,19 +243104,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
       in 1902, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-19'
-  - id: arc-universalcottage00univ-3cb127ad
-    title: Universal cottages. Book no. 9 (1937) [arc-universalcottage00univ-3cb127ad]
-    url: https://archive.org/download/universalcottage00univ/universalcottage00univ_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1937'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1937'']: the item
-      states no licence'
-    rights_verified_at: '2026-10-19'
   - id: arc-concretebasement00port-c2a7a337
     title: Concrete basements for homes (1949) [arc-concretebasement00port-c2a7a337]
     url: https://archive.org/download/concretebasement00port/concretebasement00port_djvu.txt
@@ -245028,4 +245000,453 @@ sources:
     document_type: trade-literature
     license_evidence: 'Internet Archive item metadata date/year [''1926'']: published
       in 1926, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich53710-73341b92
+    title: 'Wunderlich metal ceilings : and other manufactures in stamped metal. Catalogue
+      M 105 (1940) [arc-wunderlich53710-73341b92]'
+    url: https://archive.org/download/Wunderlich53710/53710_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1940']
+    rights_verified_at: '2026-10-19'
+  - id: arc-armstrong7380-2a3577ba
+    title: Price list of timber, moulding, joinery, turnery, builders' supplies / Armstrong
+      & Royse L (1932) [arc-armstrong7380-2a3577ba]
+    url: https://archive.org/download/Armstrong7380/7380_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1932']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4526-1269c42b
+    title: Colour in Wunderlich products / Wunderlich Limited (1933) [arc-wunderlich4526-1269c42b]
+    url: https://archive.org/download/Wunderlich4526/4526_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1933']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich10459-3d9f6b44
+    title: A selection of Wunderlich ceilings and other ornamental metal linings (1933)
+      [arc-wunderlich10459-3d9f6b44]
+    url: https://archive.org/download/Wunderlich10459/10459_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1933']
+    rights_verified_at: '2026-10-19'
+  - id: arc-catalogueofroofi00penn-6d54c274
+    title: Catalogue of roofing, siding, cornices and ridging (1899) [arc-catalogueofroofi00penn-6d54c274]
+    url: https://archive.org/download/catalogueofroofi00penn/catalogueofroofi00penn_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1899'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1899'']: published
+      in 1899, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-4498wunderlich-1bab62cb
+    title: '"Durabestos" : the durable : asbestos cement sheets and slates / Wunderlich
+      Limited (1920) [arc-4498wunderlich-1bab62cb]'
+    url: https://archive.org/download/4498Wunderlich/4498_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1920']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich14691-daecabba
+    title: 'The Wunderlich pattern book : illustrating the complete range of designs
+      in stamped art me (1935) [arc-wunderlich14691-daecabba]'
+    url: https://archive.org/download/Wunderlich14691/14691_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1935']
+    rights_verified_at: '2026-10-19'
+  - id: arc-over48941-f53f8a72
+    title: 'Ornamental architecture in the Gothic, Chinese, and modern taste : being
+      above fifty intir (1758) [arc-over48941-f53f8a72]'
+    url: https://archive.org/download/Over48941/48941_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1758'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1758']
+    rights_verified_at: '2026-10-19'
+  - id: arc-danks30283-48677dd0
+    title: Modern mantels / John Danks & Son Pty Ltd (1925) [arc-danks30283-48677dd0]
+    url: https://archive.org/download/Danks30283/30283_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1925']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4518-5f06a41e
+    title: 'Wunderlich Limited trade price list : August, 1935 (1935) [arc-wunderlich4518-5f06a41e]'
+    url: https://archive.org/download/Wunderlich4518/4518_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1935'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1935']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4497-2ba31af7
+    title: Wunderlich "Durabestos" hydraulically compressed asbestos-cement slates /
+      Wunderlich Limit (1922) [arc-wunderlich4497-2ba31af7]
+    url: https://archive.org/download/Wunderlich4497/4497_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1922']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4507-4baef899
+    title: Durabestos asbestos cement building sheets simplify wall buildings / Wunderlich
+      Limited (1926) [arc-wunderlich4507-4baef899]
+    url: https://archive.org/download/Wunderlich4507/4507_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1926']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4514-9452d913
+    title: Durabestos asbestos-cement building sheets / Wunderlich Limited (1927) [arc-wunderlich4514-9452d913]
+    url: https://archive.org/download/Wunderlich4514/4514_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1927']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4520-62f55877
+    title: 'Wunderlich Limited (Newcastle Branch) : trade price list December, 1941
+      (1941) [arc-wunderlich4520-62f55877]'
+    url: https://archive.org/download/Wunderlich4520/4520_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1941'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1941']
+    rights_verified_at: '2026-10-19'
+  - id: arc-claygate14891-82aafe5c
+    title: 1934 price list / Claygate Brickfields Limited (1924) [arc-claygate14891-82aafe5c]
+    url: https://archive.org/download/Claygate14891/14891_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich14696-2170b5d9
+    title: 'Duratile : looks like tile - but costs much less / Wunderlich Limited (1936)
+      [arc-wunderlich14696-2170b5d9]'
+    url: https://archive.org/download/Wunderlich14696/14696_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1936']
+    rights_verified_at: '2026-10-19'
+  - id: arc-jolly57177-e2eeaaac
+    title: 'Price list : Lismore Sawmills and Joinery Works, South Lismore / Brown &
+      Jolly Ltd. (1933) [arc-jolly57177-e2eeaaac]'
+    url: https://archive.org/download/Jolly57177/57177_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1933']
+    rights_verified_at: '2026-10-19'
+  - id: arc-danks26994-819af905
+    title: Wood-workers' tool catalogue / John Danks & Son (1921) [arc-danks26994-819af905]
+    url: https://archive.org/download/Danks26994/26994_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1921'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1921']
+    rights_verified_at: '2026-10-19'
+  - id: arc-a-l-rice-1901-202601-3c8af544
+    title: 'Powdrpaint, a dry powder : makes a durable fireproof, sunproof, weatherproof
+      paint (1901) [arc-a-l-rice-1901-202601-3c8af544]'
+    url: https://archive.org/download/a.-l.-rice-1901_202601/A.%20L.%20Rice%2C%201901_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1901'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1901']
+    rights_verified_at: '2026-10-19'
+  - id: arc-abram-cox-stove-co-1917-30f13c8b
+    title: Novelty stoves and ranges; catalogue 66-B. (1917) [arc-abram-cox-stove-co-1917-30f13c8b]
+    url: https://archive.org/download/abram-cox-stove-co-1917/Abram%20Cox%20Stove%20Co%2C%201917_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1917'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1917']
+    rights_verified_at: '2026-10-19'
+  - id: arc-allentown-manufacturing-co-1886-cfe55d61
+    title: Sample circular of Breinig's ready-mix oil paints. (1886) [arc-allentown-manufacturing-co-1886-cfe55d61]
+    url: https://archive.org/download/allentown-manufacturing-co-1886/Allentown%20Manufacturing%20Co%2C%201886_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1886'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1886']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4534-f570be9b
+    title: 'Wunderlich Duratile : asbestos cement wall tile sheeting for bathroom and
+      kitchen interior (1937) [arc-wunderlich4534-f570be9b]'
+    url: https://archive.org/download/Wunderlich4534/4534_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1937']
+    rights_verified_at: '2026-10-19'
+  - id: arc-arthur-s-vernay-incorporated-1931-78ed0b40
+    title: English period interiors and architectural decorations designed and executed
+      by Arthur S.  (1931) [arc-arthur-s-vernay-incorporated-1931-78ed0b40]
+    url: https://archive.org/download/arthur-s.-vernay-incorporated-1931/Arthur%20S.%20Vernay%20Incorporated%2C%201931_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1931']
+    rights_verified_at: '2026-10-19'
+  - id: arc-ball-and-ball-1947-350dfdd1
+    title: 'Catalog no. 47 : cabinet hardware / Ball and Ball. (1947) [arc-ball-and-ball-1947-350dfdd1]'
+    url: https://archive.org/download/ball-and-ball-1947/Ball%20and%20Ball%2C%201947_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1947'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1947']
+    rights_verified_at: '2026-10-19'
+  - id: arc-american-wood-working-machinery-company-190-eb94db67
+    title: 'Catalog : American Wood Working Machinery Company, (1904) [arc-american-wood-working-machinery-company-190-eb94db67]'
+    url: https://archive.org/download/american-wood-working-machinery-company-1902/American%20Wood%20Working%20Machinery%20Company%2C%201902_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1904'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1904']
+    rights_verified_at: '2026-10-19'
+  - id: arc-chambers-brothers-company-1880-7eb43587
+    title: Chambers Bro. & Co.'s new brick machine. (1880) [arc-chambers-brothers-company-1880-7eb43587]
+    url: https://archive.org/download/chambers-brothers-company-1880/Chambers%20Brothers%20Company%2C%201880_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1880'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1880']
+    rights_verified_at: '2026-10-19'
+  - id: arc-general-sheet-metal-works-1922-909b2f4f
+    title: This textbook-catalogue explains. (1922) [arc-general-sheet-metal-works-1922-909b2f4f]
+    url: https://archive.org/download/general-sheet-metal-works-1922/General%20Sheet%20Metal%20Works%2C%201922_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1922']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich4435-6df4e352
+    title: Wunderlich deep corrugated durabestos for roofing and wall siding / Wunderlich
+      Limited (1938) [arc-wunderlich4435-6df4e352]
+    url: https://archive.org/download/Wunderlich4435/4435_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1938']
+    rights_verified_at: '2026-10-19'
+  - id: arc-armstrong7773-27a14f4f
+    title: Price list of timber, moulding, joinery, turnery, builders' supplies / Armstrong
+      & Royse (1912) [arc-armstrong7773-27a14f4f]
+    url: https://archive.org/download/Armstrong7773/7773_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1912']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wunderlich6591-7e2b3c51
+    title: Home builders' catalogue of Wunderlich metal ceilings (1924) [arc-wunderlich6591-7e2b3c51]
+    url: https://archive.org/download/Wunderlich6591/6591_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1924'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924']
+    rights_verified_at: '2026-10-19'
+  - id: arc-grand-rapids-furniture-manufacturing-compan-5e9dde4f
+    title: Direct from factory to home. (1905) [arc-grand-rapids-furniture-manufacturing-compan-5e9dde4f]
+    url: https://archive.org/download/grand-rapids-furniture-manufacturing-company-1905/Grand%20Rapids%20Furniture%20Manufacturing%20Company%2C%201905_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1905'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1905']
     rights_verified_at: '2026-10-19'
