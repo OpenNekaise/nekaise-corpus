@@ -220446,20 +220446,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
       in 1920, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-18'
-  - id: arc-californiaincome00brow-0570ff03
-    title: 'California income units : motels, duplexes, triplexes, four units, 6 to
-      16 units, garage a (1949) [arc-californiaincome00brow-0570ff03]'
-    url: https://archive.org/download/californiaincome00brow/californiaincome00brow_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: architecture
-    format: txt
-    language: en
-    published_at: '1949'
-    document_type: trade-literature
-    license_evidence: 'Internet Archive item metadata date/year [''1949'']: the item
-      states no licence'
-    rights_verified_at: '2026-10-18'
   - id: arc-tiledswimmingpoo00asso-14a08439
     title: Tiled swimming pools (1924) [arc-tiledswimmingpoo00asso-14a08439]
     url: https://archive.org/download/tiledswimmingpoo00asso/tiledswimmingpoo00asso_djvu.txt
@@ -231209,4 +231195,743 @@ sources:
     document_type: trade-literature
     license_evidence: 'Internet Archive item metadata date/year [''1922'']: published
       in 1922, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-bookofplansbyour00chic-01a553a1
+    title: 'A book of plans : by our wonderful offer you can build economically (1909)
+      [arc-bookofplansbyour00chic-01a553a1]'
+    url: https://archive.org/download/bookofplansbyour00chic/bookofplansbyour00chic_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1909'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-trevorcolockport00trev-ba24941d
+    title: 'Trevor & Co., Lockport, N.Y., U.S.A. : manufacturers of shingle, heading
+      and stave machine (1899) [arc-trevorcolockport00trev-ba24941d]'
+    url: https://archive.org/download/trevorcolockport00trev/trevorcolockport00trev_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1899'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1899'', ''1899'']:
+      published in 1899, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-homeservice00clbo-d4816bb3
+    title: Home service (1926) [arc-homeservice00clbo-d4816bb3]
+    url: https://archive.org/download/homeservice00clbo/homeservice00clbo_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1926'']: published
+      in 1926, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-smithcraft-flourescent-fixtures-1950s-4-196fd1ef
+    title: Smithcraft fluorescent fixtures. (1950) [arc-smithcraft-flourescent-fixtures-1950s-4-196fd1ef]
+    url: https://archive.org/download/smithcraft-flourescent-fixtures-1950s-4/Smithcraft%20flourescent%20fixtures%201950s%204_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-19'
+  - id: arc-advance-transformers-1950s-4-805a116e
+    title: The first name in fluorescent ballasts. (1950) [arc-advance-transformers-1950s-4-805a116e]
+    url: https://archive.org/download/advance-transformers-1950s-4/Advance%20transformers%201950s%204_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-19'
+  - id: arc-wiley-flourescents-1950s-8-dee86ffa
+    title: Wiley fluorescent fixture (1950) [arc-wiley-flourescents-1950s-8-dee86ffa]
+    url: https://archive.org/download/wiley-flourescents-1950s-8/Wiley%20flourescents%201950s%208_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1950', '1950']
+    rights_verified_at: '2026-10-19'
+  - id: arc-uniqueperfectsas00uniq-c28c7369
+    title: 'Unique : the perfect sash balance : eliminates weights, cords, pulleys,
+      pockets, boxes (1938) [arc-uniqueperfectsas00uniq-c28c7369]'
+    url: https://archive.org/download/uniqueperfectsas00uniq/uniqueperfectsas00uniq_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1938'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1938'', ''1938'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-synkosurfacecond00synk-ecd52012
+    title: Synko surface conditioner (1950) [arc-synkosurfacecond00synk-ecd52012]
+    url: https://archive.org/download/synkosurfacecond00synk/synkosurfacecond00synk_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'', ''1950'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-termitestermitec00amer-233e86ec
+    title: Termites and termite control (1937) [arc-termitestermitec00amer-233e86ec]
+    url: https://archive.org/download/termitestermitec00amer/termitestermitec00amer_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'', ''1937'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-rusticseven00stan-090a3bbe
+    title: The rustic seven (1975) [arc-rusticseven00stan-090a3bbe]
+    url: https://archive.org/download/rusticseven00stan/rusticseven00stan_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1975'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1975'', ''1975'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-greenbriarhomes00brow-d01e5488
+    title: Greenbriar homes (1950) [arc-greenbriarhomes00brow-d01e5488]
+    url: https://archive.org/download/greenbriarhomes00brow/greenbriarhomes00brow_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1950'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1950'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-paintspaintingil00sher-ca79ea51
+    title: 'Paints and painting : an illustrated pamphlet, containing valuable information
+      for everybo (1900) [arc-paintspaintingil00sher-ca79ea51]'
+    url: https://archive.org/download/paintspaintingil00sher/paintspaintingil00sher_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1900'', ''1900'']:
+      published in 1900, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-rolscreensideals00rols-66cd408d
+    title: 'Rolscreens : the ideal screen for casements : a permanent, economical convenience
+      your hom (1926) [arc-rolscreensideals00rols-66cd408d]'
+    url: https://archive.org/download/rolscreensideals00rols/rolscreensideals00rols_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1926'']: published
+      in 1926, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-reillycreocotepa00reil-a73a2cf0
+    title: Reilly creocote paint for creosoted block floors (1940) [arc-reillycreocotepa00reil-a73a2cf0]
+    url: https://archive.org/download/reillycreocotepa00reil/reillycreocotepa00reil_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1940'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1940'', ''1940'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-plywooddesignspe00amer-27fb7de5
+    title: Plywood Design Specification (1968) [arc-plywooddesignspe00amer-27fb7de5]
+    url: https://archive.org/download/plywooddesignspe00amer/plywooddesignspe00amer_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1968'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1968'', ''1968'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-howtotestwindowf00ande-93df1f2d
+    title: How to test window frames (1927) [arc-howtotestwindowf00ande-93df1f2d]
+    url: https://archive.org/download/howtotestwindowf00ande/howtotestwindowf00ande_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1927'', ''1927'']:
+      published in 1927, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-plywooddesignspe00amer-0-8e782486
+    title: Plywood Design Specification (1968) [arc-plywooddesignspe00amer-0-8e782486]
+    url: https://archive.org/download/plywooddesignspe00amer_0/plywooddesignspe00amer_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1968'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1968'', ''1968'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-pullmanunitsashb00pull-9a037b93
+    title: Pullman unit sash balances for new buildings (1918) [arc-pullmanunitsashb00pull-9a037b93]
+    url: https://archive.org/download/pullmanunitsashb00pull/pullmanunitsashb00pull_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1918'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1918'', ''1918'']:
+      published in 1918, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-banzaienamelforf00pitc-c389dc6f
+    title: 'Banzai enamel : for finest interior and exterior decorating (1900) [arc-banzaienamelforf00pitc-c389dc6f]'
+    url: https://archive.org/download/banzaienamelforf00pitc/banzaienamelforf00pitc_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1900'', ''1900'']:
+      published in 1900, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-highstandardpain00lowe-96d6e635
+    title: '"High Standard" paint windows (1900) [arc-highstandardpain00lowe-96d6e635]'
+    url: https://archive.org/download/highstandardpain00lowe/highstandardpain00lowe_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1900'', ''1900'']:
+      published in 1900, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-hodgsoncamphouse00efho-8b3c8da8
+    title: Hodgson camp houses (1932) [arc-hodgsoncamphouse00efho-8b3c8da8]
+    url: https://archive.org/download/hodgsoncamphouse00efho/hodgsoncamphouse00efho_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1932'', ''1932'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-princesshomesgat00prin-c08b71f0
+    title: 'Princess Homes : the gateway to better living, designed for Californians
+      (1968) [arc-princesshomesgat00prin-c08b71f0]'
+    url: https://archive.org/download/princesshomesgat00prin/princesshomesgat00prin_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1968'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1968'', ''1968'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-springpaintingca00sher-efd41116
+    title: 'Spring painting catalog : Sherwin-Williams paints (1936) [arc-springpaintingca00sher-efd41116]'
+    url: https://archive.org/download/springpaintingca00sher/springpaintingca00sher_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-walleffectsofdis00nati-ebca8473
+    title: 'Wall effects of distinction for the home : a practical and interesting booklet
+      on artistic (1923) [arc-walleffectsofdis00nati-ebca8473]'
+    url: https://archive.org/download/walleffectsofdis00nati/walleffectsofdis00nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'', ''1923'']:
+      published in 1923, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-varnishdifficult00vale-b483b63e
+    title: Varnish difficulties (1920) [arc-varnishdifficult00vale-b483b63e]
+    url: https://archive.org/download/varnishdifficult00vale/varnishdifficult00vale_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1920'', ''1920'']:
+      published in 1920, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-craftsmanhouse00stic-ab2b4549
+    title: The Craftsman house [arc-craftsmanhouse00stic-ab2b4549]
+    url: https://archive.org/download/craftsmanhouse00stic/craftsmanhouse00stic_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata without a date: the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-buyersguidetotod00arms-6544ed03
+    title: A buyer's guide to today's home styles (1962) [arc-buyersguidetotod00arms-6544ed03]
+    url: https://archive.org/download/buyersguidetotod00arms/buyersguidetotod00arms_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1962'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1962'']: the item
+      states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-spring1937painti00sher-a236eb99
+    title: 'Spring 1937 painting catalogue : Sherwin-Williams paints (1937) [arc-spring1937painti00sher-a236eb99]'
+    url: https://archive.org/download/spring1937painti00sher/spring1937painti00sher_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1937'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1937'', ''1937'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-howtopaint00sear-8f3e61a5
+    title: How to paint (1910) [arc-howtopaint00sear-8f3e61a5]
+    url: https://archive.org/download/howtopaint00sear/howtopaint00sear_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1910'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1910'', ''1910'']:
+      published in 1910, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-howtopaintdirect00sear-0-1a2bea46
+    title: 'How to paint : directions for applying paint and varnish with best results
+      (1913) [arc-howtopaintdirect00sear-0-1a2bea46]'
+    url: https://archive.org/download/howtopaintdirect00sear_0/howtopaintdirect00sear_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1913'', ''1913'']:
+      published in 1913, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-newplanbooktwent00stan-edbcf83e
+    title: 'The new plan book : twenty-six outstanding new designs (1978) [arc-newplanbooktwent00stan-edbcf83e]'
+    url: https://archive.org/download/newplanbooktwent00stan/newplanbooktwent00stan_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1978'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1978'', ''1978'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-triggs27541-9300d82e
+    title: Useful artistic furniture / Story & Triggs Ltd. (1895) [arc-triggs27541-9300d82e]
+    url: https://archive.org/download/Triggs27541/27541_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1895'
+    document_type: trade-literature
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1895']
+    rights_verified_at: '2026-10-19'
+  - id: arc-joyofcolor00sher-c365de30
+    title: The joy of color (1932) [arc-joyofcolor00sher-c365de30]
+    url: https://archive.org/download/joyofcolor00sher/joyofcolor00sher_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1932'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1932'', ''1932'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-weldwoodplywoodf00unit-89163518
+    title: 'Weldwood plywood for commercial interiors : stores, offices, banks, hotels,
+      institutions,  (1946) [arc-weldwoodplywoodf00unit-89163518]'
+    url: https://archive.org/download/weldwoodplywoodf00unit/weldwoodplywoodf00unit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1946'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1946'', ''1946'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-hodgsonhousesout00efho-175c2e7e
+    title: 'Hodgson houses : and outdoor equipment for your country home (1931) [arc-hodgsonhousesout00efho-175c2e7e]'
+    url: https://archive.org/download/hodgsonhousesout00efho/hodgsonhousesout00efho_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1931'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1931'', ''1931'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-howtopaint00sear-0-37788a53
+    title: How to paint (1936) [arc-howtopaint00sear-0-37788a53]
+    url: https://archive.org/download/howtopaint00sear_0/howtopaint00sear_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1936'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1936'', ''1936'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-howtopaintcomple00sear-d482d97e
+    title: 'How to paint : complete information on every popular decorative finish (1933)
+      [arc-howtopaintcomple00sear-d482d97e]'
+    url: https://archive.org/download/howtopaintcomple00sear/howtopaintcomple00sear_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1933'', ''1933'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-unclesamsexperie00nati-a69b6aa2
+    title: Uncle Sam's experience with paints (1900) [arc-unclesamsexperie00nati-a69b6aa2]
+    url: https://archive.org/download/unclesamsexperie00nati/unclesamsexperie00nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1900'', ''1900'']:
+      published in 1900, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-ripolinimportede00jawb-197b3f38
+    title: 'Ripolin : an imported enamel paint for interior and exterior finish (1909)
+      [arc-ripolinimportede00jawb-197b3f38]'
+    url: https://archive.org/download/ripolinimportede00jawb/ripolinimportede00jawb_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1909'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1909'', ''1909'']:
+      published in 1909, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-24craftsmanhouse00stic-ca25cbeb
+    title: 24 Craftsman houses (1912) [arc-24craftsmanhouse00stic-ca25cbeb]
+    url: https://archive.org/download/24craftsmanhouse00stic/24craftsmanhouse00stic_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1912'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1912'', ''1912'']:
+      published in 1912, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-trusconcopperste00trus-0-8f38f6fa
+    title: 'Truscon copper steel standard casements : thoroughly practical, beautiful
+      and economical w (1926) [arc-trusconcopperste00trus-0-8f38f6fa]'
+    url: https://archive.org/download/trusconcopperste00trus_0/trusconcopperste00trus_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1926'', ''1926'']:
+      published in 1926, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-curtainswindowdr00henr-eb43c056
+    title: 'Curtains, window drapery & screening : a practical help for the architect
+      & house owner wh (1930) [arc-curtainswindowdr00henr-eb43c056]'
+    url: https://archive.org/download/curtainswindowdr00henr/curtainswindowdr00henr_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1930'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1930'', ''1930'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-newhomedecorator00sher-7c6ce020
+    title: The new home decorator (1934) [arc-newhomedecorator00sher-7c6ce020]
+    url: https://archive.org/download/newhomedecorator00sher/newhomedecorator00sher_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1934'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1934'', ''1934'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-riwpainttheytalk00toch-dd0a7f26
+    title: '"R.I.W." the paint they talk about : indorsements on our check to dampness
+      (1903) [arc-riwpainttheytalk00toch-dd0a7f26]'
+    url: https://archive.org/download/riwpainttheytalk00toch/riwpainttheytalk00toch_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1903'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1903'', ''1903'']:
+      published in 1903, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-bungalowcrafthom00bung-43be9f7c
+    title: 'Bungalowcraft : homes not houses : Spanish, stucco, colonial & Swiss chalet
+      bungalows (1922) [arc-bungalowcrafthom00bung-43be9f7c]'
+    url: https://archive.org/download/bungalowcrafthom00bung/bungalowcrafthom00bung_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1922'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1922'']: published
+      in 1922, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-meskercompletest00geol-c9a97591
+    title: Mesker complete store fronts (1923) [arc-meskercompletest00geol-c9a97591]
+    url: https://archive.org/download/meskercompletest00geol/meskercompletest00geol_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'', ''1923'']:
+      published in 1923, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-homedecorator00sher-0-16b10057
+    title: The home decorator (1933) [arc-homedecorator00sher-0-16b10057]
+    url: https://archive.org/download/homedecorator00sher_0/homedecorator00sher_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1933'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1933'', ''1933'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-wirescreens00etbu-0-a948bea1
+    title: Wire screens (1888) [arc-wirescreens00etbu-0-a948bea1]
+    url: https://archive.org/download/wirescreens00etbu_0/wirescreens00etbu_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1888'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1888'', ''1888'']:
+      published in 1888, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-chaseplanbook00chas-98c88407
+    title: The Chase plan book (1925) [arc-chaseplanbook00chas-98c88407]
+    url: https://archive.org/download/chaseplanbook00chas/chaseplanbook00chas_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1925'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-modernhomescolle00cent-5097c22c
+    title: 'Modern homes : a collection of practical designs of houses and cottages,
+      with some interio (1898) [arc-modernhomescolle00cent-5097c22c]'
+    url: https://archive.org/download/modernhomescolle00cent/modernhomescolle00cent_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1898'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1898'']: published
+      in 1898, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-plansofmodernhom00chic-0-fd6fb070
+    title: Plans of modern homes (1913) [arc-plansofmodernhom00chic-0-fd6fb070]
+    url: https://archive.org/download/plansofmodernhom00chic_0/plansofmodernhom00chic_0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-plansofmodernhom00chic-3-0549ec1b
+    title: Plans of modern homes. Number 340 (1923) [arc-plansofmodernhom00chic-3-0549ec1b]
+    url: https://archive.org/download/plansofmodernhom00chic_3/plansofmodernhom00chic_3_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1923'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-kawneernewimprov00kawn-87cb4aa4
+    title: 'Kawneer new and improved store front construction : in solid bronze or copper
+      : solid nick (1929) [arc-kawneernewimprov00kawn-87cb4aa4]'
+    url: https://archive.org/download/kawneernewimprov00kawn/kawneernewimprov00kawn_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1929'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1929'', ''1929'']:
+      the item states no licence'
+    rights_verified_at: '2026-10-19'
+  - id: arc-plansofmodernhom00chic-1-0d4c9f3d
+    title: Plans of modern homes (1913) [arc-plansofmodernhom00chic-1-0d4c9f3d]
+    url: https://archive.org/download/plansofmodernhom00chic_1/plansofmodernhom00chic_1_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: architecture
+    format: txt
+    language: en
+    published_at: '1913'
+    document_type: trade-literature
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-19'
