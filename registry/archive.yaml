@@ -252055,20 +252055,6 @@ sources:
       date/year [''1913'', ''1913'']: published in 1913, US copyright expired (publications
       up to 1928); the item states no licence'
     rights_verified_at: '2026-10-20'
-  - id: arc-berechnungundko00ftgoog-8193d950
-    title: 'Berechnung und Konstruktion der Schiffsmaschinen und -Kessel : ein Handbuch
-      zum Gebrauch für Konstrukteure, Seemaschini (1902)'
-    url: https://archive.org/download/berechnungundko00ftgoog/berechnungundko00ftgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: de
-    published_at: '1902'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1902'', ''1902'']: published in 1902, US copyright expired (publications
-      up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
   - id: arc-cyclopediaengin04unkngoog-c0483c90
     title: Cyclopedia of engineering; a manual of steam boilers, steam pumps, steam
       engines, gas and oil engines, marine and locomo (1906)
@@ -252443,20 +252429,6 @@ sources:
       Mark</a>''] date/year [''1855'']: a rights statement is not a recognized licence
       or public-domain statement'
     rights_verified_at: '2026-10-20'
-  - id: arc-b30754641-f8044986
-    title: 'Specification of William Grindley Craig : furnaces of steam boilers (1856)'
-    url: https://archive.org/download/b30754641/b30754641_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1856'
-    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
-      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
-      Mark</a>''] date/year [''1856'']: a rights statement is not a recognized licence
-      or public-domain statement'
-    rights_verified_at: '2026-10-20'
   - id: arc-b30754860-6cd8cdfc
     title: 'Specification of William Power : furnaces (1858)'
     url: https://archive.org/download/b30754860/b30754860_djvu.txt
@@ -252810,20 +252782,6 @@ sources:
       date/year [''1916'']: published in 1916, US copyright expired (publications up
       to 1928); the item states no licence'
     rights_verified_at: '2026-10-20'
-  - id: arc-cyclopediaofappl04amer-f78962d7
-    title: 'Cyclopedia of applied electricity : a general reference work on direct-current
-      generators and motors, storage batteries,, v. v. 4 (1916)'
-    url: https://archive.org/download/cyclopediaofappl04amer/cyclopediaofappl04amer_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1916'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1916'']: published in 1916, US copyright expired (publications up
-      to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
   - id: arc-cyclopediaofappl03amer-2bae9f46
     title: 'Cyclopedia of applied electricity : a general reference work on direct-current
       generators and motors, storage batteries,, v. v. 3 (1916)'
@@ -253078,4 +253036,702 @@ sources:
     license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
       date/year [''1899'']: published in 1899, US copyright expired (publications up
       to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-notesonbuilding02smigoog-6925caa4
+    title: Notes on building construction, arranged to meet the requirements of the
+      syllabus of the Science & Art Department of the, v. 3 (1892)
+    url: https://archive.org/download/notesonbuilding02smigoog/notesonbuilding02smigoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1892'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1891'', ''1892'']: published in 1892, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-handbookbuildin00johngoog-828668af
+    title: Handbook of building construction; data for architects, designing and constructing
+      engineers, and contractors .., v. 1 (1920)
+    url: https://archive.org/download/handbookbuildin00johngoog/handbookbuildin00johngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1920'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1920'', ''1920'']: published in 1920, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-coursdeconstruc01demagoog-ddb6d087
+    title: Cours de construction professé à l'école militaire de Bruxelles (1843
+      à 1847) (1850)
+    url: https://archive.org/download/coursdeconstruc01demagoog/coursdeconstruc01demagoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: fr
+    published_at: '1850'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1847'', ''1850'']: published in 1850, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-buildingconstru00unkngoog-540d8df3
+    title: Building construction and superintendence, v. pt.1 (1910)
+    url: https://archive.org/download/buildingconstru00unkngoog/buildingconstru00unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1910'']: published in 1910, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-buildingconstru04kiddgoog-83c99541
+    title: Building Construction and Superintendence, v. 3 (1896)
+    url: https://archive.org/download/buildingconstru04kiddgoog/buildingconstru04kiddgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1896'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1896'', ''1896'']: published in 1896, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-buildingconstruc02kidd-981da5ed
+    title: Building construction and superintendence, v. pt.2 (1909)
+    url: https://archive.org/download/buildingconstruc02kidd/buildingconstruc02kidd_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-firepreventiona00hutsgoog-701c56d1
+    title: Fire prevention and protection; a compilation of insurance regulations covering
+      modern restrictions on hazards and sugge (1916)
+    url: https://archive.org/download/firepreventiona00hutsgoog/firepreventiona00hutsgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1916'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1916'', ''1916'']: published in 1916, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-cu31924015332889-aafe753e
+    title: Radford's portfolio of details of building construction; a remarkable and
+      unique collection of full-page plates, accurat (1911)
+    url: https://archive.org/download/cu31924015332889/cu31924015332889_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-gri-33125000021747-f0a42b82
+    title: Building construction and superintendence, v. 3 (1897)
+    url: https://archive.org/download/gri_33125000021747/gri_33125000021747_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1897'']: published in 1897, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-gri-33125000021754-90bfdcfc
+    title: Building construction and superintendence, v. 2 (1897)
+    url: https://archive.org/download/gri_33125000021754/gri_33125000021754_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1897'']: published in 1897, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-textbookonarchit03inte-2b6ffe25
+    title: A textbook on architecture and building construction, v. 3 (1900)
+    url: https://archive.org/download/textbookonarchit03inte/textbookonarchit03inte_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1900'
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-textbookonarchit04inte-c1f195da
+    title: A textbook on architecture and building construction, v. 4 (1900)
+    url: https://archive.org/download/textbookonarchit04inte/textbookonarchit04inte_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1900'
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-in-ernet-dli-2015-501710-5d79e7f7
+    title: Notes On Building Construction, Part.1 (1904)
+    url: https://archive.org/download/in.ernet.dli.2015.501710/2015.501710.Notes-on_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1904'
+    license_evidence: 'Internet Archive item metadata date/year [''1904'']: published
+      in 1904, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-in-ernet-dli-2015-106428-ddb1d0d7
+    title: Building Construction Part 2 (1893)
+    url: https://archive.org/download/in.ernet.dli.2015.106428/2015.106428.Building-Construction-Part-2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1893'
+    license_evidence: 'Internet Archive item metadata date/year [''1893'']: published
+      in 1893, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-academy-architecture-and-architectural-45fe287a
+    title: 'Academy Architecture and Architectural Review 1900: Vol 17 Table of Contents,
+      v. 17 (1900)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1900_17_contents/sim_academy-architecture-and-architectural-review_1900_17_contents_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1900'
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-academy-architecture-and-architectural-98d5f422
+    title: 'Academy Architecture and Architectural Review 1904: Vol 26 Table of Contents,
+      v. 26 (1904)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1904_26_contents/sim_academy-architecture-and-architectural-review_1904_26_contents_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1904'
+    license_evidence: 'Internet Archive item metadata date/year [''1904'']: published
+      in 1904, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-academy-architecture-and-architectural-5b581b6e
+    title: 'Academy Architecture and Architectural Review 1906: Vol 30 Table of Contents,
+      v. 30 (1906)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1906_30_contents/sim_academy-architecture-and-architectural-review_1906_30_contents_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata date/year [''1906'']: published
+      in 1906, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-academy-architecture-and-architectural-43655c43
+    title: 'Academy Architecture and Architectural Review 1909: Vol 35, v. 35 (1909)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1909_35/sim_academy-architecture-and-architectural-review_1909_35_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-academy-architecture-and-architectural-c0bf1cce
+    title: 'Academy Architecture and Architectural Review 1912: Vol 41 Table of Contents,
+      v. 41 (1912)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1912_41_contents/sim_academy-architecture-and-architectural-review_1912_41_contents_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1912'
+    license_evidence: 'Internet Archive item metadata date/year [''1912'']: published
+      in 1912, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-academy-architecture-and-architectural-05f2a520
+    title: 'Academy Architecture and Architectural Review 1912: Vol 42, v. 42 (1912)'
+    url: https://archive.org/download/sim_academy-architecture-and-architectural-review_1912_42/sim_academy-architecture-and-architectural-review_1912_42_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1912'
+    license_evidence: 'Internet Archive item metadata date/year [''1912'']: published
+      in 1912, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-fa005cef
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1912: Vol 38 Index, v. 38 (1912)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1912_38_index/sim_american-society-of-civil-engineers-proceedings_january-december-1912_38_index_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1912'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1912'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-530c20ad
+    title: 'Proceedings of the American Society of Civil Engineers 1912-01: Vol 38 Iss
+      1, v. 38 (1912)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1912-01_38_1/sim_american-society-of-civil-engineers-proceedings_1912-01_38_1_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1912'
+    license_evidence: 'Internet Archive item metadata date/year [''1912-01'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-05e61b30
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1877: Vol 3, v. 3 (1877)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1877_3/sim_american-society-of-civil-engineers-proceedings_january-december-1877_3_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1877'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1877'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-0ba540f1
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1878: Vol 4, v. 4 (1878)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1878_4/sim_american-society-of-civil-engineers-proceedings_january-december-1878_4_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1878'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1878'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-e84daef5
+    title: 'Proceedings of the American Society of Civil Engineers 1879: Vol 5 Index,
+      v. 5 (1879)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1879_5_index/sim_american-society-of-civil-engineers-proceedings_1879_5_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1879'
+    license_evidence: 'Internet Archive item metadata date/year [''1879'']: published
+      in 1879, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-d67f2664
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1880: Vol 6, v. 6 (1880)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1880_6/sim_american-society-of-civil-engineers-proceedings_january-december-1880_6_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1880'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1880'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-df4939bd
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1881: Vol 7, v. 7 (1881)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1881_7/sim_american-society-of-civil-engineers-proceedings_january-december-1881_7_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1881'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1881'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-6cf4f8de
+    title: 'Proceedings of the American Society of Civil Engineers 1889: Vol 15 Index,
+      v. 15 (1889)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1889_15_index/sim_american-society-of-civil-engineers-proceedings_1889_15_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1889'
+    license_evidence: 'Internet Archive item metadata date/year [''1889'']: published
+      in 1889, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-00f98748
+    title: 'Proceedings of the American Society of Civil Engineers 1912-10: Vol 38 Iss
+      8, v. 38 (1912)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1912-10_38_8/sim_american-society-of-civil-engineers-proceedings_1912-10_38_8_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1912'
+    license_evidence: 'Internet Archive item metadata date/year [''1912-10'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-4b519bc2
+    title: 'Proceedings of the American Society of Civil Engineers 1894: Vol 20 Index,
+      v. 20 (1894)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1894_20_index/sim_american-society-of-civil-engineers-proceedings_1894_20_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-8baf799e
+    title: 'Proceedings of the American Society of Civil Engineers 1895: Vol 21 Index,
+      v. 21 (1895)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1895_21_index/sim_american-society-of-civil-engineers-proceedings_1895_21_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1895'
+    license_evidence: 'Internet Archive item metadata date/year [''1895'']: published
+      in 1895, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-33d7d523
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1896: Vol 22, v. 22 (1896)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1896_22/sim_american-society-of-civil-engineers-proceedings_january-december-1896_22_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1896'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1896'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-8447bf97
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1913: Vol 39 Index, v. 39 (1913)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1913_39_index/sim_american-society-of-civil-engineers-proceedings_january-december-1913_39_index_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1913'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-9af083ac
+    title: 'Proceedings of the American Society of Civil Engineers 1913-01: Vol 39 Iss
+      1, v. 39 (1913)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1913-01_39_1/sim_american-society-of-civil-engineers-proceedings_1913-01_39_1_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata date/year [''1913-01'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-0dfcb1fd
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1897: Vol 23, v. 23 (1897)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1897_23/sim_american-society-of-civil-engineers-proceedings_january-december-1897_23_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1897'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-3a02213b
+    title: 'Proceedings of the American Society of Civil Engineers 1898: Vol 24 Index,
+      v. 24 (1898)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1898_24_index/sim_american-society-of-civil-engineers-proceedings_1898_24_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1898'
+    license_evidence: 'Internet Archive item metadata date/year [''1898'']: published
+      in 1898, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-9bb98b77
+    title: 'Proceedings of the American Society of Civil Engineers 1913-05: Vol 39 Iss
+      5, v. 39 (1913)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1913-05_39_5/sim_american-society-of-civil-engineers-proceedings_1913-05_39_5_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata date/year [''1913-05'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-12f356f7
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1899: Vol 25, v. 25 (1899)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1899_25/sim_american-society-of-civil-engineers-proceedings_january-december-1899_25_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1899'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1899'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-94199838
+    title: 'Proceedings of the American Society of Civil Engineers 1903: Vol 29 Index,
+      v. 29 (1903)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1903_29_index/sim_american-society-of-civil-engineers-proceedings_1903_29_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-8befac86
+    title: 'Proceedings of the American Society of Civil Engineers 1914-03: Vol 40 Iss
+      3, v. 40 (1914)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1914-03_40_3/sim_american-society-of-civil-engineers-proceedings_1914-03_40_3_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-03'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-43ab3dba
+    title: 'Proceedings of the American Society of Civil Engineers 1914-05: Vol 40 Iss
+      5, v. 40 (1914)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1914-05_40_5/sim_american-society-of-civil-engineers-proceedings_1914-05_40_5_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-05'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-1cbd00d7
+    title: 'Proceedings of the American Society of Civil Engineers 1914-09: Vol 40 Iss
+      7, v. 40 (1914)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1914-09_40_7/sim_american-society-of-civil-engineers-proceedings_1914-09_40_7_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-09'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-b0da9535
+    title: 'Proceedings of the American Society of Civil Engineers 1914-10: Vol 40 Iss
+      8, v. 40 (1914)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1914-10_40_8/sim_american-society-of-civil-engineers-proceedings_1914-10_40_8_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-10'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-a0220cae
+    title: 'Proceedings of the American Society of Civil Engineers 1914-11: Vol 40 Iss
+      9, v. 40 (1914)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1914-11_40_9/sim_american-society-of-civil-engineers-proceedings_1914-11_40_9_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-11'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-99c1bc33
+    title: 'Proceedings of the American Society of Civil Engineers 1905: Vol 31 Index,
+      v. 31 (1905)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1905_31_index/sim_american-society-of-civil-engineers-proceedings_1905_31_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
+      in 1905, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-5eeddf2a
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1905: Vol 31, v. 31 (1905)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1905_31/sim_american-society-of-civil-engineers-proceedings_january-december-1905_31_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1905'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-e1036d46
+    title: 'Proceedings of the American Society of Civil Engineers 1906: Vol 32 Index,
+      v. 32 (1906)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1906_32_index/sim_american-society-of-civil-engineers-proceedings_1906_32_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata date/year [''1906'']: published
+      in 1906, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-9b95ab9d
+    title: 'Proceedings of the American Society of Civil Engineers 1915-09: Vol 41 Iss
+      7, v. 41 (1915)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1915-09_41_7/sim_american-society-of-civil-engineers-proceedings_1915-09_41_7_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-09'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-dc140c5e
+    title: 'Proceedings of the American Society of Civil Engineers 1909: Vol 35 Index,
+      v. 35 (1909)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1909_35_index/sim_american-society-of-civil-engineers-proceedings_1909_35_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-feab903a
+    title: 'Proceedings of the American Society of Civil Engineers 1915-12: Vol 41 Iss
+      10, v. 41 (1915)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1915-12_41_10/sim_american-society-of-civil-engineers-proceedings_1915-12_41_10_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-12'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-c6066448
+    title: 'Proceedings of the American Society of Civil Engineers January-December
+      1916: Vol 42 Index, v. 42 (1916)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_january-december-1916_42_index/sim_american-society-of-civil-engineers-proceedings_january-december-1916_42_index_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1916'
+    license_evidence: 'Internet Archive item metadata date/year [''January-December
+      1916'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-3c5ffe21
+    title: 'Proceedings of the American Society of Civil Engineers 1911-01: Vol 37 Iss
+      1, v. 37 (1911)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1911-01_37_1/sim_american-society-of-civil-engineers-proceedings_1911-01_37_1_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata date/year [''1911-01'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-231a06e9
+    title: 'Proceedings of the American Society of Civil Engineers 1923: Vol 49 Index,
+      v. 49 (1923)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1923_49_index/sim_american-society-of-civil-engineers-proceedings_1923_49_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1923'
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-sim-american-society-of-civil-engineers-pro-33477cb2
+    title: 'Proceedings of the American Society of Civil Engineers 1923-04: Vol 49 Iss
+      4, v. 49 (1923)'
+    url: https://archive.org/download/sim_american-society-of-civil-engineers-proceedings_1923-04_49_4/sim_american-society-of-civil-engineers-proceedings_1923-04_49_4_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1923'
+    license_evidence: 'Internet Archive item metadata date/year [''1923-04'']: no licence
+      and no certain publication date'
     rights_verified_at: '2026-10-20'
