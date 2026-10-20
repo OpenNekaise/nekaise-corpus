@@ -159911,3 +159911,114 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-20'
     origin_ids: doi:10.1615/int.j.uncertaintyquantification.2015011808
+  - id: ope-state-of-the-art-on-heat-pumps-for-residential
+    title: State of the Art on Heat Pumps for Residential Buildings
+    url: https://eprints.qut.edu.au/212611/1/96799569.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-08-14'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings11080350
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://eprints.qut.edu.au/212611/1/96799569.pdf; version submittedVersion;
+      rights accepted]
+    rights_verified_at: '2026-10-20'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/buildings11080350 openalex:W3194645827
+    resolution: 'legacy: openalex location'
+  - id: ope-impact-of-exterior-convective-heat-transfer-co
+    title: Impact of exterior convective heat transfer coefficient models on the energy
+      demand prediction of buildings with different geometry
+    url: https://lirias.kuleuven.be/retrieve/1bac57ad-da8a-47b7-800c-560aa544ffd2
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-04-04'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s12273-019-0531-7
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/1bac57ad-da8a-47b7-800c-560aa544ffd2;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-20'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s12273-019-0531-7 openalex:W2935277237
+    resolution: 'legacy: openalex location'
+  - id: ope-cfd-simulations-of-wind-induced-ventilation-in
+    title: 'CFD simulations of wind-induced ventilation in apartment buildings with
+      vertical voids: Effects of pilotis and wind fin on ventilation performance'
+    url: https://www.repository.cam.ac.uk/bitstreams/215057e3-df5f-467e-8b62-c687f010748d/download
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-02-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2021.107666
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://www.repository.cam.ac.uk/bitstreams/215057e3-df5f-467e-8b62-c687f010748d/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-20'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2021.107666 openalex:W3126809198
+    resolution: 'legacy: openalex location'
+  - id: ope-the-impact-of-green-facades-and-vegetative-cov
+    title: The impact of green facades and vegetative cover on the temperature and relative
+      humidity within model buildings
+    url: https://centaur.reading.ac.uk/91882/1/The%20impact%20of%20green%20facades%20and%20vegetative%20cover%20on%20the%20temperature%20and%20relative%20humidity%20within%20model%20buildings.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2020.107009
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/91882/1/The%20impact%20of%20green%20facades%20and%20vegetative%20cover%20on%20the%20temperature%20and%20relative%20humidity%20within%20model%20buildings.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-20'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2020.107009 openalex:W3043295292
+    resolution: 'legacy: openalex location'
+  - id: ope-design-construction-and-thermal-performance-ev
+    title: Design, construction, and thermal performance evaluation of an innovative
+      bio-based ventilated façade
+    url: https://pure.tue.nl/ws/files/151421248/2_s2.0_S2095263520300170_main.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-12'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.foar.2020.02.003
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://pure.tue.nl/ws/files/151421248/2_s2.0_S2095263520300170_main.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-20'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.foar.2020.02.003 openalex:W3010924400
+    resolution: 'legacy: openalex location'
+  - id: arx-efficient-synthesis-of-room-acoustics-via-scat
+    title: Efficient Synthesis of Room Acoustics via Scattering Delay Networks
+    url: https://arxiv.org/pdf/1502.05751v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-02-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1502.05751
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1502.05751 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+    origin_ids: doi:10.1109/taslp.2015.2438547
