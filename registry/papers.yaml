@@ -160542,3 +160542,79 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621987907
     resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-energy-sensing-and-monitoring-framework-with-a
+    title: Energy Sensing and Monitoring Framework with an Integrated Communication
+      Backbone in the Energy Efficient Intelligent Buildings
+    url: https://arxiv.org/pdf/1603.08026v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-03-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1603.08026
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1603.08026 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+    origin_ids: doi:10.4028/www.scientific.net/amm.303-306.1460
+  - id: arx-heat-pump-without-particle-transport-or-extern
+    title: Heat pump without particle transport or external work on the medium achieved
+      by differential thermostatting of the phase space
+    url: https://arxiv.org/pdf/1603.08295v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2016-03-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1603.08295
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1603.08295 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+    origin_ids: doi:10.1103/physreve.93.033308
+  - id: arx-interacting-dark-matter-and-modified-holograph
+    title: Interacting dark matter and modified holographic Ricci dark energy plus a
+      noninteracting cosmic component
+    url: https://arxiv.org/pdf/1207.1492v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2012-07-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1207.1492
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1207.1492 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+    origin_ids: doi:10.1103/physrevd.85.127301
+  - id: arx-optimal-design-of-water-distribution-networks-
+    title: Optimal Design of Water Distribution Networks by Discrete State Transition
+      Algorithm
+    url: https://arxiv.org/pdf/1304.7622v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2013-04-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1304.7622
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1304.7622 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+    origin_ids: doi:10.1080/0305215x.2015.1025775
