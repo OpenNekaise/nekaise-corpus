@@ -251315,19 +251315,6 @@ sources:
       date/year [''1901'']: published in 1901, US copyright expired (publications up
       to 1928); the item states no licence'
     rights_verified_at: '2026-10-20'
-  - id: arc-manueldumecanici00janv-72f7d5ea
-    title: 'Manuel du mécanicien fontainier, pompier, plombier : contenant la théorie
-      des pompes ordinaires, des machines hydrauli (1828)'
-    url: https://archive.org/download/manueldumecanici00janv/manueldumecanici00janv_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: fr
-    published_at: '1828'
-    license_evidence: 'Internet Archive item metadata date/year [''1828'']: published
-      in 1828, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
   - id: arc-b30738209-f7bbf952
     title: Improvements in apparatus for disinfecting and fumigating also applicable
       for testing plumbing work (1904)
@@ -251556,19 +251543,6 @@ sources:
       date/year [''1905'', ''1905'']: published in 1905, US copyright expired (publications
       up to 1928); the item states no licence'
     rights_verified_at: '2026-10-20'
-  - id: arc-transactionsame57engigoog-2c039a66
-    title: Transactions of the American Society of Refrigerating Engineers, v. 9 (1914)
-    url: https://archive.org/download/transactionsame57engigoog/transactionsame57engigoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1914'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1905'', ''1914'']: published in 1914, US copyright expired (publications
-      up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
   - id: arc-verdampfenkonden00hausuoft-e6584022
     title: Verdampfen, Kondensieren und Kühlen. Erklärungen, Formeln und tabellen für
       den praktischen Gebrauch (1909)
@@ -251781,4 +251755,617 @@ sources:
     license_url: http://creativecommons.org/publicdomain/mark/1.0/
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1804-01-01']
+    rights_verified_at: '2026-10-20'
+  - id: arc-jstor-109585-8db7b9d4
+    title: Observations on Basalt, and on the Transition from the Vitreous to the Stony
+      Texture, Which Occurs in the Gradual Refrig, v. 1 (1800)
+    url: https://archive.org/download/jstor-109585/109585_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1800'
+    license_evidence: 'Internet Archive item metadata date/year [''1800-01-01'']: published
+      in 1800, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-jstor-107147-2805036f
+    title: Observations on Basalt, and on the Transition from the Vitreous to the Stony
+      Texture, Which Occurs in the Gradual Refrig, v. 94 (1804)
+    url: https://archive.org/download/jstor-107147/107147_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1804'
+    license_evidence: 'Internet Archive item metadata date/year [''1804-01-01'']: published
+      in 1804, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-zeitschriftfurdi2819deut-78fe512f
+    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.28(1921) (1894)
+    url: https://archive.org/download/zeitschriftfurdi2819deut/zeitschriftfurdi2819deut_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-zeitschriftfurdi5618deut-a2a32313
+    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.5-6(1898-1899) (1894)
+    url: https://archive.org/download/zeitschriftfurdi5618deut/zeitschriftfurdi5618deut_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-zeitschriftfurdi7819deut-c3ac8be9
+    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.7-8(1900-1901) (1894)
+    url: https://archive.org/download/zeitschriftfurdi7819deut/zeitschriftfurdi7819deut_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-zeitschriftfurdi2719deut-fa550019
+    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.27(1920) (1894)
+    url: https://archive.org/download/zeitschriftfurdi2719deut/zeitschriftfurdi2719deut_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-zeitschriftfurdi2919deut-81309e87
+    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.29(1922) (1894)
+    url: https://archive.org/download/zeitschriftfurdi2919deut/zeitschriftfurdi2919deut_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-zeitschriftfurdi4189deut-9daf259d
+    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.4(1897) (1894)
+    url: https://archive.org/download/zeitschriftfurdi4189deut/zeitschriftfurdi4189deut_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-zeitschriftfurdi1218deut-2670d2ef
+    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.1-2(1894-1895) (1894)
+    url: https://archive.org/download/zeitschriftfurdi1218deut/zeitschriftfurdi1218deut_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-zeitschriftfurdi2519deut-15f95ef2
+    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.25(1918) (1894)
+    url: https://archive.org/download/zeitschriftfurdi2519deut/zeitschriftfurdi2519deut_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-cat31337788002-d348ea3e
+    title: 'Ice and refrigeration : illustrated, v. v.2:no.1-v.2:no. (1892)'
+    url: https://archive.org/download/CAT31337788002/CAT31337788002_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1892'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright''] date/year [''1892'', ''1892'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-bwb-t4-akc-142-44e36a2c
+    title: refrigeration (1925)
+    url: https://archive.org/download/bwb_T4-AKC-142/bwb_T4-AKC-142_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-gb-1868-377-morton-abff7676
+    title: Morton - Refrigerating and Heating Apparatus, British Patent 377 of 1868
+      (1868)
+    url: https://archive.org/download/gb-1868-377-morton/GB-1868-377_Morton_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1868'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1868-07-23']
+    rights_verified_at: '2026-10-20'
+  - id: arc-diekalteindustri2519unse-1c660121
+    title: 'Die Kälte-industrie : zeitschrift der vereine, v. v.25(1928) (1925)'
+    url: https://archive.org/download/diekalteindustri2519unse/diekalteindustri2519unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-diekalteindustri2419unse-5a2e95ee
+    title: 'Die Kälte-industrie : zeitschrift der vereine, v. v.24(1927) (1925)'
+    url: https://archive.org/download/diekalteindustri2419unse/diekalteindustri2419unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-diekalteindustri2319unse-a0b416fa
+    title: 'Die Kälte-industrie : zeitschrift der vereine, v. v.23(1926) (1925)'
+    url: https://archive.org/download/diekalteindustri2319unse/diekalteindustri2319unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-diekalteindustri2219unse-b217b792
+    title: 'Die Kälte-industrie : zeitschrift der vereine, v. v.22(1925) (1925)'
+    url: https://archive.org/download/diekalteindustri2219unse/diekalteindustri2219unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-refrigeration0000moye-d8ec4e61
+    title: refrigeration (1928)
+    url: https://archive.org/download/refrigeration0000moye/refrigeration0000moye_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    published_at: '1928'
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-gb-1870-267-west-168aec54
+    title: West - Refrigerating, British Patent 267 of 1870 (1870)
+    url: https://archive.org/download/gb-1870-267-west/GB-1870-267_West_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1870'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1870-07-29']
+    rights_verified_at: '2026-10-20'
+  - id: arc-rulesforconstru00engigoog-918456c3
+    title: Rules for the Construction of Stationary Boilers (1918)
+    url: https://archive.org/download/rulesforconstru00engigoog/rulesforconstru00engigoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1918'', ''1918'']: published in 1918, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-steamengineatre03clargoog-5518abad
+    title: 'The Steam Engine: a Treatise on Steam Engines and Boilers ...: Above 1300
+      Figures in the Text ..., v. 3 (1890)'
+    url: https://archive.org/download/steamengineatre03clargoog/steamengineatre03clargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1890'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1890'', ''1890'']: published in 1890, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-treatiseonworki00colygoog-fa2bcf25
+    title: Treatise on the working and management of steam boilers and engines (1885)
+    url: https://archive.org/download/treatiseonworki00colygoog/treatiseonworki00colygoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1885'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1885'', ''1885'']: published in 1885, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-lesnouvellesmac01hubagoog-2a5e5be4
+    title: Les nouvelles machines marines, supplément au Traité des appareils à vapeur
+      de navigation, v. 3 (1880)
+    url: https://archive.org/download/lesnouvellesmac01hubagoog/lesnouvellesmac01hubagoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: fr
+    published_at: '1880'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1876'', ''1880'']: published in 1880, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-steamitsgenerat00compgoog-e12ec4dd
+    title: Steam, its generation and use (1913)
+    url: https://archive.org/download/steamitsgenerat00compgoog/steamitsgenerat00compgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1913'', ''1913'']: published in 1913, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-berechnungundko00ftgoog-8193d950
+    title: 'Berechnung und Konstruktion der Schiffsmaschinen und -Kessel : ein Handbuch
+      zum Gebrauch für Konstrukteure, Seemaschini (1902)'
+    url: https://archive.org/download/berechnungundko00ftgoog/berechnungundko00ftgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902'', ''1902'']: published in 1902, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-cyclopediaengin04unkngoog-c0483c90
+    title: Cyclopedia of engineering; a manual of steam boilers, steam pumps, steam
+      engines, gas and oil engines, marine and locomo (1906)
+    url: https://archive.org/download/cyclopediaengin04unkngoog/cyclopediaengin04unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1906'', ''1906'']: published in 1906, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-derbetriebvonsc00sirkgoog-4003734c
+    title: Der betrieb von schiffs-dampfkesseln und maschinen (1875)
+    url: https://archive.org/download/derbetriebvonsc00sirkgoog/derbetriebvonsc00sirkgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1875'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1875'', ''1875'']: published in 1875, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-berichtberrauch00archgoog-0141c5dd
+    title: Bericht über rauchfreie dampfkessel-anlagen in Sachsen (1896)
+    url: https://archive.org/download/berichtberrauch00archgoog/berichtberrauch00archgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: de
+    published_at: '1896'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1896'', ''1896'']: published in 1896, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-warmblaststeamb01hoadgoog-e00c71b3
+    title: 'Warm-blast steam-boiler furnace : a report upon a series of trials of an
+      apparatus for transferring a part of the heat o (1891)'
+    url: https://archive.org/download/warmblaststeamb01hoadgoog/warmblaststeamb01hoadgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1891'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1891'']: published in 1891, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-officialproceedi1907mast-60facc2b
+    title: Official proceedings of the committee reports and special papers, v. 1907
+      (1907)
+    url: https://archive.org/download/officialproceedi1907mast/officialproceedi1907mast_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
+      in 1907, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-officialproceedi1909mast-659b27a0
+    title: Official proceedings of the committee reports and special papers, v. 1909
+      (1909)
+    url: https://archive.org/download/officialproceedi1909mast/officialproceedi1909mast_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-steamboilersinsp00vict-f75319e0
+    title: STEAM BOILERS INSPECTION ACT, 1901 (1913)
+    url: https://archive.org/download/steamboilersinsp00vict/steamboilersinsp00vict_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-notesurleschaudi00brac-8faa74d0
+    title: Note sur les chaudières à vapeur de l'Exposition universelle (1867) (1868)
+    url: https://archive.org/download/notesurleschaudi00brac/notesurleschaudi00brac_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: fr
+    published_at: '1868'
+    license_evidence: 'Internet Archive item metadata date/year [''1868'']: published
+      in 1868, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-remarksproofsofs00sibb-a5456cf2
+    title: 'Remarks and proofs of Sibbald''s patent anti-corrosive metalline compound
+      : for the preservation of steam boilers from sc (1853)'
+    url: https://archive.org/download/remarksproofsofs00sibb/remarksproofsofs00sibb_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1853'
+    license_evidence: 'Internet Archive item metadata date/year [''1853'']: published
+      in 1853, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-20'
+  - id: arc-paper-doi-10-1038-049410a0-8dce6a02
+    title: Marine Boilers, v. 1270 (1894)
+    url: https://archive.org/download/paper-doi-10_1038_049410a0/paper-doi-10_1038_049410a0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1894'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1894-03']
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30741907-551e6987
+    title: 'Specification of John Wright : furnaces for steam boilers (1854)'
+    url: https://archive.org/download/b30741907/b30741907_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30741919-e6fb4806
+    title: 'Specification of Robert Fall : boiler for heating fluids (1854)'
+    url: https://archive.org/download/b30741919/b30741919_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b3074202x-f87459b1
+    title: 'Specification of John Reinecke : boilers (1854)'
+    url: https://archive.org/download/b3074202x/b3074202x_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30742274-39e5096a
+    title: 'Specification of Thomas Hills the younger : steam boiler furnaces (1855)'
+    url: https://archive.org/download/b30742274/b30742274_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1855'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1855'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30742353-28398d42
+    title: 'Specification of James Tate : furnaces, coppers, &c. for brewing and distilling
+      (1854)'
+    url: https://archive.org/download/b30742353/b30742353_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30742419-c105c3e3
+    title: 'Specification of Francis Lloyd : Furnace or fire-place (1854)'
+    url: https://archive.org/download/b30742419/b30742419_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30742523-14144532
+    title: 'Specification of Joseph Lewis : furnaces of steam boilers (1854)'
+    url: https://archive.org/download/b30742523/b30742523_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30742791-0cd74d65
+    title: 'Specification of William Robert Wale King : steam boilers, stills, &c (1854)'
+    url: https://archive.org/download/b30742791/b30742791_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30743254-a469938d
+    title: 'Specification of George Stratton : furnaces of steam boilers, &c (1854)'
+    url: https://archive.org/download/b30743254/b30743254_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30743552-7faec62f
+    title: 'Specification of Moses Poole : tubular steam boilers (1854)'
+    url: https://archive.org/download/b30743552/b30743552_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b3074359x-920af120
+    title: 'Specification of Paul Descroizilles : tubular apparatus for heating water
+      and air (1854)'
+    url: https://archive.org/download/b3074359x/b3074359x_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-20'
+  - id: arc-b30743606-6ad9ffd8
+    title: 'Specification of John Rawe the younger and John Boase : tubular boilers,
+      &c. : method of guiding steam carriages (1854)'
+    url: https://archive.org/download/b30743606/b30743606_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: equipment_systems
+    format: txt
+    language: en
+    published_at: '1854'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1854'']: a rights statement is not a recognized licence
+      or public-domain statement'
     rights_verified_at: '2026-10-20'
