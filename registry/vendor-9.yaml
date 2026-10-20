@@ -22813,9 +22813,23 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-t234-technical-document-v5-2588191a
-    title: 'SpecifiedBy (UK manufacturer documents): t234-technical-document-v5_2588191a.pdf'
-    url: https://www.specifiedby.com/sureset-resin/natural-aggregate-for-permeable-resin-bound-paving-surfacing-installed-by-sureset-resin-systems-for-external-works/t234-technical-document-v5_2588191a.pdf
+  - id: vnd-specifiedby-t234-technical-document-v5-0bc1b4f5
+    title: 'SpecifiedBy (UK manufacturer documents): t234-technical-document-v5_0bc1b4f5.pdf'
+    url: https://www.specifiedby.com/sureset-resin/coloured-recycled-glass-spectrum-resin-bound-paving-surface-installed-by-sureset-resin-systems-for-external-works/t234-technical-document-v5_0bc1b4f5.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-orbis-product-specification-guide-0dc1ec14
+    title: 'SpecifiedBy (UK manufacturer documents): orbis-product-specification-guide_0dc1ec14.pdf'
+    url: https://www.specifiedby.com/delta-balustrades/orbis-os200-vertical-bar-infill-side-fix-architectural-balustrade-system/orbis-product-specification-guide_0dc1ec14.pdf
     source: vendor_specifiedby
     license: open
     topic: construction

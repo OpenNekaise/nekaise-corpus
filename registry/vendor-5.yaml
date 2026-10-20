@@ -21646,9 +21646,9 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-t129-residential-permeable-base-v9-adad058e
-    title: 'SpecifiedBy (UK manufacturer documents): t129-residential-permeable-base-v9_adad058e.pdf'
-    url: https://www.specifiedby.com/sureset-resin/natural-aggregate-for-permeable-resin-bound-paving-surfacing-installed-by-sureset-resin-systems-for-external-works/t129-residential-permeable-base-v9_adad058e.pdf
+  - id: vnd-specifiedby-t29-surface-water-drainage-systems-product-information-sheet-v3-0214-4d7f0
+    title: 'SpecifiedBy (UK manufacturer documents): t29-surface-water-drainage-systems-product-information-sheet-v3-0214_4d7f04b2.pdf'
+    url: https://www.specifiedby.com/sureset-resin/luxury-crushed-marbles-for-permeable-resin-bound-paving-surfaces-installed-by-sureset-resin-systems-for-external-works/t29-surface-water-drainage-systems-product-information-sheet-v3-0214_4d7f04b2.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
@@ -21660,9 +21660,23 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-t29-surface-water-drainage-systems-product-information-sheet-v3-0214-7befa
-    title: 'SpecifiedBy (UK manufacturer documents): t29-surface-water-drainage-systems-product-information-sheet-v3-0214_7befa93c.pdf'
-    url: https://www.specifiedby.com/sureset-resin/natural-aggregate-for-permeable-resin-bound-paving-surfacing-installed-by-sureset-resin-systems-for-external-works/t29-surface-water-drainage-systems-product-information-sheet-v3-0214_7befa93c.pdf
+  - id: vnd-specifiedby-t145-public-pedestrian-areas-permeable-base-v9-08f7aa61
+    title: 'SpecifiedBy (UK manufacturer documents): t145-public-pedestrian-areas-permeable-base-v9_08f7aa61.pdf'
+    url: https://www.specifiedby.com/sureset-resin/luxury-crushed-marbles-for-permeable-resin-bound-paving-surfaces-installed-by-sureset-resin-systems-for-external-works/t145-public-pedestrian-areas-permeable-base-v9_08f7aa61.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-t303-playbound-specification-v1-c5cc2410
+    title: 'SpecifiedBy (UK manufacturer documents): t303-playbound-specification-v1_c5cc2410.pdf'
+    url: https://www.specifiedby.com/sureset-resin/epdm-coloured-rubber-playbound-permeable-resin-bound-paving-surfacing-for-external-works-and-playgrounds/t303-playbound-specification-v1_c5cc2410.pdf
     source: vendor_specifiedby
     license: open
     topic: construction

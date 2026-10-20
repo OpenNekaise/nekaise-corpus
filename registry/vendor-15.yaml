@@ -22156,9 +22156,9 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-t17-movement-joint-profiles-technical-guideance-v3-e454e05a
-    title: 'SpecifiedBy (UK manufacturer documents): t17-movement-joint-profiles-technical-guideance-v3_e454e05a.pdf'
-    url: https://www.specifiedby.com/sureset-resin/natural-aggregate-for-permeable-resin-bound-paving-surfacing-installed-by-sureset-resin-systems-for-external-works/t17-movement-joint-profiles-technical-guideance-v3_e454e05a.pdf
+  - id: vnd-specifiedby-t294-edging-guide-v2-905eb4e9
+    title: 'SpecifiedBy (UK manufacturer documents): t294-edging-guide-v2_905eb4e9.pdf'
+    url: https://www.specifiedby.com/sureset-resin/luxury-crushed-marbles-for-permeable-resin-bound-paving-surfaces-installed-by-sureset-resin-systems-for-external-works/t294-edging-guide-v2_905eb4e9.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
@@ -22170,12 +22170,40 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-t27-recessed-access-covers-product-information-sheet-v3-0214-dd4475c8
-    title: 'SpecifiedBy (UK manufacturer documents): t27-recessed-access-covers-product-information-sheet-v3-0214_dd4475c8.pdf'
-    url: https://www.specifiedby.com/sureset-resin/natural-aggregate-for-permeable-resin-bound-paving-surfacing-installed-by-sureset-resin-systems-for-external-works/t27-recessed-access-covers-product-information-sheet-v3-0214_dd4475c8.pdf
+  - id: vnd-specifiedby-t137-driveway-non-permeable-base-v8-9fba2273
+    title: 'SpecifiedBy (UK manufacturer documents): t137-driveway-non-permeable-base-v8_9fba2273.pdf'
+    url: https://www.specifiedby.com/sureset-resin/luxury-crushed-marbles-for-permeable-resin-bound-paving-surfaces-installed-by-sureset-resin-systems-for-external-works/t137-driveway-non-permeable-base-v8_9fba2273.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-case-study-sureset-spectrum-glass-raynsford-academy-bedfordshire-5d198da2
+    title: 'SpecifiedBy (UK manufacturer documents): case-study-sureset-spectrum-glass-raynsford-academy-bedfordshire_5d198da2.pdf'
+    url: https://www.specifiedby.com/sureset-resin/coloured-recycled-glass-spectrum-resin-bound-paving-surface-installed-by-sureset-resin-systems-for-external-works/case-study-sureset-spectrum-glass-raynsford-academy-bedfordshire_5d198da2.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-delta-update-fixings-1438ac8a
+    title: 'SpecifiedBy (UK manufacturer documents): delta-update-fixings_1438ac8a.pdf'
+    url: https://www.specifiedby.com/delta-balustrades/orbis-os210-glass-infill-side-fix-architectural-balustrade-system/delta-update-fixings_1438ac8a.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
     format: pdf
     language: en
     document_type: product-literature

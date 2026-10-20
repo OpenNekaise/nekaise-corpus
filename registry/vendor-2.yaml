@@ -22382,12 +22382,40 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-t145-public-pedestrian-areas-permeable-base-v9-2a07a795
-    title: 'SpecifiedBy (UK manufacturer documents): t145-public-pedestrian-areas-permeable-base-v9_2a07a795.pdf'
-    url: https://www.specifiedby.com/sureset-resin/natural-aggregate-for-permeable-resin-bound-paving-surfacing-installed-by-sureset-resin-systems-for-external-works/t145-public-pedestrian-areas-permeable-base-v9_2a07a795.pdf
+  - id: vnd-specifiedby-sureset-residential-brochure-a5-feb20-lrp-00320a70
+    title: 'SpecifiedBy (UK manufacturer documents): sureset-residential-brochure-a5-feb20-lrp_00320a70.pdf'
+    url: https://www.specifiedby.com/sureset-resin/coloured-recycled-glass-spectrum-resin-bound-paving-surface-installed-by-sureset-resin-systems-for-external-works/sureset-residential-brochure-a5-feb20-lrp_00320a70.pdf
     source: vendor_specifiedby
     license: open
-    topic: construction
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-t170-aftercare-and-maintenance-guide-v5-1ca09664
+    title: 'SpecifiedBy (UK manufacturer documents): t170-aftercare-and-maintenance-guide-v5_1ca09664.pdf'
+    url: https://www.specifiedby.com/sureset-resin/coloured-recycled-glass-spectrum-resin-bound-paving-surface-installed-by-sureset-resin-systems-for-external-works/t170-aftercare-and-maintenance-guide-v5_1ca09664.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-t27-recessed-access-covers-product-information-sheet-v3-0214-81eca155
+    title: 'SpecifiedBy (UK manufacturer documents): t27-recessed-access-covers-product-information-sheet-v3-0214_81eca155.pdf'
+    url: https://www.specifiedby.com/sureset-resin/coloured-recycled-glass-spectrum-resin-bound-paving-surface-installed-by-sureset-resin-systems-for-external-works/t27-recessed-access-covers-product-information-sheet-v3-0214_81eca155.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
     format: pdf
     language: en
     document_type: product-literature

@@ -159805,3 +159805,20 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-20'
     origin_ids: doi:10.1088/1674-1137/38/10/108202
+  - id: arx-atmospheric-radiative-transfer-parametrization
+    title: Atmospheric radiative transfer parametrization for solar energy yield calculations
+      on buildings
+    url: https://arxiv.org/pdf/1506.06059v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-06-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1506.06059
+    license_url: http://creativecommons.org/licenses/by-nc-sa/3.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1506.06059 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/3.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-20'
