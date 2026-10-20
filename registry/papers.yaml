@@ -159857,3 +159857,21 @@ sources:
       (no licence recorded: arXiv''s default distribution licence applies)'
     rights_verified_at: '2026-10-20'
     origin_ids: doi:10.1063/1.2185616
+  - id: oas-10-1016-j-cma-2021-114288-a2f037ad
+    title: Smooth implicit hybrid upwinding for compositional multiphase flow in porous
+      media
+    url: https://arxiv.org/pdf/2106.03317
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cma.2021.114288
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2106.03317;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-20'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.cma.2021.114288 openalex:W3167589936
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
