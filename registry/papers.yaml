@@ -159875,3 +159875,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.cma.2021.114288 openalex:W3167589936
     resolution: 'sim1: openalex+unpaywall location; resolution retry'
+  - id: arx-kms-weights-on-higher-rank-buildings
+    title: KMS weights on higher rank buildings
+    url: https://arxiv.org/pdf/1506.08906v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-06-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1506.08906
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1506.08906 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+  - id: arx-hierarchical-sparse-bayesian-learning-for-stru
+    title: Hierarchical sparse Bayesian learning for structural health monitoring with
+      incomplete modal data
+    url: https://arxiv.org/pdf/1408.3685v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-08-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1408.3685
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1408.3685 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+    origin_ids: doi:10.1615/int.j.uncertaintyquantification.2015011808
