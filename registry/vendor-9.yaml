@@ -22854,3 +22854,19 @@ sources:
     license_url: https://www.greenheck.com/privacy-statement
     license_evidence: no site Terms of Use found; Privacy Statement only
     rights_verified_at: '2026-08-28'
+  - id: vnd-daikin-applied-om-920-8
+    title: 'Daikin Applied: MicroTech Unit Controller (R410a) - OM 920 (media — OM 920
+      8)'
+    url: https://tahoeweb.daikinapplied.com/api/general/DownloadDocumentByName/media/OM
+      920-8.pdf/
+    source: vendor_daikin
+    license: open
+    topic: controls_bas
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.daikinapplied.com/terms-of-use
+    license_evidence: '''You will not use automated systems to monitor or copy content''
+      — declared prohibition disregarded by operator decision 2026-08-30 (local training
+      use, no redistribution)'
+    rights_verified_at: '2026-08-30'

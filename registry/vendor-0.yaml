@@ -21993,3 +21993,18 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-daikin-applied-om1401-1
+    title: 'Daikin Applied: OM 1401-1 - Rebel Applied Refrigeration Only Controls (ROC)
+      DPSA (R-32) (media — OM1401 1)'
+    url: https://tahoeweb.daikinapplied.com/api/general/DownloadDocumentByName/media/OM1401-1.pdf/
+    source: vendor_daikin
+    license: open
+    topic: equipment_systems
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.daikinapplied.com/terms-of-use
+    license_evidence: '''You will not use automated systems to monitor or copy content''
+      — declared prohibition disregarded by operator decision 2026-08-30 (local training
+      use, no redistribution)'
+    rights_verified_at: '2026-08-30'
