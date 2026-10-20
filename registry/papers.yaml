@@ -159784,3 +159784,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W399462216
     resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-background-radioactivity-of-construction-mater
+    title: Background radioactivity of construction materials, raw substance and ready-made
+      CaMoO4 crystals
+    url: https://arxiv.org/pdf/1312.1041v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2013-12-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1312.1041
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1312.1041 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+    origin_ids: doi:10.1051/epjconf/20136503002
