@@ -159765,3 +159765,20 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.1080/20464177.2025.2518782 openalex:W4412412647
     resolution: 'legacy: openalex location'
+  - id: oas-w7207988510
+    title: 建築系学生を対象とした労働災害体験型VRシミュレータの試作
+    url: https://kokushikan.repo.nii.ac.jp/record/15627/files/1882_4013_015_06.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2022-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7207988510
+    license_evidence: no licence statement for this copy [copy https://kokushikan.repo.nii.ac.jp/record/15627/files/1882_4013_015_06.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-19'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7207988510
+    resolution: 'sim1: openalex location'
