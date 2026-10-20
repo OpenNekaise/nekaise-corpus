@@ -21564,20 +21564,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-delta-balustrades-brochure-9041693d
-    title: 'SpecifiedBy (UK manufacturer documents): delta-balustrades-brochure_9041693d.pdf'
-    url: https://www.specifiedby.com/delta-balustrades/orbis-os201-vertical-bar-infill-top-fix-architectural-balustrade-system/delta-balustrades-brochure_9041693d.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: construction
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-jci-bas-content-3452
     title: 'Johnson Controls Metasys/BAS docs: VA-4233-GGx Discontinuation Letter (t8xaug~ilw8bKLLCFkQuPg
       — content)'
@@ -21607,4 +21593,18 @@ sources:
     license_evidence: 'website ToS: personal non-commercial use, no robots — declared
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-atled001spotlights-3e601f18
+    title: 'SpecifiedBy (UK manufacturer documents): atled001spotlights_3e601f18.pdf'
+    url: https://www.specifiedby.com/delta-balustrades/atled-001-handrail-spotlights-architectural-balustrade-system/atled001spotlights_3e601f18.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
