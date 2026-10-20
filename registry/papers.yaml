@@ -160127,3 +160127,73 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W389991997
     resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-5194-acp-16-6735-2016-d3543137
+    title: 'Analysis of the potential of near-ground measurements of CO 2 and CH 4 in
+      London, UK, for the monitoring of city-scale emissions using an atmospheric '
+    url: https://centaur.reading.ac.uk/66171/1/acp-16-6735-2016.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-06-03'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/acp-16-6735-2016
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/66171/1/acp-16-6735-2016.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-20'
+    selected_version: submittedVersion
+    origin_ids: doi:10.5194/acp-16-6735-2016 openalex:W2174028314
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
+  - id: arx-comparison-between-purely-statistical-and-mult
+    title: Comparison between purely statistical and multi-agent based ap-proaches for
+      occupant behaviour modeling in buildings
+    url: https://arxiv.org/pdf/1510.02225v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-10-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1510.02225
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1510.02225 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+  - id: arx-evaluating-the-non-intrusive-room-acoustics-al
+    title: Evaluating the Non-Intrusive Room Acoustics Algorithm with the ACE Challenge
+    url: https://arxiv.org/pdf/1510.04616v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-10-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1510.04616
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1510.04616 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+  - id: arx-srmr-variants-for-improved-blind-room-acoustic
+    title: SRMR variants for improved blind room acoustics characterization
+    url: https://arxiv.org/pdf/1510.04707v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-10-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1510.04707
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1510.04707 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
