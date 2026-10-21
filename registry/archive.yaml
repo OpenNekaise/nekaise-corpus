@@ -232014,36 +232014,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1919']
     rights_verified_at: '2026-10-19'
-  - id: arc-wright-1-15030-9d5da5aa
-    title: 'Ausgefuhrte Bauten und Entwurfe / von Frank Lloyd Wright [Variant title:
-      Executed building (1910) [arc-wright-1-15030-9d5da5aa]'
-    url: https://archive.org/download/Wright-1-15030/15030_1_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: de
-    published_at: '1910'
-    document_type: trade-literature
-    license_url: https://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1910', '1910']
-    rights_verified_at: '2026-10-19'
-  - id: arc-wright-2-15030-26613f71
-    title: 'Ausgefuhrte Bauten und Entwurfe / von Frank Lloyd Wright [Variant title:
-      Executed building (1910) [arc-wright-2-15030-26613f71]'
-    url: https://archive.org/download/Wright-2-15030/15030_2_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: architecture
-    format: txt
-    language: de
-    published_at: '1910'
-    document_type: trade-literature
-    license_url: https://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1910', '1910']
-    rights_verified_at: '2026-10-19'
   - id: arc-gov02135-434fc1fd
     title: 'Government Savings Bank of N.S.W. Advances for Homes Department : plan booklet
       (1929) [arc-gov02135-434fc1fd]'
@@ -300684,18 +300654,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1917-06-30'']: published
       in 1917, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-21'
-  - id: arc-sim-glass-industry-november-december-1920-1-d0cde0a4
-    title: 'The Glass Industry November-December 1920: Vol 1 Index, v. 1 (1920)'
-    url: https://archive.org/download/sim_glass-industry_november-december-1920_1_index/sim_glass-industry_november-december-1920_1_index_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1920'
-    license_evidence: 'Internet Archive item metadata date/year [''November-December
-      1920'']: no licence and no certain publication date'
-    rights_verified_at: '2026-10-21'
   - id: arc-sim-glass-industry-january-december-1921-2-cdfc0247
     title: 'The Glass Industry January-December 1921: Vol 2 Index, v. 2 (1921)'
     url: https://archive.org/download/sim_glass-industry_january-december-1921_2_index/sim_glass-industry_january-december-1921_2_index_djvu.txt
@@ -303812,4 +303770,602 @@ sources:
     published_at: '1913'
     license_evidence: 'Internet Archive item metadata date/year [''1913-12-24'']: published
       in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-7fb49720
+    title: 'The American Architect and Architecture 1901-12-28: Vol 74 Iss 1357, v.
+      74 (1901)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1901-12-28_74_1357/sim_american-architect-and-architecture_1901-12-28_74_1357_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1901'
+    license_evidence: 'Internet Archive item metadata date/year [''1901-12-28'']: published
+      in 1901, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-3eb2752a
+    title: 'The American Architect 1914-02-11: Vol 105 Iss 1990, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-02-11_105_1990/sim_american-architect-and-architecture_1914-02-11_105_1990_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-02-11'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-48ee3191
+    title: 'The American Architect and Architecture 1902-02-22: Vol 75 Iss 1365, v.
+      75 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-02-22_75_1365/sim_american-architect-and-architecture_1902-02-22_75_1365_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-02-22'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-58590db8
+    title: 'The American Architect 1914-03-04: Vol 105 Iss 1993, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-03-04_105_1993/sim_american-architect-and-architecture_1914-03-04_105_1993_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-03-04'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-172a1814
+    title: 'The American Architect 1914-03-18: Vol 105 Iss 1995, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-03-18_105_1995/sim_american-architect-and-architecture_1914-03-18_105_1995_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-03-18'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-d3ebc351
+    title: 'The American Architect 1914-04-01: Vol 105 Iss 1997, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-04-01_105_1997/sim_american-architect-and-architecture_1914-04-01_105_1997_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-04-01'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-3809fba4
+    title: 'The American Architect 1914-04-15: Vol 105 Iss 1999, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-04-15_105_1999/sim_american-architect-and-architecture_1914-04-15_105_1999_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-04-15'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-b76c255a
+    title: 'The American Architect and Architecture 1902-05-03: Vol 76 Iss 1375, v.
+      76 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-05-03_76_1375/sim_american-architect-and-architecture_1902-05-03_76_1375_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-05-03'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-68eceb54
+    title: 'The American Architect 1914-05-13: Vol 105 Iss 2003, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-05-13_105_2003/sim_american-architect-and-architecture_1914-05-13_105_2003_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-05-13'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-22fd29f3
+    title: 'The American Architect 1914-05-20: Vol 105 Iss 2004, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-05-20_105_2004/sim_american-architect-and-architecture_1914-05-20_105_2004_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-05-20'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-09064a9d
+    title: 'The American Architect 1914-05-27: Vol 105 Iss 2005, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-05-27_105_2005/sim_american-architect-and-architecture_1914-05-27_105_2005_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-05-27'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-ac3f21cd
+    title: 'The American Architect and Architecture 1902-06-07: Vol 76 Iss 1380, v.
+      76 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-06-07_76_1380/sim_american-architect-and-architecture_1902-06-07_76_1380_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-06-07'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-269316ff
+    title: 'The American Architect and Architecture 1902-06-21: Vol 76 Iss 1382, v.
+      76 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-06-21_76_1382/sim_american-architect-and-architecture_1902-06-21_76_1382_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-06-21'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-9e925ae0
+    title: 'The American Architect 1914-06-17: Vol 105 Iss 2008, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-06-17_105_2008/sim_american-architect-and-architecture_1914-06-17_105_2008_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-06-17'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-b0d05839
+    title: 'The American Architect 1914-06-24: Vol 105 Iss 2009, v. 105 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-06-24_105_2009/sim_american-architect-and-architecture_1914-06-24_105_2009_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-06-24'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-0fbc62a2
+    title: 'The American Architect and Architecture 1902-08-16: Vol 77 Iss 1390, v.
+      77 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-08-16_77_1390/sim_american-architect-and-architecture_1902-08-16_77_1390_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-08-16'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-architectural-magazine-and-journal-of-i-49310255
+    title: The Architectural Magazine and Journal of Improvement in Architecture, Building,
+      and Furnishing and in the Various Arts , v. 1-5 (1834)
+    url: https://archive.org/download/sim_architectural-magazine-and-journal-of-improvement_1834_1-5_cumulative-index/sim_architectural-magazine-and-journal-of-improvement_1834_1-5_cumulative-index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1834'
+    license_evidence: 'Internet Archive item metadata date/year [''1834'']: published
+      in 1834, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-architectural-magazine-and-journal-of-i-83a5646a
+    title: The Architectural Magazine and Journal of Improvement in Architecture, Building,
+      and Furnishing and in the Various Arts , v. 1 (1834)
+    url: https://archive.org/download/sim_architectural-magazine-and-journal-of-improvement_1834_1_index/sim_architectural-magazine-and-journal-of-improvement_1834_1_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1834'
+    license_evidence: 'Internet Archive item metadata date/year [''1834'']: published
+      in 1834, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-cc322d88
+    title: 'The American Architect 1914-08-26: Vol 106 Iss 2018, v. 106 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-08-26_106_2018/sim_american-architect-and-architecture_1914-08-26_106_2018_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-08-26'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-83fcc633
+    title: 'The American Architect 1914-09-09: Vol 106 Iss 2020, v. 106 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-09-09_106_2020/sim_american-architect-and-architecture_1914-09-09_106_2020_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-09-09'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-7a015d78
+    title: 'The American Architect and Architecture 1902-10-11: Vol 78 Iss 1398, v.
+      78 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-10-11_78_1398/sim_american-architect-and-architecture_1902-10-11_78_1398_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-10-11'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-architectural-magazine-and-journal-of-i-b5b95abc
+    title: The Architectural Magazine and Journal of Improvement in Architecture, Building,
+      and Furnishing and in the Various Arts , v. 2 (1835)
+    url: https://archive.org/download/sim_architectural-magazine-and-journal-of-improvement_1835-01_2_11/sim_architectural-magazine-and-journal-of-improvement_1835-01_2_11_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1835'
+    license_evidence: 'Internet Archive item metadata date/year [''1835-01'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-ace7ec3e
+    title: 'The American Architect and Architecture 1902-11-01: Vol 78 Iss 1401, v.
+      78 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-11-01_78_1401/sim_american-architect-and-architecture_1902-11-01_78_1401_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-11-01'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-3d772067
+    title: 'The American Architect 1914-10-14: Vol 106 Iss 2025, v. 106 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-10-14_106_2025/sim_american-architect-and-architecture_1914-10-14_106_2025_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-10-14'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-f2d9a7be
+    title: 'The American Architect and Architecture 1902-11-29: Vol 78 Iss 1405, v.
+      78 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-11-29_78_1405/sim_american-architect-and-architecture_1902-11-29_78_1405_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-11-29'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-9c7d2851
+    title: 'The American Architect 1914-10-28: Vol 106 Iss 2027, v. 106 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-10-28_106_2027/sim_american-architect-and-architecture_1914-10-28_106_2027_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-10-28'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-82b49d54
+    title: 'The American Architect and Architecture 1902-12-06: Vol 78 Iss 1406, v.
+      78 (1902)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1902-12-06_78_1406/sim_american-architect-and-architecture_1902-12-06_78_1406_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902-12-06'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-ec6d8588
+    title: 'The American Architect 1914-11-11: Vol 106 Iss 2029, v. 106 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-11-11_106_2029/sim_american-architect-and-architecture_1914-11-11_106_2029_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-11-11'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-cc313aab
+    title: 'The American Architect 1914-11-18: Vol 106 Iss 2030, v. 106 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-11-18_106_2030/sim_american-architect-and-architecture_1914-11-18_106_2030_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-11-18'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-5f35b171
+    title: 'The American Architect and Architecture 1903-01-10: Vol 79 Iss 1411, v.
+      79 (1903)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1903-01-10_79_1411/sim_american-architect-and-architecture_1903-01-10_79_1411_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903-01-10'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-architectural-magazine-and-journal-of-i-183b2591
+    title: The Architectural Magazine and Journal of Improvement in Architecture, Building,
+      and Furnishing and in the Various Arts , v. 3 (1836)
+    url: https://archive.org/download/sim_architectural-magazine-and-journal-of-improvement_1836_3_contents/sim_architectural-magazine-and-journal-of-improvement_1836_3_contents_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1836'
+    license_evidence: 'Internet Archive item metadata date/year [''1836'']: published
+      in 1836, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-05e25211
+    title: 'The American Architect 1914-11-25: Vol 106 Iss 2031, v. 106 (1914)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1914-11-25_106_2031/sim_american-architect-and-architecture_1914-11-25_106_2031_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914-11-25'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-cbed0564
+    title: 'The American Architect 1915: Vol 107 Index, v. 107 (1915)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1915_107_index/sim_american-architect-and-architecture_1915_107_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-1805dc69
+    title: 'The American Architect and Architecture 1903-03-21: Vol 79 Iss 1421, v.
+      79 (1903)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1903-03-21_79_1421/sim_american-architect-and-architecture_1903-03-21_79_1421_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903-03-21'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-9d647718
+    title: 'The American Architect 1915-01-13: Vol 107 Iss 2038, v. 107 (1915)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1915-01-13_107_2038/sim_american-architect-and-architecture_1915-01-13_107_2038_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-01-13'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-8c6d6916
+    title: 'The American Architect 1915-01-20: Vol 107 Iss 2039, v. 107 (1915)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1915-01-20_107_2039/sim_american-architect-and-architecture_1915-01-20_107_2039_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-01-20'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-architectural-magazine-and-journal-of-i-e02a7e65
+    title: The Architectural Magazine and Journal of Improvement in Architecture, Building,
+      and Furnishing and in the Various Arts , v. 4 (1837)
+    url: https://archive.org/download/sim_architectural-magazine-and-journal-of-improvement_1837_4_index/sim_architectural-magazine-and-journal-of-improvement_1837_4_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1837'
+    license_evidence: 'Internet Archive item metadata date/year [''1837'']: published
+      in 1837, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-3d7ba143
+    title: 'The American Architect 1915-01-27: Vol 107 Iss 2040, v. 107 (1915)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1915-01-27_107_2040/sim_american-architect-and-architecture_1915-01-27_107_2040_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-01-27'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-895bc31e
+    title: 'The American Architect 1915-02-17: Vol 107 Iss 2043, v. 107 (1915)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1915-02-17_107_2043/sim_american-architect-and-architecture_1915-02-17_107_2043_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-02-17'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-a9222f52
+    title: 'The American Architect and Architecture 1903-05-09: Vol 80 Iss 1428, v.
+      80 (1903)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1903-05-09_80_1428/sim_american-architect-and-architecture_1903-05-09_80_1428_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903-05-09'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-0268c672
+    title: 'The American Architect and Architecture 1903-05-16: Vol 80 Iss 1429, v.
+      80 (1903)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1903-05-16_80_1429/sim_american-architect-and-architecture_1903-05-16_80_1429_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903-05-16'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-e9ffb1b2
+    title: 'The American Architect and Architecture 1903-06-13: Vol 80 Iss 1433, v.
+      80 (1903)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1903-06-13_80_1433/sim_american-architect-and-architecture_1903-06-13_80_1433_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903-06-13'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-architectural-magazine-and-journal-of-i-58b64236
+    title: The Architectural Magazine and Journal of Improvement in Architecture, Building,
+      and Furnishing and in the Various Arts , v. 5 (1838)
+    url: https://archive.org/download/sim_architectural-magazine-and-journal-of-improvement_1838-02_5_48/sim_architectural-magazine-and-journal-of-improvement_1838-02_5_48_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1838'
+    license_evidence: 'Internet Archive item metadata date/year [''1838-02'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-5876d904
+    title: 'The American Architect 1915-05-12: Vol 107 Iss 2055, v. 107 (1915)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1915-05-12_107_2055/sim_american-architect-and-architecture_1915-05-12_107_2055_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-05-12'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-f38a0320
+    title: 'The American Architect 1915-05-19: Vol 107 Iss 2056, v. 107 (1915)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1915-05-19_107_2056/sim_american-architect-and-architecture_1915-05-19_107_2056_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-05-19'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-191-76350550
+    title: 'The American Architect 1915-06-16: Vol 107 Iss 2060, v. 107 (1915)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1915-06-16_107_2060/sim_american-architect-and-architecture_1915-06-16_107_2060_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915-06-16'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-793673ce
+    title: 'The American Architect and Architecture 1903: Vol 82 Index, v. 82 (1903)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1903_82_index/sim_american-architect-and-architecture_1903_82_index_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-21'
+  - id: arc-sim-american-architect-and-architecture-190-3e7d6bbd
+    title: 'The American Architect and Architecture 1903-10-10: Vol 82 Iss 1450, v.
+      82 (1903)'
+    url: https://archive.org/download/sim_american-architect-and-architecture_1903-10-10_82_1450/sim_american-architect-and-architecture_1903-10-10_82_1450_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903-10-10'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-21'

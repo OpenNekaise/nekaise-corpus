@@ -162004,3 +162004,22 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.1002/eqe.2848 openalex:W2560600632
     resolution: 'legacy: openalex location'
+  - id: arx-identifying-hazardousness-of-sewer-pipeline-ga
+    title: 'Identifying hazardousness of sewer pipeline gas mixture using classification
+      methods: a comparative study'
+    url: https://arxiv.org/pdf/1707.00561v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-05-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1707.00561
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1707.00561 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+    origin_ids: doi:10.1007/s00521-016-2443-0
