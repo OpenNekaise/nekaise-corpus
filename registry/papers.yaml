@@ -161931,3 +161931,76 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.tws.2018.01.020 openalex:W2793436950
     resolution: 'legacy: openalex location'
+  - id: ope-parametric-experimental-investigation-of-unbon
+    title: Parametric experimental investigation of unbonded post‐tensioned reinforced
+      concrete bridge piers under cyclic loading
+    url: https://discovery.ucl.ac.uk/10155967/1/Shen%20et%20al%202022_Parametric%20experimental%20investigation%20of%20unbonded%20post-tensioned%20reinforced%20concrete%20bridge%20piers%20under%20cyclic%20loading%20-%20Authors%20Version.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-09-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/eqe.3732
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10155967/1/Shen%20et%20al%202022_Parametric%20experimental%20investigation%20of%20unbonded%20post-tensioned%20reinforced%20concrete%20bridge%20piers%20under%20cyclic%20loading%20-%20Authors%20Version.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/eqe.3732 openalex:W4296369391
+    resolution: 'legacy: openalex location'
+  - id: ope-a-model-taxonomy-for-flood-fragility-and-vulne
+    title: A model taxonomy for flood fragility and vulnerability assessment of buildings
+    url: https://discovery.ucl.ac.uk/10119491/1/galasso_et_al_final_R1.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-12-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ijdrr.2020.101985
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://discovery.ucl.ac.uk/10119491/1/galasso_et_al_final_R1.pdf; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ijdrr.2020.101985 openalex:W3110073964
+    resolution: 'legacy: openalex location'
+  - id: ope-generative-aibim-an-automatic-and-intelligent-
+    title: 'Generative AIBIM: An automatic and intelligent structural design pipeline
+      integrating BIM and generative AI'
+    url: https://arxiv.org/pdf/2311.04052
+    source: openalex
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.inffus.2024.102654
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy https://arxiv.org/pdf/2311.04052; version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.inffus.2024.102654 openalex:W4402105866
+    resolution: 'legacy: openalex location'
+  - id: ope-damage-based-seismic-planar-pounding-analysis-
+    title: Damage‐based seismic planar pounding analysis of adjacent symmetric buildings
+      considering inelastic structure–soil–structure interaction
+    url: https://discovery.dundee.ac.uk/ws/files/11145063/EQE_16_0157.R3.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-12-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/eqe.2848
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://discovery.dundee.ac.uk/ws/files/11145063/EQE_16_0157.R3.pdf; version
+      acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-21'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1002/eqe.2848 openalex:W2560600632
+    resolution: 'legacy: openalex location'
