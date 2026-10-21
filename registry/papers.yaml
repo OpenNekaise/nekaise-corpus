@@ -161826,3 +161826,73 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-21'
     origin_ids: doi:10.1016/j.probengmech.2017.04.001
+  - id: oas-w621987907
+    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2004-12-15'
+    document_type: article
+    persistent_id: https://openalex.org/W621987907
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: openalex:W621987907
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-theoretical-and-numerical-analysis-of-a-heat-p
+    title: Theoretical and numerical analysis of a heat pump model utilizing Dufour
+      effect
+    url: https://arxiv.org/pdf/1403.6255v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2014-03-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1403.6255
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1403.6255 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+    origin_ids: doi:10.1140/epjb/e2017-70730-7
+  - id: arx-micro-location-for-internet-of-things-equipped
+    title: Micro-location for Internet of Things equipped Smart Buildings
+    url: https://arxiv.org/pdf/1501.01539v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-01-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1501.01539
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1501.01539 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+    origin_ids: doi:10.1109/jiot.2015.2442956
+  - id: arx-providing-wireless-coverage-to-high-rise-build
+    title: Providing Wireless Coverage to High-rise Buildings Using UAVs
+    url: https://arxiv.org/pdf/1705.09770v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-05-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1705.09770
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1705.09770 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-21'
