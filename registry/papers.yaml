@@ -161434,3 +161434,21 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-21'
+  - id: oas-10-57349-0002000560-9aac06fa
+    title: 視覚を利用した建築構造教育について―弾塑性力学モデルを用いた木造軸組構造の耐震強度―
+    url: https://kasei-gakuin.repo.nii.ac.jp/record/2000560/files/13441892_49N_61-64.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2009-08-31'
+    document_type: article
+    persistent_id: https://doi.org/10.57349/0002000560
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kasei-gakuin.repo.nii.ac.jp/record/2000560/files/13441892_49N_61-64.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.57349/0002000560 openalex:W7221718549
+    resolution: 'sim1: openalex location'
