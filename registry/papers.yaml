@@ -160727,3 +160727,39 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-20'
+  - id: arx-gradient-based-estimation-of-air-flow-and-geom
+    title: Gradient-Based Estimation of Air Flow and Geometry Configurations in a Building
+      Using Fluid Dynamic Adjoint Equations
+    url: https://arxiv.org/pdf/1605.05339v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-05-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1605.05339
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1605.05339 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
+  - id: arx-dynamic-bayesian-networks-to-simulate-occupant
+    title: Dynamic Bayesian Networks to simulate occupant behaviours in office buildings
+      related to indoor air quality
+    url: https://arxiv.org/pdf/1605.05966v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-05-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1605.05966
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1605.05966 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-20'
