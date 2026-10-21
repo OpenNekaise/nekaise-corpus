@@ -160289,23 +160289,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-20'
     origin_ids: doi:10.1016/j.physe.2015.11.019
-  - id: oas-w7145378116
-    title: 韓国の植民地都市と植民地建築物
-    url: http://reposit.sun.ac.jp/dspace/bitstream/10561/1254/1/v9p69_lee.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2017-03-31'
-    document_type: article
-    persistent_id: https://openalex.org/W7145378116
-    license_evidence: no licence statement for this copy [copy http://reposit.sun.ac.jp/dspace/bitstream/10561/1254/1/v9p69_lee.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-20'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7145378116
-    resolution: 'sim1: openalex location'
   - id: arx-interception-efficiency-of-cvm-based-lightning
     title: Interception efficiency of CVM-based lightning protection systems for buildings
       and the fractional Poisson model
@@ -160901,3 +160884,19 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W399462216
     resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-buildings-group-extensions-and-the-cohomology-
+    title: Buildings, group extensions and the cohomology of congruence subgroups
+    url: https://arxiv.org/pdf/math/9702234v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '1997-02-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/9702234
+    license_url: https://oaipmh.arxiv.org/oai?verb=GetRecord&identifier=oai:arXiv.org:math/9702234&metadataPrefix=arXivRaw
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/9702234 (v1, the current
+      version and the copy this URL names): no licence element -> arxiv-nonexclusive
+      (no licence recorded: arXiv''s default distribution licence applies)'
+    rights_verified_at: '2026-10-21'
