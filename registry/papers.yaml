@@ -160850,23 +160850,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-21'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-21'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-buildings-group-extensions-and-the-cohomology-
     title: Buildings, group extensions and the cohomology of congruence subgroups
     url: https://arxiv.org/pdf/math/9702234v1
@@ -161526,3 +161509,181 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-21'
     origin_ids: doi:10.1109/glocom.2016.7841916
+  - id: ope-flexural-stiffness-of-steel-concrete-composite
+    title: Flexural stiffness of steel-concrete composite beam under positive moment
+    url: https://eprints.qut.edu.au/221539/1/Accepted%2Bversion.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-04-30'
+    document_type: article
+    persistent_id: https://doi.org/10.12989/scs.2016.20.6.1369
+    license_evidence: no licence statement for this copy [copy https://eprints.qut.edu.au/221539/1/Accepted%2Bversion.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.12989/scs.2016.20.6.1369 openalex:W2397806473
+    resolution: 'legacy: openalex location'
+  - id: ope-effect-of-exposure-to-alkaline-environment-on-
+    title: Effect of exposure to alkaline environment on the mechanical properties of
+      TRM composites
+    url: https://pure.tue.nl/ws/files/364289049/1-s2.0-S2352710225007053-main.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-24'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jobe.2025.112468
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pure.tue.nl/ws/files/364289049/1-s2.0-S2352710225007053-main.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jobe.2025.112468 openalex:W4408783824
+    resolution: 'legacy: openalex location'
+  - id: ope-behaviour-of-short-columns-made-with-conventio
+    title: 'Behaviour of short columns made with conventional or FRP-confined rubberised
+      concrete: An experimental and numerical investigation'
+    url: https://wrap.warwick.ac.uk/184547/1/WRAP-behaviour-short-columns-made-conventional-FRP-confined-rubberised-concrete-2024.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2024.117885
+    license_evidence: no licence statement for this copy [copy https://wrap.warwick.ac.uk/184547/1/WRAP-behaviour-short-columns-made-conventional-FRP-confined-rubberised-concrete-2024.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2024.117885 openalex:W4393123791
+    resolution: 'legacy: openalex location'
+  - id: ope-shaking-table-tests-and-numerical-analysis-of-
+    title: Shaking table tests and numerical analysis of RC coupled shear wall structure
+      with hybrid replaceable coupling beams
+    url: https://discovery.ucl.ac.uk/id/eprint/10186467/1/Gong%20et%20al_2024_Shaking%20table%20tests%20and%20numerical%20analysis%20of%20RC%20coupled%20SW%20structure%20with%20hybrid%20RCBs%20-%20Authors%20Version.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/eqe.4088
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/id/eprint/10186467/1/Gong%20et%20al_2024_Shaking%20table%20tests%20and%20numerical%20analysis%20of%20RC%20coupled%20SW%20structure%20with%20hybrid%20RCBs%20-%20Authors%20Version.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1002/eqe.4088 openalex:W4391360159
+    resolution: 'legacy: openalex location'
+  - id: ope-experimental-and-analytical-investigations-of-
+    title: Experimental and analytical investigations of prefabricated segmental concrete
+      beams post-tensioned with unbonded steel/FRP tendons subjected to impac
+    url: https://espace.curtin.edu.au/bitstream/20.500.11937/96059/2/95824.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ijimpeng.2023.104868
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://espace.curtin.edu.au/bitstream/20.500.11937/96059/2/95824.pdf; version
+      submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ijimpeng.2023.104868 openalex:W4390116552
+    resolution: 'legacy: openalex location'
+  - id: oas-w2111364805
+    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W2111364805
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2111364805
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-34428-0002002285-3a94f64b
+    title: Report of the Symposium on Ancient Buildings in Tetsugakudo Park
+    url: https://toyo.repo.nii.ac.jp/record/2002285/files/kogyogijutsu47_005-007.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2025-03-01'
+    document_type: article
+    persistent_id: https://doi.org/10.34428/0002002285
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://toyo.repo.nii.ac.jp/record/2002285/files/kogyogijutsu47_005-007.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.34428/0002002285 openalex:W7163514451
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-occupancy-counting-with-burst-and-intermittent
+    title: Occupancy Counting with Burst and Intermittent Signals in Smart Buildings
+    url: https://arxiv.org/pdf/1702.06423v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-02-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1702.06423
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1702.06423 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+  - id: arx-continuation-of-homoclinic-orbits-in-the-suspe
+    title: 'Continuation of homoclinic orbits in the suspension bridge equation: a computer-assisted
+      proof'
+    url: https://arxiv.org/pdf/1702.07412v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-02-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1702.07412
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1702.07412 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+  - id: arx-distance-regularity-in-buildings-and-structure
+    title: Distance regularity in buildings and structure constants in Hecke algebras
+    url: https://arxiv.org/pdf/1508.03912v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2015-08-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1508.03912
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1508.03912 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
