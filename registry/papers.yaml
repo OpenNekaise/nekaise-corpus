@@ -160110,23 +160110,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-20'
     origin_ids: doi:10.5204/jld.v6i3.160
-  - id: oas-w389991997
-    title: '建築構造物の地震被害予測に関する実地調査研究・VI : 多治見市を対象とした調査'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2007-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W389991997
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000263&elmid=Body&fname=E01_043_079.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-20'
-    selected_version: submittedVersion
-    origin_ids: openalex:W389991997
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-10-5194-acp-16-6735-2016-d3543137
     title: 'Analysis of the potential of near-ground measurements of CO 2 and CH 4 in
       London, UK, for the monitoring of city-scale emissions using an atmospheric '
@@ -160828,6 +160811,23 @@ sources:
     persistent_id: doi:10.48550/arxiv.1606.01754
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1606.01754 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+  - id: arx-sketched-floor-plans-versus-slam-maps-a-compar
+    title: 'Sketched Floor plans versus SLAM maps: A Comparison'
+    url: https://arxiv.org/pdf/1606.04836v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-06-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1606.04836
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1606.04836 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
