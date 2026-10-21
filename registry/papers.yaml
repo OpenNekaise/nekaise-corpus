@@ -161452,3 +161452,41 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.57349/0002000560 openalex:W7221718549
     resolution: 'sim1: openalex location'
+  - id: arx-optimization-based-residential-load-scheduling
+    title: Optimization-based Residential Load Scheduling to Improve Reliability in
+      the Distribution Grid
+    url: https://arxiv.org/pdf/1612.04881v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-12-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1612.04881
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1612.04881 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+    origin_ids: doi:10.1109/cdc.2016.7798624
+  - id: arx-bayesian-system-identification-based-on-hierar
+    title: Bayesian System Identification based on Hierarchical Sparse Bayesian Learning
+      and Gibbs Sampling with Application to Structural Damage Assessment
+    url: https://arxiv.org/pdf/1701.03550v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-01-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1701.03550
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1701.03550 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+    origin_ids: doi:10.1016/j.cma.2017.01.030
