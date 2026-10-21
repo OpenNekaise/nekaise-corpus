@@ -160474,23 +160474,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jclepro.2022.130938 openalex:W4214594915
     resolution: 'legacy: openalex location'
-  - id: oas-w621987907
-    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2004-12-15'
-    document_type: article
-    persistent_id: https://openalex.org/W621987907
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-20'
-    selected_version: submittedVersion
-    origin_ids: openalex:W621987907
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-energy-sensing-and-monitoring-framework-with-a
     title: Energy Sensing and Monitoring Framework with an Integrated Communication
       Backbone in the Energy Efficient Intelligent Buildings
@@ -160991,3 +160974,20 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-21'
     origin_ids: doi:10.2140/gt.2016.20.2433
+  - id: arx-building-clusters-atom-by-atom-from-local-orde
+    title: 'Building clusters atom by atom: from local order to global order'
+    url: https://arxiv.org/pdf/0812.4734v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2008-12-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.0812.4734
+    license_url: http://creativecommons.org/licenses/by-nc-sa/3.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:0812.4734 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/3.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-21'
+    origin_ids: doi:10.1021/jp809729p
