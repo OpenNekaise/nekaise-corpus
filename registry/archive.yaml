@@ -115692,20 +115692,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['c. 1925', '1925']
     rights_verified_at: '2026-10-14'
-  - id: arc-wirefabricconcretereinforcement-9e6cdb9a
-    title: Wire fabric concrete reinforcement. (1928) [arc-wirefabricconcretereinforcement-9e6cdb9a]
-    url: https://archive.org/download/WireFabricConcreteReinforcement/AmericanSteelWireCo_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: structures_civil
-    format: txt
-    language: en
-    published_at: '1928'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1928', '1928']
-    rights_verified_at: '2026-10-14'
   - id: arc-globelightandpowerplants-0e43a53d
     title: 'Electric light and power plants: for the farm, country, home, church, warehouses
       etc. (1920) [arc-globelightandpowerplants-0e43a53d]'
@@ -251987,20 +251973,6 @@ sources:
       date/year [''1918'', ''1918'']: published in 1918, US copyright expired (publications
       up to 1928); the item states no licence'
     rights_verified_at: '2026-10-20'
-  - id: arc-steamengineatre03clargoog-5518abad
-    title: 'The Steam Engine: a Treatise on Steam Engines and Boilers ...: Above 1300
-      Figures in the Text ..., v. 3 (1890)'
-    url: https://archive.org/download/steamengineatre03clargoog/steamengineatre03clargoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1890'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1890'', ''1890'']: published in 1890, US copyright expired (publications
-      up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
   - id: arc-treatiseonworki00colygoog-fa2bcf25
     title: Treatise on the working and management of steam boilers and engines (1885)
     url: https://archive.org/download/treatiseonworki00colygoog/treatiseonworki00colygoog_djvu.txt
@@ -252823,20 +252795,6 @@ sources:
       date/year [''1908'', ''1908'']: published in 1908, US copyright expired (publications
       up to 1928); the item states no licence'
     rights_verified_at: '2026-10-20'
-  - id: arc-universalwiring00herigoog-ba31ee5c
-    title: 'Universal wiring computer : for determining the size of wires for incandescent
-      electric lamp leads and for distribution  (1891)'
-    url: https://archive.org/download/universalwiring00herigoog/universalwiring00herigoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1891'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1891'', ''1891'']: published in 1891, US copyright expired (publications
-      up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
   - id: arc-electricwiringa00shaagoog-40c83bce
     title: Electric wiring and lighting (1909)
     url: https://archive.org/download/electricwiringa00shaagoog/electricwiringa00shaagoog_djvu.txt
@@ -252985,34 +252943,6 @@ sources:
     title: A treatise on architecture and building construction, prepared for students
       of the International Correspondence Schools, v. 2 (1899)
     url: https://archive.org/download/treatiseonarchit02inteiala/treatiseonarchit02inteiala_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1899'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1899'']: published in 1899, US copyright expired (publications up
-      to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
-  - id: arc-treatiseonarchit07inteiala-b8d5383f
-    title: A treatise on architecture and building construction, prepared for students
-      of the International Correspondence Schools, v. 7 (1899)
-    url: https://archive.org/download/treatiseonarchit07inteiala/treatiseonarchit07inteiala_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1899'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1899'']: published in 1899, US copyright expired (publications up
-      to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
-  - id: arc-treatiseonarchit08inteiala-8617f2bf
-    title: A treatise on architecture and building construction, prepared for students
-      of the International Correspondence Schools, v. 8 (1899)
-    url: https://archive.org/download/treatiseonarchit08inteiala/treatiseonarchit08inteiala_djvu.txt
     source: internet_archive
     license: public-domain
     topic: construction
