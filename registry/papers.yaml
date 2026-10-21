@@ -161379,3 +161379,58 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-21'
     origin_ids: doi:10.1063/1.4967920
+  - id: oas-10-69393-0002000579-d71f0ef9
+    title: 飛鳥寺の舎利容器とその復元
+    url: https://kpu.repo.nii.ac.jp/record/2000579/files/b_38_022.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2026-03-30'
+    document_type: article
+    persistent_id: https://doi.org/10.69393/0002000579
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kpu.repo.nii.ac.jp/record/2000579/files/b_38_022.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-21'
+    selected_version: submittedVersion
+    origin_ids: doi:10.69393/0002000579 openalex:W7166511484
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-iofclime-the-fuzzy-logic-and-the-internet-of-t
+    title: 'IoFClime: The fuzzy logic and the Internet of Things to control indoor temperature
+      regarding the outdoor ambient conditions'
+    url: https://arxiv.org/pdf/1701.02545v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-01-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1701.02545
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1701.02545 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
+    origin_ids: doi:10.1016/j.future.2016.11.020
+  - id: arx-transactive-control-of-air-conditioning-loads-
+    title: Transactive Control of Air Conditioning Loads for Mitigating Microgrid Tie-line
+      Power Fluctuations
+    url: https://arxiv.org/pdf/1701.02902v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-01-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1701.02902
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1701.02902 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-21'
