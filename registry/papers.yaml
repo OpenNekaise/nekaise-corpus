@@ -162023,3 +162023,20 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-22'
+  - id: oas-w1946152366
+    title: '5216 保育者の保育展開にみる環境構成要素の活用に関する事例的研究 : アメリカにおいて(幼稚園・保育所,建築計画I)'
+    url: http://ir.lib.hiroshima-u.ac.jp/00031980
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-07-31'
+    document_type: article
+    persistent_id: https://openalex.org/W1946152366
+    license_evidence: no licence statement for this copy [copy http://ir.lib.hiroshima-u.ac.jp/00031980;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-22'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1946152366
+    resolution: 'sim1: openalex location'
