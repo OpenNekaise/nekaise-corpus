@@ -162524,3 +162524,86 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-22'
     origin_ids: doi:10.1007/s12220-017-9856-6
+  - id: arx-heavy-nuclei-as-thermal-insulation-for-proto-n
+    title: Heavy Nuclei as Thermal Insulation for Proto-Neutron Stars
+    url: https://arxiv.org/pdf/1710.10441v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-10-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1710.10441
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1710.10441 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
+    origin_ids: doi:10.1103/physrevc.97.035804
+  - id: ope-analytical-analysis-for-horizontal-displacemen
+    title: Analytical analysis for horizontal displacement of pile anchor support structure
+      considering prestress
+    url: https://www.frontiersin.org/articles/10.3389/fevo.2023.1249239/pdf?isPublishedV2=False
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-18'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fevo.2023.1249239
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fevo.2023.1249239/pdf?isPublishedV2=False
+      do not transfer to https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2023.1249239/pdf;
+      payload sha256=d4f747c3039cfe62e4bfeb91be66615794386c1067d8c5c507e4814e40655839;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fevo.2023.1249239/pdf?isPublishedV2=False;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-22",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-22T12:48:39Z'
+    origin_ids: doi:10.3389/fevo.2023.1249239 openalex:W4386849542
+    resolution: 'legacy: openalex location'
+  - id: ope-genetic-mechanisms-and-a-stability-evaluation-
+    title: Genetic mechanisms and a stability evaluation of large landslides in Zhangjiawan,
+      Qinghai Province
+    url: https://www.frontiersin.org/articles/10.3389/feart.2023.1140030/pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-02'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/feart.2023.1140030
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/feart.2023.1140030/pdf
+      do not transfer to https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2023.1140030/pdf;
+      payload sha256=499d47646c849d7103484905324658bf6dc14c6707dd75dc45d6e29ab67fee40;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/feart.2023.1140030/pdf;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-22",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-22T12:48:47Z'
+    origin_ids: doi:10.3389/feart.2023.1140030 openalex:W4322773741
+    resolution: 'legacy: openalex location'
+  - id: ope-scaling-factors-for-1-d-ground-response-amplif
+    title: Scaling factors for 1-D ground response amplification in a soft soil basin
+    url: https://www.frontiersin.org/articles/10.3389/fbuil.2023.1275425/pdf?isPublishedV2=False
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-05'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbuil.2023.1275425
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fbuil.2023.1275425/pdf?isPublishedV2=False
+      do not transfer to https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2023.1275425/pdf;
+      payload sha256=4fa34f04c28a07203e193c30b65d9cfda0caf98b4b326bf8c53fed6741ce167f;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fbuil.2023.1275425/pdf?isPublishedV2=False;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-22",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-22T12:48:43Z'
+    origin_ids: doi:10.3389/fbuil.2023.1275425 openalex:W4390610553
+    resolution: 'legacy: openalex location'
