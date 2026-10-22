@@ -94412,20 +94412,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1894', '1894']
     rights_verified_at: '2026-10-13'
-  - id: arc-yuletidelightingwishingyouamerrychristmas-4ebc4114
-    title: 'Yuletide lighting : wishing you a merry Christmas. (1926) [arc-yuletidelightingwishingyouamerrychristmas-4ebc4114]'
-    url: https://archive.org/download/YuletideLightingWishingYouAMerryChristmas/Cca48673NationalLampWorks_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: en
-    published_at: '1926'
-    document_type: trade-literature
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1926', '1926']
-    rights_verified_at: '2026-10-13'
   - id: arc-fortystreetsinone-eddddb62
     title: Forty streets in one. (1925) [arc-fortystreetsinone-eddddb62]
     url: https://archive.org/download/FortyStreetsInOne/Cca48721NationalLampWorks_djvu.txt
@@ -251238,30 +251224,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
       in 1894, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-20'
-  - id: arc-zeitschriftfurdi7819deut-c3ac8be9
-    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.7-8(1900-1901) (1894)
-    url: https://archive.org/download/zeitschriftfurdi7819deut/zeitschriftfurdi7819deut_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: de
-    published_at: '1894'
-    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
-      in 1894, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
-  - id: arc-zeitschriftfurdi2719deut-fa550019
-    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.27(1920) (1894)
-    url: https://archive.org/download/zeitschriftfurdi2719deut/zeitschriftfurdi2719deut_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: de
-    published_at: '1894'
-    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
-      in 1894, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
   - id: arc-zeitschriftfurdi2919deut-81309e87
     title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.29(1922) (1894)
     url: https://archive.org/download/zeitschriftfurdi2919deut/zeitschriftfurdi2919deut_djvu.txt
@@ -251274,33 +251236,9 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
       in 1894, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-20'
-  - id: arc-zeitschriftfurdi4189deut-9daf259d
-    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.4(1897) (1894)
-    url: https://archive.org/download/zeitschriftfurdi4189deut/zeitschriftfurdi4189deut_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: de
-    published_at: '1894'
-    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
-      in 1894, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
   - id: arc-zeitschriftfurdi1218deut-2670d2ef
     title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.1-2(1894-1895) (1894)
     url: https://archive.org/download/zeitschriftfurdi1218deut/zeitschriftfurdi1218deut_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: equipment_systems
-    format: txt
-    language: de
-    published_at: '1894'
-    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
-      in 1894, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-20'
-  - id: arc-zeitschriftfurdi2519deut-15f95ef2
-    title: Zeitschrift für die gesammte Kälte-Industrie .., v. v.25(1918) (1894)
-    url: https://archive.org/download/zeitschriftfurdi2519deut/zeitschriftfurdi2519deut_djvu.txt
     source: internet_archive
     license: public-domain
     topic: equipment_systems
