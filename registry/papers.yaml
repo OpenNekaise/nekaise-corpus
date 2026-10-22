@@ -162197,3 +162197,56 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W399462216
     resolution: 'sim1: openalex location; resolution retry'
+  - id: arx-autonomous-mobile-robot-navigation-in-uneven-a
+    title: Autonomous Mobile Robot Navigation in Uneven and Unstructured Indoor Environments
+    url: https://arxiv.org/pdf/1710.10523v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-10-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1710.10523
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1710.10523 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
+  - id: arx-rebar-low-variance-unbiased-gradient-estimates
+    title: 'REBAR: Low-variance, unbiased gradient estimates for discrete latent variable
+      models'
+    url: https://arxiv.org/pdf/1703.07370v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2017-03-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1703.07370
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1703.07370 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
+  - id: arx-modeling-and-optimization-of-complex-building-
+    title: Modeling and Optimization of Complex Building Energy Systems with Deep Neural
+      Networks
+    url: https://arxiv.org/pdf/1711.02278v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-11-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1711.02278
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1711.02278 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
