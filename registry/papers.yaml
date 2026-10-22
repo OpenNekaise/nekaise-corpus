@@ -162146,23 +162146,6 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-22'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-22'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location; resolution retry'
   - id: arx-autonomous-mobile-robot-navigation-in-uneven-a
     title: Autonomous Mobile Robot Navigation in Uneven and Unstructured Indoor Environments
     url: https://arxiv.org/pdf/1710.10523v1
@@ -162816,6 +162799,91 @@ sources:
     persistent_id: doi:10.48550/arxiv.1708.08826
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1708.08826 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
+  - id: oas-w413185441
+    title: 建築構造物の減衰性能と生体の生理反応--座位・立位での振動暴露に対する手掌部発汗
+    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10102222&elmid=Body&fname=079_Kotake.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1997-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W413185441
+    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10102222&elmid=Body&fname=079_Kotake.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-22'
+    selected_version: submittedVersion
+    origin_ids: openalex:W413185441
+    resolution: 'sim1: openalex location'
+  - id: arx-generalized-non-crossing-partitions-and-buildi
+    title: Generalized non-crossing Partitions and Buildings
+    url: https://arxiv.org/pdf/1706.00529v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-06-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1706.00529
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1706.00529 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
+  - id: arx-building-extraction-at-scale-using-convolution
+    title: 'Building Extraction at Scale using Convolutional Neural Network: Mapping
+      of the United States'
+    url: https://arxiv.org/pdf/1805.08946v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-05-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1805.08946
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1805.08946 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
+  - id: arx-iot-based-big-data-analysis-of-school-building
+    title: IoT-based Big Data Analysis of School Buildings Performance
+    url: https://arxiv.org/pdf/1805.09561v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-05-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1805.09561
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1805.09561 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-22'
+  - id: arx-iot-for-green-building-management
+    title: IoT for Green Building Management
+    url: https://arxiv.org/pdf/1805.10635v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-05-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1805.10635
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1805.10635 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
