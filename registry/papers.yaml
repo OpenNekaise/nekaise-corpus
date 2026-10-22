@@ -162040,3 +162040,40 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W1946152366
     resolution: 'sim1: openalex location'
+  - id: ope-developing-the-mental-effort-and-load-translin
+    title: Developing the Mental Effort and Load–Translingual Scale (MEL-TS) as a Foundation
+      for Translingual Research in Self-Regulated Learning
+    url: https://rune.une.edu.au/web/retrieve/7961eafb-b55b-4117-8ea7-f95836d817dd
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s10648-024-09978-8
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://rune.une.edu.au/web/retrieve/7961eafb-b55b-4117-8ea7-f95836d817dd;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-22'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s10648-024-09978-8 openalex:W4406211188
+    resolution: 'legacy: openalex location'
+  - id: arx-two-optimization-problems-in-thermal-insulatio
+    title: Two optimization problems in thermal insulation
+    url: https://arxiv.org/pdf/1708.08202v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-08-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1708.08202
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1708.08202 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
+    origin_ids: doi:10.1090/noti1557
