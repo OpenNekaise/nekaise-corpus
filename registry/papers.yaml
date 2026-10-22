@@ -162607,3 +162607,37 @@ sources:
     rights_verified_at: '2026-10-22T12:48:43Z'
     origin_ids: doi:10.3389/fbuil.2023.1275425 openalex:W4390610553
     resolution: 'legacy: openalex location'
+  - id: arx-mapping-walls-of-indoor-environment-using-rgb-
+    title: Mapping Walls of Indoor Environment using RGB-D Sensor
+    url: https://arxiv.org/pdf/1803.10687v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2018-03-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1803.10687
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1803.10687 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
+  - id: arx-buildings-groups-of-lie-type-and-random-walks
+    title: Buildings, groups of Lie type, and random walks
+    url: https://arxiv.org/pdf/1803.10880v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-03-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1803.10880
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1803.10880 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-22'
