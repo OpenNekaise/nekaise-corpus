@@ -161460,24 +161460,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.jobe.2025.112468 openalex:W4408783824
     resolution: 'legacy: openalex location'
-  - id: ope-behaviour-of-short-columns-made-with-conventio
-    title: 'Behaviour of short columns made with conventional or FRP-confined rubberised
-      concrete: An experimental and numerical investigation'
-    url: https://wrap.warwick.ac.uk/184547/1/WRAP-behaviour-short-columns-made-conventional-FRP-confined-rubberised-concrete-2024.pdf
-    source: openalex
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2024-03-23'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.engstruct.2024.117885
-    license_evidence: no licence statement for this copy [copy https://wrap.warwick.ac.uk/184547/1/WRAP-behaviour-short-columns-made-conventional-FRP-confined-rubberised-concrete-2024.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-21'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.engstruct.2024.117885 openalex:W4393123791
-    resolution: 'legacy: openalex location'
   - id: ope-shaking-table-tests-and-numerical-analysis-of-
     title: Shaking table tests and numerical analysis of RC coupled shear wall structure
       with hybrid replaceable coupling beams
@@ -161496,42 +161478,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1002/eqe.4088 openalex:W4391360159
     resolution: 'legacy: openalex location'
-  - id: ope-experimental-and-analytical-investigations-of-
-    title: Experimental and analytical investigations of prefabricated segmental concrete
-      beams post-tensioned with unbonded steel/FRP tendons subjected to impac
-    url: https://espace.curtin.edu.au/bitstream/20.500.11937/96059/2/95824.pdf
-    source: openalex
-    license: cc-by
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2023-12-22'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.ijimpeng.2023.104868
-    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
-      [copy https://espace.curtin.edu.au/bitstream/20.500.11937/96059/2/95824.pdf; version
-      submittedVersion; rights accepted]
-    rights_verified_at: '2026-10-21'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.ijimpeng.2023.104868 openalex:W4390116552
-    resolution: 'legacy: openalex location'
-  - id: oas-w2111364805
-    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2005-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2111364805
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-21'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2111364805
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-10-34428-0002002285-3a94f64b
     title: Report of the Symposium on Ancient Buildings in Tetsugakudo Park
     url: https://toyo.repo.nii.ac.jp/record/2002285/files/kogyogijutsu47_005-007.pdf
@@ -162199,4 +162145,38 @@ sources:
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
+    rights_verified_at: '2026-10-22'
+  - id: ope-autonomous-deployment-of-a-solar-panel-using-e
+    title: Autonomous Deployment of a Solar Panel Using Elastic Origami and Distributed
+      Shape-Memory-Polymer Actuators
+    url: https://arxiv.org/pdf/1810.08978
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-06-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1103/physrevapplied.11.064069
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1810.08978;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-22'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1103/physrevapplied.11.064069 openalex:W2896751739
+    resolution: 'legacy: openalex location'
+  - id: arx-guides-geospatial-urban-infrastructure-data-en
+    title: GUIDES - Geospatial Urban Infrastructure Data Engineering Solutions
+    url: https://arxiv.org/pdf/1710.04144v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-10-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1710.04144
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1710.04144 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-22'
