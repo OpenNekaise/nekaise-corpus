@@ -346531,19 +346531,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1928-01-20'']: published
       in 1928, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-sim-riba-journal-1928-02-25-35-8-dc86a666
-    title: 'Journal of the Royal Institute of British Architects 1928-02-25: Vol 35
-      Iss 8, v. 35 (1928)'
-    url: https://archive.org/download/sim_riba-journal_1928-02-25_35_8/sim_riba-journal_1928-02-25_35_8_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1928'
-    license_evidence: 'Internet Archive item metadata date/year [''1928-02-25'']: published
-      in 1928, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-sim-riba-journal-1928-03-10-35-9-63dbfd08
     title: 'Journal of the Royal Institute of British Architects 1928-03-10: Vol 35
       Iss 9, v. 35 (1928)'
@@ -347135,19 +347122,6 @@ sources:
       date/year [''1912'']: published in 1912, US copyright expired (publications up
       to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-traitdelartdela00mygoog-96302c8e
-    title: Traité de l'art de la charpenterie, v. 2 (1842)
-    url: https://archive.org/download/traitdelartdela00mygoog/traitdelartdela00mygoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: fr
-    published_at: '1842'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1841'', ''1842'']: published in 1842, US copyright expired (publications
-      up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-radfordscycloped11johnuoft-70108467
     title: Radford's cyclopedia of construction; carpentry, building and architecture.
       Based on the practical experience of a large, v. 11 (1909)
@@ -347259,19 +347233,6 @@ sources:
     license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
       date/year [''1909'']: published in 1909, US copyright expired (publications up
       to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
-  - id: arc-traitdecharpent00adhgoog-cede7659
-    title: Traité de charpente (1854)
-    url: https://archive.org/download/traitdecharpent00adhgoog/traitdecharpent00adhgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: fr
-    published_at: '1854'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1854'', ''1854'']: published in 1854, US copyright expired (publications
-      up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
   - id: arc-carpenterjoiner00holl-610e8006
     title: 'The carpenter''s and joiner''s hand-book : containing a complete treatise
@@ -348477,18 +348438,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
       in 1812, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-traitetheoriquee02rond-320cd9d4
-    title: Traité théorique et pratique de l'art de bâtir, v. 2 (1812)
-    url: https://archive.org/download/traitetheoriquee02rond/traitetheoriquee02rond_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: fr
-    published_at: '1812'
-    license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
-      in 1812, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-traitetheoriquee03rond-7aae550e
     title: Traité théorique et pratique de l'art de bâtir, v. 3 (1812)
     url: https://archive.org/download/traitetheoriquee03rond/traitetheoriquee03rond_djvu.txt
@@ -348887,17 +348836,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1917-02'']: no licence
       and no certain publication date'
     rights_verified_at: '2026-10-23'
-  - id: arc-the-menace-of-bigness-3a6cea95
-    title: THE MENACE OF BIGNESS (1922)
-    url: https://archive.org/download/the-menace-of-bigness/THE%20MENACE%20OF%20BIGNESS_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: materials
-    format: txt
-    published_at: '1922'
-    license_evidence: 'Internet Archive item metadata date/year [''1922-05'']: no licence
-      and no certain publication date'
-    rights_verified_at: '2026-10-23'
   - id: arc-the-problem-of-the-large-lodge-ab1baa0c
     title: THE PROBLEM OF THE LARGE LODGE (1919)
     url: https://archive.org/download/the-problem-of-the-large-lodge/THE%20PROBLEM%20OF%20THE%20LARGE%20LODGE_djvu.txt
@@ -348907,17 +348845,6 @@ sources:
     format: txt
     published_at: '1919'
     license_evidence: 'Internet Archive item metadata date/year [''1919-06'']: no licence
-      and no certain publication date'
-    rights_verified_at: '2026-10-23'
-  - id: arc-the-question-of-refreshment-b0c5ee70
-    title: THE QUESTION OF REFRESHMENT (1925)
-    url: https://archive.org/download/the-question-of-refreshment/THE%20QUESTION%20OF%20REFRESHMENT_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: materials
-    format: txt
-    published_at: '1925'
-    license_evidence: 'Internet Archive item metadata date/year [''1925-08'']: no licence
       and no certain publication date'
     rights_verified_at: '2026-10-23'
   - id: arc-what-s-the-matter-with-freemasonry-5abee5cf
@@ -348941,15 +348868,4 @@ sources:
     published_at: '1925'
     license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
       in 1925, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
-  - id: arc-the-subordinate-lodge-should-take-the-initi-d3ffa875
-    title: THE SUBORDINATE LODGE SHOULD TAKE THE INITIATIVE (1923)
-    url: https://archive.org/download/the-subordinate-lodge-should-take-the-initiative/THE%20SUBORDINATE%20LODGE%20SHOULD%20TAKE%20THE%20INITIATIVE_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: materials
-    format: txt
-    published_at: '1923'
-    license_evidence: 'Internet Archive item metadata date/year [''1923-05'']: no licence
-      and no certain publication date'
     rights_verified_at: '2026-10-23'
