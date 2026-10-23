@@ -348450,30 +348450,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
       in 1812, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-traitetheoriquee04rond-024586c9
-    title: Traité théorique et pratique de l'art de bâtir, v. 4 (1812)
-    url: https://archive.org/download/traitetheoriquee04rond/traitetheoriquee04rond_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: fr
-    published_at: '1812'
-    license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
-      in 1812, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
-  - id: arc-traitetheoriquee05rond-c34f85b9
-    title: Traité théorique et pratique de l'art de bâtir, v. 5 (1812)
-    url: https://archive.org/download/traitetheoriquee05rond/traitetheoriquee05rond_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: fr
-    published_at: '1812'
-    license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
-      in 1812, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-scotchritemasonr01blan-44cddf49
     title: 'Scotch Rite masonry illustrated : the complete ritual of the ancient and
       accepted Scottish Rite profusely illustrated, v. 1 (1905)'
@@ -349227,19 +349203,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1922'']: published
       in 1922, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-cihm-90807-08c206ac
-    title: 'L''École Sociale Populaire à S.G. Mgr Paul Bruchesi, Archevêque de Montréal
-      [microforme] : rapport d''une enquête (1913)'
-    url: https://archive.org/download/cihm_90807/cihm_90807_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: fr
-    published_at: '1913'
-    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
-      in 1913, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-cihm-80285-2f0dec2e
     title: 'Nouveau système de fondations économique et perfectionné par compression
       mécanique du sol [microforme] : entreprise de c (1905)'
@@ -349266,4 +349229,442 @@ sources:
     license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
       date/year [''1880'']: published in 1880, US copyright expired (publications up
       to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-physischeundchem01accu-7251baab
+    title: 'Physische und chemische Beschaffenheit der Baumaterialien, deren Wahl, Verhalten
+      und zweckmässige Anwendung : ein Handb, v. 1 (1826)'
+    url: https://archive.org/download/physischeundchem01accu/physischeundchem01accu_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1826'
+    license_evidence: 'Internet Archive item metadata date/year [''1826'']: published
+      in 1826, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-travauxpublicset00expo-b4e02b70
+    title: Travaux publics et constructions civiles (1868)
+    url: https://archive.org/download/travauxpublicset00expo/travauxpublicset00expo_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1868'
+    license_evidence: 'Internet Archive item metadata date/year [''1868'']: published
+      in 1868, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-biostor-257634-79e6e84c
+    title: On the comparative value and durability of the building materials in use
+      in Melbourne, v. 1 (1855)
+    url: https://archive.org/download/biostor-257634/biostor-257634_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: materials
+    format: txt
+    published_at: '1855'
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1855', '1855']
+    rights_verified_at: '2026-10-23'
+  - id: arc-universiteitleiden-dig-koloniaal-weekblad-1-2794e408
+    title: 'Het Koloniaal Weekblad (19 juni 1913) : Orgaan der Vereeniging Oost en West,
+      v. 13 (1913)'
+    url: https://archive.org/download/UNIVERSITEITLEIDEN-DIG-KOLONIAAL-WEEKBLAD-1913-25/MMKITLV01_PDF_TS694_1913_25_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: nl
+    published_at: '1913'
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1913-06-19', '1913']
+    rights_verified_at: '2026-10-23'
+  - id: arc-lehrbuchderbauma5619foer-cbaf8b9e
+    title: Lehrbuch der Baumaterialienkunde zum Gebrauche an technischen Hochschulen
+      und zum Selbststudium, v. v.5-6(1912) (1903)
+    url: https://archive.org/download/lehrbuchderbauma5619foer/lehrbuchderbauma5619foer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-wiebauenmaterial02rasc-ecea1471
+    title: 'Wie Bauen? : Materialien und Konstruktionen für industrielle Produktion
+      : Jahres-Ausgabe 1928 / Heinz und Bodo Rasch., v. c.2 (1928)'
+    url: https://archive.org/download/wiebauenmaterial02rasc/wiebauenmaterial02rasc_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1928'
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-gb-1873-1004-de-witt-1f9c1bba
+    title: De Witt - Materials for Building Purposes, British Patent 1004 of 1873 (1873)
+    url: https://archive.org/download/gb-1873-1004-de-witt/GB-1873-1004_DeWitt_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1873'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1873-06-16']
+    rights_verified_at: '2026-10-23'
+  - id: arc-gb-1884-17056-de-ricci-b096d649
+    title: De Ricci - Waterproof and Bullet Proof Material, British Patent 17056 of
+      1884 (1884)
+    url: https://archive.org/download/gb-1884-17056-de-ricci/GB-1884-17056_DeRicci_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1884'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1884-12-31']
+    rights_verified_at: '2026-10-23'
+  - id: arc-materialsofconst0000mill-g9q5-546b130c
+    title: 'Materials of construction : their manufacture and properties (1915)'
+    url: https://archive.org/download/materialsofconst0000mill_g9q5/materialsofconst0000mill_g9q5_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-1926-modern-store-fronts-hooker-glass-925ec39a
+    title: Modern Store Fronts Attract Attention (1926)
+    url: https://archive.org/download/1926-modern-store-fronts-hooker-glass/1926%20Modern%20StoreFronts%20HookerGlass_djvu.txt
+    source: internet_archive
+    license: cc-by-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    license_url: https://creativecommons.org/licenses/by-nd/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nd/4.0/']
+      date/year ['1926']
+    rights_verified_at: '2026-10-23'
+  - id: arc-1926-blue-print-book-hooker-glass-058a2ca1
+    title: The Blue Print Book of Hooker Hollow Metal Store Fronts (1926)
+    url: https://archive.org/download/1926-blue-print-book-hooker-glass/1926%20Blue%20Print%20Book%20HookerGlass_djvu.txt
+    source: internet_archive
+    license: cc-by-nd
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1926'
+    license_url: https://creativecommons.org/licenses/by-nd/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nd/4.0/']
+      date/year ['1926']
+    rights_verified_at: '2026-10-23'
+  - id: arc-tapestry-brickwork-202408-c3676e3f
+    title: Tapestry Brickwork (1911)
+    url: https://archive.org/download/tapestry-brickwork_202408/Tapestry%20Brickwork_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-reportofcommitte00chipiala-f8f5d3ab
+    title: 'Report of the Committee on Medical Topography, Meteorology, Endemics, etc.
+      : made to the Medical Society of the State of (1883)'
+    url: https://archive.org/download/reportofcommitte00chipiala/reportofcommitte00chipiala_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1883'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1883'']: published in 1883, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-timbertreesandf00ashegoog-c7f37d86
+    title: Timber trees and forests of North Carolina, v. nos. 6-7 (1897)
+    url: https://archive.org/download/timbertreesandf00ashegoog/timbertreesandf00ashegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1897'', ''1897'']: published in 1897, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-forestpreservat00chipgoog-63fd1284
+    title: 'Forest Preservation and Timber Cultivation: Report of the Committee on Medical
+      Topography ... (1883)'
+    url: https://archive.org/download/forestpreservat00chipgoog/forestpreservat00chipgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1883'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1883'', ''1883'']: published in 1883, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-costgrowingtimb00kirkgoog-5deaaace
+    title: Cost of Growing Timber in the Pacific Northwest, as Related to the Interest
+      ... (1915)
+    url: https://archive.org/download/costgrowingtimb00kirkgoog/costgrowingtimb00kirkgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1915'', ''1915'']: published in 1915, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-timbertreestimb02balfgoog-0481323a
+    title: 'The Timber Trees, Timber and Fancy Woods: As Also the Forests of India and
+      of Eastern and ... (1862)'
+    url: https://archive.org/download/timbertreestimb02balfgoog/timbertreestimb02balfgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1862'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1862'', ''1862'']: published in 1862, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-observationsons00guesgoog-88b2b800
+    title: Observations on Sheathing Vessels, Seasoning Timber, the Proper Time to Fall
+      Timber, the Nature ... (1805)
+    url: https://archive.org/download/observationsons00guesgoog/observationsons00guesgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1805'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1805'', ''1805'']: published in 1805, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-ahistorybritish00selbgoog-1c323f10
+    title: A history of British forest-trees, indigenous and introduced (1842)
+    url: https://archive.org/download/ahistorybritish00selbgoog/ahistorybritish00selbgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1842'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1842'', ''1842'']: published in 1842, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-tablesforusearc00walegoog-c2917336
+    title: Tables for the use of architects, engineers, surveyors, builders; mahogany,
+      deal, and timber ... (1851)
+    url: https://archive.org/download/tablesforusearc00walegoog/tablesforusearc00walegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1851'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1851'', ''1851'']: published in 1851, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-mechanicalprope00recogoog-f3ec81a9
+    title: The mechanical properties of wood, including a discussion of the factors
+      affecting the mechanical properties, and method (1914)
+    url: https://archive.org/download/mechanicalprope00recogoog/mechanicalprope00recogoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1914'', ''1914'']: published in 1914, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-versucheinerauf00laugoog-ad2faffb
+    title: Versuch einer Aufstellung von Kiefernertragstafeln für das Grossherzogtum
+      Hessen gemäss den Bestimmungen des Vereins D (1904)
+    url: https://archive.org/download/versucheinerauf00laugoog/versucheinerauf00laugoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1904'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1904'', ''1904'']: published in 1904, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-suggestionsform00unkngoog-3eb7eb6a
+    title: Suggestions for Marketing Small Timber (1918)
+    url: https://archive.org/download/suggestionsform00unkngoog/suggestionsform00unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1918'']: published in 1918, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-biennialreport11commgoog-7e5054c0
+    title: Biennial Report (1888)
+    url: https://archive.org/download/biennialreport11commgoog/biennialreport11commgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1888'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1888'', ''1888'']: published in 1888, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-americanlumberi00statgoog-420a253b
+    title: American Lumber in Foreign Markets (1894)
+    url: https://archive.org/download/americanlumberi00statgoog/americanlumberi00statgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1894'', ''1894'']: published in 1894, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-designhighwaybr02ketcgoog-ea188561
+    title: The design of highway bridges of steel, timber and concrete (1920)
+    url: https://archive.org/download/designhighwaybr02ketcgoog/designhighwaybr02ketcgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1920'', ''1920'']: published in 1920, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cihm-17892-470b7a9f
+    title: Report of D.C. Lewis, on the resources of the country along the Columbia
+      River, from the boundary line to Galena Bay [mi (1884)
+    url: https://archive.org/download/cihm_17892/cihm_17892_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1884'
+    license_evidence: 'Internet Archive item metadata date/year [''1884'']: published
+      in 1884, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cihm-21472-3f0eb73b
+    title: Remarks on the importance of preserving the existing scale of duties on North
+      American and foreign timber [microform] (1834)
+    url: https://archive.org/download/cihm_21472/cihm_21472_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1834'
+    license_evidence: 'Internet Archive item metadata date/year [''1834'']: published
+      in 1834, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-biennialreportf01commgoog-57fb2977
+    title: Biennial report of the Forestry Commission for the two fiscal years ending
+      ... (1916)
+    url: https://archive.org/download/biennialreportf01commgoog/biennialreportf01commgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1916'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1916'']: published in 1916, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-chemischetechno01mayegoog-38838553
+    title: Chemische Technologie des Holzes als Baumaterial (1872)
+    url: https://archive.org/download/chemischetechno01mayegoog/chemischetechno01mayegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1872'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'']: published in 1872, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-ferrumtimbercom00unkngoog-0835c49a
+    title: The Ferrum timber company for the United States of America, organized for
+      ... (1865)
+    url: https://archive.org/download/ferrumtimbercom00unkngoog/ferrumtimbercom00unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1865'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1865'']: published in 1865, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-onstrengthameri00thurgoog-49a8ac36
+    title: On the strength of American timber (1879)
+    url: https://archive.org/download/onstrengthameri00thurgoog/onstrengthameri00thurgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1879'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1879'']: published in 1879, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-whitepinetimbers00unit-adf361ab
+    title: White pine timber supplies. Letter from the secretary of agriculture, transmitting,
+      in response to Senate resolution of  (1897)
+    url: https://archive.org/download/whitepinetimbers00unit/whitepinetimbers00unit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1897'']:
+      a rights statement is not a recognized licence or public-domain statement'
     rights_verified_at: '2026-10-23'
