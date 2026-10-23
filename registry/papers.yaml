@@ -163193,3 +163193,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2762464046
     resolution: 'legacy: openalex location'
+  - id: ope-applied-artificial-intelligence-for-predicting
+    title: Applied artificial intelligence for predicting construction projects delay
+    url: https://uhra.herts.ac.uk/id/eprint/9329/1/1_s2.0_S2666827021000839_main.pdf
+    source: openalex
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-09-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.mlwa.2021.100166
+    license_evidence: no licence statement for this copy [copy https://uhra.herts.ac.uk/id/eprint/9329/1/1_s2.0_S2666827021000839_main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-22'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.mlwa.2021.100166 openalex:W3203495899
+    resolution: 'legacy: openalex location'
