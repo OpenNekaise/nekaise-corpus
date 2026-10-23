@@ -338763,18 +338763,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1900-06'']: no licence
       and no certain publication date'
     rights_verified_at: '2026-10-23'
-  - id: arc-sim-municipal-affairs-1901-5-contents-afb8f089
-    title: 'Municipal Affairs 1901: Vol 5 Table of Contents, v. 5 (1901)'
-    url: https://archive.org/download/sim_municipal-affairs_1901_5_contents/sim_municipal-affairs_1901_5_contents_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1901'
-    license_evidence: 'Internet Archive item metadata date/year [''1901'']: published
-      in 1901, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-sim-municipal-affairs-1901-03-5-1-0e4017d0
     title: 'Municipal Affairs 1901-03: Vol 5 Iss 1, v. 5 (1901)'
     url: https://archive.org/download/sim_municipal-affairs_1901-03_5_1/sim_municipal-affairs_1901-03_5_1_djvu.txt
@@ -338785,30 +338773,6 @@ sources:
     language: en
     published_at: '1901'
     license_evidence: 'Internet Archive item metadata date/year [''1901-03'']: no licence
-      and no certain publication date'
-    rights_verified_at: '2026-10-23'
-  - id: arc-sim-municipal-affairs-1902-6-contents-6528250f
-    title: 'Municipal Affairs 1902: Vol 6 Table of Contents, v. 6 (1902)'
-    url: https://archive.org/download/sim_municipal-affairs_1902_6_contents/sim_municipal-affairs_1902_6_contents_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1902'
-    license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
-      in 1902, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
-  - id: arc-sim-municipal-affairs-1902-06-6-2-b3670de5
-    title: 'Municipal Affairs 1902-06: Vol 6 Iss 2, v. 6 (1902)'
-    url: https://archive.org/download/sim_municipal-affairs_1902-06_6_2/sim_municipal-affairs_1902-06_6_2_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1902'
-    license_evidence: 'Internet Archive item metadata date/year [''1902-06'']: no licence
       and no certain publication date'
     rights_verified_at: '2026-10-23'
   - id: arc-sim-inland-architect-and-news-record-1883-0-4b31e304
@@ -348179,4 +348143,616 @@ sources:
     published_at: '1924'
     license_evidence: 'Internet Archive item metadata date/year [''1924'']: published
       in 1924, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-laconstructione01guilgoog-50d76794
+    title: La construction en ciment armé. Applications générales. Théories et systèmes
+      divers (1902)
+    url: https://archive.org/download/laconstructione01guilgoog/laconstructione01guilgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: fr
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902'', ''1902'']: published in 1902, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-handbuchfreisen03empegoog-3e63330c
+    title: Handbuch für Eisenbetonbau, v. 6 (1911)
+    url: https://archive.org/download/handbuchfreisen03empegoog/handbuchfreisen03empegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: de
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1910'', ''1911'']: published in 1911, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-derportlandceme00unkngoog-bcad918e
+    title: 'Der Portland-Cement und seine Anwendungen im Bauwesen : verfasst im Auftrage
+      des Vereins Deutscher Portland-Cement-Fabri (1905)'
+    url: https://archive.org/download/derportlandceme00unkngoog/derportlandceme00unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: de
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1905'']: published in 1905, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-concreteconstru01compgoog-b9b599c3
+    title: Concrete construction about the home and on the farm (1909)
+    url: https://archive.org/download/concreteconstru01compgoog/concreteconstru01compgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1905'', ''1909'']: published in 1909, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-structuralengine04inst-91eefdff
+    title: The Structural engineer; the journal of the Institution of Structural Engineers,
+      v. 4 (1909)
+    url: https://archive.org/download/structuralengine04inst/structuralengine04inst_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofann16amer-ab09df8c
+    title: Proceedings of the ... annual convention held at ..., v. Volume 16 (1914)
+    url: https://archive.org/download/proceedingsofann16amer/proceedingsofann16amer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofann17amer-880fdf42
+    title: Proceedings of the ... annual convention held at ..., v. Volume 17 (1914)
+    url: https://archive.org/download/proceedingsofann17amer/proceedingsofann17amer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofann81912nati-1a9afee1
+    title: Proceedings of the ... annual convention held at ..., v. Volume 8 1912 (1907)
+    url: https://archive.org/download/proceedingsofann81912nati/proceedingsofann81912nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
+      in 1907, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofann91912nati-fcc4673d
+    title: Proceedings of the ... annual convention held at ..., v. Volume 9 1912 (1907)
+    url: https://archive.org/download/proceedingsofann91912nati/proceedingsofann91912nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
+      in 1907, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofann71911nati-2b576182
+    title: Proceedings of the ... annual convention held at ..., v. Volume 7 1911 (1907)
+    url: https://archive.org/download/proceedingsofann71911nati/proceedingsofann71911nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
+      in 1907, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofcon21906nati-c03cc1e3
+    title: Proceedings of ... convention ..., v. Volume 2 1906 (1905)
+    url: https://archive.org/download/proceedingsofcon21906nati/proceedingsofcon21906nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
+      in 1905, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofcon31907nati-2dd60e55
+    title: Proceedings of ... convention ..., v. Volume 3 1907 (1905)
+    url: https://archive.org/download/proceedingsofcon31907nati/proceedingsofcon31907nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
+      in 1905, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofcon41908nati-55793baa
+    title: Proceedings of ... convention ..., v. Volume 4 1908 (1905)
+    url: https://archive.org/download/proceedingsofcon41908nati/proceedingsofcon41908nati_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
+      in 1905, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofann1916amer-655dc78f
+    title: Proceedings of the ... annual convention held at ..., v. Volume 12 1916 (1914)
+    url: https://archive.org/download/proceedingsofann1916amer/proceedingsofann1916amer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-proceedingsofann1917amer-1d89b3bd
+    title: Proceedings of the ... annual convention held at ..., v. Volume 13 1917 (1914)
+    url: https://archive.org/download/proceedingsofann1917amer/proceedingsofann1917amer_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914'', ''1914'']:
+      published in 1914, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cihm-66229-159b7500
+    title: Ce que le cultivateur peut faire avec du bêton [microforme] (1919)
+    url: https://archive.org/download/cihm_66229/cihm_66229_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: fr
+    published_at: '1919'
+    license_evidence: 'Internet Archive item metadata date/year [''1919'']: published
+      in 1919, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-comparisonofgird00bann-bcd30be6
+    title: Comparison of girderless with beam and girder reinforced concrete floors
+      (1911)
+    url: https://archive.org/download/comparisonofgird00bann/comparisonofgird00bann_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: de
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-derportlandcemen00vere-7dab9cc4
+    title: Der Portland-Cement und seine Anwendungen im Bauwesen (1892)
+    url: https://archive.org/download/derportlandcemen00vere/derportlandcemen00vere_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: de
+    published_at: '1892'
+    license_evidence: 'Internet Archive item metadata date/year [''1892'']: published
+      in 1892, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-gri-33125007990894-aa918484
+    title: Calcul des poutres droites et planchers en béton de ciment armé (1899)
+    url: https://archive.org/download/gri_33125007990894/gri_33125007990894_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: fr
+    published_at: '1899'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1899'']: published in 1899, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-hennebiquesystem00henn-a5f67222
+    title: Hennebique system of ferro-concrete construction, principles, advantages,
+      application (1902)
+    url: https://archive.org/download/hennebiquesystem00henn/hennebiquesystem00henn_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: fr
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-versuchemitbeton00graf-8bf1eb0d
+    title: Versuche mit beton- und eisen-betonquadern zu brückengelenken und auflagern
+      .. (1921)
+    url: https://archive.org/download/versuchemitbeton00graf/versuchemitbeton00graf_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: de
+    published_at: '1921'
+    license_evidence: 'Internet Archive item metadata date/year [''1921'']: published
+      in 1921, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-gri-33125007396647-7216aee7
+    title: Manuel théorique & pratique du constructeur en ciment armé (1909)
+    url: https://archive.org/download/gri_33125007396647/gri_33125007396647_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: fr
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'']: published in 1909, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-dereisenbetonint00sali-95455aa1
+    title: Der Eisenbeton in Theorie und Konstruktion. Ein Leitfaden durch die neueren
+      Bauweisen in Stein und Metall (1906)
+    url: https://archive.org/download/dereisenbetonint00sali/dereisenbetonint00sali_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: de
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata date/year [''1906'']: published
+      in 1906, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-gri-33125010456651-247bc438
+    title: Ausgewählte Monier- und Beton-Bauwerke, Strassen- und Eisenbahnbrücken,
+      Hochbauten, Silos, Futtermauern, Kanäle u. s. (1894)
+    url: https://archive.org/download/gri_33125010456651/gri_33125010456651_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: de
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1894'', ''1894'']: published in 1894, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cyclopediaofcivi03ameriala-d692be1f
+    title: Cyclopedia of civil engineering; a general reference work on surveying, railroad
+      engineering, structural engineering, ro, v. 3 (1908)
+    url: https://archive.org/download/cyclopediaofcivi03ameriala/cyclopediaofcivi03ameriala_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1908'']: published in 1908, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cyclopediaofciv04ameriala-ad184a66
+    title: Cyclopedia of civil engineering; a general reference work on surveying, railroad
+      engineering, structural engineering, ro, v. 4 (1908)
+    url: https://archive.org/download/cyclopediaofciv04ameriala/cyclopediaofciv04ameriala_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1908'']: published in 1908, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cyclopediaofcivi05amerrich-1e1aed06
+    title: Cyclopedia of civil engineering; a general reference work on surveying, highway
+      construction, railroad engineering, eart, v. 5 (1920)
+    url: https://archive.org/download/cyclopediaofcivi05amerrich/cyclopediaofcivi05amerrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1920'']: published in 1920, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cyclopediaofcivi08amerrich-e6079de0
+    title: Cyclopedia of civil engineering; a general reference work on surveying, highway
+      construction, railroad engineering, eart, v. 8 (1920)
+    url: https://archive.org/download/cyclopediaofcivi08amerrich/cyclopediaofcivi08amerrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1920'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1920'']: published in 1920, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-pontsenmaonneri00rsgoog-fcab4c87
+    title: Ponts en maçonnerie, v. 2 (1888)
+    url: https://archive.org/download/pontsenmaonneri00rsgoog/pontsenmaonneri00rsgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1888'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1887'', ''1888'']: published in 1888, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-masonryanelemen00barhgoog-faf5be1f
+    title: 'Masonry: An Elementary Text-book for Students in Trade Schools and Apprentices
+      (1914)'
+    url: https://archive.org/download/masonryanelemen00barhgoog/masonryanelemen00barhgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1914'', ''1914'']: published in 1914, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-atreatiseonmaso10bakegoog-f7b63d0b
+    title: A treatise on masonry construction (1913)
+    url: https://archive.org/download/atreatiseonmaso10bakegoog/atreatiseonmaso10bakegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'', ''1913'']: published in 1913, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-treatiseonmasonr00bake-566baadd
+    title: A treatise on masonry construction (1902)
+    url: https://archive.org/download/treatiseonmasonr00bake/treatiseonmasonr00bake_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-pratiquedelartd00larogoog-1cc6a841
+    title: Pratique de l'art de construire; maçonnerie, terrasse et platrerie .. (1865)
+    url: https://archive.org/download/pratiquedelartd00larogoog/pratiquedelartd00larogoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1865'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1863'', ''1865'']: published in 1865, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-tudesurladmini00dubouoft-79a0768a
+    title: Étude sur l'administration et l'exploitation des carrières marbres, porphyre,
+      granit, etc. dans le monde romain (1908)
+    url: https://archive.org/download/tudesurladmini00dubouoft/tudesurladmini00dubouoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata date/year [''1908'']: published
+      in 1908, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-procdsetmatriau02debagoog-5e98487d
+    title: Procédés et matériaux de construction (1884)
+    url: https://archive.org/download/procdsetmatriau02debagoog/procdsetmatriau02debagoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1884'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1884'']: published in 1884, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-traitetheoriquee01rond-4dd5858b
+    title: Traité théorique et pratique de l'art de bâtir, v. 1a (1812)
+    url: https://archive.org/download/traitetheoriquee01rond/traitetheoriquee01rond_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1812'
+    license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
+      in 1812, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-traitetheoriquee02rond-320cd9d4
+    title: Traité théorique et pratique de l'art de bâtir, v. 2 (1812)
+    url: https://archive.org/download/traitetheoriquee02rond/traitetheoriquee02rond_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1812'
+    license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
+      in 1812, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-traitetheoriquee03rond-7aae550e
+    title: Traité théorique et pratique de l'art de bâtir, v. 3 (1812)
+    url: https://archive.org/download/traitetheoriquee03rond/traitetheoriquee03rond_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1812'
+    license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
+      in 1812, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-traitetheoriquee04rond-024586c9
+    title: Traité théorique et pratique de l'art de bâtir, v. 4 (1812)
+    url: https://archive.org/download/traitetheoriquee04rond/traitetheoriquee04rond_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1812'
+    license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
+      in 1812, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-traitetheoriquee05rond-c34f85b9
+    title: Traité théorique et pratique de l'art de bâtir, v. 5 (1812)
+    url: https://archive.org/download/traitetheoriquee05rond/traitetheoriquee05rond_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1812'
+    license_evidence: 'Internet Archive item metadata date/year [''1812'']: published
+      in 1812, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-scotchritemasonr01blan-44cddf49
+    title: 'Scotch Rite masonry illustrated : the complete ritual of the ancient and
+      accepted Scottish Rite profusely illustrated, v. 1 (1905)'
+    url: https://archive.org/download/scotchritemasonr01blan/scotchritemasonr01blan_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
+      in 1905, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-masonrypastprese00john-183973d8
+    title: 'Masonry, past, present and future : proved by tradition, history and revelation
+      : including two hundred and seventy-five (1871)'
+    url: https://archive.org/download/masonrypastprese00john/masonrypastprese00john_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1871'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1871'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-bub-gb-v0huaaaayaaj-fbed441f
+    title: Lehrbuch der Mauerwerks-Konstruktionen. Mit 508 Text-Abbildungen (1901)
+    url: https://archive.org/download/bub_gb_V0hUAAAAYAAJ/bub_gb_V0hUAAAAYAAJ_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1901'
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1901', '1901']
+    rights_verified_at: '2026-10-23'
+  - id: arc-baukundedesarchi11unse-6d76c190
+    title: Baukunde des Architekten (Deutsches Bauhandbuch), v. 1.1 (1903)
+    url: https://archive.org/download/baukundedesarchi11unse/baukundedesarchi11unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-pontsetouvragese00arag-72f1c46c
+    title: Ponts et ouvrages en maçonnerie (1909)
+    url: https://archive.org/download/pontsetouvragese00arag/pontsetouvragese00arag_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: fr
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-circularofbureau321unse-f66e1a41
+    title: 'Circular of the Bureau of Standards no. 321: United States government master
+      specification for cement, masonry, v. NBS Circular 321 (1927)'
+    url: https://archive.org/download/circularofbureau321unse/circularofbureau321unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    license_evidence: 'Internet Archive item metadata date/year [''1927-02-01'']: published
+      in 1927, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-trattatoteoricoe01rond-9b418311
+    title: Trattato teorico e pratico dell'arte di edificare, v. v. 1 (1832)
+    url: https://archive.org/download/trattatoteoricoe01rond/trattatoteoricoe01rond_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: it
+    published_at: '1832'
+    license_evidence: 'Internet Archive item metadata date/year [''1832'']: published
+      in 1832, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-trattatoteoricoe21rond-aa02ffbb
+    title: Trattato teorico e pratico dell'arte di edificare, v. v. 2 pt. 1 (1832)
+    url: https://archive.org/download/trattatoteoricoe21rond/trattatoteoricoe21rond_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: it
+    published_at: '1832'
+    license_evidence: 'Internet Archive item metadata date/year [''1832'']: published
+      in 1832, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
