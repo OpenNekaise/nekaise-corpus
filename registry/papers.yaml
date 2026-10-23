@@ -162869,23 +162869,6 @@ sources:
       version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
       -> cc0 (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-22'
-  - id: ope-structural-performance-of-cross-laminated-timb
-    title: Structural performance of cross laminated timber panels as walls
-    url: http://eprints.usq.edu.au/18406/1/Turner_2010.pdf
-    source: openalex
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2010-10-01'
-    document_type: article
-    persistent_id: https://openalex.org/W175225039
-    license_evidence: no licence statement for this copy [copy http://eprints.usq.edu.au/18406/1/Turner_2010.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-22'
-    selected_version: submittedVersion
-    origin_ids: openalex:W175225039
-    resolution: 'legacy: openalex location'
   - id: ope-life-cycle-assessment-of-modular-steel-constru
     title: Life Cycle Assessment of Modular Steel Construction for Sustainable Social
       Housing in the UK
@@ -163299,3 +163282,57 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-23'
+  - id: arx-on-geodesic-ray-bundles-in-buildings
+    title: On geodesic ray bundles in buildings
+    url: https://arxiv.org/pdf/1708.08431v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-08-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1708.08431
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1708.08431 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+    origin_ids: doi:10.1007/s10711-018-0401-y
+  - id: arx-waveform-signal-entropy-and-compression-study-
+    title: Waveform Signal Entropy and Compression Study of Whole-Building Energy Datasets
+    url: https://arxiv.org/pdf/1810.10887v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-10-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1810.10887
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1810.10887 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+  - id: arx-structural-damage-identification-using-piezoel
+    title: Structural Damage Identification Using Piezoelectric Impedance Measurement
+      with Sparse Inverse Analysis
+    url: https://arxiv.org/pdf/1708.02968v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-08-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1708.02968
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1708.02968 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+    origin_ids: doi:10.1088/1361-665x/aaacba
