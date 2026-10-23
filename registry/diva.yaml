@@ -253004,21 +253004,6 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-22'
-  - id: dva-framtida-produktionsutveckling-f-r-nybyggnation-av-b
-    title: 'FRAMTIDA PRODUKTIONSUTVECKLING FÖR NYBYGGNATION AV BOSTÄDER: EN FALLSTUDIE
-      PÅ ETT BYGGHERREFÖRETAG, HUR DE KAN ANPASSA SIN VERKSAMHETTILL KONSTANTA FÖ'
-    url: https://www.diva-portal.org/smash/get/diva2:1213706/FULLTEXT01.pdf
-    source: diva
-    license: unverified
-    topic: construction
-    format: pdf
-    language: sv
-    published_at: '2017'
-    document_type: thesis
-    persistent_id: diva2:1213706
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-22'
   - id: dva-railway-infrastructure-management-system-engineering
     title: Railway Infrastructure Management - System Engineering and Requirement Management
     url: https://www.diva-portal.org/smash/get/diva2:1207027/FULLTEXT01.pdf
@@ -267321,20 +267306,6 @@ sources:
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-23'
-  - id: dva-skarvahuset
-    title: Skarvahuset
-    url: https://www.diva-portal.org/smash/get/diva2:1703407/FULLTEXT01.pdf
-    source: diva
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: sv
-    published_at: '2021'
-    document_type: thesis
-    persistent_id: diva2:1703407
-    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
-      licence'
-    rights_verified_at: '2026-10-23'
   - id: dva-reinfera
     title: REINFERA
     url: https://www.diva-portal.org/smash/get/diva2:1703412/FULLTEXT01.pdf
@@ -267675,6 +267646,504 @@ sources:
     published_at: '2022'
     document_type: thesis
     persistent_id: diva2:1704882
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-deep-reinforcement-learning-for-building-control-a-c
+    title: 'Deep Reinforcement Learning for Building Control: A comparative study for
+      applying Deep Reinforcement Learning to Building Energy Management'
+    url: https://www.diva-portal.org/smash/get/diva2:1704894/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1704894
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-terbruket
+    title: Återbruket
+    url: https://www.diva-portal.org/smash/get/diva2:1705179/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: sv
+    published_at: '2021'
+    document_type: thesis
+    persistent_id: diva2:1705179
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-framtida-produktionsutveckling-f-r-nybyggnatio-2
+    title: 'FRAMTIDA PRODUKTIONSUTVECKLING FÖR NYBYGGNATION AV BOSTÄDER: EN FALLSTUDIE
+      PÅ ETT BYGGHERREFÖRETAG,HUR DE KAN ANPASSA SIN VERKSAMHETTILL KONSTANTA FÖR'
+    url: https://www.diva-portal.org/smash/get/diva2:1144074/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2017'
+    document_type: thesis
+    persistent_id: diva2:1144074
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-evaluation-of-acoustic-visual-and-thermal-comfort-pe
+    title: 'Evaluation of acoustic, visual and thermal comfort perception of students
+      in the Educational Building at KTH Campus: A study case in a university buil'
+    url: https://www.diva-portal.org/smash/get/diva2:1265226/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1265226
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-luftburen-v-rme-termisk-komfort-och-energianv-ndning
+    title: Luftburen värme, termisk komfort och energianvändning. Jämförelse av värmesystem
+      för ett flerbostadshus
+    url: https://www.diva-portal.org/smash/get/diva2:1077680/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2017'
+    document_type: thesis
+    persistent_id: diva2:1077680
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-transformation-of-a-policy-instrument-for-energy-ren
+    title: 'Transformation of a policy instrument for energy renovation of housing:
+      Real case application on the French tax credit for energy transition'
+    url: https://www.diva-portal.org/smash/get/diva2:1410835/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: thesis
+    persistent_id: diva2:1410835
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-feasibility-study-for-production-of-biogas-from-wast
+    title: 'Feasibility Study for Production of Biogas from Wastewater and Sewage Sludge:
+      Development of a Sustainability Assessment Framework and its Application'
+    url: https://www.diva-portal.org/smash/get/diva2:1435267/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: thesis
+    persistent_id: diva2:1435267
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-alternatives-to-carbon-capture-and-storage-ccs-in-th
+    title: 'Alternatives to carbon capture and storage (CCS) in the deep decarbonisation
+      of the Norwegian cement industry: A cost-optimisation study of GHG mitiga'
+    url: https://www.diva-portal.org/smash/get/diva2:1453168/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: thesis
+    persistent_id: diva2:1453168
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-comparing-three-machine-learning-algorithms-in-the-t
+    title: Comparing three machine learning algorithms in the task of appraising commercial
+      real estate
+    url: https://www.diva-portal.org/smash/get/diva2:1249635/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2018'
+    document_type: thesis
+    persistent_id: diva2:1249635
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-jakten-p-framg-ng-fastighetsm-klares-definition-av-f
+    title: 'Jakten på framgång: - Fastighetsmäklares definition av framgång i sitt yrke
+      och vilka faktorer som motiverar dom att nå framgång.'
+    url: https://www.diva-portal.org/smash/get/diva2:1706225/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1706225
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-modelling-critical-points-in-infrastructure
+    title: Modelling Critical Points in Infrastructure
+    url: https://www.diva-portal.org/smash/get/diva2:1706319/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1706319
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-en-oreglerad-budgivningsprocess-hur-fastighetsm-klar
+    title: 'En oreglerad budgivningsprocess: Hur fastighetsmäklare upplever att en icke
+      lagreglerad budgivningsprocess påverkar förtroendet för fastighetsmäklare '
+    url: https://www.diva-portal.org/smash/get/diva2:1701752/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1701752
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-fuktinducerade-sprickors-inverkan-p-h-lkanth-llfasth
+    title: Fuktinducerade sprickors inverkan på hålkanthållfastheten och hålstyvheten
+      hos dymlingar i gran och björk belastade vinkelrätt mot fiberriktningen
+    url: https://www.diva-portal.org/smash/get/diva2:1706578/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1706578
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-effects-of-cracking-of-coupling-beams-onhigh-rise-to
+    title: Effects of cracking of coupling beams onhigh rise towers subjected to wind
+      load
+    url: https://www.diva-portal.org/smash/get/diva2:1529776/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: thesis
+    persistent_id: diva2:1529776
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-bygglogistik-i-barkarbystaden-en-nul-gesanalys-av-lo
+    title: 'Bygglogistik i Barkarbystaden: En nulägesanalys av logistikplanering'
+    url: https://www.diva-portal.org/smash/get/diva2:1707761/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1707761
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-nitrogen-removal-in-mbbr-investigating-the-effect-of
+    title: 'Nitrogen removal in MBBR: Investigating the effect of temperature'
+    url: https://www.diva-portal.org/smash/get/diva2:1708072/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1708072
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-life-cycle-analysis-and-comparison-of-climate-impact
+    title: Life cycle analysis and comparison of climate impact for two alternative
+      floor systems for increased weight in high-rise timber buildings
+    url: https://www.diva-portal.org/smash/get/diva2:1709375/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1709375
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-a-case-study-of-estimating-algal-biomass-productivit
+    title: A case study of estimating Algal biomass productivity from wastewater treatment
+      facilities in the state of Texas and possible use
+    url: https://www.diva-portal.org/smash/get/diva2:1709690/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1709690
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-measuring-social-sustainability-of-urban-space-in-sw
+    title: Measuring Social Sustainability of Urban Space in Sweden
+    url: https://www.diva-portal.org/smash/get/diva2:1682909/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1682909
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-radio-frequency-energy-harvesting-in-embankment-dams
+    title: Radio Frequency Energy Harvesting In Embankment Dams
+    url: https://www.diva-portal.org/smash/get/diva2:1703856/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1703856
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-den-nya-fastighetsm-klarlagen-fastighetsm-klarf-reta
+    title: 'Den nya fastighetsmäklarlagen: Fastighetsmäklarföretagens ansvar att verka
+      för korrekt utformade standardavtal'
+    url: https://www.diva-portal.org/smash/get/diva2:1709976/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1709976
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-tekniska-och-ekonomiska-mo-jligheter-fo-r-fastighets
+    title: 'Tekniska och ekonomiska möjligheter för fastighetsbolag att ansluta till
+      Svenska kraftnäts balansmarknad: En lönsamhetsstudie för fastighetsbolag'
+    url: https://www.diva-portal.org/smash/get/diva2:1710858/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1710858
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-betala-eller-inte-betala-min-bostadshyra-eller-mitt-
+    title: 'Betala eller inte betala min bostadshyra eller mitt bolån?: <em>En kvantitativ
+      studie om sambandet mellan det ekonomiska och sociala kapitalets påverk'
+    url: https://www.diva-portal.org/smash/get/diva2:1703694/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1703694
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-flerbostadshus-i-tr-och-dess-betydelse-f-r-v-lm-ende
+    title: Flerbostadshus i trä och dess betydelse för välmåendet i bostadsmiljön
+    url: https://www.diva-portal.org/smash/get/diva2:1711691/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1711691
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-determination-of-diclofenac-in-wastewater-using-uhpl
+    title: Determination of Diclofenac in Wastewater Using UHPLC-MS
+    url: https://www.diva-portal.org/smash/get/diva2:1712051/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1712051
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-the-application-of-low-cost-sensors-in-estimates-of-
+    title: 'The application of low-cost sensors in estimates of greenhouse gases: A
+      field study at a wastewater treatment plant'
+    url: https://www.diva-portal.org/smash/get/diva2:1699949/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1699949
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-m-tesplats-edesta
+    title: Mötesplats Edesta
+    url: https://www.diva-portal.org/smash/get/diva2:1713232/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2021'
+    document_type: thesis
+    persistent_id: diva2:1713232
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-billsta-kulturhus
+    title: Billsta Kulturhus
+    url: https://www.diva-portal.org/smash/get/diva2:1713234/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: materials
+    format: pdf
+    language: sv
+    published_at: '2021'
+    document_type: thesis
+    persistent_id: diva2:1713234
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-lina-parkhus
+    title: Lina Parkhus
+    url: https://www.diva-portal.org/smash/get/diva2:1713228/FULLTEXT02.pdf
+    source: diva
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: sv
+    published_at: '2021'
+    document_type: thesis
+    persistent_id: diva2:1713228
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-exploatering-och-utveckling-av-det-gotl-ndska-kustla
+    title: Exploatering och utveckling av det gotländska kustlandskapet
+    url: https://www.diva-portal.org/smash/get/diva2:1709112/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: urban
+    format: pdf
+    language: sv
+    published_at: '2021'
+    document_type: thesis
+    persistent_id: diva2:1709112
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-5th-generation-district-heating-and-cooling-a-high-l
+    title: '5th Generation District Heating and Cooling: A High-Level Simulation Model
+      of a Novel District Energy Network'
+    url: https://www.diva-portal.org/smash/get/diva2:1713736/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: simulation_modeling
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1713736
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-analysis-of-benzoisothiazolinone-in-process-water-fr
+    title: Analysis of Benzoisothiazolinone in process water from operations that handle
+      large amounts of paint residues
+    url: https://www.diva-portal.org/smash/get/diva2:1714153/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1714153
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-construction-workers-use-and-experienced-comfort-of-
+    title: Construction workers’ use and experienced comfort of personal protective
+      equipment in a winter climate.
+    url: https://www.diva-portal.org/smash/get/diva2:1704782/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1704782
+    license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
+      licence'
+    rights_verified_at: '2026-10-23'
+  - id: dva-intressekonflikter-i-gaturummet-en-kvalitativ-studie
+    title: 'Intressekonflikter i gaturummet: En kvalitativ studie om cykelplanering
+      och ett urval av kommuners hantering av intressekonflikter i en svensk kontext'
+    url: https://www.diva-portal.org/smash/get/diva2:1712910/FULLTEXT01.pdf
+    source: diva
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: sv
+    published_at: '2022'
+    document_type: thesis
+    persistent_id: diva2:1712910
     license_evidence: 'DiVA swepub_mods: full text marked free; no verifiable reuse
       licence'
     rights_verified_at: '2026-10-23'
