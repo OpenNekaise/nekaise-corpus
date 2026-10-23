@@ -163086,23 +163086,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-22'
-  - id: oas-w399462216
-    title: M・E・リバーソ著『建築物の設計及び建設における価値工学のためのライフサイクル・コスト・システム』パーデュー大学, 1984年
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W399462216
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10103104&elmid=Body&fname=095_Takemori.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-22'
-    selected_version: submittedVersion
-    origin_ids: openalex:W399462216
-    resolution: 'sim1: openalex location'
   - id: ope-roadmap-on-measurement-technologies-for-next-g
     title: Roadmap on measurement technologies for next generation structural health
       monitoring systems
@@ -163710,6 +163693,75 @@ sources:
     persistent_id: doi:10.48550/arxiv.1812.06509
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1812.06509 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+  - id: arx-srm-an-efficient-framework-for-autonomous-robo
+    title: 'SRM: An Efficient Framework for Autonomous Robotic Exploration in Indoor
+      Environments'
+    url: https://arxiv.org/pdf/1812.09852v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-12-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1812.09852
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1812.09852 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-23'
+  - id: arx-statistical-analysis-of-nyc-buildings-and-wind
+    title: Statistical Analysis Of NYC Buildings And Wind Damages
+    url: https://arxiv.org/pdf/1901.00103v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-01-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1901.00103
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1901.00103 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+  - id: arx-edge-semantic-learning-strategy-for-layout-est
+    title: Edge-Semantic Learning Strategy for Layout Estimation in Indoor Environment
+    url: https://arxiv.org/pdf/1901.00621v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-01-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1901.00621
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1901.00621 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+  - id: arx-real-time-structural-health-monitoring-system-
+    title: Real-time Structural Health Monitoring System Using Internet of Things and
+      Cloud Computing
+    url: https://arxiv.org/pdf/1901.00670v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-01-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1901.00670
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1901.00670 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
