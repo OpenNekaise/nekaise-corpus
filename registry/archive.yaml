@@ -348527,30 +348527,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1927-02-01'']: published
       in 1927, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-trattatoteoricoe32rond-b7f8fd54
-    title: Trattato teorico e pratico dell'arte di edificare, v. v. 3 pt. 2 (1832)
-    url: https://archive.org/download/trattatoteoricoe32rond/trattatoteoricoe32rond_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: it
-    published_at: '1832'
-    license_evidence: 'Internet Archive item metadata date/year [''1832'']: published
-      in 1832, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
-  - id: arc-trattatoteoricoe41rond-f7896306
-    title: Trattato teorico e pratico dell'arte di edificare, v. v. 4 pt. 1 (1832)
-    url: https://archive.org/download/trattatoteoricoe41rond/trattatoteoricoe41rond_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: it
-    published_at: '1832'
-    license_evidence: 'Internet Archive item metadata date/year [''1832'']: published
-      in 1832, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-trattatoteoricoe42rond-e326fb22
     title: Trattato teorico e pratico dell'arte di edificare, v. v. 4 pt. 2 (1832)
     url: https://archive.org/download/trattatoteoricoe42rond/trattatoteoricoe42rond_djvu.txt
@@ -350637,5 +350613,625 @@ sources:
     published_at: '1904'
     license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
       date/year [''1904'', ''1904'']: published in 1904, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-vorlesungenbere00probgoog-2a5d73ef
+    title: Vorlesungen über Eisenbeton (1917)
+    url: https://archive.org/download/vorlesungenbere00probgoog/vorlesungenbere00probgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: de
+    published_at: '1917'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1917'', ''1917'']: published in 1917, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-diestatikdeseis00schmgoog-085ff61e
+    title: 'Die statik des eisenbetonbaues ... Mit ... einem anhange: Bestimmungen für
+      die ausführung von konstruktionen aus eisenbe (1909)'
+    url: https://archive.org/download/diestatikdeseis00schmgoog/diestatikdeseis00schmgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: de
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'']: published in 1909, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-investigationofa00nitk-7cac7e2d
+    title: Investigation of the actual stresses in stirrups of reinforced concrete T-beams
+      (1918)
+    url: https://archive.org/download/investigationofa00nitk/investigationofa00nitk_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata rights [''Public Domain''] date/year
+      [''1918'']: published in 1918, US copyright expired (publications up to 1928);
+      the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-scientific-american-1909-10-09-7bbfaaf5
+    title: Scientific American Volume 101 Number 15 (October 1909) (1909)
+    url: https://archive.org/download/scientific-american-1909-10-09/scientific-american-v101-n15-1909-10-09_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909-10-09'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-effectofrepeat1920182slat-fe0874c4
+    title: Effect of repeated reversals of stress on double-reinforced concrete beams.,
+      v. Technologic Pape (1920)
+    url: https://archive.org/download/effectofrepeat1920182slat/effectofrepeat1920182slat_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1920'
+    license_evidence: 'Internet Archive item metadata rights [''Technologic Papers of
+      the Bureau of Standards is a publication of the U.S. Government. The papers are
+      in the public domain and are not subject to copyright in the United States. However,
+      please pay special attention to the individual works to make sure there are no
+      copyright restrictions indicated. Individual works may require securing other
+      permissions from the original copyright holder.''] date/year [''1920'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-testsofheavily1923233slat-abfcd0eb
+    title: 'Tests of heavily reinforced concrete slab beams: effect of direction of
+      reinforcement on strength and deformation., v. Technologic Pape (1923)'
+    url: https://archive.org/download/testsofheavily1923233slat/testsofheavily1923233slat_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1923'
+    license_evidence: 'Internet Archive item metadata rights [''Technologic Papers of
+      the Bureau of Standards is a publication of the U.S. Government. The papers are
+      in the public domain and are not subject to copyright in the United States. However,
+      please pay special attention to the individual works to make sure there are no
+      copyright restrictions indicated. Individual works may require securing other
+      permissions from the original copyright holder.''] date/year [''1923'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-loadingtestofh1923236lars-a89cf0e1
+    title: Loading test of a hollow tile and reinforced concrete floor of Arlington
+      Building, Washington, D. C., v. Technologic Pape (1923)
+    url: https://archive.org/download/loadingtestofh1923236lars/loadingtestofh1923236lars_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1923'
+    license_evidence: 'Internet Archive item metadata rights [''Technologic Papers of
+      the Bureau of Standards is a publication of the U.S. Government. The papers are
+      in the public domain and are not subject to copyright in the United States. However,
+      please pay special attention to the individual works to make sure there are no
+      copyright restrictions indicated. Individual works may require securing other
+      permissions from the original copyright holder.''] date/year [''1923'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-sheartestsofre1926314slat-452cb9a4
+    title: Shear tests of reinforced concrete beams., v. Technologic Pape (1926)
+    url: https://archive.org/download/sheartestsofre1926314slat/sheartestsofre1926314slat_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1926'
+    license_evidence: 'Internet Archive item metadata rights [''Technologic Papers of
+      the Bureau of Standards is a publication of the U.S. Government. The papers are
+      in the public domain and are not subject to copyright in the United States. However,
+      please pay special attention to the individual works to make sure there are no
+      copyright restrictions indicated. Individual works may require securing other
+      permissions from the original copyright holder.''] date/year [''1926'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-jresv1n2p189-b2ba16b3
+    title: Tests of the effect of brackets in reinforced concrete rigid frames, v. 1
+      (1928)
+    url: https://archive.org/download/jresv1n2p189/jresv1n2p189_A1b_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1928'
+    license_evidence: 'Internet Archive item metadata rights [''The Bureau of Standards
+      Journal of Research is a publication of the U.S. Government. The papers are in
+      the public domain and are not subject to copyright in the United States. However,
+      please pay special attention to the individual works to make sure there are no
+      copyright restrictions indicated. Individual works may require securing other
+      permissions from the original copyright holder.''] date/year [''1928-08'']: a
+      rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-testsofreinforce00arme-f23fc242
+    title: 'Tests of reinforced concrete beams : comparison of methods of loading (1906)'
+    url: https://archive.org/download/testsofreinforce00arme/testsofreinforce00arme_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata date/year [''1906'']: published
+      in 1906, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-testsofconcreter00bran-f9b89199
+    title: Tests of concrete and reinforced concrete wall footings (1908)
+    url: https://archive.org/download/testsofconcreter00bran/testsofconcreter00bran_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata date/year [''1908'']: published
+      in 1908, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-testsofreinforce00schm-5e7c5901
+    title: 'Tests of reinforced-concrete beams : resistance to web stresses (1913)'
+    url: https://archive.org/download/testsofreinforce00schm/testsofreinforce00schm_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-gri-33125010095848-eb643c6e
+    title: 'Der Eisenbetonbau : ein Leitfaden für Schule und Praxis (1907)'
+    url: https://archive.org/download/gri_33125010095848/gri_33125010095848_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: de
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1907'']: published in 1907, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-testsofreinforce00mcco-7981ba5b
+    title: 'Tests of reinforced concrete columns : effect of end condition of reinforcement
+      and of splicing (1910)'
+    url: https://archive.org/download/testsofreinforce00mcco/testsofreinforce00mcco_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-electrolysisinco00rosa-9deaf9c7
+    title: Electrolysis in concrete .. (1913)
+    url: https://archive.org/download/electrolysisinco00rosa/electrolysisinco00rosa_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1913'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-treatiseonconcre00tayl-cae68595
+    title: A treatise on concrete, plain and reinforced:materials, construction, and
+      design of concrete and reinforced concrete, (1911)
+    url: https://archive.org/download/treatiseonconcre00tayl/treatiseonconcre00tayl_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1911'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-paper-doi-10-1038-0770via0-ae176651
+    title: Reinforced Concrete, v. 2001 (1908)
+    url: https://archive.org/download/paper-doi-10_1038_0770via0/paper-doi-10_1038_0770via0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1908'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1908-03']
+    rights_verified_at: '2026-10-23'
+  - id: arc-the-elements-of-reinforced-concrete-design-cbce0edc
+    title: The Elements Of Reinforced Concrete Design (1925)
+    url: https://archive.org/download/the-elements-of-reinforced-concrete-design/The%20Elements%20of%20Reinforced%20Concrete%20Design_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-wayss-freytag-ausfuehrungen-in-eisenbeton-1-06c3de53
+    title: Wayss & Freytag AG. Ausführungen in Eisenbeton [München 1904] (1904)
+    url: https://archive.org/download/wayss-freytag-ausfuehrungen-in-eisenbeton-1904/wayss-%26-freytag-ausfuehrungen-in-eisenbeton-1904_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: de
+    published_at: '1904'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1904', '1904']
+    rights_verified_at: '2026-10-23'
+  - id: arc-reinforcedconcre0000hale-5ae085a0
+    title: Reinforced Concrete Design (1926)
+    url: https://archive.org/download/reinforcedconcre0000hale/reinforcedconcre0000hale_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1926'
+    license_evidence: 'Internet Archive item metadata date/year [''1926'']: published
+      in 1926, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-structuralengine00kirkrich-00f5cb6d
+    title: Structural engineering (1914)
+    url: https://archive.org/download/structuralengine00kirkrich/structuralengine00kirkrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1914'']: published in 1914, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cyclopediaofcivi04turnuoft-d009f489
+    title: Cyclopedia of civil engineering; a general reference work on surveying, railroad
+      engineering, structural engineering, ro, v. 4 (1909)
+    url: https://archive.org/download/cyclopediaofcivi04turnuoft/cyclopediaofcivi04turnuoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'']: published in 1909, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cyclopediaofcivi08turnuoft-c19b4637
+    title: Cyclopedia of civil engineering; a general reference work on surveying, railroad
+      engineering, structural engineering, ro, v. 8 (1909)
+    url: https://archive.org/download/cyclopediaofcivi08turnuoft/cyclopediaofcivi08turnuoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'']: published in 1909, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cyclopediaofcivi01turnuoft-cff78f54
+    title: Cyclopedia of civil engineering; a general reference work on surveying, railroad
+      engineering, structural engineering, ro, v. 1 (1909)
+    url: https://archive.org/download/cyclopediaofcivi01turnuoft/cyclopediaofcivi01turnuoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'']: published in 1909, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-structuralengin02godfgoog-2410210f
+    title: Structural engineering .., v. 3 (1913)
+    url: https://archive.org/download/structuralengin02godfgoog/structuralengin02godfgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1907'', ''1913'']: published in 1913, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-structuralengine00briguoft-f52e1f38
+    title: Structural engineering (1908)
+    url: https://archive.org/download/structuralengine00briguoft/structuralengine00briguoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1908'']: published in 1908, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-structuralengine01swai-e4decf0c
+    title: Structural engineering, v. v.1 (1924)
+    url: https://archive.org/download/structuralengine01swai/structuralengine01swai_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1924'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1924'']: published in 1924, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-structuralengine03swai-9430fd21
+    title: Structural engineering, v. v.3 (1924)
+    url: https://archive.org/download/structuralengine03swai/structuralengine03swai_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1924'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1924'']: published in 1924, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-structuralengin01godfgoog-7eba593b
+    title: Structural Engineering ..., v. 2 (1908)
+    url: https://archive.org/download/structuralengin01godfgoog/structuralengin01godfgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1908'', ''1908'']: published in 1908, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cihm-87960-5e574c41
+    title: Structural problems. Part I [microform] (1920)
+    url: https://archive.org/download/cihm_87960/cihm_87960_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1920'
+    license_evidence: 'Internet Archive item metadata date/year [''1920'']: published
+      in 1920, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-in-ernet-dli-2015-161980-03f6abe7
+    title: Structural Engineering Loads Materials Beams (1927)
+    url: https://archive.org/download/in.ernet.dli.2015.161980/2015.161980.Structural-Engineering-Loads-Materials-Beams_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1927'
+    license_evidence: 'Internet Archive item metadata date/year [''1927'']: published
+      in 1927, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-in-ernet-dli-2015-211781-b0cab355
+    title: Structural Engineering (1928)
+    url: https://archive.org/download/in.ernet.dli.2015.211781/2015.211781.Structural-Engineering_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1928'
+    license_evidence: 'Internet Archive item metadata date/year [''1928'']: published
+      in 1928, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-dieingenieurbaut00unse-9c682847
+    title: Die Ingenieurbauten in ihrer guten Gestaltung (1923)
+    url: https://archive.org/download/dieingenieurbaut00unse/dieingenieurbaut00unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: de
+    published_at: '1923'
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-structuralengine0000geor-7efdb22a
+    title: Structural Engineering Strength of Materials (1924)
+    url: https://archive.org/download/structuralengine0000geor/structuralengine0000geor_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    published_at: '1924'
+    license_evidence: 'Internet Archive item metadata date/year [''1924'']: published
+      in 1924, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-irvingmechanics00churrich-64e63cad
+    title: Mechanics of engineering. Comprising statics and kinetics of solids; the
+      mechanics of the materials of construction, or  (1908)
+    url: https://archive.org/download/irvingmechanics00churrich/irvingmechanics00churrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1908'']: published in 1908, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-strengthmaterial00morlrich-0f4b6a44
+    title: Strength of materials (1916)
+    url: https://archive.org/download/strengthmaterial00morlrich/strengthmaterial00morlrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1916'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1916'']: published in 1916, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-strengthofmateri00oberrich-6b328baf
+    title: Strength of materials (1914)
+    url: https://archive.org/download/strengthofmateri00oberrich/strengthofmateri00oberrich_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''c1914'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-23'
+  - id: arc-reportonmaterial00jenkrich-155274b7
+    title: Report on materials of construction used in aircraft and aircraft engines
+      (1920)
+    url: https://archive.org/download/reportonmaterial00jenkrich/reportonmaterial00jenkrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1920'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1920'']: published in 1920, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-historyoftheoryo02todhuoft-9a24090e
+    title: A history of the theory of elasticity and of the strength of materials from
+      Galilei to the present time;, v. 2, Pt.2 (1893)
+    url: https://archive.org/download/historyoftheoryo02todhuoft/historyoftheoryo02todhuoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1893'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1886-1893'']: published in 1893, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-pt1historyoftheo02todhuoft-f77dd9eb
+    title: A history of the theory of elasticity and of the strength of materials from
+      Galilei to the present time;, v. 2, pt.1 (1893)
+    url: https://archive.org/download/pt1historyoftheo02todhuoft/pt1historyoftheo02todhuoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1893'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1886-1893'']: published in 1893, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-elasticityresist00burruoft-a99f0211
+    title: The elasticity and resistance of the materials of engineering (1896)
+    url: https://archive.org/download/elasticityresist00burruoft/elasticityresist00burruoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1896'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1896'']: published in 1896, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-experimentalengi00carpuoft-4d3dc717
+    title: Experimental engineering and manual for testing (1912)
+    url: https://archive.org/download/experimentalengi00carpuoft/experimentalengi00carpuoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1912'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1912'']: published in 1912, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-dieangewandteel01tetmgoog-b383dd7a
+    title: Die angewandte Elastizitäts- und Festigkeitslehre (1905)
+    url: https://archive.org/download/dieangewandteel01tetmgoog/dieangewandteel01tetmgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: de
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1905'', ''1905'']: published in 1905, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-handbuchdermate00martgoog-38a13460
+    title: Handbuch der materialienkunde für den maschinenbau (1898)
+    url: https://archive.org/download/handbuchdermate00martgoog/handbuchdermate00martgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: de
+    published_at: '1898'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1898'', ''1898'']: published in 1898, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-reportunitedsta15metagoog-90e4baa3
+    title: Report of the United States Board appointed to test iron, steel and other
+      metals (1883)
+    url: https://archive.org/download/reportunitedsta15metagoog/reportunitedsta15metagoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1883'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1878'', ''1883'']: published in 1883, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-mechanicsengine03churgoog-d5e95fc1
+    title: Mechanics of engineering. Comprising statics and dynamics of solids; the
+      mechanics of the materials of construction, or  (1893)
+    url: https://archive.org/download/mechanicsengine03churgoog/mechanicsengine03churgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: structures_civil
+    format: txt
+    language: en
+    published_at: '1893'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1893'', ''1893'']: published in 1893, US copyright expired (publications
       up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
