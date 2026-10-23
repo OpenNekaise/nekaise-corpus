@@ -163424,3 +163424,149 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-23'
+  - id: ope-flood-design-recipes-vs-reality-can-prediction
+    title: 'Flood design recipes vs. reality: can predictions for ungauged basins be
+      trusted?'
+    url: https://nhess.copernicus.org/articles/14/1417/2014/nhess-14-1417-2014.pdf
+    source: openalex
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2014-06-05'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-14-1417-2014
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/14/1417/2014/nhess-14-1417-2014.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-23'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-14-1417-2014 openalex:W2109122716
+    resolution: 'legacy: openalex location'
+  - id: arx-towards-energy-efficient-buildings-how-icts-ca
+    title: 'Towards energy efficient buildings: how ICTs can convert advances?'
+    url: https://arxiv.org/pdf/1811.09160v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-11-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1811.09160
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1811.09160 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+    origin_ids: doi:10.1016/j.ifacol.2018.08.410
+  - id: arx-sewer-rats-in-teaching-action-an-explorative-f
+    title: 'Sewer Rats in Teaching Action: An explorative field study on students''
+      perception of a game-based learning app in graduate engineering education'
+    url: https://arxiv.org/pdf/1811.09776v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2018-11-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1811.09776
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1811.09776 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+  - id: arx-clustering-residential-electricity-load-curves
+    title: Clustering Residential Electricity Load Curves via Community Detection in
+      Network
+    url: https://arxiv.org/pdf/1811.10356v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-11-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1811.10356
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1811.10356 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+  - id: arx-buildings-have-finite-asymptotic-dimension
+    title: Buildings have finite asymptotic dimension
+    url: https://arxiv.org/pdf/math/0703199v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2007-03-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.math/0703199
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:math/0703199 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+    origin_ids: doi:10.1134/s1061920809030091
+  - id: arx-building-energy-load-forecasting-using-deep-ne
+    title: Building Energy Load Forecasting using Deep Neural Networks
+    url: https://arxiv.org/pdf/1610.09460v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-10-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1610.09460
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1610.09460 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+    origin_ids: doi:10.1109/iecon.2016.7793413
+  - id: arx-operational-planning-and-bidding-for-district-
+    title: Operational planning and bidding for district heating systems with uncertain
+      renewable energy production
+    url: https://arxiv.org/pdf/1810.10774v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-10-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1810.10774
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1810.10774 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
+    origin_ids: doi:10.3390/en11123310
+  - id: arx-automatic-rendering-of-building-floor-plan-ima
+    title: Automatic Rendering of Building Floor Plan Images from Textual Descriptions
+      in English
+    url: https://arxiv.org/pdf/1811.11938v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-11-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1811.11938
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1811.11938 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-23'
