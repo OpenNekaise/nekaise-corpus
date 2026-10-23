@@ -338751,30 +338751,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1897'']: published
       in 1897, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-sim-municipal-affairs-1899-3-contents-5e7a0f7c
-    title: 'Municipal Affairs 1899: Vol 3 Table of Contents, v. 3 (1899)'
-    url: https://archive.org/download/sim_municipal-affairs_1899_3_contents/sim_municipal-affairs_1899_3_contents_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1899'
-    license_evidence: 'Internet Archive item metadata date/year [''1899'']: published
-      in 1899, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
-  - id: arc-sim-municipal-affairs-1900-03-4-1-86b100de
-    title: 'Municipal Affairs 1900-03: Vol 4 Iss 1, v. 4 (1900)'
-    url: https://archive.org/download/sim_municipal-affairs_1900-03_4_1/sim_municipal-affairs_1900-03_4_1_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1900'
-    license_evidence: 'Internet Archive item metadata date/year [''1900-03'']: no licence
-      and no certain publication date'
-    rights_verified_at: '2026-10-23'
   - id: arc-sim-municipal-affairs-1900-06-4-2-c5280a2b
     title: 'Municipal Affairs 1900-06: Vol 4 Iss 2, v. 4 (1900)'
     url: https://archive.org/download/sim_municipal-affairs_1900-06_4_2/sim_municipal-affairs_1900-06_4_2_djvu.txt
@@ -338809,42 +338785,6 @@ sources:
     language: en
     published_at: '1901'
     license_evidence: 'Internet Archive item metadata date/year [''1901-03'']: no licence
-      and no certain publication date'
-    rights_verified_at: '2026-10-23'
-  - id: arc-sim-municipal-affairs-1901-06-5-2-cf814697
-    title: 'Municipal Affairs 1901-06: Vol 5 Iss 2, v. 5 (1901)'
-    url: https://archive.org/download/sim_municipal-affairs_1901-06_5_2/sim_municipal-affairs_1901-06_5_2_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1901'
-    license_evidence: 'Internet Archive item metadata date/year [''1901-06'']: no licence
-      and no certain publication date'
-    rights_verified_at: '2026-10-23'
-  - id: arc-sim-municipal-affairs-1901-09-5-3-8cf34954
-    title: 'Municipal Affairs 1901-09: Vol 5 Iss 3, v. 5 (1901)'
-    url: https://archive.org/download/sim_municipal-affairs_1901-09_5_3/sim_municipal-affairs_1901-09_5_3_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1901'
-    license_evidence: 'Internet Archive item metadata date/year [''1901-09'']: no licence
-      and no certain publication date'
-    rights_verified_at: '2026-10-23'
-  - id: arc-sim-municipal-affairs-1901-12-5-4-0c6feddd
-    title: 'Municipal Affairs 1901-12: Vol 5 Iss 4, v. 5 (1901)'
-    url: https://archive.org/download/sim_municipal-affairs_1901-12_5_4/sim_municipal-affairs_1901-12_5_4_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: construction
-    format: txt
-    language: en
-    published_at: '1901'
-    license_evidence: 'Internet Archive item metadata date/year [''1901-12'']: no licence
       and no certain publication date'
     rights_verified_at: '2026-10-23'
   - id: arc-sim-municipal-affairs-1902-6-contents-6528250f
@@ -347512,19 +347452,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
       date/year ['1895', '1895']
     rights_verified_at: '2026-10-23'
-  - id: arc-nouveaumanuelcom11nosb-7cee7dff
-    title: 'Nouveau manuel complet du menuisier de l''ébéniste et du layetier : contenant
-      tous les détails utiles sur la nature de, v. v.1, c.1 (1843)'
-    url: https://archive.org/download/nouveaumanuelcom11nosb/nouveaumanuelcom11nosb_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: construction
-    format: txt
-    language: fr
-    published_at: '1843'
-    license_evidence: 'Internet Archive item metadata date/year [''1843'']: published
-      in 1843, US copyright expired (publications up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-carpentrybuildin3188unse-75944008
     title: Carpentry and building, v. v.3 (1881) (1879)
     url: https://archive.org/download/carpentrybuildin3188unse/carpentrybuildin3188unse_djvu.txt
@@ -347690,4 +347617,566 @@ sources:
     published_at: '1910'
     license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
       in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-buildingage3619unse-7b3a5ade
+    title: Building age, v. v.36 (1914) (1910)
+    url: https://archive.org/download/buildingage3619unse/buildingage3619unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-buildingage3719unse-b7003cd1
+    title: Building age, v. v.37 (1915) (1910)
+    url: https://archive.org/download/buildingage3719unse/buildingage3719unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-buildingage3419unse-e3abb102
+    title: Building age, v. v.34 (1912) (1910)
+    url: https://archive.org/download/buildingage3419unse/buildingage3419unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-buildingage4319unse-42fff79c
+    title: Building age, v. v.43 (1921) (1910)
+    url: https://archive.org/download/buildingage4319unse/buildingage4319unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-buildingage3219unse-96aba2ae
+    title: Building age, v. v.32 (1910) (1910)
+    url: https://archive.org/download/buildingage3219unse/buildingage3219unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-carpentrybuildin9188unse-64e3a976
+    title: Carpentry and building, v. v.9 (1887) (1879)
+    url: https://archive.org/download/carpentrybuildin9188unse/carpentrybuildin9188unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1879'
+    license_evidence: 'Internet Archive item metadata date/year [''1879'']: published
+      in 1879, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-buildingage4219unse-202259bb
+    title: Building age, v. v.42 (1920) (1910)
+    url: https://archive.org/download/buildingage4219unse/buildingage4219unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-carpentrybuildin1018unse-dccf2cce
+    title: Carpentry and building, v. v.10 (1888) (1879)
+    url: https://archive.org/download/carpentrybuildin1018unse/carpentrybuildin1018unse_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1879'
+    license_evidence: 'Internet Archive item metadata date/year [''1879'']: published
+      in 1879, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1880-3ff9f22e
+    title: Carpentry and Building, 1880 (1880)
+    url: https://archive.org/download/usmodernist-CB-1880/CB-1880_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1880'
+    license_evidence: 'Internet Archive item metadata date/year [''1880'']: published
+      in 1880, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1883-d8660b26
+    title: Carpentry and Building, 1883 (1883)
+    url: https://archive.org/download/usmodernist-CB-1883/CB-1883_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1883'
+    license_evidence: 'Internet Archive item metadata date/year [''1883'']: published
+      in 1883, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1919-4f8d282c
+    title: Carpentry and Building, 1919 (1919)
+    url: https://archive.org/download/usmodernist-ba-1919/ba-1919_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1919'
+    license_evidence: 'Internet Archive item metadata date/year [''1919'']: published
+      in 1919, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1891-5e6d361a
+    title: Carpentry and Building, 1891 (1891)
+    url: https://archive.org/download/usmodernist-CB-1891/CB-1891_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1891'
+    license_evidence: 'Internet Archive item metadata date/year [''1891'']: published
+      in 1891, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1907-4433910f
+    title: Carpentry and Building, 1907 (1907)
+    url: https://archive.org/download/usmodernist-CB-1907/CB-1907_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
+      in 1907, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1917-eef51065
+    title: Carpentry and Building, 1917 (1917)
+    url: https://archive.org/download/usmodernist-ba-1917/ba-1917_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1917'
+    license_evidence: 'Internet Archive item metadata date/year [''1917'']: published
+      in 1917, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1901-cd4b08fd
+    title: Carpentry and Building, 1901 (1901)
+    url: https://archive.org/download/usmodernist-CB-1901/CB-1901_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1901'
+    license_evidence: 'Internet Archive item metadata date/year [''1901'']: published
+      in 1901, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1923-217b53a4
+    title: Carpentry and Building, 1923 (1923)
+    url: https://archive.org/download/usmodernist-ba-1923/ba-1923_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1923'
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1882-2acbc62c
+    title: Carpentry and Building, 1882 (1882)
+    url: https://archive.org/download/usmodernist-CB-1882/CB-1882_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1882'
+    license_evidence: 'Internet Archive item metadata date/year [''1882'']: published
+      in 1882, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1897-4332efb5
+    title: Carpentry and Building, 1897 (1897)
+    url: https://archive.org/download/usmodernist-CB-1897/CB-1897_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata date/year [''1897'']: published
+      in 1897, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1902-b9cd04c6
+    title: Carpentry and Building, 1902 (1902)
+    url: https://archive.org/download/usmodernist-CB-1902/CB-1902_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1908-ee8e2971
+    title: Carpentry and Building, 1908 (1908)
+    url: https://archive.org/download/usmodernist-CB-1908/CB-1908_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata date/year [''1908'']: published
+      in 1908, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1899-b19777c6
+    title: Carpentry and Building, 1899 (1899)
+    url: https://archive.org/download/usmodernist-CB-1899/CB-1899_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1899'
+    license_evidence: 'Internet Archive item metadata date/year [''1899'']: published
+      in 1899, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1889-b28e3f63
+    title: Carpentry and Building, 1889 (1889)
+    url: https://archive.org/download/usmodernist-CB-1889/CB-1889_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1889'
+    license_evidence: 'Internet Archive item metadata date/year [''1889'']: published
+      in 1889, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1896-e6606aa5
+    title: Carpentry and Building, 1896 (1896)
+    url: https://archive.org/download/usmodernist-CB-1896/CB-1896_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1896'
+    license_evidence: 'Internet Archive item metadata date/year [''1896'']: published
+      in 1896, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1922-1391c7cd
+    title: Carpentry and Building, 1922 (1922)
+    url: https://archive.org/download/usmodernist-ba-1922/ba-1922_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1922'
+    license_evidence: 'Internet Archive item metadata date/year [''1922'']: published
+      in 1922, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1879-292b8228
+    title: Carpentry and Building, 1879 (1879)
+    url: https://archive.org/download/usmodernist-CB-1879/CB-1879_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1879'
+    license_evidence: 'Internet Archive item metadata date/year [''1879'']: published
+      in 1879, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1890-34d56018
+    title: Carpentry and Building, 1890 (1890)
+    url: https://archive.org/download/usmodernist-CB-1890/CB-1890_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1890'
+    license_evidence: 'Internet Archive item metadata date/year [''1890'']: published
+      in 1890, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1881-4a7d0a2b
+    title: Carpentry and Building, 1881 (1881)
+    url: https://archive.org/download/usmodernist-CB-1881/CB-1881_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1881'
+    license_evidence: 'Internet Archive item metadata date/year [''1881'']: published
+      in 1881, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1895-27bf16a3
+    title: Carpentry and Building, 1895 (1895)
+    url: https://archive.org/download/usmodernist-CB-1895/CB-1895_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1895'
+    license_evidence: 'Internet Archive item metadata date/year [''1895'']: published
+      in 1895, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1911-ae46c17b
+    title: Carpentry and Building, 1911 (1911)
+    url: https://archive.org/download/usmodernist-ba-1911/ba-1911_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1918-36f47e5f
+    title: Carpentry and Building, 1918 (1918)
+    url: https://archive.org/download/usmodernist-ba-1918/ba-1918_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata date/year [''1918'']: published
+      in 1918, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1893-cf12d4db
+    title: Carpentry and Building, 1893 (1893)
+    url: https://archive.org/download/usmodernist-CB-1893/CB-1893_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1893'
+    license_evidence: 'Internet Archive item metadata date/year [''1893'']: published
+      in 1893, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1894-40029b58
+    title: Carpentry and Building, 1894 (1894)
+    url: https://archive.org/download/usmodernist-CB-1894/CB-1894_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata date/year [''1894'']: published
+      in 1894, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1884-ae8fa9d5
+    title: Carpentry and Building, 1884 (1884)
+    url: https://archive.org/download/usmodernist-CB-1884/CB-1884_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1884'
+    license_evidence: 'Internet Archive item metadata date/year [''1884'']: published
+      in 1884, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1904-bbb839ba
+    title: Carpentry and Building, 1904 (1904)
+    url: https://archive.org/download/usmodernist-CB-1904/CB-1904_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1904'
+    license_evidence: 'Internet Archive item metadata date/year [''1904'']: published
+      in 1904, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1915-9dbb1d7c
+    title: Carpentry and Building, 1915 (1915)
+    url: https://archive.org/download/usmodernist-ba-1915/ba-1915_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata date/year [''1915'']: published
+      in 1915, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1925-02-1626f474
+    title: Carpentry and Building, February 1925 (1925)
+    url: https://archive.org/download/usmodernist-ba-1925-02/ba-1925-02_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: construction
+    format: txt
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata date/year [''1925-02'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1921-1e9dd29a
+    title: Carpentry and Building, 1921 (1921)
+    url: https://archive.org/download/usmodernist-ba-1921/ba-1921_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1921'
+    license_evidence: 'Internet Archive item metadata date/year [''1921'']: published
+      in 1921, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1898-0972410b
+    title: Carpentry and Building, 1898 (1898)
+    url: https://archive.org/download/usmodernist-CB-1898/CB-1898_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1898'
+    license_evidence: 'Internet Archive item metadata date/year [''1898'']: published
+      in 1898, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1903-8c8a2292
+    title: Carpentry and Building, 1903 (1903)
+    url: https://archive.org/download/usmodernist-CB-1903/CB-1903_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata date/year [''1903'']: published
+      in 1903, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1905-a17bfee0
+    title: Carpentry and Building, 1905 (1905)
+    url: https://archive.org/download/usmodernist-CB-1905/CB-1905_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
+      in 1905, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1906-c956c72d
+    title: Carpentry and Building, 1906 (1906)
+    url: https://archive.org/download/usmodernist-CB-1906/CB-1906_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata date/year [''1906'']: published
+      in 1906, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1892-b0ebc9cf
+    title: Carpentry and Building, 1892 (1892)
+    url: https://archive.org/download/usmodernist-CB-1892/CB-1892_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1892'
+    license_evidence: 'Internet Archive item metadata date/year [''1892'']: published
+      in 1892, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1900-6016962d
+    title: Carpentry and Building, 1900 (1900)
+    url: https://archive.org/download/usmodernist-CB-1900/CB-1900_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1900'
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-cb-1909-eba149ad
+    title: Carpentry and Building, 1909 (1909)
+    url: https://archive.org/download/usmodernist-CB-1909/CB-1909_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-usmodernist-ba-1912-bee3c051
+    title: Carpentry and Building, 1912 (1912)
+    url: https://archive.org/download/usmodernist-ba-1912/ba-1912_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1912'
+    license_evidence: 'Internet Archive item metadata date/year [''1912'']: published
+      in 1912, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-bwb-c0-bny-234-adf05581
+    title: Cyclopedia Architecture, Carpentry and Building (1907)
+    url: https://archive.org/download/bwb_C0-BNY-234/bwb_C0-BNY-234_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
+      in 1907, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-turen-tore-images-177b06ab
+    title: Türen, Tore Und Andere Bautischlerarbeiten - Doors, Gates, and Other Architectural
+      Woodwork (1900)
+    url: https://archive.org/download/turen-tore-images/Turen%20Tore_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: de
+    published_at: '1900'
+    license_evidence: 'Internet Archive item metadata date/year [''1900'']: published
+      in 1900, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-practicalcarpent0002will-07721bc9
+    title: Practical Carpentry, v. 2 (1907)
+    url: https://archive.org/download/practicalcarpent0002will/practicalcarpent0002will_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata date/year [''1907'']: published
+      in 1907, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-bwb-s0-ejt-078-a1289b33
+    title: Estimating Building Costs (1923)
+    url: https://archive.org/download/bwb_S0-EJT-078/bwb_S0-EJT-078_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    language: en
+    published_at: '1923'
+    license_evidence: 'Internet Archive item metadata date/year [''1923'']: published
+      in 1923, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-bwb-s0-ejt-065-5b876eb1
+    title: estimating building costs and appraising building (1924)
+    url: https://archive.org/download/bwb_S0-EJT-065/bwb_S0-EJT-065_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: construction
+    format: txt
+    published_at: '1924'
+    license_evidence: 'Internet Archive item metadata date/year [''1924'']: published
+      in 1924, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
