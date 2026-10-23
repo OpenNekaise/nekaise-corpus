@@ -349467,19 +349467,6 @@ sources:
       date/year [''1805'', ''1805'']: published in 1805, US copyright expired (publications
       up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-ahistorybritish00selbgoog-1c323f10
-    title: A history of British forest-trees, indigenous and introduced (1842)
-    url: https://archive.org/download/ahistorybritish00selbgoog/ahistorybritish00selbgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: en
-    published_at: '1842'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1842'', ''1842'']: published in 1842, US copyright expired (publications
-      up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-tablesforusearc00walegoog-c2917336
     title: Tables for the use of architects, engineers, surveyors, builders; mahogany,
       deal, and timber ... (1851)
@@ -349614,19 +349601,6 @@ sources:
       date/year [''1916'']: published in 1916, US copyright expired (publications up
       to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
-  - id: arc-chemischetechno01mayegoog-38838553
-    title: Chemische Technologie des Holzes als Baumaterial (1872)
-    url: https://archive.org/download/chemischetechno01mayegoog/chemischetechno01mayegoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: de
-    published_at: '1872'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1872'']: published in 1872, US copyright expired (publications up
-      to 1928); the item states no licence'
-    rights_verified_at: '2026-10-23'
   - id: arc-ferrumtimbercom00unkngoog-0835c49a
     title: The Ferrum timber company for the United States of America, organized for
       ... (1865)
@@ -349667,4 +349641,561 @@ sources:
     license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
       is unaware of any copyright restrictions for this item.''] date/year [''1897'']:
       a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-unsereholzzollpo00velt-d215dc4c
+    title: Unsere holzzollpolitik [microform] (1902)
+    url: https://archive.org/download/unsereholzzollpo00velt/unsereholzzollpo00velt_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-timberlegislatio01nova-3f501560
+    title: Timber legislation--Canada ... Laws enacted in Nova Scotia, Ontario, British
+      Columbia, Quebec, and New Brunswick, Canada (1911)
+    url: https://archive.org/download/timberlegislatio01nova/timberlegislatio01nova_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1911'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cihm-48627-e991282f
+    title: An appendix to letters regarding the shipping interest, with reference to
+      the importation of fir-timber and deals in Bri (1821)
+    url: https://archive.org/download/cihm_48627/cihm_48627_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1821'
+    license_evidence: 'Internet Archive item metadata date/year [''1821'']: published
+      in 1821, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-handbookoftimber01rowe-d4efe83b
+    title: Hand book of timber preservation (1900)
+    url: https://archive.org/download/handbookoftimber01rowe/handbookoftimber01rowe_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1900'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1900'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-treatiseontimber00sanf-66309506
+    title: Treatise on timber preservation with extracts from the best known authorities
+      (1902)
+    url: https://archive.org/download/treatiseontimber00sanf/treatiseontimber00sanf_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1902'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-unitedstatesvdlb00unit-76f4b1cf
+    title: United States v. D.L. Boyd, et al (1897)
+    url: https://archive.org/download/unitedstatesvdlb00unit/unitedstatesvdlb00unit_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata date/year [''1897'']: published
+      in 1897, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cihm-64230-7095a657
+    title: Thoughts on the impolicy of altering the present rate of duty on foreign
+      timber and deals [microform] (1817)
+    url: https://archive.org/download/cihm_64230/cihm_64230_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1817'
+    license_evidence: 'Internet Archive item metadata date/year [''1817'']: published
+      in 1817, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-lettertopresiden00litt-a89a6257
+    title: Letter to the president and council of the Montreal Board of Trade Objection
+      "To get rid of the timber", at the meeting  (1890)
+    url: https://archive.org/download/lettertopresiden00litt/lettertopresiden00litt_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1890'
+    license_evidence: 'Internet Archive item metadata date/year [''1890'']: published
+      in 1890, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-jstor-1273452-0515faa5
+    title: 'Real Property: Standing Timber: Sale and Delivery, v. 8 (1910)'
+    url: https://archive.org/download/jstor-1273452/1273452_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910-01-01'']: published
+      in 1910, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-jstor-2479388-550b2b0b
+    title: List of Plants Collected Above Timber Line on Pikes Peak, with Altitudinal
+      Extensions and Notes, v. 38 (1911)
+    url: https://archive.org/download/jstor-2479388/2479388_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata date/year [''1911-05-01'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-jstor-1111856-6112c3fe
+    title: Real Property. Passing of Title to Timber. Time of Removal, v. 19 (1919)
+    url: https://archive.org/download/jstor-1111856/1111856_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1919'
+    license_evidence: 'Internet Archive item metadata date/year [''1919-05-01'']: published
+      in 1919, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cihm-82141-3bf3e093
+    title: 'Forest products of Canada, 1910 [microform] : timber used in mining operations
+      (1911)'
+    url: https://archive.org/download/cihm_82141/cihm_82141_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata date/year [''1911'']: published
+      in 1911, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-jstor-196931-ca1de5e5
+    title: The Timber Line, v. 31 (1899)
+    url: https://archive.org/download/jstor-196931/196931_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1899'
+    license_evidence: 'Internet Archive item metadata date/year [''1899-01-01'']: published
+      in 1899, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-jstor-207355-804bc205
+    title: South American Timber Resources and Their Relation to the World's Timber
+      Supply, v. 2 (1916)
+    url: https://archive.org/download/jstor-207355/207355_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1916'
+    license_evidence: 'Internet Archive item metadata date/year [''1916-10-01'']: published
+      in 1916, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-timbergrowinglog1491till-be9d6c81
+    title: Timber growing and logging practice in the central hardwood region, v. no.1491
+      (1927)
+    url: https://archive.org/download/timbergrowinglog1491till/timbergrowinglog1491till_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1927'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1927'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-timberrotcausedb214spau-3140e580
+    title: The timber rot caused by Lenzites sepiaria, v. no.214 (1911)
+    url: https://archive.org/download/timberrotcausedb214spau/timberrotcausedb214spau_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1911'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cihm-87893-c12dc44e
+    title: 'Kitsumkallum Timber Company Limited [microform] : report and general information
+      (1914)'
+    url: https://archive.org/download/cihm_87893/cihm_87893_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata date/year [''1914'']: published
+      in 1914, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-reportonrelation01fern-cb85eb12
+    title: 'Report on the relation of railroads to forest supplies and forestry : together
+      with appendices on the structure of some , v. no.1 (1887)'
+    url: https://archive.org/download/reportonrelation01fern/reportonrelation01fern_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1887'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1887'', ''1887'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-economicaldesign12john-0-4fd6dd42
+    title: Economical designing of timber trestle bridges, v. no.12 (1902)
+    url: https://archive.org/download/economicaldesign12john_0/economicaldesign12john_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1902'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-timberpinesofsou13mohr-0-9b476c56
+    title: The timber pines of the southern United States, v. no.13 (1897)
+    url: https://archive.org/download/timberpinesofsou13mohr_0/timberpinesofsou13mohr_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1897'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-seasoningoftimbe41vons-b4398b37
+    title: Seasoning of timber, v. no.41 (1903)
+    url: https://archive.org/download/seasoningoftimbe41vons/seasoningoftimbe41vons_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1903'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-timberofedwardsp49bray-6ee3383c
+    title: 'The timber of the Edwards Plateau of Texas : its relations to climate, water
+      supply, and soil, v. no.49 (1904)'
+    url: https://archive.org/download/timberofedwardsp49bray/timberofedwardsp49bray_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1904'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1904'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-progressreporton32hatt-1e2be6e8
+    title: Progress report on the strength of structural timber, v. no.32 (1904)
+    url: https://archive.org/download/progressreporton32hatt/progressreporton32hatt_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1904'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1904'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-reportonexaminat00wilk-e7154c9f
+    title: Report on the examination of the Deep River district, North Carolina (1859)
+    url: https://archive.org/download/reportonexaminat00wilk/reportonexaminat00wilk_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1859'
+    license_evidence: 'Internet Archive item metadata date/year [''1859'']: published
+      in 1859, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-forestryinqueensland-1515df6a
+    title: Forestry In Queensland (1924)
+    url: https://archive.org/download/ForestryInQueensland/Forestry%20in%20Queensland_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1924']
+    rights_verified_at: '2026-10-23'
+  - id: arc-reportofwsrichar00rich-fa5b827f
+    title: Report of W.S. Richardson on the St. Jean and Magpie rivers limits and certificate
+      of Joseph Bureau re quantities of tim (1912)
+    url: https://archive.org/download/reportofwsrichar00rich/reportofwsrichar00rich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1912'
+    license_evidence: 'Internet Archive item metadata date/year [''1912'']: published
+      in 1912, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-saleoftimberonal00unit-225113fa
+    title: Sale of timber on allotted Indian lands.. (1909)
+    url: https://archive.org/download/saleoftimberonal00unit/saleoftimberonal00unit_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1909'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-southernpinebeet60crai-2ab193a7
+    title: 'The southern pine beetle : a menace to the pine timber of the southern states,
+      v. no.60 (1925)'
+    url: https://archive.org/download/southernpinebeet60crai/southernpinebeet60crai_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1925'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cat87202516-5cfe9629
+    title: The windbreak as a farm asset, v. no.788 (1917)
+    url: https://archive.org/download/CAT87202516/farmbul0788_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1917'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1917'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cat87202919-c3f4daa6
+    title: Measuring and marketing farm timber, v. no.1210 (1921)
+    url: https://archive.org/download/CAT87202919/farmbul1210_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1921'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1921'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-cat87203526-3dafd76e
+    title: Black walnut for timber and nuts, v. no.1392 (1924)
+    url: https://archive.org/download/CAT87203526/farmbul1392_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1924'
+    license_evidence: 'Internet Archive item metadata rights [''The contributing institution
+      believes that this item is not in copyright.''] date/year [''1924'']: a rights
+      statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-gri-33125000021515-e7b2d883
+    title: Structural details, or, elements of design in timber framing (1918)
+    url: https://archive.org/download/gri_33125000021515/gri_33125000021515_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1918'']: published in 1918, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-outlinesofhistor00fost-09d882d1
+    title: 'Outlines of history of the Territory of Dakota, and emigrant''s guide to
+      the free lands of the Northwest : containing a d (1870)'
+    url: https://archive.org/download/outlinesofhistor00fost/outlinesofhistor00fost_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1870'
+    license_evidence: 'Internet Archive item metadata date/year [''1870'']: published
+      in 1870, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-in-ernet-dli-2015-500463-ac4238ea
+    title: Showing The Different Applicatons And Uses Of Timber In Various Trades (1902)
+    url: https://archive.org/download/in.ernet.dli.2015.500463/2015.500463.Timber--_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
+      in 1902, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-blackhillsminute00dodg-3fe99a76
+    title: 'The Black Hills : a minute description of the routes, scenery, soil, climate,
+      timber, gold, geology, zoÃ¶logy, etc. ; wi (1876)'
+    url: https://archive.org/download/blackhillsminute00dodg/blackhillsminute00dodg_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1876'
+    license_evidence: 'Internet Archive item metadata date/year [''1876'', ''1876'']:
+      published in 1876, US copyright expired (publications up to 1928); the item states
+      no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-iowaasitisin185700park-c53afafc
+    title: 'Iowa as it is in 1857 : a gazetteer for citizens, and a handbook for immigrants,
+      embracing a full description of the sta (1857)'
+    url: https://archive.org/download/iowaasitisin185700park/iowaasitisin185700park_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1857'
+    license_evidence: 'Internet Archive item metadata date/year [''1857'']: published
+      in 1857, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-timberwolves00cron-0-7bd752e0
+    title: Timber wolves (1921)
+    url: https://archive.org/download/timberwolves00cron_0/timberwolves00cron_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1921'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1921'',
+      ''1921'']: a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-oacreviewvol18iss2-59062ddd
+    title: O. A. C. Review Volume 18 Issue 2, November 1905 (1905)
+    url: https://archive.org/download/oacreviewvol18iss2/oacreviewvol18iss2_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1905'
+    license_evidence: 'Internet Archive item metadata rights [''University of Guelph'']
+      date/year [''1905-11-01'', ''1905'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-lightheavytimber00hodg-a6ee93a8
+    title: Light and heavy timber framing made easy; balloon framing, mixed framing,
+      heavy timber framing, houses, factories, bridg (1909)
+    url: https://archive.org/download/lightheavytimber00hodg/lightheavytimber00hodg_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata date/year [''1909'']: published
+      in 1909, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-23'
+  - id: arc-burkartssammlun00burk-ea01930d
+    title: Burkart's Sammlung der wichtigsten europäischen Nutzhölzer in characteristischen
+      Schnitten (1880)
+    url: https://archive.org/download/burkartssammlun00burk/burkartssammlun00burk_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: materials
+    format: txt
+    language: de
+    published_at: '1880'
+    license_evidence: 'Internet Archive item metadata rights [''Public domain. The BHL
+      considers that this work is no longer under copyright protection.''] date/year
+      [''1880'', ''1880'']: a rights statement is not a recognized licence or public-domain
+      statement'
+    rights_verified_at: '2026-10-23'
+  - id: arc-paper-doi-10-1038-013181a0-fb97ffbe
+    title: Timber and Timber Trees, Native and Foreign, v. 323 (1876)
+    url: https://archive.org/download/paper-doi-10_1038_013181a0/paper-doi-10_1038_013181a0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    published_at: '1876'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1876-01']
+    rights_verified_at: '2026-10-23'
+  - id: arc-paper-doi-10-1038-022169c0-87024cd0
+    title: Calcareous Concretions in Timber, v. 556 (1880)
+    url: https://archive.org/download/paper-doi-10_1038_022169c0/paper-doi-10_1038_022169c0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    published_at: '1880'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1880-06']
+    rights_verified_at: '2026-10-23'
+  - id: arc-paper-doi-10-1038-037182a0-7a5b6e41
+    title: Timber and Some of its Diseases, v. 947 (1887)
+    url: https://archive.org/download/paper-doi-10_1038_037182a0/paper-doi-10_1038_037182a0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: materials
+    format: txt
+    published_at: '1887'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1887-12']
     rights_verified_at: '2026-10-23'
