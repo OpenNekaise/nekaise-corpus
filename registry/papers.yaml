@@ -163607,24 +163607,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.cscm.2024.e03237 openalex:W4396528154
     resolution: 'legacy: openalex location'
-  - id: ope-solutions-to-achieve-carbon-neutral-mixtures-f
-    title: Solutions to achieve carbon-neutral mixtures for the U.S. pavement network
-    url: https://dspace.mit.edu/bitstream/1721.1/150975/1/11367_2022_2121_ReferencePDF.pdf
-    source: openalex
-    license: cc-by-nc-sa
-    topic: materials
-    format: pdf
-    language: en
-    published_at: '2023-01-19'
-    document_type: article
-    persistent_id: https://doi.org/10.1007/s11367-022-02121-1
-    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa
-      [copy https://dspace.mit.edu/bitstream/1721.1/150975/1/11367_2022_2121_ReferencePDF.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-23'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1007/s11367-022-02121-1 openalex:W4317425069
-    resolution: 'legacy: openalex location'
   - id: ope-effect-of-micro-tio2-on-cement-mortar
     title: EFFECT OF MICRO TIO2 ON CEMENT MORTAR
     url: https://repository.uwl.ac.uk/id/eprint/6949/7/Shaaban_etal_EJMSE_2020_Effect_of_micro_TiO%E2%82%82_on_cement_mortar_published_version.pdf
@@ -164333,6 +164315,41 @@ sources:
     persistent_id: doi:10.48550/arxiv.1911.09296
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1911.09296 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-on-unbiased-simulations-of-stochastic-bridges-
+    title: On unbiased simulations of stochastic bridges conditioned on extrema
+    url: https://arxiv.org/pdf/1911.10972v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-11-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1911.10972
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1911.10972 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-leveraging-operational-technology-and-the-inte
+    title: Leveraging Operational Technology and the Internet of Things to Attack Smart
+      Buildings
+    url: https://arxiv.org/pdf/1912.02480v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-12-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.02480
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.02480 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
