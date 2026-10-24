@@ -163963,3 +163963,57 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2610.23511 openalex:W7222952935
     resolution: 'ai1: openalex location'
+  - id: arx-leveraging-data-driven-approaches-to-quantify-
+    title: Leveraging Data Driven Approaches to Quantify the Impact of Construction
+      Projects on Urban Quality of Life
+    url: https://arxiv.org/pdf/1901.09084v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2019-01-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1901.09084
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1901.09084 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-long-term-robot-navigation-in-indoor-environme
+    title: Long-Term Robot Navigation in Indoor Environments Estimating Patterns in
+      Traversability Changes
+    url: https://arxiv.org/pdf/1909.12733v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-09-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1909.12733
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1909.12733 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-on-first-exit-times-and-their-means-for-browni
+    title: On first exit times and their means for Brownian bridges
+    url: https://arxiv.org/pdf/1711.06107v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-11-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1711.06107
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1711.06107 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1017/jpr.2019.42

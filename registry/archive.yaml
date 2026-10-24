@@ -349133,20 +349133,6 @@ sources:
     license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
       date/year ['1855', '1855']
     rights_verified_at: '2026-10-23'
-  - id: arc-universiteitleiden-dig-koloniaal-weekblad-1-2794e408
-    title: 'Het Koloniaal Weekblad (19 juni 1913) : Orgaan der Vereeniging Oost en West,
-      v. 13 (1913)'
-    url: https://archive.org/download/UNIVERSITEITLEIDEN-DIG-KOLONIAAL-WEEKBLAD-1913-25/MMKITLV01_PDF_TS694_1913_25_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: nl
-    published_at: '1913'
-    license_url: http://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1913-06-19', '1913']
-    rights_verified_at: '2026-10-23'
   - id: arc-lehrbuchderbauma5619foer-cbaf8b9e
     title: Lehrbuch der Baumaterialienkunde zum Gebrauche an technischen Hochschulen
       und zum Selbststudium, v. v.5-6(1912) (1903)
@@ -349506,18 +349492,6 @@ sources:
     license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
       is unaware of any copyright restrictions for this item.''] date/year [''1897'']:
       a rights statement is not a recognized licence or public-domain statement'
-    rights_verified_at: '2026-10-23'
-  - id: arc-unsereholzzollpo00velt-d215dc4c
-    title: Unsere holzzollpolitik [microform] (1902)
-    url: https://archive.org/download/unsereholzzollpo00velt/unsereholzzollpo00velt_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: materials
-    format: txt
-    language: de
-    published_at: '1902'
-    license_evidence: 'Internet Archive item metadata date/year [''1902'']: published
-      in 1902, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-23'
   - id: arc-timberlegislatio01nova-3f501560
     title: Timber legislation--Canada ... Laws enacted in Nova Scotia, Ontario, British
@@ -354668,19 +354642,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1889'']: published
       in 1889, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'
-  - id: arc-unterlagenzurdi00weyrgoog-c601af14
-    title: Unterlagen zur Dimensionierung städtischer Kanalnetze .. (1904)
-    url: https://archive.org/download/unterlagenzurdi00weyrgoog/unterlagenzurdi00weyrgoog_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: infrastructure
-    format: txt
-    language: de
-    published_at: '1904'
-    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
-      date/year [''1904'', ''1904'']: published in 1904, US copyright expired (publications
-      up to 1928); the item states no licence'
-    rights_verified_at: '2026-10-24'
   - id: arc-reportacommissi00rivegoog-b37fdcaa
     title: Report of a commission appointed to consider a general system of drainage
       for the valleys of Mystic, Blackstone, and Cha (1886)
@@ -357034,4 +356995,434 @@ sources:
     license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
       date/year [''1914'', ''1886'']: published in 1914, US copyright expired (publications
       up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-militarysurveyi00richgoog-970152c3
+    title: Military surveying and field sketching (1875)
+    url: https://archive.org/download/militarysurveyi00richgoog/militarysurveyi00richgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1875'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1875'', ''1875'']: published in 1875, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-atreatiseonland02gillgoog-264a4e2e
+    title: 'A treatise on land-surveying : comprising the theory developed from five
+      elementary principles : and the practice with t (1875)'
+    url: https://archive.org/download/atreatiseonland02gillgoog/atreatiseonland02gillgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1875'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1855'', ''1875'']: published in 1875, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-practicalmilita00draygoog-742b2e20
+    title: 'Practical Military Surveying and Sketching: With the Use of the Compass
+      and Sextant, Theodolite ... (1874)'
+    url: https://archive.org/download/practicalmilita00draygoog/practicalmilita00draygoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1874'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1874'', ''1874'']: published in 1874, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-practicalmilita02draygoog-dead0e3a
+    title: 'Practical Military Surveying and Sketching: With the Use of the Compass
+      and Sextant, Theodolite ... (1865)'
+    url: https://archive.org/download/practicalmilita02draygoog/practicalmilita02draygoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1865'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1865'', ''1865'']: published in 1865, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve09vermgoog-d67cd8bf
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 3 (1874)
+    url: https://archive.org/download/zeitschriftfrve09vermgoog/zeitschriftfrve09vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1874'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1874'']: published in 1874, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve06vermgoog-fde049fe
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 6 (1877)
+    url: https://archive.org/download/zeitschriftfrve06vermgoog/zeitschriftfrve06vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1877'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1877'']: published in 1877, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-manualofsurveyin00unit-2acb5510
+    title: Manual of surveying instructions for the survey of the public lands of the
+      United States and private land claims (1894)
+    url: https://archive.org/download/manualofsurveyin00unit/manualofsurveyin00unit_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1894'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1894'']: published in 1894, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-handbookofsouthe00gugg-0565ba21
+    title: Handbook of the Southern Nigeria Survey and text book of topographical surveying
+      in tropical Africa (1911)
+    url: https://archive.org/download/handbookofsouthe00gugg/handbookofsouthe00gugg_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1911'']: published in 1911, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve19vermgoog-d5527ed4
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 5 (1876)
+    url: https://archive.org/download/zeitschriftfrve19vermgoog/zeitschriftfrve19vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1876'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1876'']: published in 1876, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-hydrographicsur00messgoog-6b92fb66
+    title: 'Hydrographic surveying: elementary; for beginners, seamen, and others (1910)'
+    url: https://archive.org/download/hydrographicsur00messgoog/hydrographicsur00messgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1910'', ''1910'']: published in 1910, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-manuallandsurve01murrgoog-f7da8709
+    title: 'Manual of Land Surveying: With Tables (1879)'
+    url: https://archive.org/download/manuallandsurve01murrgoog/manuallandsurve01murrgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1879'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1879'', ''1879'']: published in 1879, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve16vermgoog-7e8274da
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 9 (1880)
+    url: https://archive.org/download/zeitschriftfrve16vermgoog/zeitschriftfrve16vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1880'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1880'']: published in 1880, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-fieldengineerin04seargoog-c387118a
+    title: Field engineering. A hand-book of the theory and practice of railway surveying,
+      location, and construction, designed for (1907)
+    url: https://archive.org/download/fieldengineerin04seargoog/fieldengineerin04seargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1907'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1907'', ''1880'']: published in 1907, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-surveyingmanual00pencgoog-878424fd
+    title: Surveying Manual ; a Surveying (1915)
+    url: https://archive.org/download/surveyingmanual00pencgoog/surveyingmanual00pencgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1915'', ''1915'']: published in 1915, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-manualsurveying01davigoog-df0c9278
+    title: Manual of surveying for field and office (1915)
+    url: https://archive.org/download/manualsurveying01davigoog/manualsurveying01davigoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1915'', ''1915'']: published in 1915, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve12vermgoog-d07b6c40
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 45 (1916)
+    url: https://archive.org/download/zeitschriftfrve12vermgoog/zeitschriftfrve12vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1916'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1916'']: published in 1916, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve11vermgoog-a456a840
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 31 (1902)
+    url: https://archive.org/download/zeitschriftfrve11vermgoog/zeitschriftfrve11vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1902'']: published in 1902, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-apracticaltreat00hoskgoog-56fad139
+    title: A practical treatise on mining, land and railway surveying, engineering,
+      &c (1863)
+    url: https://archive.org/download/apracticaltreat00hoskgoog/apracticaltreat00hoskgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1863'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1863'', ''1863'']: published in 1863, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-atreatiseonland01gillgoog-d2275c9c
+    title: 'A treatise on land-surveying : comprising the theory developed from five
+      elementary principles and the practice, with th (1872)'
+    url: https://archive.org/download/atreatiseonland01gillgoog/atreatiseonland01gillgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1872'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1868'']: published in 1872, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-oncoastscathaya00blakgoog-6de1b244
+    title: On the coasts of Cathay and Cipango forty years ago; a record of surveying
+      service in the China, Yellow and Japan seas a (1902)
+    url: https://archive.org/download/oncoastscathaya00blakgoog/oncoastscathaya00blakgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902'', ''1902'']: published in 1902, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-manualunitedsta00hawegoog-db8292c5
+    title: 'Manual of United States Surveying: System of Rectangular Surveying Employed
+      in Subdividing the ... (1868)'
+    url: https://archive.org/download/manualunitedsta00hawegoog/manualunitedsta00hawegoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1868'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1868'', ''1868'']: published in 1868, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-earlyindianatrai63wils-a72d3a71
+    title: Early Indiana trails and surveys, v. 6 no.3 (1919)
+    url: https://archive.org/download/earlyindianatrai63wils/earlyindianatrai63wils_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1919'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1919'']: published in 1919, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-treatiseonlandsu00gill-8dd02d7f
+    title: A treatise on land-surveying; comprising the theory developed from five elementary
+      principles; and the practice with the (1875)
+    url: https://archive.org/download/treatiseonlandsu00gill/treatiseonlandsu00gill_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1875'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1875'']: published in 1875, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-amanuallandsurv01hodggoog-51b173f3
+    title: A manual of land surveying, comprising an elementary course of practice with
+      instruments and a treatise upon the survey  (1886)
+    url: https://archive.org/download/amanuallandsurv01hodggoog/amanuallandsurv01hodggoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1886'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1886'', ''1886'']: published in 1886, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-atreatiseonland07gillgoog-c03f18d2
+    title: 'A Treatise on Land-surveying: Comprising the Theory Developed from Five
+      ... (1855)'
+    url: https://archive.org/download/atreatiseonland07gillgoog/atreatiseonland07gillgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1855'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1855'', ''1855'']: published in 1855, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve24vermgoog-816ab34d
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 4 (1875)
+    url: https://archive.org/download/zeitschriftfrve24vermgoog/zeitschriftfrve24vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1875'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1875'']: published in 1875, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve17vermgoog-96096a5a
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 15 (1886)
+    url: https://archive.org/download/zeitschriftfrve17vermgoog/zeitschriftfrve17vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1886'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1886'']: published in 1886, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve15vermgoog-f52cf18c
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 16 (1887)
+    url: https://archive.org/download/zeitschriftfrve15vermgoog/zeitschriftfrve15vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1887'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1887'']: published in 1887, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve23vermgoog-e6515e1b
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 22 (1893)
+    url: https://archive.org/download/zeitschriftfrve23vermgoog/zeitschriftfrve23vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1893'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1893'']: published in 1893, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-zeitschriftfrve10vermgoog-ef066f50
+    title: Zeitschrift für Vermessungswesen. ZFV, v. 26 (1897)
+    url: https://archive.org/download/zeitschriftfrve10vermgoog/zeitschriftfrve10vermgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1897'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1872'', ''1897'']: published in 1897, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-diaryofturhandki00kirt-97cd40f5
+    title: Diary of Turhand Kirtland from 1798-1800. While surveying and laying out
+      the Western Reserve for the Connecticut Land Co (1903)
+    url: https://archive.org/download/diaryofturhandki00kirt/diaryofturhandki00kirt_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1903'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1903'']: published in 1903, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-elementarysurvey00breeuoft-df1fbed7
+    title: Elementary surveying (1916)
+    url: https://archive.org/download/elementarysurvey00breeuoft/elementarysurvey00breeuoft_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1916'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1916'']: published in 1916, US copyright expired (publications up
+      to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'
