@@ -164123,3 +164123,110 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: oas-10-5194-isprs-archives-l-4-w3-2026-107-2-b0681459
+    title: Automated geometric decomposition and semantic enrichment of shared wall
+      boundary surfaces in LoD 2 CityGML models for urban building energy modelling
+    url: https://isprs-archives.copernicus.org/articles/L-4-W3-2026/107/2026/isprs-archives-L-4-W3-2026-107-2026.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-29'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-l-4-w3-2026-107-2026
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/L-4-W3-2026/107/2026/isprs-archives-L-4-W3-2026-107-2026.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-l-4-w3-2026-107-2026 openalex:W7214784554
+    resolution: 'sim1: openalex location'
+  - id: arx-discovery-of-intergalactic-bridges-connecting-
+    title: Discovery of intergalactic bridges connecting two faint $z\sim3$ quasars
+    url: https://arxiv.org/pdf/1909.00829v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-09-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1909.00829
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1909.00829 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1051/0004-6361/201936211
+  - id: arx-the-late-jolt-re-examining-the-world-trade-cen
+    title: The Late Jolt -- Re-Examining the World Trade Center Catastrophe
+    url: https://arxiv.org/pdf/1712.06207v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-12-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1712.06207
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1712.06207 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-intensity-based-feature-selection-for-near-rea
+    title: Intensity-Based Feature Selection for Near Real-Time Damage Diagnosis of
+      Building Structures
+    url: https://arxiv.org/pdf/1910.11240v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2019-10-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1910.11240
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1910.11240 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-filtrations-and-buildings
+    title: Filtrations and Buildings
+    url: https://arxiv.org/pdf/1411.5567v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-11-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1411.5567
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1411.5567 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-a-robust-pavement-mapping-system-based-on-norm
+    title: A Robust Pavement Mapping System Based on Normal-Constrained Stereo Visual
+      Odometry
+    url: https://arxiv.org/pdf/1910.13102v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-10-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1910.13102
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1910.13102 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
