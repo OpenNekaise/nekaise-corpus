@@ -164955,3 +164955,109 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-24'
+  - id: oas-10-1016-j-egyr-2020-11-011-7317469d
+    title: Investigations towards lower cooling load in a typical residential building
+      in Kurdistan (Iraq)
+    url: http://researchrepository.napier.ac.uk/Output/2787393
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyr.2020.11.011
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy http://researchrepository.napier.ac.uk/Output/2787393;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyr.2020.11.011 openalex:W3109005860
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-symbol-spotting-on-digital-architectural-floor
+    title: Symbol Spotting on Digital Architectural Floor Plans Using a Deep Learning-based
+      Framework
+    url: https://arxiv.org/pdf/2006.00684v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2020-06-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.00684
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.00684 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-24'
+  - id: arx-a-hierarchical-deep-convolutional-neural-netwo
+    title: A Hierarchical Deep Convolutional Neural Network and Gated Recurrent Unit
+      Framework for Structural Damage Detection
+    url: https://arxiv.org/pdf/2006.01045v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-05-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.01045
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.01045 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-development-of-a-fuzzy-based-patrol-robot-usin
+    title: Development of a Fuzzy-based Patrol Robot Using in Building Automation System
+    url: https://arxiv.org/pdf/2006.02216v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-05-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.02216
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.02216 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-towards-windproofing-ligo-reducing-the-effect-
+    title: 'Towards windproofing LIGO: Reducing the effect of wind-driven floor tilt
+      by using rotation sensors in active seismic isolation'
+    url: https://arxiv.org/pdf/2003.06447v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-03-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.06447
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.06447 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-instance-segmentation-of-buildings-using-keypo
+    title: Instance segmentation of buildings using keypoints
+    url: https://arxiv.org/pdf/2006.03858v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-06-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.03858
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.03858 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
