@@ -132632,24 +132632,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7146386731
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7146806243
-    title: '職業選択に及ぼす親の職業的影響 : 小・中学校教師・大学教師・建築設計士について'
-    url: https://our.repo.nii.ac.jp/record/2009120/files/ksk_33_2_171-176.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1985-06-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7146806243
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://our.repo.nii.ac.jp/record/2009120/files/ksk_33_2_171-176.pdf; version
-      submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7146806243
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7208013956
     title: '503 現代住宅の平面構成に関する研究 : 第2報 平面類型化による典型4タイプの出現傾向について(建築計画)'
     url: https://ir.kagoshima-u.ac.jp/record/984/files/110007672877.pdf
@@ -132755,24 +132737,6 @@ sources:
     rights_verified_at: '2026-10-10'
     selected_version: submittedVersion
     origin_ids: openalex:W7208354200
-    resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7212417552
-    title: 醸造建築の調査研究
-    url: https://kindai.repo.nii.ac.jp/record/2004828/files/AN00063653-19861201-0051.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1986-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7212417552
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://kindai.repo.nii.ac.jp/record/2004828/files/AN00063653-19861201-0051.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7212417552
     resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7208431465
     title: 明治後期における三菱合資会社の不動産事業
@@ -163874,3 +163838,74 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1061/(asce)cc.1943-5614.0000477 openalex:W2057721587
     resolution: 'legacy: openalex location'
+  - id: ope-relationship-between-microstructure-and-strain
+    title: Relationship between microstructure and strain-hardening behaviour of 3D
+      printed engineered cementitious composites
+    url: https://discovery.ucl.ac.uk/10152118/1/Accepted%20Version.pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2022-07-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cemconcomp.2022.104677
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10152118/1/Accepted%20Version.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.cemconcomp.2022.104677 openalex:W4285403816
+    resolution: 'legacy: openalex location'
+  - id: ope-out-of-round-railway-wheels-and-polygonisation
+    title: Out-of-round railway wheels and polygonisation
+    url: https://research.chalmers.se/publication/535473/file/535473_Fulltext.pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-03-30'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/00423114.2023.2194544
+    license_evidence: no licence statement for this copy [copy https://research.chalmers.se/publication/535473/file/535473_Fulltext.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/00423114.2023.2194544 openalex:W4361269300
+    resolution: 'legacy: openalex location'
+  - id: arx-rio-3d-object-instance-re-localization-in-chan
+    title: 'RIO: 3D Object Instance Re-Localization in Changing Indoor Environments'
+    url: https://arxiv.org/pdf/1908.06109v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-08-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1908.06109
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1908.06109 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-structural-health-monitoring-of-cantilever-bea
+    title: Structural Health Monitoring of Cantilever Beam, a Case Study -- Using Bayesian
+      Neural Network AND Deep Learning
+    url: https://arxiv.org/pdf/1908.06326v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-08-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1908.06326
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1908.06326 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1007/978-981-13-8767-8_64
