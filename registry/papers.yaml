@@ -164248,3 +164248,56 @@ sources:
     rights_verified_at: '2026-10-24T12:57:06Z'
     origin_ids: doi:10.1002/ese3.70415 openalex:W7116798222
     resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-a-latent-variable-approach-to-heat-load-predic
+    title: A latent variable approach to heat load prediction in thermal grids
+    url: https://arxiv.org/pdf/2002.05397v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-02-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.05397
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.05397 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-solving-nonlinear-diffusive-problems-in-buildi
+    title: Solving nonlinear diffusive problems in buildings by means of a Spectral
+      Reduced-Order Model
+    url: https://arxiv.org/pdf/1704.07607v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-04-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1704.07607
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1704.07607 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1080/19401493.2018.1458905
+  - id: arx-bb-evac-fast-location-sensitive-behavior-based
+    title: 'BB_Evac: Fast Location-Sensitive Behavior-Based Building Evacuation'
+    url: https://arxiv.org/pdf/2002.08114v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-02-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.08114
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.08114 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
