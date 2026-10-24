@@ -126562,23 +126562,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208684514
     resolution: 'sim1: openalex location'
-  - id: oas-w7146053466
-    title: スケール感覚を養うプロジェクションマッピングプロジェクト（第2報） ―1/5投影装置と1/1投影装置の制作―
-    url: https://iot.repo.nii.ac.jp/record/280/files/bulletin_192.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2023-03-08'
-    document_type: article
-    persistent_id: https://openalex.org/W7146053466
-    license_evidence: no licence statement for this copy [copy https://iot.repo.nii.ac.jp/record/280/files/bulletin_192.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-09'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7146053466
-    resolution: 'sim1: openalex location'
   - id: oas-w7208149428
     title: 原寸再現模型制作 ―事例 北海道石狩市における国宝・待庵を用いた現代茶室の制作―
     url: https://iot.repo.nii.ac.jp/record/279/files/bulletin_191.pdf
@@ -126670,24 +126653,6 @@ sources:
     rights_verified_at: '2026-10-09'
     selected_version: submittedVersion
     origin_ids: openalex:W7208479833
-    resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w398169568
-    title: '今日のロンドン建築について (その1) : ロンドンの北から中心部にかけて'
-    url: https://kokushikan.repo.nii.ac.jp/record/5515/files/0368_508X_038_15.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2005-03-01'
-    document_type: article
-    persistent_id: https://openalex.org/W398169568
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://kokushikan.repo.nii.ac.jp/record/5515/files/0368_508X_038_15.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-09'
-    selected_version: submittedVersion
-    origin_ids: openalex:W398169568
     resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w419517260
     title: 今日のロンドン建築について(その2)ロンドンの中心部周辺
@@ -127744,24 +127709,6 @@ sources:
     rights_verified_at: '2026-10-09'
     selected_version: submittedVersion
     origin_ids: openalex:W7207992397
-    resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-10-11188-seisankenkyu-54-376-f54805fb
-    title: '研究速報 : ピエゾアクチュエータを用いた可変摩擦ダンパによる建築構造物のセミアクティブ免震ー第1報,可変摩擦ダンパの特性実験ー'
-    url: https://repository.dl.itc.u-tokyo.ac.jp/record/49755/files/sk054006005.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2002-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.11188/seisankenkyu.54.376
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/49755/files/sk054006005.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-09'
-    selected_version: submittedVersion
-    origin_ids: doi:10.11188/seisankenkyu.54.376 openalex:W3190434564
     resolution: 'sim1: openalex location; resolution retry'
   - id: oas-10-69181-769-50261614
     title: 'ケルンの中世教会堂建築 : 平信徒空間の視点から(3)'
@@ -131320,24 +131267,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.15083/00017609 openalex:W23385670
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-10-18999-jouflp-37-53-cea3ee07
-    title: インド密教における建築儀礼－Vajravali-nama-mandalopayika 和訳（1）－
-    url: https://kanazawa-u.repo.nii.ac.jp/record/1081/files/LE-PR-MORI-M-53.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1991-03-01'
-    document_type: article
-    persistent_id: https://doi.org/10.18999/jouflp.37.53
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://kanazawa-u.repo.nii.ac.jp/record/1081/files/LE-PR-MORI-M-53.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: doi:10.18999/jouflp.37.53 openalex:W2136878335
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w26627508
     title: '国産材需要拡大のために : 特集「住宅建築と国産材」のまとめ'
     url: https://repository.dl.itc.u-tokyo.ac.jp/record/623/files/Fukushima_199012.pdf
@@ -133645,23 +133574,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208583078
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w2170988750
-    title: 'モダンデザインの背景を探る : 1920-30年代諸事情その8 : アールデコ再考'
-    url: https://osaka-shoin.repo.nii.ac.jp/record/3905/files/KJ00009741926.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2015-01-31'
-    document_type: article
-    persistent_id: https://openalex.org/W2170988750
-    license_evidence: no licence statement for this copy [copy https://osaka-shoin.repo.nii.ac.jp/record/3905/files/KJ00009741926.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2170988750
-    resolution: 'sim1: openalex location'
   - id: oas-10-34405-00015766-b924de5f
     title: 鹿島臨海工業地帯造成に伴なう地域変貌の地理学的研究-5-建築動態
     url: https://rose-ibadai.repo.nii.ac.jp/record/15772/files/CSI2010_2618.pdf
@@ -134774,24 +134686,6 @@ sources:
     rights_verified_at: '2026-10-10'
     selected_version: submittedVersion
     origin_ids: openalex:W7146370307
-    resolution: 'sim1: openalex location'
-  - id: oas-w7146425058
-    title: Empty Housingファンド ： 介護の未来は空き家にかかっている
-    url: https://tku.repo.nii.ac.jp/record/2005913/files/NGG-10.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2014-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7146425058
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://tku.repo.nii.ac.jp/record/2005913/files/NGG-10.pdf; version submittedVersion;
-      rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7146425058
     resolution: 'sim1: openalex location'
   - id: ope-l-aquila-central-italy-and-the-disaster-cycle-
     title: L’Aquila, central Italy, and the “disaster cycle”, 2009-2017
@@ -163590,24 +163484,6 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.1016/j.compositesb.2018.12.007 openalex:W2905770351
     resolution: 'legacy: openalex location'
-  - id: ope-predicting-stress-and-strain-of-frp-confined-s
-    title: Predicting Stress and Strain of FRP-Confined Square/Rectangular Columns Using
-      Artificial Neural Networks
-    url: https://espace.curtin.edu.au/bitstream/20.500.11937/26789/2/238696_238696.pdf
-    source: openalex
-    license: unverified
-    topic: materials
-    format: pdf
-    language: en
-    published_at: '2014-03-13'
-    document_type: article
-    persistent_id: https://doi.org/10.1061/(asce)cc.1943-5614.0000477
-    license_evidence: no licence statement for this copy [copy https://espace.curtin.edu.au/bitstream/20.500.11937/26789/2/238696_238696.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-24'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1061/(asce)cc.1943-5614.0000477 openalex:W2057721587
-    resolution: 'legacy: openalex location'
   - id: ope-relationship-between-microstructure-and-strain
     title: Relationship between microstructure and strain-hardening behaviour of 3D
       printed engineered cementitious composites
@@ -164331,6 +164207,23 @@ sources:
     persistent_id: doi:10.48550/arxiv.1904.10151
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1904.10151 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-city-planning-with-augmented-reality
+    title: City Planning with Augmented Reality
+    url: https://arxiv.org/pdf/2001.06578v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-01-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2001.06578
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2001.06578 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
