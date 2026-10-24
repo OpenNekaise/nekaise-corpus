@@ -164208,3 +164208,43 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: arx-obstruction-level-detection-of-sewer-videos-us
+    title: Obstruction level detection of sewer videos using convolutional neural networks
+    url: https://arxiv.org/pdf/2002.01284v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-02-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.01284
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.01284 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: oas-10-1002-ese3-70415-64cbc07a
+    title: Prediction of Energy Consumption and Energy Savings in an Urban Vertical
+      Farm Benchmark
+    url: https://infoscience.epfl.ch/bitstreams/e7440a73-2d8e-47d2-8ab3-0d50aefc2061/download
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-12-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1002/ese3.70415
+    license_evidence: 'redirect: rights of requested copy https://infoscience.epfl.ch/bitstreams/e7440a73-2d8e-47d2-8ab3-0d50aefc2061/download
+      do not transfer to https://cf002.cdn.4science.cloud/4s-assetstore-epfl-prod/15/25/75/152575507929998591764690064978120824406?response-content-type=application%2Fpdf&response-content-disposition=attachment%3B+filename%3D%22Energy+Science+Engineering+-+2025+-+Xie+-+Prediction+of+Energy+Consumption+and+Energy+Savings+in+an+Urban+Vertical+Farm.pdf%22&Expires=1792846745&Signature=e8FmdZmYtio4-ABGWku4aX3jUPR6BWN-uJvAzIP~CxREPM2Cp5L70VHWqlXVems~ZYv9fD6GSkZpJAVhUgad9GIsI2n51Iu4TyK~FL1P-NaqZI5fLMWrCurEnFtOrmYF6U4QEs1a4FTRbUmh~6vdrtszgXgZqlIcq9bHdkco~vyx2ym9u9Ra4HiefUdALwP9wsRlMVz4ax74uxqVnur7GdXHibTvjHb5ClXqMaTkOwOY85S7HnapceNOuvSuLO2Vp8V4pstLYaR8vEJs7S24MdlVCynQYPSPHB2G~5jg8Tsbz5~jX7WyCGKUVrFlEhCFzKQLT8Wd9y4YNBW0CRolmA__&Key-Pair-Id=K20AKEP5FKG3TS;
+      payload sha256=17e7e9529d0b9c841979b206e5de4bdea0a36318487f376016925a1b12337afe;
+      original evidence: {"license": "cc-by-nc-nd", "license_evidence": "openalex.license=cc-by-nc-nd;
+      openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd; unpaywall.license=cc-by-nc-nd
+      [copy https://infoscience.epfl.ch/bitstreams/e7440a73-2d8e-47d2-8ab3-0d50aefc2061/download;
+      version submittedVersion; rights restricted]", "rights_verified_at": "2026-10-24",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-24T12:57:06Z'
+    origin_ids: doi:10.1002/ese3.70415 openalex:W7116798222
+    resolution: 'sim1: openalex+unpaywall location'
