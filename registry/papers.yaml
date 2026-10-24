@@ -130531,24 +130531,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7144915851
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7208149654
-    title: 'The viewpoint of the relationship of architecture and garden : The design
-      theory of Katsura-Rikyu of Mori Osamu and Horiguchi Sutemi, Nishizawa Fumita'
-    url: https://kuins.repo.nii.ac.jp/record/652/files/19%E2%91%A3%E7%94%B0%E4%B8%AD.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2017-12-20'
-    document_type: article
-    persistent_id: https://openalex.org/W7208149654
-    license_evidence: no licence statement for this copy [copy https://kuins.repo.nii.ac.jp/record/652/files/19%E2%91%A3%E7%94%B0%E4%B8%AD.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7208149654
-    resolution: 'sim1: openalex location'
   - id: oas-w7145064643
     title: '451 薩摩町における独居高齢者の生活実態について : 高齢者が自立できる社会形成に関する研究 その3(建築計画)'
     url: https://ir.kagoshima-u.ac.jp/record/5534/files/110007024525.pdf
@@ -130813,23 +130795,6 @@ sources:
     rights_verified_at: '2026-10-10'
     selected_version: submittedVersion
     origin_ids: openalex:W7208564509
-    resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7208583596
-    title: '聾学校の学習集団編成について : 聾学校の建築計画に関する基礎的研究4'
-    url: https://tsukuba-tech.repo.nii.ac.jp/record/1307/files/gakuju95_hirane_001.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1995-07-20'
-    document_type: article
-    persistent_id: https://openalex.org/W7208583596
-    license_evidence: no licence statement for this copy [copy https://tsukuba-tech.repo.nii.ac.jp/record/1307/files/gakuju95_hirane_001.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7208583596
     resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7208656268
     title: '研究解説 : 日本における鉄筋コンクリート造建築物の耐震補強工法の現状'
@@ -162994,24 +162959,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.conbuildmat.2013.11.098 openalex:W2052243218
     resolution: 'legacy: openalex location'
-  - id: ope-fundamental-behavior-of-steel-concrete-composi
-    title: Fundamental Behavior of Steel-Concrete Composite Beams Strengthened with
-      High Modulus Carbon Fiber Reinforced Polymer (CFRP) Materials
-    url: http://www.lib.ncsu.edu/resolver/1840.16/1959
-    source: openalex
-    license: unverified
-    topic: materials
-    format: pdf
-    language: en
-    published_at: '2005-06-30'
-    document_type: article
-    persistent_id: https://openalex.org/W2524955344
-    license_evidence: no licence statement for this copy [copy http://www.lib.ncsu.edu/resolver/1840.16/1959;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-23'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2524955344
-    resolution: 'legacy: openalex location'
   - id: arx-gaple-generalizable-approaching-policy-learnin
     title: 'GAPLE: Generalizable Approaching Policy LEarning for Robotic Object Searching
       in Indoor Environment'
@@ -163942,3 +163889,21 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-23'
+  - id: arx-assessing-workers-perceived-risk-during-constr
+    title: Assessing Workers Perceived Risk During Construction Task Using A Wristband-Type
+      Biosensor
+    url: https://arxiv.org/pdf/1908.05133v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2019-08-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1908.05133
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1908.05133 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
