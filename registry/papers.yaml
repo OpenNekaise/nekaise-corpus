@@ -164320,3 +164320,20 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-24'
     origin_ids: doi:10.1016/j.ress.2019.106737
+  - id: arx-xbd-a-dataset-for-assessing-building-damage-fr
+    title: 'xBD: A Dataset for Assessing Building Damage from Satellite Imagery'
+    url: https://arxiv.org/pdf/1911.09296v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-11-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1911.09296
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1911.09296 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'

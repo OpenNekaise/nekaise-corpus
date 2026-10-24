@@ -358591,47 +358591,206 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1883'']: published
       in 1883, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'
-  - id: arc-dixue-zazhi-v4-n5-044663dd
-    title: 地學雜誌 1913.05 第四年第五號 (1913)
-    url: https://archive.org/download/dixue-zazhi-v4-n5/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201913.05%20%E7%AC%AC%E5%9B%9B%E5%B9%B4%E7%AC%AC%E4%BA%94%E5%8F%B7_djvu.txt
+  - id: arc-dixue-zazhi-v14-n3-4-cbcab9f9
+    title: 地學雜誌 1923.02 第十四年第三四期 (1923)
+    url: https://archive.org/download/dixue-zazhi-v14-n3-4/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201923.02%20%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%B9%B4%E7%AC%AC%E4%B8%89%E5%9B%9B%E6%9C%9F_djvu.txt
     source: internet_archive
     license: unverified
     topic: infrastructure
     format: txt
+    published_at: '1923'
+    license_evidence: 'Internet Archive item metadata date/year [''1923-02'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-cmisc86-1870-10-04-perry-cce174b6
+    title: A.H. Perry letter (1870)
+    url: https://archive.org/download/CMisc86_1870-10-04_Perry/CMisc86_1870_Perry_transcript_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    published_at: '1870'
+    license_evidence: 'Internet Archive item metadata rights [''For questions or information
+      about duplication, licensing, or copyright status for this item, email <a href="mailto:specialcollections@middlebury.libanswers.com"
+      rel="ugc nofollow">Middlebury College Special Collections</a>.''] date/year [''1870-10-04'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-24'
+  - id: arc-surveyingforsett0000will-02fd300d
+    title: Surveying for Settlers (1922)
+    url: https://archive.org/download/surveyingforsett0000will/surveyingforsett0000will_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    published_at: '1922'
+    license_evidence: 'Internet Archive item metadata date/year [''1922'']: published
+      in 1922, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-gurley-civil-engineers-instruments-1896-386006bf
+    title: Gurley Civil Engineers' and Surveyors' Instruments 1896 (1896)
+    url: https://archive.org/download/gurley-civil-engineers-instruments-1896/Gurley_Civil_Engineers_Instruments_1896_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1896'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1896-01']
+    rights_verified_at: '2026-10-24'
+  - id: arc-cartography-southwest-louisiana-winnfield-h-2f1f6616
+    title: Cartography of southwestern Louisiana - Jennings Sheet (1907)
+    url: https://archive.org/download/cartography-southwest-louisiana-winnfield-harris-1907/Cartography_Southwest_Louisiana_Winnfield%28Harris1907%29_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1907'
+    license_url: https://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1907']
+    rights_verified_at: '2026-10-24'
+  - id: arc-principlespracti0001char-w1m0-42135cf7
+    title: The principles and practice of surveying, v. 1 (1908)
+    url: https://archive.org/download/principlespracti0001char_w1m0/principlespracti0001char_w1m0_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata date/year [''1908'']: published
+      in 1908, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-seamanshipitsass0000alst-4cc66552
+    title: 'Seamanship : and its associated duties in the Royal Navy : together with
+      a treatise on nautical surveying for the use of (1860)'
+    url: https://archive.org/download/seamanshipitsass0000alst/seamanshipitsass0000alst_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1860'
+    license_evidence: 'Internet Archive item metadata date/year [''1860'']: published
+      in 1860, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-irrigationengine00wilsrich-765d8300
+    title: Irrigation engineering (1909)
+    url: https://archive.org/download/irrigationengine00wilsrich/irrigationengine00wilsrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'']: published in 1909, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-manualofirrigati00wilsrich-564399c9
+    title: Manual of irrigation engineering (1893)
+    url: https://archive.org/download/manualofirrigati00wilsrich/manualofirrigati00wilsrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1893'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1893'']: published in 1893, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-irrigationengine00davirich-cca62962
+    title: Irrigation engineering (1919)
+    url: https://archive.org/download/irrigationengine00davirich/irrigationengine00davirich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1919'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1919'']: published in 1919, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-principlesofirri00newerich-a96eb7ae
+    title: 'Principles of irrigation engineering : arid lands, water supply, storage
+      works, dams, canals, water rights and products (1913)'
+    url: https://archive.org/download/principlesofirri00newerich/principlesofirri00newerich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
     published_at: '1913'
-    license_evidence: 'Internet Archive item metadata date/year [''1913-05'']: no licence
-      and no certain publication date'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1913'']: published in 1913, US copyright expired (publications up
+      to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'
-  - id: arc-dixue-zazhi-v9-n6-d2fe321e
-    title: 地學雜誌 1918.06 第九年第六期 (1918)
-    url: https://archive.org/download/dixue-zazhi-v9-n6/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201918.06%20%E7%AC%AC%E4%B9%9D%E5%B9%B4%E7%AC%AC%E5%85%AD%E6%9C%9F_djvu.txt
+  - id: arc-unitirrigationin00newerich-d4da2cdb
+    title: Irrigation in the United States (1906)
+    url: https://archive.org/download/unitirrigationin00newerich/unitirrigationin00newerich_djvu.txt
     source: internet_archive
     license: unverified
     topic: infrastructure
     format: txt
-    published_at: '1918'
-    license_evidence: 'Internet Archive item metadata date/year [''1918-06'']: no licence
-      and no certain publication date'
+    language: en
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''[1906]'']: no licence and no certain publication date'
     rights_verified_at: '2026-10-24'
-  - id: arc-dixue-zazhi-v9-n7-8-36b0a16e
-    title: 地學雜誌 1918.08 第九年第七八期 (1918)
-    url: https://archive.org/download/dixue-zazhi-v9-n7-8/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201918.08%20%E7%AC%AC%E4%B9%9D%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%85%AB%E6%9C%9F_djvu.txt
+  - id: arc-irrigationpracti00etchrich-831d8df3
+    title: Irrigation practice and irrigation engineering .. (1914)
+    url: https://archive.org/download/irrigationpracti00etchrich/irrigationpracti00etchrich_djvu.txt
     source: internet_archive
     license: unverified
     topic: infrastructure
     format: txt
-    published_at: '1918'
-    license_evidence: 'Internet Archive item metadata date/year [''1918-08'']: no licence
-      and no certain publication date'
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1914-'']: no licence and no certain publication date'
     rights_verified_at: '2026-10-24'
-  - id: arc-dixue-zazhi-v9-n90-16bd39c1
-    title: 地學雜誌 1918.10 第九年第九十期 (1918)
-    url: https://archive.org/download/dixue-zazhi-v9-n90/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201918.10%20%E7%AC%AC%E4%B9%9D%E5%B9%B4%E7%AC%AC%E4%B9%9D%E5%8D%81%E6%9C%9F_djvu.txt
+  - id: arc-irrigationengine00wilsuoft-33fbc13f
+    title: Irrigation engineering (1910)
+    url: https://archive.org/download/irrigationengine00wilsuoft/irrigationengine00wilsuoft_djvu.txt
     source: internet_archive
-    license: unverified
+    license: public-domain
     topic: infrastructure
     format: txt
-    published_at: '1918'
-    license_evidence: 'Internet Archive item metadata date/year [''1918-10'']: no licence
-      and no certain publication date'
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1910'']: published in 1910, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-irrigationengin03wilsgoog-a0ef491f
+    title: Irrigation engineering (1914)
+    url: https://archive.org/download/irrigationengin03wilsgoog/irrigationengin03wilsgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1914'', ''1909'']: published in 1914, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-principlesirrig00murpgoog-51d74ad6
+    title: 'Principles of Irrigation Engineering: Arid Lands, Water Supply, Storage
+      Works, Dams, Canals ... (1913)'
+    url: https://archive.org/download/principlesirrig00murpgoog/principlesirrig00murpgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1913'', ''1913'']: published in 1913, US copyright expired (publications
+      up to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'
