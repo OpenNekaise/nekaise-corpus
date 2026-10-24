@@ -130775,23 +130775,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7144586953
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7144610773
-    title: '住宅団地の都市気候環境 : 多摩ニュータウン南大沢地区の事例'
-    url: https://tokyo-metro-u.repo.nii.ac.jp/record/5487/files/20024-053-007.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1994-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7144610773
-    license_evidence: no licence statement for this copy [copy https://tokyo-metro-u.repo.nii.ac.jp/record/5487/files/20024-053-007.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7144610773
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7144641099
     title: '417 独居高齢者の生活実態について : 高齢者が自立できる社会形成に関する研究 その1(建築計画)'
     url: https://ir.kagoshima-u.ac.jp/record/2742/files/110007644849.pdf
@@ -165262,3 +165245,40 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-24'
     origin_ids: doi:10.1145/3406961
+  - id: arx-building-damage-annotation-on-post-hurricane-s
+    title: Building Damage Annotation on Post-Hurricane Satellite Imagery Based on Convolutional
+      Neural Networks
+    url: https://arxiv.org/pdf/1807.01688v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-07-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1807.01688
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1807.01688 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1007/s11069-020-04133-2
+  - id: arx-automatic-crack-detection-on-road-pavements-us
+    title: Automatic Crack Detection on Road Pavements Using Encoder Decoder Architecture
+    url: https://arxiv.org/pdf/2007.00477v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-07-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.00477
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.00477 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.3390/ma13132960
