@@ -164807,3 +164807,151 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: ope-contribution-of-prioritized-urban-nature-based
+    title: Contribution of prioritized urban nature-based solutions allocation to carbon
+      neutrality
+    url: https://hig.diva-portal.org/smash/get/diva2:1784921/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-07-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1038/s41558-023-01737-x
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://hig.diva-portal.org/smash/get/diva2:1784921/FULLTEXT01; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1038/s41558-023-01737-x openalex:W4384927994
+    resolution: 'legacy: openalex location'
+  - id: ope-ugs-1m-fine-grained-urban-green-space-mapping-
+    title: 'UGS-1m: fine-grained urban green space mapping of 31 major cities in China
+      based on the deep learning framework'
+    url: https://essd.copernicus.org/articles/15/555/2023/essd-15-555-2023.pdf
+    source: openalex
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-02-03'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/essd-15-555-2023
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://essd.copernicus.org/articles/15/555/2023/essd-15-555-2023.pdf; version
+      publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/essd-15-555-2023 openalex:W4319157933
+    resolution: 'legacy: openalex location'
+  - id: ope-assessment-of-natural-and-anthropogenic-aeroso
+    title: Assessment of natural and anthropogenic aerosol air pollution in the Middle
+      East using MERRA-2, CAMS data assimilation products, and high-resolution W
+    url: https://acp.copernicus.org/articles/20/9281/2020/acp-20-9281-2020.pdf
+    source: openalex
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-08-06'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/acp-20-9281-2020
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://acp.copernicus.org/articles/20/9281/2020/acp-20-9281-2020.pdf; version
+      publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/acp-20-9281-2020 openalex:W3005261989
+    resolution: 'legacy: openalex location'
+  - id: ope-the-influence-of-land-use-and-land-cover-chang
+    title: 'The influence of land use and land cover change on landslide susceptibility:
+      a case study in Zhushan Town, Xuan''en County (Hubei, China)'
+    url: https://nhess.copernicus.org/articles/19/2207/2019/nhess-19-2207-2019.pdf
+    source: openalex
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-10-10'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-19-2207-2019
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/19/2207/2019/nhess-19-2207-2019.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-19-2207-2019 openalex:W2953509868
+    resolution: 'legacy: openalex location'
+  - id: ope-connectivity-and-physical-activity-using-footp
+    title: 'Connectivity and physical activity: using footpath networks to measure the
+      walkability of built environments'
+    url: https://pureadmin.qub.ac.uk/ws/files/15825772/Ellis_et_al_2015_Connectivity_paper_preprint_copy.pdf
+    source: openalex
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2015-10-14'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/0265813515610672
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://pureadmin.qub.ac.uk/ws/files/15825772/Ellis_et_al_2015_Connectivity_paper_preprint_copy.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/0265813515610672 openalex:W2299848270
+    resolution: 'legacy: openalex location'
+  - id: arx-an-innovative-approach-to-determine-rebar-dept
+    title: An Innovative Approach to Determine Rebar Depth and Size by Comparing GPR
+      Data with a Theoretical Database
+    url: https://arxiv.org/pdf/2005.09643v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2020-05-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2005.09643
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2005.09643 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-learning-structural-graph-layouts-and-3d-shape
+    title: Learning Structural Graph Layouts and 3D Shapes for Long Span Bridges 3D
+      Reconstruction
+    url: https://arxiv.org/pdf/1907.03387v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-07-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1907.03387
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1907.03387 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-deep-reinforcement-learning-for-real-autonomou
+    title: Deep Reinforcement learning for real autonomous mobile robot navigation in
+      indoor environments
+    url: https://arxiv.org/pdf/2005.13857v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2005.13857
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2005.13857 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-24'
