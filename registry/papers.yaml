@@ -135216,24 +135216,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208471398
     resolution: 'sim1: openalex location'
-  - id: oas-w7208599095
-    title: '[Special Contribution] For 1300 Years of Time and Space: What Five-storied
-      Pagodas(Goju-no-to) Tell Us'
-    url: https://swu.repo.nii.ac.jp/record/5296/files/KJ00007253243.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2011-07-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7208599095
-    license_evidence: no licence statement for this copy [copy https://swu.repo.nii.ac.jp/record/5296/files/KJ00007253243.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7208599095
-    resolution: 'sim1: openalex location'
   - id: oas-10-14946-00001659-d382a6f6
     title: The Continuing Use of Apartments
     url: https://shoin.repo.nii.ac.jp/record/1692/files/KJ00006907688.pdf
@@ -164300,4 +164282,127 @@ sources:
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: ope-white-paper-machine-learning-in-certified-syst
+    title: White Paper Machine Learning in Certified Systems
+    url: https://arxiv.org/pdf/2103.10529
+    source: openalex
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-03-18'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2103.10529
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2103.10529;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2103.10529 openalex:W3136514444
+    resolution: 'legacy: openalex location'
+  - id: ope-a-nascent-educational-framework-for-fire-safet
+    title: A nascent educational framework for fire safety engineering
+    url: https://discovery.ucl.ac.uk/10089023/1/Woodrow_et%20al%20revised%20submission_extracted.pdf
+    source: openalex
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2013-03-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.firesaf.2013.02.004
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10089023/1/Woodrow_et%20al%20revised%20submission_extracted.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.firesaf.2013.02.004 openalex:W2072747628
+    resolution: 'legacy: openalex location'
+  - id: ope-international-comparative-analysis-of-building
+    title: 'International Comparative Analysis of Building Regulations: An Analytical
+      Tool'
+    url: https://openresearch-repository.anu.edu.au/bitstreams/8fbc72ae-3907-4c6f-978c-797ec6478120/download
+    source: openalex
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2009-04-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1108/17561450910950223
+    license_evidence: no licence statement for this copy [copy https://openresearch-repository.anu.edu.au/bitstreams/8fbc72ae-3907-4c6f-978c-797ec6478120/download;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1108/17561450910950223 openalex:W2089203649
+    resolution: 'legacy: openalex location'
+  - id: ope-tunnel-fire-safety-management-and-systems-thin
+    title: 'Tunnel fire safety management and systems thinking: Adapting engineering
+      practice through regulations and education'
+    url: https://discovery.ucl.ac.uk/10191349/1/Torero%20Cullen_1-s2.0-S0379711224000535-main.pdf
+    source: openalex
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-03-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.firesaf.2024.104140
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10191349/1/Torero%20Cullen_1-s2.0-S0379711224000535-main.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.firesaf.2024.104140 openalex:W4393257069
+    resolution: 'legacy: openalex location'
+  - id: arx-applying-rule-based-context-knowledge-to-build
+    title: Applying Rule-Based Context Knowledge to Build Abstract Semantic Maps of
+      Indoor Environments
+    url: https://arxiv.org/pdf/2002.10938v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-02-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.10938
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.10938 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-comparative-analysis-of-single-and-hybrid-neur
+    title: Comparative Analysis of Single and Hybrid Neuro-Fuzzy-Based Models for an
+      Industrial Heating Ventilation and Air Conditioning Control System
+    url: https://arxiv.org/pdf/2002.11042v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-02-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.11042
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.11042 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-24'
+  - id: arx-reconstructing-element-by-element-dissipated-h
+    title: 'Reconstructing Element-by-Element Dissipated Hysteretic Energy in Instrumented
+      Buildings: Application to the Van Nuys Hotel Testbed'
+    url: https://arxiv.org/pdf/2002.12426v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-02-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.12426
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.12426 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-24'
