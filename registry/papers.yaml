@@ -164719,3 +164719,91 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: oas-10-1109-access-2023-3262934-07d066b6
+    title: Design of an EnergyPlus Model-Based Smart Controller for Maintaining Thermal
+      Comfortable Environment in Non-Domestic Building
+    url: https://e-space.mmu.ac.uk/632483/1/10086530.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/access.2023.3262934
+    license_evidence: no licence statement for this copy [copy https://e-space.mmu.ac.uk/632483/1/10086530.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1109/access.2023.3262934 openalex:W4361801809
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-deep-learning-framework-for-detecting-ground-d
+    title: Deep Learning Framework for Detecting Ground Deformation in the Built Environment
+      using Satellite InSAR data
+    url: https://arxiv.org/pdf/2005.03221v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2005.03221
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2005.03221 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-on-the-eigenproblem-for-gaussian-bridges
+    title: On the eigenproblem for Gaussian bridges
+    url: https://arxiv.org/pdf/1706.09298v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-06-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1706.09298
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1706.09298 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-per-pixel-classification-rebar-exposures-in-br
+    title: Per-pixel Classification Rebar Exposures in Bridge Eye-inspection
+    url: https://arxiv.org/pdf/2004.12805v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-04-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.12805
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.12805 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-synthetic-image-augmentation-for-damage-region
+    title: Synthetic Image Augmentation for Damage Region Segmentation using Conditional
+      GAN with Structure Edge
+    url: https://arxiv.org/pdf/2005.08628v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-05-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2005.08628
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2005.08628 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
