@@ -165187,3 +165187,59 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: arx-a-linear-time-algorithm-for-constructing-ortho
+    title: A linear time algorithm for constructing orthogonal floor plans with minimum
+      number of bends
+    url: https://arxiv.org/pdf/2006.14182v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-06-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.14182
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.14182 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-crackgan-pavement-crack-detection-using-partia
+    title: 'CrackGAN: Pavement Crack Detection Using Partially Accurate Ground Truths
+      Based on Generative Adversarial Learning'
+    url: https://arxiv.org/pdf/1909.08216v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-09-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1909.08216
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1909.08216 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1109/tits.2020.2990703
+  - id: arx-automated-pavement-crack-segmentation-using-u-
+    title: Automated Pavement Crack Segmentation Using U-Net-based Convolutional Neural
+      Network
+    url: https://arxiv.org/pdf/2001.01912v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-01-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2001.01912
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2001.01912 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1109/access.2020.3003638
