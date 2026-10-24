@@ -353345,20 +353345,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1905'']: published
       in 1905, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'
-  - id: arc-treatiseonprinci00simm-cb75a04e
-    title: A treatise on the principles and practice of levelling, showing its application
-      to purposes of railway engineering and t (1870)
-    url: https://archive.org/download/treatiseonprinci00simm/treatiseonprinci00simm_djvu.txt
-    source: internet_archive
-    license: unverified
-    topic: infrastructure
-    format: txt
-    language: en
-    published_at: '1870'
-    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
-      is unaware of any copyright restrictions for this item.''] date/year [''1870'']:
-      a rights statement is not a recognized licence or public-domain statement'
-    rights_verified_at: '2026-10-24'
   - id: arc-proceedingsofame1916amer-064f7751
     title: Proceedings of the American Electric Railway Engineering Association ...
       containing a complete report of the ... Annual , v. 1916 (1911)
@@ -353938,4 +353924,572 @@ sources:
     license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
       date/year [''1896'']: published in 1896, US copyright expired (publications up
       to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-pavingandmunici00unkngoog-b9c79b8e
+    title: Paving and municipal engineering (1890)
+    url: https://archive.org/download/pavingandmunici00unkngoog/pavingandmunici00unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1890'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1890'']: published in 1890, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-publicwatersupp01meadgoog-8ab92d31
+    title: 'Public water-supplies : requirements, resources, and the construction of
+      works (1910)'
+    url: https://archive.org/download/publicwatersupp01meadgoog/publicwatersupp01meadgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1910'']: published in 1910, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-watersewagework60v61chic-d9262fd9
+    title: Water & sewage works, v. 60-61 (1921)
+    url: https://archive.org/download/watersewagework60v61chic/watersewagework60v61chic_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1921'
+    license_evidence: 'Internet Archive item metadata date/year [''1921'']: published
+      in 1921, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-watersewageworks45chic-ec58a97b
+    title: Water & sewage works, v. 45 (1913)
+    url: https://archive.org/download/watersewageworks45chic/watersewageworks45chic_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-watersewagework62v63chic-44a51abb
+    title: Water & sewage works, v. 62-63 (1922)
+    url: https://archive.org/download/watersewagework62v63chic/watersewagework62v63chic_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1922'
+    license_evidence: 'Internet Archive item metadata date/year [''1922'']: published
+      in 1922, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-engineeringandc00unkngoog-aa5bda22
+    title: Engineering and contracting (1926)
+    url: https://archive.org/download/engineeringandc00unkngoog/engineeringandc00unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1926'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1926'']: published in 1926, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-gri-33125011899693-857c17aa
+    title: Miscellanea antiquario-idraulica (1827)
+    url: https://archive.org/download/gri_33125011899693/gri_33125011899693_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: it
+    published_at: '1827'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1827'']: published in 1827, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-publicwatersuppl00turn-1b5ab7f0
+    title: Public water-supplies.Requirements, resources, and the construction of works.
+      (1906)
+    url: https://archive.org/download/publicwatersuppl00turn/publicwatersuppl00turn_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1906'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-24'
+  - id: arc-publicwatersuppl00turn-0-1aae647e
+    title: 'Public water-supplies: requirements, resources, and the construction of
+      works. (1913)'
+    url: https://archive.org/download/publicwatersuppl00turn_0/publicwatersuppl00turn_0_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata rights [''The Library of Congress
+      is unaware of any copyright restrictions for this item.''] date/year [''1913'']:
+      a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-24'
+  - id: arc-b33778954-0001-e75b5084
+    title: 'Yorkshire, past and present : a history and a description of the three ridings
+      of the great county of York, from the ear, v. Vol. 1, [div. 1] (1871)'
+    url: https://archive.org/download/b33778954_0001/b33778954_0001_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    published_at: '1871'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1871'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-24'
+  - id: arc-watersupplyengin0000apre-de527ff1
+    title: water supply engineering (1917)
+    url: https://archive.org/download/watersupplyengin0000apre/watersupplyengin0000apre_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1917'
+    license_evidence: 'Internet Archive item metadata date/year [''1917'']: published
+      in 1917, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-firstnineteentha15massiala-ca75b97c
+    title: First-Nineteenth annual report of the Metropolitan water and sewerage board
+      ... 1901-1919, v. 15 (1902)
+    url: https://archive.org/download/firstnineteentha15massiala/firstnineteentha15massiala_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902-20'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-firstnineteentha14massiala-fa5dc190
+    title: First-Nineteenth annual report of the Metropolitan water and sewerage board
+      ... 1901-1919, v. 14 (1902)
+    url: https://archive.org/download/firstnineteentha14massiala/firstnineteentha14massiala_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902-20'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-firstnineteentha10massiala-f46024a4
+    title: First-Nineteenth annual report of the Metropolitan water and sewerage board
+      ... 1901-1919, v. 10 (1902)
+    url: https://archive.org/download/firstnineteentha10massiala/firstnineteentha10massiala_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902-20'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-firstnineteentha08massiala-f13e7b3b
+    title: First-Nineteenth annual report of the Metropolitan water and sewerage board
+      ... 1901-1919, v. 8 (1902)
+    url: https://archive.org/download/firstnineteentha08massiala/firstnineteentha08massiala_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902-20'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-firstnineteentha13massiala-81dd7b53
+    title: First-Nineteenth annual report of the Metropolitan water and sewerage board
+      ... 1901-1919, v. 13 (1902)
+    url: https://archive.org/download/firstnineteentha13massiala/firstnineteentha13massiala_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902-20'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-seweragesewagetr00babbrich-033184b8
+    title: Sewerage and sewage treatment (1922)
+    url: https://archive.org/download/seweragesewagetr00babbrich/seweragesewagetr00babbrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1922'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1922'']: published in 1922, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-sewerageconst00folwrich-c0bb9d39
+    title: Sewerage. The designing, construction, and maintenance of sewerage systems
+      (1899)
+    url: https://archive.org/download/sewerageconst00folwrich/sewerageconst00folwrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1899'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1899'']: published in 1899, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-sewersdrainscomp00marsrich-fe55247f
+    title: Sewers and drains. A comprehensive discussion of modern sanitary methods
+      in the design of sewers and sewerage systems, i (1917)
+    url: https://archive.org/download/sewersdrainscomp00marsrich/sewersdrainscomp00marsrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1917'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1917'']: published in 1917, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-rudimentarytreat00demprich-261297f9
+    title: 'Rudimentary treatise on the drainage of towns and buildings: suggestive
+      of sanatory regulations conducive to the health  (1865)'
+    url: https://archive.org/download/rudimentarytreat00demprich/rudimentarytreat00demprich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1865'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1865'']: published in 1865, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-sanitarydrainage00waririch-a0b195e6
+    title: The sanitary drainage of houses and towns (1879)
+    url: https://archive.org/download/sanitarydrainage00waririch/sanitarydrainage00waririch_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1879'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1879'']: published in 1879, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-sewagesewerageof00warrrich-7117a686
+    title: Sewage and sewerage of farm homes (1922)
+    url: https://archive.org/download/sewagesewerageof00warrrich/sewagesewerageof00warrrich_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1922'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1922'']: published in 1922, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-seweragesewagedi00newyrich-52808d02
+    title: Sewerage and sewage disposal in the metropolitan district of New York and
+      New Jersey; report, April 30, 1910 (1910)
+    url: https://archive.org/download/seweragesewagedi00newyrich/seweragesewagedi00newyrich_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1910]'']: no licence and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreportmet07unkngoog-ec510141
+    title: Annual Report of the Metropolitan Water and Sewerage Board (1911)
+    url: https://archive.org/download/annualreportmet07unkngoog/annualreportmet07unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1911'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1911'', ''1911'']: published in 1911, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreport18divigoog-bb9d3473
+    title: Annual Report (1893)
+    url: https://archive.org/download/annualreport18divigoog/annualreport18divigoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1893'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1893'', ''1893'']: published in 1893, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreport30boargoog-7f6899f6
+    title: Annual Report (1918)
+    url: https://archive.org/download/annualreport30boargoog/annualreport30boargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1918'', ''1918'']: published in 1918, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreportmet16unkngoog-9714bf29
+    title: Annual Report of the Metropolitan Water and Sewerage Board (1913)
+    url: https://archive.org/download/annualreportmet16unkngoog/annualreportmet16unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1913'', ''1913'']: published in 1913, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-americansewerag00eddygoog-feecd3e9
+    title: American sewerage practice .. (1915)
+    url: https://archive.org/download/americansewerag00eddygoog/americansewerag00eddygoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1915'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1914'', ''1915'']: published in 1915, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-amanualpractica02parkgoog-3e471bd6
+    title: A manual of practical hygiene (1891)
+    url: https://archive.org/download/amanualpractica02parkgoog/amanualpractica02parkgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1891'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1883'', ''1891'']: published in 1891, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreport19boargoog-ba5e1185
+    title: Annual Report (1902)
+    url: https://archive.org/download/annualreport19boargoog/annualreport19boargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1902'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1902'', ''1902'']: published in 1902, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreportmet19unkngoog-c0cf3809
+    title: Annual Report of the Metropolitan Water and Sewerage Board (1916)
+    url: https://archive.org/download/annualreportmet19unkngoog/annualreportmet19unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1916'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1916'', ''1916'']: published in 1916, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-evolutiongreate00shongoog-bf3baf8e
+    title: The evolution of greater Britain's antiseptic house & town sewage-drainage
+      sysems of the twentieth century and after (1914)
+    url: https://archive.org/download/evolutiongreate00shongoog/evolutiongreate00shongoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1914'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1914'', ''1914'']: published in 1914, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreportmet05unkngoog-e4baedd9
+    title: Annual Report of the Metropolitan Water and Sewerage Board (1918)
+    url: https://archive.org/download/annualreportmet05unkngoog/annualreportmet05unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1918'', ''1918'']: published in 1918, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreport28boargoog-3d962422
+    title: Annual Report (1910)
+    url: https://archive.org/download/annualreport28boargoog/annualreport28boargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1910'', ''1910'']: published in 1910, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreportmet10unkngoog-1d315f60
+    title: Annual Report of the Metropolitan Water and Sewerage Board (1910)
+    url: https://archive.org/download/annualreportmet10unkngoog/annualreportmet10unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1910'', ''1910'']: published in 1910, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreportmet18unkngoog-86223c63
+    title: Annual Report of the Metropolitan Water and Sewerage Board (1909)
+    url: https://archive.org/download/annualreportmet18unkngoog/annualreportmet18unkngoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'', ''1909'']: published in 1909, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-sewersanddrains00marsgoog-2d1b9914
+    title: Sewers and drains; a practical treatise on the selection, design, and construction
+      of public and domestic sewerage and d (1909)
+    url: https://archive.org/download/sewersanddrains00marsgoog/sewersanddrains00marsgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1909'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1909'', ''1908'']: published in 1909, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-sanitaryenginee00lathgoog-2f5d48f9
+    title: Sanitary engineering, a guide to the construction of works of sewerage and
+      house drainage, with tables for facilitating  (1878)
+    url: https://archive.org/download/sanitaryenginee00lathgoog/sanitaryenginee00lathgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1878'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1877'', ''1878'']: published in 1878, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-suggestionsfors00warigoog-cfa5074a
+    title: Suggestions for the sanitary drainage of Washington City, v. 26, no. 1 (1883)
+    url: https://archive.org/download/suggestionsfors00warigoog/suggestionsfors00warigoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1883'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1880'', ''1883'']: published in 1883, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-undergroundworl00knoxgoog-86e957ed
+    title: 'The underground world : a mirror of life below the surface, with vivid descriptions
+      of the hidden works of nature and ar (1883)'
+    url: https://archive.org/download/undergroundworl00knoxgoog/undergroundworl00knoxgoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1883'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1883'', ''1883'']: published in 1883, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-cihm-00069-ddf52d14
+    title: La ventilation libre des égouts en rapport avec l'hygiène de l'habitation
+      [microforme] (1892)
+    url: https://archive.org/download/cihm_00069/cihm_00069_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: fr
+    published_at: '1892'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1892'']: published in 1892, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-reporttogeneralb00dick-a96bf66c
+    title: Report to the General Board of Health on a preliminary inquiry into the sewerage,
+      drainage, and supply of water, and the, v. Talbot Collectio (1857)
+    url: https://archive.org/download/reporttogeneralb00dick/reporttogeneralb00dick_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1857'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1857'', ''1857'']: published in 1857, US copyright expired (publications
+      up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-annualreport01boargoog-71381d2f
+    title: Annual Report (1908)
+    url: https://archive.org/download/annualreport01boargoog/annualreport01boargoog_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1908'
+    license_evidence: 'Internet Archive item metadata rights [''NOT_IN_COPYRIGHT'']
+      date/year [''1908'', ''1908'']: published in 1908, US copyright expired (publications
+      up to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'

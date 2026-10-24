@@ -131727,58 +131727,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7145606694
     resolution: 'sim1: openalex location'
-  - id: oas-10-15014-0000000106-a162fd25
-    title: 『状況のアーキテクチャーへ？』京都市立芸術大学美術学部構想設計
-    url: https://kcua.repo.nii.ac.jp/record/106/files/bfoa61b04.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2017-03-23'
-    document_type: article
-    persistent_id: https://doi.org/10.15014/0000000106
-    license_evidence: no licence statement for this copy [copy https://kcua.repo.nii.ac.jp/record/106/files/bfoa61b04.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: doi:10.15014/0000000106 openalex:W7143897255
-    resolution: 'sim1: openalex location'
-  - id: oas-10-69341-2012981-f244be48
-    title: 〈視察レポート〉アルジューブ博物館を訪問して
-    url: https://sophia.repo.nii.ac.jp/record/2012981/files/200000929954_000009000_181.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2017-03-03'
-    document_type: article
-    persistent_id: https://doi.org/10.69341/2012981
-    license_evidence: no licence statement for this copy [copy https://sophia.repo.nii.ac.jp/record/2012981/files/200000929954_000009000_181.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: doi:10.69341/2012981 openalex:W7143764653
-    resolution: 'sim1: openalex location'
-  - id: oas-w2701581813
-    title: '省エネルギー政策に関する一考察 : 特に,その類型と効果'
-    url: https://rissho.repo.nii.ac.jp/record/2830/files/[059-074].pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2017-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2701581813
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://rissho.repo.nii.ac.jp/record/2830/files/[059-074].pdf; version submittedVersion;
-      rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2701581813
-    resolution: 'sim1: openalex location'
   - id: oas-w2742016958
     title: 'モダンデザインの背景を探る : 1900 年代諸事情その10 旧社会体制に埋もれた中欧モダン住宅'
     url: https://osaka-shoin.repo.nii.ac.jp/record/4103/files/%E5%A1%9A%E5%8F%A3%E5%85%88%E7%94%9F.pdf
@@ -132331,24 +132279,6 @@ sources:
     rights_verified_at: '2026-10-10'
     selected_version: submittedVersion
     origin_ids: openalex:W7208694454
-    resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w9749573
-    title: 建築構造物の応答制御設計法に関する研究 （第1報：制震構造物の振動実験）
-    url: https://nagasaki-u.repo.nii.ac.jp/record/14323/files/kogaku19_33_12.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '1989-08-01'
-    document_type: article
-    persistent_id: https://openalex.org/W9749573
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://nagasaki-u.repo.nii.ac.jp/record/14323/files/kogaku19_33_12.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W9749573
     resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w296820602
     title: '調査報告 : 台湾・韓国における日本人建築家作品の現地調査'
@@ -163890,3 +163820,57 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: ope-durability-of-concrete-containing-carbonated-r
+    title: 'Durability of concrete containing carbonated recycled aggregates: A comprehensive
+      review'
+    url: https://discovery.ucl.ac.uk/10200704/1/Accepted%20Version.pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-11-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cemconcomp.2024.105865
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10200704/1/Accepted%20Version.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.cemconcomp.2024.105865 openalex:W4404678195
+    resolution: 'legacy: openalex location'
+  - id: ope-experimental-and-analytical-investigation-on-c
+    title: 'Experimental and analytical investigation on CFRP strengthened glulam laminated
+      timber beams: Full-scale experiments'
+    url: https://opus.lib.uts.edu.au/bitstream/10453/129292/4/5692BCF7-E67A-495D-8245-CD46233DEC95.pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2018-12-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.compositesb.2018.12.007
+    license_evidence: no licence statement for this copy [copy https://opus.lib.uts.edu.au/bitstream/10453/129292/4/5692BCF7-E67A-495D-8245-CD46233DEC95.pdf;
+      version publishedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1016/j.compositesb.2018.12.007 openalex:W2905770351
+    resolution: 'legacy: openalex location'
+  - id: ope-predicting-stress-and-strain-of-frp-confined-s
+    title: Predicting Stress and Strain of FRP-Confined Square/Rectangular Columns Using
+      Artificial Neural Networks
+    url: https://espace.curtin.edu.au/bitstream/20.500.11937/26789/2/238696_238696.pdf
+    source: openalex
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2014-03-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1061/(asce)cc.1943-5614.0000477
+    license_evidence: no licence statement for this copy [copy https://espace.curtin.edu.au/bitstream/20.500.11937/26789/2/238696_238696.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1061/(asce)cc.1943-5614.0000477 openalex:W2057721587
+    resolution: 'legacy: openalex location'
