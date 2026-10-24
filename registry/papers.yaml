@@ -134882,23 +134882,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7146425058
     resolution: 'sim1: openalex location'
-  - id: oas-w7208325261
-    title: 「方丈の庵」の居住空間のデザインに関する実践的研究
-    url: https://kobe-du.repo.nii.ac.jp/record/124/files/19_kaneko_2013.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2013-11-25'
-    document_type: article
-    persistent_id: https://openalex.org/W7208325261
-    license_evidence: no licence statement for this copy [copy https://kobe-du.repo.nii.ac.jp/record/124/files/19_kaneko_2013.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7208325261
-    resolution: 'sim1: openalex location'
   - id: ope-l-aquila-central-italy-and-the-disaster-cycle-
     title: L’Aquila, central Italy, and the “disaster cycle”, 2009-2017
     url: https://discovery.ucl.ac.uk/10051485/1/Alexander%20-%20L%27Aquila%20Paper.pdf
@@ -164350,6 +164333,41 @@ sources:
     persistent_id: doi:10.48550/arxiv.1912.02480
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.02480 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-automatic-analysis-of-sewer-pipes-based-on-unr
+    title: Automatic Analysis of Sewer Pipes Based on Unrolled Monocular Fisheye Images
+    url: https://arxiv.org/pdf/1912.05222v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-12-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.05222
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.05222 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1109/wacv.2018.00223
+  - id: arx-ambient-vibrations-of-age-old-masonry-towers-r
+    title: 'Ambient vibrations of age-old masonry towers: results of long-term dynamic
+      monitoring in the historic centre of Lucca'
+    url: https://arxiv.org/pdf/1907.00765v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2019-07-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1907.00765
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1907.00765 (v3, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
