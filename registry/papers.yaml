@@ -164248,25 +164248,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
-  - id: oas-10-1016-j-energy-2020-119646-8b61cccc
-    title: Comprehensive energy, economic and thermal comfort assessments for the passive
-      energy retrofit of historical buildings - A case study of a late ninete
-    url: https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2020-12-26'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.energy.2020.119646
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
-      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-24'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.energy.2020.119646 openalex:W3116469510
-    resolution: 'sim1: openalex+unpaywall location'
   - id: arx-from-pixels-to-buildings-end-to-end-probabilis
     title: 'From Pixels to Buildings: End-to-end Probabilistic Deep Networks for Large-scale
       Semantic Mapping'
@@ -165500,3 +165481,73 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: arx-learning-to-simulate-and-design-for-structural
+    title: Learning to simulate and design for structural engineering
+    url: https://arxiv.org/pdf/2003.09103v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-03-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.09103
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.09103 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-damage-detection-in-bridge-structures-an-edge-
+    title: 'Damage Detection in Bridge Structures: An Edge Computing Approach'
+    url: https://arxiv.org/pdf/2008.06724v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-08-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2008.06724
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2008.06724 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-an-architectural-design-for-measurement-uncert
+    title: An Architectural Design for Measurement Uncertainty Evaluation in Cyber-Physical
+      Systems
+    url: https://arxiv.org/pdf/2008.07282v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2020-08-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2008.07282
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2008.07282 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-towards-smart-sustainable-cities-addressing-se
+    title: 'Towards Smart Sustainable Cities: Addressing semantic heterogeneity in building
+      management systems using discriminative models'
+    url: https://arxiv.org/pdf/2008.07414v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-08-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2008.07414
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2008.07414 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1016/j.scs.2020.102367
