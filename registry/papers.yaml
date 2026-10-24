@@ -164440,3 +164440,94 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: oas-10-1016-j-energy-2020-119646-8b61cccc
+    title: Comprehensive energy, economic and thermal comfort assessments for the passive
+      energy retrofit of historical buildings - A case study of a late ninete
+    url: https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-12-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2020.119646
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2020.119646 openalex:W3116469510
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-from-pixels-to-buildings-end-to-end-probabilis
+    title: 'From Pixels to Buildings: End-to-end Probabilistic Deep Networks for Large-scale
+      Semantic Mapping'
+    url: https://arxiv.org/pdf/1812.11866v8
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-12-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1812.11866
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1812.11866 (v8, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-multi-objective-variational-autoencoder-an-app
+    title: 'Multi-Objective Variational Autoencoder: an Application for Smart Infrastructure
+      Maintenance'
+    url: https://arxiv.org/pdf/2003.05070v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.05070
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.05070 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-vectorizing-world-buildings-planar-graph-recon
+    title: 'Vectorizing World Buildings: Planar Graph Reconstruction by Primitive Detection
+      and Relationship Inference'
+    url: https://arxiv.org/pdf/1912.05135v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-12-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.05135
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.05135 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-shine-strategies-for-high-frequency-indoor-env
+    title: SHINE (Strategies for High-frequency INdoor Environments) with Efficient
+      THz-AP Placement
+    url: https://arxiv.org/pdf/2003.07015v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.07015
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.07015 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
