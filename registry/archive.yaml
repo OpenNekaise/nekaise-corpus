@@ -358181,20 +358181,6 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1897'']: published
       in 1897, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'
-  - id: arc-tavolediragguagl00ital-1c43d501
-    title: Tavole di ragguaglio dirette e inverse fra la misura delle vigne di Roma
-      e la censuale (1825)
-    url: https://archive.org/download/tavolediragguagl00ital/tavolediragguagl00ital_djvu.txt
-    source: internet_archive
-    license: public-domain
-    topic: infrastructure
-    format: txt
-    language: it
-    published_at: '1825'
-    license_url: https://creativecommons.org/publicdomain/mark/1.0/
-    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/publicdomain/mark/1.0/']
-      date/year ['1825']
-    rights_verified_at: '2026-10-24'
   - id: arc-manualofprincipa00wleg-4-e6fe165d
     title: A manual of the principal instruments used in American engineering and surveying,
       manufactured by W. & L.E. Gurley, Troy (1884)
@@ -358413,4 +358399,206 @@ sources:
     license_evidence: 'Internet Archive item metadata rights [''Not in copyright. The
       BHL knows of no copyright restrictions on this item.''] date/year [''1901'']:
       a rights statement is not a recognized licence or public-domain statement'
+    rights_verified_at: '2026-10-24'
+  - id: arc-narrativeofsurve02fitz-befd186f
+    title: Narrative of the surveying voyages of His Majesty's ships Adventure and Beagle,
+      between the years 1826 and 1836, describ, v. 2 (1839)
+    url: https://archive.org/download/narrativeofsurve02fitz/narrativeofsurve02fitz_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1839'
+    license_evidence: 'Internet Archive item metadata date/year [''1839'']: published
+      in 1839, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-in-gov-ignca-17344-4c17636e
+    title: Gazetteer of the Bombay Presidency vol.XVI (1883)
+    url: https://archive.org/download/in.gov.ignca.17344/17344_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1883'
+    license_evidence: 'Internet Archive item metadata date/year [''1883'']: published
+      in 1883, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-biostor-66462-ab201e36
+    title: LXVI.—Natural History Notes from the Royal Indian Marine Survey Ship ‘Investigator,’
+      Commander T. H. Heming, R. N., comm, v. 8 (1901)
+    url: https://archive.org/download/biostor-66462/biostor-66462_djvu.txt
+    source: internet_archive
+    license: cc-by-nc
+    topic: infrastructure
+    format: txt
+    published_at: '1901'
+    license_url: http://creativecommons.org/licenses/by-nc/3.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/licenses/by-nc/3.0/']
+      date/year ['1901', '1901']
+    rights_verified_at: '2026-10-24'
+  - id: arc-breithaupt-1920-theo-3b7f28b2
+    title: Breithaupt 1920; Theodolite (1920)
+    url: https://archive.org/download/breithaupt-1920-theo/Breithaupt%201920%20theo_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1920'
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc-nd/4.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-24'
+  - id: arc-breithaupt-1920-grub-20230907-bcf3e00d
+    title: Breithaupt 1920; Gruben-Theodolite (1920)
+    url: https://archive.org/download/breithaupt-1920-grub_20230907/Breithaupt%201920%20grub_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1920'
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc-nd/4.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-24'
+  - id: arc-breithaupt-1920-nivel-b7ec4305
+    title: Breithaupt 1920; Nivelliere (1920)
+    url: https://archive.org/download/breithaupt-1920-nivel/Breithaupt%201920%20nivel_djvu.txt
+    source: internet_archive
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: txt
+    language: de
+    published_at: '1920'
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: Internet Archive item metadata licenseurl ['https://creativecommons.org/licenses/by-nc-nd/4.0/']
+      date/year ['1920', '1920']
+    rights_verified_at: '2026-10-24'
+  - id: arc-bwb-o5-mgy-500-2-a2367bc7
+    title: A Treatise on Surveying; in Two Parts, v. 2 (1906)
+    url: https://archive.org/download/bwb_O5-MGY-500_2/bwb_O5-MGY-500_2_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1906'
+    license_evidence: 'Internet Archive item metadata date/year [''1906'']: published
+      in 1906, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-pbc-gda-pl-c-tp-15045-b-657-80364-60061ac1
+    title: Bulletin 657. The use of the panoramic camera in topographic surveying with
+      notes on the application of photogrametry to (1917)
+    url: https://archive.org/download/pbc.gda.pl.C_TP_15045_B_657_____80364/C_TP_15045_B_657_____djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1917'
+    license_evidence: 'Internet Archive item metadata date/year [''1917-05-07'']: published
+      in 1917, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-universiteitleiden-dig-koloniaal-weekblad-1-fc42a011
+    title: 'Het Koloniaal Weekblad (29 november 1906) : Orgaan der Vereeniging Oost
+      en West, v. 6 (1906)'
+    url: https://archive.org/download/UNIVERSITEITLEIDEN-DIG-KOLONIAAL-WEEKBLAD-1906-48/MMKITLV01_PDF_TS694_1906_48_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: nl
+    published_at: '1906'
+    license_url: http://creativecommons.org/publicdomain/mark/1.0/
+    license_evidence: Internet Archive item metadata licenseurl ['http://creativecommons.org/publicdomain/mark/1.0/']
+      date/year ['1906-11-29', '1906']
+    rights_verified_at: '2026-10-24'
+  - id: arc-b33288136-0002-327805e0
+    title: Narrative of the surveying voyages of His Majesty's ships Adventure and Beagle,
+      between the years 1826 and 1836, describ, v. Vol. 2 (1839)
+    url: https://archive.org/download/b33288136_0002/b33288136_0002_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1839'
+    license_evidence: 'Internet Archive item metadata rights [''<a href="http://creativecommons.org/publicdomain/mark/1.0/"
+      rel="ugc nofollow">This work is available under the Creative Commons, Public Domain
+      Mark</a>''] date/year [''1839'']: a rights statement is not a recognized licence
+      or public-domain statement'
+    rights_verified_at: '2026-10-24'
+  - id: arc-bwb-t3-bsj-656-3ff27c0d
+    title: Surveying Your Community (1925)
+    url: https://archive.org/download/bwb_T3-BSJ-656/bwb_T3-BSJ-656_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    published_at: '1925'
+    license_evidence: 'Internet Archive item metadata date/year [''1925'']: published
+      in 1925, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-elementsofplanes0000samu-478990dc
+    title: Elements of plane surveying (1913)
+    url: https://archive.org/download/elementsofplanes0000samu/elementsofplanes0000samu_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata date/year [''1913'']: published
+      in 1913, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-uaa-1974-169-9-2-4-001-520d1e33
+    title: Private, 1883-1888 (1888)
+    url: https://archive.org/download/UAA-1974-169-9-2-4-001/UAA-1974-169-9-2-4-001_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1888'
+    license_evidence: 'Internet Archive item metadata rights [''Public Domain Mark 1.0'']
+      date/year [''1888'']: published in 1888, US copyright expired (publications up
+      to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-india-history-resource-36385-470977fa
+    title: 'Narrative Of The Surveying Voyages Of His Majesty’S Ships Adventures And
+      Beagle: Between The Years 1826 And 1836 Describ (1839)'
+    url: https://archive.org/download/india.history.resource.36385/36385_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1839'
+    license_evidence: 'Internet Archive item metadata date/year [''1839'']: published
+      in 1839, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-treatiseonmethod0000vari-e1378b23
+    title: a treatise on the method of government surveying (1883)
+    url: https://archive.org/download/treatiseonmethod0000vari/treatiseonmethod0000vari_djvu.txt
+    source: internet_archive
+    license: public-domain
+    topic: infrastructure
+    format: txt
+    language: en
+    published_at: '1883'
+    license_evidence: 'Internet Archive item metadata date/year [''1883'']: published
+      in 1883, US copyright expired (publications up to 1928); the item states no licence'
+    rights_verified_at: '2026-10-24'
+  - id: arc-dixue-zazhi-v1-n10-a097f6b8
+    title: 地學雜誌 1910.11 第一年第十號 (1910)
+    url: https://archive.org/download/dixue-zazhi-v1-n10/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201910.11%20%E7%AC%AC%E4%B8%80%E5%B9%B4%E7%AC%AC%E5%8D%81%E5%8F%B7_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    published_at: '1910'
+    license_evidence: 'Internet Archive item metadata date/year [''1910-11'']: no licence
+      and no certain publication date'
     rights_verified_at: '2026-10-24'
