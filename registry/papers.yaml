@@ -164372,3 +164372,38 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: arx-constructaide-analyzing-and-visualizing-constr
+    title: 'ConstructAide: Analyzing and Visualizing Construction Sites through Photographs
+      and Building Models'
+    url: https://arxiv.org/pdf/1912.11567v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2019-12-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.11567
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.11567 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-clinical-xlnet-modeling-sequential-clinical-no
+    title: 'Clinical XLNet: Modeling Sequential Clinical Notes and Predicting Prolonged
+      Mechanical Ventilation'
+    url: https://arxiv.org/pdf/1912.11975v1
+    source: arxiv
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2019-12-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.11975
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.11975 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-24'
