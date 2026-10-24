@@ -132119,24 +132119,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W45225569
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7144396991
-    title: 粘性土地盤に載る建築構造物の沈下過程に関する解析的研究
-    url: https://muroran-it.repo.nii.ac.jp/record/8017/files/kiyo34_rikou_pp55-74.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1984-11-30'
-    document_type: article
-    persistent_id: https://openalex.org/W7144396991
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://muroran-it.repo.nii.ac.jp/record/8017/files/kiyo34_rikou_pp55-74.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7144396991
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7144461931
     title: '調査報告 : 1985年メキシコ地震調査報告'
     url: https://repository.dl.itc.u-tokyo.ac.jp/record/19919/files/sk038004001.pdf
@@ -164613,3 +164595,127 @@ sources:
     rights_verified_at: '2026-10-24T16:28:42Z'
     origin_ids: doi:10.3389/fsufs.2022.969248 openalex:W4312186881
     resolution: 'legacy: openalex location'
+  - id: arx-object-oriented-slam-using-quadrics-and-symmet
+    title: Object-oriented SLAM using Quadrics and Symmetry Properties for Indoor Environments
+    url: https://arxiv.org/pdf/2004.05303v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-04-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.05303
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.05303 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-bayesian-surprise-in-indoor-environments
+    title: Bayesian Surprise in Indoor Environments
+    url: https://arxiv.org/pdf/2004.05381v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-04-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.05381
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.05381 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1145/3347146.3359358
+  - id: arx-aggregating-buildings-as-virtual-power-plant-a
+    title: 'Aggregating Buildings as Virtual Power Plant: Architecture, Implementation
+      Technologies, and Case Studies'
+    url: https://arxiv.org/pdf/2004.05807v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2020-04-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.05807
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.05807 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-the-application-of-muon-tomography-to-the-imag
+    title: The application of muon tomography to the imaging of railway tunnels
+    url: https://arxiv.org/pdf/1906.05814v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-06-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1906.05814
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1906.05814 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1103/physrevresearch.2.023017
+  - id: arx-zodiacal-exoplanets-in-time-x-the-orbit-and-at
+    title: Zodiacal Exoplanets in Time. X. The Orbit and Atmosphere of the Young "Neptune
+      Desert"-Dwelling Planet K2-100b
+    url: https://arxiv.org/pdf/2003.12940v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.12940
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.12940 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1093/mnras/staa918
+  - id: arx-hybrid-attention-networks-for-flow-and-pressur
+    title: Hybrid Attention Networks for Flow and Pressure Forecasting in Water Distribution
+      Systems
+    url: https://arxiv.org/pdf/2004.05828v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2020-04-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.05828
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.05828 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-a-heuristics-based-home-energy-management-syst
+    title: A Heuristics-based Home Energy Management System for Demand Response
+    url: https://arxiv.org/pdf/2004.07873v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-04-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.07873
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.07873 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
