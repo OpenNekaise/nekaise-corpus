@@ -164513,3 +164513,57 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: ope-towards-a-relational-geography-of-disability
+    title: Towards a relational geography of disability
+    url: https://ocu-omu.repo.nii.ac.jp/record/2003157/files/13423282-23-149.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2016-08-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/0309132516659705
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ocu-omu.repo.nii.ac.jp/record/2003157/files/13423282-23-149.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/0309132516659705 openalex:W2500779093
+    resolution: 'legacy: openalex location'
+  - id: arx-miniature-robot-path-planning-for-bridge-inspe
+    title: 'Miniature Robot Path Planning for Bridge Inspection: Min-Max Cycle Cover-Based
+      Approach'
+    url: https://arxiv.org/pdf/2003.12134v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-03-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.12134
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.12134 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-defect-segmentation-mapping-tunnel-lining-inte
+    title: 'Defect segmentation: Mapping tunnel lining internal defects with ground
+      penetrating radar data using a convolutional neural network'
+    url: https://arxiv.org/pdf/2003.13120v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-03-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.13120
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.13120 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
