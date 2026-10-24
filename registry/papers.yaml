@@ -130951,23 +130951,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W563832035
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w57862854
-    title: 'ガウディ : 建築と彫刻の“融合”への挑戦'
-    url: https://atomi.repo.nii.ac.jp/record/1946/files/atomi-bigaku-21-4.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-03-01'
-    document_type: article
-    persistent_id: https://openalex.org/W57862854
-    license_evidence: no licence statement for this copy [copy https://atomi.repo.nii.ac.jp/record/1946/files/atomi-bigaku-21-4.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W57862854
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w603482792
     title: 「光と影」から「曲り角」へ(BACKYARD)
     url: https://sucra.repo.nii.ac.jp/record/12205/files/A1004154.pdf
