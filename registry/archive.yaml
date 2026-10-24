@@ -358591,14 +358591,47 @@ sources:
     license_evidence: 'Internet Archive item metadata date/year [''1883'']: published
       in 1883, US copyright expired (publications up to 1928); the item states no licence'
     rights_verified_at: '2026-10-24'
-  - id: arc-dixue-zazhi-v1-n10-a097f6b8
-    title: 地學雜誌 1910.11 第一年第十號 (1910)
-    url: https://archive.org/download/dixue-zazhi-v1-n10/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201910.11%20%E7%AC%AC%E4%B8%80%E5%B9%B4%E7%AC%AC%E5%8D%81%E5%8F%B7_djvu.txt
+  - id: arc-dixue-zazhi-v4-n5-044663dd
+    title: 地學雜誌 1913.05 第四年第五號 (1913)
+    url: https://archive.org/download/dixue-zazhi-v4-n5/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201913.05%20%E7%AC%AC%E5%9B%9B%E5%B9%B4%E7%AC%AC%E4%BA%94%E5%8F%B7_djvu.txt
     source: internet_archive
     license: unverified
     topic: infrastructure
     format: txt
-    published_at: '1910'
-    license_evidence: 'Internet Archive item metadata date/year [''1910-11'']: no licence
+    published_at: '1913'
+    license_evidence: 'Internet Archive item metadata date/year [''1913-05'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-dixue-zazhi-v9-n6-d2fe321e
+    title: 地學雜誌 1918.06 第九年第六期 (1918)
+    url: https://archive.org/download/dixue-zazhi-v9-n6/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201918.06%20%E7%AC%AC%E4%B9%9D%E5%B9%B4%E7%AC%AC%E5%85%AD%E6%9C%9F_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata date/year [''1918-06'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-dixue-zazhi-v9-n7-8-36b0a16e
+    title: 地學雜誌 1918.08 第九年第七八期 (1918)
+    url: https://archive.org/download/dixue-zazhi-v9-n7-8/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201918.08%20%E7%AC%AC%E4%B9%9D%E5%B9%B4%E7%AC%AC%E4%B8%83%E5%85%AB%E6%9C%9F_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata date/year [''1918-08'']: no licence
+      and no certain publication date'
+    rights_verified_at: '2026-10-24'
+  - id: arc-dixue-zazhi-v9-n90-16bd39c1
+    title: 地學雜誌 1918.10 第九年第九十期 (1918)
+    url: https://archive.org/download/dixue-zazhi-v9-n90/%E5%9C%B0%E5%AD%A6%E6%9D%82%E5%BF%97%201918.10%20%E7%AC%AC%E4%B9%9D%E5%B9%B4%E7%AC%AC%E4%B9%9D%E5%8D%81%E6%9C%9F_djvu.txt
+    source: internet_archive
+    license: unverified
+    topic: infrastructure
+    format: txt
+    published_at: '1918'
+    license_evidence: 'Internet Archive item metadata date/year [''1918-10'']: no licence
       and no certain publication date'
     rights_verified_at: '2026-10-24'

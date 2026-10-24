@@ -164301,3 +164301,22 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
+  - id: arx-principal-component-analysis-and-sparse-polyno
+    title: 'Principal component analysis and sparse polynomial chaos expansions for
+      global sensitivity analysis and model calibration: application to urban draina'
+    url: https://arxiv.org/pdf/1709.03283v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-09-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1709.03283
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1709.03283 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1016/j.ress.2019.106737
