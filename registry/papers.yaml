@@ -165282,3 +165282,152 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-24'
     origin_ids: doi:10.3390/ma13132960
+  - id: ope-rainwater-tank-systems-for-urban-water-supply-
+    title: 'Rainwater Tank Systems for Urban Water Supply: Design, Yield, Energy, Health
+      Risks, Economics and Social Perceptions'
+    url: https://vuir.vu.edu.au/33810/1/wio9781780405360.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-03-01'
+    document_type: article
+    persistent_id: https://doi.org/10.2166/9781780405360
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://vuir.vu.edu.au/33810/1/wio9781780405360.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.2166/9781780405360 openalex:W2413437231
+    resolution: 'legacy: openalex location'
+  - id: ope-on-the-occurrence-of-rainstorm-damage-based-on
+    title: On the occurrence of rainstorm damage based on home insurance and weather
+      data
+    url: https://nhess.copernicus.org/articles/15/261/2015/nhess-15-261-2015.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-02-05'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-15-261-2015
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/15/261/2015/nhess-15-261-2015.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-15-261-2015 openalex:W1976767918
+    resolution: 'legacy: openalex location'
+  - id: ope-what-does-it-take-to-renature-cities-an-expert
+    title: What does it take to renature cities? An expert-based analysis of barriers
+      and strategies for the implementation of nature-based solutions
+    url: http://bura.brunel.ac.uk/bitstream/2438/29108/1/FullText.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-02-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jenvman.2024.120385
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy http://bura.brunel.ac.uk/bitstream/2438/29108/1/FullText.pdf; version submittedVersion;
+      rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jenvman.2024.120385 openalex:W4391982505
+    resolution: 'legacy: openalex location'
+  - id: ope-global-resilience-analysis-of-combined-sewer-s
+    title: Global resilience analysis of combined sewer systems under continuous hydrologic
+      simulation
+    url: https://ore.exeter.ac.uk/repository/bitstream/10871/133680/1/Global%20resilience%20analysis%20Rodriguez%20et%20al%202023.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-07-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jenvman.2023.118607
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://ore.exeter.ac.uk/repository/bitstream/10871/133680/1/Global%20resilience%20analysis%20Rodriguez%20et%20al%202023.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jenvman.2023.118607 openalex:W4384400773
+    resolution: 'legacy: openalex location'
+  - id: ope-current-challenges-on-the-widespread-adoption-
+    title: 'Current challenges on the widespread adoption of new bio-based fertilizers:
+      insights to move forward toward more circular food systems'
+    url: https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2024.1386680/pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-07-08'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fsufs.2024.1386680
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2024.1386680/pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-24'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fsufs.2024.1386680 openalex:W4400419238
+    resolution: 'legacy: openalex location'
+  - id: arx-end-to-end-trainable-deep-active-contour-model
+    title: 'End-to-End Trainable Deep Active Contour Models for Automated Image Segmentation:
+      Delineating Buildings in Aerial Imagery'
+    url: https://arxiv.org/pdf/2007.11691v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.11691
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.11691 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-a-non-intrusive-load-monitoring-approach-for-v
+    title: A Non-Intrusive Load Monitoring Approach for Very Short Term Power Predictions
+      in Commercial Buildings
+    url: https://arxiv.org/pdf/2007.11819v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.11819
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.11819 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+  - id: arx-predicting-nonlinear-seismic-response-of-struc
+    title: Predicting Nonlinear Seismic Response of Structural Braces Using Machine
+      Learning
+    url: https://arxiv.org/pdf/2007.13662v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-07-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.13662
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.13662 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
