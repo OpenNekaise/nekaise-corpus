@@ -165243,3 +165243,22 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-24'
     origin_ids: doi:10.1109/access.2020.3003638
+  - id: arx-wattscale-a-data-driven-approach-for-energy-ef
+    title: 'WattScale: A Data-driven Approach for Energy Efficiency Analytics of Buildings
+      at Scale'
+    url: https://arxiv.org/pdf/2007.01382v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.01382
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.01382 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-24'
+    origin_ids: doi:10.1145/3406961
