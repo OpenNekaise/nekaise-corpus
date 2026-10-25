@@ -166240,25 +166240,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
-  - id: oas-10-1007-s12273-017-0347-2-895a5ab9
-    title: Simulation-based analysis of the use of PCM-wallboards to reduce cooling
-      energy demand and peak-loads in low-rise residential heavyweight buildings in
-    url: https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download
-    source: openalex_sim
-    license: cc-by-nc-sa
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2017-01-16'
-    document_type: article
-    persistent_id: https://doi.org/10.1007/s12273-017-0347-2
-    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa;
-      unpaywall.license=cc-by-nc-sa [copy https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-25'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1007/s12273-017-0347-2 openalex:W2573472155
-    resolution: 'sim1: openalex+unpaywall location'
   - id: arx-star-formation-in-splash-bridges
     title: Star Formation in Splash Bridges
     url: https://arxiv.org/pdf/2011.13035v1
@@ -167422,6 +167403,40 @@ sources:
     persistent_id: doi:10.48550/arxiv.2105.12983
     license_url: http://creativecommons.org/licenses/by/4.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2105.12983 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-a-novel-edge-detection-operator-for-identifyin
+    title: A Novel Edge Detection Operator for Identifying Buildings in Augmented Reality
+      Applications
+    url: https://arxiv.org/pdf/2106.01055v1
+    source: arxiv
+    license: cc0
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-06-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.01055
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.01055 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1007/978-3-030-59506-7_18
+  - id: arx-facade-x-an-opinionated-approach-to-sparql-any
+    title: 'Facade-X: an opinionated approach to SPARQL anything'
+    url: https://arxiv.org/pdf/2106.02361v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-06-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.02361
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.02361 (v1, the current
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-25'
