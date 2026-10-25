@@ -167114,3 +167114,160 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-25'
     origin_ids: doi:10.1145/3427773.3427869
+  - id: ope-water-governance-an-historical-perspective-on-
+    title: Water Governance—An Historical Perspective on Current Debates
+    url: https://pure.manchester.ac.uk/ws/files/52060361/WD_Water_Governance_author_accepted_ms_16112016.pdf
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2017-01-05'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.worlddev.2016.11.014
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://pure.manchester.ac.uk/ws/files/52060361/WD_Water_Governance_author_accepted_ms_16112016.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.worlddev.2016.11.014 openalex:W2571063879
+    resolution: 'legacy: openalex location'
+  - id: ope-a-localized-disaster-resilience-index-to-asses
+    title: A localized disaster-resilience index to assess coastal communities based
+      on an analytic hierarchy process (AHP)
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/52643/AHP-Disaster%20Resilience.pdf
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2012-12-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ijdrr.2012.11.006
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/52643/AHP-Disaster%20Resilience.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ijdrr.2012.11.006 openalex:W2045846892
+    resolution: 'legacy: openalex location'
+  - id: ope-technologies-for-digital-twin-applications-in-
+    title: Technologies for digital twin applications in construction
+    url: https://radar.brookes.ac.uk/radar/file/45bbdc29-5a2d-4da2-8d92-a64bee6f8543/1/1-s2.0-S0926580523001917-main.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2023-05-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2023.104931
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://radar.brookes.ac.uk/radar/file/45bbdc29-5a2d-4da2-8d92-a64bee6f8543/1/1-s2.0-S0926580523001917-main.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2023.104931 openalex:W4381789065
+    resolution: 'legacy: openalex location'
+  - id: ope-emission-trends-and-mitigation-options-for-air
+    title: Emission trends and mitigation options for air pollutants in East Asia
+    url: https://acp.copernicus.org/articles/14/6571/2014/acp-14-6571-2014.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2014-07-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/acp-14-6571-2014
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://acp.copernicus.org/articles/14/6571/2014/acp-14-6571-2014.pdf; version
+      publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/acp-14-6571-2014 openalex:W2132645786
+    resolution: 'legacy: openalex location'
+  - id: ope-carbon-capture-and-storage-at-the-end-of-a-los
+    title: Carbon capture and storage at the end of a lost decade
+    url: https://strathprints.strath.ac.uk/79707/1/Martin_Roberts_etal_OE_2021_Carbon_capture_and_storage_at_the_end_of_a_lost_decade.pdf
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2021-10-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.oneear.2021.10.002
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/79707/1/Martin_Roberts_etal_OE_2021_Carbon_capture_and_storage_at_the_end_of_a_lost_decade.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.oneear.2021.10.002 openalex:W3209224011
+    resolution: 'legacy: openalex location'
+  - id: arx-towards-automatic-digital-documentation-and-pr
+    title: Towards Automatic Digital Documentation and Progress Reporting of Mechanical
+      Construction Pipes using Smartphones
+    url: https://arxiv.org/pdf/2012.10958v2
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2020-12-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2012.10958
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2012.10958 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1016/j.autcon.2021.103735
+  - id: arx-innovative-seismic-isolation-devices-based-on-
+    title: 'Innovative seismic isolation devices based on lattice materials: A review'
+    url: https://arxiv.org/pdf/2104.15008v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-04-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2104.15008
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2104.15008 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-gans-for-urban-design
+    title: GANs for Urban Design
+    url: https://arxiv.org/pdf/2105.01727v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-05-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2105.01727
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2105.01727 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-comparing-field-trips-vr-experiences-and-video
+    title: Comparing Field Trips, VR Experiences and Video Representations on Spatial
+      Layout Learning in Complex Buildings
+    url: https://arxiv.org/pdf/2105.01968v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-05-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2105.01968
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2105.01968 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
