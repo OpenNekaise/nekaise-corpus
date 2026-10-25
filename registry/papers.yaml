@@ -166310,3 +166310,94 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
+  - id: oas-10-1007-s12273-017-0347-2-895a5ab9
+    title: Simulation-based analysis of the use of PCM-wallboards to reduce cooling
+      energy demand and peak-loads in low-rise residential heavyweight buildings in
+    url: https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download
+    source: openalex_sim
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s12273-017-0347-2
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa;
+      unpaywall.license=cc-by-nc-sa [copy https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s12273-017-0347-2 openalex:W2573472155
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-star-formation-in-splash-bridges
+    title: Star Formation in Splash Bridges
+    url: https://arxiv.org/pdf/2011.13035v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.13035
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.13035 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.3847/1538-4357/abc82a
+  - id: arx-attenuation-of-several-common-building-materia
+    title: 'Attenuation of Several Common Building Materials in Millimeter-Wave Frequency
+      Bands: 28, 73 and 91 GHz'
+    url: https://arxiv.org/pdf/2004.12568v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-04-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.12568
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.12568 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1109/map.2020.3043445
+  - id: arx-reimagining-city-configuration-automated-urban
+    title: 'Reimagining City Configuration: Automated Urban Planning via Adversarial
+      Learning'
+    url: https://arxiv.org/pdf/2008.09912v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-08-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2008.09912
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2008.09912 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1145/3397536.3422268
+  - id: arx-occupancy-detection-in-room-using-sensor-data
+    title: Occupancy Detection in Room Using Sensor Data
+    url: https://arxiv.org/pdf/2101.03616v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-01-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2101.03616
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2101.03616 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
