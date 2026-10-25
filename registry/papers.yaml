@@ -166273,3 +166273,40 @@ sources:
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-25'
     origin_ids: doi:10.1109/tvcg.2020.3018458
+  - id: arx-knowledge-transfer-between-buildings-for-seism
+    title: Knowledge Transfer between Buildings for Seismic Damage Diagnosis through
+      Adversarial Learning
+    url: https://arxiv.org/pdf/2002.09513v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-02-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.09513
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.09513 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1016/j.ymssp.2020.107374
+  - id: arx-alvio-adaptive-line-and-point-feature-based-vi
+    title: 'ALVIO: Adaptive Line and Point Feature-based Visual Inertial Odometry for
+      Robust Localization in Indoor Environments'
+    url: https://arxiv.org/pdf/2012.15008v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-12-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2012.15008
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2012.15008 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
