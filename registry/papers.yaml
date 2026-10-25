@@ -135524,24 +135524,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W621637342
     resolution: 'sim1: openalex location'
-  - id: oas-w1566672019
-    title: 'モダンデザインの背景を探る : 1920年代アバンギャルド住宅誕生におけるクライアント像 その1'
-    url: https://osaka-shoin.repo.nii.ac.jp/record/2236/files/KJ00005117660.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2008-01-31'
-    document_type: article
-    persistent_id: https://openalex.org/W1566672019
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://osaka-shoin.repo.nii.ac.jp/record/2236/files/KJ00005117660.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W1566672019
-    resolution: 'sim1: openalex location'
   - id: oas-w7145637136
     title: 景観を教材とした美術教育の一例
     url: https://petit.lib.yamaguchi-u.ac.jp/5741/files/162863
@@ -135894,23 +135876,6 @@ sources:
     rights_verified_at: '2026-10-10'
     selected_version: submittedVersion
     origin_ids: openalex:W647762735
-    resolution: 'sim1: openalex location'
-  - id: oas-w143117799
-    title: 10-102 建築設計教育における設計方法の変遷に関する一考察((8)エンジニアリングデザイン(工学設計教育)-I)
-    url: https://niit.repo.nii.ac.jp/record/2000264/files/2005_148.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2005-09-09'
-    document_type: article
-    persistent_id: https://openalex.org/W143117799
-    license_evidence: no licence statement for this copy [copy https://niit.repo.nii.ac.jp/record/2000264/files/2005_148.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W143117799
     resolution: 'sim1: openalex location'
   - id: oas-w153457171
     title: '41323 建築物を利用した風力発電技術に関する研究(その10) : 108台のマイクロ風車と太陽電池を用いた制風システム(光・風・生ごみ発電,環境工学II)'
@@ -137545,23 +137510,6 @@ sources:
     rights_verified_at: '2026-10-11'
     selected_version: submittedVersion
     origin_ids: openalex:W7208210728
-    resolution: 'sim1: openalex location'
-  - id: oas-w7208183068
-    title: オープンシステムの幼稚園について
-    url: https://takamatsu-u.repo.nii.ac.jp/record/5980/files/AN00138796_8_1_8.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1978-03-10'
-    document_type: article
-    persistent_id: https://openalex.org/W7208183068
-    license_evidence: no licence statement for this copy [copy https://takamatsu-u.repo.nii.ac.jp/record/5980/files/AN00138796_8_1_8.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7208183068
     resolution: 'sim1: openalex location'
   - id: ope-numerical-study-on-the-asphalt-concrete-struct
     title: Numerical Study on the Asphalt Concrete Structure for Blast and Impact Load
@@ -166913,3 +166861,132 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
+  - id: ope-of-disasters-and-dragon-kings-a-statistical-an
+    title: 'Of Disasters and Dragon Kings: A Statistical Analysis of Nuclear Power Incidents
+      and Accidents'
+    url: http://sro.sussex.ac.uk/id/eprint/66356/1/Wheatley_et_al-2016-Risk_Analysis.pdf
+    source: openalex
+    license: cc-by-nc
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2016-03-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1111/risa.12587
+    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
+      [copy http://sro.sussex.ac.uk/id/eprint/66356/1/Wheatley_et_al-2016-Risk_Analysis.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1111/risa.12587 openalex:W1568361450
+    resolution: 'legacy: openalex location'
+  - id: ope-application-of-deep-learning-in-facility-manag
+    title: Application of deep learning in facility management and maintenance for heating,
+      ventilation, and air conditioning
+    url: https://repository.nottingham.ac.uk/bitstreams/0d6d2bf6-3026-4848-8f7f-3e0cd1f0d59a/download
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2022-06-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2022.104445
+    license_evidence: no licence statement for this copy [copy https://repository.nottingham.ac.uk/bitstreams/0d6d2bf6-3026-4848-8f7f-3e0cd1f0d59a/download;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2022.104445 openalex:W4283328341
+    resolution: 'legacy: openalex location'
+  - id: arx-microlocation-for-smart-buildings-in-the-era-o
+    title: 'Microlocation for Smart Buildings in the Era of the Internet of Things:
+      A Survey of Technologies, Techniques, and Approaches'
+    url: https://arxiv.org/pdf/2104.02659v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-02-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2104.02659
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2104.02659 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1109/msp.2018.2846804
+  - id: arx-sequential-bayesian-optimal-experimental-desig
+    title: Sequential Bayesian optimal experimental design for structural reliability
+      analysis
+    url: https://arxiv.org/pdf/2007.00402v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-07-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.00402
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.00402 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1007/s11222-021-10000-2
+  - id: arx-selfdeco-self-supervised-monocular-depth-compl
+    title: 'SelfDeco: Self-Supervised Monocular Depth Completion in Challenging Indoor
+      Environments'
+    url: https://arxiv.org/pdf/2011.04977v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.04977
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.04977 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-three-cooperative-robotic-fabrication-methods-
+    title: Three Cooperative Robotic Fabrication Methods for the Scaffold-Free Construction
+      of a Masonry Arch
+    url: https://arxiv.org/pdf/2104.04856v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2021-04-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2104.04856
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2104.04856 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: ope-modern-approaches-in-meteotsunami-research-and
+    title: Modern Approaches in Meteotsunami Research and Early Warning
+    url: https://www.frontiersin.org/articles/10.3389/fmars.2016.00057/pdf
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2016-05-03'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fmars.2016.00057
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fmars.2016.00057/pdf
+      do not transfer to https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2016.00057/pdf;
+      payload sha256=4472a76b1c4529e152270aa4aa5663f5787398277804904cb87fb2b8e6b42099;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fmars.2016.00057/pdf;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-25",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-25T12:16:51Z'
+    origin_ids: doi:10.3389/fmars.2016.00057 openalex:W2346899148
+    resolution: 'legacy: openalex location'
