@@ -166171,3 +166171,55 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-25'
+  - id: ope-hazard-responsive-digital-twin-for-weather-dri
+    title: Hazard-responsive digital twin for weather-driven urban resilience and affordability
+    url: https://arxiv.org/pdf/2510.22941
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-04-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.scs.2026.107413
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2510.22941; version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.scs.2026.107413 openalex:W7154907125
+    resolution: 'legacy: openalex location'
+  - id: ope-ten-questions-on-indoor-greening-and-environme
+    title: Ten questions on indoor greening and environmental quality
+    url: https://eprints.whiterose.ac.uk/id/eprint/237835/1/1-s2.0-S0360132326001423-main.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-02-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2026.114336
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/id/eprint/237835/1/1-s2.0-S0360132326001423-main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2026.114336 openalex:W7128158546
+    resolution: 'legacy: openalex location'
+  - id: ope-toward-multiphysics-informed-machine-learning-
+    title: 'Toward Multiphysics-Informed Machine Learning for Sustainable Data Center
+      Operations: Intelligence Evolution With Deployable Solutions for Computing I'
+    url: https://arxiv.org/pdf/2505.19414
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-01-28'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/esm.2025.3626704
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2505.19414; version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/esm.2025.3626704 openalex:W4414586537
+    resolution: 'legacy: openalex location'
