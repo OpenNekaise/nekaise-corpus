@@ -167042,3 +167042,75 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
+  - id: oas-10-1184-r1-6715931-54529b53
+    title: Device-Level Data Analytics to Guide Policy
+    url: http://repository.cmu.edu/dissertations/896
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1184/r1/6715931
+    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/896;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1184/r1/6715931 openalex:W2615161488
+    resolution: 'sim1: openalex location'
+  - id: arx-an-ontology-based-approach-to-data-exchanges-f
+    title: An ontology-based approach to data exchanges for robot navigation on construction
+      sites
+    url: https://arxiv.org/pdf/2104.10239v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-04-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2104.10239
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2104.10239 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-exploration-of-indoor-environments-predicting-
+    title: Exploration of Indoor Environments Predicting the Layout of Partially Observed
+      Rooms
+    url: https://arxiv.org/pdf/2004.06967v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-04-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.06967
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.06967 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.5555/3461017.3461113
+  - id: arx-a-centralised-soft-actor-critic-deep-reinforce
+    title: A Centralised Soft Actor Critic Deep Reinforcement Learning Approach to District
+      Demand Side Management through CityLearn
+    url: https://arxiv.org/pdf/2009.10562v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-09-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.10562
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.10562 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1145/3427773.3427869
