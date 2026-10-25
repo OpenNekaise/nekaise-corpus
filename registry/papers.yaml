@@ -166825,25 +166825,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
-  - id: ope-of-disasters-and-dragon-kings-a-statistical-an
-    title: 'Of Disasters and Dragon Kings: A Statistical Analysis of Nuclear Power Incidents
-      and Accidents'
-    url: http://sro.sussex.ac.uk/id/eprint/66356/1/Wheatley_et_al-2016-Risk_Analysis.pdf
-    source: openalex
-    license: cc-by-nc
-    topic: commissioning_fdd
-    format: pdf
-    language: en
-    published_at: '2016-03-22'
-    document_type: article
-    persistent_id: https://doi.org/10.1111/risa.12587
-    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
-      [copy http://sro.sussex.ac.uk/id/eprint/66356/1/Wheatley_et_al-2016-Risk_Analysis.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-25'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1111/risa.12587 openalex:W1568361450
-    resolution: 'legacy: openalex location'
   - id: ope-application-of-deep-learning-in-facility-manag
     title: Application of deep learning in facility management and maintenance for heating,
       ventilation, and air conditioning
@@ -168062,3 +168043,61 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
+  - id: ope-coupled-daily-streamflow-and-water-temperature
+    title: Coupled daily streamflow and water temperature modelling in large river basins
+    url: https://hess.copernicus.org/articles/16/4303/2012/hess-16-4303-2012.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2012-11-21'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/hess-16-4303-2012
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://hess.copernicus.org/articles/16/4303/2012/hess-16-4303-2012.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/hess-16-4303-2012 openalex:W2073453836
+    resolution: 'legacy: openalex location'
+  - id: ope-uncertainty-of-simulated-groundwater-recharge-
+    title: 'Uncertainty of simulated groundwater recharge at different global warming
+      levels: a global-scale multi-model ensemble study'
+    url: https://hess.copernicus.org/articles/25/787/2021/hess-25-787-2021.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-02-19'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/hess-25-787-2021
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://hess.copernicus.org/articles/25/787/2021/hess-25-787-2021.pdf; version
+      publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/hess-25-787-2021 openalex:W3033511820
+    resolution: 'legacy: openalex location'
+  - id: ope-pathways-to-advanced-resource-recovery-from-se
+    title: Pathways to advanced resource recovery from sewage
+    url: https://biblio.ugent.be/publication/01JTMXZ0Y1N9ZFB5PC7PVGRDE4/file/01JTQVS8WBEDKZZFXQXXANRE1B.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2024-09-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1038/s41893-024-01423-6
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/01JTMXZ0Y1N9ZFB5PC7PVGRDE4/file/01JTQVS8WBEDKZZFXQXXANRE1B.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/01JTMXZ0Y1N9ZFB5PC7PVGRDE4/01JTQVS8WBEDKZZFXQXXANRE1B;
+      payload sha256=90faa805c8227ccb1d37ba341ef0880fd6b80add9f41e7108c5e9497d10e766f;
+      original evidence: {"license": "unverified", "license_evidence": "openalex.license=other-oa;
+      openalex.license_id=https://openalex.org/licenses/other-oa [copy https://biblio.ugent.be/publication/01JTMXZ0Y1N9ZFB5PC7PVGRDE4/file/01JTQVS8WBEDKZZFXQXXANRE1B.pdf;
+      version submittedVersion; rights unknown]", "rights_verified_at": "2026-10-25",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-25T20:39:40Z'
+    origin_ids: doi:10.1038/s41893-024-01423-6 openalex:W4402371503
+    resolution: 'legacy: openalex location'
