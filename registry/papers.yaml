@@ -167458,3 +167458,103 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
+  - id: oas-w213218084
+    title: Advances in the application of passive down-draft evaporative cooling technology
+      in the cooling of buildings
+    url: https://www.ideals.illinois.edu/items/26476/bitstreams/90601/data.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2011-08-26'
+    document_type: article
+    persistent_id: https://openalex.org/W213218084
+    license_evidence: no licence statement for this copy [copy https://www.ideals.illinois.edu/items/26476/bitstreams/90601/data.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: openalex:W213218084
+    resolution: 'sim1: openalex location'
+  - id: arx-archify-a-recommender-system-of-architectural-
+    title: 'Archify: A Recommender System of Architectural Design Decisions'
+    url: https://arxiv.org/pdf/2106.08115v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-06-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.08115
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.08115 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-semantic-navigation-with-domain-knowledge
+    title: Semantic navigation with domain knowledge
+    url: https://arxiv.org/pdf/2106.10220v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-06-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.10220
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.10220 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-floorpp-net-reconstructing-floor-plans-using-p
+    title: 'FloorPP-Net: Reconstructing Floor Plans using Point Pillars for Scan-to-BIM'
+    url: https://arxiv.org/pdf/2106.10635v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-06-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.10635
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.10635 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-life-cycle-assessment-for-flutter-probability-
+    title: Life-cycle assessment for flutter probability of a long-span suspension bridge
+      based on field monitoring data
+    url: https://arxiv.org/pdf/2106.10694v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-06-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.10694
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.10694 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-bim-digital-twin-and-cyber-physical-systems-cr
+    title: 'BIM, Digital Twin and Cyber-Physical Systems: crossing and blurring boundaries'
+    url: https://arxiv.org/pdf/2106.11030v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-06-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.11030
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.11030 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
