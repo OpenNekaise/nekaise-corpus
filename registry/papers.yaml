@@ -166598,3 +166598,40 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-25'
+  - id: arx-curved-buildings-reconstruction-from-airborne-
+    title: Curved Buildings Reconstruction from Airborne LiDAR Data by Matching and
+      Deforming Geometric Primitives
+    url: https://arxiv.org/pdf/2003.09934v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.09934
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.09934 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1109/tgrs.2020.2995732
+  - id: arx-depth-enhanced-feature-pyramid-network-for-occ
+    title: Depth-Enhanced Feature Pyramid Network for Occlusion-Aware Verification of
+      Buildings from Oblique Images
+    url: https://arxiv.org/pdf/2011.13226v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.13226
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.13226 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1016/j.isprsjprs.2021.01.025
