@@ -168101,3 +168101,72 @@ sources:
     rights_verified_at: '2026-10-25T20:39:40Z'
     origin_ids: doi:10.1038/s41893-024-01423-6 openalex:W4402371503
     resolution: 'legacy: openalex location'
+  - id: arx-a-modular-construction-of-unramified-p-extensi
+    title: A modular construction of unramified $p$-extensions of $\mathbb{Q}(N^{1/p})$
+    url: https://arxiv.org/pdf/2109.04308v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-09-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2109.04308
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2109.04308 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-error-state-extended-kalman-filter-multi-senso
+    title: Error State Extended Kalman Filter Multi-Sensor Fusion for Unmanned Aerial
+      Vehicle Localization in GPS and Magnetometer Denied Indoor Environments
+    url: https://arxiv.org/pdf/2109.04908v1
+    source: arxiv
+    license: cc-by-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-09-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2109.04908
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2109.04908 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-montefloor-extending-mcts-for-reconstructing-a
+    title: 'MonteFloor: Extending MCTS for Reconstructing Accurate Large-Scale Floor
+      Plans'
+    url: https://arxiv.org/pdf/2103.11161v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-03-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2103.11161
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2103.11161 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-urbanvr-an-immersive-analytics-system-for-cont
+    title: 'UrbanVR: An immersive analytics system for context-aware urban design'
+    url: https://arxiv.org/pdf/2107.00227v2
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-07-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2107.00227
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2107.00227 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1016/j.cag.2021.07.006
