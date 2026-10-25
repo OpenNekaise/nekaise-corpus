@@ -166223,3 +166223,72 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1109/esm.2025.3626704 openalex:W4414586537
     resolution: 'legacy: openalex location'
+  - id: arx-model-order-reduction-approach-for-structural-
+    title: Model-Order-Reduction Approach for Structural Health Monitoring of Large
+      Deployed Structures with Localized Operational Excitations
+    url: https://arxiv.org/pdf/2012.08462v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-12-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2012.08462
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2012.08462 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-early-bird-loop-closures-from-opposing-viewpoi
+    title: 'Early Bird: Loop Closures from Opposing Viewpoints for Perceptually-Aliased
+      Indoor Environments'
+    url: https://arxiv.org/pdf/2010.01421v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2010.01421
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.01421 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-citylearn-standardizing-research-in-multi-agen
+    title: 'CityLearn: Standardizing Research in Multi-Agent Reinforcement Learning
+      for Demand Response and Urban Energy Management'
+    url: https://arxiv.org/pdf/2012.10504v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-12-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2012.10504
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2012.10504 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-placement-retargeting-of-virtual-avatars-to-di
+    title: Placement Retargeting of Virtual Avatars to Dissimilar Indoor Environments
+    url: https://arxiv.org/pdf/2012.11878v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-12-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2012.11878
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2012.11878 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1109/tvcg.2020.3018458
