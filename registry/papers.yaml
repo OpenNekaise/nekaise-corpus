@@ -130793,23 +130793,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7144641099
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7144914871
-    title: '聾学校の児童・生徒数の推移について : 聾学校の建築計画に関する基礎的研究３'
-    url: https://tsukuba-tech.repo.nii.ac.jp/record/1299/files/gakuju93_hirane_001.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1993-07-25'
-    document_type: article
-    persistent_id: https://openalex.org/W7144914871
-    license_evidence: no licence statement for this copy [copy https://tsukuba-tech.repo.nii.ac.jp/record/1299/files/gakuju93_hirane_001.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7144914871
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7145272347
     title: '事務所建築における柱設計用積載荷重の階数による低減 その3 : 負担面積と層間の相関係数の影響について'
     url: https://nitech.repo.nii.ac.jp/record/4232/files/STPAM_1993_949.pdf
@@ -136655,24 +136638,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W650607920
     resolution: 'sim1: openalex location'
-  - id: oas-w572018671
-    title: 地方戸建住宅居住者の住宅選択行動に関する研究(第2報)新築戸建住宅取得者による住宅と施工業者に対する評価
-    url: https://shotoku.repo.nii.ac.jp/?action=repository_action_common_download&item_id=319&item_no=1&attribute_id=21&file_no=1
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2004-03-31'
-    document_type: article
-    persistent_id: https://openalex.org/W572018671
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://shotoku.repo.nii.ac.jp/?action=repository_action_common_download&item_id=319&item_no=1&attribute_id=21&file_no=1;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: openalex:W572018671
-    resolution: 'sim1: openalex location'
   - id: oas-w7208007315
     title: Possibility and Prospect of Wooden Culture
     url: https://suac.repo.nii.ac.jp/record/575/files/P163-P173.pdf
@@ -136690,24 +136655,6 @@ sources:
     rights_verified_at: '2026-10-11'
     selected_version: submittedVersion
     origin_ids: openalex:W7208007315
-    resolution: 'sim1: openalex location'
-  - id: oas-w379283349
-    title: 地方戸建住宅居住者の住宅選択行動に関する研究(第1報)新築戸建住宅取得者の施工業者選択
-    url: https://aska-r.repo.nii.ac.jp/record/6850/files/0016009200403059076.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2004-03-03'
-    document_type: article
-    persistent_id: https://openalex.org/W379283349
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://aska-r.repo.nii.ac.jp/record/6850/files/0016009200403059076.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: openalex:W379283349
     resolution: 'sim1: openalex location'
   - id: oas-w36493629
     title: 都市型産業集積の形成に関する一考察--京都市の「高度集積地区」を事例に
@@ -165622,3 +165569,133 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-24'
     origin_ids: doi:10.1007/s00033-020-01316-6
+  - id: ope-swarm-intelligence-optimization-of-the-group-m
+    title: Swarm intelligence optimization of the group method of data handling using
+      the cuckoo search and whale optimization algorithms to model and predict la
+    url: https://opus.lib.uts.edu.au/bitstream/10453/155274/2/Binder1.pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-12-09'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.asoc.2021.108254
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://opus.lib.uts.edu.au/bitstream/10453/155274/2/Binder1.pdf; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.asoc.2021.108254 openalex:W4200539666
+    resolution: 'legacy: openalex location'
+  - id: arx-coverage-and-energy-analysis-of-mobile-sensor-
+    title: 'Coverage and Energy Analysis of Mobile Sensor Nodes in Obstructed Noisy
+      Indoor Environment: A Voronoi Approach'
+    url: https://arxiv.org/pdf/2009.04864v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-09-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.04864
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.04864 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-learning-from-multimodal-and-multitemporal-ear
+    title: Learning from Multimodal and Multitemporal Earth Observation Data for Building
+      Damage Mapping
+    url: https://arxiv.org/pdf/2009.06200v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-09-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.06200
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.06200 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-data-fusion-strategies-for-energy-efficiency-i
+    title: 'Data fusion strategies for energy efficiency in buildings: Overview, challenges
+      and novel orientations'
+    url: https://arxiv.org/pdf/2009.06345v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-09-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.06345
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.06345 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1016/j.inffus.2020.07.003
+  - id: arx-fem-modelling-techniques-for-simulation-of-3d-
+    title: FEM modelling techniques for simulation of 3D concrete printing
+    url: https://arxiv.org/pdf/2009.06907v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2020-09-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.06907
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.06907 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-pomp-pomcp-based-online-motion-planning-for-ac
+    title: 'POMP: Pomcp-based Online Motion Planning for active visual search in indoor
+      environments'
+    url: https://arxiv.org/pdf/2009.08140v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-09-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.08140
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.08140 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: ope-gis-based-flood-susceptibility-mapping-using-b
+    title: GIS-based flood susceptibility mapping using bivariate statistical model
+      in Swat River Basin, Eastern Hindukush region, Pakistan
+    url: https://www.frontiersin.org/articles/10.3389/fenvs.2023.1178540/pdf
+    source: openalex
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-07-06'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fenvs.2023.1178540
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fenvs.2023.1178540/pdf
+      do not transfer to https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2023.1178540/pdf;
+      payload sha256=7aaca570108e997db7500fc970564dfcd4e849f06896094f19daceab66ed8ec2;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fenvs.2023.1178540/pdf;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-25",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-25T00:46:37Z'
+    origin_ids: doi:10.3389/fenvs.2023.1178540 openalex:W4383370769
+    resolution: 'legacy: openalex location'
