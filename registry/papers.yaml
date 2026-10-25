@@ -166990,3 +166990,55 @@ sources:
     rights_verified_at: '2026-10-25T12:16:51Z'
     origin_ids: doi:10.3389/fmars.2016.00057 openalex:W2346899148
     resolution: 'legacy: openalex location'
+  - id: arx-a-comprehensive-review-on-the-nilm-algorithms-
+    title: A Comprehensive Review on the NILM Algorithms for Energy Disaggregation
+    url: https://arxiv.org/pdf/2102.12578v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-02-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2102.12578
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2102.12578 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-arch-elites-quality-diversity-for-urban-design
+    title: 'ARCH-Elites: Quality-Diversity for Urban Design'
+    url: https://arxiv.org/pdf/2104.08774v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-04-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2104.08774
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2104.08774 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1145/3449726.3459490
+  - id: arx-iiot-enabled-health-monitoring-for-integrated-
+    title: IIoT-Enabled Health Monitoring for Integrated Heat Pump System Using Mixture
+      Slow Feature Analysis
+    url: https://arxiv.org/pdf/2104.09876v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-04-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2104.09876
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2104.09876 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
