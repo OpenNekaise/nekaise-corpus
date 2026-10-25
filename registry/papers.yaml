@@ -136749,24 +136749,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208413785
     resolution: 'sim1: openalex location'
-  - id: oas-w7162969732
-    title: Estimation of Sedimentary Structure in Fukui Plain Based on Microtremor Observation
-    url: https://u-fukui.repo.nii.ac.jp/record/24655/files/KK_009_2002_014_019.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2002-11-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7162969732
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://u-fukui.repo.nii.ac.jp/record/24655/files/KK_009_2002_014_019.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7162969732
-    resolution: 'sim1: openalex location'
   - id: oas-w372314838
     title: '「よみがえれ!新浦安駅前『公共広場』大作戦」の内容と方法 : 市民まちづくり活動と学校教育との連携に関する研究 (その2)(2002年度大会 (北陸)
       学術講演梗概集)'
@@ -165924,4 +165906,199 @@ sources:
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: ope-artificial-intelligence-for-calculating-and-pr
+    title: 'Artificial intelligence for calculating and predicting building carbon emissions:
+      a review'
+    url: https://pureadmin.qub.ac.uk/ws/files/641877757/Artificial_intelligence.pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-03-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s10311-024-01799-z
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pureadmin.qub.ac.uk/ws/files/641877757/Artificial_intelligence.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s10311-024-01799-z openalex:W4408707502
+    resolution: 'legacy: openalex location'
+  - id: ope-barriers-to-implementation-of-energy-efficient
+    title: Barriers to implementation of energy-efficient technologies in building construction
+      projects — Results from a Swedish case study
+    url: https://hig.diva-portal.org/smash/get/diva2:1713854/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-11-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.resenv.2022.100097
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://hig.diva-portal.org/smash/get/diva2:1713854/FULLTEXT01; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.resenv.2022.100097 openalex:W4308153132
+    resolution: 'legacy: openalex location'
+  - id: ope-courtyard-design-impact-on-indoor-thermal-comf
+    title: 'Courtyard design impact on indoor thermal comfort and utility costs for
+      residential households: Comparative analysis and deep-learning predictive mode'
+    url: https://eprints.qut.edu.au/228908/1/107161186.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-03-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.foar.2022.02.006
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://eprints.qut.edu.au/228908/1/107161186.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.foar.2022.02.006 openalex:W4220772942
+    resolution: 'legacy: openalex location'
+  - id: ope-impacts-of-anthropogenic-heat-on-summertime-ra
+    title: Impacts of Anthropogenic Heat on Summertime Rainfall in Beijing
+    url: https://centaur.reading.ac.uk/71102/1/jhm-d-16-0173.1.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2016-12-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1175/jhm-d-16-0173.1
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/71102/1/jhm-d-16-0173.1.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1175/jhm-d-16-0173.1 openalex:W2564786798
+    resolution: 'legacy: openalex location'
+  - id: ope-source-apportionment-for-indoor-air-pollution-
+    title: 'Source apportionment for indoor air pollution: Current challenges and future
+      directions'
+    url: https://eprints.whiterose.ac.uk/id/eprint/201884/1/1_s2.0_S004896972304367X_main.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-07-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.scitotenv.2023.165744
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/id/eprint/201884/1/1_s2.0_S004896972304367X_main.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.scitotenv.2023.165744 openalex:W4385076738
+    resolution: 'legacy: openalex location'
+  - id: ope-prevalence-risk-factors-and-impacts-related-to
+    title: 'Prevalence, Risk Factors and Impacts Related to Mould-Affected Housing:
+      An Australian Integrative Review'
+    url: https://eprints.qut.edu.au/227876/1/ijerph_19_01854.pdf
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-02-07'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/ijerph19031854
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://eprints.qut.edu.au/227876/1/ijerph_19_01854.pdf; version submittedVersion;
+      rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/ijerph19031854 openalex:W4210935542
+    resolution: 'legacy: openalex location'
+  - id: arx-mobility-map-inference-from-thermal-modeling-o
+    title: Mobility Map Inference from Thermal Modeling of a Building
+    url: https://arxiv.org/pdf/2011.07372v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.07372
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.07372 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-mobile-manipulator-for-autonomous-localization
+    title: Mobile Manipulator for Autonomous Localization, Grasping and Precise Placement
+      of Construction Material in a Semi-structured Environment
+    url: https://arxiv.org/pdf/2011.07972v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2020-11-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.07972
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.07972 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-cross-directional-feature-fusion-network-for-b
+    title: Cross-directional Feature Fusion Network for Building Damage Assessment from
+      Satellite Imagery
+    url: https://arxiv.org/pdf/2010.14014v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2010.14014
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.14014 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-topology-free-optimal-power-dispatch-for-distr
+    title: Topology-free optimal power dispatch for distribution network considering
+      security constraints and flexible building thermal inertia
+    url: https://arxiv.org/pdf/2011.09630v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-11-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.09630
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.09630 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-assessing-out-of-domain-generalization-for-rob
+    title: Assessing out-of-domain generalization for robust building damage detection
+    url: https://arxiv.org/pdf/2011.10328v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.10328
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.10328 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-25'
