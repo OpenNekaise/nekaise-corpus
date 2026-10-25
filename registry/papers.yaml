@@ -165733,3 +165733,79 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
+  - id: ope-controls-on-water-storage-and-drainage-in-crev
+    title: Controls on Water Storage and Drainage in Crevasses on the Greenland Ice
+      Sheet
+    url: https://www.repository.cam.ac.uk/bitstreams/80802a92-8be2-4d1c-9257-b01a90eae875/download
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-08-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1029/2021jf006287
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/80802a92-8be2-4d1c-9257-b01a90eae875/download;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1029/2021jf006287 openalex:W3195619486
+    resolution: 'legacy: openalex location'
+  - id: ope-potential-of-remote-sensing-techniques-for-tsu
+    title: Potential of remote sensing techniques for tsunami hazard and vulnerability
+      analysis – a case study from Phang-Nga province, Thailand
+    url: https://nhess.copernicus.org/articles/12/2103/2012/nhess-12-2103-2012.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2012-06-28'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/nhess-12-2103-2012
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://nhess.copernicus.org/articles/12/2103/2012/nhess-12-2103-2012.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/nhess-12-2103-2012 openalex:W2043066055
+    resolution: 'legacy: openalex location'
+  - id: ope-the-evolution-of-ontology-in-aec-a-two-decade-
+    title: 'The evolution of ontology in AEC: A two-decade synthesis, application domains,
+      and future directions'
+    url: https://discovery.ucl.ac.uk/id/eprint/10177207/1/Farghaly_The%20evolution%20of%20ontology%20in%20AEC_VoR.pdf
+    source: openalex
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-09-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jii.2023.100519
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/id/eprint/10177207/1/Farghaly_The%20evolution%20of%20ontology%20in%20AEC_VoR.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jii.2023.100519 openalex:W4386349934
+    resolution: 'legacy: openalex location'
+  - id: arx-map-net-multi-attending-path-neural-network-fo
+    title: 'MAP-Net: Multi Attending Path Neural Network for Building Footprint Extraction
+      from Remote Sensed Imagery'
+    url: https://arxiv.org/pdf/1910.12060v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-10-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1910.12060
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1910.12060 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1109/tgrs.2020.3026051
