@@ -165699,3 +165699,37 @@ sources:
     rights_verified_at: '2026-10-25T00:46:37Z'
     origin_ids: doi:10.3389/fenvs.2023.1178540 openalex:W4383370769
     resolution: 'legacy: openalex location'
+  - id: arx-goal-directed-occupancy-prediction-for-lane-fo
+    title: Goal-Directed Occupancy Prediction for Lane-Following Actors
+    url: https://arxiv.org/pdf/2009.12174v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-09-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.12174
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.12174 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-a-nonparametric-unsupervised-learning-approach
+    title: A Nonparametric Unsupervised Learning Approach for Structural Damage Detection
+    url: https://arxiv.org/pdf/2009.13692v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.13692
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.13692 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
