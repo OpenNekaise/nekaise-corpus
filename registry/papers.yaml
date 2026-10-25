@@ -135024,24 +135024,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208471398
     resolution: 'sim1: openalex location'
-  - id: oas-10-14946-00001659-d382a6f6
-    title: The Continuing Use of Apartments
-    url: https://shoin.repo.nii.ac.jp/record/1692/files/KJ00006907688.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2011-03-03'
-    document_type: article
-    persistent_id: https://doi.org/10.14946/00001659
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://shoin.repo.nii.ac.jp/record/1692/files/KJ00006907688.pdf; version
-      submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: doi:10.14946/00001659 openalex:W7207874723
-    resolution: 'sim1: openalex location'
   - id: oas-w7208241706
     title: 各都道府県の人口増減がコンクリート需要に及ぼす影響
     url: https://kutarr.kochi-tech.ac.jp/record/202/files/JSCEF4_67_4_I-339.pdf
@@ -136855,24 +136837,6 @@ sources:
     rights_verified_at: '2026-10-11'
     selected_version: submittedVersion
     origin_ids: openalex:W587119865
-    resolution: 'sim1: openalex location'
-  - id: oas-10-15085-00000396-48531d49
-    title: 'インテリアデザイン試論 : ホスピタリティから見たインテリアデザイン'
-    url: https://myu.repo.nii.ac.jp/record/407/files/jigyou_02_12.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2000-03-25'
-    document_type: article
-    persistent_id: https://doi.org/10.15085/00000396
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://myu.repo.nii.ac.jp/record/407/files/jigyou_02_12.pdf; version submittedVersion;
-      rights restricted]
-    rights_verified_at: '2026-10-11'
-    selected_version: submittedVersion
-    origin_ids: doi:10.15085/00000396 openalex:W7143734426
     resolution: 'sim1: openalex location'
   - id: oas-w648468034
     title: 40419 HLCE-Human Life Cycle Emission とその削減(HLCE)
@@ -166136,3 +166100,74 @@ sources:
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-25'
     origin_ids: doi:10.5194/isprs-archives-xlii-4-w18-615-2019
+  - id: arx-building-footprint-generation-by-integratingco
+    title: Building Footprint Generation by IntegratingConvolution Neural Network with
+      Feature PairwiseConditional Random Field (FPCRF)
+    url: https://arxiv.org/pdf/2002.04600v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-02-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2002.04600
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2002.04600 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1109/tgrs.2020.2973720
+  - id: arx-sar-tomography-at-the-limit-building-height-re
+    title: 'SAR Tomography at the Limit: Building Height Reconstruction Using Only 3-5
+      TanDEM-X Bistatic Interferograms'
+    url: https://arxiv.org/pdf/2003.07803v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-03-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2003.07803
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2003.07803 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1109/tgrs.2020.2986052
+  - id: arx-clustering-residential-electricity-consumption
+    title: Clustering Residential Electricity Consumption Data to Create Archetypes
+      that Capture Household Behaviour in South Africa
+    url: https://arxiv.org/pdf/2006.07197v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-06-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2006.07197
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2006.07197 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-urban-heat-islands-beating-the-heat-with-multi
+    title: 'Urban Heat Islands: Beating the Heat with Multi-Modal Spatial Analysis'
+    url: https://arxiv.org/pdf/2012.03049v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-12-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2012.03049
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2012.03049 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
