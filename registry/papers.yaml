@@ -164613,24 +164613,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-24'
-  - id: oas-10-1109-access-2023-3262934-07d066b6
-    title: Design of an EnergyPlus Model-Based Smart Controller for Maintaining Thermal
-      Comfortable Environment in Non-Domestic Building
-    url: https://e-space.mmu.ac.uk/632483/1/10086530.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2023-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1109/access.2023.3262934
-    license_evidence: no licence statement for this copy [copy https://e-space.mmu.ac.uk/632483/1/10086530.pdf;
-      version acceptedVersion; rights unknown]
-    rights_verified_at: '2026-10-24'
-    selected_version: acceptedVersion
-    origin_ids: doi:10.1109/access.2023.3262934 openalex:W4361801809
-    resolution: 'sim1: openalex+unpaywall location'
   - id: arx-deep-learning-framework-for-detecting-ground-d
     title: Deep Learning Framework for Detecting Ground Deformation in the Built Environment
       using Satellite InSAR data
@@ -165856,6 +165838,92 @@ sources:
     persistent_id: doi:10.48550/arxiv.1711.09330
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1711.09330 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-privacy-concerns-regarding-occupant-tracking-i
+    title: Privacy Concerns Regarding Occupant Tracking in Smart Buildings
+    url: https://arxiv.org/pdf/2010.07028v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-09-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2010.07028
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.07028 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-how-close-and-how-much-linking-health-outcomes
+    title: How Close and How Much? Linking Health Outcomes to Built Environment Spatial
+      Distributions
+    url: https://arxiv.org/pdf/2010.07348v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2010.07348
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.07348 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-on-the-flow-problem-in-water-distribution-netw
+    title: 'On the Flow Problem in Water Distribution Networks: Uniqueness and Solvers'
+    url: https://arxiv.org/pdf/1901.03676v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019-01-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1901.03676
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1901.03676 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-build2vec-building-representation-in-vector-sp
+    title: 'Build2Vec: Building Representation in Vector Space'
+    url: https://arxiv.org/pdf/2007.00740v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2007.00740
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2007.00740 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-visual-navigation-in-real-world-indoor-environ
+    title: Visual Navigation in Real-World Indoor Environments Using End-to-End Deep
+      Reinforcement Learning
+    url: https://arxiv.org/pdf/2010.10903v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2010.10903
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.10903 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
