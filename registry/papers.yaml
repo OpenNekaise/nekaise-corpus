@@ -167993,3 +167993,72 @@ sources:
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-25'
     origin_ids: doi:10.1063/1.4982943
+  - id: oas-10-1016-j-buildenv-2026-115221-5988a57d
+    title: Physics-informed AI-integrated digital twin framework for early and real-time
+      prediction of mould growth in buildings
+    url: https://cronfa.swan.ac.uk/Record/cronfa72985/Download/72985__37862__7eb9081a8ebd444bbaefeabc7b7eb2fb.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2026.115221
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://cronfa.swan.ac.uk/Record/cronfa72985/Download/72985__37862__7eb9081a8ebd444bbaefeabc7b7eb2fb.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2026.115221 openalex:W7210280081
+    resolution: 'sim1: openalex location'
+  - id: arx-dependable-iot-data-stream-processing-for-moni
+    title: Dependable IoT Data Stream Processing for Monitoring and Control of Urban
+      Infrastructures
+    url: https://arxiv.org/pdf/2108.10721v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-08-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2108.10721
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2108.10721 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-application-of-classification-and-feature-sele
+    title: Application of Classification and Feature Selection in Building Energy Simulations
+    url: https://arxiv.org/pdf/2108.12363v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-08-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2108.12363
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2108.12363 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-a-visual-analytics-system-for-water-distributi
+    title: A Visual Analytics System for Water Distribution System Optimization
+    url: https://arxiv.org/pdf/2108.12540v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-08-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2108.12540
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2108.12540 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
