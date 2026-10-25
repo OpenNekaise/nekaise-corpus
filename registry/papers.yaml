@@ -166635,3 +166635,54 @@ sources:
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-25'
     origin_ids: doi:10.1016/j.isprsjprs.2021.01.025
+  - id: arx-walk2map-extracting-floor-plans-from-indoor-wa
+    title: 'Walk2Map: Extracting Floor Plans from Indoor Walk Trajectories'
+    url: https://arxiv.org/pdf/2103.00262v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-02-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2103.00262
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2103.00262 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-probabilistic-inference-for-structural-health-
+    title: 'Probabilistic Inference for Structural Health Monitoring: New Modes of Learning
+      from Data'
+    url: https://arxiv.org/pdf/2103.01676v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-03-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2103.01676
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2103.01676 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1061/ajrua6.0001106
+  - id: arx-sub-terahertz-and-mmwave-penetration-loss-meas
+    title: Sub-Terahertz and mmWave Penetration Loss Measurements for Indoor Environments
+    url: https://arxiv.org/pdf/2103.02745v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-03-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2103.02745
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2103.02745 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
