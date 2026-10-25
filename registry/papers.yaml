@@ -133259,24 +133259,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7207911319
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7208210239
-    title: 鉄筋コンクリート建築物の大変形領域における非対称履歴ループと地震応答性状
-    url: https://kindai.repo.nii.ac.jp/record/2004776/files/AN00063653-19791201-0025.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1979-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7208210239
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://kindai.repo.nii.ac.jp/record/2004776/files/AN00063653-19791201-0025.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7208210239
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7208287769
     title: フランスの新たな不動産建築契約について －フランスの所有権観念の考察をかねて－
     url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/16328/31(3-4)1_p165-186.pdf
@@ -165924,6 +165906,23 @@ sources:
     persistent_id: doi:10.48550/arxiv.2010.10903
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.10903 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-avoiding-occupancy-detection-from-smart-meter-
+    title: Avoiding Occupancy Detection from Smart Meter using Adversarial Machine Learning
+    url: https://arxiv.org/pdf/2010.12640v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-10-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2010.12640
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2010.12640 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
