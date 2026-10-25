@@ -168206,3 +168206,58 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-25'
     origin_ids: doi:10.1103/physrevd.104.063031
+  - id: oas-10-1016-j-buildenv-2020-107070-2a3704c3
+    title: Assessing the application and limitations of a standardised overheating risk-assessment
+      methodology in a real-world context
+    url: https://figshare.com/articles/journal_contribution/Assessing_the_application_and_limitations_of_a_standardised_overheating_risk-assessment_methodology_in_a_real-world_context/12968030
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-07-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2020.107070
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Assessing_the_application_and_limitations_of_a_standardised_overheating_risk-assessment_methodology_in_a_real-world_context/12968030;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2020.107070 openalex:W3041793104
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-gprinvnet-deep-learning-based-ground-penetrati
+    title: 'GPRInvNet: Deep Learning-Based Ground Penetrating Radar Data Inversion for
+      Tunnel Lining'
+    url: https://arxiv.org/pdf/1912.05759v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-12-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1912.05759
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1912.05759 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1109/tgrs.2020.3046454
+  - id: arx-an-automatic-system-to-monitor-the-physical-di
+    title: An Automatic System to Monitor the Physical Distance and Face Mask Wearing
+      of Construction Workers in COVID-19 Pandemic
+    url: https://arxiv.org/pdf/2101.01373v3
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-01-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2101.01373
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2101.01373 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
