@@ -167682,3 +167682,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1184/r1/6716120 openalex:W1895185220
     resolution: 'sim1: openalex location'
+  - id: arx-open-government-geospatial-data-on-buildings-f
+    title: Open government geospatial data on buildings for planning sustainable and
+      resilient cities
+    url: https://arxiv.org/pdf/2107.04023v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-06-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2107.04023
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2107.04023 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+  - id: arx-evaluation-of-efficiency-index-of-friction-ene
+    title: Evaluation of efficiency index of friction energy dissipation devices using
+      endurance time method
+    url: https://arxiv.org/pdf/2107.04530v1
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-07-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2107.04530
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2107.04530 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.52547/nmce.5.2.12
