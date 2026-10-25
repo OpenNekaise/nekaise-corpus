@@ -436,20 +436,6 @@ sources:
       notice appears in all copies, use is informational and non-commercial, no modifications;
       no scraping clause
     rights_verified_at: '2026-08-28'
-  - id: vnd-kone-us-ecomod-20flex-sf3151-20-281-29-tcm25-144523
-    title: 'KONE US: Images — EcoMod Flex SF3151 (1) tcm25 144523'
-    url: https://www.kone.us/Images/EcoMod%20Flex_SF3151%20%281%29_tcm25-144523.pdf
-    source: vendor_kone
-    license: open
-    topic: architecture
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.kone.us/legal-notice.aspx
-    license_evidence: non-exclusive, personal and limited right to access, use and display
-      this Site and attendant materials for your personal use only; no explicit anti-bot
-      clause
-    rights_verified_at: '2026-08-28'
   - id: vnd-wienerberger-uk-uk-mkt-doc-tec-wal-designing-for-movemen-in-brickwork-bda-aug-2016-001
     title: 'Wienerberger UK: technical — UK MKT DOC TEC WAL Designing for Movemen in
       Brickwork BDA Aug 2016 001'
@@ -21541,3 +21527,18 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-kone-us-kone-monospace-dx-branding-tcm25-11525-2
+    title: 'KONE US: KONE MonoSpace DX Brief PDF, 795.1 KB Opens in a new tab (as —
+      KONE MonoSpace DX Branding tcm25 115253)'
+    url: https://assets.kone.com/adobe/assets/urn:aaid:aem:7424e561-16b5-470c-ade4-9118a22958ea/renditions/original/as/KONE-MonoSpace-DX-Branding_tcm25-115253.pdf
+    source: vendor_kone
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.kone.us/legal-notice.aspx
+    license_evidence: non-exclusive, personal and limited right to access, use and display
+      this Site and attendant materials for your personal use only; no explicit anti-bot
+      clause
+    rights_verified_at: '2026-08-28'

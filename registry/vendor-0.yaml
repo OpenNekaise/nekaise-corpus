@@ -569,37 +569,9 @@ sources:
       notice appears in all copies, use is informational and non-commercial, no modifications;
       no scraping clause
     rights_verified_at: '2026-08-28'
-  - id: vnd-kone-us-tm-20210-220-20accessories-20cut-20sheet-tcm25-78291
-    title: 'KONE US: Images — TM 210 220 Accessories Cut Sheet tcm25 78291'
-    url: https://www.kone.us/Images/TM%20210-220%20Accessories%20Cut%20Sheet_tcm25-78291.pdf
-    source: vendor_kone
-    license: open
-    topic: architecture
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.kone.us/legal-notice.aspx
-    license_evidence: non-exclusive, personal and limited right to access, use and display
-      this Site and attendant materials for your personal use only; no explicit anti-bot
-      clause
-    rights_verified_at: '2026-08-28'
   - id: vnd-kone-us-kone-resolve-dx-brochure-tcm25-115260
     title: 'KONE US: Images — KONE ReSolve DX brochure tcm25 115260'
     url: https://www.kone.us/Images/KONE-ReSolve-DX-brochure_tcm25-115260.pdf
-    source: vendor_kone
-    license: open
-    topic: architecture
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.kone.us/legal-notice.aspx
-    license_evidence: non-exclusive, personal and limited right to access, use and display
-      this Site and attendant materials for your personal use only; no explicit anti-bot
-      clause
-    rights_verified_at: '2026-08-28'
-  - id: vnd-kone-us-435839-kone-jumplift-c-sf3018-tcm25-39837
-    title: 'KONE US: Images — 435839 KONE JumpLift C SF3018 tcm25 39837'
-    url: https://www.kone.us/Images/435839_KONE_JumpLift_C_SF3018_tcm25-39837.pdf
     source: vendor_kone
     license: open
     topic: architecture
@@ -22050,3 +22022,18 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
+  - id: vnd-kone-us-kone-minispace-dx-brochure-tcm25-11542-2
+    title: 'KONE US: KONE MiniSpace™ DX brochure PDF, 12.3 MB Opens in a new tab (as
+      — KONE MiniSpace DX Brochure tcm25 115422)'
+    url: https://assets.kone.com/adobe/assets/urn:aaid:aem:48c51fa3-1aa7-4dc1-98d7-df7f64db97ef/renditions/original/as/KONE-MiniSpace-DX-Brochure_tcm25-115422.pdf
+    source: vendor_kone
+    license: open
+    topic: architecture
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.kone.us/legal-notice.aspx
+    license_evidence: non-exclusive, personal and limited right to access, use and display
+      this Site and attendant materials for your personal use only; no explicit anti-bot
+      clause
+    rights_verified_at: '2026-08-28'

@@ -166401,3 +166401,41 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
+  - id: arx-applications-of-shapelet-transform-to-time-ser
+    title: Applications of shapelet transform to time series classification of earthquake,
+      wind and wave data
+    url: https://arxiv.org/pdf/2004.11243v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-04-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2004.11243
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2004.11243 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1016/j.engstruct.2020.111564
+  - id: arx-stereo-camera-visual-slam-with-hierarchical-ma
+    title: Stereo Camera Visual SLAM with Hierarchical Masking and Motion-state Classification
+      at Outdoor Construction Sites Containing Large Dynamic Objects
+    url: https://arxiv.org/pdf/2101.06563v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-01-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2101.06563
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2101.06563 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1080/01691864.2020.1869586
