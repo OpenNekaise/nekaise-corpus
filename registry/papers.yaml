@@ -166987,23 +166987,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
-  - id: oas-10-1184-r1-6715931-54529b53
-    title: Device-Level Data Analytics to Guide Policy
-    url: http://repository.cmu.edu/dissertations/896
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2017-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1184/r1/6715931
-    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/896;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-25'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1184/r1/6715931 openalex:W2615161488
-    resolution: 'sim1: openalex location'
   - id: arx-an-ontology-based-approach-to-data-exchanges-f
     title: An ontology-based approach to data exchanges for robot navigation on construction
       sites
@@ -168170,3 +168153,56 @@ sources:
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-25'
     origin_ids: doi:10.1016/j.cag.2021.07.006
+  - id: arx-vision-based-autonomous-disinfection-of-high-t
+    title: Vision-based Autonomous Disinfection of High Touch Surfaces in Indoor Environments
+    url: https://arxiv.org/pdf/2108.11456v2
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-08-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2108.11456
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2108.11456 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-struct-mrt-immersive-learning-and-teaching-of-
+    title: 'Struct-MRT: Immersive Learning and Teaching of Design and Verification in
+      Structural Civil Engineering using Mixed Reality'
+    url: https://arxiv.org/pdf/2109.09489v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2109.09489
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2109.09489 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.13140/rg.2.2.27661.46563
+  - id: arx-pyroq-a-python-based-reduced-order-quadrature-
+    title: 'PyROQ: a Python-based Reduced Order Quadrature Building Code for Fast Gravitational
+      Wave Inference'
+    url: https://arxiv.org/pdf/2009.13812v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2020-09-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2009.13812
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2009.13812 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-25'
+    origin_ids: doi:10.1103/physrevd.104.063031
