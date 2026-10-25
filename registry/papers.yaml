@@ -166475,3 +166475,55 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-25'
+  - id: ope-thermal-comfort-perception-in-naturally-ventil
+    title: Thermal comfort perception in naturally ventilated affordable housing of
+      India
+    url: https://www.repository.cam.ac.uk/bitstreams/ee8bc65b-366e-4520-9d79-1171eea380b3/download
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-03-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/17512549.2021.1907224
+    license_evidence: no licence statement for this copy [copy https://www.repository.cam.ac.uk/bitstreams/ee8bc65b-366e-4520-9d79-1171eea380b3/download;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-25'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/17512549.2021.1907224 openalex:W3142826958
+    resolution: 'legacy: openalex location'
+  - id: arx-automated-decontamination-of-workspaces-using-
+    title: Automated decontamination of workspaces using UVC coupled with occupancy
+      detection
+    url: https://arxiv.org/pdf/2101.12581v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-01-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2101.12581
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2101.12581 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-25'
+  - id: arx-real-time-prediction-for-mechanical-ventilatio
+    title: Real-time Prediction for Mechanical Ventilation in COVID-19 Patients using
+      A Multi-task Gaussian Process Multi-objective Self-attention Network
+    url: https://arxiv.org/pdf/2102.01147v1
+    source: arxiv
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-02-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2102.01147
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2102.01147 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-25'
