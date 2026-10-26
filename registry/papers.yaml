@@ -168944,3 +168944,111 @@ sources:
     rights_verified_at: '2026-10-26T04:17:42Z'
     origin_ids: doi:10.1016/j.enbuild.2025.115883 openalex:W4410494704
     resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-3389-fcomp-2026-1972880-3a4cf185
+    title: An integrated AI-based software architecture for load forecasting, controlled
+      anomaly detection, and predictive energy management
+    url: https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1972880/pdf
+    source: openalex_sim
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-10-15'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fcomp.2026.1972880
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1972880/pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fcomp.2026.1972880 openalex:W7222295735
+    resolution: 'sim1: openalex location'
+  - id: arx-cbhe-corner-based-building-height-estimation-f
+    title: 'CBHE: Corner-based Building Height Estimation for Complex Street Scene Images'
+    url: https://arxiv.org/pdf/1904.11128v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-04-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1904.11128
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1904.11128 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1145/3308558.3313394
+  - id: arx-methods-for-segmenting-cracks-in-3d-images-of-
+    title: 'Methods for segmenting cracks in 3d images of concrete: A comparison based
+      on semi-synthetic images'
+    url: https://arxiv.org/pdf/2112.09493v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2021-12-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2112.09493
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2112.09493 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-enhanced-object-detection-in-floor-plan-throug
+    title: Enhanced Object Detection in Floor-plan through Super Resolution
+    url: https://arxiv.org/pdf/2112.09844v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-12-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2112.09844
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2112.09844 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-surrogate-assisted-active-subspace-and-active-
+    title: Surrogate assisted active subspace and active subspace assisted surrogate
+      -- A new paradigm for high dimensional structural reliability analysis
+    url: https://arxiv.org/pdf/2105.04979v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-05-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2105.04979
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2105.04979 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1016/j.cma.2021.114374
+  - id: arx-semantically-enriched-spatial-modelling-of-ind
+    title: Semantically enriched spatial modelling of industrial indoor environments
+      enabling location-based services
+    url: https://arxiv.org/pdf/2112.11856v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-12-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2112.11856
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2112.11856 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1007/978-3-662-56714-2_13
