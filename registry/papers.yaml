@@ -169843,3 +169843,55 @@ sources:
       -> cc-by-sa (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-26'
     origin_ids: doi:10.1038/s41467-022-29094-x
+  - id: arx-automated-generalisation-of-buildings-using-ca
+    title: Automated generalisation of buildings using CartAGen platform
+    url: https://arxiv.org/pdf/2204.01544v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-04-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.01544
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.01544 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-finding-the-right-place-sensor-placement-for-u
+    title: 'Finding the Right Place: Sensor Placement for UWB Time Difference of Arrival
+      Localization in Cluttered Indoor Environments'
+    url: https://arxiv.org/pdf/2204.04508v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-04-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.04508
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.04508 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1109/lra.2022.3165181
+  - id: arx-thermal-insulation-and-heat-guiding-using-nano
+    title: Thermal insulation and heat guiding using nanopatterned MoS2
+    url: https://arxiv.org/pdf/2204.04999v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-04-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.04999
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.04999 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
