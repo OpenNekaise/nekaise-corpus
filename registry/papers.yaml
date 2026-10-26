@@ -168188,25 +168188,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-25'
     origin_ids: doi:10.1103/physrevd.104.063031
-  - id: oas-10-1016-j-buildenv-2020-107070-2a3704c3
-    title: Assessing the application and limitations of a standardised overheating risk-assessment
-      methodology in a real-world context
-    url: https://figshare.com/articles/journal_contribution/Assessing_the_application_and_limitations_of_a_standardised_overheating_risk-assessment_methodology_in_a_real-world_context/12968030
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2020-07-11'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.buildenv.2020.107070
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
-      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Assessing_the_application_and_limitations_of_a_standardised_overheating_risk-assessment_methodology_in_a_real-world_context/12968030;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-25'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.buildenv.2020.107070 openalex:W3041793104
-    resolution: 'sim1: openalex+unpaywall location'
   - id: arx-gprinvnet-deep-learning-based-ground-penetrati
     title: 'GPRInvNet: Deep Learning-Based Ground Penetrating Radar Data Inversion for
       Tunnel Lining'
@@ -169386,3 +169367,92 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1002/ente.202300577 openalex:W4389831771
     resolution: 'legacy: openalex location'
+  - id: arx-if-city-intelligible-fair-city-planning-to-mea
+    title: 'IF-City: Intelligible Fair City Planning to Measure, Explain and Mitigate
+      Inequality'
+    url: https://arxiv.org/pdf/2202.07349v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-02-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2202.07349
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2202.07349 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-bdanet-multiscale-convolutional-neural-network
+    title: 'BDANet: Multiscale Convolutional Neural Network with Cross-directional Attention
+      for Building Damage Assessment from Satellite Images'
+    url: https://arxiv.org/pdf/2105.07364v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-05-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2105.07364
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2105.07364 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1109/tgrs.2021.3080580
+  - id: arx-lidar-inertial-3d-slam-with-plane-constraint-f
+    title: LiDAR-Inertial 3D SLAM with Plane Constraint for Multi-story Building
+    url: https://arxiv.org/pdf/2202.08487v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-02-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2202.08487
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2202.08487 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-ganmapper-geographical-data-translation
+    title: 'GANmapper: geographical data translation'
+    url: https://arxiv.org/pdf/2108.04232v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-08-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2108.04232
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2108.04232 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1080/13658816.2022.2041643
+  - id: arx-combining-optimal-control-and-learning-for-aut
+    title: Combining optimal control and learning for autonomous aerial navigation in
+      novel indoor environments
+    url: https://arxiv.org/pdf/2112.03554v2
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-12-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2112.03554
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2112.03554 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
