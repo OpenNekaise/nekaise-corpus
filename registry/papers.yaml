@@ -169685,3 +169685,161 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-26'
+  - id: ope-adaptive-sensing-and-personalized-thermal-comf
+    title: Adaptive sensing and personalized thermal comfort prediction for building
+      energy efficiency
+    url: https://www.ideals.illinois.edu/items/131729/bitstreams/437585/data.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-14'
+    document_type: article
+    persistent_id: https://openalex.org/W7220816840
+    license_evidence: no licence statement for this copy [copy https://www.ideals.illinois.edu/items/131729/bitstreams/437585/data.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7220816840
+    resolution: 'legacy: openalex location'
+  - id: ope-improving-building-energy-efficiency-utilizing
+    title: 'Improving Building Energy Efficiency Utilizing Machine Learning Technologies:
+      Real-Time Performance Simulation Using Real-Time Weather Data for Energy'
+    url: https://www.lib.ncsu.edu/resolver/1840.20/38368
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-26'
+    document_type: article
+    persistent_id: https://openalex.org/W3105336542
+    license_evidence: no licence statement for this copy [copy https://www.lib.ncsu.edu/resolver/1840.20/38368;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3105336542
+    resolution: 'legacy: openalex location'
+  - id: ope-low-carbon-building-performance-in-the-constru
+    title: 'Low Carbon Building Performance in the Construction Industry: A Multi-Method
+      Approach of Project Management Operations and Building Energy Use Applied'
+    url: https://discovery.ucl.ac.uk/10088068/1/manuscript%20EB%20format%20REV1%20track%20changes%20ACCEPTED.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-01-25'
+    document_type: article
+    persistent_id: https://openalex.org/W3161895750
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10088068/1/manuscript%20EB%20format%20REV1%20track%20changes%20ACCEPTED.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3161895750
+    resolution: 'legacy: openalex location'
+  - id: ope-efficient-greenhouse-temperature-control-with-
+    title: Efficient Greenhouse Temperature Control with Data-Driven Robust Model Predictive
+      Control
+    url: https://arxiv.org/pdf/1912.12666
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-12-29'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.1912.12666
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1912.12666;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.1912.12666 openalex:W2998170436
+    resolution: 'legacy: openalex location'
+  - id: ope-machine-learning-for-human-centered-and-value-
+    title: Machine learning for human-centered and value-sensitive building energy efficiency
+    url: https://www.ideals.illinois.edu/items/112353/bitstreams/367767/data.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-04-19'
+    document_type: article
+    persistent_id: https://openalex.org/W2969641907
+    license_evidence: no licence statement for this copy [copy https://www.ideals.illinois.edu/items/112353/bitstreams/367767/data.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2969641907
+    resolution: 'legacy: openalex location'
+  - id: ope-enhancing-and-expanding-conventional-simulatio
+    title: Enhancing and Expanding Conventional Simulation Models of Refrigeration Systems
+      for Improved Correlations
+    url: https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=dayton1544524232130074&disposition=inline
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2018-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W3097034180
+    license_evidence: no licence statement for this copy [copy https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=dayton1544524232130074&disposition=inline;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3097034180
+    resolution: 'legacy: openalex location'
+  - id: arx-a-universal-deep-room-acoustics-estimator
+    title: A Universal Deep Room Acoustics Estimator
+    url: https://arxiv.org/pdf/2109.14436v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-09-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2109.14436
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2109.14436 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1109/waspaa52581.2021.9632738
+  - id: arx-sam-knn-regressor-for-online-learning-in-water
+    title: SAM-kNN Regressor for Online Learning in Water Distribution Networks
+    url: https://arxiv.org/pdf/2204.01436v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022-04-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.01436
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.01436 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-high-resolution-population-estimation-using-ho
+    title: High-resolution population estimation using household survey data and building
+      footprints
+    url: https://arxiv.org/pdf/2106.07461v1
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-06-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.07461
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.07461 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1038/s41467-022-29094-x
