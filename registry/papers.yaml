@@ -170563,24 +170563,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.3390/buildings4030467 openalex:W1966380912
     resolution: 'legacy: openalex location'
-  - id: ope-organisational-obstacles-to-reducing-carbon-em
-    title: Organisational obstacles to reducing carbon emissions in Hong Kong
-    url: https://eprints.qut.edu.au/219152/1/59239.pdf
-    source: openalex
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2013-04-18'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.habitatint.2013.03.004
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://eprints.qut.edu.au/219152/1/59239.pdf; version submittedVersion;
-      rights restricted]
-    rights_verified_at: '2026-10-26'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.habitatint.2013.03.004 openalex:W1594766793
-    resolution: 'legacy: openalex location'
   - id: ope-review-of-energy-dissipation-mechanisms-in-con
     title: 'Review of Energy Dissipation Mechanisms in Concrete: Role of Advanced Materials,
       Mix Design, and Curing Conditions'
@@ -170695,3 +170677,55 @@ sources:
     rights_verified_at: '2026-10-26T16:30:28Z'
     origin_ids: doi:10.1016/j.buildenv.2024.111551 openalex:W4395072514
     resolution: 'legacy: openalex location'
+  - id: oas-10-1016-j-ynexs-2024-100031-9528e6e6
+    title: 'The Digital Lab Facility Manager: Automating operations of research laboratories
+      through “The World Avatar”'
+    url: https://www.repository.cam.ac.uk/bitstreams/dec88a5e-b0d7-4a33-ac58-288a7a0db4db/download
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-08-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.ynexs.2024.100031
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/dec88a5e-b0d7-4a33-ac58-288a7a0db4db/download;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.ynexs.2024.100031 openalex:W4401931865
+    resolution: 'ai1: openalex location'
+  - id: arx-rendernet-visual-relocalization-using-virtual-
+    title: 'RenderNet: Visual Relocalization Using Virtual Viewpoints in Large-Scale
+      Indoor Environments'
+    url: https://arxiv.org/pdf/2207.12579v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-07-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2207.12579
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2207.12579 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-accurate-polygonal-mapping-of-buildings-in-sat
+    title: Accurate Polygonal Mapping of Buildings in Satellite Imagery
+    url: https://arxiv.org/pdf/2208.00609v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-08-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2208.00609
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2208.00609 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
