@@ -170080,3 +170080,72 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-26'
+  - id: oas-10-5194-isprs-annals-xii-4-w1-2026-293-2-4d6f4dc1
+    title: Assessing and fixing LOD2 building models for Urban Energy Digital Twin
+    url: https://isprs-annals.copernicus.org/articles/XII-4-W1-2026/293/2026/isprs-annals-XII-4-W1-2026-293-2026.pdf
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-09-28'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-annals-xii-4-w1-2026-293-2026
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-annals.copernicus.org/articles/XII-4-W1-2026/293/2026/isprs-annals-XII-4-W1-2026-293-2026.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-26'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-annals-xii-4-w1-2026-293-2026 openalex:W7214603645
+    resolution: 'sim1: openalex location'
+  - id: arx-transfer-of-energy-from-flexural-to-torsional-
+    title: Transfer of energy from flexural to torsional modes for the Fish-bone Suspension
+      bridge
+    url: https://arxiv.org/pdf/2205.12884v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-05-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2205.12884
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2205.12884 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-rfid-based-indoor-spatial-query-evaluation-wit
+    title: RFID-Based Indoor Spatial Query Evaluation with Bayesian Filtering Techniques
+    url: https://arxiv.org/pdf/2204.00747v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-04-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.00747
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.00747 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-dual-tasks-siamese-transformer-framework-for-b
+    title: Dual-Tasks Siamese Transformer Framework for Building Damage Assessment
+    url: https://arxiv.org/pdf/2201.10953v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-01-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2201.10953
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2201.10953 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
