@@ -20,7 +20,7 @@ locally and retain their original licenses.
 
 **By topic:** equipment_systems 536,710 · construction 441,070 · building_energy 220,009 · structures_civil 175,570 · materials 116,255 · infrastructure 76,461 · architecture 50,527 · standards_protocols 12,989 · controls_bas 10,600 · urban 9,383 · simulation_modeling 8,467 · commissioning_fdd 419.
 
-_The default training view, auto-generated from the manifest. Another **96,739** rows (collected and kept) stay outside it: policy-held or restricted licences. The bytes are not shipped; run the loader to fetch your own copy._
+_The default training view, auto-generated from the manifest. Another **96,743** rows (collected and kept) stay outside it: policy-held or restricted licences. The bytes are not shipped; run the loader to fetch your own copy._
 <!-- STATS:END -->
 
 ## Quick start
