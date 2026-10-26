@@ -171313,3 +171313,57 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-26'
+  - id: ope-flattening-the-peak-demand-curve-through-energ
+    title: 'Flattening the peak demand curve through energy efficient buildings: A holistic
+      approach towards net-zero carbon'
+    url: https://publikationen.bibliothek.kit.edu/1000188873/171098425
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-02-08'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.apenergy.2025.125421
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://publikationen.bibliothek.kit.edu/1000188873/171098425; version submittedVersion;
+      rights accepted]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.apenergy.2025.125421 openalex:W4407270527
+    resolution: 'legacy: openalex location'
+  - id: arx-towards-trustworthy-multi-label-sewer-defect-c
+    title: Towards Trustworthy Multi-label Sewer Defect Classification via Evidential
+      Deep Learning
+    url: https://arxiv.org/pdf/2210.13782v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022-10-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2210.13782
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2210.13782 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-towards-improving-workers-safety-and-progress-
+    title: Towards Improving Workers' Safety and Progress Monitoring of Construction
+      Sites Through Construction Site Understanding
+    url: https://arxiv.org/pdf/2210.15760v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-10-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2210.15760
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2210.15760 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-26'
