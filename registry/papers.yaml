@@ -171089,3 +171089,56 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-26'
+  - id: arx-double-prong-convlstm-for-spatiotemporal-occup
+    title: Double-Prong ConvLSTM for Spatiotemporal Occupancy Prediction in Dynamic
+      Environments
+    url: https://arxiv.org/pdf/2011.09045v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2020-11-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.09045
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.09045 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-dynamics-aware-spatiotemporal-occupancy-predic
+    title: Dynamics-Aware Spatiotemporal Occupancy Prediction in Urban Environments
+    url: https://arxiv.org/pdf/2209.13172v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-09-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2209.13172
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2209.13172 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-towards-cross-disaster-building-damage-assessm
+    title: Towards Cross-Disaster Building Damage Assessment with Graph Convolutional
+      Networks
+    url: https://arxiv.org/pdf/2201.10395v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-01-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2201.10395
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2201.10395 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1109/igarss46834.2022.9883832
