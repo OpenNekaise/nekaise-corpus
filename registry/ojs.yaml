@@ -522840,3 +522840,48 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: http://www.fracturae.com/index.php/fis/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:"ojs.www.fracturae.com:article/5954
     rights_verified_at: '2026-10-26'
+  - id: ojs-acta-network-level-pavement-bearing-capacity-assessment-usi
+    title: Network-Level Pavement Bearing Capacity Assessment Using the Curviameter
+      Mechanical Index (CMI)
+    url: https://acta.sze.hu/index.php/acta/article/download/999/688
+    source: ojs_acta
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-10-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14513/actatechjaur.00999
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://acta.sze.hu/index.php/acta/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:acta.sze.hu:article/999
+    rights_verified_at: '2026-10-26'
+  - id: ojs-acta-effect-of-waste-thermoplastics-on-properties-of-warm-m
+    title: Effect of Waste Thermoplastics on Properties of Warm Mix Asphalt
+    url: https://acta.sze.hu/index.php/acta/article/download/1049/687
+    source: ojs_acta
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-10-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14513/actatechjaur.01049
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://acta.sze.hu/index.php/acta/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:acta.sze.hu:article/1049
+    rights_verified_at: '2026-10-26'
+  - id: ojs-asubterraneas-application-of-the-god-method-for-assessing-a
+    title: Application of the GOD method for assessing aquifer vulnerability to contamination
+      in the city of Maceió, AL
+    url: https://aguassubterraneas.abas.org/asubterraneas/article/download/30424/19535
+    source: ojs_asubterraneas
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2026-10-22'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14295/ras.v40i2.30424
+    license_evidence: 'https://aguassubterraneas.abas.org/asubterraneas/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.aguassubterraneas.abas.org:article/30424
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Águas Subterrâneas)'
+    rights_verified_at: '2026-10-26'
