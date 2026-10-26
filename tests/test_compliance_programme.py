@@ -6,7 +6,7 @@ from __future__ import annotations
 import json
 import threading
 import time
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -1381,8 +1381,20 @@ def test_held_raw_without_text_is_repairable_not_unavailable(tmp_path):
     assert registry.programme_unavailable(row, exists=lambda r, stage: False)
 
 
-def _programme_repo(monkeypatch, tmp_path, entries, manifest=(), regdocs=None):
+def _programme_repo(monkeypatch, tmp_path, entries, manifest=(), regdocs=None, *, review_age=0):
     import pipeline_repo
+    # Exercise the real expiry rule through its existing clock seam. Patch only this
+    # test's module entry point; never depend on the machine or production review dates.
+    review_due = compliance_common.review_due
+    monkeypatch.setattr(compliance_common, "review_due",
+                        lambda reviewed_at, today=None: review_due(
+                            reviewed_at, TODAY if today is None else today))
+    reviewed_at = (TODAY - timedelta(days=review_age)).isoformat()
+    monkeypatch.setattr(compliance_common, "BFS_RIGHTS_REVIEWED_AT", reviewed_at)
+    if regdocs is not None:
+        regdocs = json.loads(json.dumps(regdocs))
+        for source in regdocs.get("sources", {}).values():
+            source["rights_reviewed_at"] = reviewed_at
     root = pipeline_repo.write_repo(tmp_path / "repo", entries=entries, manifest=manifest)
     if regdocs is not None:
         (root / "registry" / "regdocs.json").write_text(json.dumps(regdocs))
@@ -1422,9 +1434,8 @@ def test_loader_repairs_missing_text_from_held_raw_without_network(monkeypatch, 
 def test_loader_requests_nothing_for_a_source_whose_review_is_due(monkeypatch, tmp_path, capsys):
     import sys as _sys
     stale = json.loads(json.dumps(docs()["regdocs.json"]))
-    stale["sources"]["riksdagen-sfs"]["rights_reviewed_at"] = "2026-01-01"
     row = {**RIKS_ROW, "id": "reg-riksdagen-sfs-new"}
-    _programme_repo(monkeypatch, tmp_path, [row], [], stale)
+    _programme_repo(monkeypatch, tmp_path, [row], [], stale, review_age=31)
     monkeypatch.setattr(build_corpus, "download_one",
                         lambda _s: pytest.fail("a stale access review allows no request"))
     monkeypatch.setattr(_sys, "argv", ["build_corpus.py", "--workers", "1"])
@@ -1648,3 +1659,34 @@ def test_a_failed_restoration_leaves_no_bytes_and_is_retried_later(monkeypatch, 
                         lambda src: calls.append(src["id"]) or {**src, "_deferred": "test"})
     build_corpus.main()
     assert calls == ["bov-bfs-bfs2011-6"]
+
+
+@pytest.mark.parametrize("age,due", [(0, False), (30, False), (31, True)])
+@pytest.mark.parametrize("offset", [0, 60, 365])
+def test_access_review_expiry_boundary(age, due, offset):
+    today = TODAY + timedelta(days=offset)
+    reviewed_at = (today - timedelta(days=age)).isoformat()
+    assert compliance_common.review_due(reviewed_at, today) is due
+
+
+@pytest.mark.parametrize("reviewed_at", [None, "", "invalid"])
+def test_missing_or_invalid_access_review_is_due(reviewed_at):
+    assert compliance_common.review_due(reviewed_at, TODAY)
+
+
+def test_expired_review_defers_restoration_without_a_restore_record(monkeypatch, tmp_path, capsys):
+    import sys as _sys
+    held = {**RIKS_ROW, "status": "ok", "sha256": "0" * 64, "bytes": 30,
+            "raw_path": "raw/riksdagen_sfs/reg-riksdagen-sfs-pbl.txt",
+            "text_path": "text/reg-riksdagen-sfs-pbl.md", "text_chars": 30}
+    root = _programme_repo(monkeypatch, tmp_path, [RIKS_ROW], [held],
+                           docs()["regdocs.json"], review_age=31)
+    monkeypatch.setattr(build_corpus, "download_one",
+                        lambda _s: pytest.fail("an expired review must defer restoration"))
+    monkeypatch.setattr(_sys, "argv", ["build_corpus.py", "--workers", "1"])
+    build_corpus.main()
+    assert "wait for an access-terms re-review" in capsys.readouterr().out
+    assert not (root / "workspace" / "programme-restore-failures.jsonl").exists()
+    rows = [json.loads(line) for line in
+            (root / "manifest" / "regdocs.jsonl").read_text().splitlines()]
+    assert rows == [held]
