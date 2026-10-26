@@ -168488,3 +168488,123 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-26'
+  - id: arx-fully-convolutional-siamese-neural-networks-fo
+    title: Fully convolutional Siamese neural networks for buildings damage assessment
+      from satellite images
+    url: https://arxiv.org/pdf/2111.00508v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-10-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.00508
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.00508 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-directional-measurements-in-urban-street-canyo
+    title: Directional Measurements in Urban Street Canyons from Macro Rooftop Sites
+      at 28 GHz for 90% Outdoor Coverage
+    url: https://arxiv.org/pdf/1908.00512v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-08-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1908.00512
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1908.00512 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1109/tap.2020.3044398
+  - id: arx-room-acoustics-lecture-notes
+    title: Room Acoustics (lecture notes)
+    url: https://arxiv.org/pdf/2111.01900v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.01900
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.01900 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-building-damage-mapping-with-self-positiveunla
+    title: Building Damage Mapping with Self-PositiveUnlabeled Learning
+    url: https://arxiv.org/pdf/2111.02586v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.02586
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.02586 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-characterizing-human-explanation-strategies-to
+    title: Characterizing Human Explanation Strategies to Inform the Design of Explainable
+      AI for Building Damage Assessment
+    url: https://arxiv.org/pdf/2111.02626v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.02626
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.02626 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-a-fast-parallel-tensor-decomposition-with-opti
+    title: 'A Fast Parallel Tensor Decomposition with Optimal Stochastic Gradient Descent:
+      an Application in Structural Damage Identification'
+    url: https://arxiv.org/pdf/2111.02632v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-11-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.02632
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.02632 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-pomp-pomcp-based-active-visual-search-in-unkno
+    title: 'POMP++: Pomcp-based Active Visual Search in unknown indoor environments'
+    url: https://arxiv.org/pdf/2107.00914v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-07-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2107.00914
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2107.00914 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
