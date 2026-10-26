@@ -170729,3 +170729,38 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-26'
+  - id: arx-polyhedral-relaxations-for-optimal-pump-schedu
+    title: Polyhedral Relaxations for Optimal Pump Scheduling of Potable Water Distribution
+      Networks
+    url: https://arxiv.org/pdf/2208.03551v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022-08-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2208.03551
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2208.03551 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-3d-instance-segmentation-of-mvs-buildings
+    title: 3D Instance Segmentation of MVS Buildings
+    url: https://arxiv.org/pdf/2112.09902v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-12-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2112.09902
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2112.09902 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1109/tgrs.2022.3183567
