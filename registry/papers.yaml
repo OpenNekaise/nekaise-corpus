@@ -169943,3 +169943,56 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-26'
+  - id: oas-10-1016-j-autcon-2026-106778-36227726
+    title: Mapping digital twin applications in infrastructure and the built environment
+      across research types, methods, sectors, phases, and scales
+    url: https://www.repository.cam.ac.uk/bitstreams/301e832b-65d2-465d-9712-506117c4a2c2/download
+    source: openalex_sim
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2026.106778
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.repository.cam.ac.uk/bitstreams/301e832b-65d2-465d-9712-506117c4a2c2/download;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2026.106778 openalex:W7123717607
+    resolution: 'sim1: openalex location'
+  - id: arx-stability-analysis-on-the-thermal-insulation-p
+    title: Stability analysis on the thermal insulation problems
+    url: https://arxiv.org/pdf/2011.00291v10
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2011.00291
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2011.00291 (v10, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-injective-metrics-on-buildings-and-symmetric-s
+    title: Injective metrics on buildings and symmetric spaces
+    url: https://arxiv.org/pdf/2101.09367v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-01-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2101.09367
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2101.09367 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
