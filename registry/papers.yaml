@@ -168713,3 +168713,107 @@ sources:
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-26'
     origin_ids: doi:10.1016/j.ssci.2021.105573
+  - id: oas-10-1184-r1-6716120-e4aa4787
+    title: Dynamic Optimization of Integrated Active - Passive Strategies for Building
+      Enthalpy Control
+    url: http://repository.cmu.edu/dissertations/404
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1184/r1/6716120
+    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/404;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1184/r1/6716120 openalex:W1895185220
+    resolution: 'sim1: openalex location'
+  - id: arx-context-based-navigation-for-ground-mobile-rob
+    title: Context-based navigation for ground mobile robot in a semi-structured indoor
+      environment
+    url: https://arxiv.org/pdf/2111.12111v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.12111
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.12111 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-autonomous-bot-with-ml-based-reactive-navigati
+    title: Autonomous bot with ML-based reactive navigation for indoor environment
+    url: https://arxiv.org/pdf/2111.12542v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.12542
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.12542 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-agility-in-software-2-0-notebook-interfaces-an
+    title: Agility in Software 2.0 -- Notebook Interfaces and MLOps with Buttresses
+      and Rebars
+    url: https://arxiv.org/pdf/2111.14142v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2021-11-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.14142
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.14142 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-buildings-classification-using-very-high-resol
+    title: Buildings Classification using Very High Resolution Satellite Imagery
+    url: https://arxiv.org/pdf/2111.14650v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.14650
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.14650 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-radioweaves-for-extreme-spatial-multiplexing-i
+    title: RadioWeaves for Extreme Spatial Multiplexing in Indoor Environments
+    url: https://arxiv.org/pdf/2111.15339v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.15339
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.15339 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.1109/ieeeconf51394.2020.9443342
