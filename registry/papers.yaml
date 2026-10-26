@@ -169668,3 +169668,20 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-26'
+  - id: arx-a-comparative-evaluation-of-machine-learning-a
+    title: A Comparative Evaluation of Machine Learning Algorithms for the Prediction
+      of R/C Buildings' Seismic Damage
+    url: https://arxiv.org/pdf/2203.13449v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-03-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2203.13449
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2203.13449 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-26'
