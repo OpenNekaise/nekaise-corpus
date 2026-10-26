@@ -130532,23 +130532,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7146386827
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7166489985
-    title: '建物高さ・長さおよび視点高さが異なる場合の二棟平行配置空間の視覚的まとまり : 建築群の空間構成計画に関する研究・その9'
-    url: https://nitech.repo.nii.ac.jp/record/4342/files/JAPEE_470_131.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1995-04-30'
-    document_type: article
-    persistent_id: https://openalex.org/W7166489985
-    license_evidence: no licence statement for this copy [copy https://nitech.repo.nii.ac.jp/record/4342/files/JAPEE_470_131.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7166489985
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7208250867
     title: '452 独居高齢者と地域社会との関連性に関する研究 : 高齢者が自立できる社会形成に関する研究 その4(建築計画)'
     url: https://ir.kagoshima-u.ac.jp/record/2746/files/110007024526.pdf
@@ -170562,3 +170545,153 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-26'
+  - id: ope-essential-bim-input-data-study-for-housing-ref
+    title: 'Essential BIM Input Data Study for Housing Refurbishment: Homeowners’ Preferences
+      in the UK'
+    url: https://publications.aston.ac.uk/id/eprint/23951/1/Essential_BIM_input_data_study_for_housing_refurbishment.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-09-11'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings4030467
+    license_evidence: no licence statement for this copy [copy https://publications.aston.ac.uk/id/eprint/23951/1/Essential_BIM_input_data_study_for_housing_refurbishment.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/buildings4030467 openalex:W1966380912
+    resolution: 'legacy: openalex location'
+  - id: ope-organisational-obstacles-to-reducing-carbon-em
+    title: Organisational obstacles to reducing carbon emissions in Hong Kong
+    url: https://eprints.qut.edu.au/219152/1/59239.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2013-04-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.habitatint.2013.03.004
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://eprints.qut.edu.au/219152/1/59239.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.habitatint.2013.03.004 openalex:W1594766793
+    resolution: 'legacy: openalex location'
+  - id: ope-review-of-energy-dissipation-mechanisms-in-con
+    title: 'Review of Energy Dissipation Mechanisms in Concrete: Role of Advanced Materials,
+      Mix Design, and Curing Conditions'
+    url: https://opus.lib.uts.edu.au/bitstream/10453/191061/2/Review%20of%20Energy%20Dissipation%20Mechanisms%20in%20Concrete%20Role%20of%20Advanced%20Materials%2c%20Mix%20Design%2c%20and%20Curing%20Conditions.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-24'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/su17156723
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://opus.lib.uts.edu.au/bitstream/10453/191061/2/Review%20of%20Energy%20Dissipation%20Mechanisms%20in%20Concrete%20Role%20of%20Advanced%20Materials%2c%20Mix%20Design%2c%20and%20Curing%20Conditions.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/su17156723 openalex:W4412642379
+    resolution: 'legacy: openalex location'
+  - id: ope-aligning-net-zero-carbon-built-environments-wi
+    title: 'Aligning net zero carbon-built environments with sustainable development
+      goals: Topic modelling approach to integrating technologies and policies'
+    url: https://pureadmin.qub.ac.uk/ws/files/641876422/az3.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-05-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2025.113156
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://pureadmin.qub.ac.uk/ws/files/641876422/az3.pdf; version submittedVersion;
+      rights accepted]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2025.113156 openalex:W4410335629
+    resolution: 'legacy: openalex location'
+  - id: ope-optimizing-energy-efficient-building-renovatio
+    title: 'Optimizing energy-efficient building renovation: Integrating double-skin
+      façades with solar systems in the Mediterranean landscape'
+    url: https://ltu.diva-portal.org/smash/get/diva2:1898295/FULLTEXT01
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyr.2024.08.032
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ltu.diva-portal.org/smash/get/diva2:1898295/FULLTEXT01; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyr.2024.08.032 openalex:W4402300398
+    resolution: 'legacy: openalex location'
+  - id: ope-integration-of-resilient-cooling-technologies-
+    title: 'Integration of resilient cooling technologies in building stock: Impact
+      on thermal comfort, final energy consumption, and GHG emissions'
+    url: https://lirias.kuleuven.be/retrieve/a67953e3-ffbb-460a-9d75-cd32483f0b39
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-05-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2024.111666
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/a67953e3-ffbb-460a-9d75-cd32483f0b39;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-26'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.buildenv.2024.111666 openalex:W4398201207
+    resolution: 'legacy: openalex location'
+  - id: arx-construction-site-safety-monitoring-and-excava
+    title: Construction Site Safety Monitoring and Excavator Activity Analysis System
+    url: https://arxiv.org/pdf/2110.03083v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-10-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2110.03083
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2110.03083 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: ope-home-indoor-air-quality-and-cognitive-function
+    title: Home indoor air quality and cognitive function over one year for people working
+      remotely during COVID-19
+    url: http://scholar.colorado.edu/downloads/f4752j429
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-04-24'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2024.111551
+    license_evidence: 'redirect: rights of requested copy http://scholar.colorado.edu/downloads/f4752j429
+      do not transfer to https://scholar.colorado.edu:443/downloads/f4752j429; payload
+      sha256=1b72fa876560ae6db0215f59a6487b7c850759437adc695fc61d182b9889afdf; original
+      evidence: {"license": "unverified", "license_evidence": "no licence statement
+      for this copy [copy http://scholar.colorado.edu/downloads/f4752j429; version submittedVersion;
+      rights unknown]", "rights_verified_at": "2026-10-26", "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-26T16:30:28Z'
+    origin_ids: doi:10.1016/j.buildenv.2024.111551 openalex:W4395072514
+    resolution: 'legacy: openalex location'
