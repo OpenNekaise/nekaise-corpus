@@ -170918,3 +170918,70 @@ sources:
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-26'
     origin_ids: doi:10.3390/knowledge2030027
+  - id: arx-construction-material-classification-on-imbala
+    title: Construction material classification on imbalanced datasets using Vision
+      Transformer (ViT) architecture
+    url: https://arxiv.org/pdf/2108.09527v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-08-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2108.09527
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2108.09527 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-some-remarks-on-proper-actions-proper-metric-s
+    title: Some remarks on proper actions, proper metric spaces, and buildings
+    url: https://arxiv.org/pdf/2109.12837v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-09-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2109.12837
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2109.12837 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-26'
+  - id: arx-fedar-a-federated-learning-approach-to-applian
+    title: 'FedAR+: A Federated Learning Approach to Appliance Recognition with Mislabeled
+      Data in Residential Buildings'
+    url: https://arxiv.org/pdf/2209.01338v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-09-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2209.01338
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2209.01338 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+  - id: arx-federated-learning-for-short-term-residential-
+    title: Federated Learning for Short-term Residential Load Forecasting
+    url: https://arxiv.org/pdf/2105.13325v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-05-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2105.13325
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2105.13325 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
