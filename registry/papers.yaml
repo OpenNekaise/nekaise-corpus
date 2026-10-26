@@ -169668,24 +169668,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7220816840
     resolution: 'legacy: openalex location'
-  - id: ope-improving-building-energy-efficiency-utilizing
-    title: 'Improving Building Energy Efficiency Utilizing Machine Learning Technologies:
-      Real-Time Performance Simulation Using Real-Time Weather Data for Energy'
-    url: https://www.lib.ncsu.edu/resolver/1840.20/38368
-    source: openalex
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2020-10-26'
-    document_type: article
-    persistent_id: https://openalex.org/W3105336542
-    license_evidence: no licence statement for this copy [copy https://www.lib.ncsu.edu/resolver/1840.20/38368;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-26'
-    selected_version: submittedVersion
-    origin_ids: openalex:W3105336542
-    resolution: 'legacy: openalex location'
   - id: ope-low-carbon-building-performance-in-the-constru
     title: 'Low Carbon Building Performance in the Construction Industry: A Multi-Method
       Approach of Project Management Operations and Building Energy Use Applied'
@@ -170918,3 +170900,21 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-26'
+  - id: arx-meta-competences-for-digital-practice-educatio
+    title: '(Meta) Competences for Digital Practice: Educational Scenarios for the Workplace
+      of the Future Exemplified by Building Information Modeling Work Proce'
+    url: https://arxiv.org/pdf/2207.01498v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-06-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2207.01498
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2207.01498 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-26'
+    origin_ids: doi:10.3390/knowledge2030027
