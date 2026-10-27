@@ -171709,3 +171709,54 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-27'
+  - id: arx-semantic-localization-on-bim-generated-maps-us
+    title: Semantic localization on BIM-generated maps using a 3D LiDAR sensor
+    url: https://arxiv.org/pdf/2205.00816v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-05-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2205.00816
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2205.00816 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1016/j.autcon.2022.104641
+  - id: arx-a-geometric-relational-deep-learning-framework
+    title: A Geometric-Relational Deep Learning Framework for BIM Object Classification
+    url: https://arxiv.org/pdf/2212.00942v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022-12-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2212.00942
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2212.00942 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+  - id: arx-a-multi-task-deep-learning-framework-for-build
+    title: A Multi-Task Deep Learning Framework for Building Footprint Segmentation
+    url: https://arxiv.org/pdf/2104.09375v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-04-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2104.09375
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2104.09375 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1109/igarss47720.2021.9554766
