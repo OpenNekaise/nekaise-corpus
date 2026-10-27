@@ -173536,3 +173536,157 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-27'
+  - id: arx-applied-bayesian-structural-health-monitoring-
+    title: 'Applied Bayesian Structural Health Monitoring: inclinometer data anomaly
+      detection and forecasting'
+    url: https://arxiv.org/pdf/2307.00305v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-07-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.00305
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.00305 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-real-time-vision-based-navigation-for-a-robot-
+    title: Real-time Vision-based Navigation for a Robot in an Indoor Environment
+    url: https://arxiv.org/pdf/2307.00666v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.00666
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.00666 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-instaloc-one-shot-global-lidar-localisation-in
+    title: 'InstaLoc: One-shot Global Lidar Localisation in Indoor Environments through
+      Instance Learning'
+    url: https://arxiv.org/pdf/2305.09552v2
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-05-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2305.09552
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2305.09552 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-a-cnn-regression-model-to-estimate-buildings-h
+    title: A CNN regression model to estimate buildings height maps using Sentinel-1
+      SAR and Sentinel-2 MSI time series
+    url: https://arxiv.org/pdf/2307.01378v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.01378
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.01378 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-fb-occ-3d-occupancy-prediction-based-on-forwar
+    title: 'FB-OCC: 3D Occupancy Prediction based on Forward-Backward View Transformation'
+    url: https://arxiv.org/pdf/2307.01492v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-07-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.01492
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.01492 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+  - id: arx-hierarchical-learning-forecasting-coherent-spa
+    title: Hierarchical learning, forecasting coherent spatio-temporal individual and
+      aggregated building loads
+    url: https://arxiv.org/pdf/2301.12967v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2301.12967
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2301.12967 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1016/j.apenergy.2023.121510
+  - id: arx-loanet-a-lightweight-network-using-object-atte
+    title: 'LOANet: A Lightweight Network Using Object Attention for Extracting Buildings
+      and Roads from UAV Aerial Remote Sensing Images'
+    url: https://arxiv.org/pdf/2212.08490v6
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-12-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2212.08490
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2212.08490 (v6, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.7717/peerj-cs.1467
+  - id: arx-semi-supervised-learning-from-street-view-imag
+    title: Semi-supervised Learning from Street-View Images and OpenStreetMap for Automatic
+      Building Height Estimation
+    url: https://arxiv.org/pdf/2307.02574v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.02574
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.02574 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-volumetric-occupancy-detection-a-comparative-a
+    title: 'Volumetric Occupancy Detection: A Comparative Analysis of Mapping Algorithms'
+    url: https://arxiv.org/pdf/2307.03089v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-07-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.03089
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.03089 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
