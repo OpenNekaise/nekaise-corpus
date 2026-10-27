@@ -172327,3 +172327,39 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-27'
+  - id: arx-application-of-machine-learning-in-seismic-fra
+    title: Application of Machine Learning in Seismic Fragility Assessment of Bridges
+      with SMA-Restrained Rocking Columns
+    url: https://arxiv.org/pdf/2212.07273v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-12-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2212.07273
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2212.07273 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1016/j.istruc.2023.02.105
+  - id: arx-bisvp-building-footprint-extraction-via-bidire
+    title: 'BiSVP: Building Footprint Extraction via Bidirectional Serialized Vertex
+      Prediction'
+    url: https://arxiv.org/pdf/2303.00300v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-03-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2303.00300
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2303.00300 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
