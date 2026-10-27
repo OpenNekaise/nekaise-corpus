@@ -173936,3 +173936,40 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-27'
+  - id: arx-semi-supervised-detection-of-structural-damage
+    title: Semi-supervised detection of structural damage using Variational Autoencoder
+      and a One-Class Support Vector Machine
+    url: https://arxiv.org/pdf/2210.05674v4
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-10-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2210.05674
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2210.05674 (v4, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1109/access.2023.3291674
+  - id: arx-electromagnetic-thermal-analyses-of-distribute
+    title: Electromagnetic-Thermal Analyses of Distributed Antennas Embedded into a
+      Load Bearing Wall
+    url: https://arxiv.org/pdf/2207.06185v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-07-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2207.06185
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2207.06185 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1109/tap.2023.3284368
