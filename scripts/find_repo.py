@@ -128,7 +128,7 @@ PURE_LICENCES = "/dk/atira/pure/core/document/licenses"   # Pure's licence vocab
 # round's proposal merger (run_round.merge_proposals) drops equal normalized titles, so such a
 # title is made unique by construction with the record's OAI identifier.
 GENERIC_TITLE = re.compile(
-    r"(?:(?:the|final|draft|revised|master s?|bachelor s?|doctoral|phd|ph d|semester|"
+    r"(?:(?:the|final|draft|revised|master(?: ?s)?|bachelor(?: ?s)?|doctoral|phd|ph d|semester|"
     r"\d+(?:st|nd|rd|th)? semester|graduation|student|project) )*"
     r"(?:thesis|dissertation|report|project|projekt|rapport|hovedrapport|speciale|"
     r"kandidatspeciale|specialeafhandling|bachelorprojekt|masterprojekt|afgangsprojekt|"
@@ -584,9 +584,10 @@ def read_pure_mods(mods: ET.Element, today: str) -> tuple[dict[str, list[str]], 
         if notes.get("visibility") != ["FREE"]:
             continue
         access, end = notes.get("access"), notes.get("embargo end") or []
-        if access == ["embargoed"] and len(end) == 1 and DATE.fullmatch(end[0]):
-            if end[0] > today:
-                continue
+        if access == ["embargoed"]:
+            ends = _iso_date(end[0]) if len(end) == 1 else None
+            if ends is None or ends > date.fromisoformat(today):
+                continue        # no, an unreadable or a future end date: still embargoed
         elif access != ["open"]:
             continue
         files.append((href, {"pure.file.license": licences} if licences else {}))
@@ -596,8 +597,10 @@ def read_pure_mods(mods: ET.Element, today: str) -> tuple[dict[str, list[str]], 
 def read_xmetadissplus(xmd: ET.Element, today: str) -> tuple[dict[str, list[str]], Files]:
     """xMetaDissPlus -> fields dc.title, dc.type (the dini:PublType), dc.subject.ddc (DDC
     subjects) / dc.subject, dc.language, dc.date.issued, dc.rights, dcterms.license,
-    dc.identifier(.doi), ddb.rights / ddb.accessRights (their ddb:kind, e.g. free),
-    thesis.degree.level and thesis.degree.grantor.department; files = the ddb:transfer URLs."""
+    dc.identifier(.doi), ddb.access (the ddb:kind of EVERY ddb:rights and dcterms:accessRights
+    element, "?" when one states none: an open_access rule on ddb.access needs all of them
+    free), thesis.degree.level and thesis.degree.grantor.department; files = the ddb:transfer
+    URLs."""
     fields: dict[str, list[str]] = {}
     files: Files = []
     for child in xmd:
@@ -618,10 +621,9 @@ def read_xmetadissplus(xmd: ET.Element, today: str) -> tuple[dict[str, list[str]
             _add(fields, "dcterms.license", _text(child))
         elif tag == f"{DC_NS}identifier":
             _add(fields, "dc.identifier.doi" if "doi" in xsi else "dc.identifier", _text(child))
-        elif tag == f"{DDB_NS}rights":
-            _add(fields, "ddb.rights", child.get(f"{DDB_NS}kind") or "?")
-        elif tag == f"{DCTERMS_NS}accessRights":
-            _add(fields, "ddb.accessRights", child.get(f"{DDB_NS}kind") or _text(child) or "?")
+        elif tag in (f"{DDB_NS}rights", f"{DCTERMS_NS}accessRights"):
+            # one field for both statements: a restrictive kind in either one closes the file
+            _add(fields, "ddb.access", child.get(f"{DDB_NS}kind") or _text(child) or "?")
         elif tag == f"{THESIS_NS}degree":
             _add(fields, "thesis.degree.level", _text(child.find(f"{THESIS_NS}level")))
             for dept in child.iter(f"{CC_NS}department"):
@@ -662,14 +664,26 @@ def adapter_of(cfg: dict) -> "Adapter":
     return ADAPTERS[cfg.get("platform") or "dspace-xoai"]
 
 
+def _iso_date(value: str) -> date | None:
+    """The calendar date a YYYY-MM-DD value names, or None ('2020-99-99' is no date)."""
+    if not DATE.fullmatch(value.strip()):
+        return None
+    try:
+        return date.fromisoformat(value.strip())
+    except ValueError:
+        return None
+
+
 def _embargo_over(value: str, today: str) -> bool:
     """True when an embargo value is empty/'none' or names a date that has passed. A bare year
-    counts as its last day; anything unreadable is treated as still embargoed."""
+    counts as its last day; anything unreadable (also an impossible date such as 2020-99-99)
+    is treated as still embargoed."""
     text = value.strip().lower()
     if text in ("", "none", "no", "false", "0", "not_embargoed", "not embargoed"):
         return True
     if match := DATE.search(text):
-        return match.group(0) <= today
+        ends = _iso_date(match.group(0))
+        return ends is not None and ends <= date.fromisoformat(today)
     if re.fullmatch(r"\d{4}", text):
         return f"{text}-12-31" <= today
     return False

@@ -408,7 +408,7 @@
       },
       "types": "thesis|report|book|conferenceobject|workingpaper|bookpart|article|preprint",
       "open_access": {
-        "field": "ddb.rights",
+        "field": "ddb.access",
         "pattern": "^free$"
       },
       "crawl_delay": 10,
@@ -417,7 +417,7 @@
       "rights": {
         "robots": "https://publications.rwth-aachen.de/robots.txt (2026-10-27): the User-agent: * group (the Googlebot and bingbot groups repeat it) disallows /admin, /cgi-bin, /search, /search.py, /yourmessages, /tools/, /journal, /cdslib/, /publiline.py, /yourbaskets/add, /highslide/, /ckeditor/, /stats/, /oai2d/, /oai2d.py/, /record/*/linkbacks/sendtrackback, /MathJax/, /youraccount/, /record/*/export/*, /PubExporter.py, /*/usage ('# Disallow: /record' is commented out); no Crawl-delay; no AI-crawler group. The OAI base URL the server publishes (Identify baseURL) is /oai2d: the rule 'Disallow: /oai2d/' does not match '/oai2d?verb=...' (RFC 9309 prefix match; the same reading as the reviewed KIT case /oai/ vs /oai); the finder checks robots.txt before every request and follows no redirect unchecked, so a move to /oai2d/ would defer the repository. /record/<id>/files/<name>.pdf is not disallowed (the xMetaDissPlus ddb:transfer URLs say http://; the same path is asked over https). 10 s between requests: a second OAI request 4 s after the first answered HTTP 503. Two sample PDFs fetched 2026-10-27 (Fak02, Fak03).",
         "terms_url": "https://www.ub.rwth-aachen.de/cms/~jeuy",
-        "terms_excerpt": "Policy des Dokumentenservers 'RWTH Publications' (read 2026-10-27): 'Die auf dem Dokumentenserver liegenden Dokumente dürfen zu wissenschaftlichen Zwecken und zum eigenen Gebrauch' [kopiert, ausgedruckt und zitiert werden]; 'Jede weitere Nutzung der Dokumente, auch von Teilen und Auszügen, ist ohne vorherige Genehmigung' [nicht gestattet]; 'Die Metadaten stehen zur allgemeinen Verfügung (Open Data). Sie dürfen von jedermann (auch automatisiert) abgerufen, gespeichert ...'. No prohibition of automated or bulk download found; the corpus keeps one local copy and never redistributes it. Records state no reuse licence (unverified); ddb:rights ddb:kind must be 'free'.",
+        "terms_excerpt": "Policy des Dokumentenservers 'RWTH Publications' (read 2026-10-27): 'Die auf dem Dokumentenserver liegenden Dokumente dürfen zu wissenschaftlichen Zwecken und zum eigenen Gebrauch' [kopiert, ausgedruckt und zitiert werden]; 'Jede weitere Nutzung der Dokumente, auch von Teilen und Auszügen, ist ohne vorherige Genehmigung' [nicht gestattet]; 'Die Metadaten stehen zur allgemeinen Verfügung (Open Data). Sie dürfen von jedermann (auch automatisiert) abgerufen, gespeichert ...'. No prohibition of automated or bulk download found; the corpus keeps one local copy and never redistributes it. Records state no reuse licence (unverified); the ddb:kind of ddb:rights and of dcterms:accessRights must be 'free'.",
         "reviewed_at": "2026-10-27",
         "decision": "go"
       }

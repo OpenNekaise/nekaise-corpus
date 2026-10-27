@@ -771,7 +771,7 @@ XMD = dict(copy.deepcopy(CFG), platform="xmetadissplus", languages=["de", "en"],
                             r"[^/?#]+\.pdf$",
            sets=["dnbdelivery"], all_sets=[], types="thesis|report|conferenceobject",
            relevant_fields={"thesis.degree.grantor.department": "^Fak0[23]$"},
-           open_access={"field": "ddb.rights", "pattern": "^free$"})
+           open_access={"field": "ddb.access", "pattern": "^free$"})
 
 
 def fixture(name: str) -> str:
@@ -871,6 +871,14 @@ ACCESS = ('<mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermi
     (ACCESS, ACCESS.replace(">open<", ">embargoed<"), None),          # no end date
     (ACCESS, ACCESS.replace(">open<", ">embargoed<")
      + '<mods:note type="embargo end" xlink:type="simple">soon</mods:note>', None),
+    # impossible dates are no end date (Codex r1)
+    (ACCESS, ACCESS.replace(">open<", ">embargoed<")
+     + '<mods:note type="embargo end" xlink:type="simple">2020-99-99</mods:note>', None),
+    (ACCESS, ACCESS.replace(">open<", ">embargoed<")
+     + '<mods:note type="embargo end" xlink:type="simple">2020-02-30</mods:note>', None),
+    (ACCESS, ACCESS.replace(">open<", ">embargoed<")
+     + '<mods:note type="embargo end" xlink:type="simple">2020-01-01</mods:note>'
+     + '<mods:note type="embargo end" xlink:type="simple">2020-02-01</mods:note>', None),
     (ACCESS, ACCESS.replace(">open<", ">closed<"), None),
     (ACCESS, "", None),
     ("<mods:internetMediaType>application/pdf</mods:internetMediaType>",
@@ -965,6 +973,34 @@ def test_student_projects_skip_assessment_forms_and_gate_by_education():
     assert registry.norm(entry["title"]) != registry.norm("Speciale")
 
 
+@pytest.mark.parametrize("title,generic", [
+    ("Speciale", True), ("Master thesis", True), ("Masters thesis", True),
+    ("Master's Thesis", True), ("Master’s thesis", True), ("Bachelor thesis", True),
+    ("Bachelors project", True), ("Final report", True), ("Thesis 2", True),
+    ("Afgangsprojekt", True), ("MASTER THESIS", True), ("Masterarbeit", True),
+    ("Master thesis on timber bridges", False), ("Report on concrete durability", False),
+    ("Masterplan Aalborg", False),
+])
+def test_generic_titles_of_two_records_never_collide(title, generic):
+    assert bool(find_repo.GENERIC_TITLE.fullmatch(registry.norm(title))) == generic
+    text = fixture("oai_dc_aau_projects_page.xml")
+    first = text.replace(">Letbanebro over Djurslandmotorvejen<", f">{title}<")
+    second = first.replace("studentproject/faad907a", "studentproject/0000aaaa").replace(
+        "/ws/files/225398959/", "/ws/files/999999999/")
+    titles = {read_all(page_, PROJECTS)[title]["title"] for page_ in (first, second)}
+    # two distinct records with the same generic title keep distinct dedup titles
+    assert len({registry.norm(t) for t in titles}) == (2 if generic else 1), titles
+
+
+def test_an_impossible_embargo_date_is_still_embargoed():
+    assert find_repo._embargo_over("2020-01-01", TODAY)
+    assert not find_repo._embargo_over("2999-01-01", TODAY)
+    for value in ("2020-99-99", "2020-02-30", "2020-13-01"):
+        assert not find_repo._embargo_over(value, TODAY), value
+    assert one(record(1, "Timber structures for multi-storey buildings",
+                      dc__date__embargo="2020-02-30")) is None
+
+
 def test_xmetadissplus_upgrades_reviewed_http_transfers_and_needs_free_rights():
     got = read_all(fixture("xmetadissplus_rwth_page.xml"), XMD)
     concrete = got["Zum Einfluss der Kontaktzone bei der Mode"]
@@ -974,12 +1010,22 @@ def test_xmetadissplus_upgrades_reviewed_http_transfers_and_needs_free_rights():
     assert got["Freiräume in neuen Wohnsiedlungen"]["published_at"] == "2008"
     assert got["Kommunikation in Clusterrechnern und Clust"] is None   # no AEC faculty / term
     text = fixture("xmetadissplus_rwth_page.xml")
-    for old, new in (('<ddb:rights ddb:kind="free">', '<ddb:rights ddb:kind="domain">'),
-                     ('<ddb:rights ddb:kind="free"></ddb:rights>', ""),
+    rights = '<ddb:rights ddb:kind="free"></ddb:rights>'
+    access = 'ddb:type="ddb:noScheme" ddb:kind="free"></dcterms:accessRights>'
+    for old, new in ((rights, rights.replace("free", "domain")),
+                     (rights, '<ddb:rights ddb:kind="blocked"></ddb:rights>'),
+                     (rights, "<ddb:rights></ddb:rights>"),            # no kind stated
+                     # ddb:rights free but dcterms:accessRights restricted: closed (Codex r1)
+                     (access, access.replace("free", "domain")),
+                     (access, access.replace('ddb:kind="free"', "")),
                      ("http://publications.rwth-aachen.de/record/",
                       "http://mirror.example.org/record/")):
         changed = read_all(text.replace(old, new), XMD)
-        assert changed.none(), old
+        assert changed.none(), (old, new)
+    # without any access statement the open_access rule fails closed
+    neither = text.replace(rights, "").replace(
+        '<dcterms:accessRights xsi:type="ddb:access" ' + access, "")
+    assert "accessRights" not in neither and read_all(neither, XMD).none()
 
 
 def test_live_new_repositories_read_their_recorded_pages():
