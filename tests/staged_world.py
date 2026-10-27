@@ -208,6 +208,9 @@ class World:
                 # the test cluster archives no WAL: waive the recoverability growth block
                 # (tests/authority_site; test_rehearsal checks the block itself)
                 "NEKAISE_TEST_WAIVE_RECOVERABILITY": "1",
+                # the test machine's free space never holds a child round (run_round.disk_hold);
+                # a test about the floor sets its own value (tests/conftest.py)
+                "NEKAISE_MIN_FREE_GB": os.environ.get("NEKAISE_MIN_FREE_GB", "0"),
                 # and no child reaches the live cluster's backups, archive or drill log
                 "NEKAISE_PG_BACKUP_DIR": str(self.tmp / "no-live-bases"),
                 "NEKAISE_PG_WAL_DIR": str(self.tmp / "no-live-wal"),

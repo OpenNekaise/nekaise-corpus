@@ -80,7 +80,13 @@ while [ "$(date +%s)" -lt "$END" ]; do
 
   round=$((round+1))
   say "round $round start"
-  if "$PYTHON_BIN" scripts/run_round.py --commit --push main --lock-timeout 30 >>"$LOG" 2>&1; then
+  code=0
+  "$PYTHON_BIN" scripts/run_round.py --commit --push main --lock-timeout 30 >>"$LOG" 2>&1 || code=$?
+  if [ "$code" -eq 75 ]; then
+    flock -u 8
+    say "round $round held: data disk below the run_round floor, nothing started — stopping"
+    break
+  elif [ "$code" -eq 0 ]; then
     say "round $round validated and pushed"
     if [ "$TARGET_TOKENS" -gt 0 ]; then
       tokens=$(current_tokens)
