@@ -172015,3 +172015,20 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-27'
+  - id: ope-energy-effects-of-heat-island-reduction-strate
+    title: Energy effects of heat-island reduction strategies in Toronto, Canada
+    url: https://digital.library.unt.edu/ark:/67531/metadc883998/m2/1/high_res_d/917518.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2003-11-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2003.09.004
+    license_evidence: no licence statement for this copy [copy https://digital.library.unt.edu/ark:/67531/metadc883998/m2/1/high_res_d/917518.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2003.09.004 openalex:W2096036098
+    resolution: 'legacy: openalex location'
