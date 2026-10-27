@@ -22427,12 +22427,26 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-marley-alutec-installation-guides-elite-roof-outlets-a4-8002ba42
-    title: 'SpecifiedBy (UK manufacturer documents): marley-alutec-installation-guides-elite-roof-outlets-a4_8002ba42.pdf'
-    url: https://www.specifiedby.com/marley-alutec/roof-outlets-comprehensive-roof-drainage-system/marley-alutec-installation-guides-elite-roof-outlets-a4_8002ba42.pdf
+  - id: vnd-specifiedby-kerto-lvl-product-datasheets-en-1-9bef6449
+    title: 'SpecifiedBy (UK manufacturer documents): kerto-lvl-product-datasheets-en-1_9bef6449.pdf'
+    url: https://www.specifiedby.com/metsae-wood/kerto-q-cross-bonded-panels/kerto-lvl-product-datasheets-en-1_9bef6449.pdf
     source: vendor_specifiedby
     license: open
-    topic: construction
+    topic: materials
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-environmental-product-declaration-for-finnjoist-41d597c3
+    title: 'SpecifiedBy (UK manufacturer documents): environmental-product-declaration-for-finnjoist_41d597c3.pdf'
+    url: https://www.specifiedby.com/metsae-wood/finnjoist-i-beam/environmental-product-declaration-for-finnjoist_41d597c3.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: materials
     format: pdf
     language: en
     document_type: product-literature
