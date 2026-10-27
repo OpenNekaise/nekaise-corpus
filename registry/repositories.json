@@ -274,6 +274,153 @@
         "reviewed_at": "2026-10-12",
         "decision": "later"
       }
+    },
+    "aau-vbn": {
+      "name": "VBN - Aalborg University research portal (publications)",
+      "country": "DK",
+      "languages": [
+        "en",
+        "da"
+      ],
+      "source": "repo_aau_vbn",
+      "platform": "pure-mods",
+      "oai": "https://vbn.aau.dk/ws/oai",
+      "hosts": [
+        "vbn.aau.dk"
+      ],
+      "fulltext_pattern": "^https://vbn\\.aau\\.dk/ws/files/[0-9]+/[^/?#]+$",
+      "skip_files": "supplement|supporting|appendi|bilag|forside|^cover|erratum|corrigendum",
+      "sets": [
+        "publications:withFiles"
+      ],
+      "relevant_fields": {
+        "pure.organisation": "Built Environment|Byggeri, By og Milj|Building Research Institute|Byggeforskning|Building Technology|Bygningsteknik|Structural (?:Engineering|Mechanics|Reliability|Dynamics)|Struktural Dynamics|Analysis of Structures|Design of [Ss]tructures|Structures, (?:Materials|Geotechnics)|Civil Engineering|\\((?:Civil|CIVIL)\\)|Byggeri og Anl|(?:in|of|and) Buildings\\b|Building (?:Systems|Services|Physics|Design|Informatics)|Byggeriet|Bygningssystemer|Indoor Environment|Indeklima|Ventilation and Airflow|Air distribution and transport|^Architecture$|^Arkitektur$|^Urban Design$|^Department of Architecture (?:&|&amp;|and) Design$|Zero Energy Buildings|Construction Management|Geotechnic"
+      },
+      "types": "article|artikel|report|rapport|thesis|afhandling|disputats|dissertation|book|\\bbog\\b|chapter|bidrag til bog|anthology|antologi|proceeding|working ?paper|\\bpaper\\b|preprint",
+      "skip_types": "review|anmeldelse|editorial|leder|letter|comment|debat|kronik|avis|newspaper|abstract|poster|preface|forord|lecture|foredrag|dataset|software|patent|encyclop|leksikon|interview|exhibition|udstilling|composition|komposition|translation|overs.ttelse|web ?publication|blog",
+      "open_access": {
+        "field": "mods.accessCondition",
+        "pattern": "^info:eu-repo/semantics/openAccess$"
+      },
+      "crawl_delay": 5,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://vbn.aau.dk/robots.txt (2026-10-27): User-Agent: * Crawl-Delay: 5; disallows only /*?*format=rss and /*?*export=xls; /ws/oai and /ws/files/ are not disallowed; no AI-crawler group, no Content-Signal. The portal's HTML pages (https://vbn.aau.dk/en/) answer a Cloudflare 'Just a moment...' challenge to the honest tool UA and are never requested; robots.txt, the OAI endpoint and the /ws/files/ PDFs answer directly (two sample PDFs fetched 2026-10-27, one publication and one student project).",
+        "terms_url": "https://vbn.aau.dk/ws/files/58305073/an_experimental_study_of_a_midbroken_2_bay_6_storey_reinforced_concrete_frame_subject_to_earthquakes.pdf",
+        "terms_excerpt": "Cover page of every VBN publication PDF (read 2026-10-27 on https://vbn.aau.dk/ws/files/58305073/...pdf): 'General rights: Copyright and moral rights for the publications made accessible in the public portal are retained by the authors and/or other copyright owners and it is a condition of accessing publications that users recognise and abide by the legal requirements associated with these rights. - Users may download and print one copy of any publication from the public portal for the purpose of private study or research. - You may not further distribute the material or use it for any profit-making activity or commercial gain - You may freely distribute the URL identifying the publication in the public portal.' (No prohibition of automated or bulk download found; the corpus keeps one local copy per publication and never redistributes it. Rows are unverified unless the file carries a Pure Creative Commons licence key.)",
+        "reviewed_at": "2026-10-27",
+        "decision": "go"
+      }
+    },
+    "aau-projects": {
+      "name": "Aalborg University student projects (VBN)",
+      "country": "DK",
+      "languages": [
+        "en",
+        "da"
+      ],
+      "source": "repo_aau_projects",
+      "platform": "oai-dc",
+      "oai": "https://vbn.aau.dk/ws/oai",
+      "hosts": [
+        "vbn.aau.dk"
+      ],
+      "fulltext_pattern": "^https://vbn\\.aau\\.dk/ws/files/[0-9]+/[^/?#]+\\.(?:pdf|PDF)$",
+      "skip_files": "bedoemmelse|bedømmelse|forside|front[ _-]?page|^cover|appendi|bilag|tegninger|drawings|abstract|resum",
+      "sets": [
+        "studentproject:withFiles"
+      ],
+      "types": "*",
+      "relevant_fields": {
+        "dc.relation.education": "Civil Engineering|Structural and Civil|Bygge- og anlæg|Byggeri og anlæg|Byggeledelse|Byggeriet|Bygningsinformatik|Building Informatics|Building Industry|Construction Management|Architecture|Arkitektur|Urban Planning|Urban Design|Byplanlægning|City, Housing|By, Bolig|Universal Design|Universelt Design|Indoor Environment|Indeklima|Lighting Design|Belysning|Sustainable Cities|Bæredygtige [Bb]yer|Water and Environmental Engineering|Vand og [Mm]iljø|Building Energy|Bygningsenergi|Building Design|Bygningsdesign"
+      },
+      "crawl_delay": 5,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://vbn.aau.dk/robots.txt (2026-10-27): User-Agent: * Crawl-Delay: 5; disallows only /*?*format=rss and /*?*export=xls; /ws/oai and /ws/files/ are not disallowed; no AI-crawler group, no Content-Signal. The portal's HTML pages (https://vbn.aau.dk/en/) answer a Cloudflare 'Just a moment...' challenge to the honest tool UA and are never requested; robots.txt, the OAI endpoint and the /ws/files/ PDFs answer directly (two sample PDFs fetched 2026-10-27, one publication and one student project).",
+        "terms_url": "https://vbn.aau.dk/ws/files/58305073/an_experimental_study_of_a_midbroken_2_bay_6_storey_reinforced_concrete_frame_subject_to_earthquakes.pdf",
+        "terms_excerpt": "Cover page of every VBN publication PDF (read 2026-10-27 on https://vbn.aau.dk/ws/files/58305073/...pdf): 'General rights: Copyright and moral rights for the publications made accessible in the public portal are retained by the authors and/or other copyright owners and it is a condition of accessing publications that users recognise and abide by the legal requirements associated with these rights. - Users may download and print one copy of any publication from the public portal for the purpose of private study or research. - You may not further distribute the material or use it for any profit-making activity or commercial gain - You may freely distribute the URL identifying the publication in the public portal.' (No prohibition of automated or bulk download found; the corpus keeps one local copy per publication and never redistributes it. Rows are unverified unless the file carries a Pure Creative Commons licence key.) Student projects (Pure 'studentproject' records, oai_dc only: the mods format lists none of them) state no rights; the files of the withFiles set are public (sample fetched); a graded assessment form (…bedoemmelse….pdf), cover pages and appendices are skipped by name.",
+        "reviewed_at": "2026-10-27",
+        "decision": "go"
+      }
+    },
+    "kluedo": {
+      "name": "KLUEDO - RPTU Kaiserslautern-Landau",
+      "country": "DE",
+      "languages": [
+        "de",
+        "en"
+      ],
+      "source": "repo_kluedo",
+      "platform": "oai-dc",
+      "oai": "https://kluedo.ub.rptu.de/oai",
+      "hosts": [
+        "kluedo.ub.rptu.de"
+      ],
+      "fulltext_pattern": "^https://kluedo\\.ub\\.rptu\\.de/files/[0-9]+/[^/?#]+\\.(?:pdf|PDF)$",
+      "sets": [
+        "ddc:624",
+        "ddc:690",
+        "ddc:710",
+        "ddc:720",
+        "ddc:620"
+      ],
+      "all_sets": [
+        "ddc:624",
+        "ddc:690",
+        "ddc:710",
+        "ddc:720"
+      ],
+      "types": "thesis|report|book|article|conferenceobject|workingpaper|periodicalpart|bookpart|preprint",
+      "skip_types": "recension|review|lecture|coursematerial|movingimage|image|sound|software|dataset",
+      "crawl_delay": 3,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://kluedo.ub.rptu.de/robots.txt (2026-10-27): User-agent: * disallows /citationExport/, /frontdoor/index/index/searchtype/, /frontdoor/index/index/start/, /solrsearch/, /auth/; no Crawl-delay (3 s used); /oai, /files/ and its redirect target /frontdoor/deliver/ are not disallowed; no AI-crawler group. A /files/<id>/<name>.pdf URL redirects to /frontdoor/deliver/index/docId/<id>/file/<name>.pdf on the same host (one http hop, robots-checked by the loader); two sample PDFs fetched 2026-10-27.",
+        "terms_url": "https://kluedo.ub.rptu.de/download/lizenzen/kluedo_leitlinien_2014-10-28.pdf",
+        "terms_excerpt": "KLUEDO Leitlinien (28.10.2014): the service 'fördert den offenen und technisch wie rechtlich barrierefreien Zugang zu Fachinformationen im Sinne von Open Access'; 'Die Metadaten der auf dem Publikationsserver veröffentlichten Dokumente dürfen von jedermann über die OAI-Schnittstelle abgerufen, gespeichert und - gegebenenfalls in angereicherter Form oder in Auswahl - Dritten verfügbar gemacht werden.' No prohibition of automated or bulk download found. Records state an eu-repo access term and a licence in dc:rights (a Creative Commons name + URL, or the KLUEDO guidelines / 'Lizenz nach Originalpublikation': unverified).",
+        "reviewed_at": "2026-10-27",
+        "decision": "go"
+      }
+    },
+    "rwth-publications": {
+      "name": "RWTH Publications (RWTH Aachen University)",
+      "country": "DE",
+      "languages": [
+        "de",
+        "en"
+      ],
+      "source": "repo_rwth",
+      "platform": "xmetadissplus",
+      "oai": "https://publications.rwth-aachen.de/oai2d",
+      "hosts": [
+        "publications.rwth-aachen.de"
+      ],
+      "fulltext_pattern": "^https://publications\\.rwth-aachen\\.de/record/[0-9]+/files/[^/?#]+\\.(?:pdf|PDF)$",
+      "sets": [
+        "dnbdelivery"
+      ],
+      "relevant_fields": {
+        "thesis.degree.grantor.department": "^Fak0[23]$"
+      },
+      "types": "thesis|report|book|conferenceobject|workingpaper|bookpart|article|preprint",
+      "open_access": {
+        "field": "ddb.rights",
+        "pattern": "^free$"
+      },
+      "crawl_delay": 10,
+      "topic": "structures_civil",
+      "enabled": true,
+      "rights": {
+        "robots": "https://publications.rwth-aachen.de/robots.txt (2026-10-27): the User-agent: * group (the Googlebot and bingbot groups repeat it) disallows /admin, /cgi-bin, /search, /search.py, /yourmessages, /tools/, /journal, /cdslib/, /publiline.py, /yourbaskets/add, /highslide/, /ckeditor/, /stats/, /oai2d/, /oai2d.py/, /record/*/linkbacks/sendtrackback, /MathJax/, /youraccount/, /record/*/export/*, /PubExporter.py, /*/usage ('# Disallow: /record' is commented out); no Crawl-delay; no AI-crawler group. The OAI base URL the server publishes (Identify baseURL) is /oai2d: the rule 'Disallow: /oai2d/' does not match '/oai2d?verb=...' (RFC 9309 prefix match; the same reading as the reviewed KIT case /oai/ vs /oai); the finder checks robots.txt before every request and follows no redirect unchecked, so a move to /oai2d/ would defer the repository. /record/<id>/files/<name>.pdf is not disallowed (the xMetaDissPlus ddb:transfer URLs say http://; the same path is asked over https). 10 s between requests: a second OAI request 4 s after the first answered HTTP 503. Two sample PDFs fetched 2026-10-27 (Fak02, Fak03).",
+        "terms_url": "https://www.ub.rwth-aachen.de/cms/~jeuy",
+        "terms_excerpt": "Policy des Dokumentenservers 'RWTH Publications' (read 2026-10-27): 'Die auf dem Dokumentenserver liegenden Dokumente dürfen zu wissenschaftlichen Zwecken und zum eigenen Gebrauch' [kopiert, ausgedruckt und zitiert werden]; 'Jede weitere Nutzung der Dokumente, auch von Teilen und Auszügen, ist ohne vorherige Genehmigung' [nicht gestattet]; 'Die Metadaten stehen zur allgemeinen Verfügung (Open Data). Sie dürfen von jedermann (auch automatisiert) abgerufen, gespeichert ...'. No prohibition of automated or bulk download found; the corpus keeps one local copy and never redistributes it. Records state no reuse licence (unverified); ddb:rights ddb:kind must be 'free'.",
+        "reviewed_at": "2026-10-27",
+        "decision": "go"
+      }
     }
   },
   "backlog": [
@@ -410,24 +557,6 @@
       "reason": "DSpace (or successor) without the xoai metadata format (mets / ore / qdc / oai_dc only): needs a dspace-mets or oai_dc adapter. LUTPub Crawl-delay 20, TUprints and Helda Crawl-delay 5. HCU Hamburg is a dedicated built-environment university (high value)"
     },
     {
-      "name": "TU/e Pure, Aalborg VBN (BUILD / SBi reports), VTT (cris.vtt.fi)",
-      "url": "https://vbn.aau.dk/ws/oai",
-      "status": "later",
-      "reason": "Pure OAI answers Identify (2026-10-12); needs a pure adapter (scripts/find_nlr.py parses one) and per-host vetting"
-    },
-    {
-      "name": "EPrints repositories: Politecnico di Torino webthesis, ETS Montreal Espace, QUT ePrints, White Rose eTheses, Concordia Spectrum",
-      "url": "https://webthesis.biblio.polito.it/cgi/oai2",
-      "status": "later",
-      "reason": "OAI answers Identify (2026-10-12); needs an eprints-oai_dc adapter and per-host vetting"
-    },
-    {
-      "name": "German xMetaDissPlus repositories: RWTH Publications, OPUS Augsburg, KLUEDO",
-      "url": "https://publications.rwth-aachen.de/oai2d",
-      "status": "later",
-      "reason": "needs an xmetadissplus adapter (ddb:transfer file URL); RWTH robots.txt restricts /oai2d/ for Googlebot and bingbot groups: read the * group before enabling"
-    },
-    {
       "name": "Aaltodoc / mediaTUM / UPV RiuNet / Canterbury / ITU Polen / Bauhaus Weimar / Cantabria / UTFPR / UFPR",
       "url": "https://aaltodoc.aalto.fi/server/oai/request",
       "status": "later",
@@ -450,6 +579,48 @@
       "url": "https://tesis.pucp.edu.pe/oai/request",
       "status": "later",
       "reason": "xoai works (26,270 records changed since 2026-06; Spanish theses with CC 2.5 PE licences; access as info:eu-repo and COAR access-right URIs, which the finder reads) and robots.txt is clean, but the host stops answering (connect timeout) after two or three requests in a row on 2026-10-12: do not enable until the cause is known. Config hint: relevant_fields thesis.degree.discipline ^(Ingeniería Civil|Arquitectura)$ and thesis.degree.grantor Facultad de Arquitectura y Urbanismo"
+    },
+    {
+      "name": "EPrints repositories with the stock robots.txt: Politecnico di Torino webthesis, ETS Montreal Espace, White Rose eTheses, Reading CentAUR, Bologna AMS Tesi + AMS Acta, LJMU Research Online, USM ePrints, Glasgow Theses",
+      "url": "https://webthesis.biblio.polito.it/cgi/oai2",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-27 on each host: User-agent: * Disallow: /cgi/ (the EPrints default), which covers the OAI provider /cgi/oai2 (ETS and White Rose also Crawl-delay 10). Possible permitted route, unbuilt: the allowed sitemap.xml + abstract pages"
+    },
+    {
+      "name": "QUT ePrints / UCL Discovery / Strathprints / Leeds Beckett",
+      "url": "https://eprints.qut.edu.au/cgi/oai2",
+      "status": "rejected",
+      "reason": "robots.txt 2026-10-27: QUT Disallow: / for ClaudeBot, anthropic-ai, GPTBot, CCBot and 60 more AI / dataset crawlers; UCL Discovery Content-Signal ai-train=no; Strathprints and Leeds Beckett Disallow: / for GPTBot"
+    },
+    {
+      "name": "Salford USIR / Nottingham Trent IRep / Cardiff ORCA",
+      "url": "https://usir.salford.ac.uk/cgi/oai2",
+      "status": "rejected",
+      "reason": "2026-10-27: Salford and NTU moved to Worktribe (the robots.txt request redirects to a 403 challenge page); Cardiff ORCA robots.txt answers 403 with an HTML page"
+    },
+    {
+      "name": "Concordia Spectrum / PolyPublie (Polytechnique Montreal) / CaltechTHESIS / UTM ePrints / Northumbria NRL / OPUS Augsburg",
+      "url": "https://spectrum.library.concordia.ca/cgi/oai2",
+      "status": "later",
+      "reason": "2026-10-27: Concordia's TLS certificate chain does not verify (unable to get local issuer: an incomplete chain, not worked around); PolyPublie, CaltechTHESIS and OPUS Augsburg connect timeout; UTM connection reset; nrl.northumbria.ac.uk does not resolve"
+    },
+    {
+      "name": "Nottingham eprints (now DSpace 7: repository.nottingham.ac.uk)",
+      "url": "https://repository.nottingham.ac.uk/server/oai/request",
+      "status": "later",
+      "reason": "eprints.nottingham.ac.uk redirects to a DSpace 7 repository with a clean robots.txt (2026-10-27): a candidate for the dspace-xoai adapter; xoai, terms and sample PDFs not vetted yet"
+    },
+    {
+      "name": "Pure portals behind Cloudflare: TU/e (research.tue.nl, OAI at pure.tue.nl), VTT (cris.vtt.fi), Ulster (pure.ulster.ac.uk), Queen's University Belfast (pure.qub.ac.uk), Aarhus School of Architecture / Royal Danish Academy (adk.elsevierpure.com)",
+      "url": "https://cris.vtt.fi/ws/oai",
+      "status": "rejected",
+      "reason": "2026-10-27: robots.txt is the clean Pure default (Crawl-Delay 5) and /ws/oai answers MODS, but the /files/ PDFs answer a Cloudflare 'Just a moment...' challenge (HTTP 403) to the honest tool UA; TU/e's portal answers the same challenge and pure.tue.nl/robots.txt redirects to a SAML login"
+    },
+    {
+      "name": "Pure portals without a public OAI endpoint: DTU Orbit, Lund research portal, Aalto, Twente, Bath, Heriot-Watt, SDU, Tampere (TUNI), TU Delft",
+      "url": "https://orbit.dtu.dk/ws/oai",
+      "status": "later",
+      "reason": "2026-10-27: robots.txt is the clean Pure default, but /ws/oai answers 404 on the portal host (the OAI service, if any, is on an unpublished admin host); DTU (civil engineering), Lund (building physics, fire safety) and Aalto would be high value"
     }
   ]
 }

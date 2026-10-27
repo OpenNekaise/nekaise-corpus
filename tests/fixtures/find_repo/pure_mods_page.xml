@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+  <ListRecords>
+    <record>
+      <header>
+        <identifier>oai:pure.atira.dk:publications/a82d4bab-acb2-4ee6-9fd3-6057923d4bf2</identifier>
+        <datestamp>2026-10-19T06:24:56Z</datestamp>
+        <setSpec>publications:all</setSpec>
+        <setSpec>publications:submissionYear2023</setSpec>
+        <setSpec>publications:submissionYear2023:withFiles</setSpec>
+        <setSpec>publications:withFiles</setSpec>
+        <setSpec>publications:year2023</setSpec>
+        <setSpec>publications:year2023:withFiles</setSpec>
+      </header>
+      <metadata>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.8" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-8.xsd ">
+          <mods:recordInfo>
+            <mods:recordContentSource>local</mods:recordContentSource>
+          </mods:recordInfo>
+          <mods:identifier type="pure/id">451309860</mods:identifier>
+          <mods:identifier type="pure/uuid">a82d4bab-acb2-4ee6-9fd3-6057923d4bf2</mods:identifier>
+          <mods:identifier type="scopus">85121424800</mods:identifier>
+          <mods:physicalDescription>
+            <mods:extent unit="pages">11</mods:extent>
+          </mods:physicalDescription>
+          <mods:note xlink:type="simple">© Author(s) 2021 Article reuse guidelines: sagepub.com/journals-permissions</mods:note>
+          <mods:titleInfo xlink:type="simple" lang="eng">
+            <mods:title>The impact of stress and life style factors on short-term sickness absence in a large Danish industrial company</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo type="alternative" xlink:type="simple" lang="dan">
+            <mods:title>betydning af stress og livsstilsfaktorer for korttidssygefravær i en stor dansk industrivirksomhed</mods:title>
+          </mods:titleInfo>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">e37f5ed9-e482-468c-aaf0-4dc4e105d625</mods:nameIdentifier>
+            <mods:namePart>Indoor Environmental Quality and Building Systems Research Group</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50427</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/department</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">fe8c0b17-d438-43fc-a7a4-aace852a3c02</mods:nameIdentifier>
+            <mods:namePart>Division of Building Technology, Management and Indoor Environment</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50417</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/faculty</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">9ef0aa33-cea9-479e-b64c-6a51944df1a5</mods:nameIdentifier>
+            <mods:namePart>The Faculty of Engineering and Science</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50000</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/institute</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">aee1aa44-15d6-4f8a-b124-00d79fe46fb0</mods:nameIdentifier>
+            <mods:namePart>Department of the Built Environment</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50400</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/smartorgguid">cdc9bdeb-7227-4b41-887d-98a17717f90d</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">2b1dea43-a317-490b-878e-61728ef5a8ea</mods:nameIdentifier>
+            <mods:namePart>Building Physics Research Group</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50437</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:genre type="publicationType" authority="dct">Journal article</mods:genre>
+          <mods:physicalDescription>
+            <mods:form authority="marcform">electronic</mods:form>
+            <mods:note type="title" xlink:type="simple">Supplemental Material 21</mods:note>
+            <mods:internetMediaType>application/pdf</mods:internetMediaType>
+            <mods:extent unit="bytes">372361</mods:extent>
+            <mods:note type="location" xlink:type="simple" xlink:href="https://vbn.aau.dk/ws/files/454820385/Supplemental_Material_21.pdf"></mods:note>
+            <mods:note type="visibility" xlink:type="simple">FREE</mods:note>
+            <mods:note type="version" typeURI="/dk/atira/pure/researchoutput/electronicversion/versiontype" xlink:type="simple">preprint</mods:note>
+            <mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermission" xlink:type="simple">open</mods:note>
+          </mods:physicalDescription>
+          <mods:physicalDescription>
+            <mods:form authority="marcform">electronic</mods:form>
+            <mods:note type="title" xlink:type="simple">The impact of stress and lifestyle factors on short-term sickness absence in a large Danish industrial company _Green Open Access</mods:note>
+            <mods:internetMediaType>application/pdf</mods:internetMediaType>
+            <mods:extent unit="bytes">479312</mods:extent>
+            <mods:note type="location" xlink:type="simple" xlink:href="https://vbn.aau.dk/ws/files/456659993/The_impact_of_stress_and_lifestyle_factors_on_short_term_sickness_absence_in_a_large_Danish_industrial_company_Green_Open_Access.pdf"></mods:note>
+            <mods:note type="visibility" xlink:type="simple">FREE</mods:note>
+            <mods:note type="license" typeURI="/dk/atira/pure/core/document/licenses" xlink:type="simple">cc_by_nc_nd</mods:note>
+            <mods:note type="version" typeURI="/dk/atira/pure/researchoutput/electronicversion/versiontype" xlink:type="simple">authorsversion</mods:note>
+            <mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermission" xlink:type="simple">open</mods:note>
+          </mods:physicalDescription>
+          <mods:note type="peerreview status" xlink:type="simple">Peer reviewed</mods:note>
+          <mods:note type="publication category" xlink:type="simple">Research</mods:note>
+          <mods:note type="publication workflow state" xlink:type="simple">validated</mods:note>
+          <mods:originInfo>
+            <mods:dateIssued encoding="w3cdtf">2023-03-01</mods:dateIssued>
+            <mods:dateOther type="inpress" encoding="w3cdtf">2021-10-28</mods:dateOther>
+            <mods:dateOther type="published" encoding="w3cdtf">2023-03-01</mods:dateOther>
+          </mods:originInfo>
+          <mods:subject xlink:type="simple">
+            <mods:topic>Intervention</mods:topic>
+            <mods:topic>Lifestyle</mods:topic>
+            <mods:topic>Risk factor</mods:topic>
+            <mods:topic>Stress</mods:topic>
+            <mods:topic>Sickness absence</mods:topic>
+            <mods:topic>Workplace</mods:topic>
+            <mods:topic>Intervention</mods:topic>
+            <mods:topic>Lifestyle</mods:topic>
+            <mods:topic>Risk factor</mods:topic>
+            <mods:topic>Stress</mods:topic>
+            <mods:topic>Sickness absence</mods:topic>
+            <mods:topic>Workplace</mods:topic>
+            <mods:topic>SDG 3 - Good Health and Well-being</mods:topic>
+            <mods:topic>SDG 8 - Decent Work and Economic Growth</mods:topic>
+          </mods:subject>
+          <mods:classification displayLabel="SDG 3 - Good Health and Well-being" authority="pure/sustainabledevelopmentgoals">/dk/atira/pure/sustainabledevelopmentgoals/good_health_and_well_being</mods:classification>
+          <mods:classification displayLabel="SDG 8 - Decent Work and Economic Growth" authority="pure/sustainabledevelopmentgoals">/dk/atira/pure/sustainabledevelopmentgoals/decent_work_and_economic_growth</mods:classification>
+          <mods:identifier type="uri">https://vbn.aau.dk/da/publications/a82d4bab-acb2-4ee6-9fd3-6057923d4bf2</mods:identifier>
+          <mods:identifier type="doi" typeURI="http://id.loc.gov/vocabulary/identifiers/doi">10.1177/14034948211060815</mods:identifier>
+          <mods:language>
+            <mods:languageTerm type="code" authority="iso639-2b">eng</mods:languageTerm>
+          </mods:language>
+          <mods:accessCondition xlink:type="simple" type="info:eu-repo/semantics/openAccess"></mods:accessCondition>
+          <mods:location>
+            <mods:url note="Scopus publication">https://www.scopus.com/pages/publications/85121424800</mods:url>
+          </mods:location>
+          <mods:note type="metadata visibility" xlink:type="simple">FREE</mods:note>
+          <mods:note type="creatorCount" xlink:type="simple">3</mods:note>
+          <mods:note type="publicationStatus" xlink:type="simple">published</mods:note>
+        </mods:mods>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:pure.atira.dk:publications/848d0ce5-a416-4167-8297-0920c195c814</identifier>
+        <datestamp>2026-10-19T06:40:50Z</datestamp>
+        <setSpec>publications:all</setSpec>
+        <setSpec>publications:submissionYear2023</setSpec>
+        <setSpec>publications:submissionYear2023:withFiles</setSpec>
+        <setSpec>publications:withFiles</setSpec>
+        <setSpec>publications:year2023</setSpec>
+        <setSpec>publications:year2023:withFiles</setSpec>
+      </header>
+      <metadata>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.8" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-8.xsd ">
+          <mods:recordInfo>
+            <mods:recordContentSource>local</mods:recordContentSource>
+          </mods:recordInfo>
+          <mods:identifier type="pure/id">473109039</mods:identifier>
+          <mods:identifier type="pure/uuid">848d0ce5-a416-4167-8297-0920c195c814</mods:identifier>
+          <mods:identifier type="scopus">85140737075</mods:identifier>
+          <mods:titleInfo xlink:type="simple" lang="eng">
+            <mods:title>A methodology to estimate space heating and domestic hot water energy demand profile in residential buildings from low-resolution heat meter data</mods:title>
+          </mods:titleInfo>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">8325ba40-f416-4ded-91bc-8ca109932934</mods:nameIdentifier>
+            <mods:namePart>Energy and Buildings Research Group</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50428</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/department</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">051cb4d4-7c62-45bc-aad1-02d63db210ec</mods:nameIdentifier>
+            <mods:namePart>Division of Energy and Sustainability in Buildings</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/faculty</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">9ef0aa33-cea9-479e-b64c-6a51944df1a5</mods:nameIdentifier>
+            <mods:namePart>The Faculty of Engineering and Science</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50000</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/institute</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">aee1aa44-15d6-4f8a-b124-00d79fe46fb0</mods:nameIdentifier>
+            <mods:namePart>Department of the Built Environment</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50400</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/smartorgguid">cdc9bdeb-7227-4b41-887d-98a17717f90d</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:genre type="publicationType" authority="dct">Journal article</mods:genre>
+          <mods:physicalDescription>
+            <mods:form authority="marcform">electronic</mods:form>
+            <mods:note type="title" xlink:type="simple">Open Access article</mods:note>
+            <mods:internetMediaType>application/pdf</mods:internetMediaType>
+            <mods:extent unit="bytes">5917312</mods:extent>
+            <mods:note type="location" xlink:type="simple" xlink:href="https://vbn.aau.dk/ws/files/526868515/Open_Access_article.pdf"></mods:note>
+            <mods:note type="visibility" xlink:type="simple">FREE</mods:note>
+            <mods:note type="license" typeURI="/dk/atira/pure/core/document/licenses" xlink:type="simple">cc_by</mods:note>
+            <mods:note type="version" typeURI="/dk/atira/pure/researchoutput/electronicversion/versiontype" xlink:type="simple">publishersversion</mods:note>
+            <mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermission" xlink:type="simple">open</mods:note>
+          </mods:physicalDescription>
+          <mods:note type="peerreview status" xlink:type="simple">Peer reviewed</mods:note>
+          <mods:note type="publication category" xlink:type="simple">Research</mods:note>
+          <mods:note type="publication workflow state" xlink:type="simple">validated</mods:note>
+          <mods:originInfo>
+            <mods:dateIssued encoding="w3cdtf">2023-01-15</mods:dateIssued>
+            <mods:dateOther type="published" encoding="w3cdtf">2023-01-15</mods:dateOther>
+          </mods:originInfo>
+          <mods:subject xlink:type="simple">
+            <mods:topic>Smart energy meter</mods:topic>
+            <mods:topic>Data disaggregation</mods:topic>
+            <mods:topic>Building energy usage</mods:topic>
+            <mods:topic>Load profiles</mods:topic>
+            <mods:topic>Time series analysis</mods:topic>
+            <mods:topic>District heating</mods:topic>
+            <mods:topic>SDG 7 - Affordable and Clean Energy</mods:topic>
+            <mods:topic>SDG 8 - Decent Work and Economic Growth</mods:topic>
+            <mods:topic>SDG 9 - Industry, Innovation, and Infrastructure</mods:topic>
+            <mods:topic>SDG 11 - Sustainable Cities and Communities</mods:topic>
+            <mods:topic>SDG 12 - Responsible Consumption and Production</mods:topic>
+            <mods:topic>SDG 13 - Climate Action</mods:topic>
+          </mods:subject>
+          <mods:classification displayLabel="SDG 7 - Affordable and Clean Energy" authority="pure/sustainabledevelopmentgoals">/dk/atira/pure/sustainabledevelopmentgoals/affordable_and_clean_energy</mods:classification>
+          <mods:classification displayLabel="SDG 8 - Decent Work and Economic Growth" authority="pure/sustainabledevelopmentgoals">/dk/atira/pure/sustainabledevelopmentgoals/decent_work_and_economic_growth</mods:classification>
+          <mods:classification displayLabel="SDG 9 - Industry, Innovation, and Infrastructure" authority="pure/sustainabledevelopmentgoals">/dk/atira/pure/sustainabledevelopmentgoals/industry_innovation_and_infrastructure</mods:classification>
+          <mods:classification displayLabel="SDG 11 - Sustainable Cities and Communities" authority="pure/sustainabledevelopmentgoals">/dk/atira/pure/sustainabledevelopmentgoals/sustainable_cities_and_communities</mods:classification>
+          <mods:classification displayLabel="SDG 12 - Responsible Consumption and Production" authority="pure/sustainabledevelopmentgoals">/dk/atira/pure/sustainabledevelopmentgoals/responsible_consumption_and_production</mods:classification>
+          <mods:classification displayLabel="SDG 13 - Climate Action" authority="pure/sustainabledevelopmentgoals">/dk/atira/pure/sustainabledevelopmentgoals/climate_action</mods:classification>
+          <mods:identifier type="uri">https://vbn.aau.dk/da/publications/848d0ce5-a416-4167-8297-0920c195c814</mods:identifier>
+          <mods:identifier type="doi" typeURI="http://id.loc.gov/vocabulary/identifiers/doi">10.1016/j.energy.2022.125705</mods:identifier>
+          <mods:language>
+            <mods:languageTerm type="code" authority="iso639-2b">eng</mods:languageTerm>
+          </mods:language>
+          <mods:accessCondition xlink:type="simple" type="info:eu-repo/semantics/openAccess"></mods:accessCondition>
+          <mods:location>
+            <mods:url note="Scopus publication">https://www.scopus.com/pages/publications/85140737075</mods:url>
+          </mods:location>
+          <mods:note type="metadata visibility" xlink:type="simple">FREE</mods:note>
+          <mods:note type="creatorCount" xlink:type="simple">4</mods:note>
+          <mods:note type="publicationStatus" xlink:type="simple">published</mods:note>
+        </mods:mods>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:pure.atira.dk:publications/bc6f72b0-0d8a-11db-9d20-000ea68e967b</identifier>
+        <datestamp>2026-09-23T03:01:13Z</datestamp>
+        <setSpec>publications:all</setSpec>
+        <setSpec>publications:submissionYear2004</setSpec>
+        <setSpec>publications:submissionYear2004:withFiles</setSpec>
+        <setSpec>publications:withFiles</setSpec>
+        <setSpec>publications:year2004</setSpec>
+        <setSpec>publications:year2004:withFiles</setSpec>
+      </header>
+      <metadata>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.8" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-8.xsd ">
+          <mods:recordInfo>
+            <mods:recordContentSource>local</mods:recordContentSource>
+          </mods:recordInfo>
+          <mods:identifier type="pure/id">22510</mods:identifier>
+          <mods:identifier type="pure/uuid">bc6f72b0-0d8a-11db-9d20-000ea68e967b</mods:identifier>
+          <mods:titleInfo xlink:type="simple" lang="dan">
+            <mods:title>Koblingspunkter</mods:title>
+          </mods:titleInfo>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="dan">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/institute</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">c3ec6adb-5884-4458-9cca-8a17348a9e37</mods:nameIdentifier>
+            <mods:namePart>Institut for Kommunikation og Psykologi</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/smartorgguid">e957f668-3988-5589-9ce0-59b5adf756a2</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:genre type="publicationType" authority="dct">Tidsskriftartikel</mods:genre>
+          <mods:physicalDescription>
+            <mods:form authority="marcform">electronic</mods:form>
+            <mods:internetMediaType>application/pdf</mods:internetMediaType>
+            <mods:extent unit="bytes">485772</mods:extent>
+            <mods:note type="location" xlink:type="simple" xlink:href="https://vbn.aau.dk/ws/files/13189445/Koblingspunkter.pdf"></mods:note>
+            <mods:note type="visibility" xlink:type="simple">FREE</mods:note>
+            <mods:note type="version" typeURI="/dk/atira/pure/researchoutput/electronicversion/versiontype" xlink:type="simple">publishersversion</mods:note>
+            <mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermission" xlink:type="simple">open</mods:note>
+          </mods:physicalDescription>
+          <mods:note type="peerreview status" xlink:type="simple">Peer reviewed</mods:note>
+          <mods:note type="publication category" xlink:type="simple">Research</mods:note>
+          <mods:note type="publication workflow state" xlink:type="simple">validated</mods:note>
+          <mods:originInfo>
+            <mods:dateIssued encoding="w3cdtf">2004</mods:dateIssued>
+            <mods:dateOther type="published" encoding="w3cdtf">2004</mods:dateOther>
+          </mods:originInfo>
+          <mods:identifier type="uri">https://vbn.aau.dk/da/publications/bc6f72b0-0d8a-11db-9d20-000ea68e967b</mods:identifier>
+          <mods:language>
+            <mods:languageTerm type="code" authority="iso639-2b">dan</mods:languageTerm>
+          </mods:language>
+          <mods:accessCondition xlink:type="simple" type="info:eu-repo/semantics/openAccess"></mods:accessCondition>
+          <mods:note type="metadata visibility" xlink:type="simple">FREE</mods:note>
+          <mods:note type="creatorCount" xlink:type="simple">1</mods:note>
+          <mods:note type="publicationStatus" xlink:type="simple">published</mods:note>
+        </mods:mods>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:pure.atira.dk:publications/74f5a8e0-a869-11da-8341-000ea68e967b</identifier>
+        <datestamp>2026-09-02T23:07:31Z</datestamp>
+        <setSpec>publications:all</setSpec>
+        <setSpec>publications:submissionYear2004</setSpec>
+        <setSpec>publications:submissionYear2004:withFiles</setSpec>
+        <setSpec>publications:withFiles</setSpec>
+        <setSpec>publications:year2004</setSpec>
+        <setSpec>publications:year2004:withFiles</setSpec>
+      </header>
+      <metadata>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.8" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-8.xsd ">
+          <mods:recordInfo>
+            <mods:recordContentSource>local</mods:recordContentSource>
+          </mods:recordInfo>
+          <mods:identifier type="pure/id">33304</mods:identifier>
+          <mods:identifier type="pure/uuid">74f5a8e0-a869-11da-8341-000ea68e967b</mods:identifier>
+          <mods:identifier type="scopus">20844437768</mods:identifier>
+          <mods:note xlink:type="simple">Udgivelsesdato. Aug</mods:note>
+          <mods:titleInfo xlink:type="simple" lang="eng">
+            <mods:title>Computational Fluid Dynamics and Room Air Movement</mods:title>
+          </mods:titleInfo>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">645078e4-c092-48c1-8bfc-af1253814b25</mods:nameIdentifier>
+            <mods:namePart>Energy Optimized Design of Buildings and Building Services</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/institute</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">46ee0560-0a76-430f-9d67-5479cfaf32ed</mods:nameIdentifier>
+            <mods:namePart>Department of Building Technology and Structural Engineering</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/misc">Inst. 6 Bygning ..</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/oldcmduri">/vbn/Videnscentre/AAU/tek-nat/Bygningsteknik/organisation</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/orglookup">Institut 6 : Institut for Bygningsteknik</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/department</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">a6fdd17c-f664-4675-9d01-2f98ab837034</mods:nameIdentifier>
+            <mods:namePart>Indoor Environmental Engineering</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">48e1f240-dd2e-4a39-b3a3-ea89a13b3b02</mods:nameIdentifier>
+            <mods:namePart>Air distribution and transport processes</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">f10fe9ff-c7b5-47b1-8f0e-f46cabbbd979</mods:nameIdentifier>
+            <mods:namePart>Ventilation and Airflow in Buildings Research Group</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">456cc58b-f947-4751-93e4-8f405f73d40f</mods:nameIdentifier>
+            <mods:namePart>Indoor Environment and Sustainable Buildings Research Group</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">43277345-273a-4094-9e3a-af32116d0a00</mods:nameIdentifier>
+            <mods:namePart>Energy in Buildings Research Group (Civil)</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/department</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">051cb4d4-7c62-45bc-aad1-02d63db210ec</mods:nameIdentifier>
+            <mods:namePart>Division of Energy and Sustainability in Buildings</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">8325ba40-f416-4ded-91bc-8ca109932934</mods:nameIdentifier>
+            <mods:namePart>Energy and Buildings Research Group</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50428</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">e37f5ed9-e482-468c-aaf0-4dc4e105d625</mods:nameIdentifier>
+            <mods:namePart>Indoor Environmental Quality and Building Systems Research Group</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/pws">50427</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:genre type="publicationType" authority="dct">Journal article</mods:genre>
+          <mods:physicalDescription>
+            <mods:form authority="marcform">electronic</mods:form>
+            <mods:note type="title" xlink:type="simple">Computational Fluid Dynamics and Room Air Movement</mods:note>
+            <mods:internetMediaType>application/pdf</mods:internetMediaType>
+            <mods:extent unit="bytes">4481356</mods:extent>
+            <mods:note type="location" xlink:type="simple" xlink:href="https://vbn.aau.dk/ws/files/53070391/Comp_fluid_dyn_and_room_air_mov_2004.pdf"></mods:note>
+            <mods:note type="visibility" xlink:type="simple">FREE</mods:note>
+            <mods:note type="version" typeURI="/dk/atira/pure/researchoutput/electronicversion/versiontype" xlink:type="simple">preprint</mods:note>
+            <mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermission" xlink:type="simple">open</mods:note>
+          </mods:physicalDescription>
+          <mods:note type="peerreview status" xlink:type="simple">Peer reviewed</mods:note>
+          <mods:note type="publication category" xlink:type="simple">Research</mods:note>
+          <mods:note type="publication workflow state" xlink:type="simple">approved</mods:note>
+          <mods:originInfo>
+            <mods:dateIssued encoding="w3cdtf">2004-09</mods:dateIssued>
+            <mods:dateOther type="published" encoding="w3cdtf">2004-09</mods:dateOther>
+          </mods:originInfo>
+          <mods:subject xlink:type="simple">
+            <mods:topic>Computational fluid dynamics : Room air distribution : Turbulence models : Supply openings : Furnishings : Thermal manikins</mods:topic>
+            <mods:topic>Fluid Dynamics</mods:topic>
+            <mods:topic>Roome Air Movement</mods:topic>
+          </mods:subject>
+          <mods:identifier type="uri">https://vbn.aau.dk/da/publications/74f5a8e0-a869-11da-8341-000ea68e967b</mods:identifier>
+          <mods:language>
+            <mods:languageTerm type="code" authority="iso639-2b">eng</mods:languageTerm>
+          </mods:language>
+          <mods:accessCondition xlink:type="simple" type="info:eu-repo/semantics/restrictedAccess"></mods:accessCondition>
+          <mods:note type="metadata visibility" xlink:type="simple">FREE</mods:note>
+          <mods:note type="creatorCount" xlink:type="simple">1</mods:note>
+          <mods:note type="publicationStatus" xlink:type="simple">published</mods:note>
+        </mods:mods>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:pure.atira.dk:publications/46fae570-8092-11db-8b97-000ea68e967b</identifier>
+        <datestamp>2026-10-09T04:17:41Z</datestamp>
+        <setSpec>publications:all</setSpec>
+        <setSpec>publications:submissionYear1998</setSpec>
+        <setSpec>publications:submissionYear1998:withFiles</setSpec>
+        <setSpec>publications:withFiles</setSpec>
+        <setSpec>publications:year1998</setSpec>
+        <setSpec>publications:year1998:withFiles</setSpec>
+      </header>
+      <metadata>
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.8" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-8.xsd ">
+          <mods:recordInfo>
+            <mods:recordContentSource>local</mods:recordContentSource>
+          </mods:recordInfo>
+          <mods:identifier type="pure/id">33369</mods:identifier>
+          <mods:identifier type="pure/uuid">46fae570-8092-11db-8b97-000ea68e967b</mods:identifier>
+          <mods:identifier type="scopus">0032170184</mods:identifier>
+          <mods:physicalDescription>
+            <mods:extent unit="pages">14</mods:extent>
+          </mods:physicalDescription>
+          <mods:titleInfo xlink:type="simple" lang="eng">
+            <mods:title>Damage Localization and Quantification of Earthquake Excited RC-Frames</mods:title>
+          </mods:titleInfo>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/institute</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">46ee0560-0a76-430f-9d67-5479cfaf32ed</mods:nameIdentifier>
+            <mods:namePart>Department of Building Technology and Structural Engineering</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/misc">Inst. 6 Bygning ..</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/oldcmduri">/vbn/Videnscentre/AAU/tek-nat/Bygningsteknik/organisation</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/orglookup">Institut 6 : Institut for Bygningsteknik</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/department</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">6971454e-74c6-4c39-a292-8559534e783b</mods:nameIdentifier>
+            <mods:namePart>Division of Structural Mechanics</mods:namePart>
+          </mods:name>
+          <mods:name type="corporate" xlink:type="simple" authority="local" lang="eng">
+            <mods:role>
+              <mods:roleTerm type="code" authority="marcrelator">pbl</mods:roleTerm>
+            </mods:role>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/organisationType">/dk/atira/pure/organisation/organisationtypes/organisation/researchgroup</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="pure/uuid">7090c7cb-0d1d-49f8-8020-ba3c824a281e</mods:nameIdentifier>
+            <mods:namePart>Struktural Dynamics and Mechanics</mods:namePart>
+            <mods:role>
+              <mods:roleTerm type="text" authority="pure/linkidentifier/orglookup">Strukturel Dynamik</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:genre type="publicationType" authority="dct">Journal article</mods:genre>
+          <mods:physicalDescription>
+            <mods:form authority="marcform">electronic</mods:form>
+            <mods:note type="title" xlink:type="simple">DAMAGE LOCALIZATION AND QUANTIFICATION OF EARTHQUAKE EXCITED RC-FRAMES</mods:note>
+            <mods:internetMediaType>application/pdf</mods:internetMediaType>
+            <mods:extent unit="bytes">204475</mods:extent>
+            <mods:note type="location" xlink:type="simple" xlink:href="https://vbn.aau.dk/ws/files/58268865/Damage_Localization_and_Quantification_of_Earthquake_Excited_RC_Frames.pdf"></mods:note>
+            <mods:note type="visibility" xlink:type="simple">FREE</mods:note>
+            <mods:note type="version" typeURI="/dk/atira/pure/researchoutput/electronicversion/versiontype" xlink:type="simple">publishersversion</mods:note>
+            <mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermission" xlink:type="simple">open</mods:note>
+          </mods:physicalDescription>
+          <mods:note type="peerreview status" xlink:type="simple">Peer reviewed</mods:note>
+          <mods:note type="publication category" xlink:type="simple">Research</mods:note>
+          <mods:note type="publication workflow state" xlink:type="simple">approved</mods:note>
+          <mods:originInfo>
+            <mods:dateIssued encoding="w3cdtf">1998</mods:dateIssued>
+            <mods:dateOther type="published" encoding="w3cdtf">1998</mods:dateOther>
+          </mods:originInfo>
+          <mods:subject xlink:type="simple">
+            <mods:topic>Dynamic and static testing</mods:topic>
+            <mods:topic>Model testing</mods:topic>
+            <mods:topic>RC-frames</mods:topic>
+            <mods:topic>Shaking Table Testing</mods:topic>
+            <mods:topic>Response Measurments</mods:topic>
+            <mods:topic>Damage</mods:topic>
+            <mods:topic>Dynamic and static testing</mods:topic>
+            <mods:topic>Model testing</mods:topic>
+            <mods:topic>RC-frames</mods:topic>
+            <mods:topic>Shaking Table Testing</mods:topic>
+            <mods:topic>Response Measurments</mods:topic>
+            <mods:topic>Damage</mods:topic>
+          </mods:subject>
+          <mods:identifier type="uri">https://vbn.aau.dk/da/publications/46fae570-8092-11db-8b97-000ea68e967b</mods:identifier>
+          <mods:identifier type="doi" typeURI="http://id.loc.gov/vocabulary/identifiers/doi">10.1002/(SICI)1096-9845(199809)27:9&lt;903::AID-EQE757&gt;3.0.CO;2-C</mods:identifier>
+          <mods:language>
+            <mods:languageTerm type="code" authority="iso639-2b">eng</mods:languageTerm>
+          </mods:language>
+          <mods:accessCondition xlink:type="simple" type="info:eu-repo/semantics/openAccess"></mods:accessCondition>
+          <mods:note type="metadata visibility" xlink:type="simple">FREE</mods:note>
+          <mods:note type="creatorCount" xlink:type="simple">4</mods:note>
+          <mods:note type="publicationStatus" xlink:type="simple">published</mods:note>
+        </mods:mods>
+      </metadata>
+    </record>
+    <resumptionToken cursor="0" completeListSize="9">tok/2</resumptionToken>
+  </ListRecords>
+</OAI-PMH>

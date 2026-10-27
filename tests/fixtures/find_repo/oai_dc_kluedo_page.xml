@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+  <ListRecords>
+    <record>
+      <header>
+        <identifier>oai:kluedo.ub.rptu.de:1218</identifier>
+        <datestamp>2023-02-16</datestamp>
+        <setSpec>doc-type:DoctoralThesis</setSpec>
+        <setSpec>bibliography:false</setSpec>
+        <setSpec>open_access</setSpec>
+        <setSpec>open_access:open_access</setSpec>
+        <setSpec>ddc</setSpec>
+        <setSpec>ddc:624</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <dc:title xml:lang="de">Einsatz der dynamischen Simulation als Bemessungshilfe für Kläranlagen in Weinbaugebieten</dc:title>
+          <dc:subject>ddc:624</dc:subject>
+          <dc:date>2000</dc:date>
+          <dc:type>doctoralthesis</dc:type>
+          <dc:type>doc-type:DoctoralThesis</dc:type>
+          <dc:format>application/pdf</dc:format>
+          <dc:identifier>https://kluedo.ub.rptu.de/frontdoor/index/index/docId/1218</dc:identifier>
+          <dc:identifier>urn:nbn:de:bsz:386-kluedo-12723</dc:identifier>
+          <dc:identifier>https://nbn-resolving.org/urn:nbn:de:bsz:386-kluedo-12723</dc:identifier>
+          <dc:identifier>https://kluedo.ub.rptu.de/files/1218/dissertation_9.pdf</dc:identifier>
+          <dc:language>deu</dc:language>
+          <dc:rights>Standard gemäß KLUEDO-Leitlinien vor dem 27.05.2011</dc:rights>
+          <dc:rights>https://kluedo.ub.rptu.de/download/lizenzen/kluedo_leitlinien_vor_2011-05-27.pdf</dc:rights>
+          <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:kluedo.ub.rptu.de:5608</identifier>
+        <datestamp>2026-03-09</datestamp>
+        <setSpec>doc-type:DoctoralThesis</setSpec>
+        <setSpec>bibliography:false</setSpec>
+        <setSpec>open_access</setSpec>
+        <setSpec>open_access:open_access</setSpec>
+        <setSpec>ddc</setSpec>
+        <setSpec>ddc:624</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <dc:title xml:lang="de">Ein methodischer Ansatz zur Bereitstellung energetischer Flexibilität durch einen anpassungsfähigen Kläranlagenbetrieb</dc:title>
+          <dc:subject>Energie auf Kläranlagen</dc:subject>
+          <dc:subject>Flexibilität</dc:subject>
+          <dc:subject>Abwasserreinigung</dc:subject>
+          <dc:subject>ddc:624</dc:subject>
+          <dc:date>2019</dc:date>
+          <dc:type>doctoralthesis</dc:type>
+          <dc:type>doc-type:DoctoralThesis</dc:type>
+          <dc:format>application/pdf</dc:format>
+          <dc:identifier>https://kluedo.ub.rptu.de/frontdoor/index/index/docId/5608</dc:identifier>
+          <dc:identifier>urn:nbn:de:hbz:386-kluedo-56084</dc:identifier>
+          <dc:identifier>https://nbn-resolving.org/urn:nbn:de:hbz:386-kluedo-56084</dc:identifier>
+          <dc:identifier>978-3-95974-108-8</dc:identifier>
+          <dc:identifier>https://kluedo.ub.rptu.de/files/5608/SR_WIR_Band-5_Dissertation_Sch%C3%A4fer.pdf</dc:identifier>
+          <dc:language>deu</dc:language>
+          <dc:rights>Creative Commons 4.0 - Namensnennung (CC BY 4.0)</dc:rights>
+          <dc:rights>https://creativecommons.org/licenses/by/4.0/deed.de</dc:rights>
+          <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+    <record>
+      <header>
+        <identifier>oai:kluedo.ub.rptu.de:6525</identifier>
+        <datestamp>2022-12-12</datestamp>
+        <setSpec>doc-type:DoctoralThesis</setSpec>
+        <setSpec>bibliography:false</setSpec>
+        <setSpec>open_access</setSpec>
+        <setSpec>open_access:open_access</setSpec>
+        <setSpec>ddc</setSpec>
+        <setSpec>ddc:620</setSpec>
+        <setSpec>ddc:624</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <dc:title xml:lang="de">Modellierung der Verteilung ungenutzter industrieller und gewerblicher Abwärme über die Abwasserkanalisation</dc:title>
+          <dc:subject>Abwasserwärmerückgewinnung</dc:subject>
+          <dc:subject>Industrielle Abwärme</dc:subject>
+          <dc:subject>Gewerbliche Abwärme</dc:subject>
+          <dc:subject>Abwasserwärmenutzung</dc:subject>
+          <dc:subject>ddc:620</dc:subject>
+          <dc:subject>ddc:624</dc:subject>
+          <dc:date>2021</dc:date>
+          <dc:type>doctoralthesis</dc:type>
+          <dc:type>doc-type:DoctoralThesis</dc:type>
+          <dc:format>application/pdf</dc:format>
+          <dc:identifier>https://kluedo.ub.rptu.de/frontdoor/index/index/docId/6525</dc:identifier>
+          <dc:identifier>urn:nbn:de:hbz:386-kluedo-65252</dc:identifier>
+          <dc:identifier>https://nbn-resolving.org/urn:nbn:de:hbz:386-kluedo-65252</dc:identifier>
+          <dc:identifier>https://doi.org/10.26204/KLUEDO/6525</dc:identifier>
+          <dc:identifier>https://kluedo.ub.rptu.de/files/6525/DissertationM%C3%BCller.pdf</dc:identifier>
+          <dc:language>deu</dc:language>
+          <dc:rights>Creative Commons 4.0 - Namensnennung, nicht kommerziell (CC BY-NC 4.0)</dc:rights>
+          <dc:rights>https://creativecommons.org/licenses/by-nc/4.0/deed.de</dc:rights>
+          <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+    <resumptionToken cursor="0" completeListSize="9">tok/2</resumptionToken>
+  </ListRecords>
+</OAI-PMH>

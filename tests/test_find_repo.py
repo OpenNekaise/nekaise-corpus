@@ -737,3 +737,281 @@ def test_cursor_forms_and_removed_repositories(monkeypatch, tmp_path):
     _, _, _, files = _setup(monkeypatch, tmp_path, [])
     _run(monkeypatch, "--cursor", json.dumps({"r": 5, "s": {"example": state, "gone": state}}))
     assert set(_next(files)["s"]) == {"example"}     # a removed repository's state is dropped
+
+
+# --------------------------------------------------------------------------------------------
+# other platforms: recorded OAI pages (tests/fixtures/find_repo, personal names and abstracts
+# removed) read with isolated configs; one test reads them with the reviewed live configs
+FIXTURES = Path(__file__).resolve().parent / "fixtures" / "find_repo"
+OPEN = "info:eu-repo/semantics/openAccess"
+PURE = dict(copy.deepcopy(CFG), platform="pure-mods", languages=["en", "da"],
+            source="repo_pure_x", oai="https://vbn.aau.dk/ws/oai", hosts=["vbn.aau.dk"],
+            fulltext_pattern=r"^https://vbn\.aau\.dk/ws/files/[0-9]+/[^/?#]+$",
+            skip_files="supplement|appendi", sets=["publications:withFiles"], all_sets=[],
+            relevant_fields={"pure.organisation": "Built Environment|Structural Mechanics"},
+            types="article|report|thesis", skip_types="review|editorial",
+            open_access={"field": "mods.accessCondition", "pattern": f"^{OPEN}$"})
+OAI_DC = dict(copy.deepcopy(CFG), platform="oai-dc", languages=["de", "en"],
+              source="repo_dc_x", oai="https://kluedo.ub.rptu.de/oai",
+              hosts=["kluedo.ub.rptu.de"],
+              fulltext_pattern=r"^https://kluedo\.ub\.rptu\.de/files/[0-9]+/[^/?#]+\.pdf$",
+              sets=["ddc:624"], all_sets=["ddc:624"], types="thesis|article")
+OAI_DC.pop("open_access")
+OAI_DC.pop("relevant_fields")
+PROJECTS = dict(copy.deepcopy(OAI_DC), source="repo_dc_y", languages=["en", "da"],
+                oai="https://vbn.aau.dk/ws/oai", hosts=["vbn.aau.dk"],
+                fulltext_pattern=r"^https://vbn\.aau\.dk/ws/files/[0-9]+/[^/?#]+\.pdf$",
+                skip_files="bedoemmelse|forside|tegninger", sets=["s"], all_sets=[],
+                types="*", relevant_fields={"dc.relation.education": "Civil Engineering|"
+                                                                      "Building Industry"})
+XMD = dict(copy.deepcopy(CFG), platform="xmetadissplus", languages=["de", "en"],
+           source="repo_xmd_x", oai="https://publications.rwth-aachen.de/oai2d",
+           hosts=["publications.rwth-aachen.de"],
+           fulltext_pattern=r"^https://publications\.rwth-aachen\.de/record/[0-9]+/files/"
+                            r"[^/?#]+\.pdf$",
+           sets=["dnbdelivery"], all_sets=[], types="thesis|report|conferenceobject",
+           relevant_fields={"thesis.degree.grantor.department": "^Fak0[23]$"},
+           open_access={"field": "ddb.rights", "pattern": "^free$"})
+
+
+def fixture(name: str) -> str:
+    return (FIXTURES / name).read_text(encoding="utf-8")
+
+
+class Titles(dict):
+    """{record title: entry or None}, looked up by an unambiguous title prefix."""
+
+    def __getitem__(self, prefix):
+        keys = [k for k in self if k.startswith(prefix)]
+        assert len(keys) == 1, (prefix, list(self))
+        return dict.__getitem__(self, keys[0])
+
+    def none(self) -> bool:
+        return all(v is None for v in self.values())
+
+
+def read_all(text: str, cfg: dict, setspec: str = "x") -> Titles:
+    records, token = find_repo.parse_page(text.encode(), has_token=False,
+                                          platform=cfg["platform"])
+    assert token == "tok/2"
+    out = Titles()
+    for element in records:
+        fields, _ = find_repo.adapter_of(cfg).read(element, TODAY)
+        out[fields["dc.title"][0]] = find_repo.candidate(element, "x", cfg, TODAY, setspec)
+    return out
+
+
+def test_new_platforms_validate_and_each_names_its_metadata_format():
+    assert set(find_repo.PLATFORMS) == set(find_repo.ADAPTERS)
+    assert {p: a.prefix for p, a in find_repo.ADAPTERS.items()} == {
+        "dspace-xoai": "xoai", "oai-dc": "oai_dc", "pure-mods": "mods",
+        "xmetadissplus": "xMetaDissPlus"}
+    for cfg in (PURE, OAI_DC, PROJECTS, XMD):
+        assert find_repo.validate({"repositories": {"x": cfg}}) == [], cfg["platform"]
+    for bad, needle in (("(", "skip_files"), ("*", "skip_files cannot")):
+        errors = find_repo.validate({"repositories": {"x": dict(PURE, skip_files=bad)}})
+        assert any(needle in e for e in errors), errors
+    # a page in another format than the repository's platform is never an empty page
+    with pytest.raises(find_repo.Unexpected, match="not mods"):
+        find_repo.parse_page(fixture("oai_dc_kluedo_page.xml").encode(), has_token=False,
+                             platform="pure-mods")
+    with pytest.raises(find_repo.Unexpected, match="not oai_dc"):
+        find_repo.parse_page(page([record(1, "Concrete bridges")]), has_token=False,
+                             platform="oai-dc")
+
+
+def test_pure_mods_takes_open_free_pdfs_and_the_files_own_licence():
+    got = read_all(fixture("pure_mods_page.xml"), PURE)
+    stress = got["The impact of stress and life style facto"]
+    # the first PDF is supplemental material: skip_files takes the article itself
+    assert stress["url"].endswith("_Green_Open_Access.pdf")
+    assert stress["license"] == "cc-by-nc-nd" and "license_url" not in stress
+    assert "Pure file licence key cc_by_nc_nd" in stress["license_evidence"]
+    assert stress["persistent_id"] == "doi:10.1177/14034948211060815"
+    assert stress["document_type"] == "journal-article" and stress["language"] == "en"
+    heat = got["A methodology to estimate space heating a"]
+    assert heat["license"] == "cc-by" and heat["topic"] == "building_energy"
+    damage = got["Damage Localization and Quantification of"]
+    assert damage["license"] == "unverified" and "states no rights" in damage[
+        "license_evidence"]
+    # restrictedAccess on the record (its file says FREE / open): fail closed
+    assert got["Computational Fluid Dynamics and Room Air"] is None
+    assert got["Koblingspunkter"] is None             # another faculty, no AEC title term
+    for entry in filter(None, got.values()):
+        assert not lint_registry.entry_errors(entry, "repositories.yaml")
+        assert registry.shard_filename(entry["id"]) == "repositories.yaml"
+
+
+def _heat_record(old: str, new: str) -> dict | None:
+    """The 'methodology' record of the recorded MODS page with one edit."""
+    text = fixture("pure_mods_page.xml")
+    start = text.index("A methodology to estimate space heating")
+    head, record_, tail = text[:start], text[start:], ""
+    end = record_.index("</record>")
+    record_, tail = record_[:end], record_[end:]
+    assert old in record_, old
+    return read_all(head + record_.replace(old, new) + tail, PURE)[
+        "A methodology to estimate space heating a"]
+
+
+LICENCE = ('<mods:note type="license" typeURI="/dk/atira/pure/core/document/licenses" '
+           'xlink:type="simple">cc_by</mods:note>')
+ACCESS = ('<mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermission" '
+          'xlink:type="simple">open</mods:note>')
+
+
+@pytest.mark.parametrize("old,new,expect", [
+    ('<mods:note type="visibility" xlink:type="simple">FREE</mods:note>',
+     '<mods:note type="visibility" xlink:type="simple">CAMPUS</mods:note>', None),
+    ('<mods:note type="visibility" xlink:type="simple">FREE</mods:note>', "", None),
+    (ACCESS, ACCESS.replace(">open<", ">embargoed<")
+     + '<mods:note type="embargo end" xlink:type="simple">2999-01-01</mods:note>', None),
+    (ACCESS, ACCESS.replace(">open<", ">embargoed<")
+     + '<mods:note type="embargo end" xlink:type="simple">2020-01-01</mods:note>', "cc-by"),
+    (ACCESS, ACCESS.replace(">open<", ">embargoed<"), None),          # no end date
+    (ACCESS, ACCESS.replace(">open<", ">embargoed<")
+     + '<mods:note type="embargo end" xlink:type="simple">soon</mods:note>', None),
+    (ACCESS, ACCESS.replace(">open<", ">closed<"), None),
+    (ACCESS, "", None),
+    ("<mods:internetMediaType>application/pdf</mods:internetMediaType>",
+     "<mods:internetMediaType>application/zip</mods:internetMediaType>", None),
+    (f'type="{OPEN}"', 'type="info:eu-repo/semantics/embargoedAccess"', None),
+    (f'<mods:accessCondition xlink:type="simple" type="{OPEN}"></mods:accessCondition>', "",
+     None),                                                   # no access condition: closed
+    (LICENCE, LICENCE.replace(">cc_by<", ">cc_by_4_0<"), "cc-by 4.0"),
+    (LICENCE, LICENCE.replace(">cc_by<", ">cc_by_nc_sa<"), "cc-by-nc-sa"),
+    (LICENCE, LICENCE.replace(">cc_by<", ">cc0<"), "cc0"),
+    (LICENCE, LICENCE.replace(">cc_by<", ">unspecified<"), "unverified"),
+    (LICENCE, LICENCE.replace(">cc_by<", ">cc_by_nd_sa<"), "unverified"),
+    (LICENCE, LICENCE.replace("/licenses", "/otherlicences"), "unverified"),
+    (LICENCE, LICENCE + LICENCE.replace(">cc_by<", ">cc_by_nc<"), "unverified"),
+    (LICENCE, "", "unverified"),
+])
+def test_pure_files_and_licences_fail_closed(old, new, expect):
+    entry = _heat_record(old, new)
+    if expect is None:
+        assert entry is None
+        return
+    tag, _, version = expect.partition(" ")
+    assert entry["license"] == tag and tag in lint_registry.LICENSES
+    if version:
+        assert entry["license_url"] == f"https://creativecommons.org/licenses/by/{version}/"
+    if tag == "unverified":
+        assert "license_url" not in entry
+
+
+def test_oai_dc_reads_identifiers_rights_and_dois():
+    got = read_all(fixture("oai_dc_kluedo_page.xml"), OAI_DC, "ddc:624")
+    old = got["Einsatz der dynamischen Simulation als Be"]
+    assert old["url"] == "https://kluedo.ub.rptu.de/files/1218/dissertation_9.pdf"
+    assert old["license"] == "unverified" and "KLUEDO-Leitlinien" in old["license_evidence"]
+    assert old["document_type"] == "thesis" and old["language"] == "de"
+    by = got["Ein methodischer Ansatz zur Bereitstellun"]
+    assert by["license"] == "cc-by"            # 'Creative Commons 4.0 - Namensnennung (CC BY 4.0)'
+    assert by["license_url"] == "https://creativecommons.org/licenses/by/4.0/deed.de"
+    nc = got["Modellierung der Verteilung ungenutzter i"]
+    assert nc["license"] == "cc-by-nc" and nc["persistent_id"] == "doi:10.26204/kluedo/6525"
+    assert "openAccess" not in nc["license_evidence"]
+    # a closed record is dropped; a URL on another host is not a full text
+    text = fixture("oai_dc_kluedo_page.xml")
+    closed = read_all(text.replace(OPEN, "info:eu-repo/semantics/closedAccess"), OAI_DC,
+                      "ddc:624")
+    assert closed.none()
+    moved = read_all(text.replace("https://kluedo.ub.rptu.de/files/",
+                                  "https://cdn.elsewhere.org/files/"), OAI_DC, "ddc:624")
+    assert moved.none()
+    # outside the dedicated set the term gate applies (German AEC terms in the title)
+    gated = read_all(text, OAI_DC, "ddc:620")
+    assert gated["Einsatz der dynamischen Simulation als Be"] is None
+    assert gated["Modellierung der Verteilung ungenutzter i"]   # 'Abwasser'
+
+
+def test_opus_licence_names_need_both_names_and_versions_to_agree():
+    kind = find_repo.licence_name_kind
+    assert kind("Creative Commons 4.0 - Namensnennung (CC BY 4.0)") == "by"
+    assert kind("Creative Commons 4.0 - Namensnennung, nicht kommerziell, keine Bearbeitung "
+                "(CC BY-NC-ND 4.0)") == "by-nc-nd"
+    assert kind("Creative Commons 4.0 - Namensnennung, Weitergabe unter gleichen Bedingungen "
+                "(CC BY-SA 4.0)") == "by-sa"
+    assert kind("Namensnennung, nicht kommerziell 4.0 International") == "by-nc"
+    for text in ("Creative Commons 4.0 - Namensnennung (CC BY-NC 4.0)",     # names disagree
+                 "Creative Commons 3.0 - Namensnennung (CC BY 4.0)",        # versions disagree
+                 "Creative Commons 4.0 - Namensnennung (CC BY)",            # no version
+                 "Creative Commons 4.0 - Namensnennung (CC BY 4.0) gilt nicht",
+                 "Creative Commons 4.0 - Lizenz nach Originalpublikation (CC BY 4.0)",
+                 "Creative Commons 4.0 - Namensnennung, keine Bearbeitung, Weitergabe unter "
+                 "gleichen Bedingungen (CC BY-ND-SA 4.0)"):
+        assert kind(text) is None, text
+    # a URL and a name for different licences stay unverified
+    fields = {"dc.rights": ["Creative Commons 4.0 - Namensnennung (CC BY 4.0)",
+                            "https://creativecommons.org/licenses/by-nc/4.0/deed.de"]}
+    assert find_repo.licence_of(fields)[0] == "unverified"
+
+
+def test_student_projects_skip_assessment_forms_and_gate_by_education():
+    got = read_all(fixture("oai_dc_aau_projects_page.xml"), PROJECTS)
+    bridge = got["Letbanebro over Djurslandmotorvejen"]
+    assert bridge["url"].endswith("_Grundlag.pdf") and bridge["document_type"] == "thesis"
+    assert bridge["language"] == "da" and bridge["license"] == "unverified"
+    assert got["Byggeledelse - Kompetenceudvikling af frem"]["url"].endswith("_Kopi.pdf")
+    # a graded assessment form is the only file of this record: never taken for the work
+    assert got["Implementering af afsluttende forløbstest"] is None
+    assert got["Aalborgs monumentale udvikling fra 1816 t"] is None      # History
+    text = fixture("oai_dc_aau_projects_page.xml")
+    renamed = text.replace(">Letbanebro over Djurslandmotorvejen<", ">Speciale<")
+    entry = read_all(renamed, PROJECTS)["Speciale"]
+    # a generic title is unique by construction (the round merger drops equal titles)
+    assert entry["title"].startswith("Speciale [oai:pure.atira.dk:studentproject/")
+    assert registry.norm(entry["title"]) != registry.norm("Speciale")
+
+
+def test_xmetadissplus_upgrades_reviewed_http_transfers_and_needs_free_rights():
+    got = read_all(fixture("xmetadissplus_rwth_page.xml"), XMD)
+    concrete = got["Zum Einfluss der Kontaktzone bei der Mode"]
+    assert concrete["url"] == ("https://publications.rwth-aachen.de/record/49915/files/"
+                               "Meyer_Lars.pdf")                   # ddb:transfer said http://
+    assert concrete["topic"] == "materials" and concrete["document_type"] == "thesis"
+    assert got["Freiräume in neuen Wohnsiedlungen"]["published_at"] == "2008"
+    assert got["Kommunikation in Clusterrechnern und Clust"] is None   # no AEC faculty / term
+    text = fixture("xmetadissplus_rwth_page.xml")
+    for old, new in (('<ddb:rights ddb:kind="free">', '<ddb:rights ddb:kind="domain">'),
+                     ('<ddb:rights ddb:kind="free"></ddb:rights>', ""),
+                     ("http://publications.rwth-aachen.de/record/",
+                      "http://mirror.example.org/record/")):
+        changed = read_all(text.replace(old, new), XMD)
+        assert changed.none(), old
+
+
+def test_live_new_repositories_read_their_recorded_pages():
+    live = find_repo.load_config()
+    expect = {"aau-vbn": ("pure_mods_page.xml", "publications:withFiles", 3),
+              "kluedo": ("oai_dc_kluedo_page.xml", "ddc:624", 3),
+              "aau-projects": ("oai_dc_aau_projects_page.xml", "studentproject:withFiles", 2),
+              "rwth-publications": ("xmetadissplus_rwth_page.xml", "dnbdelivery", 2)}
+    for key, (name, setspec, kept) in expect.items():
+        cfg = live[key]
+        assert cfg["enabled"] and cfg["rights"]["decision"] == "go", key
+        got = read_all(fixture(name), cfg, setspec)
+        assert sum(1 for e in got.values() if e) == kept, (key, got)
+
+
+def test_walk_asks_the_platforms_format_and_ends_in_a_watch_state(monkeypatch, tmp_path):
+    today = datetime.now(timezone.utc).date()
+    text = fixture("oai_dc_kluedo_page.xml")
+    last = text.replace('<resumptionToken cursor="0" completeListSize="9">tok/2'
+                        "</resumptionToken>", "")
+    calls, _, appended, files = _setup(monkeypatch, tmp_path, [text.encode(), last.encode()],
+                                       repos={"kl": OAI_DC})
+    _run(monkeypatch, "--cursor", "START", "--pages", "2", "--append")
+    assert [c[1] for c in calls] == [
+        {"verb": "ListRecords", "metadataPrefix": "oai_dc", "set": "ddc:624"},
+        {"verb": "ListRecords", "resumptionToken": "tok/2"}]
+    assert len(appended) == 3 and {e["source"] for e in appended} == {"repo_dc_x"}
+    assert _next(files)["s"]["kl"] == {"i": 0, "w": today.isoformat(),
+                                       "p": (today - timedelta(days=1)).isoformat()}
+    # an xoai page answered to an oai_dc request keeps the state (never an empty page)
+    state = {"i": 0, "t": "tok/2", "d": "2026-10-20"}
+    _, _, appended, files = _setup(monkeypatch, tmp_path, [page([record(1, "Beton")], "")],
+                                   repos={"kl": OAI_DC})
+    _run(monkeypatch, "--cursor", json.dumps({"r": 0, "s": {"kl": state}}), "--append")
+    assert appended == [] and _next(files)["s"]["kl"] == state

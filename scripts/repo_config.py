@@ -18,7 +18,9 @@ import store
 CONFIG_PATH = store.config_path("repositories.json", registry.ROOT)
 MIN_DELAY = 2.0        # seconds between requests when robots.txt states no Crawl-delay
 RUN_SECONDS = 270.0    # loader budget per host and run (HOST_RUN_CAP = RUN_SECONDS / delay)
-PLATFORMS = ("dspace-xoai",)
+# OAI metadata formats find_repo reads (find_repo.ADAPTERS): DSpace xoai, plain Dublin Core
+# (OPUS 4, Pure student projects, EPrints), Pure research outputs in MODS, xMetaDissPlus
+PLATFORMS = ("dspace-xoai", "oai-dc", "pure-mods", "xmetadissplus")
 DECISIONS = ("go", "rejected", "later")
 # languages a repository may declare: English plus the languages find_repo.AEC_LANG has terms for
 LANGUAGES = ("en", "de", "fr", "es", "ca", "pt", "it", "nl", "sv", "no", "da", "fi")
@@ -89,7 +91,7 @@ def validate(data: object) -> list[str]:
         if not isinstance(all_sets, list) or not set(all_sets) <= set(
                 sets if isinstance(sets, list) else []):
             errors.append(f"{label}: all_sets must be a list of setSpecs from sets")
-        patterns = {field: cfg[field] for field in ("types", "skip_types")
+        patterns = {field: cfg[field] for field in ("types", "skip_types", "skip_files")
                     if field in cfg and cfg[field] != "*"}
         relevant_fields = cfg.get("relevant_fields", {})
         if not isinstance(relevant_fields, dict):
@@ -106,8 +108,9 @@ def validate(data: object) -> list[str]:
         ignore = cfg.get("ignore_fields", [])
         if not isinstance(ignore, list) or not all(isinstance(f, str) and f for f in ignore):
             errors.append(f"{label}: ignore_fields must be a list of field paths")
-        if cfg.get("skip_types") == "*":
-            errors.append(f"{label}: skip_types cannot be '*'")
+        for field in ("skip_types", "skip_files"):
+            if cfg.get(field) == "*":
+                errors.append(f"{label}: {field} cannot be '*'")
         access = cfg.get("open_access")
         if access is not None:
             if (not isinstance(access, dict) or not access.get("field")

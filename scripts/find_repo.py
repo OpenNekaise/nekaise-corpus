@@ -17,13 +17,27 @@ repositories too), defers `rep-` rows when that configuration cannot be loaded, 
 robots-checks the download URL and every redirect hop (build_corpus.ROBOTS_CHECKED_PREFIXES:
 Disallow, AI-training opt-out or unavailable robots.txt defers the row; no fallback client).
 
-Platforms (adapters; `PLATFORMS`): `dspace-xoai` — DSpace's `xoai` metadata format, which lists
-every dc field and the ORIGINAL bundle's bitstream URLs. Other platforms (EPrints oai_dc,
-xMetaDissPlus, Pure) are backlog: an adapter is a function (record element, config) -> Record.
+Platforms (adapters; `ADAPTERS`, one per repository `platform`): each reads one OAI metadata
+format into flat fields ("dc.title", "dc.type", "dc.rights" ...) plus the record's full-text
+files in document order, so the gates below are shared:
+  * `dspace-xoai` — DSpace's `xoai` format: every dc field and the ORIGINAL bundle's PDF
+    bitstreams;
+  * `oai-dc` — plain Dublin Core (OPUS 4, Pure student projects, EPrints): the files are the
+    dc:identifier / dc:relation URLs that match `fulltext_pattern`; a `type` attribute
+    qualifies the field ("dc.relation.education");
+  * `pure-mods` — Elsevier Pure research outputs in MODS: genre, organisations, keywords and the
+    record's eu-repo access condition as fields; a file counts only when it is a PDF with
+    visibility FREE and access `open` (or `embargoed` with a stated end date that has passed),
+    and it brings its own licence key;
+  * `xmetadissplus` — the German National Library's xMetaDissPlus (RWTH, OPUS): the files are
+    the ddb:transfer URLs (an http URL on a reviewed host is asked over https), the access
+    is ddb:rights ddb:kind, the faculty is the thesis grantor's department.
+A record whose metadata root is not the adapter's format is Unexpected. `skip_files` drops
+files by name (assessment forms, cover pages, appendices) before the first match is taken.
 
 A record is kept only when
-  * it is not deleted and has a PDF bitstream in the ORIGINAL bundle whose URL matches the
-    repository's `fulltext_pattern` (same host);
+  * it is not deleted and has a full-text PDF (for xoai: in the ORIGINAL bundle) whose URL
+    matches the repository's `fulltext_pattern` (same host);
   * it is not embargoed or restricted: a repository with an access field (`open_access`) must
     state the open value, an embargo field with a future or unreadable date drops the record,
     and an access term other than open in a rights / access field drops it (openAccess /
@@ -47,7 +61,9 @@ Licence (collect regardless of licence, classify exactly): from the record's rig
 value that is a URL or names a licence must be a canonical open Creative Commons URL for an open
 tag (scripts/licenses.py); a single canonical NC / ND licence URL keeps its exact tag; anything
 else — rightsstatements.org "In Copyright", free text, no statement — is `unverified` with the
-statement as evidence.
+statement as evidence. A Pure file's licence is a key of Pure's controlled licence vocabulary
+(typeURI /dk/atira/pure/core/document/licenses): exactly one cc_by[_nc][_nd|_sa][_<major>_<minor>]
+or cc0 key gives that tag, any other key, a second key or another vocabulary is unverified.
 
 Rotation (dynamic `--cursor`, a JSON object): {"r": <round-robin position>, "s": {<key>: state}}.
 A repository's state is {"i": set index, "t": resumption token, "f": OAI from-date of this pass,
@@ -72,7 +88,8 @@ import sys
 import time
 import xml.etree.ElementTree as ET
 from datetime import date, datetime, timedelta, timezone
-from urllib.parse import urljoin, urlsplit
+from typing import Callable, NamedTuple
+from urllib.parse import unquote, urljoin, urlsplit
 
 import requests
 import yaml
@@ -85,8 +102,8 @@ import registry
 import robots_policy
 import store
 from finder_protocol import MAX_CURSOR, Report
-from repo_config import (DATE, LANGUAGES, MIN_DELAY, RUN_SECONDS, load_config,  # noqa: F401
-                         loader_hosts, validate)
+from repo_config import (DATE, LANGUAGES, MIN_DELAY, PLATFORMS, RUN_SECONDS,  # noqa: F401
+                         load_config, loader_hosts, validate)
 
 UA = {"User-Agent": "nekaise-corpus/find_repo (research corpus; robots.txt honoured)"}
 ROBOTS_MAX_DELAY = 30.0   # a larger robots Crawl-delay defers the repository
@@ -96,6 +113,27 @@ WATCH_DAYS = 7         # a walked repository is read again (from=) this many day
 PREFIX = "rep-"
 OAI_NS = "{http://www.openarchives.org/OAI/2.0/}"
 XOAI_NS = "{http://www.lyncode.com/xoai}"
+OAI_DC_NS = "{http://www.openarchives.org/OAI/2.0/oai_dc/}"
+DC_NS = "{http://purl.org/dc/elements/1.1/}"
+DCTERMS_NS = "{http://purl.org/dc/terms/}"
+MODS_NS = "{http://www.loc.gov/mods/v3}"
+XLINK_HREF = "{http://www.w3.org/1999/xlink}href"
+XSI_TYPE = "{http://www.w3.org/2001/XMLSchema-instance}type"
+XMD_NS = "{http://www.d-nb.de/standards/xmetadissplus/}"
+DDB_NS = "{http://www.d-nb.de/standards/ddb/}"
+THESIS_NS = "{http://www.ndltd.org/standards/metadata/etdms/1.0/}"
+CC_NS = "{http://www.d-nb.de/standards/cc/}"
+PURE_LICENCES = "/dk/atira/pure/core/document/licenses"   # Pure's licence vocabulary (typeURI)
+# A title that names only the kind of document ("Speciale", "Master's thesis", "Report 2"): the
+# round's proposal merger (run_round.merge_proposals) drops equal normalized titles, so such a
+# title is made unique by construction with the record's OAI identifier.
+GENERIC_TITLE = re.compile(
+    r"(?:(?:the|final|draft|revised|master s?|bachelor s?|doctoral|phd|ph d|semester|"
+    r"\d+(?:st|nd|rd|th)? semester|graduation|student|project) )*"
+    r"(?:thesis|dissertation|report|project|projekt|rapport|hovedrapport|speciale|"
+    r"kandidatspeciale|specialeafhandling|bachelorprojekt|masterprojekt|afgangsprojekt|"
+    r"bachelor|master|masterarbeit|bachelorarbeit|diplomarbeit|abschlussarbeit|appendix|"
+    r"appendiks|bilag|untitled|no title|ohne titel|final)(?: \d{1,4})?")
 
 # Document types harvested by default (dc.type values in any of the repositories' languages).
 TYPES = re.compile(
@@ -351,7 +389,7 @@ def fetch_page(cfg: dict, setspec: str, token: str, from_date: str) -> bytes:
     if token:
         params = {"verb": "ListRecords", "resumptionToken": token}
     else:
-        params = {"verb": "ListRecords", "metadataPrefix": "xoai"}
+        params = {"verb": "ListRecords", "metadataPrefix": adapter_of(cfg).prefix}
         if setspec:
             params["set"] = setspec
         if from_date:
@@ -359,10 +397,12 @@ def fetch_page(cfg: dict, setspec: str, token: str, from_date: str) -> bytes:
     return polite_get(cfg["oai"], params, cfg)
 
 
-def parse_page(body: bytes, *, has_token: bool) -> tuple[list[ET.Element], str]:
+def parse_page(body: bytes, *, has_token: bool,
+               platform: str = "dspace-xoai") -> tuple[list[ET.Element], str]:
     """(metadata elements of non-deleted records, next token or ''). An initial noRecordsMatch is
     an empty finished window; badResumptionToken raises LookupError; anything that is not an
-    OAI-PMH ListRecords answer raises Unexpected."""
+    OAI-PMH ListRecords answer in the platform's metadata format raises Unexpected."""
+    root_tag = ADAPTERS[platform].root
     try:
         root = ET.fromstring(body)
     except ET.ParseError as exc:
@@ -393,10 +433,11 @@ def parse_page(body: bytes, *, has_token: bool) -> tuple[list[ET.Element], str]:
         metadata = record.find(f"{OAI_NS}metadata")
         if metadata is None or not len(metadata):
             raise Unexpected("a non-deleted OAI record carries no metadata")
-        if len(metadata) != 1 or metadata[0].tag != f"{XOAI_NS}metadata":
-            # another format (oai_dc after a repository change) has no bundles and no fields
-            # this adapter reads: it would look like a page without full texts
-            raise Unexpected(f"OAI record metadata is {metadata[0].tag!r}, not xoai")
+        if len(metadata) != 1 or metadata[0].tag != root_tag:
+            # another format (oai_dc after a repository change) has no files and no fields
+            # the adapter reads: it would look like a page without full texts
+            raise Unexpected(f"OAI record metadata is {metadata[0].tag!r}, not "
+                             f"{ADAPTERS[platform].prefix}")
         metadata[0].set("oai-identifier", header.findtext(f"{OAI_NS}identifier") or "")
         out.append(metadata[0])
     token_el = listing.find(f"{OAI_NS}resumptionToken")
@@ -447,6 +488,180 @@ def pdf_bitstreams(xoai: ET.Element) -> list[str]:
     return urls
 
 
+# A file of a record: (URL, fields that belong to that file only, e.g. its licence).
+Files = list[tuple[str, dict[str, list[str]]]]
+
+
+def _text(element: ET.Element | None) -> str:
+    return " ".join("".join(element.itertext()).split()) if element is not None else ""
+
+
+def _add(fields: dict[str, list[str]], path: str, value: str | None) -> None:
+    value = " ".join((value or "").split())
+    if value:
+        fields.setdefault(path, []).append(value)
+
+
+def read_xoai(xoai: ET.Element, today: str) -> tuple[dict[str, list[str]], Files]:
+    return flatten(xoai), [(url, {}) for url in pdf_bitstreams(xoai)]
+
+
+def read_oai_dc(dc: ET.Element, today: str) -> tuple[dict[str, list[str]], Files]:
+    """oai_dc -> {"dc.title": [...], "dc.relation.education": [...]} and the http(s) values of
+    dc:identifier / dc:relation in document order as candidate files (the repository's
+    fulltext_pattern decides which of them is a full text). A `type` attribute (not xsi:type)
+    qualifies the path with its last segment ("http://purl.org/dc/terms/URI" -> "URI")."""
+    fields: dict[str, list[str]] = {}
+    files: Files = []
+    for child in dc:
+        prefix = next((p for ns, p in ((DC_NS, "dc"), (DCTERMS_NS, "dcterms"))
+                       if child.tag.startswith(ns)), None)
+        if prefix is None:
+            continue
+        name = child.tag.rsplit("}", 1)[-1]
+        qualifier = re.sub(r"[^\w-]", "", re.split(r"[/#:]", (child.get("type") or "")
+                                                   .strip().rstrip("/"))[-1])
+        path = f"{prefix}.{name}" + (f".{qualifier}" if qualifier else "")
+        value = _text(child)
+        _add(fields, path, value)
+        if name in ("identifier", "relation") and re.match(r"https?://\S+$", value):
+            files.append((value, {}))
+    return fields, files
+
+
+def read_pure_mods(mods: ET.Element, today: str) -> tuple[dict[str, list[str]], Files]:
+    """A Pure research output in MODS. Fields: dc.title (title: subtitle of the first untyped
+    titleInfo), dc.type (the publicationType genre), pure.organisation (every corporate name),
+    dc.subject (keywords), dc.language.iso, dc.date.issued, dc.identifier.doi / .uri and
+    mods.accessCondition (the record's info:eu-repo access term; any other access condition is
+    mods.accessCondition.other). Files: PDFs with visibility FREE and access `open`, or
+    `embargoed` with exactly one embargo end date that has passed; anything else — a missing
+    or unknown visibility / access value, a future or unreadable embargo — is not a file."""
+    m = MODS_NS
+    fields: dict[str, list[str]] = {}
+    for info in mods.findall(f"{m}titleInfo"):
+        if info.get("type"):
+            continue
+        title, sub = _text(info.find(f"{m}title")), _text(info.find(f"{m}subTitle"))
+        _add(fields, "dc.title", f"{title}: {sub}" if title and sub else title)
+        break
+    for genre in mods.findall(f"{m}genre"):
+        if genre.get("type") == "publicationType":
+            _add(fields, "dc.type", _text(genre))
+    for name in mods.findall(f"{m}name"):
+        if name.get("type") == "corporate":
+            for part in name.findall(f"{m}namePart"):
+                _add(fields, "pure.organisation", _text(part))
+    for topic in mods.findall(f"{m}subject/{m}topic"):
+        _add(fields, "dc.subject", _text(topic))
+    for term in mods.findall(f"{m}language/{m}languageTerm"):
+        _add(fields, "dc.language.iso", _text(term))
+    for issued in mods.findall(f"{m}originInfo/{m}dateIssued"):
+        _add(fields, "dc.date.issued", _text(issued))
+    for ident in mods.findall(f"{m}identifier"):
+        if ident.get("type") in ("doi", "uri"):
+            _add(fields, f"dc.identifier.{ident.get('type')}", _text(ident))
+    for cond in mods.findall(f"{m}accessCondition"):
+        kind = (cond.get("type") or "").strip()
+        if kind.startswith("info:eu-repo/semantics/"):
+            _add(fields, "mods.accessCondition", kind)
+        else:
+            _add(fields, "mods.accessCondition.other", f"{kind} {_text(cond)}".strip() or "?")
+    files: Files = []
+    for desc in mods.findall(f"{m}physicalDescription"):
+        href, notes, licences = "", {}, []
+        for note in desc.findall(f"{m}note"):
+            kind = note.get("type") or ""
+            if kind == "location":
+                href = (note.get(XLINK_HREF) or "").strip()
+            elif kind == "license":
+                vocabulary = note.get("typeURI") == PURE_LICENCES
+                licences.append(_text(note) if vocabulary else f"?{_text(note)}")
+            else:
+                notes.setdefault(kind, []).append(_text(note))
+        if not href or _text(desc.find(f"{m}internetMediaType")) != "application/pdf":
+            continue
+        if notes.get("visibility") != ["FREE"]:
+            continue
+        access, end = notes.get("access"), notes.get("embargo end") or []
+        if access == ["embargoed"] and len(end) == 1 and DATE.fullmatch(end[0]):
+            if end[0] > today:
+                continue
+        elif access != ["open"]:
+            continue
+        files.append((href, {"pure.file.license": licences} if licences else {}))
+    return fields, files
+
+
+def read_xmetadissplus(xmd: ET.Element, today: str) -> tuple[dict[str, list[str]], Files]:
+    """xMetaDissPlus -> fields dc.title, dc.type (the dini:PublType), dc.subject.ddc (DDC
+    subjects) / dc.subject, dc.language, dc.date.issued, dc.rights, dcterms.license,
+    dc.identifier(.doi), ddb.rights / ddb.accessRights (their ddb:kind, e.g. free),
+    thesis.degree.level and thesis.degree.grantor.department; files = the ddb:transfer URLs."""
+    fields: dict[str, list[str]] = {}
+    files: Files = []
+    for child in xmd:
+        tag, xsi = child.tag, (child.get(XSI_TYPE) or "").lower()
+        if tag == f"{DC_NS}title":
+            _add(fields, "dc.title", _text(child))
+        elif tag == f"{DC_NS}type" and xsi.endswith("publtype"):
+            _add(fields, "dc.type", _text(child))
+        elif tag == f"{DC_NS}subject":
+            _add(fields, "dc.subject.ddc" if "ddc" in xsi else "dc.subject", _text(child))
+        elif tag == f"{DC_NS}language":
+            _add(fields, "dc.language", _text(child))
+        elif tag == f"{DCTERMS_NS}issued":
+            _add(fields, "dc.date.issued", _text(child))
+        elif tag == f"{DC_NS}rights":
+            _add(fields, "dc.rights", _text(child))
+        elif tag == f"{DCTERMS_NS}license":
+            _add(fields, "dcterms.license", _text(child))
+        elif tag == f"{DC_NS}identifier":
+            _add(fields, "dc.identifier.doi" if "doi" in xsi else "dc.identifier", _text(child))
+        elif tag == f"{DDB_NS}rights":
+            _add(fields, "ddb.rights", child.get(f"{DDB_NS}kind") or "?")
+        elif tag == f"{DCTERMS_NS}accessRights":
+            _add(fields, "ddb.accessRights", child.get(f"{DDB_NS}kind") or _text(child) or "?")
+        elif tag == f"{THESIS_NS}degree":
+            _add(fields, "thesis.degree.level", _text(child.find(f"{THESIS_NS}level")))
+            for dept in child.iter(f"{CC_NS}department"):
+                _add(fields, "thesis.degree.grantor.department",
+                     _text(dept.find(f"{CC_NS}name")))
+        elif tag == f"{DDB_NS}transfer":
+            if url := _text(child):
+                files.append((url, {}))
+    return fields, files
+
+
+def pure_licence(fields: dict[str, list[str]]) -> tuple[str, str | None, list[str]]:
+    """(tag, licence URL, statements) from the chosen file's Pure licence key."""
+    keys = fields.get("pure.file.license") or []
+    statements = [f"Pure file licence key {k}" for k in keys]
+    if len(keys) != 1:
+        return "unverified", None, statements
+    key = keys[0].strip().lower()
+    if match := re.fullmatch(r"cc_by((?:_nc)?(?:_nd|_sa)?)(?:_(\d)_(\d))?", key):
+        kind = "by" + match.group(1).replace("_", "-")
+        url = (f"https://creativecommons.org/licenses/{kind}/{match.group(2)}.{match.group(3)}/"
+               if match.group(2) else None)
+        return f"cc-{kind}", url, statements
+    if key in ("cc0", "cc0_1_0"):
+        return "cc0", "https://creativecommons.org/publicdomain/zero/1.0/", statements
+    return "unverified", None, statements
+
+
+class Adapter(NamedTuple):
+    prefix: str                     # OAI metadataPrefix
+    root: str                       # the metadata element every record must carry
+    read: Callable[[ET.Element, str], tuple[dict[str, list[str]], Files]]
+    licence: Callable[[dict[str, list[str]]], tuple[str, str | None, list[str]]]
+    https_upgrade: bool = False     # an http file URL on a reviewed host is asked over https
+
+
+def adapter_of(cfg: dict) -> "Adapter":
+    return ADAPTERS[cfg.get("platform") or "dspace-xoai"]
+
+
 def _embargo_over(value: str, today: str) -> bool:
     """True when an embargo value is empty/'none' or names a date that has passed. A bare year
     counts as its last day; anything unreadable is treated as still embargoed."""
@@ -494,8 +709,12 @@ _CC_SHORT = re.compile(r"(?:creative commons )?cc[ -]?(by(?:-(?:nc|nd|sa)){0,2}|
                        r"(?: \d\.\d" + _JURISDICTION + r")?(?: licen[cs]e)?")
 _CC_LONG = re.compile(
     r"(?:creative commons )?(?:attribution|namensnennung)"
-    r"((?:[ -]+(?:non[ -]?commercial|no[ -]?deriv(?:ative)?s?(?: works)?|share[ -]?alike))*)"
+    r"((?:(?:[ -]+|, ?)(?:non[ -]?commercial|no[ -]?deriv(?:ative)?s?(?: works)?|share[ -]?alike|"
+    r"nicht[ -]?kommerziell|keine bearbeitung(?:en)?|weitergabe unter gleichen bedingungen))*)"
     r"(?: \d\.\d" + _JURISDICTION + r")?(?: licen[cs]e)?")
+# OPUS 4 names a licence twice: "Creative Commons 4.0 - Namensnennung, nicht kommerziell
+# (CC BY-NC 4.0)"; both names and both versions must agree.
+_CC_TWICE = re.compile(r"creative commons (\d\.\d) - ([^()]+) \((cc [^()]+)\)")
 _CC_ZERO = re.compile(r"(?:creative commons )?(?:cc0|cc zero|public domain dedication)"
                       r"(?: 1\.0(?: universal)?)?")
 _PD_MARK = re.compile(r"(?:creative commons )?public domain(?: mark)?(?: 1\.0)?")
@@ -508,17 +727,25 @@ def licence_name_kind(text: str) -> str | None:
     a negation, "All rights reserved", a sentence that mentions a licence — is None."""
     text = " ".join(text.replace("\u2013", "-").replace("\u2010", "-").lower().split())
     text = text.rstrip(".")
+    if match := _CC_TWICE.fullmatch(text):
+        version, long_name, short_name = match.groups()
+        kind = licence_name_kind(long_name)
+        stated = re.search(r"\d\.\d", short_name)
+        if (kind is not None and kind == licence_name_kind(short_name)
+                and stated is not None and stated.group(0) == version):
+            return kind
+        return None
     if match := _CC_SHORT.fullmatch(text):
         kind = match.group(1)
         return "zero" if kind in ("0", "zero") else kind
     if match := _CC_LONG.fullmatch(text):
         parts = match.group(1)
         kind = "by"
-        if re.search(r"non[ -]?commercial", parts):
+        if re.search(r"non[ -]?commercial|nicht[ -]?kommerziell", parts):
             kind += "-nc"
-        if re.search(r"no[ -]?deriv", parts):
+        if re.search(r"no[ -]?deriv|keine bearbeitung", parts):
             kind += "-nd"
-        if re.search(r"share[ -]?alike", parts):
+        if re.search(r"share[ -]?alike|weitergabe unter gleichen", parts):
             kind += "-sa"
         return kind if "-nd-sa" not in kind else None
     if _CC_ZERO.fullmatch(text):
@@ -566,6 +793,16 @@ def licence_of(fields: dict[str, list[str]]) -> tuple[str, str | None, list[str]
     if any(licence_name_kind(t) != kind for t in texts):
         return "unverified", None, statements
     return tag, urls[0], statements
+
+
+ADAPTERS: dict[str, Adapter] = {
+    "dspace-xoai": Adapter("xoai", f"{XOAI_NS}metadata", read_xoai, licence_of),
+    "oai-dc": Adapter("oai_dc", f"{OAI_DC_NS}dc", read_oai_dc, licence_of),
+    "pure-mods": Adapter("mods", f"{MODS_NS}mods", read_pure_mods, pure_licence),
+    "xmetadissplus": Adapter("xMetaDissPlus", f"{XMD_NS}xMetaDiss", read_xmetadissplus,
+                             licence_of, https_upgrade=True),
+}
+assert set(ADAPTERS) == set(PLATFORMS), "repo_config.PLATFORMS is out of step"
 
 
 def relevant(title: str, subjects: list[str], classes: list[str], cfg: dict,
@@ -620,9 +857,28 @@ def _first(fields: dict[str, list[str]], *paths: str) -> str:
     return ""
 
 
-def candidate(xoai: ET.Element, key: str, cfg: dict, today: str,
+def full_text(files: Files, cfg: dict, https_upgrade: bool = False
+              ) -> tuple[str, dict[str, list[str]]] | None:
+    """The first file that is a full text of this repository: its URL matches the reviewed
+    `fulltext_pattern` on one of the repository's hosts and its name is not a `skip_files`
+    name (an assessment form or a cover page is never taken for the work)."""
+    pattern = re.compile(cfg["fulltext_pattern"])
+    skip = re.compile(cfg["skip_files"], re.I) if cfg.get("skip_files") else None
+    for url, extra in files:
+        if https_upgrade and url.startswith("http://") and urlsplit(url).netloc in cfg["hosts"]:
+            url = "https://" + url[len("http://"):]
+        if not pattern.fullmatch(url) or urlsplit(url).netloc not in cfg["hosts"]:
+            continue
+        if skip and skip.search(unquote(urlsplit(url).path.rsplit("/", 1)[-1])):
+            continue
+        return url, extra
+    return None
+
+
+def candidate(element: ET.Element, key: str, cfg: dict, today: str,
               setspec: str = "") -> dict | None:
-    fields = flatten(xoai)
+    adapter = adapter_of(cfg)
+    fields, files = adapter.read(element, today)
     title = " ".join(html.unescape(_first(fields, "dc.title", "dcterms.title")).split())
     if not title:
         return None
@@ -636,10 +892,12 @@ def candidate(xoai: ET.Element, key: str, cfg: dict, today: str,
         wanted = re.compile(cfg["types"], re.I) if cfg.get("types") else TYPES
         if not any(wanted.search(t) for t in types):
             return None
-    pattern = re.compile(cfg["fulltext_pattern"])
-    url = next((u for u in pdf_bitstreams(xoai) if pattern.fullmatch(u)
-                and urlsplit(u).netloc in cfg["hosts"]), None)
-    if url is None or restricted(fields, cfg, today):
+    chosen = full_text(files, cfg, adapter.https_upgrade)
+    if chosen is None:
+        return None
+    url, file_fields = chosen
+    fields = {**fields, **file_fields}
+    if restricted(fields, cfg, today):
         return None
     subjects = [v for path, values in fields.items() if SUBJECT_PATH.match(path)
                 and not DDC_FIELD.search(path) for v in values]
@@ -651,7 +909,9 @@ def candidate(xoai: ET.Element, key: str, cfg: dict, today: str,
         language = ""
     if not relevant(title, subjects, classes, cfg, fields, setspec, language):
         return None
-    tag, licence_url, statements = licence_of(fields)
+    tag, licence_url, statements = adapter.licence(fields)
+    if GENERIC_TITLE.fullmatch(registry.norm(title)):
+        title = f"{title[:100]} [{element.get('oai-identifier') or url}]"
     entry = {
         "id": f"{PREFIX}{key[:14]}-{registry.slug(title)[:40]}", "title": title[:150],
         "url": url, "source": cfg["source"], "license": tag,
@@ -666,11 +926,12 @@ def candidate(xoai: ET.Element, key: str, cfg: dict, today: str,
         entry["license_url"] = licence_url
     kind = " ".join(types).lower()
     entry["document_type"] = (
-        "journal-article" if re.search(r"article", kind) else
+        "journal-article" if re.search(r"article|artikel", kind) else
         "thesis" if re.search(
             r"thes|dissert|doctoral|master|bachelor|licentiat|habilit|tesi|tese|tesis|mémoire|"
             r"thèse|arbeit|examensarbete|opinnäyte|diplomity|väitös|gradu|trabajo|treball|"
-            r"trabalho|tcc|student|doctor|m\.?phil|ph\.?d", kind) or cfg.get("types") == "*" else
+            r"trabalho|tcc|student|doctor|m\.?phil|ph\.?d|afhandling|disputats|speciale",
+            kind) or cfg.get("types") == "*" else
         "report" if re.search(r"report|bericht|rapport|raportti|working", kind) else "book")
     if language:
         entry["language"] = language
@@ -681,7 +942,12 @@ def candidate(xoai: ET.Element, key: str, cfg: dict, today: str,
                    if re.match(r"https?://hdl\.handle\.net/\S+$", v)), "")
     if handle:
         entry["persistent_id"] = "hdl:" + handle.split("hdl.handle.net/", 1)[1]
-    for doi in [*(fields.get("dc.identifier.doi") or []), *(fields.get("dc.relation.doi") or [])]:
+    dois = [*(fields.get("dc.identifier.doi") or []), *(fields.get("dc.relation.doi") or [])]
+    if adapter is not ADAPTERS["dspace-xoai"]:
+        # plain dc:identifier values in DOI form ("https://doi.org/10.26204/KLUEDO/1234")
+        dois += [v for path, values in fields.items() if path.startswith("dc.identifier")
+                 for v in values if re.match(r"(?:https?://(?:dx\.)?doi\.org/|doi:)10\.", v, re.I)]
+    for doi in dois:
         if (pid := dedup.normalize_pid(doi)) and pid.startswith("doi:"):
             entry["persistent_id"] = pid
             break
@@ -745,7 +1011,7 @@ def walk(key: str, cfg: dict, state: dict, pages: int, limit: int, keys,
         try:
             records, token = parse_page(
                 fetch_page(cfg, sets[state["i"]], state.get("t", ""), state.get("f", "")),
-                has_token=bool(state.get("t")))
+                has_token=bool(state.get("t")), platform=cfg["platform"])
         except LookupError:
             if restarted or not state.get("t"):
                 raise
