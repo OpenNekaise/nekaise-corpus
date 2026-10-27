@@ -157,6 +157,12 @@ def load_config(path: Path | None = None) -> dict[str, dict]:
     return data["repositories"]
 
 
+def source_hosts(repos: dict[str, dict]) -> dict[str, frozenset[str]]:
+    """source -> the reviewed full-text hosts of that repository (enabled or not): the loader
+    keeps a repository row's every hop and robots.txt redirect on them."""
+    return {cfg["source"]: frozenset(cfg["hosts"]) for cfg in repos.values()}
+
+
 def loader_hosts(repos: dict[str, dict]) -> dict[str, dict]:
     """host -> {"delay": seconds, "cap": downloads per run} for EVERY configured repository,
     enabled or not: rows registered before a repository was disabled are still fetched, and

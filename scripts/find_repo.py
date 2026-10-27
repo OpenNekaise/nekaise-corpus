@@ -62,8 +62,9 @@ value that is a URL or names a licence must be a canonical open Creative Commons
 tag (scripts/licenses.py); a single canonical NC / ND licence URL keeps its exact tag; anything
 else — rightsstatements.org "In Copyright", free text, no statement — is `unverified` with the
 statement as evidence. A Pure file's licence is a key of Pure's controlled licence vocabulary
-(typeURI /dk/atira/pure/core/document/licenses): exactly one cc_by[_nc][_nd|_sa][_<major>_<minor>]
-or cc0 key gives that tag, any other key, a second key or another vocabulary is unverified.
+(typeURI /dk/atira/pure/core/document/licenses): exactly one key of the enumerated
+PURE_LICENCE_KEYS (cc_by ... cc_by_nc_nd, with or without a 2.0 / 2.5 / 3.0 / 4.0 version, cc0)
+gives that tag; any other key, a second key or another vocabulary is unverified.
 
 Rotation (dynamic `--cursor`, a JSON object): {"r": <round-robin position>, "s": {<key>: state}}.
 A repository's state is {"i": set index, "t": resumption token, "f": OAI from-date of this pass,
@@ -124,6 +125,18 @@ DDB_NS = "{http://www.d-nb.de/standards/ddb/}"
 THESIS_NS = "{http://www.ndltd.org/standards/metadata/etdms/1.0/}"
 CC_NS = "{http://www.d-nb.de/standards/cc/}"
 PURE_LICENCES = "/dk/atira/pure/core/document/licenses"   # Pure's licence vocabulary (typeURI)
+# The Pure licence keys that name one Creative Commons licence, enumerated (a key of another
+# shape or an unknown version, e.g. cc_by_9_9, is unverified): the six CC kinds without a
+# version and in the versions 2.0 / 2.5 / 3.0 / 4.0 (each exists), and CC0.
+_CC_KINDS = ("by", "by-sa", "by-nd", "by-nc", "by-nc-sa", "by-nc-nd")
+PURE_LICENCE_KEYS: dict[str, tuple[str, str | None]] = {
+    **{"cc_" + kind.replace("-", "_"): (f"cc-{kind}", None) for kind in _CC_KINDS},
+    **{f"cc_{kind.replace('-', '_')}_{version.replace('.', '_')}":
+       (f"cc-{kind}", f"https://creativecommons.org/licenses/{kind}/{version}/")
+       for kind in _CC_KINDS for version in ("2.0", "2.5", "3.0", "4.0")},
+    "cc0": ("cc0", "https://creativecommons.org/publicdomain/zero/1.0/"),
+    "cc0_1_0": ("cc0", "https://creativecommons.org/publicdomain/zero/1.0/"),
+}
 # A title that names only the kind of document ("Speciale", "Master's thesis", "Report 2"): the
 # round's proposal merger (run_round.merge_proposals) drops equal normalized titles, so such a
 # title is made unique by construction with the record's OAI identifier.
@@ -438,8 +451,22 @@ def parse_page(body: bytes, *, has_token: bool,
             # the adapter reads: it would look like a page without full texts
             raise Unexpected(f"OAI record metadata is {metadata[0].tag!r}, not "
                              f"{ADAPTERS[platform].prefix}")
+        if not len(metadata[0]):
+            # an empty <oai_dc:dc/> or <mods:mods/> is no record: never a page without texts
+            raise Unexpected(f"a non-deleted OAI record carries empty "
+                             f"{ADAPTERS[platform].prefix} metadata")
         metadata[0].set("oai-identifier", header.findtext(f"{OAI_NS}identifier") or "")
         out.append(metadata[0])
+    if out:
+        # a page none of whose records the adapter can read a title from is malformed (a
+        # changed format or a broken export), not a page of off-topic records: it must never
+        # move the walk on. A single untitled record among readable ones is just skipped.
+        today = datetime.now(timezone.utc).date().isoformat()
+        read = ADAPTERS[platform].read
+        if not any(_first(read(element, today)[0], "dc.title", "dcterms.title").strip()
+                   for element in out):
+            raise Unexpected(f"no record of the page has a readable "
+                             f"{ADAPTERS[platform].prefix} title")
     token_el = listing.find(f"{OAI_NS}resumptionToken")
     token = (token_el.text or "").strip() if token_el is not None else ""
     return out, token
@@ -533,10 +560,12 @@ def read_pure_mods(mods: ET.Element, today: str) -> tuple[dict[str, list[str]], 
     """A Pure research output in MODS. Fields: dc.title (title: subtitle of the first untyped
     titleInfo), dc.type (the publicationType genre), pure.organisation (every corporate name),
     dc.subject (keywords), dc.language.iso, dc.date.issued, dc.identifier.doi / .uri and
-    mods.accessCondition (the record's info:eu-repo access term; any other access condition is
-    mods.accessCondition.other). Files: PDFs with visibility FREE and access `open`, or
-    `embargoed` with exactly one embargo end date that has passed; anything else — a missing
-    or unknown visibility / access value, a future or unreadable embargo — is not a file."""
+    mods.accessCondition (the type of every accessCondition, plus any text inside one, so that
+    only a lone info:eu-repo openAccess term passes an open_access rule). Files: PDFs with
+    visibility FREE and access `open` or `embargoed`; a stated embargo end (also next to
+    `open`) must be exactly one calendar date that has passed, and `embargoed` needs one;
+    anything else — a missing or unknown visibility / access value, a future, unreadable or
+    second embargo end — is not a file."""
     m = MODS_NS
     fields: dict[str, list[str]] = {}
     for info in mods.findall(f"{m}titleInfo"):
@@ -562,11 +591,10 @@ def read_pure_mods(mods: ET.Element, today: str) -> tuple[dict[str, list[str]], 
         if ident.get("type") in ("doi", "uri"):
             _add(fields, f"dc.identifier.{ident.get('type')}", _text(ident))
     for cond in mods.findall(f"{m}accessCondition"):
-        kind = (cond.get("type") or "").strip()
-        if kind.startswith("info:eu-repo/semantics/"):
-            _add(fields, "mods.accessCondition", kind)
-        else:
-            _add(fields, "mods.accessCondition.other", f"{kind} {_text(cond)}".strip() or "?")
+        # every access statement must be exactly the open term (the repository's open_access
+        # rule): text inside it or another kind of condition is not understood and closes it
+        _add(fields, "mods.accessCondition", (cond.get("type") or "").strip() or "?")
+        _add(fields, "mods.accessCondition", _text(cond))
     files: Files = []
     for desc in mods.findall(f"{m}physicalDescription"):
         href, notes, licences = "", {}, []
@@ -584,11 +612,13 @@ def read_pure_mods(mods: ET.Element, today: str) -> tuple[dict[str, list[str]], 
         if notes.get("visibility") != ["FREE"]:
             continue
         access, end = notes.get("access"), notes.get("embargo end") or []
-        if access == ["embargoed"]:
+        if end:     # any stated end, also next to access `open`, must have passed
             ends = _iso_date(end[0]) if len(end) == 1 else None
             if ends is None or ends > date.fromisoformat(today):
-                continue        # no, an unreadable or a future end date: still embargoed
-        elif access != ["open"]:
+                continue        # an unreadable, second or future end date: still embargoed
+        if access == ["embargoed"] and not end:
+            continue            # embargoed without an end date
+        if access not in (["open"], ["embargoed"]):
             continue
         files.append((href, {"pure.file.license": licences} if licences else {}))
     return fields, files
@@ -641,15 +671,8 @@ def pure_licence(fields: dict[str, list[str]]) -> tuple[str, str | None, list[st
     statements = [f"Pure file licence key {k}" for k in keys]
     if len(keys) != 1:
         return "unverified", None, statements
-    key = keys[0].strip().lower()
-    if match := re.fullmatch(r"cc_by((?:_nc)?(?:_nd|_sa)?)(?:_(\d)_(\d))?", key):
-        kind = "by" + match.group(1).replace("_", "-")
-        url = (f"https://creativecommons.org/licenses/{kind}/{match.group(2)}.{match.group(3)}/"
-               if match.group(2) else None)
-        return f"cc-{kind}", url, statements
-    if key in ("cc0", "cc0_1_0"):
-        return "cc0", "https://creativecommons.org/publicdomain/zero/1.0/", statements
-    return "unverified", None, statements
+    tag, url = PURE_LICENCE_KEYS.get(keys[0].strip().lower(), ("unverified", None))
+    return tag, url, statements
 
 
 class Adapter(NamedTuple):

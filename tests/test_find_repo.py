@@ -894,6 +894,24 @@ ACCESS = ('<mods:note type="access" typeURI="/dk/atira/pure/core/openaccesspermi
     (LICENCE, LICENCE.replace("/licenses", "/otherlicences"), "unverified"),
     (LICENCE, LICENCE + LICENCE.replace(">cc_by<", ">cc_by_nc<"), "unverified"),
     (LICENCE, "", "unverified"),
+    # Codex round 2: access `open` with an embargo end must still respect the date
+    (ACCESS, ACCESS + '<mods:note type="embargo end" xlink:type="simple">2999-01-01'
+     '</mods:note>', None),
+    (ACCESS, ACCESS + '<mods:note type="embargo end" xlink:type="simple">2020-02-30'
+     '</mods:note>', None),
+    (ACCESS, ACCESS + '<mods:note type="embargo end" xlink:type="simple">2020-01-01'
+     '</mods:note>', "cc-by"),
+    # ... text inside the access term, or another access condition, closes the record
+    (f'type="{OPEN}"></mods:accessCondition>',
+     f'type="{OPEN}">Restricted to campus users</mods:accessCondition>', None),
+    (f'type="{OPEN}"></mods:accessCondition>',
+     f'type="{OPEN}"></mods:accessCondition><mods:accessCondition '
+     'type="use and reproduction">Only for registered users</mods:accessCondition>', None),
+    # ... and a licence key is classified only from the enumerated vocabulary
+    (LICENCE, LICENCE.replace(">cc_by<", ">cc_by_9_9<"), "unverified"),
+    (LICENCE, LICENCE.replace(">cc_by<", ">cc_by_nc_nd_4_0<"), "cc-by-nc-nd"),
+    (LICENCE, LICENCE.replace(">cc_by<", ">cc_by_2_5<"), "cc-by 2.5"),
+    (LICENCE, LICENCE.replace(">cc_by<", ">cc_by_sa_nc<"), "unverified"),
 ])
 def test_pure_files_and_licences_fail_closed(old, new, expect):
     entry = _heat_record(old, new)
@@ -1061,3 +1079,113 @@ def test_walk_asks_the_platforms_format_and_ends_in_a_watch_state(monkeypatch, t
                                    repos={"kl": OAI_DC})
     _run(monkeypatch, "--cursor", json.dumps({"r": 0, "s": {"kl": state}}), "--append")
     assert appended == [] and _next(files)["s"]["kl"] == state
+
+
+def _emptied(text: str, keep_title: bool = False) -> str:
+    """The recorded KLUEDO page, last page (no token), with every record's metadata emptied
+    (or reduced to its dc:date when keep_title is False but the root keeps a child)."""
+    import re as re_
+    last = text.replace('<resumptionToken cursor="0" completeListSize="9">tok/2'
+                        "</resumptionToken>", "")
+    return re_.sub(r"(<oai_dc:dc [^>]*>).*?(</oai_dc:dc>)",
+                   (lambda m: m.group(1) + "<dc:date>2020</dc:date>" + m.group(2))
+                   if not keep_title else (lambda m: m.group(0)), last, flags=re_.S)
+
+
+def test_an_empty_or_untitled_payload_page_never_completes_the_history(monkeypatch, tmp_path):
+    """Codex round 2: a last page whose records carry empty metadata roots (or roots with no
+    readable title) must raise, keep the cursor and never turn into a watch state."""
+    text = fixture("oai_dc_kluedo_page.xml")
+    import re as re_
+    empty = re_.sub(r"(<oai_dc:dc [^>]*?)>.*?</oai_dc:dc>", r"\1/>", _emptied(text),
+                    flags=re_.S)
+    assert empty.count("/>") >= 3 and "<dc:title" not in empty
+    with pytest.raises(find_repo.Unexpected, match="empty oai_dc metadata"):
+        find_repo.parse_page(empty.encode(), has_token=True, platform="oai-dc")
+    untitled = _emptied(text)
+    assert "<dc:title" not in untitled and "<dc:date>2020</dc:date>" in untitled
+    with pytest.raises(find_repo.Unexpected, match="readable oai_dc title"):
+        find_repo.parse_page(untitled.encode(), has_token=True, platform="oai-dc")
+    # one untitled record among readable ones is skipped, the page is fine
+    one_untitled = text.replace(">Einsatz der dynamischen Simulation als Bemessungshilfe für "
+                                "Kläranlagen in Weinbaugebieten<", "><")
+    records, _ = find_repo.parse_page(one_untitled.encode(), has_token=False,
+                                      platform="oai-dc")
+    assert len(records) == 3
+    for body in (empty, untitled):
+        state = {"i": 0, "t": "tok/2", "d": "2026-10-20"}
+        _, _, appended, files = _setup(monkeypatch, tmp_path, [body.encode()],
+                                       repos={"kl": OAI_DC})
+        _run(monkeypatch, "--cursor", json.dumps({"r": 0, "s": {"kl": state}}), "--append")
+        assert appended == [] and _next(files)["s"]["kl"] == state     # no watch state
+
+
+def _rep_hops(monkeypatch, hosts=frozenset({"repo.example.edu"})):
+    import robots_policy
+    monkeypatch.setattr(build_corpus, "HOST_POLICY", {})
+    asked = []
+    monkeypatch.setattr(robots_policy, "decision", lambda url: (asked.append(url), (True, None))[1])
+    monkeypatch.setattr(robots_policy, "ai_training_refused", lambda url: None)
+    start = "https://repo.example.edu/files/1/thesis.pdf"
+    hops = build_corpus.Hops(start, False, robots_checked=True, sid="rep-example-x")
+    hops.hosts = hosts
+    return hops, start, asked
+
+
+def test_rep_rows_never_leave_their_repositorys_reviewed_hosts(monkeypatch):
+    """Codex round 2: every hop of a repository row and every robots.txt redirect stays on
+    the hosts of THAT repository; elsewhere is refused before any request (also robots.txt)."""
+    hops, start, asked = _rep_hops(monkeypatch)
+    build_corpus.check_hop(start, hops)
+    build_corpus.check_hop("http://repo.example.edu/deliver/1/thesis.pdf", hops)  # same host
+    assert len(asked) == 2
+    for away in ("https://cdn.elsewhere.org/thesis.pdf", "https://other.example.edu/x.pdf"):
+        with pytest.raises(build_corpus.RouteRefused, match="not a reviewed host"):
+            build_corpus.check_hop(away, hops)
+    assert len(asked) == 2 and hops.chain == [start, "http://repo.example.edu/deliver/1/"
+                                                     "thesis.pdf"]
+    # robots.txt redirects of a repository row: only its own hosts
+    monkeypatch.setattr(build_corpus._hops, "value", hops, raising=False)
+    assert build_corpus._robots_hop_allowed("https://repo.example.edu/robots.txt")
+    assert not build_corpus._robots_hop_allowed("https://cdn.elsewhere.org/robots.txt")
+    # other robots-checked rows (OJS) keep their rule: any host
+    ojs = build_corpus.Hops(start, False, robots_checked=True, sid="ojs-j-x")
+    monkeypatch.setattr(build_corpus._hops, "value", ojs, raising=False)
+    assert ojs.hosts is None and build_corpus._robots_hop_allowed("https://cdn.elsewhere.org/r")
+
+
+def test_download_one_confines_a_rep_row_to_its_sources_hosts(monkeypatch):
+    url = "https://repo.example.edu/files/1/thesis.pdf"
+    monkeypatch.setattr(build_corpus, "REPOSITORY_HOSTS", {"repo.example.edu", "b.example.edu"})
+    monkeypatch.setattr(build_corpus, "REPOSITORY_SOURCE_HOSTS",
+                        {"repo_example": frozenset({"repo.example.edu"}),
+                         "repo_b": frozenset({"b.example.edu"})})
+    monkeypatch.setattr(build_corpus, "REPOSITORY_CONFIG_ERROR", "")
+    # the start URL on another configured repository's host: deferred, never requested
+    assert "repository of source repo_b" in build_corpus.repository_deferral(
+        "rep-b-x", url, "repo_b")
+    assert build_corpus.repository_deferral("rep-example-x", url, "repo_example") is None
+    assert "repository of source repo_gone" in build_corpus.repository_deferral(
+        "rep-gone-x", url, "repo_gone")
+    seen = []
+
+    def stop(hop, *args, **kwargs):
+        seen.append(build_corpus._current_hops().hosts)
+        raise build_corpus.RouteRefused(hop, "test stop")
+
+    monkeypatch.setattr(build_corpus, "_get_hops", stop)
+    rec = build_corpus.download_one({"id": "rep-example-x", "url": url,
+                                     "source": "repo_example", "license": "unverified",
+                                     "topic": "materials", "format": "pdf", "title": "x"})
+    assert seen == [frozenset({"repo.example.edu"})] and "test stop" in rec["error"]
+    rec = build_corpus.download_one({"id": "rep-b-x", "url": url, "source": "repo_b",
+                                     "license": "unverified", "topic": "materials",
+                                     "format": "pdf", "title": "x"})
+    assert "_deferred" in rec and len(seen) == 1
+
+
+def test_every_live_repository_source_has_its_reviewed_hosts():
+    live = find_repo.load_config()
+    assert not build_corpus.REPOSITORY_CONFIG_ERROR
+    assert build_corpus.REPOSITORY_SOURCE_HOSTS == {
+        cfg["source"]: frozenset(cfg["hosts"]) for cfg in live.values()}

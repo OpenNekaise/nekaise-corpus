@@ -531,6 +531,9 @@ class Hops:
         # generic robots-checked rows (ROBOTS_CHECKED_PREFIXES): robots.txt on every hop of any
         # host, honest UA, no fallback client; none of the programme's allowlist or budgets
         self.robots_checked = robots_checked and not robots
+        # rep- rows: the repository's reviewed hosts (registry/repositories.json); every hop
+        # and every robots.txt redirect must stay on them (None: no such confinement)
+        self.hosts: frozenset[str] | None = None
         self.sid = sid
         self.started = time.monotonic()
         self.chain: list[str] = []
@@ -572,6 +575,11 @@ def check_hop(url: str, hops: "Hops | None" = None) -> None:
     hops = hops if hops is not None else _current_hops()
     if rule := host_policy.suspended(url, HOST_POLICY):
         raise HostSuspended(url, rule)
+    if hops is not None and hops.hosts is not None \
+            and host_policy.canonical_host(url) not in hops.hosts:
+        # a repository row never leaves its reviewed hosts, not even for robots.txt
+        raise RouteRefused(url, f"{host_policy.canonical_host(url)} is not a reviewed host of "
+                                "this repository (registry/repositories.json)")
     if hops is not None and hops.robots_checked:
         import robots_policy
         url = requests.Request("GET", url).prepare().url  # dot segments, escapes: as sent
@@ -765,11 +773,16 @@ def apply_repository_hosts(hosts: dict[str, dict]) -> None:
 # protections: with no usable configuration, or on any other host, it is DEFERRED (no request,
 # no manifest change), never fetched with the default UA, concurrency and fallback clients.
 REPOSITORY_HOSTS: set[str] = set()
+# source (repo_<name>) -> that repository's reviewed hosts: a rep- row's download URL, every
+# redirect hop and every robots.txt redirect stay on them (download_one -> Hops.hosts)
+REPOSITORY_SOURCE_HOSTS: dict[str, frozenset[str]] = {}
 REPOSITORY_CONFIG_ERROR = ""
 REPOSITORY_PREFIX = "rep-"
 try:  # repository hosts declare their politeness once, in registry/repositories.json
     import repo_config
-    apply_repository_hosts(repo_config.loader_hosts(repo_config.load_config()))
+    _repositories = repo_config.load_config()
+    apply_repository_hosts(repo_config.loader_hosts(_repositories))
+    REPOSITORY_SOURCE_HOSTS.update(repo_config.source_hosts(_repositories))
 except Exception as exc:
     REPOSITORY_CONFIG_ERROR = f"{type(exc).__name__}: {exc}"[:200]
     if not isinstance(exc, FileNotFoundError):  # absent: a checkout without the find_repo vein
@@ -777,8 +790,9 @@ except Exception as exc:
               file=sys.stderr)
 
 
-def repository_deferral(sid: str, url: str) -> str | None:
-    """Why a `rep-` row must not be requested now, or None."""
+def repository_deferral(sid: str, url: str, source: str | None = None) -> str | None:
+    """Why a `rep-` row must not be requested now, or None. With its source, the URL must be on
+    THAT repository's reviewed hosts."""
     if not sid.startswith(REPOSITORY_PREFIX):
         return None
     if REPOSITORY_CONFIG_ERROR:
@@ -786,6 +800,9 @@ def repository_deferral(sid: str, url: str) -> str | None:
     host = host_policy.canonical_host(url)
     if host not in REPOSITORY_HOSTS:
         return f"{host} is not a host of a configured repository (registry/repositories.json)"
+    if source is not None and host not in REPOSITORY_SOURCE_HOSTS.get(source, frozenset()):
+        return (f"{host} is not a reviewed host of the repository of source {source} "
+                "(registry/repositories.json)")
     return None
 
 
@@ -880,9 +897,12 @@ def _robots_pace(url: str):
 
 def _robots_hop_allowed(url: str) -> bool:
     """Whether a robots.txt request (or a redirect of one) may go to this host: a reviewed
-    programme host, or any host while the current download is a generic robots-checked row
-    (suspended hosts are refused by robots_policy itself)."""
+    programme host, or any host while the current download is a generic robots-checked row —
+    for a repository row only that repository's reviewed hosts (suspended hosts are refused by
+    robots_policy itself)."""
     hops = _current_hops()
+    if hops is not None and hops.hosts is not None:
+        return host_policy.canonical_host(url) in hops.hosts
     return compliance_common.reviewed_host(url) or (hops is not None and hops.robots_checked)
 
 
@@ -1246,7 +1266,7 @@ def download_one(src: dict) -> dict:
     url = src["url"]
     host = host_policy.canonical_host(url)
     programme = is_programme_row(sid)
-    if why := repository_deferral(sid, url):
+    if why := repository_deferral(sid, url, source):
         rec["_deferred"] = why
         return rec
     if programme and not PROGRAMME.admit(sid):
@@ -1256,6 +1276,8 @@ def download_one(src: dict) -> dict:
                 robots=programme, robots_checked=is_robots_checked_row(sid),
                 max_bytes=(ESEF_MAX_BYTES if sid.startswith("esf-") else PROGRAMME_MAX_BYTES)
                 if programme else None, sid=sid)
+    if sid.startswith(REPOSITORY_PREFIX):
+        hops.hosts = REPOSITORY_SOURCE_HOSTS.get(source, frozenset())
     _hops.value = hops
     try:
         if "ec.europa.eu/research/participants/documents/downloadPublic" in url:
