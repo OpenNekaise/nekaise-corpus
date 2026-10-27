@@ -172032,3 +172032,73 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.energy.2003.09.004 openalex:W2096036098
     resolution: 'legacy: openalex location'
+  - id: arx-detecting-building-changes-with-off-nadir-aeri
+    title: Detecting Building Changes with Off-Nadir Aerial Images
+    url: https://arxiv.org/pdf/2301.10922v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2301.10922
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2301.10922 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-rethinking-lightweight-convolutional-neural-ne
+    title: Rethinking Lightweight Convolutional Neural Networks for Efficient and High-quality
+      Pavement Crack Detection
+    url: https://arxiv.org/pdf/2109.05707v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-09-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2109.05707
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2109.05707 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+  - id: arx-a-bayesian-generative-adversarial-network-gan-
+    title: A Bayesian Generative Adversarial Network (GAN) to Generate Synthetic Time-Series
+      Data, Application in Combined Sewer Flow Prediction
+    url: https://arxiv.org/pdf/2301.13733v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-01-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2301.13733
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2301.13733 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.4995/wdsa-ccwi2022.2022.14699
+  - id: arx-seismic-fragility-analysis-using-stochastic-po
+    title: Seismic fragility analysis using stochastic polynomial chaos expansions
+    url: https://arxiv.org/pdf/2208.07747v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-08-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2208.07747
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2208.07747 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1016/j.probengmech.2023.103413
