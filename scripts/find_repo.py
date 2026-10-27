@@ -296,6 +296,9 @@ ACCESS_TERM = re.compile(r"(?:info:eu-repo/semantics/)?\b(open|closed|embargoed|
 # c_14cb metadata only.
 COAR_ACCESS = re.compile(r"https?://purl\.org/coar/access_right/(c_[0-9a-f]{4})/?$", re.I)
 RIGHTS_PATH = re.compile(r"rights|access|availab|license|licence")
+# A field that IS an access statement (a path segment access / accessRights / accessCondition /
+# accessStatus): with the new adapters every value must be a recognised open statement.
+ACCESS_FIELD = re.compile(r"(?:^|\.)access(?:rights|condition|status)?(?:\.|$)", re.I)
 LICENCE_PATH = re.compile(r"(?:dc|dcterms)\.(?:rights|license)(?:\.|$)")
 SUBJECT_PATH = re.compile(r"(?:dc|dcterms)\.subject(?:\.|$)|dcterms\.LCSH$")
 LANG_NAMES = {"english": "en", "german": "de", "deutsch": "de", "french": "fr", "spanish": "es",
@@ -550,7 +553,8 @@ def read_oai_dc(dc: ET.Element, today: str) -> tuple[dict[str, list[str]], Files
                                                    .strip().rstrip("/"))[-1])
         path = f"{prefix}.{name}" + (f".{qualifier}" if qualifier else "")
         value = _text(child)
-        _add(fields, path, value)
+        # a blank access statement is not understood: kept as '?' so restricted() closes it
+        _add(fields, path, value or ("?" if ACCESS_FIELD.search(path) else ""))
         if name in ("identifier", "relation") and re.match(r"https?://\S+$", value):
             files.append((value, {}))
     return fields, files
@@ -716,10 +720,28 @@ def _embargo_over(value: str, today: str) -> bool:
     return False
 
 
+def open_statement(value: str) -> bool:
+    """Whether a value of an access field is exactly a recognised open statement: an open
+    access term ('openAccess', 'info:eu-repo/semantics/openAccess', 'open access'), the COAR
+    open-access URI, or the DNB ddb:kind 'free'."""
+    text = value.strip().rstrip(".")
+    if (match := ACCESS_TERM.fullmatch(text)) and match.group(1).lower() == "open":
+        return True
+    if (match := COAR_ACCESS.match(text)) and match.group(1).lower() == "c_abf2":
+        return True
+    return text.lower() == "free"
+
+
 def restricted(fields: dict[str, list[str]], cfg: dict, today: str) -> str | None:
     """Why the record's full text is not open, or None. Fail closed: an embargo field with a
-    future or unreadable date, an access term other than open in a rights / access field, or a
-    missing / different value in the repository's open-access field."""
+    future or unreadable date; ANY access term other than open in a rights / access value
+    ('openAccess; restrictedAccess' is restricted); for the repositories read with the new
+    adapters (not dspace-xoai, whose repositories were reviewed with their own open-access
+    fields), a field that IS an access statement (ACCESS_FIELD: dcterms.accessRights,
+    mods.accessCondition, ddb.access ...) whose value is not a recognised open statement —
+    'Campus only', a blank statement ('?') or prose; or a missing / different value in the
+    repository's open-access field."""
+    strict = adapter_of(cfg) is not ADAPTERS["dspace-xoai"]
     for path, values in fields.items():
         lowered = path.lower()
         if path in (cfg.get("ignore_fields") or ()):
@@ -729,10 +751,13 @@ def restricted(fields: dict[str, list[str]], cfg: dict, today: str) -> str | Non
                 return f"embargo ({path}: {value[:40]})"
             if not RIGHTS_PATH.search(lowered):
                 continue
-            if (match := ACCESS_TERM.search(value)) and match.group(1).lower() != "open":
-                return f"access {match.group(0)}"
+            for match in ACCESS_TERM.finditer(value):
+                if match.group(1).lower() != "open":
+                    return f"access {match.group(0)}"
             if (match := COAR_ACCESS.match(value.strip())) and match.group(1).lower() != "c_abf2":
                 return f"access {match.group(0)}"
+            if strict and ACCESS_FIELD.search(lowered) and not open_statement(value):
+                return f"access statement not understood ({path}: {value[:40]})"
     access = cfg.get("open_access")
     if access:
         values = fields.get(access["field"]) or []

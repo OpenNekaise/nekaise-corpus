@@ -952,6 +952,46 @@ def test_oai_dc_reads_identifiers_rights_and_dois():
     assert gated["Modellierung der Verteilung ungenutzter i"]   # 'Abwasser'
 
 
+ACCESS_RIGHTS = '<dcterms:accessRights xmlns:dcterms="http://purl.org/dc/terms/">{}' \
+                '</dcterms:accessRights>'
+
+
+@pytest.mark.parametrize("statement,kept", [
+    (ACCESS_RIGHTS.format("Campus only"), False),                  # access prose: closed
+    (ACCESS_RIGHTS.format(""), False),                             # blank statement: closed
+    (ACCESS_RIGHTS.format("embargoed access"), False),
+    (ACCESS_RIGHTS.format("open access"), True),                   # a recognised open term
+    (ACCESS_RIGHTS.format("http://purl.org/coar/access_right/c_abf2"), True),
+    (ACCESS_RIGHTS.format("http://purl.org/coar/access_right/c_14cb"), False),
+    ("<dc:rights>info:eu-repo/semantics/openAccess; info:eu-repo/semantics/restrictedAccess"
+     "</dc:rights>", False),                                       # every token is read
+    ("<dc:rights>Open Access (restricted access to the appendix)</dc:rights>", False),
+])
+def test_oai_dc_access_statements_fail_closed(statement, kept):
+    """Codex round 5: an explicit access field must be a recognised open statement, and every
+    access token of a rights / access value is read."""
+    text = fixture("oai_dc_kluedo_page.xml").replace(
+        "<dc:rights>info:eu-repo/semantics/openAccess</dc:rights>",
+        f"<dc:rights>info:eu-repo/semantics/openAccess</dc:rights>{statement}")
+    got = read_all(text, OAI_DC, "ddc:624")
+    if kept:
+        assert all(got.values())
+    else:
+        assert got.none()
+    # the reviewed live KLUEDO configuration reads it the same way
+    live = read_all(text, find_repo.load_config()["kluedo"], "ddc:624")
+    assert (sum(1 for e in live.values() if e) == 3) == kept
+
+
+def test_every_access_token_of_a_dspace_value_is_read():
+    title = "Timber structures for multi-storey buildings"
+    assert one(record(1, title, dc__rights="openAccess"))
+    assert one(record(2, title, dc__rights="openAccess; restrictedAccess")) is None
+    assert find_repo.open_statement("info:eu-repo/semantics/openAccess")
+    assert find_repo.open_statement("free") and not find_repo.open_statement("free for staff")
+    assert not find_repo.open_statement("?") and not find_repo.open_statement("Public")
+
+
 def test_opus_licence_names_need_both_names_and_versions_to_agree():
     kind = find_repo.licence_name_kind
     assert kind("Creative Commons 4.0 - Namensnennung (CC BY 4.0)") == "by"
