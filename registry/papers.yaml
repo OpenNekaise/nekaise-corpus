@@ -173142,3 +173142,72 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-27'
+  - id: arx-urban-geobim-construction-by-integrating-seman
+    title: Urban GeoBIM construction by integrating semantic LiDAR point clouds with
+      as-designed BIM models
+    url: https://arxiv.org/pdf/2304.11719v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-04-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.11719
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.11719 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-learning-from-demonstrations-an-intuitive-vr-e
+    title: 'Learning from demonstrations: An intuitive VR environment for imitation
+      learning of construction robots'
+    url: https://arxiv.org/pdf/2305.14584v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-05-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2305.14584
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2305.14584 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+  - id: arx-computer-vision-for-construction-progress-moni
+    title: 'Computer Vision for Construction Progress Monitoring: A Real-Time Object
+      Detection Approach'
+    url: https://arxiv.org/pdf/2305.15097v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-05-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2305.15097
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2305.15097 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-a-hybrid-semantic-geometric-approach-for-clutt
+    title: A Hybrid Semantic-Geometric Approach for Clutter-Resistant Floorplan Generation
+      from Building Point Clouds
+    url: https://arxiv.org/pdf/2305.15420v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-05-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2305.15420
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2305.15420 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
