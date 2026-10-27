@@ -1040,6 +1040,9 @@ def test_xmetadissplus_upgrades_reviewed_http_transfers_and_needs_free_rights():
                      (rights, rights.replace("></", ">info:eu-repo/semantics/restrictedAccess</")),
                      (access, access.replace("></", ">Campus only</")),
                      (access, access.replace('ddb:kind="free"></', ">free</")),   # no kind
+                     # Codex round 4: a blank kind is no kind, in either element
+                     (rights, rights.replace('"free"', '" "')),
+                     (access, access.replace('"free"', '"  "')),
                      ("http://publications.rwth-aachen.de/record/",
                       "http://mirror.example.org/record/")):
         changed = read_all(text.replace(old, new), XMD)

@@ -654,7 +654,9 @@ def read_xmetadissplus(xmd: ET.Element, today: str) -> tuple[dict[str, list[str]
         elif tag in (f"{DDB_NS}rights", f"{DCTERMS_NS}accessRights"):
             # one field for both statements, the ddb:kind AND any text inside the element:
             # a restrictive kind, a missing kind or any prose in either one closes the file
-            _add(fields, "ddb.access", child.get(f"{DDB_NS}kind") or "?")
+            # (a blank kind is no kind: normalised BEFORE the '?' sentinel, which _add keeps)
+            _add(fields, "ddb.access", " ".join((child.get(f"{DDB_NS}kind") or "").split())
+                 or "?")
             _add(fields, "ddb.access", _text(child))
         elif tag == f"{THESIS_NS}degree":
             _add(fields, "thesis.degree.level", _text(child.find(f"{THESIS_NS}level")))
