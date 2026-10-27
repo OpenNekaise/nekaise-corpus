@@ -173430,3 +173430,54 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-27'
+  - id: arx-supporting-construction-and-architectural-visu
+    title: 'Supporting Construction and Architectural Visualization through BIM and
+      AR/VR: A Systematic Literature Review'
+    url: https://arxiv.org/pdf/2306.12274v1
+    source: arxiv
+    license: cc-by-sa
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-06-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.12274
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.12274 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-equivariant-perverse-sheaves-on-coxeter-arrang
+    title: Equivariant perverse sheaves on Coxeter arrangements and buildings
+    url: https://arxiv.org/pdf/1706.07847v5
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-06-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1706.07847
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1706.07847 (v5, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.46298/epiga.2019.volume3.4353
+  - id: arx-a-modular-construction-of-type-theories
+    title: A modular construction of type theories
+    url: https://arxiv.org/pdf/2111.00543v6
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2021-10-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.00543
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.00543 (v6, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.46298/lmcs-19(1:12)2023
