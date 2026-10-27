@@ -172829,3 +172829,144 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-27'
+  - id: ope-beyond-traditional-h-bim-ai-powered-modeling-f
+    title: 'Beyond Traditional H-BIM: AI-Powered Modeling for Heritage Bridges'
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-M-9-2025/615/2025/isprs-archives-XLVIII-M-9-2025-615-2025.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2025-10-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-m-9-2025-615-2025
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-M-9-2025/615/2025/isprs-archives-XLVIII-M-9-2025-615-2025.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-27'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-m-9-2025-615-2025 openalex:W4414699026
+    resolution: 'legacy: openalex location'
+  - id: ope-a-bim-gis-digitalization-process-to-explore-th
+    title: A BIM/GIS DIGITALIZATION PROCESS TO EXPLORE THE POTENTIAL OF DISUSED RAILWAYS
+      IN ITALY
+    url: https://isprs-archives.copernicus.org/articles/XLVIII-5-W2-2023/37/2023/isprs-archives-XLVIII-5-W2-2023-37-2023.pdf
+    source: openalex
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2023-06-13'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/isprs-archives-xlviii-5-w2-2023-37-2023
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://isprs-archives.copernicus.org/articles/XLVIII-5-W2-2023/37/2023/isprs-archives-XLVIII-5-W2-2023-37-2023.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-27'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/isprs-archives-xlviii-5-w2-2023-37-2023 openalex:W4380482252
+    resolution: 'legacy: openalex location'
+  - id: ope-cbim-a-graph-based-approach-to-enhance-interop
+    title: 'CBIM: A Graph-based Approach to Enhance Interoperability Using Semantic
+      Enrichment'
+    url: https://arxiv.org/pdf/2304.11672
+    source: openalex
+    license: cc-by-nc-sa
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2023-04-23'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2304.11672
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa
+      [copy https://arxiv.org/pdf/2304.11672; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2304.11672 openalex:W4366999804
+    resolution: 'legacy: openalex location'
+  - id: ope-toward-new-generation-railway-traffic-manageme
+    title: 'Toward new generation railway Traffic Management Systems: the contribution
+      of the OPTIMA project'
+    url: https://eprints.whiterose.ac.uk/200148/14/Toward%20new%20generation%20railway%20Traffic%20Management%20Systems%20the%20contribution%20of%20the%20OPTIMA%20project.pdf
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2023-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.trpro.2023.11.882
+    license_evidence: no licence statement for this copy [copy https://eprints.whiterose.ac.uk/200148/14/Toward%20new%20generation%20railway%20Traffic%20Management%20Systems%20the%20contribution%20of%20the%20OPTIMA%20project.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.trpro.2023.11.882 openalex:W4389662689
+    resolution: 'legacy: openalex location'
+  - id: arx-pedestrian-wayfinding-behavior-in-a-multi-stor
+    title: 'Pedestrian wayfinding behavior in a multi-story building: a comprehensive
+      modeling study featuring route choice, wayfinding performance, and observati'
+    url: https://arxiv.org/pdf/2304.11167v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-04-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.11167
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.11167 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-longitudinal-thermal-imaging-for-scalable-non-
+    title: Longitudinal thermal imaging for scalable non-residential HVAC and occupant
+      behaviour characterization
+    url: https://arxiv.org/pdf/2211.09288v3
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2022-11-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2211.09288
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2211.09288 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1016/j.enbuild.2023.112997
+  - id: arx-adalio-robust-adaptive-lidar-inertial-odometry
+    title: 'AdaLIO: Robust Adaptive LiDAR-Inertial Odometry in Degenerate Indoor Environments'
+    url: https://arxiv.org/pdf/2304.12577v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-04-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.12577
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.12577 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-detection-of-pavement-cracks-by-deep-learning-
+    title: Detection of Pavement Cracks by Deep Learning Models of Transformer and UNet
+    url: https://arxiv.org/pdf/2304.12596v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-04-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.12596
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.12596 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
