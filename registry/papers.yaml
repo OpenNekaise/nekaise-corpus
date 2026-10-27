@@ -171844,3 +171844,38 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-27'
+  - id: arx-generative-methods-for-urban-design-and-rapid-
+    title: Generative methods for Urban design and rapid solution space exploration
+    url: https://arxiv.org/pdf/2212.06783v1
+    source: arxiv
+    license: cc0
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-12-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2212.06783
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2212.06783 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1177/23998083221142191
+  - id: arx-structural-reliability-under-uncertainty-in-mo
+    title: 'Structural reliability under uncertainty in moments: distributionally-robust
+      reliability-based design optimization'
+    url: https://arxiv.org/pdf/2106.08490v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-06-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.08490
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.08490 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1007/s13160-021-00483-x
