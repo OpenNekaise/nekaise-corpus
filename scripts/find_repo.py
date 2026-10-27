@@ -295,6 +295,7 @@ ACCESS_TERM = re.compile(r"(?:info:eu-repo/semantics/)?\b(open|closed|embargoed|
 # COAR access-right vocabulary URIs: c_abf2 open access, c_f1cf embargoed, c_16ec restricted,
 # c_14cb metadata only.
 COAR_ACCESS = re.compile(r"https?://purl\.org/coar/access_right/(c_[0-9a-f]{4})/?$", re.I)
+COAR_ACCESS_ANY = re.compile(r"https?://purl\.org/coar/access_right/(c_[0-9a-f]{4})", re.I)
 RIGHTS_PATH = re.compile(r"rights|access|availab|license|licence")
 # A field that IS an access statement (a path segment access / accessRights / accessCondition /
 # accessStatus): with the new adapters every value must be a recognised open statement.
@@ -754,8 +755,9 @@ def restricted(fields: dict[str, list[str]], cfg: dict, today: str) -> str | Non
             for match in ACCESS_TERM.finditer(value):
                 if match.group(1).lower() != "open":
                     return f"access {match.group(0)}"
-            if (match := COAR_ACCESS.match(value.strip())) and match.group(1).lower() != "c_abf2":
-                return f"access {match.group(0)}"
+            for match in COAR_ACCESS_ANY.finditer(value):   # also inside a compound value
+                if match.group(1).lower() != "c_abf2":
+                    return f"access {match.group(0)}"
             if strict and ACCESS_FIELD.search(lowered) and not open_statement(value):
                 return f"access statement not understood ({path}: {value[:40]})"
     access = cfg.get("open_access")

@@ -966,6 +966,12 @@ ACCESS_RIGHTS = '<dcterms:accessRights xmlns:dcterms="http://purl.org/dc/terms/"
     ("<dc:rights>info:eu-repo/semantics/openAccess; info:eu-repo/semantics/restrictedAccess"
      "</dc:rights>", False),                                       # every token is read
     ("<dc:rights>Open Access (restricted access to the appendix)</dc:rights>", False),
+    # Codex round 6: every COAR access URI of a compound value is read too
+    ("<dc:rights>info:eu-repo/semantics/openAccess; "
+     "http://purl.org/coar/access_right/c_16ec</dc:rights>", False),
+    ("<dc:rights>http://purl.org/coar/access_right/c_abf2; "
+     "http://purl.org/coar/access_right/c_f1cf</dc:rights>", False),
+    ("<dc:rights>http://purl.org/coar/access_right/c_abf2</dc:rights>", True),
 ])
 def test_oai_dc_access_statements_fail_closed(statement, kept):
     """Codex round 5: an explicit access field must be a recognised open statement, and every
