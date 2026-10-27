@@ -173760,3 +173760,75 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1109/twc.2022.3225796 openalex:W4312660080
     resolution: 'sim1: openalex+unpaywall location'
+  - id: ope-a-review-of-energy-simulation-tools-for-the-ma
+    title: A review of energy simulation tools for the manufacturing sector
+    url: https://strathprints.strath.ac.uk/67903/1/Garwood_etal_RSER_2017_A_review_of_energy_simulation_tools_for_the_manufacturing_sector.pdf
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2017-09-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rser.2017.08.063
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/67903/1/Garwood_etal_RSER_2017_A_review_of_energy_simulation_tools_for_the_manufacturing_sector.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.rser.2017.08.063 openalex:W2753665377
+    resolution: 'legacy: openalex location'
+  - id: ope-electronic-waste-reduction-through-devices-and
+    title: Electronic Waste Reduction Through Devices and Printed Circuit Boards Designed
+      for Circularity
+    url: http://eprints.gla.ac.uk/266893/1/266893.pdf
+    source: openalex
+    license: cc-by-sa
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2022-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/jflex.2022.3159258
+    license_evidence: openalex.license=cc-by-sa; openalex.license_id=https://openalex.org/licenses/cc-by-sa
+      [copy http://eprints.gla.ac.uk/266893/1/266893.pdf; version acceptedVersion; rights
+      accepted]
+    rights_verified_at: '2026-10-27'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1109/jflex.2022.3159258 openalex:W4226354009
+    resolution: 'legacy: openalex location'
+  - id: ope-privacy-preserving-ddos-attack-detection-using
+    title: Privacy-Preserving DDoS Attack Detection Using Cross-Domain Traffic in Software
+      Defined Networks
+    url: https://arxiv.org/pdf/1809.07046
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2018-03-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/jsac.2018.2815442
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/1809.07046;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/jsac.2018.2815442 openalex:W2963320092
+    resolution: 'legacy: openalex location'
+  - id: ope-intelligent-traffic-steering-in-beyond-5g-open
+    title: Intelligent Traffic Steering in Beyond 5G Open RAN Based on LSTM Traffic
+      Prediction
+    url: https://arxiv.org/pdf/2210.08829
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2023-03-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/twc.2023.3254903
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2210.08829;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/twc.2023.3254903 openalex:W4327522621
+    resolution: 'legacy: openalex location'
