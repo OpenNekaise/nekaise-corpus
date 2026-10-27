@@ -90,6 +90,13 @@ def _waive_recoverability(monkeypatch, request):
 
 
 @pytest.fixture(autouse=True)
+def _no_disk_floor(monkeypatch):
+    """The free space of the machine running the tests never holds an in-process round
+    (run_round.disk_hold); tests about the floor set NEKAISE_MIN_FREE_GB themselves."""
+    monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "0")
+
+
+@pytest.fixture(autouse=True)
 def _private_authority_record(monkeypatch, tmp_path):
     """The host authority record (scripts/store_authority.py) of the machine running the tests
     never applies in-process: each test gets an empty private one, and the store selection

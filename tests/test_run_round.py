@@ -1040,3 +1040,45 @@ def test_resume_refusals_come_before_anything_is_adopted():
                                     []) == "it is aborted"
     assert "only rounds are resumed" in run_round.resume_refusal(
         None, None, {"status": "open", "kind": "standalone"}, None, [])
+
+
+def _disk(free_gb):
+    return lambda _path: SimpleNamespace(total=4000e9, used=4000e9 - free_gb * 1e9,
+                                         free=free_gb * 1e9)
+
+
+def test_disk_hold_uses_floor_and_its_override(tmp_path, monkeypatch):
+    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(39.9))
+    monkeypatch.delenv("NEKAISE_MIN_FREE_GB")
+    assert "39.9 GB free, below the 40 GB" in run_round.disk_hold(tmp_path)
+    monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "30")
+    assert run_round.disk_hold(tmp_path) is None
+    for bad in ("-5", "lots"):
+        monkeypatch.setenv("NEKAISE_MIN_FREE_GB", bad)
+        assert run_round.disk_hold(tmp_path) is not None
+    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(40))
+    monkeypatch.delenv("NEKAISE_MIN_FREE_GB")
+    assert run_round.disk_hold(tmp_path) is None
+
+
+def test_main_holds_a_round_on_low_disk_before_any_run(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(run_round, "ROOT", tmp_path)
+    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(5))
+    monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "40")
+    events = []
+    monkeypatch.setattr(run_round.ops, "run_event", lambda *a, **kw: events.append(a))
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--commit"])
+
+    assert run_round.main() == run_round.EXIT_HELD == 75
+    assert events == []
+    assert "held: data disk has 5.0 GB free" in capsys.readouterr().err
+
+
+def test_main_never_holds_recovery_on_low_disk(tmp_path, monkeypatch):
+    monkeypatch.setattr(run_round, "ROOT", tmp_path)
+    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(5))
+    monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "40")
+    monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", rid("held-recover")])
+
+    with pytest.raises(store.PendingTransaction):  # reached recovery, was not held
+        run_round.main()

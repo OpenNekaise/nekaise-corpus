@@ -31,7 +31,12 @@ set +e
 timeout "${MAX}s" "$PYTHON_BIN" scripts/run_round.py --commit --lock-timeout 30 >>"$LOG" 2>&1
 code=$?
 set -e
-if [ "$code" -eq 124 ]; then
+if [ "$code" -eq 75 ]; then
+  # Held before any work (run_round.disk_hold): one line in a rolling log, not a log per minute.
+  { printf '[%s] ' "$(date -Is)"; cat "$LOG"; } >>"$REPO/logs/round-held.log"
+  rm -f "$LOG"
+  exit 0
+elif [ "$code" -eq 124 ]; then
   echo "[$(date -Is)] dig hit the ${MAX}s cap" | tee -a "$LOG"
 else
   echo "[$(date -Is)] dig done (exit $code)" | tee -a "$LOG"

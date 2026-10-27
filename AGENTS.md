@@ -315,7 +315,10 @@ versions in resumable background slices; `scripts/artifact_gc.py` reports collec
 (dry run only). `scripts/pg_backup.py` keeps 35 days of base + WAL coverage and its weekly drill
 restores a named recovery point and compares fingerprints (the RTO); `scripts/ops_health.py`
 alerts (`workspace/ops-health.json`, `logs/alerts.jsonl`) and a staged round refuses to grow
-while committed metadata could be more than 15 minutes from the WAL archive.
+while committed metadata could be more than 15 minutes from the WAL archive. Under either
+authority `run_round.py` does not start a round (exit 75, nothing run or recorded) while the data
+disk has less than 40 GB free (`NEKAISE_MIN_FREE_GB` overrides); `dig.sh` appends each hold to
+`logs/round-held.log` and the next cron minute retries. `--recover`/`--resume` are never held.
 `scripts/rollback_export.py` materializes a promoted generation back into the legacy file layout
 for the stage-4 rollback.
 

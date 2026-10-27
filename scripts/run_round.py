@@ -825,6 +825,30 @@ def nested_round_owner(st) -> str | None:
             f"needs it as its own writer. {NESTED_ROUND_HELP}.")
 
 
+# Free space a round needs on the data disk before it starts. Snapshots, manifest rewrites, fetched
+# bytes, the commit and PostgreSQL WAL all land there; running out mid-round fails writes that
+# rollback and the store must then repair. Another project sharing the disk can fill it within
+# hours, so the check runs before every round. Recovery and resume are never held.
+MIN_FREE_GB = 40.0
+EXIT_HELD = 75  # EX_TEMPFAIL: nothing was started; dig.sh retries on the next cron minute
+
+
+def disk_hold(root: Path | None = None) -> str | None:
+    """Why a round must not start for lack of disk space, or None. NEKAISE_MIN_FREE_GB overrides
+    MIN_FREE_GB (an unparsable or negative value keeps the default)."""
+    raw = os.environ.get("NEKAISE_MIN_FREE_GB")
+    try:
+        floor = float(raw) if raw else MIN_FREE_GB
+    except ValueError:
+        floor = MIN_FREE_GB
+    if floor < 0:
+        floor = MIN_FREE_GB
+    free = shutil.disk_usage(ROOT if root is None else root).free / 1e9
+    if free < floor:
+        return f"data disk has {free:.1f} GB free, below the {floor:g} GB a round needs"
+    return None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--backend", action="append", default=[],
@@ -873,6 +897,9 @@ def main() -> int:
         print("ERROR: --resume continues a PostgreSQL staged run; this root is file-"
               "authoritative (recover with --recover)", file=sys.stderr)
         return 2
+    if not (args.recover or args.resume) and (why := disk_hold()):
+        print(f"held: {why}; no round started", file=sys.stderr)
+        return EXIT_HELD
     if staged:
         return staged_main(args, ap, st)
     if args.recover:
