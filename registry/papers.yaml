@@ -173973,3 +173973,72 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-27'
     origin_ids: doi:10.1109/tap.2023.3284368
+  - id: arx-designtracking-track-and-replay-bim-based-desi
+    title: 'DesignTracking: Track and Replay BIM-based Design Process'
+    url: https://arxiv.org/pdf/2305.10205v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-05-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2305.10205
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2305.10205 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.3311/ccc2023-006
+  - id: arx-a-serial-dual-channel-library-occupancy-detect
+    title: A serial dual-channel library occupancy detection system based on Faster
+      RCNN
+    url: https://arxiv.org/pdf/2306.16080v2
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-06-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.16080
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.16080 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-a-multilayer-perceptron-based-fast-sunlight-as
+    title: A Multilayer Perceptron-based Fast Sunlight Assessment for the Conceptual
+      Design of Residential Neighborhoods under Chinese Policy
+    url: https://arxiv.org/pdf/2308.07616v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-08-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2308.07616
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2308.07616 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1016/j.buildenv.2023.110739
+  - id: arx-novel-spanning-tree-matrix-approach-to-model-a
+    title: Novel Spanning-Tree Matrix Approach to Model and Optimize Large-Scale, Tree-Shaped
+      Water Distribution Networks
+    url: https://arxiv.org/pdf/2209.11993v3
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022-09-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2209.11993
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2209.11993 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
