@@ -628,9 +628,9 @@ def read_xmetadissplus(xmd: ET.Element, today: str) -> tuple[dict[str, list[str]
     """xMetaDissPlus -> fields dc.title, dc.type (the dini:PublType), dc.subject.ddc (DDC
     subjects) / dc.subject, dc.language, dc.date.issued, dc.rights, dcterms.license,
     dc.identifier(.doi), ddb.access (the ddb:kind of EVERY ddb:rights and dcterms:accessRights
-    element, "?" when one states none: an open_access rule on ddb.access needs all of them
-    free), thesis.degree.level and thesis.degree.grantor.department; files = the ddb:transfer
-    URLs."""
+    element, "?" when one states none, plus any text inside one: an open_access rule on
+    ddb.access needs all of them free), thesis.degree.level and
+    thesis.degree.grantor.department; files = the ddb:transfer URLs."""
     fields: dict[str, list[str]] = {}
     files: Files = []
     for child in xmd:
@@ -652,8 +652,10 @@ def read_xmetadissplus(xmd: ET.Element, today: str) -> tuple[dict[str, list[str]
         elif tag == f"{DC_NS}identifier":
             _add(fields, "dc.identifier.doi" if "doi" in xsi else "dc.identifier", _text(child))
         elif tag in (f"{DDB_NS}rights", f"{DCTERMS_NS}accessRights"):
-            # one field for both statements: a restrictive kind in either one closes the file
-            _add(fields, "ddb.access", child.get(f"{DDB_NS}kind") or _text(child) or "?")
+            # one field for both statements, the ddb:kind AND any text inside the element:
+            # a restrictive kind, a missing kind or any prose in either one closes the file
+            _add(fields, "ddb.access", child.get(f"{DDB_NS}kind") or "?")
+            _add(fields, "ddb.access", _text(child))
         elif tag == f"{THESIS_NS}degree":
             _add(fields, "thesis.degree.level", _text(child.find(f"{THESIS_NS}level")))
             for dept in child.iter(f"{CC_NS}department"):

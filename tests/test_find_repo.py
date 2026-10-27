@@ -1036,6 +1036,10 @@ def test_xmetadissplus_upgrades_reviewed_http_transfers_and_needs_free_rights():
                      # ddb:rights free but dcterms:accessRights restricted: closed (Codex r1)
                      (access, access.replace("free", "domain")),
                      (access, access.replace('ddb:kind="free"', "")),
+                     # Codex round 3: text inside either element is access evidence too
+                     (rights, rights.replace("></", ">info:eu-repo/semantics/restrictedAccess</")),
+                     (access, access.replace("></", ">Campus only</")),
+                     (access, access.replace('ddb:kind="free"></', ">free</")),   # no kind
                      ("http://publications.rwth-aachen.de/record/",
                       "http://mirror.example.org/record/")):
         changed = read_all(text.replace(old, new), XMD)
