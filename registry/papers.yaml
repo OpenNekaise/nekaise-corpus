@@ -173741,3 +173741,22 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-27'
+  - id: oas-10-1109-twc-2022-3225796-e58c87f1
+    title: A Novel Weighted Fusion Based Efficient Clustering for Improved Wi-Fi Fingerprint
+      Indoor Positioning
+    url: https://myresearchspace.uws.ac.uk/ws/files/50279894/2022_12_08_Sadhukan_et_al_Novel_accepted.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-12-07'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/twc.2022.3225796
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa;
+      unpaywall.license=other-oa [copy https://myresearchspace.uws.ac.uk/ws/files/50279894/2022_12_08_Sadhukan_et_al_Novel_accepted.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1109/twc.2022.3225796 openalex:W4312660080
+    resolution: 'sim1: openalex+unpaywall location'
