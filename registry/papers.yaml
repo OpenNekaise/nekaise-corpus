@@ -174385,3 +174385,132 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-27'
+  - id: ope-cleaner-production-of-cleaner-fuels-wind-to-wh
+    title: 'Cleaner production of cleaner fuels: wind-to-wheel – environmental assessment
+      of CO 2 -based oxymethylene ether as a drop-in fuel'
+    url: https://lirias.kuleuven.be/retrieve/fcd611d5-3f1c-4270-a04c-7cbe46e77e11
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2017-11-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1039/c7ee01657c
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://lirias.kuleuven.be/retrieve/fcd611d5-3f1c-4270-a04c-7cbe46e77e11;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-27'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1039/c7ee01657c openalex:W2770532251
+    resolution: 'legacy: openalex location'
+  - id: arx-the-unique-coclique-extension-property-for-apa
+    title: The unique coclique extension property for apartments of buildings
+    url: https://arxiv.org/pdf/2211.12663v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-11-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2211.12663
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2211.12663 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.2140/iig.2023.20.209
+  - id: arx-decoupling-the-curve-modeling-and-pavement-reg
+    title: Decoupling the Curve Modeling and Pavement Regression for Lane Detection
+    url: https://arxiv.org/pdf/2309.10533v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-09-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2309.10533
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2309.10533 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+  - id: arx-a-real-time-approach-for-smart-building-operat
+    title: A Real-Time Approach for Smart Building Operations Prediction Using Rule-Based
+      Complex Event Processing and SPARQL Query
+    url: https://arxiv.org/pdf/2309.10822v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-08-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2309.10822
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2309.10822 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-27'
+  - id: arx-submodule-codes-as-spherical-codes-in-building
+    title: Submodule codes as spherical codes in buildings
+    url: https://arxiv.org/pdf/2202.13370v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2022-02-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2202.13370
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2202.13370 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1007/s10623-023-01207-7
+  - id: arx-efficient-multi-task-rgb-d-scene-analysis-for-
+    title: Efficient Multi-Task RGB-D Scene Analysis for Indoor Environments
+    url: https://arxiv.org/pdf/2207.04526v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-07-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2207.04526
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2207.04526 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1109/ijcnn55064.2022.9892852
+  - id: ope-the-role-of-ultrasound-driven-microbubble-dyna
+    title: 'The Role of Ultrasound-Driven Microbubble Dynamics in Drug Delivery: From
+      Microbubble Fundamentals to Clinical Translation'
+    url: https://biblio.ugent.be/publication/8632217/file/8632219.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2019-01-17'
+    document_type: article
+    persistent_id: https://doi.org/10.1021/acs.langmuir.8b03779
+    license_evidence: 'redirect: rights of requested copy https://biblio.ugent.be/publication/8632217/file/8632219.pdf
+      do not transfer to https://backoffice.biblio.ugent.be/download/8632217/8632219;
+      payload sha256=f7f35f0f0c3d0e2e04b669f083c55647083a32df7d18f96e94d963aa32000bc8;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://biblio.ugent.be/publication/8632217/file/8632219.pdf;
+      version submittedVersion; rights accepted]", "rights_verified_at": "2026-10-27",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-27T23:27:48Z'
+    origin_ids: doi:10.1021/acs.langmuir.8b03779 openalex:W2910728952
+    resolution: 'legacy: openalex location'
