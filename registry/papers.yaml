@@ -172706,3 +172706,38 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-27'
+  - id: arx-convolutional-neural-networks-for-crack-detect
+    title: Convolutional neural networks for crack detection on flexible road pavements
+    url: https://arxiv.org/pdf/2304.02933v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-04-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.02933
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.02933 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-27'
+    origin_ids: doi:10.1007/978-3-031-27524-1_19
+  - id: arx-occformer-dual-path-transformer-for-vision-bas
+    title: 'OccFormer: Dual-path Transformer for Vision-based 3D Semantic Occupancy
+      Prediction'
+    url: https://arxiv.org/pdf/2304.05316v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-04-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.05316
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.05316 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-27'
