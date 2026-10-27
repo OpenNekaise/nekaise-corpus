@@ -256,6 +256,33 @@ def test_pdf_galley_is_chosen_when_formats_pair_with_galleys():
             == f"{BASE}/article/download/5/50")
 
 
+def test_galley_views_named_by_url_path_are_kept_as_written():
+    """Journals that give articles or galleys a URL path (OJS's "best id") name the galley view
+    by it: Roads and Bridges (rabdim.pl), The Baltic Journal of Road and Bridge Engineering."""
+    assert (find_ojs.galley_download(BASE, [f"{BASE}/article/view/v4n1p15/5"])
+            == f"{BASE}/article/download/v4n1p15/5")
+    enc = "1822-427X.2006.1.29%E2%80%9337"
+    assert (find_ojs.galley_download(BASE, [f"{BASE}/article/view/{enc}/pdf"], ["application/pdf"])
+            == f"{BASE}/article/download/{enc}/pdf")
+    # never more or less than two path segments, no query, space or raw non-ASCII character
+    for rel in (f"{BASE}/article/view/a/b/c", f"{BASE}/article/view/a?x=1/2",
+                f"{BASE}/article/view/a b/2", f"{BASE}/article/view/статья/2",
+                f"{BASE}/article/view/a/2#x", f"{BASE}/article/view/v4n1p15",
+                f"{BASE}/article/view/../2", f"{BASE}/article/view/5/.",
+                f"{BASE}/article/view/%2E%2e/2", f"{BASE}/article/view/a%2F..%2F..%2Fx/2",
+                f"{BASE}/article/view/a%5c..%5cx/2", f"{BASE}/article/view/5/pdf%3Fx=1"):
+        assert find_ojs.galley_download(BASE, [rel]) is None, rel
+
+
+def test_non_latin_title_with_url_path_galley_gets_an_id_safe_article_id():
+    rel = [f"{BASE}/article/view/1822-427X.2006.1.29%E2%80%9337/5"]
+    records, _ = find_ojs.parse_page(_page([_record(7, "Мосты и дороги", [BY], relations=rel,
+                                                    lang="rus")]))
+    entry = find_ojs.entry_for(SITE, records[0], "2026-10-12")
+    assert entry["id"] == "ojs-clima2022-article-1822-427x-2006-1-29-e2-80-9337-5"
+    assert entry["url"] == f"{BASE}/article/download/1822-427X.2006.1.29%E2%80%9337/5"
+
+
 @pytest.mark.parametrize("title", ["Editorial", "EDITORIAL", "Front Matter", "Table of Contents",
                                    "Índice", "Sumário", "Expediente", "Daftar Isi", "Содержание",
                                    "Editorial Vol. 12 No. 3", "Cover", "Inhaltsverzeichnis"])
@@ -378,8 +405,8 @@ def _mock_pages(monkeypatch, pages):
     """pages: list of bodies in call order, or {token-or-'': body}. Returns the call log."""
     calls = []
 
-    def fetch(base, token, since=""):
-        calls.append((token, since))
+    def fetch(base, token, since="", oai_set=""):
+        calls.append((token, since) + ((oai_set,) if oai_set else ()))
         body = pages[token] if isinstance(pages, dict) else pages[len(calls) - 1]
         if isinstance(body, Exception):
             raise body
@@ -410,6 +437,28 @@ def test_harvest_pages_classifies_and_dedups(monkeypatch):
     assert first["language"] == "en" and first["published_at"] == "2022-04-21"
     assert out[3]["language"] == "nl"
     assert find_ojs.registry.shard_filename(first["id"]) == "ojs.yaml"
+
+
+def test_a_venue_set_restricts_the_first_request_only(monkeypatch):
+    """An OJS portal whose journal endpoint lists the whole site (ejournal.undip.ac.id): the
+    venue's `set` goes with the first ListRecords request (with `from` in a watch cycle); the
+    resumption token carries it afterwards. Records of other journals still fail galley_download
+    (their galleys are not under the venue's base)."""
+    calls = _mock_pages(monkeypatch, [PAGE1, PAGE2])
+    out, _, rest = find_ojs.harvest(dict(SITE, set="clima2022"), _keys(), maxn=100,
+                                    since="2026-10-01")
+    assert calls == [("", "2026-10-01", "clima2022"), ("tok-2", "2026-10-01", "clima2022")]
+    assert rest == "" and len(out) == 5
+    requested = []
+    _real_access(monkeypatch, lambda url: (True, None))
+    _Clock(monkeypatch)
+    monkeypatch.setattr(find_ojs.requests, "get",
+                        lambda url, **kw: (requested.append(url), _Resp(200, PAGE2))[1])
+    find_ojs.fetch_page(BASE, "", "2026-10-01", "mkts")
+    find_ojs.fetch_page(BASE, "tok-2", "2026-10-01", "mkts")
+    assert requested == [
+        f"{BASE}/oai?verb=ListRecords&metadataPrefix=oai_dc&from=2026-10-01&set=mkts",
+        f"{BASE}/oai?verb=ListRecords&resumptionToken=tok-2"]
 
 
 def test_harvest_dedups_by_doi_identity(monkeypatch):
@@ -898,6 +947,13 @@ def test_venue_list_is_append_only_unique_and_well_formed():
         assert site["source"] and site["name"]
         # the id keeps room for a title slug inside the 63-character budget
         assert len(f"ojs-{site['key']}-") <= 24
+        # optional: the journal's OAI set (OJS portal), galley redirect hosts seen at review
+        assert re.fullmatch(r"[A-Za-z0-9_.-]+", site.get("set", "x")), site["key"]
+        assert isinstance(site.get("hosts", ()), tuple)
+        for host in site.get("hosts", ()):
+            assert re.fullmatch(r"[a-z0-9.-]+\.[a-z]{2,}", host), host
+            assert host in ojs_sites.HOSTS and host in build_corpus.POLITE_HOSTS
+            assert build_corpus.HOST_UA[host] == build_corpus.HONEST_UA
     for site in find_ojs.SITES[8:]:
         assert site["source"] == f"ojs_{site['key']}"
 
@@ -1077,3 +1133,26 @@ def test_initial_cursor_backfills_every_venue_with_no_bit_set():
     assert "1" not in state["d"] and state["a"] == 0 and state["i"] == len(find_ojs.SITES)
     assert (state["f"], state["s"]) == ("2026-10-12", "2026-10-12")
     assert find_ojs.plan(state, 3, date(2026, 10, 12)) == ([0, 1, 2], [])
+
+
+def test_appended_venues_join_the_backfill_and_keep_every_existing_bit(monkeypatch, tmp_path):
+    """A cursor written before venues were appended to SITES (here: 10 venues, then 4
+    appended): its bits keep their indexes, the new venues read as bit 0 (backfill), and a watch
+    cycle in progress passes over them without a request until they are complete. Isolated
+    fixture: a synthetic SITES, never the live rotation."""
+    old = [dict(SITE, key=f"v{k}", base=f"https://v{k}.example/j") for k in range(10)]
+    new = [dict(SITE, key=f"n{k}", base=f"https://n{k}.example/j") for k in range(4)]
+    monkeypatch.setattr(find_ojs, "SITES", tuple(old + new))
+    bits = "1101111111"
+    cursor = f"f=2026-10-18 s={date.today()} i=10 a=9 d={bits}"
+    state = find_ojs.parse_cursor(cursor)
+    assert "".join(state["d"]) == bits + "0000"
+    assert find_ojs.plan(state, 4, date.today()) == ([10, 11, 12, 13], [10, 11, 12, 13])
+    visits = {10: ([_entry(1)], 3, True), 11: ([], 0, False), 12: TimeoutError("offline"),
+              13: ([_entry(2)], 7, True)}
+    seen, _, state = _run_main(monkeypatch, tmp_path,
+                               ["--cursor", cursor, "--sites", "4", "--append"], visits)
+    # the backfill walks the new venues; the watch pass reads only the ones complete by now
+    assert seen == [(10, ""), (11, ""), (12, ""), (13, ""),
+                    (10, "2026-10-18"), (13, "2026-10-18")]
+    assert "".join(state["d"]) == bits + "1001" and state["i"] == 14 and state["a"] == 14

@@ -9,7 +9,11 @@ Fields: key (id namespace `ojs-<key>-...`, unique), base (the OJS journal root, 
 slash; `<base>/oai` is its OAI-PMH endpoint and `<base>/article/download/<a>/<g>` a galley),
 source, topic, type, name; optional gate (True: a broad engineering / planning / heritage venue,
 only records whose title or subjects name a built-environment concept are kept), delay (robots
-Crawl-delay in seconds seen at review; the live robots.txt is read again on every visit),
+Crawl-delay in seconds seen at review; the live robots.txt is read again on every visit), set
+(the journal's OAI setSpec, for an OJS portal whose journal endpoint lists the records of the
+whole site: sent with the first ListRecords request of every walk), hosts (other hosts the
+sampled galley downloads redirected to at review, e.g. a national journal platform: polite
+loader hosts like the base's),
 lang (main article language seen at review), licence (the journal-level licence in DOAJ: review
 evidence only, each record is classified from its own dc:rights), n (OAI records at review).
 
@@ -21,6 +25,19 @@ honest User-Agent: robots.txt read and neither the OAI path nor article/download
 group with Disallow: /, or Content-Signal ai-train=no) and no Crawl-delay above 15 s;
 ListRecords oai_dc answered; two sampled galley downloads returned %PDF bytes; the finder built
 entries from the first OAI page. Rejected candidates and reasons: see the commit message.
+
+Venues from index 149 on were reviewed on 2026-10-27 from the same DOAJ dump: candidates that
+the 2026-10-12 review had rejected for no OJS OAI endpoint at the DOAJ URL, for a transient
+reason (robots.txt unavailable, OAI refused or failing), or because their galley relations
+were not numeric (URL-path ids, which find_ojs now reads; a relation root other than the OAI
+root; a site-wide list without `set`). The journal root was read from the DOAJ URL's own page
+(links to <root>/issue/archive, /issue/current, /article/view/...; every page and redirect hop
+robots-checked first) or from the records' galley relations, and confirmed by the journal's
+ISSN in the OAI answer (one venue whose records carry no ISSN, mkts, has the DOAJ URL itself as
+its root); then each root passed the same checks as above with the finder's own code
+(find_ojs.site_delay, ListRecords, entry_for), one sampled galley returned %PDF to the loader's
+User-Agent, and the venues were reviewed by hand for topic (gate for broad venues). Rejected
+candidates and reasons: see the commit message of that change.
 """
 from __future__ import annotations
 
@@ -616,16 +633,219 @@ SITES = (
      "source": "ojs_zrzr", "topic": "structures_civil", "type": "journal-article",
      "name": "Zbornik Radova",
      "lang": "hr", "licence": "CC BY-NC-ND", "n": 213},
+    # ---- DOAJ-listed venues, reviewed 2026-10-27 (journal root found from the DOAJ page) ----
+    {"key": "andarchitettura", "base": "https://and-architettura.it/index.php/and",
+     "source": "ojs_andarchitettura", "topic": "architecture", "type": "journal-article",
+     "name": "And",
+     "lang": "it", "licence": "CC BY-NC-SA", "n": 632},
+    {"key": "bjrbe", "base": "https://bjrbe-journals.rtu.lv/bjrbe",
+     "source": "ojs_bjrbe", "topic": "infrastructure", "type": "journal-article",
+     "name": "The Baltic Journal of Road and Bridge Engineering",
+     "lang": "en", "licence": "CC BY", "n": 703},
+    {"key": "ced", "base": "https://ced.petra.ac.id/index.php/civ",
+     "source": "ojs_ced", "topic": "structures_civil", "type": "journal-article",
+     "name": "Civil Engineering Dimension",
+     "lang": "en", "licence": "CC BY", "n": 482},
+    {"key": "curiham", "base": "https://cuadernosdelcuriham.unr.edu.ar/index.php/CURIHAM",
+     "source": "ojs_curiham", "topic": "infrastructure", "type": "journal-article",
+     "name": "Cuadernos del CURIHAM",
+     "lang": "es", "licence": "CC BY-NC-SA", "n": 147},
+    {"key": "geoplanning", "base": "https://ejournal.undip.ac.id/index.php/geoplanning",
+     "source": "ojs_geoplanning", "topic": "urban", "type": "journal-article",
+     "name": "Geoplanning: Journal of Geomatics and Planning",
+     "set": "geoplanning", "gate": True, "lang": "en", "licence": "CC BY-NC-SA", "n": 183},
+    {"key": "mkts", "base": "https://ejournal.undip.ac.id/index.php/mkts",
+     "source": "ojs_mkts", "topic": "structures_civil", "type": "journal-article",
+     "name": "Media Komunikasi Teknik Sipil",
+     "set": "mkts", "lang": "en", "licence": "CC BY", "n": 489},
+    {"key": "modul", "base": "https://ejournal.undip.ac.id/index.php/modul",
+     "source": "ojs_modul", "topic": "architecture", "type": "journal-article",
+     "name": "Modul",
+     "set": "modul", "lang": "en", "licence": "CC BY", "n": 229},
+    {"key": "pwk", "base": "https://ejournal.undip.ac.id/index.php/pwk",
+     "source": "ojs_pwk", "topic": "urban", "type": "journal-article",
+     "name": "Jurnal Pembangunan Wilayah dan Kota",
+     "set": "pwk", "lang": "en", "licence": "CC BY-NC-SA", "n": 537},
+    {"key": "jwl", "base": "http://ejournal2.undip.ac.id/index.php/jwl",
+     "source": "ojs_jwl", "topic": "urban", "type": "journal-article",
+     "name": "Jurnal Wilayah dan Lingkungan",
+     "set": "jwl", "gate": True, "lang": "en", "licence": "CC BY-NC-SA", "n": 255},
+    {"key": "tataloka", "base": "http://ejournal2.undip.ac.id/index.php/tataloka",
+     "source": "ojs_tataloka", "topic": "urban", "type": "journal-article",
+     "name": "Tataloka",
+     "set": "tataloka", "lang": "en", "licence": "CC BY-NC-SA", "n": 547},
+    {"key": "jsceengiscience", "base": "https://engiscience.com/index.php/JSCE",
+     "source": "ojs_jsceengiscience", "topic": "structures_civil", "type": "journal-article",
+     "name": "Journal of Studies in Civil Engineering",
+     "lang": "en", "licence": "CC BY", "n": 28},
+    {"key": "estudoscariocas", "base": "https://estudoscariocas.rio/ojs",
+     "source": "ojs_estudoscariocas", "topic": "urban", "type": "journal-article",
+     "name": "Coleção Estudos Cariocas",
+     "gate": True, "lang": "pt", "licence": "CC BY", "n": 182},
+    {"key": "hsdarda", "base": "https://hsd.ardascience.com/index.php/journal",
+     "source": "ojs_hsdarda", "topic": "architecture", "type": "journal-article",
+     "name": "Heritage and Sustainable Development",
+     "gate": True, "lang": "en", "licence": "CC BY", "n": 316},
+    {"key": "ijas", "base": "https://ijournal-as.com/jour/index.php/ijas",
+     "source": "ojs_ijas", "topic": "infrastructure", "type": "journal-article",
+     "name": "International Journal of Advanced Studies",
+     "gate": True, "lang": "ru", "licence": "CC BY-NC-ND", "n": 247},
+    {"key": "joelho", "base": "https://impactum-journals.uc.pt/joelho",
+     "source": "ojs_joelho", "topic": "architecture", "type": "journal-article",
+     "name": "Joelho",
+     "lang": "en", "licence": "CC BY", "n": 246},
+    {"key": "territorium", "base": "https://impactum-journals.uc.pt/territorium",
+     "source": "ojs_territorium", "topic": "infrastructure", "type": "journal-article",
+     "name": "Territorium: Revista Portuguesa de riscos, prevenção e segurança",
+     "gate": True, "lang": "pt", "licence": "CC BY", "n": 790},
+    {"key": "jaets", "base": "https://journal.yrpipku.com/index.php/jaets",
+     "source": "ojs_jaets", "topic": "structures_civil", "type": "journal-article",
+     "name": "Journal of Applied Engineering and Technological Science",
+     "gate": True, "lang": "en", "licence": "CC BY-SA", "n": 426},
+    {"key": "planext", "base": "https://journals.aesop-planning.eu/index.php/planext",
+     "source": "ojs_planext", "topic": "urban", "type": "journal-article",
+     "name": "PlaNext",
+     "lang": "en", "licence": "CC BY", "n": 140},
+    {"key": "jarer", "base": "https://journals.uct.ac.za/index.php/JARER",
+     "source": "ojs_jarer", "topic": "urban", "type": "journal-article",
+     "name": "Journal of African Real Estate Research",
+     "lang": "en", "licence": "CC BY", "n": 169},
+    {"key": "jcbm", "base": "https://journals.uct.ac.za/index.php/jcbm",
+     "source": "ojs_jcbm", "topic": "construction", "type": "journal-article",
+     "name": "Journal of Construction Business and Management",
+     "lang": "en", "licence": "CC BY", "n": 159},
+    {"key": "leve", "base": "https://journals.univ-batna.dz/index.php/leve",
+     "source": "ojs_leve", "topic": "architecture", "type": "journal-article",
+     "name": "مجلة العمارة وبيئة الطفل",
+     "hosts": ("asjp.cerist.dz",), "lang": "ar", "licence": "CC BY", "n": 148},
+    {"key": "jtung", "base": "https://jt.ft.ung.ac.id/index.php/jt",
+     "source": "ojs_jtung", "topic": "structures_civil", "type": "journal-article",
+     "name": "Jurnal Teknik",
+     "gate": True, "lang": "en", "licence": "CC BY-SA", "n": 154},
+    {"key": "arsitekturauns", "base": "https://jurnal.uns.ac.id/Arsitektura",
+     "source": "ojs_arsitekturauns", "topic": "architecture", "type": "journal-article",
+     "name": "Arsitektura: Jurnal Ilmiah Arsitektur dan Lingkungan Binaan",
+     "set": "Arsitektura", "lang": "en", "licence": "CC BY-SA", "n": 521},
+    {"key": "regionuns", "base": "https://jurnal.uns.ac.id/region",
+     "source": "ojs_regionuns", "topic": "urban", "type": "journal-article",
+     "name": "Region: Jurnal Pembangunan Wilayah dan Perencanaan Partisipatif",
+     "set": "region", "gate": True, "lang": "en", "licence": "CC BY-NC", "n": 327},
+    {"key": "legado", "base": "https://legadodearquitecturaydiseno.uaemex.mx",
+     "source": "ojs_legado", "topic": "architecture", "type": "journal-article",
+     "name": "Legado de Arquitectura y Diseño",
+     "set": "legado", "lang": "es", "licence": "CC BY-NC-ND", "n": 473},
+    {"key": "oculum", "base": "https://periodicos.puc-campinas.edu.br/oculum",
+     "source": "ojs_oculum", "topic": "urban", "type": "journal-article",
+     "name": "Oculum Ensaios",
+     "lang": "pt", "licence": "CC BY", "n": 599},
+    {"key": "perner", "base": "https://pernerscontacts.upce.cz/index.php/perner",
+     "source": "ojs_perner", "topic": "infrastructure", "type": "journal-article",
+     "name": "Perner’s Contacts",
+     "gate": True, "lang": "cs", "licence": "CC BY", "n": 1129},
+    {"key": "challengingglass", "base": "https://proceedings.challengingglass.com/index.php/cgc",
+     "source": "ojs_challengingglass", "topic": "structures_civil", "type": "conference-paper",
+     "name": "Challenging Glass Conference Proceedings",
+     "lang": "en", "licence": "CC BY", "n": 600},
+    {"key": "quivera", "base": "https://quivera.uaemex.mx",
+     "source": "ojs_quivera", "topic": "urban", "type": "journal-article",
+     "name": "Quivera Revista de Estudios Territoriales",
+     "set": "quivera", "lang": "es", "licence": "CC BY-NC-ND", "n": 483},
+    {"key": "rengj", "base": "https://rengj.uomosul.edu.iq/index.php/rengj",
+     "source": "ojs_rengj", "topic": "structures_civil", "type": "journal-article",
+     "name": "مجلة هندسة الرافدين",
+     "gate": True, "lang": "en", "licence": "CC BY", "n": 1161},
+    {"key": "alconpat", "base": "https://revistaalconpat.org/index.php/RA",
+     "source": "ojs_alconpat", "topic": "materials", "type": "journal-article",
+     "name": "Revista ALCONPAT",
+     "lang": "es", "licence": "CC BY", "n": 417},
+    {"key": "aarc", "base": "https://revistas.udc.es/index.php/aarc",
+     "source": "ojs_aarc", "topic": "architecture", "type": "journal-article",
+     "name": "Actas de Arquitectura Religiosa Contemporánea",
+     "lang": "es", "licence": "CC BY-NC-SA", "n": 240},
+    {"key": "memoriaum", "base": "https://revistas.um.edu.uy/index.php/ingenieria",
+     "source": "ojs_memoriaum", "topic": "structures_civil", "type": "journal-article",
+     "name": "Memoria Investigaciones en Ingeniería",
+     "gate": True, "lang": "es", "licence": "CC BY", "n": 296},
+    {"key": "rcin", "base": "https://revistas.umng.edu.co/index.php/rcin",
+     "source": "ojs_rcin", "topic": "structures_civil", "type": "journal-article",
+     "name": "Ciencia e Ingeniería Neogranadina",
+     "gate": True, "lang": "es", "licence": "CC BY-NC-ND", "n": 533},
+    {"key": "astragalo", "base": "https://revistascientificas.us.es/index.php/astragalo",
+     "source": "ojs_astragalo", "topic": "architecture", "type": "journal-article",
+     "name": "Astragalo",
+     "hosts": ("institucional.us.es",), "lang": "es", "licence": "CC BY-NC-SA", "n": 199},
+    {"key": "jmes", "base": "http://revue.ummto.dz/index.php/JMES",
+     "source": "ojs_jmes", "topic": "structures_civil", "type": "journal-article",
+     "name": "Journal of Materials and Engineering Structures",
+     "lang": "en", "licence": "CC BY-SA", "n": 536},
+    {"key": "tjes", "base": "https://tj-es.com/ojs/index.php/tjes",
+     "source": "ojs_tjes", "topic": "structures_civil", "type": "journal-article",
+     "name": "Tikrit Journal of Engineering Sciences",
+     "gate": True, "lang": "en", "licence": "CC BY", "n": 1102},
+    {"key": "transportes", "base": "https://transportes.anpet.org.br/anpet",
+     "source": "ojs_transportes", "topic": "infrastructure", "type": "journal-article",
+     "name": "Transportes",
+     "lang": "pt", "licence": "CC BY", "n": 1009},
+    {"key": "urbansocio", "base": "https://urbansocio.com/index.php/1",
+     "source": "ojs_urbansocio", "topic": "urban", "type": "journal-article",
+     "name": "Социология города",
+     "lang": "ru", "licence": "CC BY-NC", "n": 117},
+    {"key": "agathon", "base": "https://www.agathon.it/agathon",
+     "source": "ojs_agathon", "topic": "architecture", "type": "journal-article",
+     "name": "Agathón",
+     "lang": "en", "licence": "CC BY", "n": 514},
+    {"key": "ayp", "base": "https://www.ayp.fapyd.unr.edu.ar/index.php/ayp",
+     "source": "ojs_ayp", "topic": "architecture", "type": "journal-article",
+     "name": "A&P Continuidad",
+     "lang": "es", "licence": "CC BY-NC-SA", "n": 341},
+    {"key": "arquitecturamas", "base": "https://www.camjol.info/index.php/arquitectura",
+     "source": "ojs_arquitecturamas", "topic": "architecture", "type": "journal-article",
+     "name": "Arquitectura +",
+     "lang": "es", "licence": "CC BY-NC-ND", "n": 142},
+    {"key": "idajournal", "base": "https://www.idajournal.com/index.php/ida",
+     "source": "ojs_idajournal", "topic": "architecture", "type": "journal-article",
+     "name": "IDA: International Design and Art Journal",
+     "gate": True, "lang": "en", "licence": "CC BY-NC-SA", "n": 148},
+    {"key": "jacces", "base": "https://www.jacces.org/index.php/jacces",
+     "source": "ojs_jacces", "topic": "architecture", "type": "journal-article",
+     "name": "Journal of Accessibility and Design for All",
+     "gate": True, "lang": "en", "licence": "CC BY-NC", "n": 199},
+    {"key": "jps", "base": "https://www.journalpublicspace.org/index.php/jps",
+     "source": "ojs_jps", "topic": "urban", "type": "journal-article",
+     "name": "The Journal of Public Space",
+     "lang": "en", "licence": "CC BY-NC", "n": 425},
+    {"key": "nijotech", "base": "https://www.nijotech.com/index.php/nijotech",
+     "source": "ojs_nijotech", "topic": "structures_civil", "type": "journal-article",
+     "name": "Nigerian Journal of Technology",
+     "gate": True, "lang": "en", "licence": "CC BY-NC-ND", "n": 1961},
+    {"key": "rabdim", "base": "https://www.rabdim.pl/index.php/rb",
+     "source": "ojs_rabdim", "topic": "infrastructure", "type": "journal-article",
+     "name": "Roads and Bridges",
+     "lang": "en", "licence": "CC BY", "n": 529},
+    {"key": "arqurb", "base": "https://www.revistaarqurb.com.br/arqurb",
+     "source": "ojs_arqurb", "topic": "architecture", "type": "journal-article",
+     "name": "arq.urb",
+     "lang": "pt", "licence": "CC BY-NC", "n": 489},
+    {"key": "suburban", "base": "https://zeitschrift-suburban.de/sys/index.php/suburban",
+     "source": "ojs_suburban", "topic": "urban", "type": "journal-article",
+     "name": "Sub\\urban",
+     "lang": "de", "licence": "CC BY-SA", "n": 674},
 )
 
+
+def site_hosts(site: dict) -> tuple[str, ...]:
+    """The venue's delivery hosts: the host of its base, then the hosts its galley downloads
+    redirected to at review (`hosts`)."""
+    return (urlsplit(site["base"]).netloc.lower(), *(h.lower() for h in site.get("hosts", ())))
+
+
 # Hosts of the venues reviewed with an honest loader User-Agent (the entries that carry `n`;
-# one sampled galley each returned %PDF bytes to "nekaise-corpus/build_corpus" on 2026-10-12):
+# one sampled galley each returned %PDF bytes to "nekaise-corpus/build_corpus" on 2026-10-12 or
+# 2026-10-27), with the hosts their galleys redirected to:
 # the loader treats them as polite hosts (scripts/build_corpus.py).
-HOSTS = tuple(dict.fromkeys(urlsplit(site["base"]).netloc.lower()
-                            for site in SITES if "n" in site))
+HOSTS = tuple(dict.fromkeys(host for site in SITES if "n" in site for host in site_hosts(site)))
 # Seconds between downloads per host: the largest robots Crawl-delay seen at review (min 1 s).
 HOST_DELAYS = {
-    host: max([1.0] + [float(s.get("delay") or 0) for s in SITES
-                       if urlsplit(s["base"]).netloc.lower() == host])
+    host: max([1.0] + [float(s.get("delay") or 0) for s in SITES if host in site_hosts(s)])
     for host in HOSTS
 }

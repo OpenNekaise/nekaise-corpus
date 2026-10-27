@@ -37,7 +37,11 @@ and FAIL-CLOSED from `dc:rights`:
 Records without a title or a PDF galley, and front matter (editorials, contents, covers), are
 skipped; a venue marked `gate` (a broad engineering journal) keeps only records whose title or
 subjects carry built-environment evidence (scripts/ojs_gate.py: an unambiguous term, or an
-ambiguous stem inside a built-environment phrase).
+ambiguous stem inside a built-environment phrase). A galley view names its article and galley by
+numeric id or by the URL path the journal assigned (kept as written in the download URL). A
+venue with a `set` (an OJS portal whose journal endpoint lists the whole site) sends it with
+the first ListRecords request of a walk; such a portal may answer the whole set on one page,
+which the page-granular --max cap then keeps whole (the loader's per-host cap paces downloads).
 
 Rotation (dynamic, `--cursor "f=<date> s=<date> i=<n> a=<n> d=<bits>"`), never EXHAUSTED:
   * BACKFILL: `d` has one bit per venue (index into SITES; a missing bit is 0). Every run visits
@@ -70,7 +74,7 @@ import time
 import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import date, timedelta
-from urllib.parse import urljoin
+from urllib.parse import unquote, urljoin
 
 import requests
 import yaml
@@ -110,7 +114,11 @@ RESTRICTED_CC = re.compile(
     r"https?://(?:www\.)?creativecommons\.org/licenses/(by-nc-nd|by-nc-sa|by-nc|by-nd)/\d\.\d"
     r"(?:/[a-z]{2}(?:-[a-z]{2})?)?(?:/(?:legalcode(?:\.[a-z]{2})?|deed\.[a-z]{2}(?:-[a-z]{2})?)?)?/?",
     re.I)
-GALLEY = re.compile(r"/article/view/(\d+)/(\d+)/?$")
+# One path segment of an OJS galley view: the numeric id, or the URL path a journal assigned to
+# the article or galley ("v4n1p15", "1822-427X.2006.1.29%E2%80%9337"; OJS's "best id"), in RFC
+# 3986 path characters only (no "/", "?", "#", whitespace or raw non-ASCII).
+_SEG = r"[A-Za-z0-9._~%!$&'()*+,;=:@-]+"
+GALLEY = re.compile(rf"/article/view/({_SEG})/({_SEG})/?$")
 # Front matter and other non-article records (whole title, any case).
 NON_ARTICLE = re.compile(
     r"(?:editorial(?: board| team| note)?|front ?matter|back ?matter|table of contents|"
@@ -209,8 +217,9 @@ def license_for(rights: list[str], creators=(), others=()) -> tuple[str, str | N
 def galley_download(base: str, relations: list[str], formats: list[str] = ()) -> str | None:
     """The PDF galley of this journal as its direct download URL: the `article/view/<a>/<g>`
     relation whose dc:format is application/pdf when formats pair up with the galley relations,
-    else the first galley relation."""
-    pat = re.compile(re.escape(base.split("://", 1)[1]) + r"/article/view/(\d+)/(\d+)/?$")
+    else the first galley relation. <a> and <g> are numeric ids or URL paths (_SEG), kept as
+    the journal wrote them."""
+    pat = re.compile(re.escape(base.split("://", 1)[1]) + rf"/article/view/({_SEG})/({_SEG})/?$")
     galleys = []
     for rel in relations:
         rel = rel.strip()
@@ -225,6 +234,10 @@ def galley_download(base: str, relations: list[str], formats: list[str] = ()) ->
         if not pdf:
             return None       # every galley is HTML / XML / EPUB: nothing the PDF loader reads
         pick = pdf[0]
+    if any(unquote(seg).strip(".") == "" or re.search(r"[/\\?#]", unquote(seg))
+           for seg in pick):
+        return None   # a dot segment ("..", "%2E") or an encoded "/", "\", "?", "#" would leave
+                      # the galley path
     return f"{base}/article/download/{pick[0]}/{pick[1]}"
 
 
@@ -295,13 +308,18 @@ def _get(url: str, params: dict) -> requests.Response:
     raise UnexpectedResponse(f"more than {MAX_REDIRECTS} redirects from {url}")
 
 
-def fetch_page(base: str, token: str, since: str = "") -> str:
+def fetch_page(base: str, token: str, since: str = "", oai_set: str = "") -> str:
+    """One ListRecords page. `oai_set` (the venue's `set`) restricts the list to the journal on
+    an OJS portal whose journal endpoint answers for the whole site; like `from`, it is sent
+    with the first request only (a resumption token carries the original arguments)."""
     if token:
         params = {"verb": "ListRecords", "resumptionToken": token}
     else:
         params = {"verb": "ListRecords", "metadataPrefix": "oai_dc"}
         if since:
             params["from"] = since
+        if oai_set:
+            params["set"] = oai_set
     r = _get(f"{base}/oai", params)
     if r.status_code != 200:
         raise UnexpectedResponse(f"OAI answered HTTP {r.status_code}")
@@ -373,7 +391,7 @@ def entry_for(site: dict, rec: dict, today: str) -> dict | None:
     article, galley = url.rsplit("/", 2)[-2:]
     slug = registry.slug(title)
     if len(slug) < 8:          # a title in a non-Latin script has no ASCII slug
-        slug = f"article-{article}-{galley}"
+        slug = registry.slug(f"article-{article}-{galley}")   # URL-path ids: id-safe
     record_url = (f"{site['base']}/oai?verb=GetRecord&metadataPrefix=oai_dc"
                   f"&identifier={rec['oai_id']}")
     entry = {
@@ -458,7 +476,7 @@ def harvest(site: dict, keys: dedup.Keys, maxn: int, *,
     today = date.today().isoformat()
     while first or token:
         first = False
-        records, token = parse_page(fetch_page(site["base"], token, since))
+        records, token = parse_page(fetch_page(site["base"], token, since, site.get("set", "")))
         pages += 1
         if token and (token in seen_tokens or pages >= MAX_PAGES):
             raise UnexpectedResponse(f"repeated resumptionToken {token[:40]!r} (paging loop)")
