@@ -174548,3 +174548,126 @@ sources:
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-27'
     origin_ids: doi:10.1145/3581783.3612356
+  - id: arx-sci-net-scale-invariant-model-for-buildings-se
+    title: 'Sci-Net: Scale Invariant Model for Buildings Segmentation from Aerial Imagery'
+    url: https://arxiv.org/pdf/2111.06812v5
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.06812
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.06812 (v5, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-causality-informed-rapid-post-hurricane-buildi
+    title: Causality-informed Rapid Post-hurricane Building Damage Detection in Large
+      Scale from InSAR Imagery
+    url: https://arxiv.org/pdf/2310.01565v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.01565
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.01565 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-deterioration-modeling-of-sewer-pipes-via-disc
+    title: 'Deterioration modeling of sewer pipes via discrete-time Markov chains: A
+      large-scale case study in the Netherlands'
+    url: https://arxiv.org/pdf/2310.01888v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-10-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.01888
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.01888 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.3850/978-981-18-5183-4_r22-13-482-cd
+  - id: arx-wireless-strain-and-temperature-monitoring-in-
+    title: Wireless strain and temperature monitoring in reinforced concrete using Surface
+      Acoustic Wave (SAW) sensors
+    url: https://arxiv.org/pdf/2310.03765v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-10-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.03765
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.03765 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1109/lsens.2023.3315219
+  - id: arx-filling-time-series-gaps-using-image-technique
+    title: 'Filling time-series gaps using image techniques: Multidimensional context
+      autoencoder approach for building energy data imputation'
+    url: https://arxiv.org/pdf/2307.05926v2
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.05926
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.05926 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1016/j.applthermaleng.2023.121545
+  - id: arx-a-text-classification-based-approach-for-evalu
+    title: A Text Classification-Based Approach for Evaluating and Enhancing the Machine
+      Interpretability of Building Codes
+    url: https://arxiv.org/pdf/2309.14374v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2023-09-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2309.14374
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2309.14374 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1016/j.engappai.2023.107207
+  - id: arx-ensemble-laplacian-biogeography-based-sine-cos
+    title: Ensemble Laplacian Biogeography-Based Sine Cosine Algorithm for Structural
+      Engineering Design Optimization Problems
+    url: https://arxiv.org/pdf/2310.05159v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-10-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.05159
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.05159 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
