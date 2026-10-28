@@ -175543,3 +175543,56 @@ sources:
     rights_verified_at: '2026-10-28T15:07:33Z'
     origin_ids: doi:10.3389/fcomp.2023.1154737 openalex:W4387673841
     resolution: 'legacy: openalex location'
+  - id: arx-on-the-promises-and-challenges-of-multimodal-f
+    title: On the Promises and Challenges of Multimodal Foundation Models for Geographical,
+      Environmental, Agricultural, and Urban Planning Applications
+    url: https://arxiv.org/pdf/2312.17016v1
+    source: arxiv
+    license: cc0
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.17016
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.17016 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-an-attempt-to-generate-new-bridge-types-from-l
+    title: An attempt to generate new bridge types from latent space of variational
+      autoencoder
+    url: https://arxiv.org/pdf/2311.03380v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-11-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.03380
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.03380 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-an-attempt-to-generate-new-bridge-types-from-l-2
+    title: An attempt to generate new bridge types from latent space of generative adversarial
+      network
+    url: https://arxiv.org/pdf/2401.00700v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.00700
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.00700 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
