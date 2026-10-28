@@ -175596,3 +175596,89 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-28'
+  - id: arx-gbss-a-global-building-semantic-segmentation-d
+    title: GBSS:a global building semantic segmentation dataset for large-scale remote
+      sensing building extraction
+    url: https://arxiv.org/pdf/2401.01178v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-01-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.01178
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.01178 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-investigating-the-suitability-of-concept-drift
+    title: Investigating the Suitability of Concept Drift Detection for Detecting Leakages
+      in Water Distribution Networks
+    url: https://arxiv.org/pdf/2401.01733v1
+    source: arxiv
+    license: cc-by-sa
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-01-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.01733
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.01733 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-architectural-design-for-secure-smart-contract
+    title: Architectural Design for Secure Smart Contract Development
+    url: https://arxiv.org/pdf/2401.01891v1
+    source: arxiv
+    license: cc0
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-01-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.01891
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.01891 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.54941/ahfe1003726
+  - id: arx-interpretable-time-series-models-for-wastewate
+    title: Interpretable Time Series Models for Wastewater Modeling in Combined Sewer
+      Overflows
+    url: https://arxiv.org/pdf/2401.02465v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-01-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.02465
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.02465 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-measured-and-modeled-outdoor-indoor-coverage-a
+    title: Measured and Modeled Outdoor Indoor Coverage at 28 GHz into High Thermal
+      Efficiency Buildings
+    url: https://arxiv.org/pdf/2401.03357v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-09-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.03357
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.03357 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
