@@ -175378,3 +175378,38 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-28'
+  - id: arx-occ3d-a-large-scale-3d-occupancy-prediction-be
+    title: 'Occ3D: A Large-Scale 3D Occupancy Prediction Benchmark for Autonomous Driving'
+    url: https://arxiv.org/pdf/2304.14365v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-04-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.14365
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.14365 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-automatic-reconstruction-of-semantic-3d-models
+    title: Automatic Reconstruction of Semantic 3D Models from 2D Floor Plans
+    url: https://arxiv.org/pdf/2306.01642v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.01642
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.01642 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.23919/mva57639.2023.10215746

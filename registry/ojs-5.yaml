@@ -80337,19 +80337,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1010
     rights_verified_at: '2026-10-28'
-  - id: ojs-perner-zmeny-dohody-adr-2009-z-poz-cie-dopravcu
-    title: ZMENY DOHODY ADR 2009 Z POZÍCIE DOPRAVCU
-    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1100/929
-    source: ojs_perner
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-    language: cs
-    published_at: '2009-05-29'
-    document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1100
-    rights_verified_at: '2026-10-28'
   - id: ojs-perner-ekonomick-efekt-vnos-zvy-ovania-rovne-kvality-hromad
     title: EKONOMICKÁ EFEKTÍVNOSŤ ZVYŠOVANIA ÚROVNE KVALITY HROMADNEJ OSOBNEJ DOPRAVY
     url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1108/936
@@ -80363,17 +80350,396 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1108
     rights_verified_at: '2026-10-28'
-  - id: ojs-perner-v-voj-poplatkov-za-pou-vanie-cestnej-siete-vo-vybran
-    title: VÝVOJ POPLATKOV ZA POUŽÍVANIE CESTNEJ SIETE VO VYBRANÝCH ŠTÁTOCH EURÓPY A
-      V SLOVENSKEJ REPUBLIKE
-    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1129/957
-    source: ojs_perner
+  - id: ojs-challengingglass-abstract-of-all-glass-entrance-pavillion-f
+    title: 'Abstract of: All-glass entrance pavillion for an office building in Madrid'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/226/222
+    source: ojs_challengingglass
     license: cc-by
-    topic: infrastructure
+    topic: structures_civil
     format: pdf
-    language: cs
-    published_at: '2009-08-17'
-    document_type: journal-article
+    language: en
+    published_at: '2018-05-17'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.6.2384
     license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1129
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/226
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-thermo-mechanical-numerical-modelling-of-s
+    title: Thermo-mechanical Numerical Modelling of Structural Glass under Fire - Preliminary
+      Considerations and Comparisons
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/234/230
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-05-06'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.6.2173
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/234
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-experimental-investigation-on-the-impact-r
+    title: Experimental Investigation on the Impact Resistance of Laminated Glass with
+      Various Glass Make-ups
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/247/240
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-05-06'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.6.2205
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/247
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-structural-glass-in-superyacht-application
+    title: 'Structural Glass in Superyacht Applications: Overcoming Challenges, Design
+      Standards and Analysis Methods'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/259/254
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4609
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/259
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-glass-design-in-switzerland
+    title: Glass design in Switzerland
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/262/257
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4610
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/262
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-an-experimental-study-on-thermoplastic-int
+    title: An experimental study on thermoplastic interlayers in laminated glass using
+      fiber optic strain sensors
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/321/302
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4602
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/321
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-vialidad-paseo-tollocan-en-la-ciudad-de-toluca
+    title: Vialidad Paseo Tollocan en la Ciudad de Toluca
+    url: https://quivera.uaemex.mx/article/download/10196/8350
+    source: ojs_quivera
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-07-01'
+    document_type: journal-article
+    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10196
+      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
+      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-bioeconomy-and-sustainability-in-mexican-forest-man
+    title: Bioeconomy and Sustainability in Mexican Forest Management
+    url: https://quivera.uaemex.mx/article/download/26902/20042
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2026-01-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/qret.v28i1.26902
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/26902
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-perception-of-security-in-an-urban-scenario-with-a
+    title: Perception of security in an urban scenario with a high incidence of street
+      crime in two popular neighborhoods in Mexico City
+    url: https://quivera.uaemex.mx/article/download/24358/18633
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2025-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/qret.v27i1.24358
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/24358
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-el-crecimiento-urbano-y-estructura-urbana-en-las-ci
+    title: El crecimiento urbano y estructura urbana en las Ciudades medias Mexicanas
+    url: https://quivera.uaemex.mx/article/download/10191/8346
+    source: ojs_quivera
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-07-01'
+    document_type: journal-article
+    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10191
+      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
+      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-who-paid-the-human-cost-of-modern-housing
+    title: Who paid the human cost of modern housing?
+    url: https://quivera.uaemex.mx/article/download/28219/20820
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2026-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/qret.v28i2.28219
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/28219
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-base-guidelines-for-developing-a-comprehensive-plan
+    title: Base Guidelines for Developing a Comprehensive Plan Solid Waste Management
+      in Ixtlahuaca, State of Mexico
+    url: https://quivera.uaemex.mx/article/download/9798/8086
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2016-01-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/9798
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31144-30981
+    title: تأثير حامض البوليلاكتيك اسد على استدامة الخلطة الإسفلتية
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31144/30981
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/arej.2024.147915.1345
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31144
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31254-31091
+    title: استخدام( زيت المحركات المستعمل) كمضاف في الخرسانة المعرضة لدرجات الحرارة
+      العالية
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31254/31091
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2009-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/rengj.2009.43617
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31254
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31280-31117
+    title: 'مراجعة شاملة لحصاد المياه: تحليل لدراسات سابقة'
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31280/31117
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/arej.2024.145055.1308
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31280
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31288-31125
+    title: إدارة المعرفة الخارجية فى بيئة مؤسسة الحفاظ المعماري
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31288/31125
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/arej.2024.145558.1317
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31288
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31311-31148
+    title: 'تقييم تأثير المياه الجوفية الملوثة بالملح المركب على مقاومة الضغط للأساسات
+      الخرسانية: دراسة حالة في البصرة، العراق'
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31311/31148
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/rengj.2023.141945.1270
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31311
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31317-31154
+    title: تقييم الأداء الميكانيكي لخلطات الأسفلت الساخنة والدافئة التي تحتوي على مخلفات
+      الكبريت كمواد مالئة بديلة
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31317/31154
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/rengj.2023.143569.1289
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31317
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31449-31286
+    title: أثر التركيب الفضائي والمكاني في كفاءة الإشغال الوظيفي لفضاءات التنزّه المفتوحة
+      في النسيج الحضري السكني في مدينة الموصل
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31449/31286
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/rengj.2015.105943
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31449
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-comparison-between-galvanic-sensors-steel-stainles
+    title: 'Comparison between galvanic sensors (steel/stainless steel) and half cell
+      potentials (Ecorr) for monitoring the corrosion risk of steel reinforcement '
+    url: https://revistaalconpat.org/index.php/RA/article/download/620/1700
+    source: ojs_alconpat
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2022-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v12i3.620
+    license_evidence: 'https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/620
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-ra-v13-n2-message-from-the-editor-in-chief-may-aug
+    title: RA V13 N2, Message from the Editor in Chief (May - August, 2023)
+    url: https://revistaalconpat.org/index.php/RA/article/download/691/1770
+    source: ojs_alconpat
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-05-01'
+    document_type: journal-article
+    license_evidence: 'https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/691
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-mapping-building-facades-using-panoramic-images-ca
+    title: Mapping building facades using panoramic images captured by Unmanned Aerial
+      Vehicle (UAV)
+    url: https://revistaalconpat.org/index.php/RA/article/download/752/2319
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v14i3.752
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/752
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-design-and-construction-of-merdeka-118-tower-using
+    title: 'Design and construction of Merdeka 118 tower using high performance concrete:
+      Pushing the boundaries of concrete technology for a megatall building.'
+    url: https://revistaalconpat.org/index.php/RA/article/download/808/2360
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v15i2.808
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/808
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-decarbonization-strategies-for-the-global-cement-a
+    title: Decarbonization strategies for the global cement and concrete industry. Highlighting
+      the role of chemical admixtures for successful transition
+    url: https://revistaalconpat.org/index.php/RA/article/download/819/2366
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v15i2.819
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/819
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-the-enduring-legacy-of-limestone-from-an-ancestral
+    title: 'The enduring legacy of limestone: from an ancestral pillar of construction
+      to a modern precursor in synergy with recycled concrete.'
+    url: https://revistaalconpat.org/index.php/RA/article/download/838/2427
+    source: ojs_alconpat
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v16i1.838
+    license_evidence: 'https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/838
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 Escalante-García, J. I.; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-evaluation-of-self-cleaning-lime-mortars-containin
+    title: Evaluation of self-cleaning lime mortars containing titanium dioxide (TiO2)
+      and metakaolin.
+    url: https://revistaalconpat.org/index.php/RA/article/download/851/2540
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v16i2.851
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/851
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-durability-and-sustainability-performance-of-portl
+    title: Durability and sustainability performance of Portland limestone cements.
+    url: https://revistaalconpat.org/index.php/RA/article/download/975/2422
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v16i1.975
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/975
     rights_verified_at: '2026-10-28'

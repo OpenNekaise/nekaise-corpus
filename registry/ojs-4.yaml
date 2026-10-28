@@ -81183,19 +81183,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2020 Jiří  Kolář##common.commaListSeparator##Milan  Velechovský; https://creativecommons.org/licenses/by/4.0)'
     rights_verified_at: '2026-10-28'
-  - id: ojs-perner-zm-na-legislativn-ho-r-mce-ve-ejn-ch-slu-eb-pro-p-ep
-    title: ZMĚNA LEGISLATIVNÍHO RÁMCE VEŘEJNÝCH SLUŽEB PRO PŘEPRAVU CESTUJÍCÍCH
-    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1094/924
-    source: ojs_perner
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-    language: cs
-    published_at: '2009-05-29'
-    document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1094
-    rights_verified_at: '2026-10-28'
   - id: ojs-perner-v-voj-integrace-ve-ejn-dopravy-v-kraji-vyso-ina
     title: VÝVOJ INTEGRACE VEŘEJNÉ DOPRAVY V KRAJI VYSOČINA
     url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1117/946
@@ -81222,4 +81209,392 @@ sources:
     license_evidence: 'https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1121
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2020 Rudolf Kampf##common.commaListSeparator##Helena Becková; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-abstract-of-revolving-entrance-doors-machi
+    title: 'Abstract of: Revolving entrance doors - Machines or structural elements?'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/225/221
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-05-17'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.6.2410
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/225
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-abstract-of-calculation-methods-of-glass-p
+    title: 'Abstract of: Calculation methods of glass parapets in aluminium clamping
+      profiles'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/229/225
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-05-17'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.6.2383
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/229
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-innovative-glass-recipes-containing-indust
+    title: Innovative Glass Recipes Containing Industrial Waste Materials
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/232/228
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-05-06'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.6.2175
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/232
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-combining-solar-control-technologies-for-o
+    title: Combining Solar Control Technologies for Optimal Performance
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/248/241
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-05-06'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.6.2169
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/248
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-performance-comparison-of-structural-inter
+    title: Performance Comparison of Structural Interlayers
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/249/242
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-05-06'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.6.2202
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/249
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-structural-behaviour-of-glass-panels-under
+    title: Structural Behaviour of Glass Panels Under Soft-body Impact
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/260/255
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4479
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/260
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-gs-e-journal-double-ring-bending-tests-on
+    title: GS&E journal > Double ring bending tests on heat pretreated soda–lime silicate
+      glass
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/266/259
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/266
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-non-destructive-testing-of-the-strength-of
+    title: Non-destructive testing of the strength of glass by a non-linear ultrasonic
+      method
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/281/270
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4498
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/281
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-redundancy-tests-on-glass-fins
+    title: Redundancy tests on glass fins
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/299/281
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4605
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/299
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-erin-mills-town-centre-globe-structure
+    title: Erin Mills Town Centre Globe Structure
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/300/282
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4765
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/300
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-an-adjustable-mould-for-the-casting-of-gla
+    title: An Adjustable Mould for the Casting of Glass Voussoirs for the Construction
+      of Fully Transparent Shell Structures
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/305/287
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4472
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/305
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-determination-and-verification-of-pvb-inte
+    title: Determination and Verification of PVB Interlayer Modulus Properties
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/322/303
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4440
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/322
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-gs-e-journal-mechanical-analy-2
+    title: 'GS&E journal > Mechanical analysis and characterization of IGUs with different
+      silicone sealed spacer connections - Part 1: experiments'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/326/307
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/326
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-recycled-glass-mixtures-as-cast-glass-comp
+    title: Recycled glass mixtures as cast glass components for structural applications,
+      towards sustainability
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/340/319
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4482
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/340
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-la-identidad-pandillera-en-la-col-santa-martha-acat
+    title: La identidad pandillera en la Col. Santa Martha Acatitla, D.F., un replanteamiento
+      para la supervivencia.
+    url: https://quivera.uaemex.mx/article/download/10269/8386
+    source: ojs_quivera
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2009-07-01'
+    document_type: journal-article
+    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10269
+      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
+      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-dise-o-de-mobiliario-urbano-para-lograr-la-din-mica
+    title: Diseño de mobiliario urbano para lograr la dinámica social en la ciudad
+    url: https://quivera.uaemex.mx/article/download/10224/8361
+    source: ojs_quivera
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2010-01-01'
+    document_type: journal-article
+    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10224
+      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
+      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-percepci-n-social-sobre-servicios-p-blicos-del-agua
+    title: 'Percepción social sobre servicios públicos del agua caso de estudio: El
+      Dorado, Sinaloa'
+    url: https://quivera.uaemex.mx/article/download/10107/8295
+    source: ojs_quivera
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2011-07-01'
+    document_type: journal-article
+    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10107
+      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
+      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-historic-evolution-of-state-of-mexico-s-population
+    title: Historic evolution of State of Mexico’s population
+    url: https://quivera.uaemex.mx/article/download/9819/8094
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2015-07-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/9819
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-theory-approaches-underlie-discourses-related-to-me
+    title: Theory approaches underlie discourses related to Mexican haciendas during
+      colonization and colony period
+    url: https://quivera.uaemex.mx/article/download/9881/8126
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2014-01-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/9881
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-vulnerability-and-resilience-of-urban-complexes-in
+    title: Vulnerability and resilience of urban complexes in Mexico City
+    url: https://quivera.uaemex.mx/article/download/9748/8055
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2017-07-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/9748
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-planificaci-n-urbana-en-perspectiva-una-mirada-a-nu
+    title: 'Planificación urbana en perspectiva: una mirada a nuestra formación en teoría
+      de la planificación urbana'
+    url: https://quivera.uaemex.mx/article/download/10108/8296
+    source: ojs_quivera
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2011-07-01'
+    document_type: journal-article
+    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10108
+      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
+      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31172-31009
+    title: التحلیل اللاخطی المزدوج لخزان سدتحت تأثیر حمل حرکی بطریقة العناصر المحدده
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31172/31009
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2011-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/rengj.2011.26613
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31172
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-diagnosis-and-project-of-structural-underpinning-o
+    title: Diagnosis and project of structural underpinning of Tampieri Palace
+    url: https://revistaalconpat.org/index.php/RA/article/download/714/1808
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v14i1.714
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/714
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-pathological-manifestations-in-a-historic-building
+    title: 'Pathological manifestations in a historic building: post-fire scenario at
+      Casarão dos Fabricantes'
+    url: https://revistaalconpat.org/index.php/RA/article/download/766/2317
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v14i3.766
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/766
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-diagonal-compression-of-hollow-concrete-block-maso
+    title: Diagonal compression of hollow concrete block masonry, as an indicator of
+      structural vulnerability.
+    url: https://revistaalconpat.org/index.php/RA/article/download/794/2399
+    source: ojs_alconpat
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v15i3.794
+    license_evidence: 'https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/794
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 Hernández, E. F., Aguilar Arriola, E. J., Martínez, H.; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-percentage-incidence-of-factors-and-indicators-tha
+    title: Percentage incidence of factors and indicators that determine the state of
+      conservation of buildings.
+    url: https://revistaalconpat.org/index.php/RA/article/download/835/2628
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: pt
+    published_at: '2026-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v16i2.835
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/835
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-effects-of-incorporating-secondary-treated-domesti
+    title: Effects of incorporating secondary-treated domestic wastewater on the physical
+      properties of concrete.
+    url: https://revistaalconpat.org/index.php/RA/article/download/844/2808
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v16i3.844
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/844
     rights_verified_at: '2026-10-28'
