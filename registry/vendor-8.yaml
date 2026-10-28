@@ -21829,3 +21829,47 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); robots.txt explicitly ALLOWS ClaudeBot/G'
     rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-orangebox-obvio-technical-pds
+    title: 'SpecifiedBy (UK manufacturer documents): Orangebox_Obvio_Technical_PDS.pdf
+      (obvio office furniture accessories — Orangebox Obvio Technical PDS)'
+    url: https://www.specifiedby.com/orangebox/obvio-office-furniture-accessories/Orangebox_Obvio_Technical_PDS.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-icopal-monarplan-gf-fleeceback-technical-pds-2
+    title: 'SpecifiedBy (UK manufacturer documents): Icopal_Monarplan-GF-Fleeceback_Technical_PDS_2.pdf'
+    url: https://www.specifiedby.com/bmi-icopal/monarplan-gf-fleeceback/Icopal_Monarplan-GF-Fleeceback_Technical_PDS_2.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-icopal-sureplan-fpo-technical-pds-fpo-plus
+    title: 'SpecifiedBy (UK manufacturer documents): Icopal_Sureplan-FPO_Technical_PDS_FPO-Plus.pdf
+      (sureplan fpo — Icopal Sureplan FPO Technical PDS FPO Plus)'
+    url: https://www.specifiedby.com/bmi-icopal/sureplan-fpo/Icopal_Sureplan-FPO_Technical_PDS_FPO-Plus.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
