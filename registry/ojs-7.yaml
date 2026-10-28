@@ -5679,19 +5679,6 @@ sources:
     license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/65
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-27'
-  - id: ojs-andarchitettura-ricerca-utopica-l-immagine-del-contrasto
-    title: 'Ricerca Utopica: L''immagine del contrasto'
-    url: https://and-architettura.it/index.php/and/article/download/296/291
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2020-12-31'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/296
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-andarchitettura-stairway-of-light-perspective-and-intersect
     title: 'Stairway of light: Perspective and intersection'
     url: https://and-architettura.it/index.php/and/article/download/144/140
@@ -75899,3 +75886,195 @@ sources:
     license_evidence: 'https://zr.gradri.uniri.hr/zr/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.zr.gradri.uniri.hr:article/66
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-13'
+  - id: ojs-pwk-land-use-change-and-environmental-impacts-a-bibliometri
+    title: 'Land Use Change and Environmental Impacts: a Bibliometric Analysis'
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/72035/pdf
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v21i4.72035
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/72035
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-peran-dan-kapasitas-pemangku-kepentingan-program-rpm-da
+    title: PERAN DAN KAPASITAS PEMANGKU KEPENTINGAN PROGRAM RPM DALAM MENDUKUNG KETERSEDIAAN
+      PANGAN MELALUI PRODUKSI PADI DI KECAMATAN MALAKA TENGAH, KABUPATEN M
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/19858/pdf
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-10-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v14i3.19858
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/19858
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-menuju-perkotaan-yang-berkelanjutan-kajian-kampung-kota
+    title: 'Menuju Perkotaan Yang Berkelanjutan: Kajian Kampung Kota dan Tipologinya
+      di Kelurahan Baru Ulu, Kota Balikpapan'
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/65138/pdf
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: id
+    published_at: '2024-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v20i3.65138
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/65138
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-struktur-ruang-wilayah-gerbangkertosusila-berdasar
+    title: 'Struktur Ruang Wilayah Gerbangkertosusila Berdasarkan Teori Pusat-Pinggiran:
+      Sebuah Kajian'
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/9826/pdf
+    source: ojs_tataloka
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.24.3.186-201
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/9826
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-evaluasi-pelayanan-sarana-dan-prasarana-proteksi-k
+    title: Evaluasi Pelayanan Sarana Dan Prasarana Proteksi Kebakaran Pada Permukiman
+      Perkotaan
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/7093/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-05-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.23.2.298-306
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/7093
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-status-sosial-ekonomi-dan-kepuasan-penghuni-aparte
+    title: STATUS SOSIAL-EKONOMI DAN KEPUASAN PENGHUNI APARTEMEN TRANSIT RANCAEKEK (ATR)
+      SEBAGAI ALTERNATIF HUNIAN MASYARAKAT BERPENGHASILAN RENDAH DI KAWASAN PE
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/2983/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.21.3.432-444
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/2983
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2019 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-analisa-spasial-lokasi-koridor-komersial-distro-da
+    title: ANALISA SPASIAL LOKASI KORIDOR KOMERSIAL DISTRO DAN BUTIK DI KOTA PONTIANAK
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/2097/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-11-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.20.4.440-454
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/2097
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2018 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-the-lower-valley-of-ofanto-river-from-landscape-arch
+    title: 'The Lower Valley of Ofanto River: From Landscape Archaeology to Landscape
+      Design'
+    url: https://impactum-journals.uc.pt/joelho/article/download/8852/7400
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_11_12_5
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/8852
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-the-convergence-of-architecture-and-archaeology-in-a
+    title: The Convergence of Architecture and Archaeology in a Palimpsestic Urban Setting
+    url: https://impactum-journals.uc.pt/joelho/article/download/10095/7398
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_11_12_7
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/10095
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-ronchamp-south-wall
+    title: Ronchamp, South Wall
+    url: https://impactum-journals.uc.pt/joelho/article/download/10583/8167
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_13_2
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/10583
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-the-architecture-of-slicing-balancing-automation-des
+    title: 'The Architecture of Slicing: Balancing Automation, Design and Sustainability
+      in Digitally Fabricated Concrete through RHWC'
+    url: https://impactum-journals.uc.pt/joelho/article/download/11412/9399
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-07-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_14_4
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11412
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-inhabiting-digital-worlds-place-nearness-distance
+    title: 'Inhabiting Digital Worlds: Place, Nearness, Distance'
+    url: https://impactum-journals.uc.pt/joelho/article/download/12277/9397
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-07-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_14_1
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/12277
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-co-creation-processes-to-rethink-architectural-desig
+    title: 'Co-creation Processes to Rethink Architectural Design: Guest Editors’Note'
+    url: https://impactum-journals.uc.pt/joelho/article/download/14334/9790
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_15_1
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/14334
+    rights_verified_at: '2026-10-28'

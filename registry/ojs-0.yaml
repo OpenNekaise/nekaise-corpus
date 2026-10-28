@@ -5168,19 +5168,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2018 AND Rivista di architetture, città e architetti)'
     rights_verified_at: '2026-10-27'
-  - id: ojs-andarchitettura-reverso-design-interior-come-flessibilit
-    title: 'Reverso design: Interior come flessibilità'
-    url: https://and-architettura.it/index.php/and/article/download/263/258
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2020-07-31'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/263
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-andarchitettura-ricucitura-urbana-parcheggio-multipiano-ex
     title: 'Ricucitura urbana: Parcheggio multipiano - Ex caserma San Martino, Ancona'
     url: https://and-architettura.it/index.php/and/article/download/253/250
@@ -5222,19 +5209,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2015 Autore/i; https://creativecommons.org/licenses/by-nc-sa/4.0)'
     rights_verified_at: '2026-10-27'
-  - id: ojs-andarchitettura-tonalite-showroom
-    title: Tonalite showroom
-    url: https://and-architettura.it/index.php/and/article/download/255/252
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2020-07-31'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/255
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-andarchitettura-una-citt-sull-acqua-cagliari-resiliente
     title: 'Una Città sull’acqua: Cagliari resiliente'
     url: https://and-architettura.it/index.php/and/article/download/316/310
@@ -77444,3 +77418,211 @@ sources:
     license_evidence: 'https://zr.gradri.uniri.hr/zr/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.zr.gradri.uniri.hr:article/269
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-14'
+  - id: ojs-pwk-land-suitability-and-potential-agriculture-analysis-to
+    title: Land Suitability and Potential Agriculture Analysis to Regional Development
+      Based on Agro-Tourism
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/37531/pdf
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v18i2.37531
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/37531
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-sinergi-implementasi-nilai-kearifan-lokal-dalam-konsep
+    title: Sinergi Implementasi Nilai Kearifan Lokal Dalam Konsep Kota Banda Aceh sebagai
+      Islamic Smart City
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/36526/pdf_1
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: id
+    published_at: '2021-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v17i3.36526
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/36526
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-faktor-pendorong-partisipasi-masyarakat-dalam-pengemban
+    title: 'Faktor Pendorong Partisipasi Masyarakat dalam Pengembangan Pariwisata (Studi
+      Kasus: Kawasan Obyek Wisata Pantai Sipakario, Kabupaten Penajam Paser Uta'
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/40307/pdf
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: id
+    published_at: '2023-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v19i2.40307
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/40307
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-memahami-perkembangan-kota-melalui-urban-morphology
+    title: Memahami Perkembangan Kota Melalui Urban Morphology
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/36135/pdf
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: id
+    published_at: '2022-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v18i3.36135
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/36135
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-manajemen-dan-rekayasa-lalu-lintas-kawasan-cbd-kota-bek
+    title: Manajemen dan Rekayasa Lalu Lintas Kawasan CBD Kota Bekasi
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/11454/8876
+    source: ojs_pwk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v12i1.11454
+    license_evidence: 'https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/11454
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 JURNAL PEMBANGUNAN WILAYAH & KOTA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-pemetaan-jalur-jalan-wisata-bukit-jamur-di-kabupat
+    title: Pemetaan Jalur Jalan Wisata Bukit Jamur di Kabupaten Bengkayang Menggunakan
+      Sistem Informasi Geografis (SIG)
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/10349/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2021-11-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.23.4.563-574
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/10349
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-evaluasi-penggunaan-lahan-untuk-perkiraan-debit-ba
+    title: EVALUASI PENGGUNAAN LAHAN UNTUK PERKIRAAN DEBIT BANJIR RANCANGAN DI DAS CIBERANG
+      PROVINSI BANTEN
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/232/150
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2015-05-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.17.2.76-86
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/232
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Jurnal Tataloka)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-model-spasial-level-dasar-bangunan-kota-tepian-air
+    title: 'Model Spasial Level Dasar Bangunan Kota Tepian Air (Studi Kasus: Kota Makassar)'
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/5045/4559
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.22.3.418-427
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/5045
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-corrigendum-eratum
+    title: Corrigendum / Eratum
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/753/560
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-01-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.15.3.vii-viii
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/753
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-workshop-internacional-de-arquitetura-sobre-alojamen
+    title: 'Workshop internacional de Arquitetura sobre Alojamento Estudantil e Reabilitação
+      Urbana. República: Arquitetura, Universidade e Cidade'
+    url: https://impactum-journals.uc.pt/joelho/article/download/_6_26/1804
+    source: ojs_joelho
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2015-12-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_6_26
+    license_evidence: 'https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/2606
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Workshop República)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-the-nine-square-grid-the-surviving-image-of-an-archi
+    title: 'The Nine-Square Grid: The Surviving Image of an Architecture without Content'
+    url: https://impactum-journals.uc.pt/joelho/article/download/9590/8172
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_13_7
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/9590
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-vincent-scully-detonates-the-past
+    title: Vincent Scully Detonates the Past
+    url: https://impactum-journals.uc.pt/joelho/article/download/9640/8169
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_13_4
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/9640
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-doors-floors-street-searching-for-meaning-in-an-unev
+    title: 'Doors, Floors, Street: Searching for Meaning in an Uneven Urban World'
+    url: https://impactum-journals.uc.pt/joelho/article/download/13290/9784
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-10-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_15_2
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/13290
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-is-there-a-new-de-re-aedificatoria-in-our-dystopian
+    title: Is There a New De Re Aedificatoria in Our Dystopian Epoch of the Anthropocene?
+    url: https://impactum-journals.uc.pt/joelho/article/download/14939/11907
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_16_1
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/14939
+    rights_verified_at: '2026-10-28'

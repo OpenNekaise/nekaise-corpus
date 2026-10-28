@@ -5469,20 +5469,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2018 AND Rivista di architetture, città e architetti)'
     rights_verified_at: '2026-10-27'
-  - id: ojs-andarchitettura-new-opera-house-abdr-architetti-associati-f
-    title: 'New Opera House: ABDR Architetti Associati, Florence'
-    url: https://and-architettura.it/index.php/and/article/download/230/225
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2012-12-31'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/230
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2012 Autore/i; https://creativecommons.org/licenses/by-nc-sa/4.0)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-andarchitettura-parcheggio-coperto-e-pensilina-di-ingresso
     title: Parcheggio coperto e pensilina di ingresso, Bonea (BN)
     url: https://and-architettura.it/index.php/and/article/download/66/60
@@ -77406,3 +77392,263 @@ sources:
     license_evidence: 'https://zr.gradri.uniri.hr/zr/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.zr.gradri.uniri.hr:article/221
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-14'
+  - id: ojs-pwk-keberlangsungan-menetap-penduduk-asli-pada-kawasan-di-s
+    title: Keberlangsungan Menetap Penduduk Asli Pada Kawasan di Sekitar Kampus UNDIP
+      Tembalang Sebagai Permukiman Kota Semarang yang Tergentrifikasi
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/6499/5364
+    source: ojs_pwk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2013-03-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v9i1.6499
+    license_evidence: 'https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/6499
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2013 JURNAL PEMBANGUNAN WILAYAH & KOTA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-kinerja-pelayanan-pengelolaan-sampah-berdasarkan-pendap
+    title: KINERJA PELAYANAN PENGELOLAAN SAMPAH BERDASARKAN PENDAPAT PEDAGANG DAN PENGELOLA
+      PASAR DI PASAR TALANG, KECAMATAAN GUNUNG TALANG KABUPATEN SOLOK
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/17718/pdf
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019-05-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v15i1.17718
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/17718
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-kajian-kesesuaian-pembangunan-ruko-terhadap-kebutuhan-p
+    title: Kajian Kesesuaian Pembangunan Ruko Terhadap Kebutuhan Pasar di Kota Mataram
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/6539/5395
+    source: ojs_pwk
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2013-09-09'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v9i3.6539
+    license_evidence: 'https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/6539
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2013 JURNAL PEMBANGUNAN WILAYAH & KOTA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-pwk-the-impacts-of-public-transportation-policy-on-bus-rapi
+    title: The Impacts of Public Transportation Policy on Bus Rapid Transit Operational
+      in the Metropolitan Jakarta
+    url: https://ejournal.undip.ac.id/index.php/pwk/article/download/45807/pdf
+    source: ojs_pwk
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/pwk.v19i4.45807
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://ejournal.undip.ac.id/index.php/pwk/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal.undip.ac.id:article/45807
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-kajian-perubahan-penggunaan-lahan-dan-harga-lahan
+    title: KAJIAN PERUBAHAN PENGGUNAAN LAHAN DAN HARGA LAHAN DI WILAYAH SEKITAR PINTU
+      TOL UNGARAN
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/379/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2016-02-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.18.1.58-70
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/379
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Jurnal Tataloka)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-transformasi-ruang-perkotaan-di-permukiman-nelayan
+    title: 'Transformasi Ruang Perkotaan di Permukiman Nelayan (Studi Kasus: Tambakmulyo,
+      Semarang)'
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/276/193
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2013-08-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.15.3.192-207
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/276
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Jurnal Tataloka)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-pengelolaan-kota-kota-kecil-di-jawa-tengah-studi-k
+    title: 'PENGELOLAAN KOTA-KOTA KECIL DI JAWA TENGAH: STUDI KASUS PADA EMPAT KOTA
+      KECIL DI WILAYAH JOGLOSEMAR'
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/1334/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-05-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/jvsar.v%vi%i.1334
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/1334
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-konsep-penanganan-sanitasi-permukiman-kumuh-di-kec
+    title: Konsep Penanganan Sanitasi Permukiman Kumuh di Kecamatan Lowokwaru, Kota
+      Malang
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/3046/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2020-02-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.22.1.83-93
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/3046
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2020 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-stabilisasi-sebagai-bentuk-penataan-pkl-makanan-si
+    title: STABILISASI SEBAGAI BENTUK PENATAAN PKL MAKANAN SIAP SAJI DI KOTA SURAKARTA
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/265/182
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2013-02-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.15.1.39-52
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/265
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Jurnal Tataloka)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-dampak-perubahan-penggunaan-lahan-pertanian-terhad
+    title: DAMPAK PERUBAHAN PENGGUNAAN LAHAN PERTANIAN TERHADAP SOSIAL EKONOMI PETANI
+      SEKITAR LOKASI PERTAMBANGAN BANYU URIP KECAMATAN GAYAM KABUPATEN BOJONEGORO
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/2166/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-02-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.20.1.50-64
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/2166
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2018 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-kesesuaian-keberadaan-rumah-tidak-layak-huni-rtlh
+    title: KESESUAIAN KEBERADAAN RUMAH TIDAK LAYAK HUNI (RTLH) TERHADAP TATA RUANG WILAYAH
+      DI KOTA YOGYAKARTA
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/1446/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.19.4.291-305
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/1446
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-tataloka-spillover-spasial-negatif-pertumbuhan-ekonomi-anta
+    title: SPILLOVER SPASIAL NEGATIF PERTUMBUHAN EKONOMI ANTAR KABUPATEN/KOTA DI PROVINSI
+      JAWA TIMUR
+    url: http://ejournal2.undip.ac.id/index.php/tataloka/article/download/1459/pdf
+    source: ojs_tataloka
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2018-08-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14710/tataloka.20.3.266-277
+    license_evidence: 'http://ejournal2.undip.ac.id/index.php/tataloka/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.ejournal2.undip.ac.id:article/1459
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2018 TATALOKA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-lvaro-siza-s-first-encounter-with-alvar-aalto-implic
+    title: "Ã\x81lvaro Siza's First Encounter with Alvar Aalto: Implications, Immediate\
+      \ and Yonder"
+    url: https://impactum-journals.uc.pt/joelho/article/download/9598/8171
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_13_6
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/9598
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-the-return-of-analogy-and-other-issues
+    title: The Return of Analogy and Other Issues
+    url: https://impactum-journals.uc.pt/joelho/article/download/11110/8165
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_13_0
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/11110
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-breathing-surfaces-brazilian-fa-ades-of-the-1930s-an
+    title: 'Breathing Surfaces: Brazilian Façades of the 1930s and 1940s'
+    url: https://impactum-journals.uc.pt/joelho/article/download/14129/11910
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_16_4
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/14129
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-territory-climate-body-and-architecture-toward-an-ec
+    title: 'Territory, Climate, Body and Architecture: Toward an Ecological Typology'
+    url: https://impactum-journals.uc.pt/joelho/article/download/14832/11909
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_16_3
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/14832
+    rights_verified_at: '2026-10-28'
+  - id: ojs-joelho-environment-trouble-in-celebration-of-the-60th-anniv
+    title: 'Environment-Trouble: In Celebration of the 60th Anniversary of Banham’s
+      "Environment Bubble"'
+    url: https://impactum-journals.uc.pt/joelho/article/download/14833/11912
+    source: ojs_joelho
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-8681_16_6
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/joelho/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/14833
+    rights_verified_at: '2026-10-28'
