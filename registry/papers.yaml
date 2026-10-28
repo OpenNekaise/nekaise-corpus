@@ -175085,3 +175085,56 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
       -> cc-by-sa (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-28'
+  - id: arx-a-simple-framework-for-3d-occupancy-estimation
+    title: A Simple Framework for 3D Occupancy Estimation in Autonomous Driving
+    url: https://arxiv.org/pdf/2303.10076v5
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-03-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2303.10076
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2303.10076 (v5, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-crackclf-automatic-pavement-crack-detection-ba
+    title: 'CrackCLF: Automatic Pavement Crack Detection based on Closed-Loop Feedback'
+    url: https://arxiv.org/pdf/2311.11815v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-11-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.11815
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.11815 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1109/tits.2023.3332995
+  - id: arx-flashocc-fast-and-memory-efficient-occupancy-p
+    title: 'FlashOcc: Fast and Memory-Efficient Occupancy Prediction via Channel-to-Height
+      Plugin'
+    url: https://arxiv.org/pdf/2311.12058v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-11-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.12058
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.12058 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
