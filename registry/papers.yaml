@@ -175171,3 +175171,120 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-28'
+  - id: oas-10-1184-r1-6716120-e4aa4787
+    title: Dynamic Optimization of Integrated Active - Passive Strategies for Building
+      Enthalpy Control
+    url: http://repository.cmu.edu/dissertations/404
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2014-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1184/r1/6716120
+    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/404;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1184/r1/6716120 openalex:W1895185220
+    resolution: 'sim1: openalex location'
+  - id: arx-comparative-analysis-of-shear-strength-predict
+    title: Comparative Analysis of Shear Strength Prediction Models for Reinforced Concrete
+      Slab-Column Connections
+    url: https://arxiv.org/pdf/2311.12824v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-09-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.12824
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.12824 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-selfocc-self-supervised-vision-based-3d-occupa
+    title: 'SelfOcc: Self-Supervised Vision-Based 3D Occupancy Prediction'
+    url: https://arxiv.org/pdf/2311.12754v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-11-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.12754
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.12754 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-bim-block-wise-self-supervised-learning-with-m
+    title: 'BIM: Block-Wise Self-Supervised Learning with Masked Image Modeling'
+    url: https://arxiv.org/pdf/2311.17218v1
+    source: arxiv
+    license: cc0
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-11-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.17218
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.17218 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-a-scan2bim-assistive-scan-to-building-informat
+    title: 'A-Scan2BIM: Assistive Scan to Building Information Modeling'
+    url: https://arxiv.org/pdf/2311.18166v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-11-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.18166
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.18166 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-automating-lookahead-planning-using-site-appea
+    title: Automating lookahead planning using site appearance and space utilization
+    url: https://arxiv.org/pdf/2311.18361v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-11-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.18361
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.18361 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-pathway-to-a-fully-data-driven-geotechnics-les
+    title: 'Pathway to a fully data-driven geotechnics: lessons from materials informatics'
+    url: https://arxiv.org/pdf/2312.00581v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.00581
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.00581 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
