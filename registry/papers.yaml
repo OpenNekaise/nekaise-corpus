@@ -175413,3 +175413,133 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-28'
     origin_ids: doi:10.23919/mva57639.2023.10215746
+  - id: ope-a-conceptual-design-of-a-wireless-sensor-actua
+    title: A conceptual design of a wireless sensor actuator system for optimizing energy
+      and well-being in buildings
+    url: https://kar.kent.ac.uk/32001/1/MonitoringOccupancyPatternV05.pdf
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2010-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.3763/inbi.2009.0032
+    license_evidence: no licence statement for this copy [copy https://kar.kent.ac.uk/32001/1/MonitoringOccupancyPatternV05.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3763/inbi.2009.0032 openalex:W1994250646
+    resolution: 'legacy: openalex location'
+  - id: ope-adaptive-opaque-fa-ades-and-their-potential-to
+    title: 'Adaptive opaque façades and their potential to reduce thermal energy use
+      in residential buildings: A simulation-based evaluation'
+    url: https://dadun.unav.edu/bitstreams/ab33a8f6-38b3-4348-8c66-6714f07217e2/download
+    source: openalex
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2021-09-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/17442591211045418
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://dadun.unav.edu/bitstreams/ab33a8f6-38b3-4348-8c66-6714f07217e2/download;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/17442591211045418 openalex:W3203047213
+    resolution: 'legacy: openalex location'
+  - id: arx-virtual-axle-detector-based-on-analysis-of-bri
+    title: Virtual Axle Detector based on Analysis of Bridge Acceleration Measurements
+      by Fully Convolutional Network
+    url: https://arxiv.org/pdf/2207.03758v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-07-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2207.03758
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2207.03758 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.3390/s22228963
+  - id: arx-orientation-constrained-system-for-lamp-detect
+    title: Orientation-Constrained System for Lamp Detection in Buildings Based on Computer
+      Vision
+    url: https://arxiv.org/pdf/2312.11380v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-12-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.11380
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.11380 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.3390/s19071516
+  - id: arx-semantic-segmentation-of-longitudinal-thermal-
+    title: Semantic segmentation of longitudinal thermal images for identification of
+      hot and cool spots in urban areas
+    url: https://arxiv.org/pdf/2310.04247v2
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-10-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.04247
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.04247 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1016/j.buildenv.2023.111112
+  - id: arx-room-occupancy-prediction-exploring-the-power-
+    title: 'Room Occupancy Prediction: Exploring the Power of Machine Learning and Temporal
+      Insights'
+    url: https://arxiv.org/pdf/2312.14426v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-12-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.14426
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.14426 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: ope-atmosphere-mood-and-scientific-explanation
+    title: Atmosphere, mood, and scientific explanation
+    url: https://www.frontiersin.org/articles/10.3389/fcomp.2023.1154737/pdf?isPublishedV2=False
+    source: openalex
+    license: unverified
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-10-16'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fcomp.2023.1154737
+    license_evidence: 'redirect: rights of requested copy https://www.frontiersin.org/articles/10.3389/fcomp.2023.1154737/pdf?isPublishedV2=False
+      do not transfer to https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2023.1154737/pdf;
+      payload sha256=c0b0f8e74fc7ce5753f407456cf0b3c13cf498565ab2a7cc8e946fa052a110a4;
+      original evidence: {"license": "cc-by", "license_evidence": "openalex.license=cc-by;
+      openalex.license_id=https://openalex.org/licenses/cc-by [copy https://www.frontiersin.org/articles/10.3389/fcomp.2023.1154737/pdf?isPublishedV2=False;
+      version publishedVersion; rights accepted]", "rights_verified_at": "2026-10-28",
+      "selected_version": "publishedVersion"}'
+    rights_verified_at: '2026-10-28T15:07:33Z'
+    origin_ids: doi:10.3389/fcomp.2023.1154737 openalex:W4387673841
+    resolution: 'legacy: openalex location'
