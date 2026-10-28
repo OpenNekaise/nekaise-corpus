@@ -176635,3 +176635,55 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-28'
     origin_ids: doi:10.36253/979-12-215-0289-3.03
+  - id: arx-multi-channel-mosra-mean-opinion-score-and-roo
+    title: 'Multi-Channel MOSRA: Mean Opinion Score and Room Acoustics Estimation Using
+      Simulated Data and a Teacher Model'
+    url: https://arxiv.org/pdf/2309.11976v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-09-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2309.11976
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2309.11976 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-monoocc-digging-into-monocular-semantic-occupa
+    title: 'MonoOcc: Digging into Monocular Semantic Occupancy Prediction'
+    url: https://arxiv.org/pdf/2403.08766v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-03-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.08766
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.08766 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-comparison-of-edge-computing-methods-in-intern
+    title: Comparison of edge computing methods in Internet of Things architectures
+      for efficient estimation of indoor environmental parameters with Machine Lear
+    url: https://arxiv.org/pdf/2403.08810v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-02-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.08810
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.08810 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1016/j.engappai.2023.107149
