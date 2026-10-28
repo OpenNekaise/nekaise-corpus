@@ -80467,22 +80467,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2019 Oculum Ensaios)'
     rights_verified_at: '2026-10-28'
-  - id: ojs-oculum-representa-es-de-bras-lia-em-poemas-de-nicolas-behr
-    title: 'Representações de Brasília em poemas de Nicolas Behr (1977-1980): uma perspectiva
-      metodológica a partir de Hans Robert Jauss | Representations of the '
-    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/4832/3304
-    source: ojs_oculum
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2022-12-10'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.24220/2318-0919v19e2022a4832
-    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/4832
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2021 Oculum Ensaios)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-perner-elasticita-popt-vky-v-doprav-a-pr-m-rn-ch-mezd-zam-s
     title: ELASTICITA POPTÁVKY V DOPRAVĚ A PRŮMĚRNÝCH MEZD ZAMĚSTNANCŮ
     url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1162/989
@@ -80562,4 +80546,290 @@ sources:
     document_type: journal-article
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1406
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-four-point-bending-tests-of-pvb-double-lam
+    title: Four-point bending tests of PVB double laminated glass panels – experiments
+      and numerical analysis
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/349/328
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-09-04'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.7480/cgc.7.4460
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/349
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-the-clamp-bender-a-new-testing-equipment-f
+    title: 'The Clamp Bender: A New Testing Equipment for Thin Glass'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/366/399
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-07-29'
+    document_type: conference-paper
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/366
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-rapid-safety-assement-and-experimental-der
+    title: Rapid Safety Assement and Experimental Derivation of Damage Indexes for In-Service
+      Glass Slabs
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/403/350
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-20'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.8.403
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/403
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-design-engineering-and-experimental-testin
+    title: Design, Engineering and Experimental Testing of Tubular Glass Columns
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/410/356
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-20'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.8.410
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/410
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-the-jardin-d-hiver-in-paris-a-structural-g
+    title: The Jardin d’Hiver in Paris, a Structural Glass Case Study
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/414/391
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-07-12'
+    document_type: conference-paper
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/414
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-prototyping-of-digitally-manufactured-thin
+    title: Prototyping of Digitally Manufactured Thin Glass Composite Façade Panels
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/430/409
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-20'
+    document_type: conference-paper
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/430
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-slim-skins-towards-a-new-glazed-fa-ade-sys
+    title: 'Slim Skins: Towards a New Glazed Façade System'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/435/361
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-20'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.8.435
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/435
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-comparison-of-behaviour-of-laminated-banis
+    title: Comparison of Behaviour of Laminated Banister Panels with Embedded Connections
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/438/362
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-20'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.8.438
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/438
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-the-chronology-of-historical-glass-constru
+    title: The Chronology of Historical Glass Constructions
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/452/370
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-20'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.8.452
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/452
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-hail-resistance-of-greenhouse-coverings
+    title: Hail Resistance of Greenhouse Coverings
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/454/371
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-20'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.8.454
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/454
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-reducing-carbon-footprint-of-laminated-gla
+    title: Reducing Carbon Footprint of Laminated Glass Through the Use of Structural
+      Interlayers
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/456/373
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-06-20'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.8.456
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/456
+    rights_verified_at: '2026-10-28'
+  - id: ojs-challengingglass-first-steps-towards-a-smart-laminated-safe
+    title: First Steps Towards a Smart Laminated Safety Glass made of Thin Glass and
+      Polycarbonate
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/481/453
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.481
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/481
+    rights_verified_at: '2026-10-28'
+  - id: ojs-quivera-25-a-os-de-encuentros-ideas-y-disertaciones-sobre-e
+    title: 25 años de encuentros, ideas y disertaciones sobre el territorio
+    url: https://quivera.uaemex.mx/article/download/21591/15931
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2023-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/qret.v25i2.21591
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/21591
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31528-31365
+    title: تأثير استخدام مياه الابار كماء للخلط في الخرسانة
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31528/31365
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-12-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/rengj.2014.101015
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31528
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-article-31537-31374
+    title: تأثير تدرج الحماية الحجرية على النحر الموضعي حول دعامات الجسور
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/31537/31374
+    source: ojs_rengj
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008-02-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/rengj.2008.44049
+    license_evidence: 'https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/31537
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-effect-of-curve-length-on-operating-speed-on-horizont
+    title: Effect of Curve Length on Operating Speed on Horizontal Curve of Multilane
+      Divided Rural Roadway
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/63528/59236
+    source: ojs_rengj
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/arej.v31i2.63528
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/63528
+    rights_verified_at: '2026-10-28'
+  - id: ojs-rengj-comparative-study-of-cement-columns-in-improving-the
+    title: Comparative Study of Cement Columns in Improving The Engineering Properties
+      of Silty Soil
+    url: https://rengj.uomosul.edu.iq/index.php/rengj/article/download/63539/59329
+    source: ojs_rengj
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.33899/arej.v31i2.63539
+    license_url: https://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://rengj.uomosul.edu.iq/index.php/rengj/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/63539
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-complete-design-for-rectangular-combined-footings
+    title: Complete design for rectangular combined footings assuming that the contact
+      area with the soil is partially compressed.
+    url: https://revistaalconpat.org/index.php/RA/article/download/1021/2816
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: pt
+    published_at: '2026-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v16i3.1021
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1021
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-impact-of-design-and-durability-monitoring-strateg
+    title: Impact of design and durability monitoring strategies on the electrochemical
+      and microenvironmental behavior of the substructure of a reinforced concr
+    url: https://revistaalconpat.org/index.php/RA/article/download/1040/2561
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v16i2.1040
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1040
+    rights_verified_at: '2026-10-28'
+  - id: ojs-alconpat-reliability-based-calibration-of-fatigue-load-fact
+    title: Reliability-based calibration of fatigue load factors for steel bridges under
+      traffic growth uncertainty.
+    url: https://revistaalconpat.org/index.php/RA/article/download/1054/2820
+    source: ojs_alconpat
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-09-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.21041/ra.v16i3.1054
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://revistaalconpat.org/index.php/RA/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1054
     rights_verified_at: '2026-10-28'
