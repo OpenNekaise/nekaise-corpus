@@ -176391,3 +176391,177 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-28'
+  - id: ope-the-making-of-the-new-european-wind-atlas-part
+    title: 'The Making of the New European Wind Atlas – Part 2: Production and evaluation'
+    url: https://gmd.copernicus.org/articles/13/5079/2020/gmd-13-5079-2020.pdf
+    source: openalex
+    license: cc-by
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2020-10-27'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/gmd-13-5079-2020
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://gmd.copernicus.org/articles/13/5079/2020/gmd-13-5079-2020.pdf; version
+      publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-28'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/gmd-13-5079-2020 openalex:W3014884263
+    resolution: 'legacy: openalex location'
+  - id: ope-characterizing-3d-vegetation-structure-from-sp
+    title: 'Characterizing 3D vegetation structure from space: Mission requirements'
+    url: https://ntrs.nasa.gov/api/citations/20120003764/downloads/20120003764.pdf
+    source: openalex
+    license: unverified
+    topic: commissioning_fdd
+    format: pdf
+    language: en
+    published_at: '2011-06-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rse.2011.01.024
+    license_evidence: no licence statement for this copy [copy https://ntrs.nasa.gov/api/citations/20120003764/downloads/20120003764.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-28'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.rse.2011.01.024 openalex:W2018130020
+    resolution: 'legacy: openalex location'
+  - id: arx-plangpt-enhancing-urban-planning-with-tailored
+    title: 'PlanGPT: Enhancing Urban Planning with Tailored Language Model and Efficient
+      Retrieval'
+    url: https://arxiv.org/pdf/2402.19273v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-02-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2402.19273
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2402.19273 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-sift-aided-rectified-2d-dic-for-displacement-a
+    title: SIFT-Aided Rectified 2D-DIC for Displacement and Strain Measurements in Asphalt
+      Concrete Testing
+    url: https://arxiv.org/pdf/2402.19279v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-02-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2402.19279
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2402.19279 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1061/jpeodx.pveng-1401
+  - id: arx-sok-cross-chain-bridging-architectural-design-
+    title: 'SoK: Cross-Chain Bridging Architectural Design Flaws and Mitigations'
+    url: https://arxiv.org/pdf/2403.00405v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-03-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.00405
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.00405 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-can-llms-generate-architectural-design-decisio
+    title: Can LLMs Generate Architectural Design Decisions? -An Exploratory Empirical
+      study
+    url: https://arxiv.org/pdf/2403.01709v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-03-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.01709
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.01709 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-renderocc-vision-centric-3d-occupancy-predicti
+    title: 'RenderOcc: Vision-Centric 3D Occupancy Prediction with 2D Rendering Supervision'
+    url: https://arxiv.org/pdf/2309.09502v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-09-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2309.09502
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2309.09502 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-ub-finenet-urban-building-fine-grained-classif
+    title: 'UB-FineNet: Urban Building Fine-grained Classification Network for Open-access
+      Satellite Images'
+    url: https://arxiv.org/pdf/2403.02132v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-03-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.02132
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.02132 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-human-activity-recognition-with-low-resolution
+    title: Human Activity Recognition with Low-Resolution Infrared Array Sensor Using
+      Semi-supervised Cross-domain Neural Networks for Indoor Environment
+    url: https://arxiv.org/pdf/2403.02632v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-03-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.02632
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.02632 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1109/jiot.2023.3243944
+  - id: arx-fastocc-accelerating-3d-occupancy-prediction-b
+    title: 'FastOcc: Accelerating 3D Occupancy Prediction by Fusing the 2D Bird''s-Eye
+      View and Perspective View'
+    url: https://arxiv.org/pdf/2403.02710v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-03-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.02710
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.02710 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'

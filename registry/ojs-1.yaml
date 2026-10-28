@@ -82058,23 +82058,6 @@ sources:
       (c) 2022 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
       https://creativecommons.org/licenses/by/)'
     rights_verified_at: '2026-10-28'
-  - id: ojs-tjes-the-use-of-bentonite-clay-as-a-coagulant-or-a-coagulan
-    title: The Use of Bentonite clay as a Coagulant or a Coagulant Aid With Alum in
-      Turbidity Removal
-    url: https://tj-es.com/ojs/index.php/tjes/article/download/727/755
-    source: ojs_tjes
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2006-06-30'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.25130/tjes.13.2.10
-    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/727
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2022 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
-      https://creativecommons.org/licenses/by/)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-tjes-elastic-plastic-non-linear-behavior-of-suddenly-loaded
     title: Elastic-Plastic Non-Linear Behavior of Suddenly Loaded Plane Steel Frames
       by ASI Technique
@@ -82210,22 +82193,6 @@ sources:
       (c) 2023 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
       https://creativecommons.org/licenses/by/)'
     rights_verified_at: '2026-10-28'
-  - id: ojs-transportes-projeto-de-reestrutura-o-operacional-do-corredo
-    title: PROJETO DE REESTRUTURAÇÃO OPERACIONAL DO CORREDOR BAIXADA FLUMINENSE-RIO
-      DE JANEIRO
-    url: https://transportes.anpet.org.br/anpet/article/download/344/306
-    source: ojs_transportes
-    license: unverified
-    topic: infrastructure
-    format: pdf
-    language: pt
-    published_at: '1993-05-23'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.14295/transportes.v1i1.344
-    license_evidence: 'https://transportes.anpet.org.br/anpet/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.anpet.emnuvens.com.br:article/344
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 1993 Carlos David Nassi)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-transportes-reaproveitamento-da-areia-de-fundi-o-como-mater
     title: Reaproveitamento da areia de fundição como material de base e sub-base de
       pavimentos flexíveis
@@ -82355,4 +82322,450 @@ sources:
     license_evidence: 'https://transportes.anpet.org.br/anpet/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.anpet.emnuvens.com.br:article/548
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2012 Sara Ferreira, António Couto)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-4-0-low-tech-building-systems-bim-based-product-pro
+    title: 4.0 low-tech building systems. BIM-based product-process innovation for corrugated
+      cardboard prefabrication
+    url: https://www.agathon.it/agathon/article/download/329/355
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/12142022
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/329
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-digital-transition-in-facility-management-bim-cmms
+    title: "Digital transition in facility management. \uFEFFBIM, CMMS and diagnostic\
+      \ maintenance"
+    url: https://www.agathon.it/agathon/article/download/330/356
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/12152022
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/330
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-perception-and-sustainable-plastics-a-digital-tool
+    title: Perception and sustainable plastics. A digital tool to manage aesthetics
+      and sustainability
+    url: https://www.agathon.it/agathon/article/download/340/366
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/12252022
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/340
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-vertical-farm-new-architectures-and-cities-from-the
+    title: Vertical farm. New architectures and cities from the forms of agriculture
+    url: https://www.agathon.it/agathon/article/download/353/387
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/13122023
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/353
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-advanced-models-for-the-construction-of-an-nbs-cata
+    title: Advanced models for the construction of an NbS catalogue for resilience and
+      biodiversity
+    url: https://www.agathon.it/agathon/article/download/356/390
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/13152023
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/356
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-beyond-arrival-on-the-potential-and-shortcomings-of
+    title: Beyond arrival – On the potential and shortcomings of modularity in shelter
+      and housing for the displaced
+    url: https://www.agathon.it/agathon/article/download/377/416
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/14102023
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/377
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-sustainability-and-energy-transition-perspectives-f
+    title: Sustainability and energy transition – Perspectives for an integrated approach
+      to the built heritage
+    url: https://www.agathon.it/agathon/article/download/403/448
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/1582024
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/403
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-public-spaces-of-the-energy-transition-a-design-in
+    title: Public spaces of the energy transition – A design in Nepi for the New European
+      Bauhaus
+    url: https://www.agathon.it/agathon/article/download/405/450
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/15102024
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/405
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-smart-readiness-for-buildings-digital-asset-for-ene
+    title: "Smart Readiness for buildings – \uFEFFDigital asset for energy transition"
+    url: https://www.agathon.it/agathon/article/download/406/451
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/15112024
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/406
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-integrated-natural-resource-management-in-sustainab
+    title: Integrated natural resource management in sustainable urban context
+    url: https://www.agathon.it/agathon/article/download/409/454
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/15142024
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/409
+    rights_verified_at: '2026-10-28'
+  - id: ojs-agathon-local-micro-networks-for-green-transition-of-the-wo
+    title: Local micro-networks for green transition of the wool supply chain
+    url: https://www.agathon.it/agathon/article/download/426/472
+    source: ojs_agathon
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.19229/2464-9309/15292024
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/426
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-seeing-the-city-through-traffic-hawking-and-merchandise
+    title: 'Seeing the City through Traffic Hawking and Merchandise Differentials: Urban
+      and Suburban Differentials in Lagos Megacity'
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1549/928
+    source: ojs_jps
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v7i1.1549
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1549
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-public-spaces-and-urban-revitalization-evidence-and-ins
+    title: 'Public Spaces and Urban Revitalization: Evidence and Insights from Luanda'
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1579/937
+    source: ojs_jps
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v7i1.1579
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1579
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-fieldwork-a-trilogy
+    title: Fieldwork, A Trilogy
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1594/915
+    source: ojs_jps
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v7i3.1594
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1594
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-disability-inclusion-and-accessibility-in-zimbabwe-shar
+    title: 'Disability Inclusion and Accessibility in Zimbabwe: Sharing Views and Experiences
+      of Blind and Partially Sighted Persons Living in the City of Bulaway'
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1606/873
+    source: ojs_jps
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-06-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v7i2.1606
+    license_evidence: 'https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1606
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2022 Edwin Ndhlovu, Nyunyutai Mudzingwa)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-vol-7-n-2-2022-full-issue
+    title: Vol. 7 n. 2 | 2022 | FULL ISSUE
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1614/897
+    source: ojs_jps
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v7i2.1614
+    license_evidence: 'https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1614
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2022 Luisa Bravo)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-creative-practices-in-the-public-realm
+    title: Creative Practices in the Public Realm
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1660/898
+    source: ojs_jps
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v7i3.1660
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1660
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-digital-public-spaces-for-youth-engagement-in-informal
+    title: 'Digital Public Spaces for Youth Engagement in Informal Settlements: Case
+      Examples from Mathare in Kenya'
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1781/997
+    source: ojs_jps
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v9i2.1781
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1781
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-a-digital-blueprint-of-breathing-spaces-in-mumbai
+    title: A Digital Blueprint of Breathing Spaces in Mumbai
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1784/1002
+    source: ojs_jps
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v9i2.1784
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1784
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-youth-empowerment-in-urban-kampung-neighborhood-through
+    title: 'Youth Empowerment in Urban Kampung Neighborhood Through Placemaking: A Case
+      Study of Bandung and Jakarta, Indonesia'
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1790/995
+    source: ojs_jps
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v9i2.1790
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1790
+    rights_verified_at: '2026-10-28'
+  - id: ojs-jps-play-for-all-towards-inclusive-public-spaces-for-young
+    title: 'Play for All: Towards Inclusive Public Spaces for Young Women in Cairo'
+    url: https://www.journalpublicspace.org/index.php/jps/article/download/1797/983
+    source: ojs_jps
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-11-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.32891/jps.v9i2.1797
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.journalpublicspace.org/index.php/jps/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.journalpublicspace.org:article/1797
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-an-appraisal-of-psychotropic-drugs-and-their-conse
+    title: AN APPRAISAL OF PSYCHOTROPIC DRUGS AND THEIR CONSEQUENCES AMONG THE CONSTRUCTION
+      INDUSTRY WORKERS IN NIGERIA, ADAMAWA STATE CASE STUDY
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1234/1062
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.361.1234
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1234
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-study-and-analysis-of-asa-river-hypothetical-dam-b
+    title: STUDY AND ANALYSIS OF ASA RIVER HYPOTHETICAL DAM BREAK USING HEC-RAS
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1244/1072
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.361.1244
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1244
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-modified-water-cement-ratio-law-for-compressive-st
+    title: MODIFIED WATER-CEMENT RATIO LAW FOR COMPRESSIVE STRENGTH OF RICE HUSK ASH
+      CONCRETE
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1284/1081
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.362.1284
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1284
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Nigerian Journal of Technology)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-organic-template-free-synthesis-of-zsm11-from-kaol
+    title: ORGANIC TEMPLATE FREE SYNTHESIS OF ZSM11 FROM KAOLINITE CLAY
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1293/1090
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-03-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.362.1293
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1293
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Nigerian Journal of Technology)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-assessment-of-traffic-flow-on-enugu-highways-using
+    title: ASSESSMENT OF TRAFFIC FLOW ON ENUGU HIGHWAYS USING SPEED DENSITY REGRESSION
+      COEFFICIENT
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1386/1132
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.363.1386
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1386
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Nigerian Journal of Technology)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-comparative-study-of-bs-8110-and-eurocode-2-in-str
+    title: COMPARATIVE STUDY OF BS 8110 AND EUROCODE 2 IN STRUCTURAL DESIGN AND ANALYSIS
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1387/1133
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.363.1387
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1387
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Nigerian Journal of Technology)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-use-of-standalone-photovoltaic-system-for-office-b
+    title: 'USE OF STANDALONE PHOTOVOLTAIC SYSTEM FOR OFFICE BUILDING: THE CASE STUDY
+      OF NATIONAL CENTRE FOR HYDROPOWER RESEARCH AND DEVELOPMENT, NIGERIA'
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1494/1196
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-09-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.364.1494
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1494
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Nigerian Journal of Technology)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-modelling-traffic-noise-level-on-roadside-traders
+    title: MODELLING TRAFFIC NOISE LEVEL ON ROADSIDE TRADERS AT WURUKUM MARKET AREA
+      IN MAKURDI TOWN, BENUE STATE – NIGERIA
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1572/1214
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.371.1572
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1572
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Nigerian Journal of Technology)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-nijotech-assessment-of-building-maintenance-in-nigerian-uni
+    title: 'ASSESSMENT OF BUILDING MAINTENANCE IN NIGERIAN UNIVERSITY SYSTEM: A CASE
+      STUDY OF UNIVERSITY OF NIGERIA, NSUKKA'
+    url: https://www.nijotech.com/index.php/nijotech/article/download/1574/1216
+    source: ojs_nijotech
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-12-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.4314/njt.371.1574
+    license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1574
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Nigerian Journal of Technology)'
     rights_verified_at: '2026-10-28'
