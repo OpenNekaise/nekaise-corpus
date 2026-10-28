@@ -81881,20 +81881,6 @@ sources:
     license_evidence: 'https://revistas.uva.es/index.php/ciudades/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.apps-biblio-des.uva.es:article/1231
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-28'
-  - id: ojs-ciudades-the-atlas-of-el-escorial
-    title: The Atlas of El Escorial
-    url: https://revistas.uva.es/index.php/ciudades/article/download/1234/1055
-    source: ojs_ciudades
-    license: unverified
-    topic: urban
-    format: pdf
-    language: es
-    published_at: '2017-12-01'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.24197/ciudades.12.2009.251-264
-    license_evidence: 'https://revistas.uva.es/index.php/ciudades/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.apps-biblio-des.uva.es:article/1234
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-ciudades-the-main-square-of-salamanca-in-the-urbanism-of-th
     title: The main square of Salamanca in the urbanism of the 20th century
     url: https://revistas.uva.es/index.php/ciudades/article/download/1266/1074
@@ -82117,4 +82103,581 @@ sources:
     document_type: journal-article
     license_url: https://creativecommons.org/licenses/by-nc-sa/4.0
     license_evidence: https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/417
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-uav-photogrammetry-for-road-surface-modelling
+    title: UAV Photogrammetry for Road Surface Modelling
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.19/315
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.19
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/316
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-evaluation-of-polyaminoamide-as-a-surfactant-additive
+    title: Evaluation of Polyaminoamide as a Surfactant Additive in Hot Mix Asphalt
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.14/320
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.14
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/321
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-impact-of-farm-equipment-loading-on-low-volume-concre
+    title: Impact of Farm Equipment Loading on Low-Volume Concrete Road Structural Response
+      and Performance
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.41/327
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.41
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/328
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-evaluation-of-moraine-loams-filtration-properties
+    title: Evaluation of Moraine Loams' Filtration Properties
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.37/331
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.37
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/332
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-strategic-road-maintenance-and-development-programme
+    title: Strategic Road Maintenance and Development Programme of the Republic of Lithuania
+      for 2030 – a Tool for Using National Funds to Create a Sustainable a
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.35/333
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.35
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/334
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-investigation-on-application-of-basalt-materials-as-r
+    title: Investigation on Application of Basalt Materials as Reinforcement for Flexural
+      Elements of Concrete Bridges
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.25/343
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.25
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/344
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-life-cycle-cost-of-bridges-first-steps-to-a-holistic
+    title: Life-Cycle Cost of Bridges – First Steps to a Holistic Approach
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.20/344
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.20
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/345
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-future-trends-in-road-pavement-technologies-developme
+    title: Future Trends in Road Pavement Technologies Development in the Context of
+      Environmental Protection
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.19/345
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.19
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/346
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-a-new-approach-to-assess-the-influence-of-road-roughn
+    title: A New Approach to Assess the Influence of Road Roughness on Driver Speed
+      Behavior Based on Driving Simulator Tests
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.17/347
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.17
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/348
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 20216 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-determination-of-load-equivalency-factors-by-statisti
+    title: Determination of Load Equivalency Factors by Statistical Analysis of Weigh-In-Motion
+      Data
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.31/369
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.31
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/370
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-unified-methodology-for-estimating-efficiency-of-traf
+    title: Unified Methodology for Estimating Efficiency of Traffic Calming Measures
+      – Example of Estonia
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.30/370
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.30
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/371
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-the-effect-of-synthetic-zeolite-admixture-on-the-dura
+    title: The Effect of Synthetic Zeolite Admixture on the Durability of Concrete Paving
+      Blocks
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.25/375
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.25
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/376
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-a-methodology-of-triage-for-bridges-in-depopulating-s
+    title: 'A Methodology of Triage For Bridges in Depopulating Society: Modeling Based
+      on Population and Network Connectivity'
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.24/376
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.24
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/377
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-methods-and-criteria-for-evaluation-of-asphalt-mixtur
+    title: Methods and Criteria for Evaluation of Asphalt Mixture Resistance to Low
+      Temperature Cracking
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2017.16/389
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-06-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2017.16
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/390
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-traffic-pollution-assessment-using-artificial-neural
+    title: Traffic Pollution Assessment Using Artificial Neural Network and Multivariate
+      Analysis
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2017.07/399
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-03-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2017.07
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/400
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-application-of-soil-structure-interaction-on-building-w
+    title: Application of Soil Structure Interaction on Building with Basement using
+      Nonlinear Soil Springs
+    url: https://ced.petra.ac.id/index.php/civ/article/download/25920/20867
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-04-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.25.1.20-28
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/25920
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-laboratory-study-on-vallejo-and-scovazzo-s-methods-in-e
+    title: Laboratory Study on Vallejo and Scovazzo’s Methods in Estimating the Rheology
+      Parameters of Bentonite and Kaolinite Muds
+    url: https://ced.petra.ac.id/index.php/civ/article/download/25987/21074
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.26.1.51-62
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/25987
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-evaluation-of-shear-flexure-interaction-behavior-of-rei
+    title: Evaluation of Shear-Flexure Interaction Behavior of Reinforced Concrete Wall
+    url: https://ced.petra.ac.id/index.php/civ/article/download/27163/21071
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.26.1.11-20
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/27163
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-improvement-of-shear-strength-of-clay-shale-soil-using
+    title: Improvement of Shear Strength of Clay Shale Soil using Polymer-Calcite Precipitation
+      (PCP) as Soil Stabilization Technique
+    url: https://ced.petra.ac.id/index.php/civ/article/download/29822/21369
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.27.2.216-224
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/29822
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-maximizing-land-potential-a-highest-and-best-use-analys
+    title: 'Maximizing Land Potential: A Highest and Best Use Analysis for Serviced
+      Apartments in Bali'
+    url: https://ced.petra.ac.id/index.php/civ/article/download/30300/21364
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.27.2.152-166
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/30300
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-experimental-investigation-on-seismic-performance-of-pr
+    title: Experimental Investigation on Seismic Performance of Precast Column-Foundation
+      Connection using Combined Anchor and Pocket System
+    url: https://ced.petra.ac.id/index.php/civ/article/download/31299/21436
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.1.69-82
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/31299
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-pull-out-strength-of-rebar-embedded-in-fiber-reinforced
+    title: Pull-Out Strength of Rebar Embedded in Fiber-Reinforced High-Strength Concrete
+      Utilizing Dimensional Analysis
+    url: https://ced.petra.ac.id/index.php/civ/article/download/31469/21602
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.2.169-178
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/31469
+    rights_verified_at: '2026-10-28'
+  - id: ojs-territorium-climate-risks-and-the-programmatic-vulnerabilit
+    title: 'Climate risks and the programmatic vulnerability: the challenges for the
+      homeless population in Rio de Jarneiro and risk analysis'
+    url: https://impactum-journals.uc.pt/territorium/article/download/13509/11422
+    source: ojs_territorium
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2025-09-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-7723_32-2_1
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/territorium/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/13509
+    rights_verified_at: '2026-10-28'
+  - id: ojs-territorium-the-terra-nova-condominium-a-critical-evaluatio
+    title: 'The Terra Nova Condominium: a critical evaluation of the population resettlement
+      policy after the 2011 extreme-rainfall in nova Friburgo, Rio de Janei'
+    url: https://impactum-journals.uc.pt/territorium/article/download/14769/13161
+    source: ojs_territorium
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2026-10-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-7723_33-2_3
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/territorium/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/14769
+    rights_verified_at: '2026-10-28'
+  - id: ojs-territorium-risk-management-in-linear-infrastructures-case
+    title: 'Risk management in linear infrastructures: case study of three machine learning
+      techniques applied to modeling susceptibility to landslides in a miner'
+    url: https://impactum-journals.uc.pt/territorium/article/download/15881/13167
+    source: ojs_territorium
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2026-10-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-7723_33-2_9
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/territorium/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/15881
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-perancangan-dan-pengembangan-terminal-penump
+    title: PERANCANGAN DAN PENGEMBANGAN TERMINAL PENUMPANG BANDARA INTERNASIONAL RADIN
+      INTEN II LAMPUNG
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/9062/8020
+    source: ojs_arsitekturauns
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2017-04-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v14i2.9062
+    license_evidence: 'https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/9062
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Arsitektura)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-tata-ruang-pada-rumah-pengrajin-gamelan-seba
+    title: Tata Ruang pada Rumah Pengrajin Gamelan sebagai Home Industry di Desa Wirun
+      Mojolaban Sukoharjo
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/93934/47558
+    source: ojs_arsitekturauns
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v22i2.93934
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/93934
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-the-application-of-architecture-bahavioral-s
+    title: THE APPLICATION OF ARCHITECTURE BAHAVIORAL STUDIES FOR DESIGN STRATEGY IN
+      FEMALE STUDENT’S DORMITORY IN SLEMAN
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/21648/17562
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2018-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v16i2.21648
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/21648
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-kajian-implementasi-desain-universal-pada-ta
+    title: Kajian Implementasi Desain Universal Pada Taman Samarendah
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/37343/28060
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-02-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v18i1.37343
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/37343
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-from-physical-models-to-innovations-technolo
+    title: 'From Physical Models to Innovations: Technology Advances in Architectural
+      and Civil Engineering'
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/81909/45215
+    source: ojs_arsitekturauns
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v22i1.81909
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/81909
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-bandar-udara-dengan-pendekatan-wayfinding-di
+    title: BANDAR UDARA DENGAN PENDEKATAN WAYFINDING DI PANIMBANG PANDEGLANG BANTEN
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/12074/10598
+    source: ojs_arsitekturauns
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2017-07-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v15i1.12074
+    license_evidence: 'https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/12074
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Arsitektura)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-solo-craft-gallery-expo-dengan-pendekatan-ar
+    title: SOLO CRAFT GALLERY EXPO DENGAN PENDEKATAN ARSITEKTUR JAWA KONTEMPORER
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/12182/10624
+    source: ojs_arsitekturauns
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2017-07-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v15i1.12182
+    license_evidence: 'https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/12182
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Arsitektura)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-implementasi-konsep-arsitektur-high-tech-pad
+    title: Implementasi Konsep Arsitektur High-Tech Pada Desain Fitness and Wellness
+      Center di Pekanbaru
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/42871/28481
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2020-11-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v18i2.42871
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/42871
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-penerapan-arsitektur-tradisional-bali-pada-p
+    title: Penerapan Arsitektur Tradisional Bali pada Perancangan Teater Kesenian Kontemporer
+      di Badung
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/42994/28476
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2020-11-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v18i2.42994
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/42994
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-toba-batak-house-of-huta-bagasan-in-jangga-d
+    title: TOBA BATAK HOUSE OF HUTA BAGASAN IN JANGGA DOLOG VILLAGE
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/29356/20254
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2019-04-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v17i1.29356
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/29356
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-konsep-eco-green-park-pada-taman-bungkul-sur
+    title: Konsep Eco Green Park pada Taman Bungkul Surabaya dalam Mewujudkan Environmental
+      Sustainability
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/59408/37650
+    source: ojs_arsitekturauns
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v20i2.59408
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/59408
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-gedung-sarinah-memori-dan-kontinuitas-modern
+    title: 'Gedung Sarinah: Memori dan Kontinuitas Modernisme Kota Jakarta'
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/62033/40492
+    source: ojs_arsitekturauns
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v21i1.62033
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/62033
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-wadah-musik-underground-sebagai-media-psikot
+    title: WADAH MUSIK UNDERGROUND SEBAGAI MEDIA PSIKOTERAPI DI KOTA SURAKARTA
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/15704/12638
+    source: ojs_arsitekturauns
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2017-11-08'
+    document_type: journal-article
+    license_evidence: 'https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/15704
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 ARSITEKTURA)'
     rights_verified_at: '2026-10-28'

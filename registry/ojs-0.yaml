@@ -80221,19 +80221,6 @@ sources:
     license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/335
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-28'
-  - id: ojs-andarchitettura-un-viaggio-nel-tempo-l-italia-resiliente-ra
-    title: 'Un viaggio nel tempo: L’Italia resiliente raccontata da Diorama'
-    url: https://and-architettura.it/index.php/and/article/download/337/331
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2021-06-30'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/337
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-28'
   - id: ojs-andarchitettura-changing-architecture-paesaggi-e-citt-il-va
     title: 'Changing Architecture: Paesaggi e città. Il valore dell''architettura'
     url: https://and-architettura.it/index.php/and/article/download/343/337
@@ -80285,19 +80272,6 @@ sources:
     published_at: '2011-12-28'
     document_type: journal-article
     license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/361
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-28'
-  - id: ojs-andarchitettura-storie-di-luce-antonino-cardillo-house-of-c
-    title: 'Storie di luce: Antonino Cardillo, House of Convexity, Barcellona, Spagna'
-    url: https://and-architettura.it/index.php/and/article/download/364/358
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2011-12-28'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/364
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-28'
   - id: ojs-andarchitettura-aree-rurali-resilienti-trasformare-il-risch
@@ -80424,4 +80398,640 @@ sources:
     document_type: journal-article
     license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/426
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-mechanical-state-analysis-of-different-variants-of-pi
+    title: Mechanical State Analysis of Different Variants of Piled Rafts
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.01/309
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-03-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.01
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/310
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-road-safety-and-pavement-management-a-case-study-of-t
+    title: 'Road Safety and Pavement Management: a Case Study of Tanzania'
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.17/317
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.17
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/318
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-pavement-diagnosis-accuracy-with-controlled-applicati
+    title: Pavement Diagnosis Accuracy With Controlled Application of Artificial Neural
+      Network
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.45/323
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.45
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/324
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-effects-in-service-of-the-staggered-construction-of-c
+    title: Effects in Service of the Staggered Construction of Cable-Stayed Bridges
+      Built on Temporary Supports
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2015.31/337
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2015.31
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/338
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2015 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-experimental-investigation-on-stiffness-and-strength
+    title: Experimental Investigation on Stiffness and Strength of Single-Lap Z-Pinned
+      Joints in a Laminated CFRP Stress-Ribbon Strip
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.14/350
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-06-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.14
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/351
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-comparision-of-constant-span-and-influence-line-metho
+    title: Comparision of Constant-Span and Influence Line Methods for Long-Span Bridge
+      Load Calculations
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.10/354
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-03-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.10
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/355
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-wind-driven-damage-localization-on-a-suspension-bridg
+    title: Wind-Driven Damage Localization on a Suspension Bridge
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.02/362
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-03-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.02
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/363
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-application-of-the-foamed-bitumen-and-bitumen-emulsio
+    title: Application of the Foamed Bitumen and Bitumen Emulsion to the Road Base Mixes
+      in the Deep Cold Recycling Technology
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.34/366
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-12-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.34
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/367
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-the-effect-of-compaction-degree-and-binder-content-on
+    title: The Effect of Compaction Degree and Binder Content on Performance Properties
+      of Asphalt Mixtures
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.26/374
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.26
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/375
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-evaluation-of-a-current-vehicle-load-model-using-weig
+    title: 'Evaluation of a Current Vehicle Load Model Using Weigh-in-Motion Records:
+      A Case in China'
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.23/377
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.23
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/378
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-analysis-of-gusset-plate-of-contemporary-bridge-truss
+    title: Analysis of Gusset Plate of Contemporary Bridge Truss Girder
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.22/378
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.22
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/379
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-the-influence-of-pavement-degradation-caused-by-cycli
+    title: The Influence of Pavement Degradation Caused by Cyclic Loading on its Failure
+      Mechanisms
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2016.21/379
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2016-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2016.21
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/380
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2016 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-perspectives-for-surrogate-safety-studies-in-east-eur
+    title: Perspectives for Surrogate Safety Studies in East-European Countries
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2017.19/386
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-09-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2017.19
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/387
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-use-of-industrial-wastes-as-filler-in-open-graded-fri
+    title: Use of Industrial Wastes as Filler in Open-Graded Friction Courses
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2017.13/392
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-06-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2017.13
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/393
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-an-experimental-study-of-the-impact-of-aging-on-gilso
+    title: An Experimental Study of the Impact of Aging on Gilsonite and Trinidad Epuré
+      Modified Asphalt Binders Properties
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2017.09/397
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-06-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2017.09
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/398
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-bjrbe-stereo-vision-method-application-to-road-inspection
+    title: Stereo Vision Method Application to Road Inspection
+    url: https://bjrbe-journals.rtu.lv/bjrbe/article/download/bjrbe.2017.05/401
+    source: ojs_bjrbe
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2017-03-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.3846/bjrbe.2017.05
+    license_evidence: 'https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/402
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Vilnius Gediminas Technical University (VGTU) Press Technika; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-the-preliminary-study-of-liquefaction-susceptibility-ma
+    title: The Preliminary Study of Liquefaction Susceptibility Map in the Yogyakarta-Bawen
+      Toll Road Sections I and II, Indonesia
+    url: https://ced.petra.ac.id/index.php/civ/article/download/25965/20868
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-04-19'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.25.1.29-36
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/25965
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-modelling-of-shear-critical-lightly-reinforced-concrete
+    title: Modelling of Shear-critical, Lightly Reinforced Concrete T-beams with Externally
+      Bonded CFRP using ATENA Science
+    url: https://ced.petra.ac.id/index.php/civ/article/download/26353/20981
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.25.2.67-77
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/26353
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-long-term-mechanical-properties-and-microstructure-of-c
+    title: Long-term Mechanical Properties and Microstructure of Concrete Utilizing
+      Self-Cementing Fly Ash as A Sole Binder Material
+    url: https://ced.petra.ac.id/index.php/civ/article/download/26908/20984
+    source: ojs_ced
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.25.2.106-114
+    license_evidence: 'https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/26908
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Dr., Prof. Antoni, Prof.; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-optimization-of-counterfort-retaining-wall-structure-wi
+    title: Optimization of Counterfort Retaining Wall Structure with Shear Key using
+      Metaheuristic Method
+    url: https://ced.petra.ac.id/index.php/civ/article/download/27937/21181
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.26.2.151-159
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/27937
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-evaluation-of-basal-heave-stability-for-deep-excavation
+    title: Evaluation of Basal Heave Stability for Deep Excavations in Clay using the
+      Discontinuity Layout Optimization Method
+    url: https://ced.petra.ac.id/index.php/civ/article/download/30435/21437
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.1.83-100
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/30435
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-investigation-on-the-structural-behaviour-of-gfrp-lamin
+    title: Investigation on the Structural Behaviour of GFRP Laminated BFRC Beams
+    url: https://ced.petra.ac.id/index.php/civ/article/download/30658/21361
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.27.2.123-134
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/30658
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-seismic-damage-state-limits-of-non-engineered-buildings
+    title: Seismic Damage State Limits of Non-Engineered Buildings Considering the Randomness
+      of Ground Motions
+    url: https://ced.petra.ac.id/index.php/civ/article/download/30703/21365
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-09-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.27.2.167-179
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/30703
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-feeder-transportation-route-evaluation-based-on-origin
+    title: Feeder Transportation Route Evaluation based on Origin-Destination Analysis
+      and Land Function (Case Study of Trans Semarang Feeder 1A, Indonesia)
+    url: https://ced.petra.ac.id/index.php/civ/article/download/30843/21441
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.1.46-53
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/30843
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-assessment-and-strengthening-of-bolted-connections-in-t
+    title: Assessment and Strengthening of Bolted Connections in the Mandomai Bowstring
+      Bridge Constructed with Ulin Wood
+    url: https://ced.petra.ac.id/index.php/civ/article/download/31083/21438
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.1.101-110
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/31083
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-analyzing-student-mobility-patterns-and-route-preferenc
+    title: 'Analyzing Student Mobility Patterns and Route Preferences: A GIS- and Mental
+      Map-based Study at Politeknik Negeri Ujung Pandang, Indonesia'
+    url: https://ced.petra.ac.id/index.php/civ/article/download/31143/21439
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.1.111-119
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/31143
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-fresh-and-mechanical-properties-of-limestone-calcined-c
+    title: Fresh and Mechanical Properties of Limestone Calcined Clay Cement (LC3) using
+      Local Clay with Clinker Content below 50%
+    url: https://ced.petra.ac.id/index.php/civ/article/download/31237/21440
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.1.120-129
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/31237
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-optimising-the-pioneer-shipping-route-considering-wave
+    title: Optimising the Pioneer Shipping Route Considering Wave Variations
+    url: https://ced.petra.ac.id/index.php/civ/article/download/31503/21601
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.2.159-168
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/31503
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-machine-learning-modelling-of-iri-in-continuously-reinf
+    title: 'Machine Learning Modelling of IRI in Continuously Reinforced Concrete Pavements
+      Using LTPP Data: Comparative Evaluation of Advanced Algorithms'
+    url: https://ced.petra.ac.id/index.php/civ/article/download/31855/21443
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.1.130-144
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/31855
+    rights_verified_at: '2026-10-28'
+  - id: ojs-ced-probabilistic-analysis-of-the-failure-time-of-concrete
+    title: Probabilistic Analysis of the Failure Time of Concrete-Filled Steel Tube
+      (CFST) Columns under Post-Blast Fire Loading
+    url: https://ced.petra.ac.id/index.php/civ/article/download/31879/21607
+    source: ojs_ced
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-09-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.9744/ced.28.2.230-248
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://ced.petra.ac.id/index.php/civ/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ced.petra.ac.id:article/31879
+    rights_verified_at: '2026-10-28'
+  - id: ojs-territorium-differentiated-education-and-training-of-teache
+    title: 'Differentiated education and training of teachers who work in caiçaras communities:
+      fundamental action for disaster risk reduction (DRR)'
+    url: https://impactum-journals.uc.pt/territorium/article/download/13524/10391
+    source: ojs_territorium
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pt
+    published_at: '2024-12-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.14195/1647-7723_31-extra1_2
+    license_url: http://creativecommons.org/licenses/by/4.0
+    license_evidence: https://impactum-journals.uc.pt/territorium/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:impactum-journals.uc.pt:article/13524
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-translokalitas-budaya-sorkam-pada-penggunaan
+    title: Translokalitas Budaya Sorkam pada Penggunaan Ruang Untuk Kegiatan Sehari-hari
+      Masyarakat di Perumahan Bumi Yapemas Indah, Bekasi
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/48283/31487
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v19i1.48283
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/48283
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-design-strategy-of-batak-socio-cultural-park
+    title: DESIGN STRATEGY OF BATAK SOCIO-CULTURAL PARK AS A TOURIST DESTINATION WITH
+      LOCAL WISDOM APRROACH IN LAKE TOBA REGION
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/22490/17636
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2018-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v16i2.22490
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/22490
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-aspek-aspek-arsitektur-kolonial-belanda-pada
+    title: Aspek-Aspek Arsitektur Kolonial Belanda Pada Bangunan Pendopo Puri Mangkunegaran
+      Surakarta
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/40893/28074
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2021-02-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v18i1.40893
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/40893
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-evaluasi-aksesibilitas-sarana-dan-prasarana
+    title: Evaluasi Aksesibilitas Sarana dan Prasarana di Universitas Sebelas Maret
+      melalui Pemetaan Spasial
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/93469/47423
+    source: ojs_arsitekturauns
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v22i2.93469
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/93469
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-kajian-penggunaan-coating-atap-terhadap-term
+    title: Kajian Penggunaan Coating Atap terhadap Termal Bangunan Studi Kasus Rumah
+      Bali Kontemporer
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/84333/47433
+    source: ojs_arsitekturauns
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-10-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v22i2.84333
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/84333
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-redesain-terminal-tirtonadi-dengan-pendekata
+    title: REDESAIN TERMINAL TIRTONADI DENGAN PENDEKATAN GREEN TERMINAL DI SURAKARTA
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/15590/12538
+    source: ojs_arsitekturauns
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2017-11-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v13i1.15590
+    license_evidence: 'https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/15590
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 ARSITEKTURA)'
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-effect-of-acoustic-material-ceiling-to-speec
+    title: EFFECT OF ACOUSTIC MATERIAL CEILING TO SPEECH PERFORMANCE OF CONVENTION HALL
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/22324/17568
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2018-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v16i2.22324
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/22324
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-study-of-theory-method-application-of-gothic
+    title: STUDY OF THEORY, METHOD, APPLICATION OF GOTHIC CHURCH ARCHITECTURE
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/20998/17560
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2018-10-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v16i2.20998
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/20998
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-hubungan-kausal-antara-14-faktor-preferensi
+    title: Hubungan Kausal antara 14 Faktor Preferensi Generasi Y dan Z dalam Memilih
+      Jenis Hunian
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/51415/35569
+    source: ojs_arsitekturauns
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2022-04-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v20i1.51415
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/51415
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-wwr-optimization-for-ventilation-and-environ
+    title: WWR OPTIMIZATION FOR VENTILATION AND ENVIRONMENTAL NOISE CONTROL OF TROPICAL
+      DWELLING
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/20092/15834
+    source: ojs_arsitekturauns
+    license: cc-by-nc-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2018-04-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v16i1.20092
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/20092
+    rights_verified_at: '2026-10-28'
+  - id: ojs-arsitekturauns-implikasi-karakter-ruang-bermain-terhadap-bi
+    title: Implikasi Karakter Ruang Bermain Terhadap Biofilia Anak Usia Sekolah di Pulau
+      Belakang Padang
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/97997/49673
+    source: ojs_arsitekturauns
+    license: cc-by-sa
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-04-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v23i1.97997
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/97997
     rights_verified_at: '2026-10-28'
