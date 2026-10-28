@@ -175824,3 +175824,106 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-28'
+  - id: arx-using-text-to-image-generation-for-architectur
+    title: Using Text-to-Image Generation for Architectural Design Ideation
+    url: https://arxiv.org/pdf/2304.10182v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-04-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2304.10182
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2304.10182 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1177/14780771231222783
+  - id: arx-automated-design-appraisal-estimating-real-est
+    title: 'Automated Design Appraisal: Estimating Real Estate Price Growth and Value
+      at Risk due to Local Development'
+    url: https://arxiv.org/pdf/2401.08645v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-12-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.08645
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.08645 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-pop-3d-open-vocabulary-3d-occupancy-prediction
+    title: 'POP-3D: Open-Vocabulary 3D Occupancy Prediction from Images'
+    url: https://arxiv.org/pdf/2401.09413v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-01-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.09413
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.09413 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-generative-ai-in-the-construction-industry-opp
+    title: 'Generative AI in the Construction Industry: Opportunities & Challenges'
+    url: https://arxiv.org/pdf/2310.04427v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-09-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.04427
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.04427 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.3390/buildings14010220
+  - id: arx-an-attempt-to-generate-new-bridge-types-from-l-4
+    title: An attempt to generate new bridge types from latent space of generative flow
+    url: https://arxiv.org/pdf/2401.10299v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.10299
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.10299 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+  - id: arx-understanding-why-slam-algorithms-fail-in-mode
+    title: Understanding why SLAM algorithms fail in modern indoor environments
+    url: https://arxiv.org/pdf/2305.05313v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-05-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2305.05313
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2305.05313 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1007/978-3-031-32606-6_22
