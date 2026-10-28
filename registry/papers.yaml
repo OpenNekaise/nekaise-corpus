@@ -174882,3 +174882,87 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-28'
     origin_ids: doi:10.1080/10586458.2015.1110541
+  - id: arx-maximum-entropy-based-modeling-of-community-le
+    title: Maximum entropy-based modeling of community-level hazard responses for civil
+      infrastructures
+    url: https://arxiv.org/pdf/2310.17798v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2023-10-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.17798
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.17798 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-assessing-verticalization-effects-on-urban-saf
+    title: Assessing verticalization effects on urban safety perception
+    url: https://arxiv.org/pdf/1709.00350v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2017-09-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1709.00350
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1709.00350 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1145/3178392.3178399
+  - id: arx-a-machine-learning-based-framework-for-cluster
+    title: A Machine Learning-Based Framework for Clustering Residential Electricity
+      Load Profiles to Enhance Demand Response Programs
+    url: https://arxiv.org/pdf/2310.20367v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-10-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.20367
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.20367 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-global-transformer-architecture-for-indoor-roo
+    title: Global Transformer Architecture for Indoor Room Temperature Forecasting
+    url: https://arxiv.org/pdf/2310.20476v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-10-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.20476
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.20476 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-yolov8-based-visual-detection-of-road-hazards-
+    title: 'YOLOv8-Based Visual Detection of Road Hazards: Potholes, Sewer Covers, and
+      Manholes'
+    url: https://arxiv.org/pdf/2311.00073v1
+    source: arxiv
+    license: cc0
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2023-10-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.00073
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.00073 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'

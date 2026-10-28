@@ -186318,19 +186318,6 @@ sources:
     license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
       rights: Pure file licence key unspecified'
     rights_verified_at: '2026-10-28'
-  - id: rep-aau-vbn-local-agenda-21-traditional-gemeinschaft
-    title: Local agenda 21. Traditional Gemeinschaft or late-modern subpolitics?
-    url: https://vbn.aau.dk/ws/files/18866870/Local_agenda_21.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: urban
-    format: pdf
-    language: en
-    published_at: '2000'
-    document_type: journal-article
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-28'
   - id: rep-aau-vbn-samspil-mellem-b-rn-og-skolens-fysiske-r
     title: Samspil mellem børn og skolens fysiske rammer
     url: https://vbn.aau.dk/ws/files/687452290/Samspil_mellem_b_rn_og_skolens_fysiske_rammer.pdf
@@ -186442,19 +186429,6 @@ sources:
     title: 'Ældres flytteovervejelser og faktiske flytninger. Hvad fremmer og hvad hæmmer
       flytninger: en analyse blandt 50-80-årige i 1997-2002'
     url: https://vbn.aau.dk/ws/files/14379814/http_www.akf.dk_udgivelser_workingpaper_2005_pdf_2_2005_aeldre_flyt.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: urban
-    format: pdf
-    language: da
-    published_at: '2005'
-    document_type: book
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-28'
-  - id: rep-aau-vbn-implementering-av-bypolitik-i-norden
-    title: Implementering av bypolitik i Norden
-    url: https://vbn.aau.dk/ws/files/14371951/TN2005502.pdf
     source: repo_aau_vbn
     license: unverified
     topic: urban
@@ -186745,32 +186719,6 @@ sources:
     language: da
     published_at: '2007'
     document_type: book
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-28'
-  - id: rep-aau-vbn-hvor-vigtigt-er-det-at-kalibrere-afl-bsm
-    title: 'Hvor vigtigt er det at kalibrere afløbsmodeller?: del I'
-    url: https://vbn.aau.dk/ws/files/10395973/Hvor_vigtigt_er_det_at_kalibrere_afl_bsmodeller_
-    source: repo_aau_vbn
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: da
-    published_at: '2007'
-    document_type: journal-article
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-28'
-  - id: rep-aau-vbn-hvor-vigtigt-er-det-at-kalibrere-afl-b-2
-    title: 'Hvor vigtigt er det at kalibrere afløbsmodeller?: del II'
-    url: https://vbn.aau.dk/ws/files/10395860/Hvor_vigtigt_er_det_at_kalibrere_afl_bsmodeller
-    source: repo_aau_vbn
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: da
-    published_at: '2007'
-    document_type: journal-article
     license_evidence: VBN - Aalborg University research portal (publications) OAI record
       states no rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-28'
@@ -189515,6 +189463,1522 @@ sources:
     published_at: '2025'
     document_type: journal-article
     persistent_id: doi:10.3390/buildings15050711
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-the-role-of-indoor-soundscape-methodolog
+    title: 'The role of indoor soundscape methodology: From architectural design process
+      to establishment of regulations'
+    url: https://publications.rwth-aachen.de/record/770190/files/770190.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239779
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-sound-transmission-through-aluminum-fram
+    title: Sound Transmission through Aluminum Framings of Window, Door and Façade Systems
+    url: https://publications.rwth-aachen.de/record/770232/files/770232.pdf
+    source: repo_rwth
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239821
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-the-acoustical-assessment-of-the-commerc
+    title: The acoustical assessment of the commercial buildings - design assumptions
+    url: https://publications.rwth-aachen.de/record/770239/files/770239.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239828
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-sound-insulation-of-fenestration-systems
+    title: 'Sound Insulation of Fenestration Systems: A Comprehensive Web-Based Simulation
+      Program and Validation'
+    url: https://publications.rwth-aachen.de/record/770247/files/770247.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239836
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-in-situ-measured-facade-sound-insulation
+    title: In Situ Measured Facade Sound Insulation of Wind Turbine Sound
+    url: https://publications.rwth-aachen.de/record/770250/files/770250.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239839
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-noise-from-plants-systems-and-building-i
+    title: 'Noise from plants systems and Building Information Modeling: The Code Checking.'
+    url: https://publications.rwth-aachen.de/record/770253/files/770253.pdf
+    source: repo_rwth
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239842
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-subjective-evaluation-of-acoustic-qualit
+    title: Subjective Evaluation of Acoustic Quality Classes in Dwelling
+    url: https://publications.rwth-aachen.de/record/770323/files/770323.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239912
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-floor-impact-sound-insulation-of-the-six
+    title: Floor Impact Sound Insulation of the Six-story Wood-frame Model Building
+    url: https://publications.rwth-aachen.de/record/770341/files/770341.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239930
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-influence-of-suspended-ceiling-type-of-r
+    title: Influence of suspended ceiling type of residential building on heavyweight
+      floor impact sound
+    url: https://publications.rwth-aachen.de/record/770342/files/770342.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239931
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-revision-of-chinese-national-standard-gb
+    title: Revision of Chinese National Standard GB 50118 - Code for Design of Sound
+      Insulation of Civil Buildings
+    url: https://publications.rwth-aachen.de/record/770358/files/770358.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239947
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-sound-absorption-of-brazilian-wooden-pan
+    title: Sound Absorption of Brazilian wooden panels and their use as Building Components
+    url: https://publications.rwth-aachen.de/record/770372/files/770372.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239961
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-use-of-higuer-harmonic-generation-to-det
+    title: Use of Higuer-Harmonic Generation To Detecting Cracks due To Steel Corrosion
+      In Reinforced Concrete
+    url: https://publications.rwth-aachen.de/record/770376/files/770376.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239965
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-sound-insulation-between-dwellings-compa
+    title: Sound insulation between dwellings – Comparison of national requirements
+      in Europe and interaction with acoustic classification schemes
+    url: https://publications.rwth-aachen.de/record/770394/files/770394.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239983
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-is-noise-annoyance-from-neighbours-in-mu
+    title: Is noise annoyance from neighbours in multi-storey housing associated with
+      fatigue and sleeping problems?
+    url: https://publications.rwth-aachen.de/record/770395/files/770395.pdf
+    source: repo_rwth
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-239984
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-municipal-housing-strategies-for-refugee
+    title: Municipal Housing Strategies for Refugees
+    url: https://publications.rwth-aachen.de/record/770717/files/770717.pdf
+    source: repo_rwth
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-2019-09685
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-recommendations-for-the-design-of-digita
+    title: Recommendations for the design of digital escape route signage from an age-differentiated
+      experimental study
+    url: https://publications.rwth-aachen.de/record/771203/files/771203.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2019-09994
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-seismic-methods-applied-to-ultrasonic-te
+    title: Seismic methods applied to ultrasonic testing in civil engineering
+    url: https://publications.rwth-aachen.de/record/771329/files/771329.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2019-10082
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-toward-optimal-metal-organic-frameworks-
+    title: Toward optimal metal-organic frameworks for adsorption chillers
+    url: https://publications.rwth-aachen.de/record/771349/files/771349.pdf
+    source: repo_rwth
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2019-10097
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-sustainable-supply-of-safe-drinking-wate
+    title: 'Sustainable Supply of Safe Drinking Water for Underserved Households in
+      Kenya: Investigating the Viability of Decentralized Solutions'
+    url: https://publications.rwth-aachen.de/record/771493/files/771493.pdf
+    source: repo_rwth
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2015'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2019-10197
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-stadtsanierung
+    title: Stadtsanierung
+    url: https://publications.rwth-aachen.de/record/771802/files/771802.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: de
+    published_at: '1975'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-2019-10421
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-netzweite-ermittlung-von-kapazit-tskennw
+    title: Netzweite Ermittlung von Kapazitätskennwerten zur bedarfsgerechten Infrastrukturdimensionierung
+      und Netzentwicklung im Eisenbahnwesen
+    url: https://publications.rwth-aachen.de/record/772157/files/772157.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2019-10622
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-room-acoustics-meets-tabs-thermally-acti
+    title: Room acoustics meets TABS (Thermally Activated Building Systems) - Practical
+      results for strip absorbers in concrete ceilings
+    url: https://publications.rwth-aachen.de/record/772203/files/772203.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-conv-240131
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-langfristige-schwermetalleinbindung-in-b
+    title: Langfristige Schwermetalleinbindung in Böden und Ersatzbaustoffen durch Behandlung
+      mit Bindemitteln
+    url: https://publications.rwth-aachen.de/record/772628/files/772628.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2019-10719
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-section-oriented-acquisition-and-applica
+    title: Section oriented acquisition and application of microscopic traffic data
+      using multi-sensor data fusion
+    url: https://publications.rwth-aachen.de/record/773136/files/773136.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2019-10955
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-uncoupled-cfd-fea-methods-for-the-thermo
+    title: Uncoupled CFD-FEA Methods for the Thermo-Structural Analysis of Turbochargers
+    url: https://publications.rwth-aachen.de/record/773508/files/773508.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2019-11138
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-probabilistic-seismic-safety-analysis-of
+    title: Probabilistic seismic safety analysis of multi-component systems
+    url: https://publications.rwth-aachen.de/record/773565/files/773565.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2019-11190
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-neues-verfahren-zur-bestimmung-von-frost
+    title: Neues Verfahren zur Bestimmung von Frosthebungen infolge künstlicher Baugrundvereisung
+      im Tunnelbau
+    url: https://publications.rwth-aachen.de/record/774180/files/774180.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-2019-11383
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-identifying-the-do-s-and-don-ts-for-a-tr
+    title: Identifying the "Do’s" and "Don’ts" for a Trust-Building CCU Product Label
+    url: https://publications.rwth-aachen.de/record/774589/files/774589.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-2019-11648
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-ganzheitliches-nachtragsmanagement-des-a
+    title: Ganzheitliches Nachtragsmanagement des Auftraggebers
+    url: https://publications.rwth-aachen.de/record/774908/files/774908.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2019-11856
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-ursache-wirkung-zusammenhang-zwischen-mi
+    title: Ursache-Wirkung-Zusammenhang zwischen Mitteleinsatz und erzielter Infrastrukturqualität
+      am Beispiel von Brücken
+    url: https://publications.rwth-aachen.de/record/775090/files/775090.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2020'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-2019-11973
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-online-offline-learning-for-sound-based-
+    title: Online Offline Learning for Sound-Based Indoor Localization Using Low-Cost
+      Hardware
+    url: https://publications.rwth-aachen.de/record/775500/files/775500.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2020-00048
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-processing-ultrasonic-data-by-coda-wave-
+    title: Processing Ultrasonic Data by Coda Wave Interferometry to Monitor Load Tests
+      of Concrete Beams
+    url: https://publications.rwth-aachen.de/record/775584/files/775584.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2018'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2020-00107
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-folded-plate-structures
+    title: Folded plate structures
+    url: https://publications.rwth-aachen.de/record/775994/files/775994.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2020-00373
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-is-co-creation-always-sustainable
+    title: Is Co-Creation Always Sustainable?
+    url: https://publications.rwth-aachen.de/record/781028/files/781028.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2020-01016
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-investigation-of-the-mechanical-punch-lo
+    title: Investigation of the Mechanical Punch Loads during Fine Blanking of High-Strength
+      Steels with Cemented Carbide
+    url: https://publications.rwth-aachen.de/record/782039/files/782039.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2020-01619
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-status-of-waste-to-energy-in-germany-par
+    title: Status of waste-to-energy in Germany, Part I - Waste treatment facilities
+    url: https://publications.rwth-aachen.de/record/782180/files/782180.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2020-01705
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-structural-uptake-and-retention-of-safet
+    title: Structural uptake and retention of safety relevant radionuclides by cementitious
+      materials
+    url: https://publications.rwth-aachen.de/record/782515/files/782515.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2020-01921
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-flood-risk-management-in-coastal-areas
+    title: Flood risk management in coastal areas
+    url: https://publications.rwth-aachen.de/record/782867/files/782867.pdf
+    source: repo_rwth
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2020-02131
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-time-series-of-heat-demand-and-heat-pump
+    title: Time series of heat demand and heat pump efficiency for energy system modeling
+    url: https://publications.rwth-aachen.de/record/782930/files/782930.pdf
+    source: repo_rwth
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2020-02179
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-rekursive-bayesische-sch-tzverfahren-zur
+    title: Rekursive Bayesische Schätzverfahren zur smartphonebasierten Positionierung
+      von Personen innerhalb von Gebäuden
+    url: https://publications.rwth-aachen.de/record/782969/files/782969.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-2020-02195
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-zum-hygrothermischen-verhalten-von-stahl
+    title: Zum hygrothermischen Verhalten von Stahl-Sandwichelementen
+    url: https://publications.rwth-aachen.de/record/783314/files/783314.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2019'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2020-02438
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-special-issue-on-co-creation-in-the-desi
+    title: Special issue on 'Co-Creation in the Design, Development and Implementation
+      of Technology-Enhanced Learning'
+    url: https://publications.rwth-aachen.de/record/783400/files/783400.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2020-02479
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-rwth-publicati-gim-and-bim-how-to-obtain-interoperabili
+    title: GIM and BIM How to Obtain Interoperability Between Geospatial and Building
+      Information Modelling?
+    url: https://publications.rwth-aachen.de/record/783452/files/783452.pdf
+    source: repo_rwth
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2020-02512
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-modelling-the-structural-behaviour-of-ra
+    title: Modelling the structural behaviour of rammed earth components
+    url: https://repositorium.uminho.pt/bitstreams/eb53a8ea-46bc-4253-baba-46b02bf309b5/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014'
+    document_type: journal-article
+    persistent_id: hdl:1822/52172
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-the-structural-intervention-of-st-torcat
+    title: 'The structural intervention of St. Torcato Church : documentation and analysis
+      of the strengthening works'
+    url: https://repositorium.uminho.pt/bitstreams/bddc761b-269f-4f9e-a2da-dafa98eaa4a3/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014'
+    document_type: thesis
+    persistent_id: hdl:1822/30611
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-assessment-of-the-b-co-historical-rc-bri
+    title: Assessment of the bôco historical RC bridge
+    url: https://repositorium.uminho.pt/bitstreams/bf78ea57-a21e-4aa5-9bfc-a95e0b880a8e/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2012'
+    document_type: book
+    persistent_id: hdl:1822/20596
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-crack-constitutive-model-for-the-predict
+    title: Crack constitutive model for the prediction of punching failure modes of
+      fiber reinforced concrete laminar structures
+    url: https://repositorium.uminho.pt/bitstreams/79d7fd36-ec87-461a-8474-97f4d8a59d23/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2011-07-08'
+    document_type: journal-article
+    persistent_id: doi:10.12989/cac.2011.8.6.735
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-the-vernacular-house-between-the-ca-vado
+    title: The vernacular house between the Cávado and the Ave, Portugal
+    url: https://repositorium.uminho.pt/bitstreams/6cc95939-1280-4e64-8791-864386e01203/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2014'
+    document_type: book
+    persistent_id: hdl:1822/26820
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-metodologia-para-adapta-o-do-m-todo-de-e
+    title: Metodologia para adaptação do método de escavação e suporte de um túnel baseado
+      no método observacional
+    url: https://repositorium.uminho.pt/bitstreams/9913dc43-2f35-49f9-8e98-27cffce74bc4/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: pt
+    published_at: '2014-04-06'
+    document_type: book
+    persistent_id: hdl:1822/31145
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-importance-of-controlling-the-degree-of-
+    title: Importance of controlling the degree of saturation in soil compaction
+    url: https://repositorium.uminho.pt/bitstreams/86a091d0-8fdb-4a66-b233-1ecdc84bb35f/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016'
+    document_type: book
+    persistent_id: doi:10.1016/j.proeng.2016.06.070
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-possibilities-and-challenges-of-nsm-for-
+    title: Possibilities and challenges of NSM for the flexural strengthening of RC
+      structures
+    url: https://repositorium.uminho.pt/bitstreams/3efadaf9-6e36-44e5-a359-e81c6834f5d3/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008'
+    document_type: book
+    persistent_id: hdl:1822/12872
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-research-about-semi-automation-solutions
+    title: Research about semi-automation solutions that generate the BIM model from
+      point cloud data
+    url: https://repositorium.uminho.pt/bitstreams/bd008468-da7f-4f9d-8639-5c1bfc9b79a0/download
+    source: repo_uminho
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-11-09'
+    document_type: thesis
+    persistent_id: hdl:1822/87509
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-coaxial-fibres-incorporated-with-phase-c
+    title: Coaxial fibres incorporated with phase change materials for thermoregulation
+      applications
+    url: https://repositorium.uminho.pt/bitstreams/b2d45d53-3625-446c-abfd-9f8d7c645cd3/download
+    source: repo_uminho
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-15'
+    document_type: journal-article
+    persistent_id: doi:10.3390/app14062473
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-experimental-characterization-of-the-fle
+    title: Experimental characterization of the flexural behaviour of steel fibre reinforced
+      concrete according to RILEM TC 162-TDF recommendations
+    url: https://repositorium.uminho.pt/bitstreams/dc0b71c8-a677-4bda-b0e8-0b84c329a81a/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2003'
+    document_type: book
+    persistent_id: hdl:1822/12776
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-durabilidade-de-um-adesivo-ep-xi-e-um-la
+    title: Durabilidade de um adesivo epóxi e um laminado de CFRP expostos a distintas
+      condições ambientais
+    url: https://repositorium.uminho.pt/bitstreams/aee4c3b2-23f5-4db8-863f-b9fa9d1960f8/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: pt
+    published_at: '2015-09-18'
+    document_type: book
+    persistent_id: hdl:1822/37329
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-rate-effect-in-inclined-fibre-pull-out-f
+    title: 'Rate effect in inclined fibre pull-out for smooth and hooked-end fibres:
+      a numerical study'
+    url: https://repositorium.uminho.pt/bitstreams/8c90b99b-96c0-4661-b350-60661ed3105a/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: journal-article
+    persistent_id: doi:10.1007/s10704-019-00404-7
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-estruturas-mistas-no-contexto-da-pr-fabr
+    title: 'Estruturas mistas no contexto da pré fabricação: alternativa à ligação viga-laje
+      pré-fabricada.'
+    url: https://repositorium.uminho.pt/bitstreams/08a73006-f697-4aac-bc84-7d6cb80e6e15/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: pt
+    published_at: '2013-07-08'
+    document_type: book
+    persistent_id: hdl:1822/37043
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-bet-o-autocompact-vel-refor-ado-com-fib-2
+    title: 'Betão autocompactável reforçado com fibras de aço : método racional de concepção'
+    url: https://repositorium.uminho.pt/bitstreams/5cd72dc8-8ef7-415e-a73a-160f3ca34c1c/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    published_at: '2003'
+    document_type: book
+    persistent_id: hdl:1822/13135
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-assessment-of-strength-and-stiffness-var
+    title: Assessment of strength and stiffness variation within old timber beams
+    url: https://repositorium.uminho.pt/bitstreams/b88d15ba-7c47-44f1-815b-89039c340afb/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2012'
+    document_type: book
+    persistent_id: hdl:1822/20778
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-situa-o-e-potencial-das-alvenarias-em-po
+    title: Situação e potencial das alvenarias em Portugal perante o contexto internacional
+    url: https://repositorium.uminho.pt/bitstreams/c0875239-5aba-4f6d-9889-a1b5c428af0a/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: pt
+    published_at: '2022-12-05'
+    document_type: book
+    persistent_id: hdl:1822/89673
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-experimental-study-of-structural-adhesiv
+    title: Experimental study of structural adhesives for a steel-glass connection
+    url: https://repositorium.uminho.pt/bitstreams/ff7e8128-d321-42e2-b9f5-133e9c763acc/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014'
+    document_type: book
+    persistent_id: hdl:1822/31071
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-an-evolutionary-multi-objective-optimiza
+    title: An evolutionary multi-objective optimization system for earthworks
+    url: https://repositorium.uminho.pt/bitstreams/9c89bc18-ec3e-4c15-a240-2a4d54f8f105/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.eswa.2015.04.051
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-o-impacto-da-taxonomia-europeia-e-do-pac
+    title: O impacto da taxonomia europeia e do pacto ecológico europeu na mudança do
+      paradigma da construção em Portugal
+    url: https://repositorium.uminho.pt/bitstreams/ef73b20e-6784-4547-bfd1-c64e6d061aad/download
+    source: repo_uminho
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: pt
+    published_at: '2024'
+    document_type: journal-article
+    persistent_id: hdl:1822/99294
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-seismic-assessment-of-metallic-neo-gothi
+    title: 'Seismic assessment of metallic neo-gothic church: deterioration and safety
+      of early structural design'
+    url: https://repositorium.uminho.pt/bitstreams/487345c6-7d56-4f60-9eaa-9b16c34fc30f/download
+    source: repo_uminho
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.istruc.2021.12.007
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by-nc-nd/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-shake-table-testing-of-u-shape-masonry-s
+    title: 'Shake table testing of U-shape masonry structures: Out-of-plane response
+      to varying ground motion signals'
+    url: https://repositorium.uminho.pt/bitstreams/5a958c2d-86f0-4a54-bff8-6ab3ca808b39/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-03-22'
+    document_type: book
+    persistent_id: doi:10.5592/co/3crocee.2025.28
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-infill-masonry-seismic-behavior-of-reinf
+    title: 'Infill masonry : seismic behavior of reinforced solutions'
+    url: https://repositorium.uminho.pt/bitstreams/ea81547c-b0e0-4d95-bc20-c5e9f4504b4d/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2011'
+    document_type: book
+    persistent_id: hdl:1822/14879
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-experimental-assessment-of-the-thermo-me
+    title: Experimental assessment of the thermo-mechanical bond behavior of NSM CFRP
+      with cement-based adhesives
+    url: https://repositorium.uminho.pt/bitstreams/b530bc5a-3c8d-44e9-9460-b41559bf5c41/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.conbuildmat.2022.129980
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-numerical-analysis-of-concrete-block-mas
+    title: Numerical analysis of concrete block masonry beams under three point bending
+    url: https://repositorium.uminho.pt/bitstreams/87be4e27-1f52-4e0b-b6bf-9067fd107f59/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2011'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.engstruct.2011.08.015
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-on-the-mechanical-behavior-of-masonry
+    title: On the mechanical behavior of masonry
+    url: https://repositorium.uminho.pt/bitstreams/f8109620-6bbe-4f60-b68f-ba67fe0d5683/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2016'
+    document_type: book
+    persistent_id: hdl:1822/67874
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-probabilistic-seismic-hazard-assessment-
+    title: Probabilistic seismic hazard assessment of Lisbon (Portugal)
+    url: https://repositorium.uminho.pt/bitstreams/43ad8eae-5276-4f9d-ac12-fb2b4eb80c4d/download
+    source: repo_uminho
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: journal-article
+    persistent_id: doi:10.3390/geohazards5030047
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-to-cross-or-not-to-cross-impact-of-visua
+    title: 'To cross or not to cross: Impact of visual and auditory cues on pedestrians''
+      crossing decision-making'
+    url: https://repositorium.uminho.pt/bitstreams/72f87113-6f7e-43d0-91a4-ccb564c7671f/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-04'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.trf.2021.08.014
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-extended-round-robin-testing-program-of-
+    title: Extended Round Robin Testing program of COST Action TU1404 – lessons learned
+      from the initial experimental phase
+    url: https://repositorium.uminho.pt/bitstreams/80532fc5-d212-44b8-adae-a5910b89f7cf/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016'
+    document_type: book
+    persistent_id: hdl:1822/43460
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-fabrication-and-curing-conditions-effect
+    title: Fabrication and curing conditions effects on the fatigue behavior of a structural
+      adhesive
+    url: https://repositorium.uminho.pt/bitstreams/06290499-536a-4c72-9cac-6302fa51c059/download
+    source: repo_uminho
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.ijfatigue.2020.105743
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-effects-of-anobiid-damage-on-shear-stren
+    title: Effects of anobiid damage on shear strength parallel to the grain in single
+      step joints
+    url: https://repositorium.uminho.pt/bitstreams/ad3f0198-9e56-4c10-b1c2-c77c19e31886/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1617/s11527-023-02234-5
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-self-healing-efficiency-of-asphalt-mixtu
+    title: Self-healing efficiency of asphalt mixtures through heating and addition
+      of capsulated rejuvenator
+    url: https://repositorium.uminho.pt/bitstreams/3520a422-ad97-453e-8fc2-e371b6c727d8/download
+    source: repo_uminho
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-05-28'
+    document_type: thesis
+    persistent_id: hdl:1822/96729
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-evaluation-of-non-destructive-techniques
+    title: Evaluation of non-destructive techniques for mechanical characterisation
+      of earth-based mortars in masonry joints
+    url: https://repositorium.uminho.pt/bitstreams/7b7bf35a-1f49-46c9-9bf8-6db080077505/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023-08-15'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.conbuildmat.2023.131960
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-valida-o-de-formula-es-anal-ticas-para-o
+    title: Validação de formulações analíticas para o reforço ao corte de vigas de betão
+      armado com compósitos de CFRP
+    url: https://repositorium.uminho.pt/bitstreams/6be84e1a-85ab-48b9-820e-a947c7af0df9/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    published_at: '2013'
+    document_type: thesis
+    persistent_id: hdl:1822/30704
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-numerical-model-and-seismic-structural-a
+    title: Numerical model and seismic structural analysis of the lamberti tower
+    url: https://repositorium.uminho.pt/bitstreams/d6816ecf-22f0-4b19-bf5e-daefad6dd4c0/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2013'
+    document_type: thesis
+    persistent_id: hdl:1822/27805
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-a-comprehensive-approach-for-designing-l
+    title: A comprehensive approach for designing low carbon wood bio-concretes
+    url: https://repositorium.uminho.pt/bitstreams/9f534088-e719-4d0a-be14-90184747a33b/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: journal-article
+    persistent_id: doi:10.3390/ma17112742
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-unified-compressive-strength-and-strain-
+    title: Unified compressive strength and strain ductility models for fully and partially
+      FRP-confined circular, square, and rectangular concrete columns
+    url: https://repositorium.uminho.pt/bitstreams/2dd51b3b-b759-4a2e-b4df-cebfe1999e0a/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1061/jccof2.cceng-4336
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-numerical-analysis-of-an-earthen-masonry
+    title: Numerical analysis of an earthen masonry structure subjected to blast loading
+    url: https://repositorium.uminho.pt/bitstreams/da4fff90-f66a-4e9d-8493-19435cc97100/download
+    source: repo_uminho
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2021'
+    document_type: journal-article
+    persistent_id: doi:10.3390/civileng2040052
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: https://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-efici-ncia-de-diferentes-t-cnicas-de-ref
+    title: Eficiência de diferentes técnicas de reforço à flexão de vigas de betão armado
+    url: https://repositorium.uminho.pt/bitstreams/01492f73-029d-424e-ab08-5819b668a86e/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: pt
+    published_at: '2010'
+    document_type: book
+    persistent_id: hdl:1822/12962
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-new-reinforcement-and-rehabilitation-sys
+    title: New reinforcement and rehabilitation system for concrete columns damaged
+      by high temperatures
+    url: https://repositorium.uminho.pt/bitstreams/42ee6ac9-0f1b-4e2e-a2c7-dbbf2f8c6823/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-12-30'
+    document_type: thesis
+    persistent_id: hdl:1822/96751
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-concrete-production-with-domestic-and-in
+    title: 'Concrete production with domestic and industrial wastewaters: a literature
+      review'
+    url: https://repositorium.uminho.pt/bitstreams/1533db5e-1c56-4fec-9789-19af6d251d04/download
+    source: repo_uminho
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1002/suco.202200637
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-optimal-sensor-placement-for-bridge-stru
+    title: 'Optimal sensor placement for bridge structural health monitoring: Integration
+      of physics-based models with data-driven approaches'
+    url: https://repositorium.uminho.pt/bitstreams/4e66e0c4-977d-4919-97f6-d26099351cec/download
+    source: repo_uminho
+    license: cc-by-nc-nd
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: book
+    persistent_id: doi:10.1016/j.prostr.2024.09.125
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by-nc-nd/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-estudo-da-qualidade-do-projeto-de-estrut
+    title: Estudo da qualidade do projeto de estruturas de edifícios
+    url: https://repositorium.uminho.pt/bitstreams/2cfb571a-ede1-4ed0-91d7-cfe7aca92564/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: pt
+    published_at: '2012'
+    document_type: book
+    persistent_id: hdl:1822/20603
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-evaluation-of-different-types-of-advance
+    title: Evaluation of different types of advanced analysis for the study of the seismic
+      behavior of masonry minarets
+    url: https://repositorium.uminho.pt/bitstreams/135fa694-72f6-4197-b4f1-1b528f535258/download
+    source: repo_uminho
+    license: cc-by-nc
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.istruc.2025.109134
+    license_url: http://creativecommons.org/licenses/by-nc/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by-nc/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-rapid-seismic-screening-of-non-engineere
+    title: Rapid seismic screening of non-engineered URM buildings in liquefaction-prone
+      areas
+    url: https://repositorium.uminho.pt/bitstreams/8b8d8b79-65a7-4c46-9b63-4f35be65b5b9/download
+    source: repo_uminho
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2026-11-01'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.soildyn.2026.110521
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-digital-models-of-stone-samples-for-dida
+    title: Digital models of stone samples for didactical purposes
+    url: https://repositorium.uminho.pt/bitstreams/7f634350-1793-48a0-9745-41153c8023aa/download
+    source: repo_uminho
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: doi:10.5194/isprs-archives-xlii-2-w15-1007-2019
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-simple-homogenized-model-for-the-non-lin
+    title: 'Simple homogenized model for the non-linear analysis of FRP strengthened
+      masonry structures. Part I : theory'
+    url: https://repositorium.uminho.pt/bitstreams/358fee84-534e-4e1f-a07a-61667446ce4c/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2013'
+    document_type: journal-article
+    persistent_id: doi:10.1061/(asce)em.1943-7889.0000457
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-uso-de-cadeias-de-markov-na-previs-o-da-
+    title: Uso de cadeias de markov na previsão da degradação de taludes
+    url: https://repositorium.uminho.pt/bitstreams/6ec88b09-bddf-4ce1-8461-79abc7f88f3d/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: pt
+    published_at: '2014-04-06'
+    document_type: book
+    persistent_id: hdl:1822/31141
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-prediction-of-the-acoustic-insulation-of
+    title: Prediction of the acoustic insulation of a prefabricated wooden-based system
+      for collective buildings
+    url: https://repositorium.uminho.pt/bitstreams/6ccffbfe-a0ac-4ff6-a597-49ca58458eb3/download
+    source: repo_uminho
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: book
+    persistent_id: doi:10.52202/069179-0259
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-the-challenge-of-integrating-seismic-and
+    title: 'The challenge of integrating seismic and energy retrofitting of buildings:
+      an opportunity for sustainable materials?'
+    url: https://repositorium.uminho.pt/bitstreams/4206f58a-6c15-4861-820d-c653afbc511f/download
+    source: repo_uminho
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: journal-article
+    persistent_id: doi:10.3390/su16083465
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-probabilistic-framework-for-seismic-perf
+    title: Probabilistic framework for seismic performance assessment of a multi-span
+      masonry arch bridge employing surrogate modeling techniques
+    url: https://repositorium.uminho.pt/bitstreams/903befd9-b497-4d28-ba0e-6d47ac2448ba/download
+    source: repo_uminho
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.engstruct.2024.119399
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-bond-performance-of-nsm-cfrp-laminates-u
+    title: Bond performance of NSM – CFRP laminates using different surface treatments
+      and cementitious adhesives
+    url: https://repositorium.uminho.pt/bitstreams/27da82d2-fa74-42c7-9ec2-95b473d4974c/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: hdl:1822/72195
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-flexural-behaviour-of-nsm-cfrp-laminate-
+    title: Flexural behaviour of NSM CFRP laminate strip systems in concrete using stiff
+      and flexible adhesives
+    url: https://repositorium.uminho.pt/bitstreams/1785e4fa-735e-4e93-8c1c-447d6f96718a/download
+    source: repo_uminho
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2020'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.compositesb.2020.108042
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-a-new-basic-creep-model-coupled-with-a-t
+    title: A new basic creep model coupled with a thermomechanical model for the numerical
+      simulation of the time-dependent behaviour of concrete structures
+    url: https://repositorium.uminho.pt/bitstreams/525c47bd-1e7c-497f-b784-f8c71dfc3f21/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2019'
+    document_type: book
+    persistent_id: hdl:1822/72170
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-testing-and-analysis-of-masonry-arches-s
+    title: Testing and analysis of masonry arches subjected to impact loads
+    url: https://repositorium.uminho.pt/bitstreams/cd2bcfa6-0b14-4297-8985-715525be0ea2/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2010'
+    document_type: book
+    persistent_id: hdl:1822/17610
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-influence-of-the-wood-mechanical-propert
+    title: Influence of the wood mechanical properties in the dovetail joint behavior
+    url: https://repositorium.uminho.pt/bitstreams/50b1f66c-b826-42a7-ab8e-d06ec248591a/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015'
+    document_type: book
+    persistent_id: hdl:1822/38966
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-numerical-simulation-of-fracture-in-laye
+    title: 'Numerical simulation of fracture in layered and sandwich structures: A systematic
+      literature review'
+    url: https://repositorium.uminho.pt/bitstreams/6efe01e6-a127-4e19-8d58-9cb512917a53/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.jcomc.2022.100294
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-shear-strengthening-of-reinforced-concr-2
+    title: Shear strengthening of reinforced concrete beams with laminate strips of
+      CFRP
+    url: https://repositorium.uminho.pt/bitstreams/eef366cc-9d83-432f-a37b-566a4addd066/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2003'
+    document_type: book
+    persistent_id: hdl:1822/12764
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-time-dependent-flexural-behaviour-of-cra
+    title: Time-dependent flexural behaviour of cracked steel fibre reinforced self-compacting
+      concrete panels
+    url: https://repositorium.uminho.pt/bitstreams/b29aab91-ae72-42b8-a046-9416c0155d56/download
+    source: repo_uminho
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2015'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.cemconres.2015.02.010
+    license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
+      the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-a-multifunctional-cementitious-composite
+    title: A multifunctional cementitious composite for pavement subgrade
+    url: https://repositorium.uminho.pt/bitstreams/f60162cd-d3ef-402f-a4d2-8964066b86b0/download
+    source: repo_uminho
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-01-27'
+    document_type: journal-article
+    persistent_id: doi:10.3390/ma17030621
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'RepositóriUM - Universidade do Minho OAI record rights: http://creativecommons.org/licenses/by/4.0/'
+    rights_verified_at: '2026-10-28'
+  - id: rep-uminho-experimental-dynamic-behavior-of-free-st
+    title: Experimental dynamic behavior of free standing multi-block structures under
+      seismic loadings
+    url: https://repositorium.uminho.pt/bitstreams/af4289cd-0742-4f5c-b43e-0f53db18f0ef/download
+    source: repo_uminho
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2008'
+    document_type: journal-article
+    persistent_id: doi:10.1080/13632460801890513
     license_evidence: RepositóriUM - Universidade do Minho OAI record states no rights;
       the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-28'
