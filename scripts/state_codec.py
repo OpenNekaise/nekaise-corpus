@@ -148,6 +148,7 @@ HASH_BUCKETS = {
     "patents-us": 8,
     "vendor": 16,
     "ostiaec": 4,  # find_osti_aec: bucketed from its first row (tens of thousands expected)
+    "ojs": 8,       # 80 MiB publication gate reached 2026-10-28
     "govuk": 4,     # manifest/govuk.jsonl reached 71.4 MiB of the 80 MiB gate (split 2026-10-12)
 }
 

@@ -436,7 +436,7 @@ def test_harvest_pages_classifies_and_dedups(monkeypatch):
     assert first["persistent_id"] == "https://doi.org/10.34641/clima.2022.28"
     assert first["language"] == "en" and first["published_at"] == "2022-04-21"
     assert out[3]["language"] == "nl"
-    assert find_ojs.registry.shard_filename(first["id"]) == "ojs.yaml"
+    assert find_ojs.registry.shard_filename(first["id"]) == "ojs-5.yaml"
 
 
 def test_a_venue_set_restricts_the_first_request_only(monkeypatch):

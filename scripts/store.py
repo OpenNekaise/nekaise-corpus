@@ -1603,10 +1603,76 @@ class FileStore:
         self._render_appends(view, writes)
         self._render_journal(view, digest, writes)
 
+        self._apply_files(view.run_id, writes)
+
+    def rebucket_family(self, family: str, *, run_id: str, expected_version: Version,
+                        writer: WriterToken | None = None) -> dict[str, int]:
+        """Losslessly migrate a monolithic file family to its configured hash buckets.
+
+        Physical layout only: no logical mutations or tombstones. Uses the same durable
+        prepare/apply/rollback protocol as row commits. An inherited maintenance lock is
+        accepted for this offline operation; the caller must keep the parent's broker idle
+        and perform no further row mutations until that window closes (its routing code
+        may predate the migration). New processes read the new routing immediately.
+        """
+        _check_run_id(run_id)
+        if writer is not None:
+            self._check_writer(writer)
+        elif self._inherited_run() is None:
+            raise WriterError("rebucketing requires a writer or inherited maintenance lock")
+        self._check_authority()
+        self._require_settled()
+        if self.version() != expected_version:
+            raise StaleView("state changed before rebucketing")
+        if family not in codec.HASH_BUCKETS:
+            raise StoreError(f"no hash buckets configured for {family!r}")
+        writes: dict[Path, bytes | None] = {}
+        counts = {}
+        for directory, suffix, table in ((self.reg, ".yaml", "entries"),
+                                          (self.man, ".jsonl", "manifest")):
+            legacy = directory / (family + suffix)
+            if not legacy.exists():
+                raise StoreError(f"missing legacy {legacy.name}; already migrated?")
+            if list(directory.glob(f"{family}-*{suffix}")):
+                raise StoreError(f"{family}: legacy and bucket files coexist")
+            text = legacy.read_text()
+            rows = ((codec.parse_yaml(text).get("sources") or []) if table == "entries"
+                    else [json.loads(line) for line in io.StringIO(text) if line.strip()])
+            groups: dict[str, list] = {}
+            seen = set()
+            for row in rows:
+                sid = row.get("id")
+                if not isinstance(sid, str) or not sid:
+                    raise StoreError(f"{legacy.name}: missing non-empty id")
+                if sid in seen:
+                    raise StoreError(f"{legacy.name}: duplicate id {sid}")
+                seen.add(sid)
+                stem = codec.manifest_shard(sid)
+                if stem not in {f"{family}-{i}" for i in range(codec.HASH_BUCKETS[family])}:
+                    raise StoreError(f"{legacy.name}: {sid} routes outside {family}")
+                groups.setdefault(stem, []).append(row)
+            for stem, group in groups.items():
+                rendered = (codec.shard_header(stem) + "".join(
+                    codec.emit_entry(e) for e in sorted(group, key=lambda e: e["id"]))
+                    if table == "entries" else codec.manifest_shard_text(group))
+                # Prove serialization retained every field/value before touching any file.
+                decoded = ((codec.parse_yaml(rendered).get("sources") or [])
+                           if table == "entries" else
+                           [json.loads(line) for line in io.StringIO(rendered)])
+                if sorted(map(canonical_row, group)) != sorted(map(canonical_row, decoded)):
+                    raise StoreError(f"{stem}: serialization changed rows")
+                writes[directory / (stem + suffix)] = rendered.encode()
+            writes[legacy] = None
+            counts[table] = len(rows)
+        self._apply_files(run_id, writes)
+        return counts
+
+    def _apply_files(self, run_id: str, writes: dict[Path, bytes | None]) -> None:
+        """Recoverable physical replacement shared by row commits and layout migrations."""
         # 1. prepare: durable backups of every file we will touch, then the recovery marker
-        txn = self.txn_dir / view.run_id
+        txn = self.txn_dir / run_id
         if (txn / "meta.json").exists():
-            raise PendingTransaction(f"transaction {view.run_id} is pending recovery")
+            raise PendingTransaction(f"transaction {run_id} is pending recovery")
         # A directory without a published marker is an interrupted preparation: no data file was
         # touched before the marker, so it is always safe to discard.
         if txn.exists():
@@ -1622,7 +1688,7 @@ class FileStore:
                     item["backup"] = f"{n}.bin"
                     _write_durable(txn / "state" / item["backup"], pre)
                 files.append(item)
-            meta = {"run_id": view.run_id, "state": "prepared", "files": files}
+            meta = {"run_id": run_id, "state": "prepared", "files": files}
             _write_durable(txn / "meta.json", (json.dumps(meta, indent=2) + "\n").encode())
         except BaseException:
             if not (txn / "meta.json").exists():
