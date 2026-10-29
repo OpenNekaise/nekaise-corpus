@@ -179838,3 +179838,193 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-29'
+  - id: oas-w7213567676
+    title: 鉄道システムに関するRAMS 性能評価法の設計と検証
+    url: https://tku.repo.nii.ac.jp/record/2003145/files/keiei324-13.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2024-12-11'
+    document_type: article
+    persistent_id: https://openalex.org/W7213567676
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://tku.repo.nii.ac.jp/record/2003145/files/keiei324-13.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7213567676
+    resolution: 'sim1: openalex location'
+  - id: oas-10-32149-0002000166-7083877a
+    title: 持続社会建設材料研究室 －二酸化炭素をコンクリート材料の高機能化と物質循環サイクル構築に活かす－
+    url: https://kutarr.kochi-tech.ac.jp/record/2000166/files/05_71-82ouchi.masahiro.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2024-09-12'
+    document_type: article
+    persistent_id: https://doi.org/10.32149/0002000166
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kutarr.kochi-tech.ac.jp/record/2000166/files/05_71-82ouchi.masahiro.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.32149/0002000166 openalex:W7143953177
+    resolution: 'sim1: openalex location'
+  - id: oas-10-17983-304055-bd10ea2b
+    title: '[特集「増田友也」] アーカイブズ整理の原則がみせる「増田友也の建築世界」'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/fa57cb54-7d5b-4166-87ad-417f244c8043/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304055
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/fa57cb54-7d5b-4166-87ad-417f244c8043/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304055 openalex:W7223269455
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304052-87b375ca
+    title: '[特集「増田友也」] 増田研究室と学校建築 --有度第二小学校を中心として'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/82aa3536-0c74-48a0-b4e3-6913514ffd61/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304052
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/82aa3536-0c74-48a0-b4e3-6913514ffd61/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304052 openalex:W7223301051
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304050-92e4e47a
+    title: '[特集「増田友也」] 「存在論的建築論」ということ (一)'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/6d20481c-a691-427f-a027-ca9795868346/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304050
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/6d20481c-a691-427f-a027-ca9795868346/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304050 openalex:W7223306174
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304054-1666f849
+    title: '[特集「増田友也」] 増田友也と五十嵐直雄 --「壁」とは何か'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/199fe742-4431-4b5d-900b-4fdfd2d79261/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304054
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/199fe742-4431-4b5d-900b-4fdfd2d79261/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304054 openalex:W7223345673
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304057-b6c9469e
+    title: '[研究ノート] 日本古典文学にみる「住まうこと」の建築論的研究 --建築論の京都学派の思索を通して'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/b48121a7-7c09-437c-b378-8b05a8ca477b/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304057
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/b48121a7-7c09-437c-b378-8b05a8ca477b/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304057 openalex:W7223395337
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304048-47f946ee
+    title: '[特集「増田友也」] 増田友也の思索と制作'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/e3723d03-5fcf-44f5-9c4b-e953bae83beb/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-15'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304048
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/e3723d03-5fcf-44f5-9c4b-e953bae83beb/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304048 openalex:W7223414767
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-when-the-small-loss-trick-is-not-enough-multi-
+    title: 'When the Small-Loss Trick is Not Enough: Multi-Label Image Classification
+      with Noisy Labels Applied to CCTV Sewer Inspections'
+    url: https://arxiv.org/pdf/2410.07689v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-10-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.07689
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.07689 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-the-impact-of-complexity-in-the-built-environm
+    title: 'The impact of complexity in the built environment on vehicular routing behavior:
+      Insights from an empirical study of taxi mobility in Beijing, China'
+    url: https://arxiv.org/pdf/2404.15589v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-04-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2404.15589
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2404.15589 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-teocc-radar-camera-multi-modal-occupancy-predi
+    title: 'TEOcc: Radar-camera Multi-modal Occupancy Prediction via Temporal Enhancement'
+    url: https://arxiv.org/pdf/2410.11228v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-10-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.11228
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.11228 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
