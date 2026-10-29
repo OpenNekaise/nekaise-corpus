@@ -235539,19 +235539,6 @@ sources:
     license_evidence: Aalborg University student projects (VBN) OAI record states no
       rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-29'
-  - id: rep-aau-vbn-evalution-of-bim-and-ecotect-for-concept
-    title: Evalution of BIM and Ecotect for Conceptual Architectural Design Analysis
-    url: https://vbn.aau.dk/ws/files/44430882/Evalution_of_BIM_and_Ecotect_for_Conceptual_Architectural_Design_Analysis.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: construction
-    format: pdf
-    language: en
-    published_at: '2010'
-    document_type: journal-article
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-29'
   - id: rep-aau-vbn-the-geodynamic-approach-problem-or-possi
     title: 'The Geodynamic Approach: problem or possibility?'
     url: https://vbn.aau.dk/ws/files/204304913/The_Geodynamic_Approach_problem_or_posibility.pdf
@@ -235776,19 +235763,6 @@ sources:
     language: en
     published_at: '2010'
     document_type: report
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-29'
-  - id: rep-aau-vbn-experiments-with-fresh-air-inlet-devices
-    title: Experiments with Fresh Air Inlet Devices
-    url: https://vbn.aau.dk/ws/files/45854713/VENTInet_nr._14.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2005'
-    document_type: journal-article
     license_evidence: VBN - Aalborg University research portal (publications) OAI record
       states no rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-29'
@@ -237281,20 +237255,6 @@ sources:
     license_evidence: VBN - Aalborg University research portal (publications) OAI record
       states no rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-29'
-  - id: rep-aau-vbn-hydraulic-response-of-caisson-breakwater
-    title: Hydraulic Response of Caisson Breakwaters in Multidirectional Breaking and
-      Non-Breaking Waves
-    url: https://vbn.aau.dk/ws/files/54561825/Hydraulic_Response_of_Caisson_Breakwaters_in_Multidirectional_Breaking_and_Non_Breaking_Waves.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: infrastructure
-    format: pdf
-    language: en
-    published_at: '1998'
-    document_type: book
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-29'
   - id: rep-aau-vbn-identification-of-civil-engineering-st-2
     title: Identification of Civil Engineering Structures using Vector ARMA Models
     url: https://vbn.aau.dk/ws/files/207033097/Identification_of_Civil_Engineering_Structures_using_Vector_ARMA_Models.pdf
@@ -238672,19 +238632,6 @@ sources:
     license_evidence: VBN - Aalborg University research portal (publications) OAI record
       states no rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-29'
-  - id: rep-aau-vbn-field-cone-penetration-tests-with-variou
-    title: Field Cone Penetration Tests with Various Penetration Rates - Test Results
-    url: https://vbn.aau.dk/ws/files/60804210/Field_Cone_Penetration_Tests_with_Various_Penetration_Rates_Test_Results.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2011'
-    document_type: report
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-29'
   - id: rep-aau-vbn-review-on-available-information-on-waves
     title: 'Review on Available Information on Waves in the DanWEC Area: (DanWEC Vaekstforum
       2011)'
@@ -239432,5 +239379,1297 @@ sources:
     document_type: journal-article
     persistent_id: doi:10.18154/rwth-2025-05706
     license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-retrofitting-ordinary-portland-cement-pr
+    title: Retrofitting Ordinary Portland cement production for reduced greenhouse gas
+      emissions
+    url: https://publications.rwth-aachen.de/record/1013885/files/1013885.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-05763
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-mechanical-responses-and-permeability-ev
+    title: 'Mechanical Responses and Permeability Evolution in Porous Sandstones Under
+      Cyclic Loading Conditions: Implications for Subsurface Hydrogen Storage'
+    url: https://publications.rwth-aachen.de/record/1013899/files/1013899.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-05776
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-window-view-clarity-evaluation-in-electr
+    title: Window view clarity evaluation in electrochromic glazings
+    url: https://publications.rwth-aachen.de/record/1014055/files/1014055.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-05891
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-investigation-of-a-supplementary-cementi
+    title: 'Investigation of a supplementary cementitious material with three reactive
+      components: the example of a carbonated mineral composite'
+    url: https://publications.rwth-aachen.de/record/1014110/files/1014110.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-05900
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-pressure-dependence-of-structural-behavi
+    title: Pressure Dependence of Structural Behavior in the Polymorphs of Fe(PM–BiA)2(NCS)2
+    url: https://publications.rwth-aachen.de/record/1014288/files/1014288.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06004
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-structural-geotechnical-and-hydrogeologi
+    title: 'Structural, geotechnical, and hydrogeological investigation of the Lake
+      Cuejdel Landslide Dam, Eastern Carpathians: a facies-based characterization of'
+    url: https://publications.rwth-aachen.de/record/1014599/files/1014599.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06174
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-the-untapped-potential-of-bayesian-regio
+    title: The untapped potential of Bayesian region of practical equivalence for assessing
+      null effects in multi-domain research
+    url: https://publications.rwth-aachen.de/record/1015161/files/1015161.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06233
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-understanding-the-regional-stress-in-act
+    title: Understanding the Regional Stress in Active Tectonic Regime Using 3D Numerical
+      Modeling, Case Study of BedrettoLab, Switzerland
+    url: https://publications.rwth-aachen.de/record/1015205/files/1015205.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06258
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-towards-a-fluid-planning-approach-in-ger
+    title: 'Towards a Fluid Planning Approach in Germany: An Option for Social Fragmentation?'
+    url: https://publications.rwth-aachen.de/record/1015369/files/1015369.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06346
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-supply-chain-cost-analysis-for-interior-
+    title: Supply Chain Cost Analysis for Interior Lighting Systems Based on Polymer
+      Optical Fibres Compared to Optical Injection Moulding
+    url: https://publications.rwth-aachen.de/record/1015407/files/1015407.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06374
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-leitfaden-holzbau-findet-stadt
+    title: Leitfaden Holzbau_findet_Stadt
+    url: https://publications.rwth-aachen.de/record/1015409/files/1015409.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: de
+    published_at: '2025'
+    document_type: book
+    persistent_id: doi:10.18154/rwth-2025-06375
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-improving-energy-efficiency-of-public-bu
+    title: Improving energy efficiency of public buildings by influencing occupant behaviour
+      using dashboards and gamification
+    url: https://publications.rwth-aachen.de/record/1015434/files/1015434.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-06390
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-robust-design-of-recycling-networks-cons
+    title: Robust design of recycling networks considering uncertain regulatory, economic,
+      and technological conditions — The case of recovering polystyrene from
+    url: https://publications.rwth-aachen.de/record/1015499/files/1015499.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06400
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-exploring-antibiotic-biotransformation-i
+    title: Exploring antibiotic biotransformation in denitrifying wastewater treatment
+      processes
+    url: https://publications.rwth-aachen.de/record/1015588/files/1015588.pdf
+    source: repo_rwth
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-06459
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-erh-hung-der-positionierungsgenauigkeit-
+    title: Erhöhung der Positionierungsgenauigkeit von Vollgewindeschrauben durch pyrolytisches
+      Vorbohren
+    url: https://publications.rwth-aachen.de/record/1015645/files/1015645.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-06500
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-selective-carbon-chain-building-from-syn
+    title: Selective carbon chain building from synthesis gas
+    url: https://publications.rwth-aachen.de/record/1015648/files/1015648.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-06503
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-life-cycle-sustainability-assessment-of-
+    title: Life cycle sustainability assessment of smart heating, ventilation and air
+      conditioning control systems
+    url: https://publications.rwth-aachen.de/record/1015734/files/1015734.pdf
+    source: repo_rwth
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-06557
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-flexible-joints-for-seismic-resilient-de
+    title: Flexible joints for seismic-resilient design of masonry-infilled RC frames
+    url: https://publications.rwth-aachen.de/record/1015842/files/1015842.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06574
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-myscore-avatar-based-teaching-and-learni
+    title: 'MyScore: avatar based teaching and learning in higher education'
+    url: https://publications.rwth-aachen.de/record/1015893/files/1015893.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-06622
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-sound-model-of-an-acoustic-improved-air-
+    title: Sound model of an acoustic improved air to water heat pump
+    url: https://publications.rwth-aachen.de/record/1016105/files/1016105.pdf
+    source: repo_rwth
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06742
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-graph-based-method-for-extracting-spatia
+    title: Graph-based method for extracting spatial information from semi-formal text
+      to derive 3D bridge and damage models from legacy maintenance data
+    url: https://publications.rwth-aachen.de/record/1016141/files/1016141.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06771
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-high-performance-zrnisn-based-half-heusl
+    title: High-performance ZrNiSn-based half-Heusler thermoelectrics with hierarchical
+      architectures enabled by reactive sintering
+    url: https://publications.rwth-aachen.de/record/1016195/files/1016195.pdf
+    source: repo_rwth
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06805
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-punching-shear-in-flat-slab-systems-expe
+    title: Punching shear in flat slab systems – Experimental quantification of unconsidered
+      system influences
+    url: https://publications.rwth-aachen.de/record/1016531/files/1016531.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06935
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-the-effect-of-the-physico-chemical-prope
+    title: The effect of the physico-chemical properties of (calcined) clays on the
+      rheological properties and early hydration of calcined clay-limestone cement
+    url: https://publications.rwth-aachen.de/record/1016539/files/1016539.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06942
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-personalized-environmental-control-syste
+    title: 'Personalized Environmental Control Systems (PECS): Systematic review of
+      benefits for thermal comfort, air quality, health, and human performance'
+    url: https://publications.rwth-aachen.de/record/1016571/files/1016571.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-06965
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-estimating-the-environmental-impacts-of-
+    title: 'Estimating the environmental impacts of aicraft operations around airports:
+      a novel framework and its application'
+    url: https://publications.rwth-aachen.de/record/1016994/files/1016994.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-07066
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-integration-von-gewerbe-in-st-dtische-ra
+    title: Integration von Gewerbe in städtische Randzonen
+    url: https://publications.rwth-aachen.de/record/1017045/files/1017045.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-07102
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-ten-questions-concerning-the-usage-of-su
+    title: Ten questions concerning the usage of subjective assessment scales in research
+      on indoor environmental quality
+    url: https://publications.rwth-aachen.de/record/1017057/files/1017057.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07109
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-experimental-investigations-and-design-o
+    title: Experimental investigations and design of precast concrete‐filled steel corrugated
+      sheet slender columns with intermediate connection
+    url: https://publications.rwth-aachen.de/record/1017059/files/1017059.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07111
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-influence-of-coarse-aggregates-on-the-fa
+    title: Influence of coarse aggregates on the fatigue behavior of high-strength concrete
+      under mode II loading
+    url: https://publications.rwth-aachen.de/record/1017076/files/1017076.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07123
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-investigation-of-cracking-resistance-of-
+    title: Investigation of cracking resistance of rubberized epoxy asphalt mixture
+      using semi-circular bending (SCB) test
+    url: https://publications.rwth-aachen.de/record/1017107/files/1017107.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07145
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-perceived-benefits-and-barriers-of-direc
+    title: 'Perceived benefits and barriers of direct air carbon capture and storage:
+      Applying a holistic perspective among German citizens using structural equat'
+    url: https://publications.rwth-aachen.de/record/1017111/files/1017111.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07147
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-multiphysics-modeling-and-experimental-a
+    title: Multiphysics modeling and experimental analysis of fiber-reinforced polymers
+      across scales
+    url: https://publications.rwth-aachen.de/record/1017118/files/1017118.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-07151
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-investigation-and-evaluation-of-existing
+    title: Investigation and evaluation of existing ontologies for modelling, condition
+      assessment and data management of underground infrastructure
+    url: https://publications.rwth-aachen.de/record/1017177/files/1017177.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-07183
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-shift-to-intra-eu-oecd-trade-enhanced-en
+    title: Shift to intra-EU-OECD trade enhanced environmental benefits after Basel
+      Convention Plastic Waste Amendments
+    url: https://publications.rwth-aachen.de/record/1017226/files/1017226.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07223
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-entwicklung-ausscheidungsh-rtbarer-kupfe
+    title: Entwicklung ausscheidungshärtbarer Kupferlegierungen für die additive Fertigung
+      von Hochleistungs-Elektronikbauteilen
+    url: https://publications.rwth-aachen.de/record/1017256/files/1017256.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: de
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-07248
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-the-environmental-performance-of-nationw
+    title: The environmental performance of nationwide heat pump deployment in residential
+      buildings in Germany
+    url: https://publications.rwth-aachen.de/record/1017473/files/1017473.pdf
+    source: repo_rwth
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07353
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-studying-the-relationship-between-window
+    title: Studying the relationship between window size and other hyperparameters in
+      deep learning-based energy consumption forecasters
+    url: https://publications.rwth-aachen.de/record/1017651/files/1017651.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-07465
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-prediction-of-micro-cracks-in-steel-stru
+    title: Prediction of Micro-Cracks in Steel Structures Subjected to Fatigue by Means
+      of Acoustic Emission
+    url: https://publications.rwth-aachen.de/record/1017667/files/1017667.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07475
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-estimating-short-and-long-run-price-and-
+    title: Estimating short- and long-run price and income elasticities of final energy
+      demand as a function of household income
+    url: https://publications.rwth-aachen.de/record/1017684/files/1017684.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07492
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-finally-an-international-standard-on-soc
+    title: 'Finally, an international standard on social life cycle assessment: ISO
+      14075'
+    url: https://publications.rwth-aachen.de/record/1017916/files/1017916.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07572
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-sulfate-attack-testing-approaches-from-c
+    title: 'Sulfate attack testing approaches from concrete to cement paste: A review
+      by RILEM TC 298-EBD'
+    url: https://publications.rwth-aachen.de/record/1017930/files/1017930.pdf
+    source: repo_rwth
+    license: unverified
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07584
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-open-source-framework-for-automated-gene
+    title: Open-source framework for automated generation of building energy performance
+      simulation models and beyond from BIM Data
+    url: https://publications.rwth-aachen.de/record/1017973/files/1017973.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07605
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-future-high-voltage-direct-current-cable
+    title: Future high-voltage-direct-current cable supply and demand as a potential
+      threat to the European Union's energy transition
+    url: https://publications.rwth-aachen.de/record/1017976/files/1017976.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07608
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-integrating-the-interaction-between-reno
+    title: Integrating the interaction between renovation measures and system temperatures
+      in design decisions for multi-family houses
+    url: https://publications.rwth-aachen.de/record/1018024/files/1018024.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07641
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-robust-energy-system-design-via-semi-inf
+    title: Robust energy system design via semi-infinite programming
+    url: https://publications.rwth-aachen.de/record/1018026/files/1018026.pdf
+    source: repo_rwth
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07643
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-environmentally-friendly-lead-free-piezo
+    title: 'Environmentally friendly lead-free piezoelectric ceramics as pavement sensing
+      element: A multi-scale finite element perspective'
+    url: https://publications.rwth-aachen.de/record/1018031/files/1018031.pdf
+    source: repo_rwth
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07647
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-what-makes-a-neighborhood-a-home
+    title: What makes a neighborhood a home?
+    url: https://publications.rwth-aachen.de/record/1018068/files/1018068.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-07668
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-experimental-analysis-of-the-ductile-to-
+    title: 'Experimental Analysis of the Ductile-to-Brittle Transition in High-Strength
+      Thin Metal Sheets: Charpy and Novel Impact Tensile Tests'
+    url: https://publications.rwth-aachen.de/record/1018077/files/1018077.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07673
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-origin-of-dissolved-organic-matter-in-wa
+    title: Origin of dissolved organic matter in wastewater treatment plant effluents
+      and its removal in biologically active granular activated carbon filters
+    url: https://publications.rwth-aachen.de/record/1018107/files/1018107.pdf
+    source: repo_rwth
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07701
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-mind-the-gap-quantifying-the-effect-of-m
+    title: 'Mind the gap: Quantifying the effect of mask fit on particle reduction rates
+      for external and self-protection of face masks'
+    url: https://publications.rwth-aachen.de/record/1018121/files/1018121.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07714
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-urban-contestation-in-migrants-settings-
+    title: 'Urban Contestation in Migrants’ Settings: Towards More Resilience Through
+      Fluid Planning in Aachen, Germany'
+    url: https://publications.rwth-aachen.de/record/1018140/files/1018140.pdf
+    source: repo_rwth
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07721
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-k-ltemittelkreislaufkonfigurationen-von-
+    title: Kältemittelkreislaufkonfigurationen von Wärmepumpen für die Gebäudebeheizung
+    url: https://publications.rwth-aachen.de/record/1018275/files/1018275.pdf
+    source: repo_rwth
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: de
+    published_at: '2025'
+    document_type: thesis
+    persistent_id: doi:10.18154/rwth-2025-07755
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-rwth-publicati-structural-behaviour-of-hss-hollow-secti
+    title: Structural behaviour of HSS hollow section K-joints – Experimental investigations
+      and advanced numerical modelling using damage mechanics
+    url: https://publications.rwth-aachen.de/record/1018341/files/1018341.pdf
+    source: repo_rwth
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025'
+    document_type: journal-article
+    persistent_id: doi:10.18154/rwth-2025-07799
+    license_evidence: RWTH Publications (RWTH Aachen University) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-connecting-the-digital-world-and-the-phy
+    title: Connecting the digital world and the physical world through light
+    url: https://vbn.aau.dk/ws/files/718682516/MasterThesis_KHoesch.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-an-engaging-serious-game-made-with-bim-s
+    title: An engaging Serious Game made with BIM simulating fire evacuation safety
+      practice training for university students.
+    url: https://vbn.aau.dk/ws/files/718141164/MED10_FJM_Master_Thesis_2024.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-feelings-as-a-tool-to-reveal-the-connect
+    title: FEELINGS AS A TOOL TO REVEAL THE CONNECTION BETWEEN EXPERIENCES OF LIGHT
+      COLOR AND INSTRUMENTS SOUND
+    url: https://vbn.aau.dk/ws/files/718826170/Elli_master_s_report_final.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-placetobe-integrating-service-design-and
+    title: 'PlaceToBe: Integrating Service Design and Foresight for a participatory
+      urban renewal planning process in Copenhagen'
+    url: https://vbn.aau.dk/ws/files/717121093/BaldoAnna_GiacosaMarta_ThesisReport_PlaceToBe_24_05_2024_.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-interactive-lighting-design-toolkit-incr
+    title: 'Interactive Lighting Design Toolkit: Increasing Male Consumer Engagement
+      in Apparel Visual Merchandising'
+    url: https://vbn.aau.dk/ws/files/719176988/Master_Thesis(1).pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-the-path
+    title: The Path
+    url: https://vbn.aau.dk/ws/files/719465611/The_Path.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-n-r-besk-ftigelsen-rykker-ud-et-frontlin
+    title: 'Når beskæftigelsen rykker ud: Et frontlinjeperspektiv på at balancere forskellige
+      normative værdier, når det ene ben er placeret inde i Jobcentret og '
+    url: https://vbn.aau.dk/ws/files/717298005/Speciale_Nar_beskaftigelsen_rykker_ud.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: da
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-the-adaptive-blueprint-of-christiania
+    title: The Adaptive Blueprint of Christiania
+    url: https://vbn.aau.dk/ws/files/720586258/The_Adaptive_Blueprint_of_Christiania.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-the-museum-of-movement-cognitive-perspec
+    title: The Museum of Movement - Cognitive Perspectives on Life-Size Dioramas and
+      Spatial Perception
+    url: https://vbn.aau.dk/ws/files/719340306/The_Museum_of_Movement_Cognitive_Perspectives_on_Life_Size_Dioramas_and_Spatial_Perception.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-the-anchor-point-msc04-group-18
+    title: The Anchor point - MSc04 group 18
+    url: https://vbn.aau.dk/ws/files/719177730/The_Anchor_point_MSc04_group_18_May_2024.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-v-ksthuset
+    title: Væksthuset
+    url: https://vbn.aau.dk/ws/files/717953388/Vaksthuset_MSc04_Group_14.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-reclaim-the-night-shifting-architectural
+    title: 'Reclaim the Night: Shifting Architectural Paradigms'
+    url: https://vbn.aau.dk/ws/files/717521508/Reclaim_the_Night._Shifting_Architectural_Paradigms_Line_Suad_2024.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-stenl-ngegaard-a-sustainable-daycare-cen
+    title: Stenlængegaard - A sustainable daycare center
+    url: https://vbn.aau.dk/ws/files/717960647/Stenlangegaard_A_sustainable_daycare_center_MSc04_group_15_compressed.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-transfomation-of-gasv-rksvejens-skole-un
+    title: 'Transfomation of Gasværksvejens Skole: Unfolding the potentials of a Late-Modern
+      Prefabricated Building: A Transformation of Gasværksvejens Skole'
+    url: https://vbn.aau.dk/ws/files/717300592/MSc04_Arc19.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-centralen-sustainable-transformation-of-
+    title: 'Centralen: Sustainable Transformation of 20th Century Building Stock'
+    url: https://vbn.aau.dk/ws/files/721277750/Centralen_Sustainable_Transformation_of_20th_Century_Building_Stock.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-pr-riehusene-development-of-christiania-
+    title: Præriehusene - Development of Christiania Downtown
+    url: https://vbn.aau.dk/ws/files/718133633/Prariehusene_Development_of_Christiania_Downtown.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-a-church-in-argir-faroe-islands
+    title: A church in Argir, Faroe Islands
+    url: https://vbn.aau.dk/ws/files/718503407/A_church_in_Argir_Faroe_Islands.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-investigation-of-oxy-fuel-combustion-in-
+    title: Investigation of Oxy-Fuel Combustion in a Circulating Fluidized Bed Boiler
+      in Ansys Fluent® Without Incorporation of User Defined Functions
+    url: https://vbn.aau.dk/ws/files/717521576/Master_Thesis_Spring_2024_done.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-seeing-the-picture-differently
+    title: Seeing the Picture differently
+    url: https://vbn.aau.dk/ws/files/719341101/Seeing_the_Picture_differently_Mathilde_Flojgaard_Andersen.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-a-modernist-approach-to-danish-cities
+    title: A Modernist Approach to Danish Cities
+    url: https://vbn.aau.dk/ws/files/719341121/A_Modernist_Approach_to_Danish_Cities.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-transit-oriented-development-of-mindemyr
+    title: 'Transit-Oriented Development of Mindemyren: A Sustainable Urban Living'
+    url: https://vbn.aau.dk/ws/files/718955701/Mindemyren_Simen_Mandt_MSc04_Urb17.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-beyond-efficiency-a-sufficiency-framewor
+    title: 'BEYOND EFFICIENCY: A Sufficiency Framework'
+    url: https://vbn.aau.dk/ws/files/719467039/BEYOND_EFFICIENCY_Digital_aflevering.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-reconciling-christiania
+    title: Reconciling Christiania?
+    url: https://vbn.aau.dk/ws/files/718689636/Master_Thesis_Reconciling_Christiania_.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-the-affordances-of-bike-parking
+    title: The affordances of bike parking
+    url: https://vbn.aau.dk/ws/files/719341204/copy_of_final_writing_thesis1000.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-designing-for-the-visually-impaired
+    title: Designing for the visually impaired
+    url: https://vbn.aau.dk/ws/files/718955780/CindyNguyen_Designing_for_the_visually_impaired.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-zostera-marina-reusing-history-for-a-sus
+    title: 'Zostera Marina: Reusing History for a Sustainable Future: En undersøgelse
+      af den mulige implementering af ålegræs i bygge sektoren.'
+    url: https://vbn.aau.dk/ws/files/719341340/MSc04_ARCH_Group_02_Anne_Mette_Rosenkilde.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-applying-facial-expression-analysis-soft
+    title: Applying Facial Expression Analysis Software to Estimate the User Experience
+      of LEGO building by Analyzing Facial Action Units
+    url: https://vbn.aau.dk/ws/files/719178482/Master_s_thesis_gr1081.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-make-do-with-now-towards-a-strategy-for-
+    title: Make Do With Now - Towards a strategy for circular transformation
+    url: https://vbn.aau.dk/ws/files/718826613/Make_Do_With_Now_Towards_a_Strategy_for_Circular_Transformation.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-out-of-urban-order
+    title: Out of (urban) order
+    url: https://vbn.aau.dk/ws/files/718689855/Out_of_urban_order.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-data-driven-modeling-and-black-box-optim
+    title: Data-driven Modeling and Black-box Optimization of MPC Parameters for Building
+      Control
+    url: https://vbn.aau.dk/ws/files/718826620/Master_Thesis.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-craft-tech-vocational-school
+    title: Craft Tech Vocational School
+    url: https://vbn.aau.dk/ws/files/718689879/MSc04_Group_20_ThesisCraftTech_Eirini_Angeli_Diana_Klissarova.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-refshale-en-quintessential-copenhagen
+    title: 'Refshaleøen: Quintessential Copenhagen?'
+    url: https://vbn.aau.dk/ws/files/719178549/MSc04_URB_MOB_Group6.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-not-waiting-for-living-anymore-a-framewo
+    title: (Not) waiting for Living (Anymore), A Framework to Enhance the Urban Quality
+      of Life during Urban Transformation
+    url: https://vbn.aau.dk/ws/files/718955876/_Not_Waiting_for_Living_Anymore_A_Framework_to_Enhance_the_Urban_Quality_of_Life_during_Urban_Transformation_Shiva_Ghasemi.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-a-mo-clay-museum-on-mors
+    title: A Mo-clay Museum on Mors
+    url: https://vbn.aau.dk/ws/files/719178699/A_Mo_clay_Museum_on_Mors.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-beyond-boundaries
+    title: Beyond Boundaries
+    url: https://vbn.aau.dk/ws/files/719341680/Beyond_Boundaries.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-future-scenario-of-tokyo-urban-livabilit
+    title: Future Scenario of Tokyo - Urban Livability for Foreigners in Tokyo through
+      Mobile Technologies and AR
+    url: https://vbn.aau.dk/ws/files/718504202/Future_Scenario_of_Tokyo_MSc04_group_19_May_2024_YuTsubouchi.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
+      rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-29'
+  - id: rep-aau-projects-forbedring-af-brugeroplevelsen-redesign-
+    title: 'Forbedring af brugeroplevelsen: Redesign af Alabu Boligs bestyrelsesportal'
+    url: https://vbn.aau.dk/ws/files/718279385/1_Redesign_af_Alabu_Boligs_bestyrelsesportal.pdf
+    source: repo_aau_projects
+    license: unverified
+    topic: urban
+    format: pdf
+    language: da
+    published_at: '2024'
+    document_type: thesis
+    license_evidence: Aalborg University student projects (VBN) OAI record states no
       rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-29'
