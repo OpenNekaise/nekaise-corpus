@@ -179254,3 +179254,88 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-29'
+  - id: arx-a-review-of-physics-based-machine-learning-in-
+    title: A Review of Physics-based Machine Learning in Civil Engineering
+    url: https://arxiv.org/pdf/2110.04600v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-10-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2110.04600
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2110.04600 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-machine-learning-framework-for-high-resolution
+    title: Machine Learning Framework for High-Resolution Air Temperature Downscaling
+      Using LiDAR-Derived Urban Morphological Features
+    url: https://arxiv.org/pdf/2409.02120v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2024-08-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.02120
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.02120 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1016/j.uclim.2024.102102
+  - id: arx-self-supervised-learning-for-identifying-defec
+    title: Self-Supervised Learning for Identifying Defects in Sewer Footage
+    url: https://arxiv.org/pdf/2409.02140v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-09-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.02140
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.02140 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-segment-change-model-scm-for-unsupervised-chan
+    title: 'Segment Change Model (SCM) for Unsupervised Change detection in VHR Remote
+      Sensing Images: a Case Study of Buildings'
+    url: https://arxiv.org/pdf/2312.16410v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-12-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.16410
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.16410 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1109/igarss53475.2024.10642429
+  - id: arx-a-cost-effective-edge-computing-gateway-for-sm
+    title: A Cost-effective Edge Computing Gateway for Smart Buildings
+    url: https://arxiv.org/pdf/2409.03770v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-08-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.03770
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.03770 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
