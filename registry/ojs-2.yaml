@@ -82004,19 +82004,6 @@ sources:
     license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/473
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-29'
-  - id: ojs-andarchitettura-wellness-benessere-integrato
-    title: 'Wellness: Benessere integrato'
-    url: https://and-architettura.it/index.php/and/article/download/484/457
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2009-12-31'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/484
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-29'
   - id: ojs-andarchitettura-luce-per-l-anima-larc-studio-centro-di-spir
     title: 'Luce per l’anima: LARC Studio, Centro di spiritualità e Casa del Giovane'
     url: https://and-architettura.it/index.php/and/article/download/489/461
@@ -82285,4 +82272,105 @@ sources:
     persistent_id: https://doi.org/10.7250/bjrbe.2019-14.444
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/492
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arsitekturauns-sentra-usaha-kecil-menengah-dengan-pendekata
+    title: SENTRA USAHA KECIL MENENGAH DENGAN PENDEKATAN ARSITEKTUR NEO VERNAKULAR DI
+      SURAKARTA
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/9168/8120
+    source: ojs_arsitekturauns
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2017-09-27'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v14i1.9168
+    license_evidence: 'https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/9168
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 Arsitektura)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arsitekturauns-showroom-mobil-dengan-pendekatan-arsitektur
+    title: SHOWROOM MOBIL DENGAN PENDEKATAN ARSITEKTUR HIGHTECH DI SURAKARTA
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/15618/12564
+    source: ojs_arsitekturauns
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2017-11-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.20961/arst.v13i2.15618
+    license_evidence: 'https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/15618
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 ARSITEKTURA)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-fabricaci-n-de-mobiliario-a-base-de-textil-reciclado
+    title: Fabricación de mobiliario a base de textil reciclado
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/15520/14156
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v17i31.15520
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/15520
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-habitabilidad-entorno-y-vivienda-reconstruida-jojutl
+    title: 'Habitabilidad, entorno y vivienda reconstruida: Jojutla, Morelos, México'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/15189/12117
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-06-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v16i29.15189
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/15189
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-dise-o-urbano-origen-y-formaci-n-de-una-disciplina-m
+    title: 'Diseño urbano: origen y formación de una disciplina mestiza'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/22042/18918
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v19i36.22042
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/22042
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-simulaciones-energ-ticas-herramientas-diagn-stico-pr
+    title: 'Simulaciones energéticas: Herramientas diagnóstico-pronóstico para la evaluación
+      de edificaciones'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/19128/14171
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-01-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/19128
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-contrastes-socio-espaciales-en-la-ciudad
+    title: Contrastes socio-espaciales en la ciudad
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/24324/20371
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v20i38.24324
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/24324
     rights_verified_at: '2026-10-29'

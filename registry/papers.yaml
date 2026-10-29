@@ -175153,24 +175153,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-28'
-  - id: oas-10-1184-r1-6716120-e4aa4787
-    title: Dynamic Optimization of Integrated Active - Passive Strategies for Building
-      Enthalpy Control
-    url: http://repository.cmu.edu/dissertations/404
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2014-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1184/r1/6716120
-    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/404;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-28'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1184/r1/6716120 openalex:W1895185220
-    resolution: 'sim1: openalex location'
   - id: arx-comparative-analysis-of-shear-strength-predict
     title: Comparative Analysis of Shear Strength Prediction Models for Reinforced Concrete
       Slab-Column Connections
@@ -176824,3 +176806,73 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-28'
+  - id: arx-dual-arm-construction-robot-for-automatic-fixa
+    title: Dual-Arm Construction Robot for Automatic Fixation of Structural Parts to
+      Concrete Surfaces in Narrow Environments
+    url: https://arxiv.org/pdf/2403.19948v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.19948
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.19948 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1109/sii55687.2023.10039387
+  - id: arx-sketch-to-architecture-generative-ai-aided-arc
+    title: 'Sketch-to-Architecture: Generative AI-aided Architectural Design'
+    url: https://arxiv.org/pdf/2403.20186v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2024-03-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.20186
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.20186 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-multi-agent-robotic-systems-and-exploration-al
+    title: 'Multi-agent robotic systems and exploration algorithms: Applications for
+      data collection in construction sites'
+    url: https://arxiv.org/pdf/2311.01078v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2023-11-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.01078
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.01078 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1002/rob.22316
+  - id: arx-time-series-analysis-in-compressor-based-machi
+    title: 'Time Series Analysis in Compressor-Based Machines: A Survey'
+    url: https://arxiv.org/pdf/2402.17802v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-02-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2402.17802
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2402.17802 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'

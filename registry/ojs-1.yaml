@@ -83501,21 +83501,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2010 Autore/i; https://creativecommons.org/licenses/by-nc-sa/4.0)'
     rights_verified_at: '2026-10-29'
-  - id: ojs-andarchitettura-produzione-privata-un-ambiente-protetto-in
-    title: 'Produzione Privata: Un ambiente protetto in cui Michele De Lucchi può esprimere
-      il meglio di sé'
-    url: https://and-architettura.it/index.php/and/article/download/534/494
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2010-06-30'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/534
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2010 Autore/i; https://creativecommons.org/licenses/by-nc-sa/4.0)'
-    rights_verified_at: '2026-10-29'
   - id: ojs-andarchitettura-maurizio-nannucci-luci-sulla-citt
     title: 'Maurizio Nannucci: Luci sulla città'
     url: https://and-architettura.it/index.php/and/article/download/543/503
@@ -83732,4 +83717,103 @@ sources:
     persistent_id: https://doi.org/10.7250/bjrbe.2020-15.477
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/506
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arsitekturauns-balai-rehabilitasi-sosial-bagi-disabilitas-f
+    title: BALAI REHABILITASI SOSIAL BAGI DISABILITAS FISIK (TUNA NETRA, TUNA RUNGU
+      WICARA, DAN TUNA DAKSA) DI SURAKARTA
+    url: https://jurnal.uns.ac.id/Arsitektura/article/download/15692/12628
+    source: ojs_arsitekturauns
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2017-11-08'
+    document_type: journal-article
+    license_evidence: 'https://jurnal.uns.ac.id/Arsitektura/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:jurnal.uns.ac.id:article/15692
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2017 ARSITEKTURA)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-el-papel-de-los-tranv-as-en-la-expansi-n-de-la-ciuda
+    title: El papel de los tranvías en la expansión de la ciudad de México del siglo
+      XIX
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/16192/14525
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v17i32.16192
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/16192
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-sistema-visual-de-imagen-urbana-en-la-ciudad-de-tehu
+    title: Sistema visual de imagen urbana en la ciudad de Tehuacán
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/14160/10815
+    source: ojs_legado
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2013-01-01'
+    document_type: journal-article
+    license_evidence: 'https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14160
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-el-mud-jar-novohispano-un-patrimonio-que-resguardar
+    title: El Mudéjar Novohispano, un patrimonio que resguardar
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/14662/11070
+    source: ojs_legado
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2015-01-01'
+    document_type: journal-article
+    license_evidence: 'https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14662
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-estrategias-de-dise-o-de-iluminaci-n-natural-para-op
+    title: Estrategias de diseño de iluminación natural para optimizar viviendas de
+      interés social en clima cálido subhúmedo
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/23204/18931
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v19i36.23204
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/23204
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-la-identidad-del-mercado-tradicional-desde-la-correl
+    title: La identidad del mercado tradicional desde la correlación físico-espacial
+      y psicosocial de la habitabilidad
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/17797/15396
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v18i33.17797
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/17797
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-rompiendo-paradigmas-en-la-restauraci-n-de-monumento
+    title: Rompiendo paradigmas en la restauración de monumentos
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/13788/10614
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-01-28'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/13788
     rights_verified_at: '2026-10-29'

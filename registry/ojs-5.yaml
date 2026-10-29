@@ -85076,20 +85076,6 @@ sources:
     license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/427
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-29'
-  - id: ojs-andarchitettura-tradire-il-disegno
-    title: Tradire il disegno
-    url: https://and-architettura.it/index.php/and/article/download/430/419
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2022-06-30'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/430
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2022 Autore/i; https://creativecommons.org/licenses/by-nc-sa/4.0)'
-    rights_verified_at: '2026-10-29'
   - id: ojs-andarchitettura-rappresentare-l-irrappresentabile-vedere-l
     title: 'Rappresentare l’irrappresentabile, vedere l’invisibile: Breve storia disegnata
       del pensiero scientifico eretico'
@@ -85443,4 +85429,78 @@ sources:
     persistent_id: https://doi.org/10.7250/bjrbe.2019-14.445
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/491
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-la-percepci-n-de-la-vivienda-vern-cula-en-michoac-n
+    title: 'La percepción de la vivienda vernácula en Michoacán: análisis desde el territorio
+      y el registro audiovisual'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/20447/17777
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2024-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v19i35.20447
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/20447
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-el-color-como-integrador-de-las-mejoras-f-sicas-al-a
+    title: El color como integrador de las mejoras físicas al ambiente público en el
+      diseño urbano
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/13995/10709
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2011-01-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/13995
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-dise-ar-con-perspectiva-de-derechos-humanos-una-prim
+    title: 'Diseñar con perspectiva de Derechos Humanos: una primera aproximación hacia
+      un cambio de paradigma'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/17445/12775
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2021-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v16i30.17445
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/17445
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-el-alma-del-proyecto-arquitect-nico-casa-galer-a-par
+    title: El alma del proyecto arquitectónico. Casa Galería para la fotógrafa Paz Errázuriz
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/13034/11243
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2020-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v15i27.13034
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/13034
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-espacios-para-la-cultura-viva-sudamericana-un-enfoqu
+    title: 'Espacios para la cultura viva sudamericana: Un enfoque desde la teoría de
+      Jordi Borja'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/24306/19604
+    source: ojs_legado
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-01-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v20i37.24306
+    license_evidence: 'https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/24306
+      : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
+      de autor 2025 Damaris Kelly Vasquez Sandoval; http://creativecommons.org/licenses/by-nc-nd/4.0)'
     rights_verified_at: '2026-10-29'

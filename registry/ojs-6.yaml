@@ -82190,19 +82190,6 @@ sources:
     license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/474
       : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
     rights_verified_at: '2026-10-29'
-  - id: ojs-andarchitettura-packaging-e-medicinali-il-ruolo-del-design
-    title: 'Packaging e medicinali: Il ruolo del design nella sicurezza del paziente'
-    url: https://and-architettura.it/index.php/and/article/download/483/456
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2009-12-31'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/483
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-29'
   - id: ojs-andarchitettura-elementi-naturali-antonio-iascone-casalunga
     title: 'Elementi naturali: Antonio Iascone, Casalunga Golf Resort'
     url: https://and-architettura.it/index.php/and/article/download/486/459
@@ -82443,4 +82430,74 @@ sources:
     persistent_id: https://doi.org/10.7250/bjrbe.2020-15.478
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://bjrbe-journals.rtu.lv/bjrbe/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.bjrbe.rtu.lv:article/505
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-estrategias-metodol-gicas-en-la-ense-anza-del-dise-o
+    title: Estrategias metodológicas en la enseñanza del diseño en la carrera de arquitectura
+      del Centro de Estudios Superiores ZACI en Valladolid, Yucatán
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/14459/10933
+    source: ojs_legado
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2014-07-01'
+    document_type: journal-article
+    license_evidence: 'https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14459
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-construcci-n-de-prototipo-de-c-pula-de-adobe-tecnifi
+    title: Construcción de prototipo de cúpula de adobe tecnificado
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/14952/11176
+    source: ojs_legado
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2016-01-01'
+    document_type: journal-article
+    license_evidence: 'https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14952
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-lecturas-arquitect-nicas-del-espacio-esc-nico-en-ham
+    title: Lecturas arquitectónicas del espacio escénico en Hamlet y Esta noche se improvisa
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/24166/20378
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2025-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v20i38.24166
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/24166
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-weighted-sums-method-applied-for-decision-making-in
+    title: 'Weighted sums method applied for decision making in improvement towards
+      complete street: a case study in Popayan, Colombia'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/22130/16479
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2023-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v18i34.22130
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/22130
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-el-conjunto-santa-fe-de-la-ciudad-de-m-xico-notas-pa
+    title: 'El Conjunto Santa Fe de la Ciudad de México: notas para una crítica de urbanismo
+      moderno'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/13943/10682
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2010-01-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/13943
     rights_verified_at: '2026-10-29'
