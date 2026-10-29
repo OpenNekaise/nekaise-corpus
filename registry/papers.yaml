@@ -180509,3 +180509,107 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-29'
+  - id: oas-w7145237128
+    title: 女子中高生のためのイノベーション入門Vol.1
+    url: https://teapot.lib.ocha.ac.jp/record/2005833/files/%E5%A5%B3%E5%AD%90%E4%B8%AD%E9%AB%98%E7%94%9F%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%A4%E3%83%8E%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%85%A5%E9%96%80Vol.1.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2022-10-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145237128
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://teapot.lib.ocha.ac.jp/record/2005833/files/%E5%A5%B3%E5%AD%90%E4%B8%AD%E9%AB%98%E7%94%9F%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%82%A4%E3%83%8E%E3%83%99%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%85%A5%E9%96%80Vol.1.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145237128
+    resolution: 'sim1: openalex location'
+  - id: arx-characterizing-rotational-ground-motions-impli
+    title: 'Characterizing Rotational Ground Motions: Implications for Earthquake-Resistant
+      Design of Bridge Structures'
+    url: https://arxiv.org/pdf/2411.02203v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.02203
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.02203 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-real-time-scream-detection-and-position-estima
+    title: Real-Time Scream Detection and Position Estimation for Worker Safety in Construction
+      Sites
+    url: https://arxiv.org/pdf/2411.03016v1
+    source: arxiv
+    license: cc-by-sa
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-11-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.03016
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.03016 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-development-of-a-practical-articulated-wheeled
+    title: Development of a Practical Articulated Wheeled In-pipe Robot for Both 3-4
+      in Force Main Inspection of Sewer Pipes
+    url: https://arxiv.org/pdf/2411.03660v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-11-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.03660
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.03660 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-occloff-learning-optimized-feature-fusion-for-
+    title: 'OccLoff: Learning Optimized Feature Fusion for 3D Occupancy Prediction'
+    url: https://arxiv.org/pdf/2411.03696v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-11-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.03696
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.03696 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-deep-learning-models-for-uav-assisted-bridge-i
+    title: 'Deep Learning Models for UAV-Assisted Bridge Inspection: A YOLO Benchmark
+      Analysis'
+    url: https://arxiv.org/pdf/2411.04475v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.04475
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.04475 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
