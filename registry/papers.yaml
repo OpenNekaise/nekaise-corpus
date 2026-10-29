@@ -177737,44 +177737,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-29'
     origin_ids: doi:10.1007/978-3-031-56852-7_13
-  - id: ope-review-on-ventilation-rates-in-the-ventilated-
-    title: Review on ventilation rates in the ventilated air-spaces behind common wall
-      assemblies with external cladding
-    url: https://infoscience.epfl.ch/bitstreams/e40b2f62-7c92-4a17-adb8-06f92d3136a8/download
-    source: openalex
-    license: cc-by-nc-nd
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2020-12-29'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.buildenv.2020.107538
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://infoscience.epfl.ch/bitstreams/e40b2f62-7c92-4a17-adb8-06f92d3136a8/download;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-29'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.buildenv.2020.107538 openalex:W3116282015
-    resolution: 'legacy: openalex location'
-  - id: ope-a-machine-learning-approach-for-mapping-the-ve
-    title: A machine learning approach for mapping the very shallow theoretical geothermal
-      potential
-    url: https://infoscience.epfl.ch/record/268722/files/s40517-019-0135-6.pdf
-    source: openalex
-    license: cc-by-nc-nd
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2019-07-25'
-    document_type: article
-    persistent_id: https://doi.org/10.1186/s40517-019-0135-6
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://infoscience.epfl.ch/record/268722/files/s40517-019-0135-6.pdf; version
-      submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-29'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1186/s40517-019-0135-6 openalex:W2966206098
-    resolution: 'legacy: openalex location'
   - id: ope-thermal-integration-of-waste-to-energy-plants-
     title: Thermal integration of waste to energy plants with Post-combustion CO2 capture
     url: https://eprints.whiterose.ac.uk/195180/3/1-s2.0-S0016236122028289-main.pdf
@@ -177846,3 +177808,137 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-29'
+  - id: ope-exergy-a-universal-metric-for-measuring-resour
+    title: 'Exergy: A universal metric for measuring resource efficiency to address
+      industrial decarbonisation'
+    url: https://www.repository.cam.ac.uk/bitstreams/23864625-1a83-4db8-9436-e68b446b5c29/download
+    source: openalex
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2019-06-12'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.spc.2019.05.006
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://www.repository.cam.ac.uk/bitstreams/23864625-1a83-4db8-9436-e68b446b5c29/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.spc.2019.05.006 openalex:W2951939532
+    resolution: 'legacy: openalex location'
+  - id: ope-hybrid-membrane-distillation-reverse-electrodi
+    title: 'Hybrid membrane distillation reverse electrodialysis configuration for water
+      and energy recovery from human urine: An opportunity for off-grid decentr'
+    url: https://strathprints.strath.ac.uk/68765/1/Mercer_etal_JMS_2019_Hybrid_membrane_distillation_reverse_electrodialysis_configuration_for_water.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2019-05-08'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.memsci.2019.05.010
+    license_evidence: no licence statement for this copy [copy https://strathprints.strath.ac.uk/68765/1/Mercer_etal_JMS_2019_Hybrid_membrane_distillation_reverse_electrodialysis_configuration_for_water.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.memsci.2019.05.010 openalex:W2944694790
+    resolution: 'legacy: openalex location'
+  - id: ope-inter-comparison-of-ammonia-fluxes-obtained-us
+    title: Inter-comparison of ammonia fluxes obtained using the Relaxed Eddy Accumulation
+      technique
+    url: https://bg.copernicus.org/articles/6/2575/2009/bg-6-2575-2009.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2009-11-16'
+    document_type: article
+    persistent_id: https://doi.org/10.5194/bg-6-2575-2009
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://bg.copernicus.org/articles/6/2575/2009/bg-6-2575-2009.pdf; version
+      publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-29'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5194/bg-6-2575-2009 openalex:W2133478967
+    resolution: 'legacy: openalex location'
+  - id: arx-enhancing-indoor-temperature-forecasting-throu
+    title: Enhancing Indoor Temperature Forecasting through Synthetic Data in Low-Data
+      Environments
+    url: https://arxiv.org/pdf/2406.04890v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2406.04890
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2406.04890 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-a-thermo-hygro-computational-model-to-determin
+    title: A thermo-hygro computational model to determine the factors dictating cold
+      joint formation in 3D printed concrete
+    url: https://arxiv.org/pdf/2406.05238v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-06-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2406.05238
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2406.05238 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: ope-a-machine-learning-approach-for-mapping-the-ve
+    title: A machine learning approach for mapping the very shallow theoretical geothermal
+      potential
+    url: https://infoscience.epfl.ch/record/268722/files/s40517-019-0135-6.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2019-07-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1186/s40517-019-0135-6
+    license_evidence: 'redirect: rights of requested copy https://infoscience.epfl.ch/record/268722/files/s40517-019-0135-6.pdf
+      do not transfer to https://cf002.cdn.4science.cloud/4s-assetstore-epfl-prod/66/92/30/66923026240495058399328619964795345694?response-content-type=application%2Fpdf&response-content-disposition=attachment%3B+filename%3D%22s40517-019-0135-6.pdf%22&Expires=1793254325&Signature=TqJST36nBV-glNWcTkttQ-qJErAaq9KHvIWXINQSanCrYg0eHjxR1GNAak2L0dlvJbL5Kv5tOZpkknMzS-hyxdJZ~zEjO8ohM-WShkoW581f3KeOwMmMbxFrHoxAZ5GOvpmTUShrYfgabtSGfMIcQubjPuq~oF~5ROR5av3R2di8-2ojWUiZISzPtK5NB27HYtkzpuFO-jjsXVA76SAiv~9ZyvgCNJEQcHsgLl6S7XaFbWwG2jBpew2YobfUKb~itffZO3hQVvmQfjel4dvFG2-yDSrdgVgthp5UgMdqf1KRO9NAKrgPuCYC6kO1Pjgfh~XX6UpkqnuEfXuWNMxe~g__&Key-Pair-Id=K20AKEP5FKG3TS;
+      payload sha256=a63959c7747402c25794fe8fa6f782166d96df03eacf8d31db8016d1d5984703;
+      original evidence: {"license": "cc-by-nc-nd", "license_evidence": "openalex.license=cc-by-nc-nd;
+      openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd [copy https://infoscience.epfl.ch/record/268722/files/s40517-019-0135-6.pdf;
+      version submittedVersion; rights restricted]", "rights_verified_at": "2026-10-29",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-29T06:10:06Z'
+    origin_ids: doi:10.1186/s40517-019-0135-6 openalex:W2966206098
+    resolution: 'legacy: openalex location'
+  - id: ope-review-on-ventilation-rates-in-the-ventilated-
+    title: Review on ventilation rates in the ventilated air-spaces behind common wall
+      assemblies with external cladding
+    url: https://infoscience.epfl.ch/bitstreams/e40b2f62-7c92-4a17-adb8-06f92d3136a8/download
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2020-12-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.buildenv.2020.107538
+    license_evidence: 'redirect: rights of requested copy https://infoscience.epfl.ch/bitstreams/e40b2f62-7c92-4a17-adb8-06f92d3136a8/download
+      do not transfer to https://cf002.cdn.4science.cloud/4s-assetstore-epfl-prod/10/04/75/100475935791029818473714107669984678543?response-content-type=application%2Fpdf&response-content-disposition=attachment%3B+filename%3D%221-s2.0-S0360132320309057-main.pdf%22&Expires=1793254327&Signature=qfuxDQGheEmWCP142dH~pNbPspMC138XMOPGgRYOfLC2fvSAFP9MXN4BUlDLLKzBmo~6kpoIQ8QTNFwOGVYFfbaFRNjmQuXKrYeY1TOFGdNIdWDV0y8mr-Dz8SqxD~LwPXxKV1SMai~xwEg5BGP5qPRf1-degwhro7xHABK6Pqtrm0vrzMW4sLJsKgr3mhuw0soryBgbAZ70Flp-CkGm2Tm28-x2S66rCyBDMxGy~nfV-rFIb6AVG0JG1wvW8MjMRx4uNBa8q7DJt9ZSLceFYp15RgrBAaL8Cc8RBnNYYwxCBVSSpNLr02LJtnB-gC6yq7fAuT19F3NVbJ8Uw5ytyA__&Key-Pair-Id=K20AKEP5FKG3TS;
+      payload sha256=721850dbb856d842f1df855148b71223c75d2e8b5bffd8cc40ce1dd3d040e1e2;
+      original evidence: {"license": "cc-by-nc-nd", "license_evidence": "openalex.license=cc-by-nc-nd;
+      openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd [copy https://infoscience.epfl.ch/bitstreams/e40b2f62-7c92-4a17-adb8-06f92d3136a8/download;
+      version submittedVersion; rights restricted]", "rights_verified_at": "2026-10-29",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-29T06:10:08Z'
+    origin_ids: doi:10.1016/j.buildenv.2020.107538 openalex:W3116282015
+    resolution: 'legacy: openalex location'
