@@ -178344,3 +178344,106 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-29'
+  - id: arx-an-experimental-evaluation-of-siamese-neural-n
+    title: An experimental evaluation of Siamese Neural Networks for robot localization
+      using omnidirectional imaging in indoor environments
+    url: https://arxiv.org/pdf/2407.10536v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-07-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.10536
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.10536 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1007/s10462-024-10840-0
+  - id: arx-fr-slam-a-slam-improvement-method-based-on-flo
+    title: 'FR-SLAM: A SLAM Improvement Method Based on Floor Plan Registration'
+    url: https://arxiv.org/pdf/2407.11299v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-07-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.11299
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.11299 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-leveraging-segment-anything-model-in-identifyi
+    title: Leveraging Segment Anything Model in Identifying Buildings within Refugee
+      Camps (SAM4Refugee) from Satellite Imagery for Humanitarian Operations
+    url: https://arxiv.org/pdf/2407.11381v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-07-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.11381
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.11381 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-veon-vocabulary-enhanced-occupancy-prediction
+    title: 'VEON: Vocabulary-Enhanced Occupancy Prediction'
+    url: https://arxiv.org/pdf/2407.12294v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-07-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.12294
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.12294 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-comparing-homogeneous-and-inhomogeneous-time-m
+    title: Comparing Homogeneous And Inhomogeneous Time Markov Chains For Modelling
+      Degradation In Sewer Pipe Networks
+    url: https://arxiv.org/pdf/2407.12557v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-07-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.12557
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.12557 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-mechanics-informed-autoencoder-enables-automat
+    title: Mechanics-Informed Autoencoder Enables Automated Detection and Localization
+      of Unforeseen Structural Damage
+    url: https://arxiv.org/pdf/2402.15492v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-02-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2402.15492
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2402.15492 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
