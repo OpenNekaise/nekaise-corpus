@@ -178240,3 +178240,55 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-29'
+  - id: arx-conditional-deep-generative-models-as-surrogat
+    title: Conditional deep generative models as surrogates for spatial field solution
+      reconstruction with quantified uncertainty in Structural Health Monitoring
+    url: https://arxiv.org/pdf/2302.08329v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-02-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2302.08329
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2302.08329 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1016/j.compstruc.2024.107462
+  - id: arx-conpr-ongoing-construction-site-dataset-for-pl
+    title: 'ConPR: Ongoing Construction Site Dataset for Place Recognition'
+    url: https://arxiv.org/pdf/2407.03684v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-07-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.03684
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.03684 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-vision-based-3d-occupancy-prediction-in-autono
+    title: 'Vision-based 3D occupancy prediction in autonomous driving: a review and
+      outlook'
+    url: https://arxiv.org/pdf/2405.02595v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-05-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2405.02595
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2405.02595 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
