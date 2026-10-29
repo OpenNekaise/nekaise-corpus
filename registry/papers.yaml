@@ -131979,24 +131979,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W45225569
     resolution: 'sim1: openalex location; resolution retry'
-  - id: oas-w7144461931
-    title: '調査報告 : 1985年メキシコ地震調査報告'
-    url: https://repository.dl.itc.u-tokyo.ac.jp/record/19919/files/sk038004001.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1986-04-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7144461931
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/19919/files/sk038004001.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-10'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7144461931
-    resolution: 'sim1: openalex location; resolution retry'
   - id: oas-w7144552602
     title: '417 熊本県における高次救急医療施設の利用実態に関する調査研究 : その2 入院区分に着目した熊本赤十字病院救命救急センター来院患者の特徴分析(建築計画)'
     url: https://ir.kagoshima-u.ac.jp/record/5520/files/110007672977.pdf
@@ -178911,4 +178893,224 @@ sources:
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.10783 (v1, the current
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+  - id: oas-10-17983-304059-24cb144c
+    title: '[特集「建築と自然・聖」] 四方界から四重界へ'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/1b25465a-2d09-4da7-a148-cd1fa6cf83b9/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-03'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304059
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/1b25465a-2d09-4da7-a148-cd1fa6cf83b9/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304059 openalex:W7223328721
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304062-41529097
+    title: '[特集「建築と自然・聖」] 「存在論的建築論」ということ (二) --増田友也のいう「聖 なること」の意味'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/8b81fdfd-ae5c-4f5b-bf97-bbea3eee05a6/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-03'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304062
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/8b81fdfd-ae5c-4f5b-bf97-bbea3eee05a6/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304062 openalex:W7223337060
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304063-a064f491
+    title: '[特集「建築と自然・聖」] ビザンティン聖堂の壁画に描かれた山の意味について'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/85d79038-ca7a-4787-9181-296314be4771/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-03'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304063
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/85d79038-ca7a-4787-9181-296314be4771/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304063 openalex:W7223360084
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304060-37823a1c
+    title: '[特集「建築と自然・聖」] アンチポデスとしての建築 --虚実の反転'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/ec7e125d-634b-4412-87d4-6d33d24705b7/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-03'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304060
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/ec7e125d-634b-4412-87d4-6d33d24705b7/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304060 openalex:W7223360684
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304061-0f59b8cc
+    title: '[特集「建築と自然・聖」] 別荘における「自然」景と日常について'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/fed4d400-0e8e-4471-9f25-b6b8c4548e31/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-03'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304061
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/fed4d400-0e8e-4471-9f25-b6b8c4548e31/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304061 openalex:W7223399747
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: arx-occnerf-advancing-3d-occupancy-prediction-in-l
+    title: 'OccNeRF: Advancing 3D Occupancy Prediction in LiDAR-Free Environments'
+    url: https://arxiv.org/pdf/2312.09243v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-12-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.09243
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.09243 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-structure-preserving-planar-simplification-for
+    title: Structure-preserving Planar Simplification for Indoor Environments
+    url: https://arxiv.org/pdf/2408.06814v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-08-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.06814
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.06814 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-mambaocc-visual-state-space-model-for-bev-base
+    title: 'MambaOcc: Visual State Space Model for BEV-based Occupancy Prediction with
+      Local Adaptive Reordering'
+    url: https://arxiv.org/pdf/2408.11464v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-08-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.11464
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.11464 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-high-resolution-population-maps-derived-from-s
+    title: High-resolution Population Maps Derived from Sentinel-1 and Sentinel-2
+    url: https://arxiv.org/pdf/2311.14006v2
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-11-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.14006
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.14006 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-graph-neural-network-surrogate-for-seismic-rel
+    title: Graph Neural Network Surrogate for Seismic Reliability Analysis of Highway
+      Bridge Systems
+    url: https://arxiv.org/pdf/2210.06404v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-10-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2210.06404
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2210.06404 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1061/jitse4.iseng-2264
+  - id: arx-examining-the-commitments-and-difficulties-inh
+    title: Examining the Commitments and Difficulties Inherent in Multimodal Foundation
+      Models for Street View Imagery
+    url: https://arxiv.org/pdf/2408.12821v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-08-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.12821
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.12821 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-adaocc-adaptive-resolution-occupancy-predictio
+    title: 'AdaOcc: Adaptive-Resolution Occupancy Prediction'
+    url: https://arxiv.org/pdf/2408.13454v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-08-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.13454
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.13454 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-missing-energy-plus-jet-in-the-smeft
+    title: Missing Energy plus Jet in the SMEFT
+    url: https://arxiv.org/pdf/2403.17063v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.17063
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.17063 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-29'
