@@ -85536,21 +85536,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Derechos
       de autor 2021 Eduardo de Santiago Rodríguez, Isabel González García)'
     rights_verified_at: '2026-10-29'
-  - id: ojs-andarchitettura-terribilis-ingenio-l-eresia-di-tintoretto-n
-    title: 'Terribilis ingenio: L’eresia di Tintoretto nello spazio sacro dell’Ultima
-      Cena'
-    url: https://and-architettura.it/index.php/and/article/download/428/417
-    source: ojs_andarchitettura
-    license: unverified
-    topic: architecture
-    format: pdf
-    language: it
-    published_at: '2022-06-30'
-    document_type: journal-article
-    license_evidence: 'https://and-architettura.it/index.php/and/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.and-architettura.it:article/428
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2022 Autore/i; https://creativecommons.org/licenses/by-nc-sa/4.0)'
-    rights_verified_at: '2026-10-29'
   - id: ojs-andarchitettura-disegno-e-eresia
     title: Disegno e eresia
     url: https://and-architettura.it/index.php/and/article/download/449/437
@@ -85969,4 +85954,507 @@ sources:
     document_type: journal-article
     license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14018
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-transgress-es-do-terci-rio-em-palmas-to-brasil-da-su
+    title: 'Transgressões do terciário em Palmas (TO, Brasil): da subversão do projeto
+      ao amparo da lei | Tertiary transgressions in in Palmas (TO, Brazil): from '
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/4846/3191
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-12-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v18e2021a4846
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/4846
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-labor-temples-the-construction-site-in-16th-century
+    title: 'Labor temples: the construction site in 16th-Century Mexico'
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/4863/3982
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-12-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v19e2022a4863
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/4863
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2022 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-mobility-urban-hub-the-path-of-the-utrecht-central-s
+    title: 'Mobility urban Hub: the path of the Utrecht central station'
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/4941/3987
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-12-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v19e2022a4941
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/4941
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2022 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-walkability-and-urban-form-a-study-on-urban-configur
+    title: 'Walkability and urban form: a study on urban configuration and its influence
+      on socio-spatial relashionships in Recife'
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5093/5021
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2023-02-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v20e2023a5093
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5093
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-a-es-locais-para-o-enfrentamento-da-pandemia-covid-1
+    title: Ações locais para o enfrentamento da pandemia covid-19 na América do Sul
+      | Local actions to address the covid-19 pandemic in South America
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5110/3338
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-12-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v18e2021a5110
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5110
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-a-falta-que-a-cidade-faz-the-lack-of-the-city-an-lis
+    title: 'A falta que a cidade faz | The lack of the city: análise de quais espaços
+      urbanos sentimos falta durante a quarentena | analysis of which urban spaces'
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5139/3281
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2021-12-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v18e2021a5139
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5139
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2021 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-the-transformations-of-cidade-baixa-neighborhood-in
+    title: The transformations of Cidade Baixa Neighborhood in Porto Alegre at 21st
+      century
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5183/4776
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-12-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v19e2022a5183
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5183
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2022 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-forma-urbana-de-reas-centrais-no-s-culo-xxi-reflex-e
+    title: 'Forma Urbana de áreas centrais no século XXI: reflexões e possibilidades'
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5279/4674
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2022-12-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v19e2022a5279
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5279
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2022 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-childing-urbanism-a-child-s-contribution-to-discussi
+    title: 'Childing urbanism: a child''s contribution to discussion of cities'
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5285/8082
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2023-12-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v20e2023a5285
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5285
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 Oculum Ensaios)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-the-neuroarchitecture-and-the-research-of-the-therap
+    title: The neuroarchitecture and the research of the therapeutic character of space
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5412/9524
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-04-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v21e2024a5412
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5412
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Lucas Silva Alves, Carolina Menzl Celaschi)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-oculum-the-spaces-built-in-nova-friburgo-rj-essential-histo
+    title: 'The spaces built in Nova Friburgo (RJ): essential historical topics in footnotes'
+    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5435/8149
+    source: ojs_oculum
+    license: unverified
+    topic: urban
+    format: pdf
+    language: pt
+    published_at: '2024-01-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.24220/2318-0919v21e2024a5435
+    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5435
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Silvia Scoralich Carvalho)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-perner-vyu-itie-n-stroja-daq-v-dopravno-psychologickom-v-sk
+    title: VYUŽITIE NÁSTROJA DAQ V DOPRAVNO-PSYCHOLOGICKOM VÝSKUME
+    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1552/1324
+    source: ojs_perner
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: cs
+    published_at: '2020-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.46585/pc.2020.1.1552
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1552
+    rights_verified_at: '2026-10-29'
+  - id: ojs-perner-syst-my-financovania-leteckej-infra-trukt-ry-z-h-adi
+    title: 'SYSTÉMY FINANCOVANIA LETECKEJ INFRAŠTRUKTÚRY Z HĽADISKA ODOLNOSTI V ČASE
+      KORONAKRÍZY: EÚ VS USA'
+    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1554/1326
+    source: ojs_perner
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: cs
+    published_at: '2020-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.46585/pc.2020.1.1554
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1554
+    rights_verified_at: '2026-10-29'
+  - id: ojs-perner-systematizace-ne-idi-sk-ch-innost-idi-autonomn-ch-n
+    title: SYSTEMATIZACE NE-ŘIDIČSKÝCH ČINNOSTÍ ŘIDIČŮ AUTONOMNÍCH NÁKLADNÍCH VOZIDEL
+    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1662/1468
+    source: ojs_perner
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: cs
+    published_at: '2021-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.46585/pc.2021.1.1662
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1662
+    rights_verified_at: '2026-10-29'
+  - id: ojs-perner-the-central-bi-oceanic-railway-corridor
+    title: THE CENTRAL BI-OCEANIC RAILWAY CORRIDOR
+    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1675/1465
+    source: ojs_perner
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2021-06-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.46585/pc.2021.1.1675
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1675
+    rights_verified_at: '2026-10-29'
+  - id: ojs-perner-p-estupky-v-silni-n-doprav-v-esk-republice-bodov-sys
+    title: PŘESTUPKY V SILNIČNÍ DOPRAVĚ V ČESKÉ REPUBLICE, BODOVÝ SYSTÉM ŘIDIČŮ V ČESKÉ
+      REPUBLICE, NĚMECKU A POLSKU A ŘEŠENÍ DOPRAVNÍHO PŘESTUPKU POLICIÍ ČR A NA
+    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1695/1632
+    source: ojs_perner
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: cs
+    published_at: '2021-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.46585/pc.2021.2.1695
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1695
+    rights_verified_at: '2026-10-29'
+  - id: ojs-perner-zv-enie-bezpe-nosti-a-redukcia-kriminality-na-vybran
+    title: 'ZVÝŠENIE BEZPEČNOSTI A REDUKCIA KRIMINALITY NA VYBRANEJ ŽELEZNIČNEJ STANICI
+      PROSTREDNÍCTVOM KONCEPCIE CPTED: INCREASING SECURITY AND REDUCING CRIME AT'
+    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/2365/2116
+    source: ojs_perner
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: sk
+    published_at: '2022-12-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.46585/pc.2022.2.2365
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/2365
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-an-approach-for-a-passively-shaded-glazed
+    title: An Approach for a Passively Shaded Glazed Steel Façade Utilizing Digital
+      Design Strategies
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/511/462
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.511
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/511
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-design-of-a-numerical-sensor-concept-as-th
+    title: Design of a Numerical Sensor Concept as the Basis of a Hybrid Digital Twin
+      for Monitoring Load-Bearing Glass Façades
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/519/444
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.519
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/519
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-photovoltaics-in-the-building-envelope
+    title: Photovoltaics in the Building Envelope
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/570/435
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.570
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/570
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-advancing-sustainable-3d-printing-the-feas
+    title: 'Advancing Sustainable 3D Printing: The Feasibility of Recycled Glass as
+      a Building Material With Additive Manufacturing'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/583/483
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.583
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/583
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-experimental-and-numerical-characterizatio
+    title: Experimental and Numerical Characterization of Input Forces in Glass Curtain
+      Walls under Soft Body Impact
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/588/490
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/588
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-stress-distribution-along-the-structural-s
+    title: Stress Distribution along the Structural Sealant Joint Length of a Cylindrically
+      Curved Glazing Panel
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/595/431
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.595
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/595
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-reducing-deflection-of-thin-glass-by-prest
+    title: Reducing Deflection of Thin Glass by Prestress
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/600/428
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.600
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/600
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-re-glass-product-development-pathways-for
+    title: 'Re-Glass: Product Development Pathways for Post-Consumer Glass'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/649/417
+    source: ojs_challengingglass
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.649
+    license_evidence: 'https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/649
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 Sophie Pennetier, Baizhen (Shirley) Yu; https://creativecommons.org/licenses/by/4.0)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-challengingglass-panoramic-perfection-unveiling-technical-i
+    title: 'Panoramic Perfection: Unveiling Technical Insights from “The Henderson”
+      in Hong Kong'
+    url: https://proceedings.challengingglass.com/index.php/cgc/article/download/650/416
+    source: ojs_challengingglass
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-16'
+    document_type: conference-paper
+    persistent_id: https://doi.org/10.47982/cgc.9.650
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/650
+    rights_verified_at: '2026-10-29'
+  - id: ojs-quivera-teor-a-e-ideolog-a-neoliberal
+    title: Teoría e ideología neoliberal
+    url: https://quivera.uaemex.mx/article/download/10579/8612
+    source: ojs_quivera
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2006-01-01'
+    document_type: journal-article
+    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10579
+      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
+      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-quivera-ciudad-y-pol-tica-cali-colombia-1987-2007
+    title: Ciudad y política. Cali, Colombia, 1987-2007
+    url: https://quivera.uaemex.mx/article/download/10487/8563
+    source: ojs_quivera
+    license: unverified
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2018-05-22'
+    document_type: journal-article
+    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10487
+      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
+      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-quivera-the-tourist-developments-and-their-environmental-ef
+    title: The tourist developments and their environmental effects in the Mayan Riviera,
+      1980-2015
+    url: https://quivera.uaemex.mx/article/download/9761/8067
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2017-07-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/9761
+    rights_verified_at: '2026-10-29'
+  - id: ojs-quivera-the-professional-performance-market-paradigm-a-mark
+    title: 'The Professional Performance Market Paradigm: A Marketing Model for Services
+      from Environmentalists and Urban Planners'
+    url: https://quivera.uaemex.mx/article/download/24860/19368
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2025-07-04'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/qret.v27i2.24860
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/24860
+    rights_verified_at: '2026-10-29'
+  - id: ojs-quivera-conditions-of-habitability-of-sustainable-housing-o
+    title: Conditions of habitability of sustainable housing of social interest. Case
+      of “Los Héroes San Pablo II”, Tecamac, Estado of Mexico
+    url: https://quivera.uaemex.mx/article/download/13674/12036
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2021-04-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/qret.v23i1.13674
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/13674
+    rights_verified_at: '2026-10-29'
+  - id: ojs-quivera-systematic-analysis-contribution-to-urban-and-regio
+    title: 'Systematic analysis: contribution to urban and regional studies'
+    url: https://quivera.uaemex.mx/article/download/21550/16884
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2024-01-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/21550
+    rights_verified_at: '2026-10-29'
+  - id: ojs-quivera-the-case-of-the-masehual-siuamej-mosenyolchicauani
+    title: The case of the Masehual Siuamej Mosenyolchicauani organization in the light
+      of the Social and Solidarity Economy
+    url: https://quivera.uaemex.mx/article/download/22021/17913
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2024-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/qret.v26i2.22021
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/22021
+    rights_verified_at: '2026-10-29'
+  - id: ojs-quivera-socio-spatial-segregation-of-the-public-transportat
+    title: Socio-spatial segregation of the Public Transportation Integrated System
+      (SITP) for the handicapped people in the district of Kennedy, Bogota, Colombi
+    url: https://quivera.uaemex.mx/article/download/13399/11511
+    source: ojs_quivera
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: es
+    published_at: '2020-11-12'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/13399
     rights_verified_at: '2026-10-29'
