@@ -180423,3 +180423,89 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-29'
+  - id: oas-w7146053466
+    title: スケール感覚を養うプロジェクションマッピングプロジェクト（第2報） ―1/5投影装置と1/1投影装置の制作―
+    url: https://iot.repo.nii.ac.jp/record/280/files/bulletin_192.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2023-03-08'
+    document_type: article
+    persistent_id: https://openalex.org/W7146053466
+    license_evidence: no licence statement for this copy [copy https://iot.repo.nii.ac.jp/record/280/files/bulletin_192.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146053466
+    resolution: 'sim1: openalex location'
+  - id: arx-classification-of-building-information-model-b
+    title: Classification of Building Information Model (BIM) Structures with Deep Learning
+    url: https://arxiv.org/pdf/1808.00601v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2018-08-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.1808.00601
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:1808.00601 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1109/euvip.2018.8611701
+  - id: arx-enhanced-sequential-directional-importance-sam
+    title: Enhanced sequential directional importance sampling for structural reliability
+      analysis
+    url: https://arxiv.org/pdf/2410.21350v1
+    source: arxiv
+    license: cc0
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.21350
+    license_url: http://creativecommons.org/publicdomain/zero/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.21350 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/publicdomain/zero/1.0/
+      -> cc0 (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-opus-occupancy-prediction-using-a-sparse-set
+    title: 'OPUS: Occupancy Prediction Using a Sparse Set'
+    url: https://arxiv.org/pdf/2409.09350v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-09-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.09350
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.09350 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-integrating-symbolic-neural-networks-with-buil
+    title: 'Integrating Symbolic Neural Networks with Building Physics: A Study and
+      Proposal'
+    url: https://arxiv.org/pdf/2411.00800v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.00800
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.00800 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
