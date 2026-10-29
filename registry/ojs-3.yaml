@@ -84456,20 +84456,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/452
     rights_verified_at: '2026-10-29'
-  - id: ojs-agathon-verbal-design-modelling-complexity-ai-and-product-i
-    title: Verbal Design Modelling – Complexity, AI and product innovation
-    url: https://www.agathon.it/agathon/article/download/457/499
-    source: ojs_agathon
-    license: cc-by
-    topic: architecture
-    format: pdf
-    language: en
-    published_at: '2024-12-30'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.19229/2464-9309/16292024
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://www.agathon.it/agathon/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.www.agathon.it:article/457
-    rights_verified_at: '2026-10-29'
   - id: ojs-agathon-meta-design-strategies-for-affordability-in-univers
     title: Meta-design strategies for affordability in university housing
     url: https://www.agathon.it/agathon/article/download/475/529
@@ -84649,4 +84635,430 @@ sources:
     license_evidence: 'https://www.nijotech.com/index.php/nijotech/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/1970
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2019 Nigerian Journal of Technology)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-potential-alkaline-reactivity-of-sands-from-domestic
+    title: Potential alkaline reactivity of sands from domestic deposits
+    url: https://www.rabdim.pl/index.php/rb/article/download/v21n3p253/659
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2022-09-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.022.015
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/756
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-use-of-plastic-waste-in-cement-bound-layers
+    title: Use of plastic waste in cement-bound layers
+    url: https://www.rabdim.pl/index.php/rb/article/download/v22n3p243/701
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2023-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.023.012
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/811
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-evaluation-of-the-effect-of-processed-plastic-additi
+    title: Evaluation of the effect of processed plastic additives on the properties
+      of paving grade bitumen
+    url: https://www.rabdim.pl/index.php/rb/article/download/v22n3p287/715
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2023-09-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.023.015
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/824
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-failure-analysis-of-multi-span-masonry-arch-bridges
+    title: Failure analysis of multi-span masonry arch bridges using combination of
+      point cloud data and three-dimensional numerical modeling
+    url: https://www.rabdim.pl/index.php/rb/article/download/v23n3p283/v23n3p283
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2024-10-03'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.024.014
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/835
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-predicting-the-properties-of-a-mixture-produced-usin
+    title: Predicting the properties of a mixture produced using “cold” technology with
+      foamed bitumen in terms of the properties of hydraulic binder mortars
+    url: https://www.rabdim.pl/index.php/rb/article/download/v22n4p363/721
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2024-03-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.023.019
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/864
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-shear-modulus-and-damping-ratio-of-recycled-concrete
+    title: Shear modulus and damping ratio of recycled concrete aggregate from cyclic
+      torsional shear test
+    url: https://www.rabdim.pl/index.php/rb/article/download/v22n4p387/725
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2024-03-30'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.023.021
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/867
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-laboratory-evaluation-of-combined-effect-of-jute-fib
+    title: Laboratory evaluation of combined effect of jute fibres and rejuvenators
+      on some performance characteristics of asphalt mixture containing reclaimed a
+    url: https://www.rabdim.pl/index.php/rb/article/download/v22n4p399/726
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2024-03-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.023.022
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/869
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-evaluation-of-the-feasibility-of-incorporating-highe
+    title: Evaluation of the feasibility of incorporating higher RAP materials content
+      in asphalt concrete with the use of additives that improve the workability
+    url: https://www.rabdim.pl/index.php/rb/article/download/v22n4p515/737
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2024-03-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.023.032
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/879
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-practical-evaluation-of-the-influence-of-the-positio
+    title: Practical evaluation of the influence of the position of dowels in expansion
+      joints on the risk of failure of Portland cement concrete pavements
+    url: https://www.rabdim.pl/index.php/rb/article/download/v24n1p47/v24n1p47
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: pl
+    published_at: '2025-03-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.025.003
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/916
+    rights_verified_at: '2026-10-29'
+  - id: ojs-rabdim-an-analysis-of-the-influence-of-legal-changes-on-the
+    title: An analysis of the influence of legal changes on the number of traffic crashes
+      and fatalities in Poland in 2022
+    url: https://www.rabdim.pl/index.php/rb/article/download/v24n3p253/v24n3p253
+    source: ojs_rabdim
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-08-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.7409/rabdim.025.014
+    license_url: https://creativecommons.org/licenses/by/4.0
+    license_evidence: https://www.rabdim.pl/index.php/rb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.pkp.sfu.ca:article/941
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arqurb-paran-based-projects-for-the-euro-kursaal-and-the-in
+    title: Paraná-based projects for the Euro Kursaal and the internationalization of
+      Brazilian architecture in the 1970s
+    url: https://www.revistaarqurb.com.br/arqurb/article/download/581/482
+    source: ojs_arqurb
+    license: cc-by-nc
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2022-08-05'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.37916/arq.urb.vi34.581
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.revistaarqurb.com.br/arqurb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.emnuvens.com.br:article/581
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arqurb-evaluation-of-irregular-occupation-of-slope-case-stu
+    title: 'Evaluation of irregular occupation of slope: case study'
+    url: https://www.revistaarqurb.com.br/arqurb/article/download/660/564
+    source: ojs_arqurb
+    license: cc-by-nc
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2024-05-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.37916/arq.urb.vi39.660
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.revistaarqurb.com.br/arqurb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.emnuvens.com.br:article/660
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arqurb-architecture-and-urbanism-in-curitiba-and-the-postmo
+    title: Architecture and urbanism in Curitiba and the postmodern sensibility
+    url: https://www.revistaarqurb.com.br/arqurb/article/download/670/583
+    source: ojs_arqurb
+    license: cc-by-nc
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2025-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.37916/arq.urb.vi40.670
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.revistaarqurb.com.br/arqurb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.emnuvens.com.br:article/670
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arqurb-popular-neighborhoods-cartography-advances-challenge
+    title: 'Popular Neighborhoods Cartography: Advances, Challenges, and Monitoring
+      of Sustainable Development Goals'
+    url: https://www.revistaarqurb.com.br/arqurb/article/download/687/557
+    source: ojs_arqurb
+    license: cc-by-nc
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2023-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.37916/arq.urb.vi38.687
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.revistaarqurb.com.br/arqurb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.emnuvens.com.br:article/687
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arqurb-citizen-participation-platforms-in-the-brazilian-con
+    title: Citizen participation platforms in the Brazilian context
+    url: https://www.revistaarqurb.com.br/arqurb/article/download/725/596
+    source: ojs_arqurb
+    license: cc-by-nc
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2026-04-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.37916/arq.urb.vi41.725
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.revistaarqurb.com.br/arqurb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.emnuvens.com.br:article/725
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arqurb-quantification-of-co2-emissions-and-waste-generation
+    title: Quantification of CO2 emissions and waste generation from different wall
+      systems
+    url: https://www.revistaarqurb.com.br/arqurb/article/download/742/585
+    source: ojs_arqurb
+    license: cc-by-nc
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2025-07-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.37916/arq.urb.vi40.742
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.revistaarqurb.com.br/arqurb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.emnuvens.com.br:article/742
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arqurb-beatriz-colomina-and-manfredo-tafuri-in-life-everyth
+    title: 'Beatriz Colomina and Manfredo Tafuri: “in life, everything is by chance?”'
+    url: https://www.revistaarqurb.com.br/arqurb/article/download/748/588
+    source: ojs_arqurb
+    license: cc-by-nc
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2025-10-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.37916/arq.urb.vi40.748
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.revistaarqurb.com.br/arqurb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.emnuvens.com.br:article/748
+    rights_verified_at: '2026-10-29'
+  - id: ojs-arqurb-m-ltiplas-vis-es-da-arquitetura
+    title: Múltiplas visões da arquitetura
+    url: https://www.revistaarqurb.com.br/arqurb/article/download/769/572
+    source: ojs_arqurb
+    license: cc-by-nc
+    topic: architecture
+    format: pdf
+    language: pt
+    published_at: '2024-11-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.37916/arq.urb.vi39.769
+    license_url: https://creativecommons.org/licenses/by-nc/4.0
+    license_evidence: https://www.revistaarqurb.com.br/arqurb/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.emnuvens.com.br:article/769
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-wir-kaufen-den-kiez-zur-ck-milieuschutz-und-vorkau
+    title: '„Wir kaufen den Kiez zurück“: Milieuschutz und Vorkaufsrecht als Ansätze
+      einer postneoliberalen Wohnraumversorgung in Berlin Friedrichshain-Kreuzberg?'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/464/650
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2019-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v7i1/2.464
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/464
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-wider-die-unsichtbarkeit-die-t-dliche-dimension-re
+    title: 'Wider die Unsichtbarkeit: Die tödliche Dimension rechter Gewalt im öffentlichen
+      Raum'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/471/663
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2019-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v7i1/2.471
+    license_url: https://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/471
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-gleichgeschaltete-r-ume-rezension-zu-winfried-s-ma
+    title: 'Gleichgeschaltete Räume? Rezension zu Winfried Süß / Malte Thießen (Hg.)
+      (2017): Städte im Nationalsozialismus. Urbane Räume und soziale Ordnungen (Be'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/476/675
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2019-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v7i1/2.476
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/476
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-stadt-land-afd-zur-produktion-des-urbanen-und-des
+    title: 'Stadt, Land, AfD: Zur Produktion des Urbanen und des Ruralen im Prozess
+      der Urbanisierung'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/483/688
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2019-05-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v7i1/2.483
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/483
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-wissen-mal-ganz-konventionell-unkonventionell-stad
+    title: 'Wissen mal ganz konventionell unkonventionell: Stadt verstehen mit Lucius
+      Burckhardt'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/529/897
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2020-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v8i3.529
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/529
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-wuchernde-stadt-und-gez-hmte-wildnis-sozial-kologi
+    title: '‚Wuchernde Stadt‘ und ‚gezähmte Wildnis‘: Sozial-ökologische Perspektiven
+      auf die Inszenierung von ‚neuer Wildnis‘ im Natur-Park Schöneberger Südgelän'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/542/802
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2020-04-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v8i1/2.542
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/542
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-das-urbane-unbewusste-psychoanalyse-und-kritische
+    title: 'Das urbane Unbewusste: Psychoanalyse und kritische Stadtforschung'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/544/732
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2019-11-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v7i3.544
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/544
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-klimagerechtes-wohnen-energetische-geb-udesanierun
+    title: 'Klimagerechtes Wohnen? Energetische Gebäudesanierung in einkommensschwachen
+      Quartieren: Kommentar zu Lisa Vollmer und Boris Michel „Wohnen in der Klim'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/567/791
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2020-04-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v8i1/2.567
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/567
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-die-logik-des-ausbruchs-formierung-von-covid-19-du
+    title: 'Die Logik des Ausbruchs: Formierung von Covid-19 durch Krisenbearbeitungsweisen'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/615/892
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2020-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v8i3.615
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/615
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-von-gentrifizierung-betroffen-ein-exemplarischer-b
+    title: 'Von Gentrifizierung betroffen: Ein exemplarischer Beitrag zur Diskussion
+      konzeptioneller und methodisch-methodologischer Fragen qualitativer Verdrängu'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/618/936
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2021-04-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v9i1/2.618
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/618
+    rights_verified_at: '2026-10-29'
+  - id: ojs-suburban-die-disziplinierung-allt-glicher-wassernutzung-rez
+    title: 'Die Disziplinierung alltäglicher Wassernutzung: Rezension zu Anke Schwarz
+      (2017): Demanding Water. A Sociospatial Approach to Domestic Water Use in Me'
+    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/621/902
+    source: ojs_suburban
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: de
+    published_at: '2020-12-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36900/suburban.v8i3.621
+    license_url: https://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/621
     rights_verified_at: '2026-10-29'

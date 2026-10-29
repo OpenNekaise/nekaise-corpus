@@ -177191,3 +177191,54 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-29'
+  - id: arx-fine-tuning-vision-foundation-model-for-crack-
+    title: Fine-tuning vision foundation model for crack segmentation in civil infrastructures
+    url: https://arxiv.org/pdf/2312.04233v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.04233
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.04233 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-occgen-generative-multi-modal-3d-occupancy-pre
+    title: 'OccGen: Generative Multi-modal 3D Occupancy Prediction for Autonomous Driving'
+    url: https://arxiv.org/pdf/2404.15014v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-04-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2404.15014
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2404.15014 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-large-scale-multipurpose-benchmark-datasets-fo
+    title: Large-Scale Multipurpose Benchmark Datasets For Assessing Data-Driven Deep
+      Learning Approaches For Water Distribution Networks
+    url: https://arxiv.org/pdf/2404.15386v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-04-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2404.15386
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2404.15386 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
