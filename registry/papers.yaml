@@ -178684,3 +178684,127 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-29'
+  - id: arx-fast-variational-bayesian-inference-for-correl
+    title: 'Fast variational Bayesian inference for correlated survival data: an application
+      to invasive mechanical ventilation duration analysis'
+    url: https://arxiv.org/pdf/2408.00177v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2024-07-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.00177
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.00177 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-an-operational-scheduling-framework-for-tanker
+    title: An Operational Scheduling Framework for Tanker-based Water Distribution System
+      under Uncertainty
+    url: https://arxiv.org/pdf/2408.00431v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-08-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.00431
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.00431 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1021/acs.iecr.3c00496
+  - id: arx-multi-label-sewer-pipe-defect-recognition-with
+    title: Multi-label Sewer Pipe Defect Recognition with Mask Attention Feature Enhancement
+      and Label Correlation Learning
+    url: https://arxiv.org/pdf/2408.00489v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-08-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.00489
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.00489 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-a-short-term-planning-framework-for-the-operat
+    title: A Short-Term Planning Framework for the Operation of Tanker-Based Water Distribution
+      Systems in Urban Areas
+    url: https://arxiv.org/pdf/2408.01184v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-08-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.01184
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.01184 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1021/acs.iecr.0c00303
+  - id: arx-comparison-of-probabilistic-structural-reliabi
+    title: Comparison of Probabilistic Structural Reliability Methods for Ultimate Limit
+      State Assessment of Wind Turbines
+    url: https://arxiv.org/pdf/2312.04972v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-12-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.04972
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.04972 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1016/j.strusafe.2024.102502
+  - id: arx-fast-lidar-informed-visual-search-in-unseen-in
+    title: Fast LiDAR Informed Visual Search in Unseen Indoor Environments
+    url: https://arxiv.org/pdf/2309.14150v11
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-09-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2309.14150
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2309.14150 (v11, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-algorithm-informed-graph-neural-networks-for-l
+    title: Algorithm-Informed Graph Neural Networks for Leakage Detection and Localization
+      in Water Distribution Networks
+    url: https://arxiv.org/pdf/2408.02797v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-08-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.02797
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.02797 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
