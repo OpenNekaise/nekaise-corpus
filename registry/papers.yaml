@@ -180165,3 +180165,90 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-29'
+  - id: oas-w7164264315
+    title: 旧本庄仲町郵便局リノベーションプロジェクト
+    url: https://iot.repo.nii.ac.jp/record/2000013/files/bulletin_205.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2024-03-06'
+    document_type: article
+    persistent_id: https://openalex.org/W7164264315
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://iot.repo.nii.ac.jp/record/2000013/files/bulletin_205.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-29'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7164264315
+    resolution: 'sim1: openalex location'
+  - id: arx-characterizing-seismic-isolation-using-convolu
+    title: Characterizing seismic isolation using convolutional neural networks and
+      Wiener filters
+    url: https://arxiv.org/pdf/2410.14806v2
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.14806
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.14806 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-interpreting-machine-learning-models-for-room-
+    title: Interpreting Machine Learning Models for Room Temperature Prediction in Non-domestic
+      Buildings
+    url: https://arxiv.org/pdf/2111.13760v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-11-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2111.13760
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2111.13760 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1080/23744731.2023.2239081
+  - id: arx-anavi-audio-noise-awareness-using-visuals-of-i
+    title: 'ANAVI: Audio Noise Awareness using Visuals of Indoor environments for NAVIgation'
+    url: https://arxiv.org/pdf/2410.18932v1
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-10-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.18932
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.18932 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-towards-human-centered-construction-robotics-a
+    title: 'Towards Human-Centered Construction Robotics: A Reinforcement Learning-Driven
+      Companion Robot for Contextually Assisting Carpentry Workers'
+    url: https://arxiv.org/pdf/2403.19060v3
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.19060
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.19060 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
