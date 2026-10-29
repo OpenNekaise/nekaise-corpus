@@ -177942,3 +177942,72 @@ sources:
     rights_verified_at: '2026-10-29T06:10:08Z'
     origin_ids: doi:10.1016/j.buildenv.2020.107538 openalex:W3116282015
     resolution: 'legacy: openalex location'
+  - id: arx-strokes2surface-recovering-curve-networks-from
+    title: 'Strokes2Surface: Recovering Curve Networks From 4D Architectural Design
+      Sketches'
+    url: https://arxiv.org/pdf/2306.07220v4
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2023-06-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.07220
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.07220 (v4, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1111/cgf.15054
+  - id: arx-weak-tits-alternative-for-groups-acting-geomet
+    title: Weak Tits alternative for groups acting geometrically on buildings
+    url: https://arxiv.org/pdf/2306.16546v2
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.16546
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.16546 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-category-level-neural-field-for-reconstruction
+    title: Category-level Neural Field for Reconstruction of Partially Observed Objects
+      in Indoor Environment
+    url: https://arxiv.org/pdf/2406.08176v1
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2406.08176
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2406.08176 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-beyond-the-frontier-predicting-unseen-walls-fr
+    title: 'Beyond the Frontier: Predicting Unseen Walls from Occupancy Grids by Learning
+      from Floor Plans'
+    url: https://arxiv.org/pdf/2406.09160v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-06-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2406.09160
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2406.09160 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1109/lra.2024.3410164
