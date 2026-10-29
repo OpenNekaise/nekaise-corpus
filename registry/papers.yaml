@@ -175102,24 +175102,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-28'
-  - id: oas-10-1080-14733315-2011-11683954-da689e67
-    title: Natural Personalised Ventilation - A Novel Approach
-    url: https://figshare.com/articles/journal_contribution/Natural_personalised_ventilation_a_novel_approach/9453215
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2011-12-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1080/14733315.2011.11683954
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
-      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Natural_personalised_ventilation_a_novel_approach/9453215;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-28'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1080/14733315.2011.11683954 openalex:W1684182508
-    resolution: 'sim1: openalex+unpaywall location'
   - id: arx-uwb-radar-slam-an-anchorless-approach-in-visio
     title: 'UWB Radar SLAM: an Anchorless Approach in Vision Denied Indoor Environments'
     url: https://arxiv.org/pdf/2311.14970v1
@@ -176753,4 +176735,92 @@ sources:
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2305.08886 (v2, the current
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-convoi-context-aware-navigation-using-vision-l
+    title: 'CoNVOI: Context-aware Navigation using Vision Language Models in Outdoor
+      and Indoor Environments'
+    url: https://arxiv.org/pdf/2403.15637v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.15637
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.15637 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-deep-learning-approach-to-forecasting-covid-19
+    title: 'Deep Learning Approach to Forecasting COVID-19 Cases in Residential Buildings
+      of Hong Kong Public Housing Estates: The Role of Environment and Sociode'
+    url: https://arxiv.org/pdf/2403.15759v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.15759
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.15759 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+  - id: arx-infrastructure-less-localization-from-indoor-e
+    title: Infrastructure-less Localization from Indoor Environmental Sounds Based on
+      Spectral Decomposition and Spatial Likelihood Model
+    url: https://arxiv.org/pdf/2403.17402v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.17402
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.17402 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1109/sii55687.2023.10039378
+  - id: arx-temporal-logic-formalisation-of-iso-34502-crit
+    title: 'Temporal Logic Formalisation of ISO 34502 Critical Scenarios: Modular Construction
+      with the RSS Safety Distance'
+    url: https://arxiv.org/pdf/2403.18764v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.18764
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.18764 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-28'
+    origin_ids: doi:10.1145/3605098.3636014
+  - id: arx-real-acoustic-fields-an-audio-visual-room-acou
+    title: 'Real Acoustic Fields: An Audio-Visual Room Acoustics Dataset and Benchmark'
+    url: https://arxiv.org/pdf/2403.18821v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.18821
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.18821 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
     rights_verified_at: '2026-10-28'
