@@ -83864,22 +83864,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2023 Oculum Ensaios)'
     rights_verified_at: '2026-10-29'
-  - id: ojs-oculum-socio-spatial-interpretation-in-traditional-communit
-    title: Socio-Spatial interpretation in traditional communities in the Amazon through
-      the theory of Christopher Alexander
-    url: https://periodicos.puc-campinas.edu.br/oculum/article/download/5217/5019
-    source: ojs_oculum
-    license: unverified
-    topic: urban
-    format: pdf
-    language: pt
-    published_at: '2023-02-17'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.24220/2318-0919v20e2023a5217
-    license_evidence: 'https://periodicos.puc-campinas.edu.br/oculum/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:periodicos.puc-campinas.edu.br:article/5217
-      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
-      (c) 2023 Oculum Ensaios)'
-    rights_verified_at: '2026-10-29'
   - id: ojs-oculum-territory-and-memory-from-the-residents-perspective
     title: 'Territory (and memory) from the residents'' perspective: mental maps workshop
       with older adults'
@@ -84295,17 +84279,216 @@ sources:
     license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/28051
     rights_verified_at: '2026-10-29'
-  - id: ojs-quivera-space-territory-and-institutions-of-local-economic
-    title: Space, territory and institutions of local economic development
-    url: https://quivera.uaemex.mx/article/download/10961/8873
-    source: ojs_quivera
-    license: unverified
-    topic: urban
+  - id: ojs-jmes-experimental-study-of-the-behavior-of-gfrp-reinforced
+    title: Experimental Study of the Behavior of GFRP Reinforced Concrete Corbels
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3713/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
     format: pdf
-    language: es
-    published_at: '1998-07-01'
+    language: en
+    published_at: '2024-12-31'
     document_type: journal-article
-    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10961
-      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
-      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3713
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-fracture-parameters-formulation-for-single-edge-notche
+    title: Fracture parameters formulation for single edge notched AS4 stitched warp-knit
+      fabric composite plate
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2033/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-12-22'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2033
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-seismic-performance-of-mid-rise-code-conforming-x-brac
+    title: Seismic performance of mid-rise code-conforming X-braced steel frames
+    url: http://revue.ummto.dz/index.php/JMES/article/download/1920/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-08-06'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/1920
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-smart-expressways-in-vietnam-an-architectural-proposal
+    title: 'Smart expressways in Vietnam: An architectural proposal'
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3915/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-01-26'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3915
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-experimental-assessment-of-mechanical-behavior-of-a-co
+    title: Experimental assessment of mechanical behavior of a compressed stabilized
+      earth blocks (CSEB) and walls
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2460/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-05-15'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2460
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-application-of-recycled-aggregate-in-sprayed-mortar-an
+    title: Application of recycled aggregate in sprayed mortar and shotcrete
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3735/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-31'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3735
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-comparative-study-on-dynamic-behaviour-of-thick-beams
+    title: 'Comparative Study on Dynamic Behaviour of Thick Beams on Foundation: Winkler,
+      Pasternak and Kerr Foundation'
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3844/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-30'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3844
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-production-of-cold-bonding-pelletized-artificial-expir
+    title: Production of Cold-Bonding Pelletized Artificial Expired Cement- Fly Ash
+      Lightweight Aggregates with Various Curing Regime
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1319/1140
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.2.18
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1319
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-using-a-curved-bed-sill-as-a-scour-countermeasure-arou
+    title: Using a Curved Bed Sill as a Scour Countermeasure around a Complex Bridge
+      Pier
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1553/1220
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.1.7
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1553
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-evaluation-of-the-pile-group-response-for-machine-foun
+    title: Evaluation of the Pile Group Response for Machine Foundation under Cyclic
+      Load in Sandy Soil
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1598/1222
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.1.9
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1598
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-performance-of-laced-reinforced-concrete-beams-with-di
+    title: Performance of Laced Reinforced Concrete Beams with Different Ratios of Glass
+      Fiber
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1651/1190
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.4.10
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1651
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-evaluating-exposure-to-road-traffic-air-and-noise-poll
+    title: 'Evaluating Exposure to Road Traffic Air and Noise Pollution: A Comprehensive
+      Review of Assessment Methods'
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/2020/1263
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-17'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.2.9
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/2020
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-behavior-of-gypseous-soil-treated-by-arabic-gum-biopol
+    title: Behavior of Gypseous Soil Treated by Arabic Gum Biopolymer Under Cycles of
+      Wetting and Drying
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/2061/1325
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.3.10
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/2061
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-smart-waste-management-framework-for-green-cities-inte
+    title: 'Smart Waste Management Framework for Green Cities: Integrating IoT, LoRa,
+      and Deep Learning for Efficient Waste Classification and Management'
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/2162/1314
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.sp1.2025.1
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/2162
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
     rights_verified_at: '2026-10-29'

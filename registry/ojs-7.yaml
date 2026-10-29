@@ -81866,20 +81866,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1456
     rights_verified_at: '2026-10-29'
-  - id: ojs-perner-vyu-itie-simul-cie-pri-v-bere-alternat-v-dopravnej-o
-    title: VYUŽITIE SIMULÁCIE PRI VÝBERE ALTERNATÍV DOPRAVNEJ OBSLUHY ÚZEMIA MESTSKOU
-      HROMADNOU DOPRAVOU
-    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1467/1239
-    source: ojs_perner
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-    language: cs
-    published_at: '2007-12-05'
-    document_type: journal-article
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1467
-    rights_verified_at: '2026-10-29'
   - id: ojs-perner-application-of-risk-management-in-the-protection-of
     title: APPLICATION OF RISK MANAGEMENT IN THE PROTECTION OF ELEMENTS OF TRANSPORT
       INFRASTRUCTURE
@@ -82209,4 +82195,303 @@ sources:
     license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10359
       : dc:rights carries no single verifiable Creative Commons licence URL (Creative
       Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-a-study-on-dynamic-modulus-of-epoxy-asphalt-concrete-e
+    title: 'A Study on Dynamic Modulus of Epoxy Asphalt Concrete: Experiment and Modeling'
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3689/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-31'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3689
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-structural-behavior-of-beam-column-joint-retrofitted-u
+    title: Structural behavior of beam column joint retrofitted using carbon fiber reinforced
+      polymer
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2471/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-05-22'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2471
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-investigating-the-applicability-of-gnss-technology-for
+    title: Investigating the Applicability of GNSS Technology for Monitoring Horizontal
+      Displacement of Wharf Structures
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3743/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-15'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3743
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-evaluation-of-mechanical-properties-of-concrete-for-it
+    title: Evaluation of mechanical properties of concrete for its sustainable development
+    url: http://revue.ummto.dz/index.php/JMES/article/download/1844/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-02-19'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/1844
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-effects-of-probabilistic-characterization-of-soil-para
+    title: Effects of probabilistic characterization of soil parameters and SSI on the
+      seismic vulnerability of a reinforced concrete structure
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3328/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: fr
+    published_at: '2023-12-30'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3328
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-machine-learning-approaches-for-predicting-flexible-as
+    title: 'Machine Learning Approaches for Predicting Flexible Asphalt Pavement Elastic
+      Modulus: ANN vs. Random Forest vs. XGBoost'
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3843/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-20'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3843
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-enhancing-mechanical-properties-of-high-strength-concr
+    title: 'Enhancing Mechanical Properties of High Strength Concrete with Nanomaterials,
+      Copper Slag, and Steel Fibers: Experimental Study and Predictive Modelin'
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3891/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-14'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3891
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-article-1185-1108
+    title: .
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1185/1108
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-10'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.1.19
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1185
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-design-and-evaluation-of-asphalt-mixtures-containing-c
+    title: Design and Evaluation of Asphalt Mixtures Containing Crumb Rubber as Aggregates
+      Replacement
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1189/1216
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.1.3
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1189
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-decision-making-for-project-delivery-system-in-constru
+    title: Decision-Making for Project Delivery System in Construction Projects Based
+      on SWARA-TOPSIS Methods
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1243/1116
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.1.25
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1243
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-developing-a-sustainability-assessment-system-for-an-e
+    title: Developing a Sustainability Assessment System for an Educational Building
+      in the Iraqi Environment
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1246/1179
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-09-15'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.4.3
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1246
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-mechanical-properties-of-modified-metakaolin-based-geo
+    title: Mechanical Properties of Modified Metakaolin-Based Geopolymer Concrete Containing
+      Tires Rubber Waste and Reinforced with Recycled Steel Fibers
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1383/1121
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.2.5
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1383
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-optimum-design-of-rc-beams-strengthened-with-externall
+    title: Optimum Design of RC Beams Strengthened with Externally Bonded FRP Using
+      Pattern Search
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1406/1218
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.1.5
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1406
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-thermal-performance-of-hybrid-solar-swimming-pool-and
+    title: Thermal Performance of Hybrid Solar Swimming Pool and Heating of Building
+      in Kirkuk City-Iraq
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1472/1217
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-08'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.1.4
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1472
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-optimizing-hvac-r-system-efficiency-and-comfort-levels
+    title: Optimizing HVAC&R System Efficiency and Comfort Levels Using Machine Learning-Based
+      Control Methods
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1614/1281
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-31'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.2.25
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1614
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-assessment-of-mechanical-performance-of-fiber-reinforc
+    title: Assessment of Mechanical Performance of Fiber Reinforced Geopolymer Concrete
+      at Different Curing Conditions
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1854/1500
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-06'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.33.1.13
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1854
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-article-2087-1354
+    title: 'تكامل نظم المعلومات الجغرافية وتحليل قرار متعدد المعايير لاختيار موقع مكب
+      النفايات: دراسة حالة لمحافظة كركوك، العراق'
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/2087/1354
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.3.34
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/2087
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-simulation-of-heat-gain-by-conduction-through-walls-fo
+    title: 'Simulation of Heat Gain by Conduction Through Walls for Residential Buildings
+      in Iraq: Ramadi City as Case Study'
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/2175/1379
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-29'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.4.10
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/2175
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-performance-of-cfrp-confined-circularized-square-solid
+    title: Performance of CFRP Confined Circularized Square Solid RC Columns under Bi-axial
+      Bending (Theoretical Investigation)
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/2193/1470
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-12-26'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.4.28
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/2193
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
     rights_verified_at: '2026-10-29'

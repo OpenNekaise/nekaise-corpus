@@ -86125,20 +86125,6 @@ sources:
       : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
       (c) 2024 Silvia Scoralich Carvalho)'
     rights_verified_at: '2026-10-29'
-  - id: ojs-perner-vyu-itie-n-stroja-daq-v-dopravno-psychologickom-v-sk
-    title: VYUŽITIE NÁSTROJA DAQ V DOPRAVNO-PSYCHOLOGICKOM VÝSKUME
-    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/1552/1324
-    source: ojs_perner
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-    language: cs
-    published_at: '2020-06-30'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.46585/pc.2020.1.1552
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1552
-    rights_verified_at: '2026-10-29'
   - id: ojs-perner-syst-my-financovania-leteckej-infra-trukt-ry-z-h-adi
     title: 'SYSTÉMY FINANCOVANIA LETECKEJ INFRAŠTRUKTÚRY Z HĽADISKA ODOLNOSTI V ČASE
       KORONAKRÍZY: EÚ VS USA'
@@ -86196,21 +86182,6 @@ sources:
     persistent_id: https://doi.org/10.46585/pc.2021.2.1695
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/1695
-    rights_verified_at: '2026-10-29'
-  - id: ojs-perner-zv-enie-bezpe-nosti-a-redukcia-kriminality-na-vybran
-    title: 'ZVÝŠENIE BEZPEČNOSTI A REDUKCIA KRIMINALITY NA VYBRANEJ ŽELEZNIČNEJ STANICI
-      PROSTREDNÍCTVOM KONCEPCIE CPTED: INCREASING SECURITY AND REDUCING CRIME AT'
-    url: https://pernerscontacts.upce.cz/index.php/perner/article/download/2365/2116
-    source: ojs_perner
-    license: cc-by
-    topic: infrastructure
-    format: pdf
-    language: sk
-    published_at: '2022-12-30'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.46585/pc.2022.2.2365
-    license_url: https://creativecommons.org/licenses/by/4.0
-    license_evidence: https://pernerscontacts.upce.cz/index.php/perner/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.journals.upce.cz:article/2365
     rights_verified_at: '2026-10-29'
   - id: ojs-challengingglass-an-approach-for-a-passively-shaded-glazed
     title: An Approach for a Passively Shaded Glazed Steel Façade Utilizing Digital
@@ -86344,20 +86315,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by/4.0
     license_evidence: https://proceedings.challengingglass.com/index.php/cgc/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:CGCP:article/650
     rights_verified_at: '2026-10-29'
-  - id: ojs-quivera-teor-a-e-ideolog-a-neoliberal
-    title: Teoría e ideología neoliberal
-    url: https://quivera.uaemex.mx/article/download/10579/8612
-    source: ojs_quivera
-    license: unverified
-    topic: urban
-    format: pdf
-    language: es
-    published_at: '2006-01-01'
-    document_type: journal-article
-    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10579
-      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
-      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
-    rights_verified_at: '2026-10-29'
   - id: ojs-quivera-ciudad-y-pol-tica-cali-colombia-1987-2007
     title: Ciudad y política. Cali, Colombia, 1987-2007
     url: https://quivera.uaemex.mx/article/download/10487/8563
@@ -86457,4 +86414,214 @@ sources:
     document_type: journal-article
     license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/13399
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-dynamic-response-of-a-rigid-foundation-rested-in-a-den
+    title: Dynamic response of a rigid foundation rested in a densified soil
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2887/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-05-09'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2887
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-workability-compressive-strength-and-initial-surface-a
+    title: Workability, compressive strength and initial surface absorption of laterized
+      concrete
+    url: http://revue.ummto.dz/index.php/JMES/article/download/1999/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2019-11-06'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/1999
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-valorisation-of-dune-sand-treated-with-lime-and-scrap
+    title: Valorisation of Dune Sand Treated with Lime and Scrap Tyre Rubber Powder
+      as a Road Foundation Material.
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2235/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-12-27'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2235
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-parametric-study-of-the-seismic-vulnerability-of-steel
+    title: Parametric study of the seismic vulnerability of steel structures and their
+      vulnerability curves
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2224/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-10-31'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2224
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-finite-element-analysis-of-rc-beams-retrofitted-and-st
+    title: Finite Element Analysis of RC Beams Retrofitted and Strengthened with CFRP
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3479/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-31'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3479
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-performance-of-a-modified-shear-box-apparatus-for-full
+    title: Performance of a Modified Shear Box Apparatus for Full Scale Laboratory Study
+      of Segmental Retaining Wall Units
+    url: http://revue.ummto.dz/index.php/JMES/article/download/328/pdf_24
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-05-26'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/328
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-retracted-elastic-plastic-analysis-of-reinforced-compo
+    title: 'RETRACTED : Elastic-plastic analysis of reinforced composite materials'
+    url: http://revue.ummto.dz/index.php/JMES/article/download/1595/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-12-30'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/1595
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-self-healing-mechanisms-and-performance-of-calcium-sul
+    title: 'Self-Healing Mechanisms and Performance of Calcium Sulfoaluminate (CSA)
+      Cement Based Concrete: A Review'
+    url: http://revue.ummto.dz/index.php/JMES/article/download/4009/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-04-15'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/4009
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-rainwater-harvesting-of-some-catchment-areas-in-mosul
+    title: Rainwater Harvesting of Some Catchment Areas in Mosul City/ Iraq by Small
+      Dams Construction
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1178/1074
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-11-13'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.30.4.7
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1178
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2023 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-design-fabrication-and-experimental-analysis-of-a-pv-p
+    title: Design, Fabrication, and Experimental Analysis of a PV Panel for a Smart
+      Sunflower System
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1198/1102
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-02-18'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.1.10
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1198
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-settlement-time-aspect-for-equal-area-footings-with-po
+    title: Settlement-Time Aspect for Equal-Area Footings with Polygon Shapes Lying
+      on Gypseous Soil
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1282/1195
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.4.17
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1282
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-geotechnical-study-of-expansive-soil-treated-with-nano
+    title: Geotechnical Study of Expansive Soil Treated with Nano-Calcium Carbonate
+      Materials in Al-Faw City, Southern Iraq
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1615/1227
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.1.14
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1615
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-the-effects-of-fibers-on-the-properties-of-local-hot-a
+    title: 'The Effects of Fibers on the Properties of Local Hot Asphalt Mixtures:'
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1793/1194
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-11'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.4.15
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1793
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-rainfall-runoff-simulation-for-ungauged-watershed-a-ca
+    title: 'Rainfall-Runoff Simulation for Ungauged Watershed: A Case of Bessre Watershed,
+      Duhok Province, Iraq'
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1916/1148
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-12'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.2.22
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1916
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
     rights_verified_at: '2026-10-29'

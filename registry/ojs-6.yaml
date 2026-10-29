@@ -82923,18 +82923,234 @@ sources:
     license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
     license_evidence: https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/11490
     rights_verified_at: '2026-10-29'
-  - id: ojs-quivera-the-patterns-of-industrialization-and-regional-and
-    title: The patterns of industrialization and regional and local development the
-      western zone of the State of Mexico at the beginning of the 1990s. An essay o
-    url: https://quivera.uaemex.mx/article/download/10945/8857
-    source: ojs_quivera
-    license: unverified
-    topic: urban
+  - id: ojs-jmes-research-on-design-method-of-long-life-asphalt-pavemen
+    title: Research on Design Method of Long-life Asphalt Pavement
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2629/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
     format: pdf
-    language: es
-    published_at: '1999-03-01'
+    language: en
+    published_at: '2020-12-30'
     document_type: journal-article
-    license_evidence: 'https://quivera.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/10945
-      : dc:rights carries no single verifiable Creative Commons licence URL (Creative
-      Commons Atribución-NoComercial-SinDerivar 4.0 Internacional)'
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2629
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-assessment-of-influence-of-reinforcement-detailing-on
+    title: Assessment of Influence of Reinforcement Detailing on Blast Resistance of
+      Reinforced Concrete Beam-column Connections
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3339/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-09-30'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3339
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-analysis-behavior-strengthening-and-repairing-of-reinf
+    title: 'Analysis, Behavior, Strengthening and repairing of Reinforced Concrete Corbels:
+      Comprehensive Review'
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3167/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-08-15'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3167
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-investigation-of-permanent-deformation-characterisatio
+    title: Investigation of permanent deformation characterisation of different asphalt
+      mixtures
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3654/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-08'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3654
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-mechanistic-analysis-and-economic-benefits-of-fiber-re
+    title: Mechanistic Analysis and Economic Benefits of Fiber-Reinforced Asphalt Overlay
+      Mixtures
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2237/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-04-17'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2237
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-marshall-properties-evaluation-of-hot-and-warm-asphalt
+    title: Marshall properties evaluation of hot and warm asphalt mixes incorporating
+      dissolved plastic bottle modified bitumen
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2399/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-11-20'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2399
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-mechanical-and-durability-characteristics-of-high-perf
+    title: Mechanical and Durability Characteristics of High Performance Concrete Using
+      Copper Slag as Fine Aggregate
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2286/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-07-13'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2286
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-improve-the-flexural-behavior-of-one-way-ribbed-slab-b
+    title: Improve the Flexural Behavior of One-Way Ribbed Slab by Using CFRP Sheet
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1151/1147
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-25'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.2.25
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1151
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-the-influence-of-construction-joints-on-the-shear-beha
+    title: The Influence of Construction Joints on the Shear Behavior of Reinforced
+      Self-Compacting Concrete Beams
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1244/1357
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-28'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.3.35
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1244
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-article-1253-1186
+    title: خصائص الجريان في المطفح العمودي باشكال مدخل وحالات غمر مختلفة
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1253/1186
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-11-24'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.4.4
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1253
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-the-impact-load-behavior-of-reinforced-concrete-slab-s
+    title: The Impact Load Behavior of Reinforced Concrete Slab Samples Containing Waste
+      Plastic Aggregate
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1364/1201
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-12-23'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.4.20
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1364
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-effect-of-different-compressor-speeds-on-the-energy-an
+    title: Effect of Different Compressor Speeds on the Energy and Exergy of an Automobile
+      Air-Conditioner Using R134a in the Absence and Presence of a Liquid-Su
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1436/1236
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.1.13
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1436
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-assessing-performance-of-alkali-activated-calcined-kao
+    title: Assessing Performance of Alkali Activated Calcined Kaolin Clay Based Self-Compacting
+      Geopolymer Concrete Using Nanoparticles and Micro Steel Fiber
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1455/1228
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-21'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.32.1.15
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1455
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2025 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-digital-modeling-for-selecting-the-optimal-combination
+    title: Digital Modeling for Selecting the Optimal Combination of Building and Thermal
+      Insulation Materials
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1751/1510
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-05-14'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.33.1.21
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1751
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2026 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-tjes-estimating-the-sediment-load-transported-by-the-valley
+    title: Estimating the Sediment Load Transported by the Valleys to Makhoul Dam Reservoir
+      (Under Construction)
+    url: https://tj-es.com/ojs/index.php/tjes/article/download/1852/1150
+    source: ojs_tjes
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-20'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.25130/tjes.31.2.24
+    license_evidence: 'https://tj-es.com/ojs/index.php/tjes/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs2.tj-es.com:article/1852
+      : dc:rights carries no single verifiable Creative Commons licence URL (Copyright
+      (c) 2024 THIS IS AN OPEN ACCESS ARTICLE UNDER THE CC BY LICENSE  http://creativecommons.org/licenses/by/4.0/;
+      https://creativecommons.org/licenses/by/)'
     rights_verified_at: '2026-10-29'
