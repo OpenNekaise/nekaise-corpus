@@ -177157,3 +177157,37 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-29'
     origin_ids: doi:10.1016/j.probengmech.2024.103622
+  - id: arx-model-failure-or-data-corruption-exploring-inc
+    title: Model Failure or Data Corruption? Exploring Inconsistencies in Building Energy
+      Ratings with Self-Supervised Contrastive Learning
+    url: https://arxiv.org/pdf/2404.12399v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-04-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2404.12399
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2404.12399 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-modeling-multi-granularity-context-information
+    title: Modeling Multi-Granularity Context Information Flow for Pavement Crack Detection
+    url: https://arxiv.org/pdf/2404.12702v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-04-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2404.12702
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2404.12702 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
