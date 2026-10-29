@@ -22354,10 +22354,23 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-spc-water-coils-brochures
-    title: 'SpecifiedBy (UK manufacturer documents): SPC_Water-Coils_Brochures.pdf (water
-      coils — SPC Water Coils Brochures)'
-    url: https://www.specifiedby.com/s-p-coil-products-limited/water-coils/SPC_Water-Coils_Brochures.pdf
+  - id: vnd-specifiedby-zehnder-group-nederland-bv-comfoair-q450-hrv-comfort-vent-q450-hrv-0954vs0
+    title: 'SpecifiedBy (UK manufacturer documents): zehnder-group-nederland-bv-comfoair-q450-hrv-comfort-vent-q450-hrv-0954vs03-en-1_8d1e530f.pdf'
+    url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-comfoair-q450-st/zehnder-group-nederland-bv-comfoair-q450-hrv-comfort-vent-q450-hrv-0954vs03-en-1_8d1e530f.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-asset-zehnder-colour-card-en-uk-retail-d92c7f2e
+    title: 'SpecifiedBy (UK manufacturer documents): asset-zehnder-colour-card-en-uk-retail_d92c7f2e.pdf'
+    url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-charleston/asset-zehnder-colour-card-en-uk-retail_d92c7f2e.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
