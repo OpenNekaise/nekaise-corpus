@@ -87488,20 +87488,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-sa/4.0
     license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/468
     rights_verified_at: '2026-10-29'
-  - id: ojs-suburban-titelbild
-    title: Titelbild
-    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/491/702
-    source: ojs_suburban
-    license: unverified
-    topic: urban
-    format: pdf
-    language: de
-    published_at: '2019-05-15'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.36900/suburban.v7i1/2.491
-    license_evidence: 'https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/491
-      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
-    rights_verified_at: '2026-10-29'
   - id: ojs-suburban-gentrification-is-a-dirty-word-kommentar-zu-neil-s
     title: '„Gentrification is a dirty word…”: Kommentar zu Neil Smiths „Für eine Theorie
       der Gentrifizierung: ‚Zurück in die Stadt‘ als Bewegung des Kapitals, ni'
@@ -87531,21 +87517,6 @@ sources:
     persistent_id: https://doi.org/10.36900/suburban.v7i3.514
     license_url: https://creativecommons.org/licenses/by-sa/4.0/
     license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/514
-    rights_verified_at: '2026-10-29'
-  - id: ojs-suburban-wissen-macht-stadt-wie-in-reallaboren-stadt-verhan
-    title: 'Wissen Macht Stadt: Wie in Reallaboren Stadt verhandelt und Wissen produziert
-      wird'
-    url: https://zeitschrift-suburban.de/sys/index.php/suburban/article/download/541/881
-    source: ojs_suburban
-    license: cc-by-sa
-    topic: urban
-    format: pdf
-    language: de
-    published_at: '2020-12-15'
-    document_type: journal-article
-    persistent_id: https://doi.org/10.36900/suburban.v8i3.541
-    license_url: https://creativecommons.org/licenses/by-sa/4.0
-    license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/541
     rights_verified_at: '2026-10-29'
   - id: ojs-suburban-geb-ude-energieeffizienz-als-katalysator-residenti
     title: 'Gebäude-Energieeffizienz als Katalysator residentieller Segregation: Kommentar
