@@ -179114,3 +179114,143 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-29'
+  - id: arx-automated-real-world-sustainability-data-gener
+    title: Automated Real-World Sustainability Data Generation from Images of Buildings
+    url: https://arxiv.org/pdf/2405.18064v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-05-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2405.18064
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2405.18064 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+  - id: arx-continual-learning-based-framework-for-structu
+    title: Continual-learning-based framework for structural damage recognition
+    url: https://arxiv.org/pdf/2408.15513v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-08-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.15513
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.15513 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-bim-slam-integrating-bim-models-in-multi-sessi
+    title: 'BIM-SLAM: Integrating BIM Models in Multi-session SLAM for Lifelong Mapping
+      using 3D LiDAR'
+    url: https://arxiv.org/pdf/2408.15870v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-08-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.15870
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.15870 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.22260/isarc2023/0070
+  - id: arx-a-deep-learning-approach-to-detect-complete-sa
+    title: A Deep Learning Approach to Detect Complete Safety Equipment For Construction
+      Workers Based On YOLOv7
+    url: https://arxiv.org/pdf/2406.07707v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-06-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2406.07707
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2406.07707 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-a-piecewise-deterministic-monte-carlo-method-f
+    title: A piecewise deterministic Monte Carlo method for diffusion bridges
+    url: https://arxiv.org/pdf/2001.05889v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-01-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2001.05889
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2001.05889 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1007/s11222-021-10008-8
+  - id: arx-scaling-laws-for-the-rigid-body-response-of-ma
+    title: Scaling laws for the rigid-body response of masonry structures under blast
+      loads
+    url: https://arxiv.org/pdf/2012.09494v2
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2020-12-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2012.09494
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2012.09494 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-29'
+    origin_ids: doi:10.1061/(asce)em.1943-7889.0001986
+  - id: arx-cmab-a-first-national-scale-multi-attribute-bu
+    title: 'CMAB: A First National-Scale Multi-Attribute Building Dataset in China Derived
+      from Open Source Data and GeoAI'
+    url: https://arxiv.org/pdf/2408.05891v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-08-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2408.05891
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2408.05891 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'
+  - id: arx-development-of-occupancy-prediction-algorithm-
+    title: Development of Occupancy Prediction Algorithm for Underground Parking Lots
+    url: https://arxiv.org/pdf/2409.00923v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-09-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.00923
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.00923 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-29'

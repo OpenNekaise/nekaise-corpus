@@ -90481,3 +90481,58 @@ sources:
     license_url: https://creativecommons.org/licenses/by-sa/4.0
     license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/1062
     rights_verified_at: '2026-10-29'
+  - id: ojs-legado-puente-port-til-peatonal-desmontable-para-emergencia
+    title: Puente portátil peatonal desmontable para emergencias
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/14825/11154
+    source: ojs_legado
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2015-07-01'
+    document_type: journal-article
+    license_evidence: 'https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14825
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-evaluaci-n-por-indicadores-de-accesibilidad-universa
+    title: 'Evaluación por indicadores de accesibilidad universal en el espacio público:
+      Centro histórico de Manzanillo'
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/16046/14526
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2022-07-01'
+    document_type: journal-article
+    persistent_id: https://doi.org/10.36677/legado.v17i32.16046
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/16046
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-a-numerical-simulation-approach-for-investigation-of-t
+    title: A Numerical Simulation Approach for Investigation of the Pressure Coefficient
+      on the Main Building at the Hill’s Top Under the Interference.
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3132/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-08-15'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3132
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-a-comparative-study-of-life-cycle-assessment-for-susta
+    title: A Comparative Study of Life Cycle Assessment for Sustainable Concrete Mixes
+    url: http://revue.ummto.dz/index.php/JMES/article/download/3023/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-08-06'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/3023
+    rights_verified_at: '2026-10-29'

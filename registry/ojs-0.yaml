@@ -87737,3 +87737,57 @@ sources:
     license_url: https://creativecommons.org/licenses/by-sa/4.0
     license_evidence: https://zeitschrift-suburban.de/sys/index.php/suburban/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.www.zeitschrift-suburban.de:article/1140
     rights_verified_at: '2026-10-29'
+  - id: ojs-legado-un-nuevo-modelo-urbano
+    title: Un nuevo modelo urbano
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/14000/10712
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2011-01-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14000
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-arquitectura-d-ctil
+    title: Arquitectura Dúctil
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/14036/10737
+    source: ojs_legado
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2012-01-01'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0
+    license_evidence: https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14036
+    rights_verified_at: '2026-10-29'
+  - id: ojs-legado-aportaciones-de-las-caracter-sticas-arquitect-nicas
+    title: Aportaciones de las características arquitectónicas y constructivas del Fuerte
+      de San Diego en Acapulco, México
+    url: https://legadodearquitecturaydiseno.uaemex.mx/article/download/14218/10826
+    source: ojs_legado
+    license: unverified
+    topic: architecture
+    format: pdf
+    language: es
+    published_at: '2013-01-01'
+    document_type: journal-article
+    license_evidence: 'https://legadodearquitecturaydiseno.uaemex.mx/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:ojs.hemeroteca.uaemex.mx:article/14218
+      : dc:rights carries no single verifiable Creative Commons licence URL (no dc:rights)'
+    rights_verified_at: '2026-10-29'
+  - id: ojs-jmes-evaluation-of-subgrade-resilient-modulus-and-modulus-r
+    title: 'Evaluation of Subgrade Resilient Modulus and Modulus Ratio for Geotextile
+      Reinforced Water Bound Macadam Road using Full-Scale Laboratory Accelerated '
+    url: http://revue.ummto.dz/index.php/JMES/article/download/2884/pdf
+    source: ojs_jmes
+    license: cc-by-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-05-04'
+    document_type: journal-article
+    license_url: http://creativecommons.org/licenses/by-sa/4.0
+    license_evidence: http://revue.ummto.dz/index.php/JMES/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai::article/2884
+    rights_verified_at: '2026-10-29'
