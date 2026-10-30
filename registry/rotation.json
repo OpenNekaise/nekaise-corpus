@@ -114,7 +114,7 @@
   },
   "find_repo": {
     "flag": "--cursor",
-    "next": "{\"r\":1,\"s\":{\"aau-projects\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-29\"},\"aau-vbn\":{\"d\":\"2026-10-27\",\"i\":0,\"t\":\"mods/46938/861867479/35000/0/549572773/publications:withFiles/x/x\"},\"auburn-etd\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-27\"},\"kluedo\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-27\"},\"luh-repo\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-27\"},\"rwth-publications\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-29\"},\"umanitoba-mspace\":{\"i\":0,\"p\":\"2026-10-28\",\"w\":\"2026-10-29\"},\"uminho\":{\"i\":0,\"p\":\"2026-10-11\",\"w\":\"2026-10-29\"},\"vtechworks\":{\"i\":0,\"p\":\"2026-10-23\",\"w\":\"2026-10-24\"}}}",
+    "next": "{\"r\":2,\"s\":{\"aau-projects\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-29\"},\"aau-vbn\":{\"d\":\"2026-10-27\",\"i\":0,\"t\":\"mods/46938/861867479/35600/0/563546879/publications:withFiles/x/x\"},\"auburn-etd\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-27\"},\"kluedo\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-27\"},\"luh-repo\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-27\"},\"rwth-publications\":{\"i\":0,\"p\":\"2026-10-26\",\"w\":\"2026-10-29\"},\"umanitoba-mspace\":{\"i\":0,\"p\":\"2026-10-28\",\"w\":\"2026-10-29\"},\"uminho\":{\"i\":0,\"p\":\"2026-10-11\",\"w\":\"2026-10-29\"},\"vtechworks\":{\"i\":0,\"p\":\"2026-10-23\",\"w\":\"2026-10-24\"}}}",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-12: JSON {r: round-robin position over the enabled repositories of registry/repositories.json (sorted keys), s: {key: {i: index into that repository's sets (append-only), t: OAI resumptionToken, f: from-date of this pass, d: date this pass started, w: date the last pass ended, p: from-date for the next pass}}}. First pass = full history per set; then a from= pass every 7 days. A failing repository keeps its state and is retried on its next turn. START = empty state."
@@ -190,27 +190,27 @@
   },
   "find_openalex_ai": {
     "flag": "--family-cursor",
-    "next": "ai1 t=1668 q=0 w=0 p=1 k=0",
+    "next": "ai1 t=1669 q=0 w=0 p=1 k=0",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-09-25: openalex_families BUILDING_AI cursor 'ai1 t q w p k' (same semantics as find_openalex_sim's main walk)."
   },
   "find_arxiv": {
     "flag": "--cursor",
-    "next": "s=5 t=verb%3DListRecords%26metadataPrefix%3DarXivRaw%26from%3D2025-04-25%26skip%3D640 f=2026-10-12,2026-10-12,2026-10-12,2026-10-12,2026-10-12,2025-04-25 w=-",
+    "next": "s=5 t=verb%3DListRecords%26metadataPrefix%3DarXivRaw%26from%3D2025-05-01%26skip%3D146 f=2026-10-12,2026-10-12,2026-10-12,2026-10-12,2026-10-12,2025-05-01 w=-",
     "step": 0,
     "dynamic": true,
     "note": "RE-AIMED 2026-10-12 from search-API page 8 to arXiv OAI-PMH: 's=<index into find_arxiv.SETS (append-only; the last entry is all of arXiv)> t=<resumptionToken|START> f=<harvested-through datestamp per set, '-' = from the beginning> w=<day the last full cycle ended|->'. A rejected token restarts its set from the stored datestamp; an unexpected answer (HTTP 429/503, non-OAI body) holds. After the last set the cursor waits 2 days, then harvests all of arXiv with from=<its datestamp>."
   },
   "find_vendor": {
     "flag": "--cursor",
-    "next": 3805,
+    "next": 3806,
     "step": 1,
     "note": "Round-robin over ENABLED vendors in registry/vendors.json (cursor % V); progress inside a vendor is the registry/manifest/blocklist dedup, so the pointer only spreads consecutive rounds across hosts. No rotation hold by design. NEW 2026-08-28 (operator: ingest HVAC/AEC manufacturer product literature)."
   },
   "find_ojs": {
     "flag": "--cursor",
-    "next": "f=2026-10-18 s=2026-10-26 i=198 a=99 d=111111111110111101111111011111111111111111111111111111110111111111111111111111110111111111101111110111111111111011111111011111111111111011111111111111111111111111111111111111111111111111111111111111",
+    "next": "f=2026-10-18 s=2026-10-26 i=198 a=12 d=111111111110111101111111011111111111111111111111111111110111111111111111111111110111111111101111110111111111111011111111011111111111111011111111111111111111111111111111111111111111111111111111111111",
     "step": 0,
     "dynamic": true,
     "note": "RE-AIMED 2026-10-12 from the integer --site index. Every venue starts with bit 0, the first 8 too: the old finder kept only CC BY/BY-SA/CC0 records, so they are backfilled again under the classify-all licence policy (dedup skips what is held). 'f=<OAI from date of the current watch cycle> s=<day the cycle started> i=<next venue of the cycle> a=<round-robin start of the backfill> d=<one completion bit per index into ojs_sites.SITES (append-only); a missing bit is 0>'. Venues with bit 0 are backfilled round-robin (a capped walk resumes from a scratch resumption token; only a walk from the first OAI page that reaches the end sets the bit). Complete venues are re-read with from=f; after the last one the cursor idles until s + 7 days, then f = s - 1 day. A venue that fails in a watch cycle loses its bit and is walked again. Never EXHAUSTED: append venues to ojs_sites.SITES and they are backfilled."
@@ -273,7 +273,7 @@
   },
   "find_diva_aec": {
     "flag": "--cursor",
-    "next": "1@2026-10-12:2025:1793361395991/diva/swepub_mods/11000/100/doctoralThesis/2025-01-01T00:00:00Z/2025-12-31T23:59:59Z/",
+    "next": "1@2026-10-12:2024:1793363640607/diva/swepub_mods/800/100/doctoralThesis/2024-01-01T00:00:00Z/2024-12-31T23:59:59Z/",
     "step": 0,
     "dynamic": true,
     "note": "NEW 2026-10-12: find_diva.py --family aec; same cursor grammar as find_diva over find_diva.AEC_SETS (append-only): history '<set index>@<walk start date>:<datestamp year>:<OAI resumptionToken|START>' down to 1995, then 'watch:<walk start date>' (the first watch harvests every datestamp since the walk began)."
