@@ -181946,3 +181946,195 @@ sources:
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-30'
     origin_ids: doi:10.1109/is.2018.8710464
+  - id: oas-w7207901222
+    title: The Artistry of the Former House of Naoya Shiga
+    url: https://naragakuen.repo.nii.ac.jp/record/3246/files/OJHE_0208_01_%E5%A4%A7%E5%8E%9F%E8%8D%98%E5%8F%B8.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2019-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7207901222
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://naragakuen.repo.nii.ac.jp/record/3246/files/OJHE_0208_01_%E5%A4%A7%E5%8E%9F%E8%8D%98%E5%8F%B8.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7207901222
+    resolution: 'sim1: openalex location'
+  - id: oas-10-17983-304023-1e44bb9a
+    title: '[特集「建築論とは何か」] 建築論の理'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/b39ad32b-b03e-400e-9818-a7f5b4d7b63b/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-07-26'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304023
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/b39ad32b-b03e-400e-9818-a7f5b4d7b63b/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304023 openalex:W7223259971
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304024-9b3f1d97
+    title: '[特集「建築論とは何か」] 森田慶一建築論に対する増田友也の当惑感'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/cb5ee3d3-9219-4939-99a8-2dd2c8d4cb02/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-07-26'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304024
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/cb5ee3d3-9219-4939-99a8-2dd2c8d4cb02/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304024 openalex:W7223292140
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304029-f362eb34
+    title: '[追悼] 建築の木 --田中喬先生追悼'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/bd45beb6-9921-4309-a8eb-4533c1112aa3/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-07-26'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304029
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/bd45beb6-9921-4309-a8eb-4533c1112aa3/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304029 openalex:W7223334645
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304027-6347236e
+    title: '[特集「建築論とは何か」] 建築論研究の新たな拠点づくりと地域的展開をめざして'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/ad701db5-7cc8-4fc1-b0d3-8aaa59659a87/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-07-26'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304027
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/ad701db5-7cc8-4fc1-b0d3-8aaa59659a87/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304027 openalex:W7223352752
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304025-badbfee1
+    title: '[特集「建築論とは何か」] 森田慶一の「建築論」の所在究明'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/29e0ed1e-c32e-4306-847d-3e895861d6ef/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-07-26'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304025
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/29e0ed1e-c32e-4306-847d-3e895861d6ef/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304025 openalex:W7223379986
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-17983-304026-a14d0119
+    title: '[特集「建築論とは何か」] 建築論 ; その問いの構造'
+    url: https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/9e89c78a-d462-4ebb-9fae-04f0054aab5e/content
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-07-26'
+    document_type: article
+    persistent_id: https://doi.org/10.17983/304026
+    license_evidence: no licence statement for this copy [copy https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/9e89c78a-d462-4ebb-9fae-04f0054aab5e/content;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.17983/304026 openalex:W7223414602
+    resolution: 'sim1: openalex+unpaywall location'
+  - id: oas-10-20604-00002579-0828c8b1
+    title: 版築と鉄骨による合成構造の開発 (特集 自然素材をまとった建物づくり)
+    url: https://tus.repo.nii.ac.jp/record/2654/files/410号_2019年4月_p18-21特集_杉山_今本_清原.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2019-04-01'
+    document_type: article
+    persistent_id: https://doi.org/10.20604/00002579
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://tus.repo.nii.ac.jp/record/2654/files/410号_2019年4月_p18-21特集_杉山_今本_清原.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.20604/00002579 openalex:W7143591095
+    resolution: 'sim1: openalex location'
+  - id: oas-w2968031770
+    title: 'Development of a City and Its Architectural Styles: Riga, Latvia'
+    url: https://suac.repo.nii.ac.jp/record/1542/files/10%E3%80%90%E5%8E%9F%E8%91%97%E8%AB%96%E6%96%87%E3%80%91%E5%A4%A9%E5%86%85%E5%A4%A7%E6%A8%B9%E5%85%88%E7%94%9F_p085.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W2968031770
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://suac.repo.nii.ac.jp/record/1542/files/10%E3%80%90%E5%8E%9F%E8%91%97%E8%AB%96%E6%96%87%E3%80%91%E5%A4%A9%E5%86%85%E5%A4%A7%E6%A8%B9%E5%85%88%E7%94%9F_p085.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2968031770
+    resolution: 'sim1: openalex location'
+  - id: arx-automated-detection-and-analysis-of-minor-defo
+    title: Automated Detection and Analysis of Minor Deformations in Flat Walls Due
+      to Railway Vibrations Using LiDAR and Machine Learning
+    url: https://arxiv.org/pdf/2501.06457v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.06457
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.06457 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1109/icccnt61001.2024.10725633
+  - id: arx-generative-data-augmentation-challenge-synthes
+    title: 'Generative Data Augmentation Challenge: Synthesis of Room Acoustics for
+      Speaker Distance Estimation'
+    url: https://arxiv.org/pdf/2501.13250v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.13250
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.13250 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
