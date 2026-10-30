@@ -182533,3 +182533,123 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-30'
+  - id: oas-w3182294832
+    title: 熊本地震における水道施設の被害分析 ~杭・井戸の被害検証と現耐震設計法の課題~
+    url: https://da.lib.kobe-u.ac.jp/da/kernel/90007074/90007074.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2018-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W3182294832
+    license_evidence: no licence statement for this copy [copy https://da.lib.kobe-u.ac.jp/da/kernel/90007074/90007074.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3182294832
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208149654
+    title: 'The viewpoint of the relationship of architecture and garden : The design
+      theory of Katsura-Rikyu of Mori Osamu and Horiguchi Sutemi, Nishizawa Fumita'
+    url: https://kuins.repo.nii.ac.jp/record/652/files/19%E2%91%A3%E7%94%B0%E4%B8%AD.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2017-12-20'
+    document_type: article
+    persistent_id: https://openalex.org/W7208149654
+    license_evidence: no licence statement for this copy [copy https://kuins.repo.nii.ac.jp/record/652/files/19%E2%91%A3%E7%94%B0%E4%B8%AD.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208149654
+    resolution: 'sim1: openalex location'
+  - id: arx-sewer-image-super-resolution-with-depth-priors
+    title: Sewer Image Super-Resolution with Depth Priors and Its Lightweight Network
+    url: https://arxiv.org/pdf/2407.19271v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-07-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.19271
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.19271 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-multi-class-seismic-building-damage-assessment
+    title: Multi-class Seismic Building Damage Assessment from InSAR Imagery using Quadratic
+      Variational Causal Bayesian Inference
+    url: https://arxiv.org/pdf/2502.18546v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-02-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.18546
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.18546 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-protoocc-accurate-efficient-3d-occupancy-predi
+    title: 'ProtoOcc: Accurate, Efficient 3D Occupancy Prediction Using Dual Branch
+      Encoder-Prototype Query Decoder'
+    url: https://arxiv.org/pdf/2412.08774v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-12-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2412.08774
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2412.08774 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-stochastic-optimal-control-for-diffusion-bridg
+    title: Stochastic Optimal Control for Diffusion Bridges in Function Spaces
+    url: https://arxiv.org/pdf/2405.20630v5
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-05-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2405.20630
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2405.20630 (v5, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-s4convd-adaptive-scaling-and-frequency-adjustm
+    title: 'S4ConvD: Adaptive Scaling and Frequency Adjustment for Energy-Efficient
+      Sensor Networks in Smart Buildings'
+    url: https://arxiv.org/pdf/2502.21035v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-02-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.21035
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.21035 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
