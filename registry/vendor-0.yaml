@@ -22368,9 +22368,23 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-asset-zehnder-colour-card-en-uk-retail-d92c7f2e
-    title: 'SpecifiedBy (UK manufacturer documents): asset-zehnder-colour-card-en-uk-retail_d92c7f2e.pdf'
-    url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-charleston/asset-zehnder-colour-card-en-uk-retail_d92c7f2e.pdf
+  - id: vnd-specifiedby-asset-mounting-instruction-zehnder-zip-en-uk-d8913c5e
+    title: 'SpecifiedBy (UK manufacturer documents): asset-mounting-instruction-zehnder-zip-en-uk_d8913c5e.pdf'
+    url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-zip/asset-mounting-instruction-zehnder-zip-en-uk_d8913c5e.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-asset-case-study-zehnder-zbn-excel-london-en-uk-3437c298
+    title: 'SpecifiedBy (UK manufacturer documents): asset-case-study-zehnder-zbn-excel-london-en-uk_3437c298.pdf'
+    url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-zbn/asset-case-study-zehnder-zbn-excel-london-en-uk_3437c298.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
