@@ -181695,3 +181695,254 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-30'
+  - id: ope-mapping-and-modelling-global-mobility-infrastr
+    title: Mapping and modelling global mobility infrastructure stocks, material flows
+      and their embodied greenhouse gas emissions
+    url: https://research.chalmers.se/publication/538840/file/538840_Fulltext.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-11-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.jclepro.2023.139742
+    license_evidence: no licence statement for this copy [copy https://research.chalmers.se/publication/538840/file/538840_Fulltext.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.jclepro.2023.139742 openalex:W4388813827
+    resolution: 'legacy: openalex location'
+  - id: ope-a-framework-for-integrating-embodied-carbon-as
+    title: A framework for integrating embodied carbon assessment and construction feasibility
+      in prefabricated stations
+    url: https://researchmgt.monash.edu/ws/files/624810950/428727301-oa.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-12-23'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.tust.2022.104920
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://researchmgt.monash.edu/ws/files/624810950/428727301-oa.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.tust.2022.104920 openalex:W4313397433
+    resolution: 'legacy: openalex location'
+  - id: ope-game-like-interactive-environment-using-bim-ba
+    title: Game-like interactive environment using BIM-based virtual reality for the
+      timber frame self-build housing sector
+    url: https://research.tees.ac.uk/ws/files/40061619/Final_Version_FAR3.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-08-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.autcon.2022.104496
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://research.tees.ac.uk/ws/files/40061619/Final_Version_FAR3.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.autcon.2022.104496 openalex:W4289516038
+    resolution: 'legacy: openalex location'
+  - id: ope-end-of-life-modelling-of-buildings-to-support-
+    title: End-of-life modelling of buildings to support more informed decisions towards
+      achieving circular economy targets
+    url: https://lirias.kuleuven.be/retrieve/d7fccc9d-e40b-4eb4-8eff-372628eccda8
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-09-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s11367-020-01807-8
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/d7fccc9d-e40b-4eb4-8eff-372628eccda8;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s11367-020-01807-8 openalex:W3084902406
+    resolution: 'legacy: openalex location'
+  - id: ope-higher-total-energy-costs-strain-the-elderly-e
+    title: Higher total energy costs strain the elderly, especially low-income, across
+      31 developed countries
+    url: https://discovery.ucl.ac.uk/10189469/1/tian-et-al-2024-higher-total-energy-costs-strain-the-elderly-especially-low-income-across-31-developed-countries.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-03-11'
+    document_type: article
+    persistent_id: https://doi.org/10.1073/pnas.2306771121
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://discovery.ucl.ac.uk/10189469/1/tian-et-al-2024-higher-total-energy-costs-strain-the-elderly-especially-low-income-across-31-developed-countries.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1073/pnas.2306771121 openalex:W4392674522
+    resolution: 'legacy: openalex location'
+  - id: ope-achieving-decent-living-standards-in-emerging-
+    title: Achieving decent living standards in emerging economies challenges national
+      mitigation goals for CO2 emissions
+    url: https://discovery.ucl.ac.uk/10178885/1/Meng_s41467-023-42079-8.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1038/s41467-023-42079-8
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://discovery.ucl.ac.uk/10178885/1/Meng_s41467-023-42079-8.pdf; version
+      submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1038/s41467-023-42079-8 openalex:W4387494361
+    resolution: 'legacy: openalex location'
+  - id: ope-comparing-energy-efficiency-labelling-systems-
+    title: 'Comparing energy efficiency labelling systems in the EU and Brazil: Implications,
+      challenges, barriers and opportunities'
+    url: https://researchonline.gcu.ac.uk/ws/files/25092933/Wong_Energy_Policy_Paper_rev3_final.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-07-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enpol.2017.07.005
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://researchonline.gcu.ac.uk/ws/files/25092933/Wong_Energy_Policy_Paper_rev3_final.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enpol.2017.07.005 openalex:W2735953709
+    resolution: 'legacy: openalex location'
+  - id: arx-on-the-use-of-statistical-learning-theory-for-
+    title: On the use of Statistical Learning Theory for model selection in Structural
+      Health Monitoring
+    url: https://arxiv.org/pdf/2501.08050v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.08050
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.08050 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-structural-damage-detection-via-hierarchical-d
+    title: Structural damage detection via hierarchical damage information with volumetric
+      assessment
+    url: https://arxiv.org/pdf/2407.19694v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-07-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2407.19694
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2407.19694 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-the-first-calibration-model-for-bluetooth-angl
+    title: 'The first calibration model for bluetooth angle of arrival: Enhancing positioning
+      accuracy in indoor environments'
+    url: https://arxiv.org/pdf/2501.08805v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.08805
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.08805 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-multi-visual-modality-micro-drone-based-struct
+    title: Multi-visual modality micro drone-based structural damage detection
+    url: https://arxiv.org/pdf/2501.08807v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-01-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.08807
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.08807 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1016/j.engappai.2024.108460
+  - id: arx-stochastic-optimal-control-of-prosumers-in-a-d
+    title: Stochastic Optimal Control of Prosumers in a District Heating System
+    url: https://arxiv.org/pdf/2501.09088v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-01-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.09088
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.09088 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-predicting-air-temperature-from-volumetric-urb
+    title: Predicting Air Temperature from Volumetric Urban Morphology with Machine
+      Learning
+    url: https://arxiv.org/pdf/2501.09469v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-01-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.09469
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.09469 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-comparison-of-various-slam-systems-for-mobile-
+    title: Comparison of Various SLAM Systems for Mobile Robot in an Indoor Environment
+    url: https://arxiv.org/pdf/2501.09490v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.09490
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.09490 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1109/is.2018.8710464
