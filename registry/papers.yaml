@@ -183155,3 +183155,160 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-30'
+  - id: arx-joint-user-pairing-and-beamforming-design-of-m
+    title: Joint User Pairing and Beamforming Design of Multi-STAR-RISs-Aided NOMA in
+      the Indoor Environment via Multi-Agent Reinforcement Learning
+    url: https://arxiv.org/pdf/2311.08708v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-11-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.08708
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.08708 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1109/noms59830.2024.10575611
+  - id: arx-design-optimization-of-noma-aided-multi-star-r
+    title: 'Design Optimization of NOMA Aided Multi-STAR-RIS for Indoor Environments:
+      A Convex Approximation Imitated Reinforcement Learning Approach'
+    url: https://arxiv.org/pdf/2406.13280v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2406.13280
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2406.13280 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1109/tmc.2025.3552521
+  - id: arx-sa-occ-satellite-assisted-3d-occupancy-predict
+    title: 'SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World'
+    url: https://arxiv.org/pdf/2503.16399v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-03-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.16399
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.16399 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-heapo-an-open-dataset-for-heat-pump-optimizati
+    title: HEAPO -- An Open Dataset for Heat Pump Optimization with Smart Electricity
+      Meter Data and On-Site Inspection Protocols
+    url: https://arxiv.org/pdf/2503.16993v1
+    source: arxiv
+    license: cc-by
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2025-03-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.16993
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.16993 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-dynamics-of-urban-heat-island-in-lafia-nasaraw
+    title: 'Dynamics of Urban Heat Island in Lafia, Nasarawa State of Nigeria: A Remote
+      Sensing Analysis of Land Surface Temperature, Urban Development and Vegeta'
+    url: https://arxiv.org/pdf/2503.17052v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-03-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.17052
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.17052 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-bim-vfi-bidirectional-motion-field-guided-fram
+    title: 'BiM-VFI: Bidirectional Motion Field-Guided Frame Interpolation for Video
+      with Non-uniform Motions'
+    url: https://arxiv.org/pdf/2412.11365v4
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-12-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2412.11365
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2412.11365 (v4, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-m3net-multimodal-multi-task-learning-for-3d-de
+    title: 'M3Net: Multimodal Multi-task Learning for 3D Detection, Segmentation, and
+      Occupancy Prediction in Autonomous Driving'
+    url: https://arxiv.org/pdf/2503.18100v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-03-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.18100
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.18100 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-active-inference-for-energy-control-and-planni
+    title: Active Inference for Energy Control and Planning in Smart Buildings and Communities
+    url: https://arxiv.org/pdf/2503.18161v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-03-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.18161
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.18161 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-secure-edge-computing-reference-architecture-f
+    title: 'Secure Edge Computing Reference Architecture for Data-driven Structural
+      Health Monitoring: Lessons Learned from Implementation and Benchmarking'
+    url: https://arxiv.org/pdf/2503.18857v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.18857
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.18857 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
