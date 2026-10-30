@@ -230593,19 +230593,6 @@ sources:
     license_evidence: VBN - Aalborg University research portal (publications) OAI record
       states no rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-29'
-  - id: rep-aau-vbn-terningapparatet-et-middel-til-bedre-jor
-    title: 'Terningapparatet: et middel til bedre jordforståelse'
-    url: https://vbn.aau.dk/ws/files/45046588/Terningapparatet_et_middel_til_bedre_jordforst_else.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: da
-    published_at: '1996'
-    document_type: report
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-29'
   - id: rep-aau-vbn-time-depence-in-flow-through-fissured-sa
     title: Time Depence in Flow Through Fissured Samples of White Chalk
     url: https://vbn.aau.dk/ws/files/45046797/Time_Depence_in_Flow_Through_Fissured_Samples_of_White_Chalk.pdf
@@ -241134,19 +241121,6 @@ sources:
     license_evidence: VBN - Aalborg University research portal (publications) OAI record
       states no rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-29'
-  - id: rep-aau-vbn-test-af-nye-tilg-ngelighedsprincipper-fo
-    title: 'Test af nye tilgængelighedsprincipper for fodgængerfelter: Evalueringsrapport'
-    url: https://vbn.aau.dk/ws/files/695933677/sbi-2013-17.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: da
-    published_at: '2013'
-    document_type: report
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
-    rights_verified_at: '2026-10-29'
   - id: rep-aau-vbn-plads-til-trivsel-og-udvikling
     title: Plads til trivsel og udvikling
     url: https://vbn.aau.dk/ws/files/690087897/sbi-2013-11.pdf
@@ -248829,20 +248803,6 @@ sources:
     license_url: https://creativecommons.org/licenses/by-nc-nd/3.0/
     license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
       rights: Pure file licence key cc_by_nc_nd_3_0'
-    rights_verified_at: '2026-10-29'
-  - id: rep-aau-vbn-tensor-calculus-with-applications-to-dif
-    title: TENSOR CALCULUS with applications to Differential Theory of Surfaces and
-      Dynamics
-    url: https://vbn.aau.dk/ws/files/285860237/TENSOR_CALCULUS_with_applications_to_Differential_Theory_of_Surfaces_and_Dynamics.pdf
-    source: repo_aau_vbn
-    license: unverified
-    topic: structures_civil
-    format: pdf
-    language: en
-    published_at: '2018'
-    document_type: report
-    license_evidence: VBN - Aalborg University research portal (publications) OAI record
-      states no rights; the full text is openly downloadable, no reuse licence is given
     rights_verified_at: '2026-10-29'
   - id: rep-aau-vbn-augmented-reality-er-kommet-til-vejsekto
     title: Augmented Reality er kommet til vejsektoren
@@ -266326,6 +266286,638 @@ sources:
     published_at: '2022'
     document_type: journal-article
     persistent_id: doi:10.7146/nja.v31i64.134221
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-risk-evaluation-of-hybrid-microgrids-con
+    title: Risk Evaluation of Hybrid Microgrids Considering DC-Link Voltage Stability
+    url: https://vbn.aau.dk/ws/files/634110608/IET_2023-Accepted.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.1109/pedg54999.2022.9923273
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-balanced-brightness-levels-exploring-how
+    title: 'Balanced Brightness Levels: Exploring how lighting affects humans'' experiences
+      of architectural and social urban contexts.'
+    url: https://vbn.aau.dk/ws/files/515388402/Hvass_2022_IOP_Conf._Ser._Earth_Environ._Sci._1099_012017.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.1088/1755-1315/1099/1/012017
+    license_url: https://creativecommons.org/licenses/by/3.0/
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_3_0'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-the-moon-as-a-light-source-new-sustainab
+    title: 'The Moon as a Light Source: New sustainable ways of lighting up cities at
+      night'
+    url: https://vbn.aau.dk/ws/files/513296926/Rathsach_2022_IOP_Conf._Ser._Earth_Environ._Sci._1099_012046.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.1088/1755-1315/1099/1/012046
+    license_url: https://creativecommons.org/licenses/by/3.0/
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_3_0'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-dark-adaptation-in-urban-environments-an
+    title: 'Dark Adaptation in Urban Environments: An Innovative Design Framework for
+      Pedestrian Lighting'
+    url: https://vbn.aau.dk/ws/files/515398448/Amoruso_2022_IOP_Conf._Ser._Earth_Environ._Sci._1099_012044.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.1088/1755-1315/1099/1/012044
+    license_url: https://creativecommons.org/licenses/by/3.0/
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_3_0'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-an-ai-layered-with-multi-agent-systems-a
+    title: 'An AI-Layered with Multi-Agent Systems Architecture for Prognostics Health
+      Management of Smart Transformers: A Novel Approach for Smart Grid-Ready Ene'
+    url: https://vbn.aau.dk/ws/files/493558244/energies_15_07217.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.3390/en15197217
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-sales-prices-social-rigidity-and-the-sec
+    title: Sales prices, social rigidity and the second home property market
+    url: https://vbn.aau.dk/ws/files/670025442/s10901-023-10047-9.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-06-14'
+    document_type: journal-article
+    persistent_id: doi:10.1007/s10901-023-10047-9
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-intelligent-power-control-of-inverter-ai
+    title: 'Intelligent Power Control of Inverter Air Conditioners in Power Systems:
+      A Brain Emotional Learning-Based Approach'
+    url: https://vbn.aau.dk/ws/files/493939521/Final_Version.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2023-09-01'
+    document_type: journal-article
+    persistent_id: doi:10.1109/tpwrs.2022.3218589
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-tunneling-through-urban-modernity
+    title: Tunneling through Urban Modernity
+    url: https://vbn.aau.dk/ws/files/496731677/losquaderno63.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-10-25'
+    document_type: journal-article
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-the-balance-between-energy-efficiency-an
+    title: The Balance between Energy Efficiency and Renewable Energy for District Renovations
+      in Denmark
+    url: https://vbn.aau.dk/ws/files/497195296/sustainability_14_13605_v2.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.3390/su142013605
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-modurbanisering-flytninger-fra-by-til-la
+    title: 'Modurbanisering: flytninger fra by til land'
+    url: https://vbn.aau.dk/ws/files/527958318/Open_Access_article.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: da
+    published_at: '2023-03-26'
+    document_type: journal-article
+    persistent_id: doi:10.7146/okonomi-og-politik.v96i1.136928
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc_nd'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-guidelines-for-low-energy-building-desig
+    title: 'Guidelines for low energy building design based on the adaptive thermal
+      comfort concept - Technical report: IEA EBC Annex 69: Strategy and Practice of'
+    url: https://vbn.aau.dk/ws/files/510903564/IEA_EBC_Annex_69_Deliverable_3_Hellwigetal_Guidelines_for_low_energy_buildings_design_basde_on_the_adaptive_thermal_comfort_approach.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: report
+    persistent_id: doi:10.54337/aau510903564
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-inhalation-and-dermal-absorption-as-domi
+    title: Inhalation and dermal absorption as dominant pathways of PCB exposure for
+      residents of contaminated apartment buildings
+    url: https://vbn.aau.dk/ws/files/532713840/1_s2.0_S1438463922001390_main.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.ijheh.2022.114056
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-the-battle-of-the-balconies-scandinavian
+    title: The Battle of the Balconies—Scandinavian Sameness and Urban-Domestic Boundaries
+    url: https://vbn.aau.dk/ws/files/516133252/Accepted_Manuscript_The_Battle_of_the_Balconies.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2022-12-21'
+    document_type: journal-article
+    persistent_id: doi:10.1080/17406315.2022.2152177
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-vidensmobilisering-og-vidensbrobygning-e
+    title: Vidensmobilisering og vidensbrobygning - en oversigt over modeller og metoder
+    url: https://vbn.aau.dk/ws/files/499834895/2022_2_vidensmobilisering_og_vidennsbrobygning_en_oversigt_over_modeller_og_metoder.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: da
+    published_at: '2022'
+    document_type: journal-article
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc_nd'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-digital-twin-of-hvac-system-hvacdt-for-m
+    title: Digital Twin of HVAC system (HVACDT) for multiobjective optimization of energy
+      consumption and thermal comfort based on BIM framework with ANN-MOGA
+    url: https://vbn.aau.dk/ws/files/653149656/Digital_Twin_of_HVAC_system_HVACDT_for_multiobjective_optimization_of_energy_consumption_and_thermal_comfort_based_on_BIM_framework_with_ANN-MOGA.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1080/17512549.2022.2136240
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc_nd'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-the-influence-of-epd-data-on-lca-results
+    title: The influence of EPD data on LCA results
+    url: https://vbn.aau.dk/ws/files/505526988/Tozan_2022_IOP_Conf._Ser._Earth_Environ._Sci._1078_012105.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-09-20'
+    document_type: journal-article
+    persistent_id: doi:10.1088/1755-1315/1078/1/012105
+    license_url: https://creativecommons.org/licenses/by/3.0/
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_3_0'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-power-heat-conversion-coordinated-contro
+    title: Power-heat conversion coordinated control of combined-cycle gas turbine with
+      thermal energy storage in district heating network
+    url: https://vbn.aau.dk/ws/files/551304025/Power_Heat_Conversion_Coordinated_clean.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-02-05'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.applthermaleng.2022.119664
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc_nd'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-perceived-visual-comfort-and-usefulness-
+    title: Perceived visual comfort and usefulness of a circadian lighting system implemented
+      at a nursing home
+    url: https://vbn.aau.dk/ws/files/515552330/2022_Perceived_visual_comfort_accepted_manuscript.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1007/s11042-022-13364-3
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-approximating-the-model-of-a-water-distr
+    title: Approximating the model of a water distribution network as a Markov decision
+      process
+    url: https://vbn.aau.dk/ws/files/505336188/1_s2.0_S240589632201299X_main.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-07-01'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.ifacol.2022.09.107
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc_nd'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-nedrivning-af-enfamiliehuse-omfang-og-rs
+    title: 'Nedrivning af enfamiliehuse: Omfang og årsager'
+    url: https://vbn.aau.dk/ws/files/519705035/Nedrivning_af_enfamiliehuse_Omfang_og_rsager.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: da
+    published_at: '2022-12-01'
+    document_type: report
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key other'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-long-term-performances-of-new-and-regene
+    title: Long-term Performances of New and Regenerated Polyethylene Membranes Used
+      as Vapor Barriers in Temperate Climates
+    url: https://vbn.aau.dk/ws/files/504297553/2_1101_Paper_Long_term_performances_of_PE.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-12-05'
+    document_type: journal-article
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-terapeutisk-allianceopbygning-i-musikter
+    title: Terapeutisk allianceopbygning i musikterapi med retspsykiatriske patienter
+      med skizofreni
+    url: https://vbn.aau.dk/ws/files/506356056/DanskMusikterapi_2022_nr2_Terapeutisk_allianceopbygning.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: da
+    published_at: '2022'
+    document_type: journal-article
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-recognising-diversity-of-data-management
+    title: Recognising diversity of data management approaches towards lifecycle costing
+      through personas
+    url: https://vbn.aau.dk/ws/files/505520213/2022_51_ITcon_Saridaki.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.36680/j.itcon.2022.051
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-energy-cost-optimization-of-globally-dis
+    title: Energy Cost Optimization of Globally Distributed Internet Data Centers by
+      Copula-based Multidimensional Correlation Modeling
+    url: https://vbn.aau.dk/ws/files/539418355/1-s2.0-S2352484722026348-main.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.egyr.2022.12.033
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc_nd'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-using-principal-component-analysis-to-id
+    title: Using Principal component analysis to identify latent factors affecting cost-
+      and time overrun in public construction projects
+    url: https://vbn.aau.dk/ws/files/509549549/Using_PCA_analysis_to_identify_latent_factors_affecting_accepted_manuscript.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-06-10'
+    document_type: journal-article
+    persistent_id: doi:10.1108/ecam-02-2022-0189
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-energirenovering-af-bevaringsv-rdige-bol
+    title: 'Energirenovering af bevaringsværdige boligejendomme: Undersøgelser og analyser
+      af boligejendommes bevaringsværdi og energieffektivitet'
+    url: https://vbn.aau.dk/ws/files/504821680/energirenovering_bevaringsv_rdigeTILPRINT.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: da
+    published_at: '2022-12-08'
+    document_type: report
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key other'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-medio-lateral-and-lateral-edge-friction-
+    title: Medio-lateral and lateral edge friction in indoor sports shoes
+    url: https://vbn.aau.dk/ws/files/613662547/Bagehorn2022-Medio_lateral_and_lateral_edge_friction_in_indoor_sports_shoes_unformatted.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1080/19424280.2022.2127921
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-danskernes-boligmilj-i-2021-og-udvikling
+    title: Danskernes boligmiljø i 2021 og udviklingen siden 2000
+    url: https://vbn.aau.dk/ws/files/518608369/Danskernes_boligmilj_i_2021_og_udviklingen_siden_2000.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: urban
+    format: pdf
+    language: da
+    published_at: '2022-12-15'
+    document_type: report
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-a-systematic-review-of-consequential-lca
+    title: 'A systematic review of consequential LCA on buildings: the perspectives
+      and challenges of applications and inventory modelling'
+    url: https://vbn.aau.dk/ws/files/702374620/A_systematic_review_of_consequential_LCA_on_buildings_accepted_manuscript.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023'
+    document_type: journal-article
+    persistent_id: doi:10.1007/s11367-022-02126-w
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-who-produces-the-peaks-household-variati
+    title: Who Produces the Peaks? Household Variation in Peak Energy Demand for Space
+      Heating and Domestic Hot Water
+    url: https://vbn.aau.dk/ws/files/506321016/Who_Produces_the_Peaks.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-12-14'
+    document_type: journal-article
+    persistent_id: doi:10.3390/en15249505
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-klimap-virkning-fra-renovering-mulighede
+    title: 'Klimapåvirkning fra renovering: Muligheder for udformning af grænseværdier
+      til LCA for renovering'
+    url: https://vbn.aau.dk/ws/files/506319104/Klimap_virkning_fra_renovering.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: da
+    published_at: '2022'
+    document_type: report
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-controlling-stormwater-detention-ponds-u
+    title: Controlling Stormwater Detention Ponds under Partial Observability
+    url: https://vbn.aau.dk/ws/files/519292683/NWPT22_paper_7938.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2022-11-02'
+    document_type: journal-article
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key other'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-does-the-enactment-of-information-and-co
+    title: Does the Enactment of Information and Communications Technology Agreements
+      in a Digital Construction Organisation Impact the Mental Work Environment?
+    url: https://vbn.aau.dk/ws/files/506210932/Primdahl_et_al_2022.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-validation-of-a-cfd-model-for-wave-energ
+    title: Validation of a CFD model for wave energy system dynamics in extreme waves
+    url: https://vbn.aau.dk/ws/files/532256072/1_s2.0_S0029801822026038_main.pdf
+    source: repo_aau_vbn
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-15'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.oceaneng.2022.113320
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by_nc_nd'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-web-of-things-semantic-interoperability-
+    title: Web of Things Semantic Interoperability in Smart Buildings
+    url: https://vbn.aau.dk/ws/files/519292168/1_s2.0_S1877050922010377_main.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.procs.2022.09.155
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-sammenh-ngen-mellem-tryghed-og-trivsel-c
+    title: 'Sammenhængen mellem tryghed og trivsel, chanceulighed og organisering i
+      de boligsociale helhedsplaner: Evaluering af Landsbyggefondens boligsociale in'
+    url: https://vbn.aau.dk/ws/files/506336199/Sammenh_ngen_mellem_tryghed_og_trivsel_chanceulighed_og_organisering_i_de_boligsociale_helhedsplaner.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: urban
+    format: pdf
+    language: da
+    published_at: '2022-12-20'
+    document_type: report
+    license_evidence: VBN - Aalborg University research portal (publications) OAI record
+      states no rights; the full text is openly downloadable, no reuse licence is given
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-machine-learning-based-algorithms-to-est
+    title: Machine learning-based algorithms to estimate thermal dynamics of residential
+      buildings with energy flexibility
+    url: https://vbn.aau.dk/ws/files/539411538/1-s2.0-S2352710222016898-main.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-04-15'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.jobe.2022.105683
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-fourth-generation-district-heating-and-m
+    title: Fourth-Generation District Heating and Motivation Tariffs
+    url: https://vbn.aau.dk/ws/files/506499172/aoje_1_011002.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022-02-25'
+    document_type: journal-article
+    persistent_id: doi:10.1115/1.4053420
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-spatial-data-analysis-for-intelligent-bu
+    title: 'Spatial data analysis for intelligent buildings: Awareness of context and
+      data uncertainty'
+    url: https://vbn.aau.dk/ws/files/513328401/fdata_05_1049198.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-11-07'
+    document_type: journal-article
+    persistent_id: doi:10.3389/fdata.2022.1049198
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-helhedsvurdering-til-beslutningsst-tte-v
+    title: Helhedsvurdering til beslutningsstøtte ved renovering eller nedrivning/nybyggeri
+    url: https://vbn.aau.dk/ws/files/517909521/Helhedsvurdering_til_beslutningsst_tte_ved_renovering_eller_nedrivning_nybyggeri.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: da
+    published_at: '2022'
+    document_type: report
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key other'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-helhedsvurdering-ved-renovering
+    title: Helhedsvurdering ved renovering
+    url: https://vbn.aau.dk/ws/files/517910743/Helhedsvurdering_ved_renovering.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: da
+    published_at: '2022'
+    document_type: report
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key other'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-bim-based-3d-cadastral-management
+    title: BIM-based 3D Cadastral Management
+    url: https://vbn.aau.dk/ws/files/507313472/2022_SBE_Slutrapport_2020_00244.pdf
+    source: repo_aau_vbn
+    license: unverified
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: report
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key unspecified'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-defining-dynamic-science-based-climate-c
+    title: Defining dynamic science-based climate change budgets for countries and absolute
+      sustainable building targets
+    url: https://vbn.aau.dk/ws/files/517576914/Defining_dynamic_science_based_climate_change_budgets_for_countries_and_absolute_sustainable_building_targets.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-02-15'
+    document_type: journal-article
+    persistent_id: doi:10.1016/j.buildenv.2022.109936
+    license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
+      rights: Pure file licence key cc_by'
+    rights_verified_at: '2026-10-30'
+  - id: rep-aau-vbn-datasets-on-the-work-habits-of-internati
+    title: Datasets on the work habits of international building researchers
+    url: https://vbn.aau.dk/ws/files/507456682/Datasets_work_habit_building_community.pdf
+    source: repo_aau_vbn
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2022'
+    document_type: report
+    persistent_id: doi:10.54337/aau507456682
     license_evidence: 'VBN - Aalborg University research portal (publications) OAI record
       rights: Pure file licence key cc_by'
     rights_verified_at: '2026-10-30'
