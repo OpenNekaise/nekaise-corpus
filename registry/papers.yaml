@@ -183988,3 +183988,38 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-30'
+  - id: arx-future-circular-collider-feasibility-study-rep
+    title: 'Future Circular Collider Feasibility Study Report: Volume 3, Civil Engineering,
+      Implementation and Sustainability'
+    url: https://arxiv.org/pdf/2505.00273v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-04-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.00273
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.00273 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.17181/cern.i26x.v4vf
+  - id: arx-gaussian-process-regression-for-active-sensing
+    title: 'Gaussian Process Regression for Active Sensing Probabilistic Structural
+      Health Monitoring: Experimental Assessment Across Multiple Damage and Loading '
+    url: https://arxiv.org/pdf/2106.14841v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-06-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2106.14841
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2106.14841 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
