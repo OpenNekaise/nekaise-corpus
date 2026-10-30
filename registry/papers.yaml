@@ -181519,3 +181519,92 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-30'
+  - id: ope-simplified-measurement-and-verification-combin
+    title: 'Simplified measurement and verification combined with quality assurance
+      instruments: a more practical and accessible method for M&V of energy savings'
+    url: https://liu.diva-portal.org/smash/get/diva2:1853622/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-04-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s12053-024-10195-z
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://liu.diva-portal.org/smash/get/diva2:1853622/FULLTEXT01; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s12053-024-10195-z openalex:W4394726752
+    resolution: 'legacy: openalex location'
+  - id: arx-top-degree-ell-p-homology-and-conformal-dimens
+    title: Top degree $\ell^p$-homology and conformal dimension of buildings
+    url: https://arxiv.org/pdf/2204.05808v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2022-04-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2204.05808
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2204.05808 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1007/s10711-024-00930-2
+  - id: arx-identifying-built-environment-factors-influenc
+    title: 'Identifying built environment factors influencing driver yielding behavior
+      at unsignalized intersections: A naturalistic open-source dataset collected'
+    url: https://arxiv.org/pdf/2312.15113v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-12-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2312.15113
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2312.15113 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1016/j.jsr.2024.12.006
+  - id: arx-pg-sag-parallel-gaussian-splatting-for-fine-gr
+    title: 'PG-SAG: Parallel Gaussian Splatting for Fine-Grained Large-Scale Urban Buildings
+      Reconstruction via Semantic-Aware Grouping'
+    url: https://arxiv.org/pdf/2501.01677v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-01-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.01677
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.01677 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-shaping-passenger-experience-an-eye-tracking-s
+    title: 'Shaping Passenger Experience: An Eye-Tracking Study of Public Transportation
+      Built Environment'
+    url: https://arxiv.org/pdf/2501.02641v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.02641
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.02641 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
