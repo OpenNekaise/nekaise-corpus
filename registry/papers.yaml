@@ -182653,3 +182653,144 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-30'
+  - id: ope-restaurant-food-waste-and-the-determinants-of-
+    title: 'Restaurant food waste and the determinants of its effective management in
+      Bulgaria: An exploratory case study of restaurants in Plovdiv'
+    url: http://eprints.bournemouth.ac.uk/33481/3/R3%20%283%29.pdf
+    source: openalex
+    license: unverified
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2019-10-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.tmp.2019.100577
+    license_evidence: no licence statement for this copy [copy http://eprints.bournemouth.ac.uk/33481/3/R3%20%283%29.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.tmp.2019.100577 openalex:W2980252226
+    resolution: 'legacy: openalex location'
+  - id: arx-efficient-long-term-structural-reliability-est
+    title: 'Efficient Long-Term Structural Reliability Estimation with Non-Gaussian
+      Stochastic Models: A Design of Experiments Approach'
+    url: https://arxiv.org/pdf/2503.01566v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.01566
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.01566 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-scalable-multi-agent-reinforcement-learning-fo-2
+    title: Scalable Multi-Agent Reinforcement Learning for Residential Load Scheduling
+      under Data Governance
+    url: https://arxiv.org/pdf/2110.02784v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-10-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2110.02784
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2110.02784 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1109/ticps.2024.3501278
+  - id: arx-deep-height-decoupling-for-precise-vision-base
+    title: Deep Height Decoupling for Precise Vision-based 3D Occupancy Prediction
+    url: https://arxiv.org/pdf/2409.07972v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-09-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.07972
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.07972 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-ls-har-language-supervised-human-action-recogn
+    title: 'LS-HAR: Language Supervised Human Action Recognition with Salient Fusion,
+      Construction Sites as a Use-Case'
+    url: https://arxiv.org/pdf/2410.01962v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-10-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.01962
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.01962 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-multi-view-depth-consistent-image-generation-u
+    title: 'Multi-View Depth Consistent Image Generation Using Generative AI Models:
+      Application on Architectural Design of University Buildings'
+    url: https://arxiv.org/pdf/2503.03068v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-03-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.03068
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.03068 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-from-architectural-sketch-to-conceptual-repres
+    title: 'From Architectural Sketch to Conceptual Representation: Using Structure-Aware
+      Diffusion Model to Generate Renderings of School Buildings'
+    url: https://arxiv.org/pdf/2503.03090v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-03-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.03090
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.03090 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-direct-sparse-odometry-with-continuous-3d-gaus
+    title: Direct Sparse Odometry with Continuous 3D Gaussian Maps for Indoor Environments
+    url: https://arxiv.org/pdf/2503.03373v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-03-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.03373
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.03373 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
