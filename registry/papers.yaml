@@ -182138,3 +182138,142 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-30'
+  - id: oas-10-18880-00013103-913f7a23
+    title: 7056 秋葉原の活気の実態に関する研究 建物用途・規模・築年数に着目して
+    url: https://ynu.repo.nii.ac.jp/?action=repository_uri&item_id=10441
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2019-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.18880/00013103
+    license_evidence: no licence statement for this copy [copy https://ynu.repo.nii.ac.jp/?action=repository_uri&item_id=10441;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: doi:10.18880/00013103 openalex:W3196071849
+    resolution: 'sim1: openalex location'
+  - id: arx-computationally-efficient-and-perceptually-mot
+    title: Computationally-efficient and perceptually-motivated rendering of diffuse
+      reflections in room acoustics simulation
+    url: https://arxiv.org/pdf/2306.16696v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-06-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2306.16696
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2306.16696 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1051/aacus/2024062
+  - id: arx-deep-learning-for-segmentation-of-cracks-in-hi
+    title: Deep Learning for Segmentation of Cracks in High-Resolution Images of Steel
+      Bridges
+    url: https://arxiv.org/pdf/2403.17725v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-03-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2403.17725
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2403.17725 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1016/j.autcon.2024.105896
+  - id: arx-transfer-learning-and-double-u-net-empowered-w
+    title: Transfer Learning and Double U-Net Empowered Wave Propagation Model in Complex
+      Indoor Environment
+    url: https://arxiv.org/pdf/2409.13833v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.13833
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.13833 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-addressing-the-pitfalls-of-image-based-structu
+    title: 'Addressing the Pitfalls of Image-Based Structural Health Monitoring: A Focus
+      on False Positives, False Negatives, and Base Rate Bias'
+    url: https://arxiv.org/pdf/2410.20384v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-10-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2410.20384
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2410.20384 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1007/s00477-024-02898-7
+  - id: arx-cisol-an-open-and-extensible-dataset-for-table
+    title: 'CISOL: An Open and Extensible Dataset for Table Structure Recognition in
+      the Construction Industry'
+    url: https://arxiv.org/pdf/2501.15469v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-01-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.15469
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.15469 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-sliceocc-indoor-3d-semantic-occupancy-predicti
+    title: 'SliceOcc: Indoor 3D Semantic Occupancy Prediction with Vertical Slice Representation'
+    url: https://arxiv.org/pdf/2501.16684v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-01-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.16684
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.16684 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-safe-and-trustworthy-robot-pathfinding-with-bi
+    title: Safe and Trustworthy Robot Pathfinding with BIM, MHA*, and NLP
+    url: https://arxiv.org/pdf/2411.15371v2
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-11-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.15371
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.15371 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
