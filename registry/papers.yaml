@@ -182396,3 +182396,88 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-30'
+  - id: oas-w7207903390
+    title: 開発許可の取消しを求める訴えと（狭義の）訴えの利益
+    url: https://toyo.repo.nii.ac.jp/record/10498/files/hakusanhougaku14_069-093.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2018-03-20'
+    document_type: article
+    persistent_id: https://openalex.org/W7207903390
+    license_evidence: no licence statement for this copy [copy https://toyo.repo.nii.ac.jp/record/10498/files/hakusanhougaku14_069-093.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-30'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7207903390
+    resolution: 'sim1: openalex location'
+  - id: arx-occrwkv-rethinking-efficient-3d-semantic-occup
+    title: 'OccRWKV: Rethinking Efficient 3D Semantic Occupancy Prediction with Linear
+      Complexity'
+    url: https://arxiv.org/pdf/2409.19987v3
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-09-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.19987
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.19987 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-a-spatiotemporal-approach-to-tri-perspective-r
+    title: A Spatiotemporal Approach to Tri-Perspective Representation for 3D Semantic
+      Occupancy Prediction
+    url: https://arxiv.org/pdf/2401.13785v3
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-01-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.13785
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.13785 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-mc-bevro-multi-camera-bird-eye-view-road-occup
+    title: 'MC-BEVRO: Multi-Camera Bird Eye View Road Occupancy Detection for Traffic
+      Monitoring'
+    url: https://arxiv.org/pdf/2502.11287v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-02-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.11287
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.11287 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-constructa-automating-commercial-construction-
+    title: 'CONSTRUCTA: Automating Commercial Construction Schedules in Fabrication
+      Facilities with Large Language Models'
+    url: https://arxiv.org/pdf/2502.12066v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-02-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.12066
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.12066 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
