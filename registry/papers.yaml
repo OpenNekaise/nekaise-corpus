@@ -182916,23 +182916,6 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-30'
-  - id: oas-w7145378116
-    title: 韓国の植民地都市と植民地建築物
-    url: http://reposit.sun.ac.jp/dspace/bitstream/10561/1254/1/v9p69_lee.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2017-03-31'
-    document_type: article
-    persistent_id: https://openalex.org/W7145378116
-    license_evidence: no licence statement for this copy [copy http://reposit.sun.ac.jp/dspace/bitstream/10561/1254/1/v9p69_lee.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-30'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7145378116
-    resolution: 'sim1: openalex location'
   - id: oas-10-15014-0000000106-a162fd25
     title: 『状況のアーキテクチャーへ？』京都市立芸術大学美術学部構想設計
     url: https://kcua.repo.nii.ac.jp/record/106/files/bfoa61b04.pdf
@@ -184506,3 +184489,53 @@ sources:
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-30'
     origin_ids: doi:10.1177/00420980231207475
+  - id: arx-odg-occupancy-prediction-using-dual-gaussians
+    title: 'ODG: Occupancy Prediction Using Dual Gaussians'
+    url: https://arxiv.org/pdf/2506.09417v2
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-06-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2506.09417
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2506.09417 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-quadricformer-scene-as-superquadrics-for-3d-se
+    title: 'QuadricFormer: Scene as Superquadrics for 3D Semantic Occupancy Prediction'
+    url: https://arxiv.org/pdf/2506.10977v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-06-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2506.10977
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2506.10977 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-digital-transformation-of-urban-planning-in-au
+    title: 'Digital Transformation of Urban Planning in Australia: Influencing Factors
+      and Key Challenges'
+    url: https://arxiv.org/pdf/2506.13333v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-06-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2506.13333
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2506.13333 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
