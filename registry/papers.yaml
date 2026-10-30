@@ -181449,3 +181449,73 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.18909/00001938 openalex:W3014171651
     resolution: 'sim1: openalex location'
+  - id: arx-dral-deep-reinforcement-adaptive-learning-for-
+    title: 'DRAL: Deep Reinforcement Adaptive Learning for Multi-UAVs Navigation in
+      Unknown Indoor Environment'
+    url: https://arxiv.org/pdf/2409.03930v3
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.03930
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.03930 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-irfusionformer-enhancing-pavement-crack-segmen
+    title: 'IRFusionFormer: Enhancing Pavement Crack Segmentation with RGB-T Fusion
+      and Topological-Based Loss'
+    url: https://arxiv.org/pdf/2409.20474v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2024-09-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.20474
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.20474 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-ergochat-a-visual-query-system-for-the-ergonom
+    title: 'ErgoChat: a Visual Query System for the Ergonomic Risk Assessment of Construction
+      Workers'
+    url: https://arxiv.org/pdf/2412.19954v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-12-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2412.19954
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2412.19954 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-mr-occ-efficient-camera-lidar-3d-semantic-occu
+    title: 'MR-Occ: Efficient Camera-LiDAR 3D Semantic Occupancy Prediction Using Hierarchical
+      Multi-Resolution Voxel Representation'
+    url: https://arxiv.org/pdf/2412.20480v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-12-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2412.20480
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2412.20480 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
