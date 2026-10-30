@@ -182361,3 +182361,38 @@ sources:
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-30'
     origin_ids: doi:10.1016/j.engstruct.2020.111518
+  - id: arx-building-extraction-from-remote-sensing-images
+    title: Building Extraction from Remote Sensing Images via an Uncertainty-Aware Network
+    url: https://arxiv.org/pdf/2307.12309v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2307.12309
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2307.12309 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1109/tgrs.2024.3361211
+  - id: arx-comprehensive-review-of-analytical-and-numeric
+    title: Comprehensive Review of Analytical and Numerical Approaches in Earth-to-Air
+      Heat Exchangers and Exergoeconomic Evaluations
+    url: https://arxiv.org/pdf/2502.08553v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-02-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.08553
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.08553 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
