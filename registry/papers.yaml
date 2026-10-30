@@ -184179,3 +184179,90 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-30'
+  - id: arx-pinn-dt-optimizing-energy-consumption-in-smart
+    title: 'PINN-DT: Optimizing Energy Consumption in Smart Building Using Hybrid Physics-Informed
+      Neural Networks and Digital Twin Framework with Blockchain Secu'
+    url: https://arxiv.org/pdf/2503.00331v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-03-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.00331
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.00331 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-30'
+  - id: arx-seismic-isolation-of-optical-tables-using-piez
+    title: Seismic Isolation of Optical Tables Using Piezo Actuators
+    url: https://arxiv.org/pdf/2505.13083v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-05-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.13083
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.13083 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-a-comparative-study-with-traditional-and-trans
+    title: A Comparative Study with Traditional and Transfer Learning-enhanced Machine
+      Learning Algorithms for Geotechnical Characterisation of Coal Spoil
+    url: https://arxiv.org/pdf/2401.01969v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-01-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2401.01969
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2401.01969 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1080/17499518.2024.2422490
+  - id: arx-towards-a-universal-vibration-analysis-dataset
+    title: 'Towards a Universal Vibration Analysis Dataset: A Framework for Transfer
+      Learning in Predictive Maintenance and Structural Health Monitoring'
+    url: https://arxiv.org/pdf/2504.11581v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-04-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2504.11581
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2504.11581 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+  - id: arx-lod1-3d-city-model-from-lidar-the-impact-of-se
+    title: 'LOD1 3D City Model from LiDAR: The Impact of Segmentation Accuracy on Quality
+      of Urban 3D Modeling and Morphology Extraction'
+    url: https://arxiv.org/pdf/2505.14747v1
+    source: arxiv
+    license: cc-by-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-05-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.14747
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.14747 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-30'
+    origin_ids: doi:10.1016/j.rsase.2025.101534
