@@ -186002,3 +186002,124 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-31'
+  - id: arx-predictive-modeling-bim-command-recommendation
+    title: 'Predictive Modeling: BIM Command Recommendation Based on Large-scale Usage
+      Logs'
+    url: https://arxiv.org/pdf/2504.05319v2
+    source: arxiv
+    license: cc-by-sa
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-02-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2504.05319
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2504.05319 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+    origin_ids: doi:10.1016/j.aei.2025.103574
+  - id: arx-deep-learning-based-scalable-image-to-3d-facad
+    title: Deep Learning-based Scalable Image-to-3D Facade Parser for Generating Thermal
+      3D Building Models
+    url: https://arxiv.org/pdf/2508.04406v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-08-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.04406
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.04406 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-metaocc-spatio-temporal-fusion-of-surround-vie
+    title: 'MetaOcc: Spatio-Temporal Fusion of Surround-View 4D Radar and Camera for
+      3D Occupancy Prediction with Dual Training Strategies'
+    url: https://arxiv.org/pdf/2501.15384v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-01-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.15384
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.15384 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-domain-specific-fine-tuning-and-prompt-based-l
+    title: 'Domain-Specific Fine-Tuning and Prompt-Based Learning: A Comparative Study
+      for developing Natural Language-Based BIM Information Retrieval Systems'
+    url: https://arxiv.org/pdf/2508.05676v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-08-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.05676
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.05676 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-enhancing-construction-site-analysis-and-under
+    title: Enhancing Construction Site Analysis and Understanding with 3D Segmentation
+    url: https://arxiv.org/pdf/2508.05922v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-08-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.05922
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.05922 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-street-view-sociability-interpretable-analysis
+    title: 'Street View Sociability: Interpretable Analysis of Urban Social Behavior
+      Across 15 Cities'
+    url: https://arxiv.org/pdf/2508.06342v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-08-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.06342
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.06342 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-damagecat-a-deep-learning-transformer-framewor
+    title: 'DamageCAT: A Deep Learning Transformer Framework for Typology-Based Post-Disaster
+      Building Damage Categorization'
+    url: https://arxiv.org/pdf/2504.11637v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-04-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2504.11637
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2504.11637 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+    origin_ids: doi:10.1016/j.ijdrr.2025.105704
