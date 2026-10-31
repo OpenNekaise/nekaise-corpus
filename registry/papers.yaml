@@ -185877,3 +185877,128 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-31'
+  - id: oas-10-15024-00001465-fa69b0fa
+    title: 桓武朝における楼閣附設建築（第Ⅱ部 都城論）
+    url: https://rekihaku.repo.nii.ac.jp/record/1482/files/kenkyuhokoku_134_09.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-03-30'
+    document_type: article
+    persistent_id: https://doi.org/10.15024/00001465
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://rekihaku.repo.nii.ac.jp/record/1482/files/kenkyuhokoku_134_09.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.15024/00001465 openalex:W7143840796
+    resolution: 'sim1: openalex location'
+  - id: oas-10-20645-00000372-cd63dfd8
+    title: '日本近代建築の保存・再活用に関する研究 : 旧報徳銀行水海道支店'
+    url: https://jc.u-aizu.repo.nii.ac.jp/record/379/files/r_01.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-03-25'
+    document_type: article
+    persistent_id: https://doi.org/10.20645/00000372
+    license_evidence: no licence statement for this copy [copy https://jc.u-aizu.repo.nii.ac.jp/record/379/files/r_01.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.20645/00000372 openalex:W7207602925
+    resolution: 'sim1: openalex location'
+  - id: oas-w7145023178
+    title: '装飾デザインの背景を探る : 英国中流階級に見るヴィクトリアンスタイルとデザイン界の展開'
+    url: https://osaka-shoin.repo.nii.ac.jp/record/2062/files/KJ00004571326.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-03-20'
+    document_type: article
+    persistent_id: https://openalex.org/W7145023178
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://osaka-shoin.repo.nii.ac.jp/record/2062/files/KJ00004571326.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145023178
+    resolution: 'sim1: openalex location'
+  - id: oas-w434255830
+    title: 今日のロンドン建築について (その6)―ロンドンの幾つかの目立つ地域
+    url: https://kokushikan.repo.nii.ac.jp/record/5486/files/0368_508X_040_05.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2007-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W434255830
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kokushikan.repo.nii.ac.jp/record/5486/files/0368_508X_040_05.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W434255830
+    resolution: 'sim1: openalex location'
+  - id: arx-floorplanmae-a-self-supervised-framework-for-c
+    title: FloorplanMAE:A self-supervised framework for complete floorplan generation
+      from partial inputs
+    url: https://arxiv.org/pdf/2506.08363v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-06-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2506.08363
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2506.08363 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-floorplan-deepseek-fpds-a-multimodal-approach-
+    title: 'FloorPlan-DeepSeek (FPDS): A multimodal approach to floorplan generation
+      using vector-based next room prediction'
+    url: https://arxiv.org/pdf/2506.21562v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-06-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2506.21562
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2506.21562 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-investigating-robotaxi-crash-severity-with-geo
+    title: Investigating Robotaxi Crash Severity with Geographical Random Forest and
+      the Urban Environment
+    url: https://arxiv.org/pdf/2505.06762v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-05-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.06762
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.06762 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
