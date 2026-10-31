@@ -184966,23 +184966,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.14946/00001659 openalex:W7207874723
     resolution: 'sim1: openalex location'
-  - id: oas-w2750299879
-    title: 伝統木造建築の新しい耐震建具の研究開発 その2 耐震性能を有する和障子の研究開発
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC11000063&elmid=Body&fname=E03_023_046.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2011-03-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2750299879
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC11000063&elmid=Body&fname=E03_023_046.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-31'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2750299879
-    resolution: 'sim1: openalex location'
   - id: ope-a-modelling-study-of-segmentation-of-naturally
     title: A Modelling Study of Segmentation of Naturally Ventilated Tall Office Buildings
       in a Hot and Humid Climate
@@ -186692,6 +186675,39 @@ sources:
     persistent_id: doi:10.48550/arxiv.2509.00543
     license_url: http://creativecommons.org/licenses/by/4.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.00543 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-generalizable-skill-learning-for-construction-
+    title: Generalizable Skill Learning for Construction Robots with Crowdsourced Natural
+      Language Instructions, Composable Skills Standardization, and Large Lan
+    url: https://arxiv.org/pdf/2509.02876v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-09-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.02876
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.02876 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-layoutgkn-graph-similarity-learning-of-floor-p
+    title: 'LayoutGKN: Graph Similarity Learning of Floor Plans'
+    url: https://arxiv.org/pdf/2509.03737v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.03737
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.03737 (v1, the current
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-31'
