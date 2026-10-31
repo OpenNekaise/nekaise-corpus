@@ -184872,3 +184872,38 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.48550/arxiv.2610.31553 openalex:W7223339866
     resolution: 'ai1: openalex location'
+  - id: oas-w7146425058
+    title: Empty Housingファンド ： 介護の未来は空き家にかかっている
+    url: https://tku.repo.nii.ac.jp/record/2005913/files/NGG-10.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2014-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146425058
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://tku.repo.nii.ac.jp/record/2005913/files/NGG-10.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146425058
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208325261
+    title: 「方丈の庵」の居住空間のデザインに関する実践的研究
+    url: https://kobe-du.repo.nii.ac.jp/record/124/files/19_kaneko_2013.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2013-11-25'
+    document_type: article
+    persistent_id: https://openalex.org/W7208325261
+    license_evidence: no licence statement for this copy [copy https://kobe-du.repo.nii.ac.jp/record/124/files/19_kaneko_2013.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208325261
+    resolution: 'sim1: openalex location'
