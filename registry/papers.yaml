@@ -184948,3 +184948,21 @@ sources:
     rights_verified_at: '2026-10-31T05:43:47Z'
     origin_ids: doi:10.1016/j.cejgas.2026.100116 openalex:W7202371018
     resolution: 'legacy: openalex location'
+  - id: oas-w7208599095
+    title: '[Special Contribution] For 1300 Years of Time and Space: What Five-storied
+      Pagodas(Goju-no-to) Tell Us'
+    url: https://swu.repo.nii.ac.jp/record/5296/files/KJ00007253243.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2011-07-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208599095
+    license_evidence: no licence statement for this copy [copy https://swu.repo.nii.ac.jp/record/5296/files/KJ00007253243.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208599095
+    resolution: 'sim1: openalex location'
