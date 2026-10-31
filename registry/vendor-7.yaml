@@ -22170,20 +22170,6 @@ sources:
       prohibition disregarded by operator decision 2026-08-30 (local training use, no
       redistribution); PDFs 200 without challenge
     rights_verified_at: '2026-08-30'
-  - id: vnd-specifiedby-vireo-hr155wm-flat-51-semi-rigid-ducting-liberty-homes-844c3374
-    title: 'SpecifiedBy (UK manufacturer documents): vireo-hr155wm-flat-51-semi-rigid-ducting-liberty-homes_844c3374.pdf'
-    url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-comfoair-155-wm/vireo-hr155wm-flat-51-semi-rigid-ducting-liberty-homes_844c3374.pdf
-    source: vendor_specifiedby
-    license: open
-    topic: construction
-    format: pdf
-    language: en
-    document_type: product-literature
-    license_url: https://www.specifiedby.com/terms
-    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
-      prohibition disregarded by operator decision 2026-08-30 (local training use, no
-      redistribution); PDFs 200 without challenge
-    rights_verified_at: '2026-08-30'
   - id: vnd-specifiedby-zehnder-comfoair-155-wm-installation-instructions-3e11e2c3
     title: 'SpecifiedBy (UK manufacturer documents): zehnder-comfoair-155-wm-installation-instructions_3e11e2c3.pdf'
     url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-comfoair-155-wm/zehnder-comfoair-155-wm-installation-instructions_3e11e2c3.pdf
@@ -22289,6 +22275,21 @@ sources:
     title: 'SpecifiedBy (UK manufacturer documents): asset-case-study-modena-en-uk_b790774a.pdf
       (zehnder comfopost cw12 — asset case study modena en uk b790774a)'
     url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-comfopost-cw12/asset-case-study-modena-en-uk_b790774a.pdf
+    source: vendor_specifiedby
+    license: open
+    topic: construction
+    format: pdf
+    language: en
+    document_type: product-literature
+    license_url: https://www.specifiedby.com/terms
+    license_evidence: Content-Signal ai-train=no + ClaudeBot/GPTBot Disallow — declared
+      prohibition disregarded by operator decision 2026-08-30 (local training use, no
+      redistribution); PDFs 200 without challenge
+    rights_verified_at: '2026-08-30'
+  - id: vnd-specifiedby-comfotube-flat-51-a3-ac8654e0
+    title: 'SpecifiedBy (UK manufacturer documents): comfotube-flat-51-a3_ac8654e0.pdf
+      (zehnder comfotube flat 51 — comfotube flat 51 a3 ac8654e0)'
+    url: https://www.specifiedby.com/zehnder-group-uk-ltd/zehnder-comfotube-flat-51/comfotube-flat-51-a3_ac8654e0.pdf
     source: vendor_specifiedby
     license: open
     topic: construction
