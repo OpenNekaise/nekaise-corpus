@@ -184800,3 +184800,20 @@ sources:
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-30'
     origin_ids: doi:10.1038/s41598-025-05279-4
+  - id: oas-w2170988750
+    title: 'モダンデザインの背景を探る : 1920-30年代諸事情その8 : アールデコ再考'
+    url: https://osaka-shoin.repo.nii.ac.jp/record/3905/files/KJ00009741926.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2015-01-31'
+    document_type: article
+    persistent_id: https://openalex.org/W2170988750
+    license_evidence: no licence statement for this copy [copy https://osaka-shoin.repo.nii.ac.jp/record/3905/files/KJ00009741926.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2170988750
+    resolution: 'sim1: openalex location'
