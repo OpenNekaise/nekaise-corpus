@@ -186985,3 +186985,22 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-31'
     origin_ids: doi:10.1109/tcsvt.2025.3610634
+  - id: oas-10-3389-fcomp-2026-1800319-aba5225b
+    title: 'When buildings learn how we move: embodied human–building interaction in
+      the age of machine intelligence'
+    url: https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1800319/pdf
+    source: openalex_ai
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-03-27'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fcomp.2026.1800319
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2026.1800319/pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-31'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fcomp.2026.1800319 openalex:W7141211125
+    resolution: 'ai1: openalex location'
