@@ -185001,3 +185001,177 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2750299879
     resolution: 'sim1: openalex location'
+  - id: ope-a-modelling-study-of-segmentation-of-naturally
+    title: A Modelling Study of Segmentation of Naturally Ventilated Tall Office Buildings
+      in a Hot and Humid Climate
+    url: https://repository.nottingham.ac.uk/bitstreams/84afc782-bb1e-410f-bb12-518b30f92df0/download
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2012-06-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/14733315.2012.11683968
+    license_evidence: no licence statement for this copy [copy https://repository.nottingham.ac.uk/bitstreams/84afc782-bb1e-410f-bb12-518b30f92df0/download;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/14733315.2012.11683968 openalex:W1579039953
+    resolution: 'legacy: openalex location'
+  - id: ope-impact-of-human-body-shape-on-free-convection-
+    title: Impact of human body shape on free convection heat transfer
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0318842&type=printable
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2025-02-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0318842
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0318842&type=printable;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-31'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0318842 openalex:W4407212612
+    resolution: 'legacy: openalex location'
+  - id: ope-wind-induced-ventilation-rate-of-single-sided-
+    title: Wind-induced ventilation rate of single-sided ventilation in a building with
+      internal partition
+    url: https://hig.diva-portal.org/smash/get/diva2:1844799/FULLTEXT01
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2024-02-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1080/14733315.2024.2319475
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://hig.diva-portal.org/smash/get/diva2:1844799/FULLTEXT01; version
+      submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1080/14733315.2024.2319475 openalex:W4392053400
+    resolution: 'legacy: openalex location'
+  - id: arx-road-graph-generator-mapping-roads-at-construc
+    title: 'Road Graph Generator: Mapping roads at construction sites from GPS data'
+    url: https://arxiv.org/pdf/2402.09919v4
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2024-02-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2402.09919
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2402.09919 (v4, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-31'
+    origin_ids: doi:10.1016/j.knosys.2025.113501
+  - id: arx-diffusion-based-generative-models-for-3d-occup
+    title: Diffusion-Based Generative Models for 3D Occupancy Prediction in Autonomous
+      Driving
+    url: https://arxiv.org/pdf/2505.23115v2
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-05-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.23115
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.23115 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-fmocc-tpv-driven-flow-matching-for-3d-occupanc
+    title: 'FMOcc: TPV-Driven Flow Matching for 3D Occupancy Prediction with Selective
+      State Space Model'
+    url: https://arxiv.org/pdf/2507.02250v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-07-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.02250
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.02250 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-ris-aided-cooperative-isac-networks-for-struct
+    title: RIS-Aided Cooperative ISAC Networks for Structural Health Monitoring
+    url: https://arxiv.org/pdf/2507.02731v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-07-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.02731
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.02731 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-high-resolution-sustain-pedal-depth-estimation
+    title: High-Resolution Sustain Pedal Depth Estimation from Piano Audio Across Room
+      Acoustics
+    url: https://arxiv.org/pdf/2507.04230v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.04230
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.04230 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-sequential-multiple-importance-sampling-for-hi
+    title: Sequential multiple importance sampling for high-dimensional Bayesian inference
+    url: https://arxiv.org/pdf/2507.05114v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.05114
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.05114 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-integrating-generative-ai-in-bim-education-ins
+    title: 'Integrating Generative AI in BIM Education: Insights from Classroom Implementation'
+    url: https://arxiv.org/pdf/2507.05296v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-07-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.05296
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.05296 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-31'
