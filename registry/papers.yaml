@@ -184907,3 +184907,44 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208325261
     resolution: 'sim1: openalex location'
+  - id: ope-a-comprehensive-review-of-hybrid-powered-drone
+    title: A comprehensive review of hybrid-powered drones for long-distance water sampling
+      and in-flight physicochemical analysis insights
+    url: https://dspace.lib.cranfield.ac.uk/bitstreams/96979eba-6c4b-4561-9548-3a5afa645454/download
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-09-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1017/aer.2026.10204
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://dspace.lib.cranfield.ac.uk/bitstreams/96979eba-6c4b-4561-9548-3a5afa645454/download;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1017/aer.2026.10204 openalex:W7213974284
+    resolution: 'legacy: openalex location'
+  - id: ope-magnetite-activated-carbon-nanocomposite-deriv
+    title: 'Magnetite-activated carbon nanocomposite derived from steel waste and rice
+      husks for trace removal of Pb(II) and Cd(II) from drinking water: Synthesis'
+    url: https://infoscience.epfl.ch/bitstreams/c7e86202-849a-4a35-8d50-366222be3ded/download
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-08-13'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cejgas.2026.100116
+    license_evidence: 'redirect: rights of requested copy https://infoscience.epfl.ch/bitstreams/c7e86202-849a-4a35-8d50-366222be3ded/download
+      do not transfer to https://cf002.cdn.4science.cloud/4s-assetstore-epfl-prod/80/36/94/80369403481155965332346462930209901910?response-content-type=application%2Fpdf&response-content-disposition=attachment%3B+filename%3D%2210.1016_j.cejgas.2026.100116.pdf%22&Expires=1793425546&Signature=MfhouiYnlZWTYArSd7gqwqA~lDbWoSXi2hluTuXCA3Tq~oEl77098xtcQLa2~sevXMLBds0Q5UFJBZBO4-xGKSo8XWXYVg7QIaUqGb0JoIQgskhdunIWDgiw6zqkZ~yL5wnk42Hy47KPyD76QE0Pc4cvh1MXiqPPi-zogMLIlbpsInm2aKfe1pW27BF0qOaAXHDiDQ~WaLMiuYM7wbG7z-8QkEvOhf2GRTssYi0FfHgVWvKNHHrPDnMHI8vT3Pezkw8J6IsC0f09QQ5FQ-1aSgPiZ3gnivK3BOwG5TRdCA6OaEFjBgsV-DJZvTe089nU3lAAB2Nz7ur0crFNpCv4Rw__&Key-Pair-Id=K20AKEP5FKG3TS;
+      payload sha256=68fbd0e76941ab16eca9ac1316c1cd6124733a07023391299c6658316c9f9170;
+      original evidence: {"license": "cc-by-nc-nd", "license_evidence": "openalex.license=cc-by-nc-nd;
+      openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd [copy https://infoscience.epfl.ch/bitstreams/c7e86202-849a-4a35-8d50-366222be3ded/download;
+      version submittedVersion; rights restricted]", "rights_verified_at": "2026-10-31",
+      "selected_version": "submittedVersion"}'
+    rights_verified_at: '2026-10-31T05:43:47Z'
+    origin_ids: doi:10.1016/j.cejgas.2026.100116 openalex:W7202371018
+    resolution: 'legacy: openalex location'
