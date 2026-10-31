@@ -185175,3 +185175,109 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
       -> cc-by-nc-nd (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-10-31'
+  - id: oas-w7145043771
+    title: 610 市町村合併に伴うコミュニティ施設再編のための指標抽出(建築計画)
+    url: https://ir.kagoshima-u.ac.jp/record/5585/files/110006675309.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2008-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145043771
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/5585/files/110006675309.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145043771
+    resolution: 'sim1: openalex location'
+  - id: oas-w7146076167
+    title: 建築協定の存立基盤と持続的な住環境の維持に関する研究
+    url: https://meiji.repo.nii.ac.jp/record/13280/files/jinbunkagakukiyo_64_61.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2008-02-28'
+    document_type: article
+    persistent_id: https://openalex.org/W7146076167
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://meiji.repo.nii.ac.jp/record/13280/files/jinbunkagakukiyo_64_61.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146076167
+    resolution: 'sim1: openalex location'
+  - id: oas-w1566672019
+    title: 'モダンデザインの背景を探る : 1920年代アバンギャルド住宅誕生におけるクライアント像 その1'
+    url: https://osaka-shoin.repo.nii.ac.jp/record/2236/files/KJ00005117660.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2008-01-31'
+    document_type: article
+    persistent_id: https://openalex.org/W1566672019
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://osaka-shoin.repo.nii.ac.jp/record/2236/files/KJ00005117660.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1566672019
+    resolution: 'sim1: openalex location'
+  - id: arx-adaptive-signal-analysis-for-automated-subsurf
+    title: Adaptive Signal Analysis for Automated Subsurface Defect Detection Using
+      Impact Echo in Concrete Slabs
+    url: https://arxiv.org/pdf/2412.17953v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-12-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2412.17953
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2412.17953 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+    origin_ids: doi:10.1109/bigdata62323.2024.10825873
+  - id: arx-an-object-based-deep-learning-approach-for-bui
+    title: An Object-Based Deep Learning Approach for Building Height Estimation from
+      Single SAR Images
+    url: https://arxiv.org/pdf/2507.08096v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.08096
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.08096 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-insightbuild-llm-powered-causal-reasoning-in-s
+    title: 'InsightBuild: LLM-Powered Causal Reasoning in Smart Building Systems'
+    url: https://arxiv.org/pdf/2507.08235v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.08235
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.08235 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
