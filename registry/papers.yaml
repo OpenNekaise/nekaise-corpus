@@ -185542,3 +185542,165 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-10-31'
+  - id: ope-predicting-the-fire-performance-of-lsf-walls-m
+    title: Predicting the fire performance of LSF walls made of web stiffened channel
+      sections
+    url: https://eprints.qut.edu.au/120961/2/120961.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2018-07-20'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2018.04.072
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://eprints.qut.edu.au/120961/2/120961.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2018.04.072 openalex:W2883038377
+    resolution: 'legacy: openalex location'
+  - id: ope-the-influence-of-soil-moisture-in-the-unsatura
+    title: The Influence of Soil Moisture in the Unsaturated Zone on the Heat Loss from
+      Buildings via the Ground
+    url: https://lirias.kuleuven.be/retrieve/ce2345a1-3c47-4059-97c5-cf644a95ed34
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2002-04-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1177/0075424202025004683
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://lirias.kuleuven.be/retrieve/ce2345a1-3c47-4059-97c5-cf644a95ed34;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1177/0075424202025004683 openalex:W2028867082
+    resolution: 'legacy: openalex location'
+  - id: ope-the-frost-restraining-effect-of-solar-air-coll
+    title: The frost restraining effect of solar air collector applied to air source
+      heat pump
+    url: https://discovery.ucl.ac.uk/10165302/1/Wei_Manuscript%281%29.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2023-02-15'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.applthermaleng.2023.120215
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10165302/1/Wei_Manuscript%281%29.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.applthermaleng.2023.120215 openalex:W4320913316
+    resolution: 'legacy: openalex location'
+  - id: arx-synthesizing-reality-leveraging-the-generative
+    title: 'Synthesizing Reality: Leveraging the Generative AI-Powered Platform Midjourney
+      for Construction Worker Detection'
+    url: https://arxiv.org/pdf/2507.13221v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-07-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.13221
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.13221 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-tidal-like-concept-drift-in-ris-covered-buildi
+    title: 'Tidal-Like Concept Drift in RIS-Covered Buildings: When Programmable Wireless
+      Environments Meet Human Behaviors'
+    url: https://arxiv.org/pdf/2507.14876v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.14876
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.14876 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-roadfusion-latent-diffusion-model-for-pavement
+    title: 'RoadFusion: Latent Diffusion Model for Pavement Defect Detection'
+    url: https://arxiv.org/pdf/2507.15346v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-07-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.15346
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.15346 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-hedge-funds-on-a-swamp-analyzing-patterns-vuln
+    title: 'Hedge Funds on a Swamp: Analyzing Patterns, Vulnerabilities, and Defense
+      Measures in Blockchain Bridges'
+    url: https://arxiv.org/pdf/2507.06156v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-07-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.06156
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.06156 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-design-and-dimensional-optimization-of-legged-
+    title: Design and Dimensional Optimization of Legged Structures for Construction
+      Robots
+    url: https://arxiv.org/pdf/2507.16328v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-07-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.16328
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.16328 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-topology-optimization-of-leg-structures-for-co
+    title: Topology Optimization of Leg Structures for Construction Robots Based on
+      Variable Density Method
+    url: https://arxiv.org/pdf/2507.16335v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-07-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.16335
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.16335 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
