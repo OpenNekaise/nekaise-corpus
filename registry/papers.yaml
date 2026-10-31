@@ -187271,3 +187271,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208280043
     resolution: 'sim1: openalex location'
+  - id: oas-w643527985
+    title: '41338 建築物を利用した風力発電技術に関する研究(その6) : 単体プロペラの後流域における気流性状(風力発電,環境工学II)'
+    url: https://sucra.repo.nii.ac.jp/record/13599/files/A1004199.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2003-07-30'
+    document_type: article
+    persistent_id: https://openalex.org/W643527985
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://sucra.repo.nii.ac.jp/record/13599/files/A1004199.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W643527985
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144721579
+    title: RC建築物の凍害に対する簡易な耐久設計法の提案
+    url: https://muroran-it.repo.nii.ac.jp/record/6154/files/jtd17_55_2003.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2003-06-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144721579
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://muroran-it.repo.nii.ac.jp/record/6154/files/jtd17_55_2003.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144721579
+    resolution: 'sim1: openalex location'
