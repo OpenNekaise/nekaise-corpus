@@ -186433,3 +186433,144 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
       -> cc-by-sa (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-31'
+  - id: oas-w143117799
+    title: 10-102 建築設計教育における設計方法の変遷に関する一考察((8)エンジニアリングデザイン(工学設計教育)-I)
+    url: https://niit.repo.nii.ac.jp/record/2000264/files/2005_148.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-09-09'
+    document_type: article
+    persistent_id: https://openalex.org/W143117799
+    license_evidence: no licence statement for this copy [copy https://niit.repo.nii.ac.jp/record/2000264/files/2005_148.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W143117799
+    resolution: 'sim1: openalex location'
+  - id: oas-w398169568
+    title: '今日のロンドン建築について (その1) : ロンドンの北から中心部にかけて'
+    url: https://kokushikan.repo.nii.ac.jp/record/5515/files/0368_508X_038_15.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2005-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W398169568
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kokushikan.repo.nii.ac.jp/record/5515/files/0368_508X_038_15.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W398169568
+    resolution: 'sim1: openalex location'
+  - id: arx-graph-framework-a-domain-specific-compiler-for
+    title: 'graph framework: A Domain Specific Compiler for Building Physics Applications'
+    url: https://arxiv.org/pdf/2508.15967v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.15967
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.15967 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-unsupervised-online-detection-of-pipe-blockage
+    title: Unsupervised Online Detection of Pipe Blockages and Leakages in Water Distribution
+      Networks
+    url: https://arxiv.org/pdf/2508.16336v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-08-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.16336
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.16336 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-an-embodied-ar-navigation-agent-integrating-bi
+    title: 'An Embodied AR Navigation Agent: Integrating BIM with Retrieval-Augmented
+      Generation for Language Guidance'
+    url: https://arxiv.org/pdf/2508.16602v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-08-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.16602
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.16602 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-embodiedocc-embodied-3d-occupancy-prediction-f
+    title: 'EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-based Online Scene
+      Understanding'
+    url: https://arxiv.org/pdf/2412.04380v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-12-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2412.04380
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2412.04380 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-gaussianflowocc-sparse-and-weakly-supervised-o
+    title: 'GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using
+      Gaussian Splatting and Temporal Flow'
+    url: https://arxiv.org/pdf/2502.17288v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-02-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.17288
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.17288 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-monitoring-assessment-and-numerical-analysis-o
+    title: Monitoring, assessment and numerical analysis of the masonry bridge pier
+      defects
+    url: https://arxiv.org/pdf/2508.17110v2
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-08-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.17110
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.17110 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
