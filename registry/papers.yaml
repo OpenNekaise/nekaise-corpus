@@ -184817,3 +184817,22 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2170988750
     resolution: 'sim1: openalex location'
+  - id: ope-evaluation-on-the-cooling-capacity-of-a-cascad
+    title: Evaluation on the Cooling capacity of a Cascade Cold Storage Refrigeration
+      System Using Refrigerant Pair R513A/R744
+    url: https://catalog.lib.kyushu-u.ac.jp/opac_download_md/7411075/p401-407.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-03-01'
+    document_type: article
+    persistent_id: https://doi.org/10.5109/7411075
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://catalog.lib.kyushu-u.ac.jp/opac_download_md/7411075/p401-407.pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-10-31'
+    selected_version: publishedVersion
+    origin_ids: doi:10.5109/7411075 openalex:W7149436558
+    resolution: 'legacy: openalex location'
