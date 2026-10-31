@@ -154358,24 +154358,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-17'
     origin_ids: doi:10.1177/1475921709352146
-  - id: ope-highly-integrated-breathable-metalized-phase-c
-    title: 'Highly integrated, breathable, metalized phase change fibrous membranes
-      based on hierarchical coaxial fiber structure for multimodal personal thermal '
-    url: https://soar-ir.repo.nii.ac.jp/record/2001791/files/20HS151H_shinsa.pdf
-    source: openalex
-    license: unverified
-    topic: equipment_systems
-    format: pdf
-    language: en
-    published_at: '2023-04-07'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.cej.2023.142835
-    license_evidence: no licence statement for this copy [copy https://soar-ir.repo.nii.ac.jp/record/2001791/files/20HS151H_shinsa.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-17'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.cej.2023.142835 openalex:W4362696643
-    resolution: 'legacy: openalex location'
   - id: ope-a-machine-learning-approach-for-solar-power-te
     title: A Machine Learning Approach for Solar Power Technology Review and Patent
       Evolution Analysis
@@ -185788,6 +185770,110 @@ sources:
     persistent_id: doi:10.48550/arxiv.2504.09540
     license_url: http://creativecommons.org/licenses/by/4.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2504.09540 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: oas-10-48550-arxiv-2406-17574-b5190333
+    title: 'Beyond Text-to-SQL for IoT Defense: A Comprehensive Framework for Querying
+      and Classifying IoT Threats'
+    url: https://arxiv.org/pdf/2406.17574
+    source: openalex_ai
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-06-25'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2406.17574
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://arxiv.org/pdf/2406.17574; version submittedVersion; rights accepted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2406.17574 openalex:W4400065101
+    resolution: 'ai1: openalex location'
+  - id: arx-scanet-split-coordinate-attention-network-for-
+    title: 'SCANet: Split Coordinate Attention Network for Building Footprint Extraction'
+    url: https://arxiv.org/pdf/2507.20809v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.20809
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.20809 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+    origin_ids: doi:10.1007/978-981-96-6594-5_8
+  - id: arx-gtad-global-temporal-aggregation-denoising-lea
+    title: 'GTAD: Global Temporal Aggregation Denoising Learning for 3D Semantic Occupancy
+      Prediction'
+    url: https://arxiv.org/pdf/2507.20963v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-07-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.20963
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.20963 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-10-31'
+  - id: arx-lite-a-learning-integrated-topological-explore
+    title: 'LITE: A Learning-Integrated Topological Explorer for Multi-Floor Indoor
+      Environments'
+    url: https://arxiv.org/pdf/2507.21517v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-07-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.21517
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.21517 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-language-driven-occupancy-prediction
+    title: Language Driven Occupancy Prediction
+    url: https://arxiv.org/pdf/2411.16072v3
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-11-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.16072
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.16072 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
+  - id: arx-explainable-deep-anomaly-detection-with-sequen
+    title: Explainable Deep Anomaly Detection with Sequential Hypothesis Testing for
+      Robotic Sewer Inspection
+    url: https://arxiv.org/pdf/2507.22546v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-07-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.22546
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.22546 (v1, the current
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-31'
