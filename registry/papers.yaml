@@ -186364,3 +186364,72 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-31'
+  - id: oas-w7163487370
+    title: Designing a Prototype of Sustainable Furniture
+    url: https://suac.repo.nii.ac.jp/record/613/files/P121-P130.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2006-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7163487370
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://suac.repo.nii.ac.jp/record/613/files/P121-P130.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7163487370
+    resolution: 'sim1: openalex location'
+  - id: oas-w187993825
+    title: へび玉道路に依拠した建築計画に対し建築確認を与えた民間確認検査機関の処分を取り消した例--中野区建築審査会平成17年7月13日裁決(16中建審・請第1号審査請求事件)の紹介
+    url: https://meigaku.repo.nii.ac.jp/record/1779/files/lawreview2-3_91-93.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2006-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W187993825
+    license_evidence: no licence statement for this copy [copy https://meigaku.repo.nii.ac.jp/record/1779/files/lawreview2-3_91-93.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: openalex:W187993825
+    resolution: 'sim1: openalex location'
+  - id: arx-eliminating-rasterization-direct-vector-floor-
+    title: 'Eliminating Rasterization: Direct Vector Floor Plan Generation with DiffPlanner'
+    url: https://arxiv.org/pdf/2508.13738v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.13738
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.13738 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-10-31'
+    origin_ids: doi:10.1109/tvcg.2025.3559682
+  - id: arx-extracting-structured-requirements-from-unstru
+    title: Extracting Structured Requirements from Unstructured Building Technical Specifications
+      for Building Information Modeling
+    url: https://arxiv.org/pdf/2508.13833v1
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.13833
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.13833 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-10-31'
