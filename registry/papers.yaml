@@ -184836,3 +184836,39 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.5109/7411075 openalex:W7149436558
     resolution: 'legacy: openalex location'
+  - id: oas-10-48550-arxiv-2610-35160-89ccca64
+    title: 'AutoEnergyDesign: An LLM-Driven Agent for Automatic Energy System Design
+      Optimization'
+    url: https://arxiv.org/pdf/2610.35160
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-10-26'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.35160
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.35160;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.35160 openalex:W7224005629
+    resolution: 'ai1: openalex location'
+  - id: oas-10-48550-arxiv-2610-31553-30442585
+    title: 'Contestable Agents for Data Governance: Recording Human Stewardship of AI-Generated
+      Metadata Across Structured and Unstructured Systems'
+    url: https://arxiv.org/pdf/2610.31553
+    source: openalex_ai
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-10-22'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.31553
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.31553;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-10-31'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.31553 openalex:W7223339866
+    resolution: 'ai1: openalex location'
