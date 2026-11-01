@@ -187446,3 +187446,57 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7145915815
     resolution: 'sim1: openalex location'
+  - id: oas-10-11188-seisankenkyu-54-376-f54805fb
+    title: '研究速報 : ピエゾアクチュエータを用いた可変摩擦ダンパによる建築構造物のセミアクティブ免震ー第1報,可変摩擦ダンパの特性実験ー'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/49755/files/sk054006005.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.11188/seisankenkyu.54.376
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/49755/files/sk054006005.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.11188/seisankenkyu.54.376 openalex:W3190434564
+    resolution: 'sim1: openalex location'
+  - id: oas-w7115384752
+    title: 現代の和釘の機械的性質とはいかなるものか
+    url: https://ynu.repo.nii.ac.jp/?action=repository_uri&item_id=10371
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2001-10-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7115384752
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ynu.repo.nii.ac.jp/?action=repository_uri&item_id=10371; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7115384752
+    resolution: 'sim1: openalex location'
+  - id: oas-w1947909569
+    title: 5288 建築ワークショップの活用に関する事例的研究(コラボレーション・参加,建築計画I)
+    url: https://hiroshima.repo.nii.ac.jp/record/2009219/files/110006600009.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2001-07-31'
+    document_type: article
+    persistent_id: https://openalex.org/W1947909569
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://hiroshima.repo.nii.ac.jp/record/2009219/files/110006600009.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1947909569
+    resolution: 'sim1: openalex location'
