@@ -187899,3 +187899,39 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2915106700
     resolution: 'sim1: openalex location'
+  - id: oas-10-15083-00036690-a8f155af
+    title: '母胎、頭蓋、宇宙 : ベケット的空間への一視座'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/36699/files/re011011.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1991-06-20'
+    document_type: article
+    persistent_id: https://doi.org/10.15083/00036690
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/36699/files/re011011.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.15083/00036690 openalex:W177983711
+    resolution: 'sim1: openalex location'
+  - id: oas-10-18999-jouflp-37-53-cea3ee07
+    title: インド密教における建築儀礼－Vajravali-nama-mandalopayika 和訳（1）－
+    url: https://kanazawa-u.repo.nii.ac.jp/record/1081/files/LE-PR-MORI-M-53.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1991-03-01'
+    document_type: article
+    persistent_id: https://doi.org/10.18999/jouflp.37.53
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kanazawa-u.repo.nii.ac.jp/record/1081/files/LE-PR-MORI-M-53.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.18999/jouflp.37.53 openalex:W2136878335
+    resolution: 'sim1: openalex location'
