@@ -188847,3 +188847,57 @@ sources:
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-01'
     origin_ids: doi:10.1145/3769748.3773355
+  - id: ope-long-term-experience-of-the-thermo-active-grou
+    title: Long-term experience of the thermo-active ground source system at the metro
+      station Taborstrasse in Vienna
+    url: https://repositum.tuwien.at/bitstream/20.500.12708/193282/1/Adam-2023-Acta%20Polytechnica%20CTU%20Proceedings-vor.pdf
+    source: openalex
+    license: cc-by
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2023-12-14'
+    document_type: article
+    persistent_id: https://doi.org/10.14311/app.2023.45.0001
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://repositum.tuwien.at/bitstream/20.500.12708/193282/1/Adam-2023-Acta%20Polytechnica%20CTU%20Proceedings-vor.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.14311/app.2023.45.0001 openalex:W4390620498
+    resolution: 'legacy: openalex location'
+  - id: arx-rir-mega-a-large-scale-simulated-room-impulse-
+    title: 'RIR-Mega: a large-scale simulated room impulse response dataset for machine
+      learning and room acoustics modeling'
+    url: https://arxiv.org/pdf/2510.18917v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-10-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.18917
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.18917 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-tracking-the-normal-modes-of-an-overpass-highw
+    title: Tracking the normal modes of an overpass highway bridge using Distributed
+      Acoustic Sensing
+    url: https://arxiv.org/pdf/2510.24212v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-10-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.24212
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.24212 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
