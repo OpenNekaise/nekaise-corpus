@@ -189976,3 +189976,109 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-01'
+  - id: ope-electric-vehicles-destination-charging-an-over
+    title: 'Electric vehicles destination charging: An overview of charging tariffs,
+      business models and coordination strategies'
+    url: https://researchmgt.monash.edu/ws/files/509398911/493538599_oa.pdf
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-07-24'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rser.2023.113534
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://researchmgt.monash.edu/ws/files/509398911/493538599_oa.pdf; version
+      submittedVersion; rights accepted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.rser.2023.113534 openalex:W4385402657
+    resolution: 'legacy: openalex location'
+  - id: ope-smart-cities-and-urban-energy-planning-an-adva
+    title: 'Smart Cities and Urban Energy Planning: An Advanced Review of Promises and
+      Challenges'
+    url: https://udspace.udel.edu/bitstreams/26a43a0a-8fdb-42bf-8006-3342cc67b185/download
+    source: openalex
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-01-31'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/smartcities7010016
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://udspace.udel.edu/bitstreams/26a43a0a-8fdb-42bf-8006-3342cc67b185/download;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.3390/smartcities7010016 openalex:W4391404874
+    resolution: 'legacy: openalex location'
+  - id: arx-a-data-driven-multi-objective-approach-for-pre
+    title: A Data-Driven Multi-Objective Approach for Predicting Mechanical Performance,
+      Flowability, and Porosity in Ultra-High-Performance Concrete (UHPC)
+    url: https://arxiv.org/pdf/2512.21610v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-12-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.21610
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.21610 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-mechanical-strength-prediction-of-steel-polypr
+    title: Mechanical Strength Prediction of Steel-Polypropylene Fiber-based High-Performance
+      Concrete Using Hybrid Machine Learning Algorithms
+    url: https://arxiv.org/pdf/2512.21638v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-12-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.21638
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.21638 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-hierarchical-context-alignment-with-disentangl
+    title: Hierarchical Context Alignment with Disentangled Geometric and Temporal Modeling
+      for Semantic Occupancy Prediction
+    url: https://arxiv.org/pdf/2412.08243v2
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-12-11'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2412.08243
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2412.08243 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-existence-uniqueness-and-approximability-of-so
+    title: Existence, uniqueness, and approximability of solutions to the classical
+      Melan equation in suspension bridges
+    url: https://arxiv.org/pdf/2512.24915v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-12-31'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.24915
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.24915 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
