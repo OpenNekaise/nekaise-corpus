@@ -188515,3 +188515,55 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-01'
+  - id: oas-w7208210239
+    title: 鉄筋コンクリート建築物の大変形領域における非対称履歴ループと地震応答性状
+    url: https://kindai.repo.nii.ac.jp/record/2004776/files/AN00063653-19791201-0025.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1979-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208210239
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kindai.repo.nii.ac.jp/record/2004776/files/AN00063653-19791201-0025.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208210239
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208183068
+    title: オープンシステムの幼稚園について
+    url: https://takamatsu-u.repo.nii.ac.jp/record/5980/files/AN00138796_8_1_8.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1978-03-10'
+    document_type: article
+    persistent_id: https://openalex.org/W7208183068
+    license_evidence: no licence statement for this copy [copy https://takamatsu-u.repo.nii.ac.jp/record/5980/files/AN00138796_8_1_8.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208183068
+    resolution: 'sim1: openalex location'
+  - id: arx-enhancing-the-plasmonic-hotspot-density-via-st
+    title: 'Enhancing the Plasmonic Hotspot Density via Structural Engineering of Multi-layered
+      MoO3-Ag-Au Systems Under Extreme Electronic Excitation Conditions '
+    url: https://arxiv.org/pdf/2510.11470v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-10-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.11470
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.11470 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
