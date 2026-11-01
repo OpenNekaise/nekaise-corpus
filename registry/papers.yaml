@@ -189770,3 +189770,90 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-01'
+  - id: arx-robust-a-posteriori-estimation-of-probit-logno
+    title: Robust a posteriori estimation of probit-lognormal seismic fragility curves
+      via sequential design of experiments and constrained reference prior
+    url: https://arxiv.org/pdf/2503.07343v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-03-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.07343
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.07343 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+    origin_ids: doi:10.1016/j.nucengdes.2025.114695
+  - id: arx-hybrid-ensemble-method-for-detecting-cyber-att
+    title: Hybrid Ensemble Method for Detecting Cyber-Attacks in Water Distribution
+      Systems Using the BATADAL Dataset
+    url: https://arxiv.org/pdf/2512.14422v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-12-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.14422
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.14422 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-a-multivariate-statistical-framework-for-detec
+    title: A Multivariate Statistical Framework for Detection, Classification and Pre-localization
+      of Anomalies in Water Distribution Networks
+    url: https://arxiv.org/pdf/2512.15685v1
+    source: arxiv
+    license: cc-by
+    topic: infrastructure
+    format: pdf
+    language: en
+    published_at: '2025-12-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.15685
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.15685 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-automated-building-heritage-assessment-using-s
+    title: Automated Building Heritage Assessment Using Street-Level Imagery
+    url: https://arxiv.org/pdf/2508.11486v3
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-08-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.11486
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.11486 (v3, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-augmented-reality-based-smart-structural-healt
+    title: Augmented Reality-Based Smart Structural Health Monitoring System With Accurate
+      3D Model Alignment
+    url: https://arxiv.org/pdf/2512.16008v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-12-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.16008
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.16008 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
+    origin_ids: doi:10.1016/j.iintel.2025.100186
