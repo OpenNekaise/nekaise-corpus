@@ -189511,3 +189511,89 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-01'
+  - id: oas-w7146187667
+    title: 耐震度試驗
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/24641/files/sk003007006.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1951-07-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146187667
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/24641/files/sk003007006.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146187667
+    resolution: 'sim1: openalex location'
+  - id: arx-deep-filament-extraction-for-3d-concrete-print
+    title: Deep Filament Extraction for 3D Concrete Printing
+    url: https://arxiv.org/pdf/2512.00091v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-11-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.00091
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.00091 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-towards-modeling-road-access-deprivation-in-su
+    title: Towards Modeling Road Access Deprivation in Sub-Saharan Africa Based on a
+      New Accessibility Metric and Road Quality
+    url: https://arxiv.org/pdf/2512.02190v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-12-01'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.02190
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.02190 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-phase-adaptive-llm-framework-with-multi-stage-
+    title: 'Phase-Adaptive LLM Framework with Multi-Stage Validation for Construction
+      Robot Task Allocation: A Systematic Benchmark Against Traditional Optimizati'
+    url: https://arxiv.org/pdf/2512.02810v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-12-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.02810
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.02810 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-real-time-structural-health-monitoring-with-ba
+    title: 'Real-Time Structural Health Monitoring with Bayesian Neural Networks: Distinguishing
+      Aleatoric and Epistemic Uncertainty for Digital Twin Frameworks'
+    url: https://arxiv.org/pdf/2512.03115v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-12-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.03115
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.03115 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
