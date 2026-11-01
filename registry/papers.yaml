@@ -188901,3 +188901,72 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-01'
+  - id: oas-10-1016-j-energy-2020-119646-8b61cccc
+    title: Comprehensive energy, economic and thermal comfort assessments for the passive
+      energy retrofit of historical buildings - A case study of a late ninete
+    url: https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-12-26'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.energy.2020.119646
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy https://figshare.com/articles/journal_contribution/Comprehensive_energy_economic_and_thermal_comfort_assessments_for_the_passive_energy_retrofit_of_historical_buildings_-_A_case_study_of_a_late_nineteenth-century_Victorian_house_renovation_in_the_UK/13607732;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.energy.2020.119646 openalex:W3116469510
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
+  - id: arx-dino-yolo-self-supervised-pre-training-for-dat
+    title: 'DINO-YOLO: Self-Supervised Pre-training for Data-Efficient Object Detection
+      in Civil Engineering Applications'
+    url: https://arxiv.org/pdf/2510.25140v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-10-29'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.25140
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.25140 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-windmil-equivariant-graph-learning-for-wind-lo
+    title: 'WindMiL: Equivariant Graph Learning for Wind Loading Prediction'
+    url: https://arxiv.org/pdf/2511.01226v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-11-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.01226
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.01226 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-neural-field-transformations-for-hybrid-monte-
+    title: 'Neural Field Transformations for Hybrid Monte Carlo: Architectural Design
+      and Scaling'
+    url: https://arxiv.org/pdf/2511.02018v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2025-11-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.02018
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.02018 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
