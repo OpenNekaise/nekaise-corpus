@@ -190204,3 +190204,72 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-01'
+  - id: ope-modern-mining-sustainability-an-integrated-fra
+    title: 'Modern mining sustainability: An integrated framework for technology innovation,
+      operational trade-offs, and implementation barriers'
+    url: https://ltu.diva-portal.org/smash/get/diva2:2104742/FULLTEXT01
+    source: openalex
+    license: cc-by-nc-nd
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-06-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.gsme.2026.03.004
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ltu.diva-portal.org/smash/get/diva2:2104742/FULLTEXT01; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.gsme.2026.03.004 openalex:W7166321024
+    resolution: 'legacy: openalex location'
+  - id: arx-an-evaluation-of-empirical-equations-for-asses
+    title: An evaluation of empirical equations for assessing local scour around bridge
+      piers using global sensitivity analysis
+    url: https://arxiv.org/pdf/2601.07594v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-01-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2601.07594
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2601.07594 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-impacted-buildings-for-gl-2
+    title: Impacted Buildings for GL(2)
+    url: https://arxiv.org/pdf/2601.08365v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-01-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2601.08365
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2601.08365 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-sketch-based-facade-renovation-with-generative
+    title: 'Sketch-Based Facade Renovation With Generative AI: A Streamlined Framework
+      for Bypassing As-Built Modelling in Industrial Adaptive Reuse'
+    url: https://arxiv.org/pdf/2601.08531v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2026-01-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2601.08531
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2601.08531 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
