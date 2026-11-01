@@ -188359,3 +188359,142 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-01'
+  - id: ope-experimental-investigations-and-multi-objectiv
+    title: Experimental investigations and multi-objective optimization of an air-source
+      absorption heat pump for residential district heating
+    url: https://discovery.ucl.ac.uk/10129524/3/Wei_Experimental%20investigations%20and%20multi-objective%20optimization%20of%20an%20air-source%20absorption%20heat%20pump%20for%20residential%20district%20heating_AAM.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2021-05-19'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.enconman.2021.114267
+    license_evidence: no licence statement for this copy [copy https://discovery.ucl.ac.uk/10129524/3/Wei_Experimental%20investigations%20and%20multi-objective%20optimization%20of%20an%20air-source%20absorption%20heat%20pump%20for%20residential%20district%20heating_AAM.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.enconman.2021.114267 openalex:W3161972362
+    resolution: 'legacy: openalex location'
+  - id: arx-automating-construction-safety-inspections-usi
+    title: Automating construction safety inspections using a multi-modal vision-language
+      RAG framework
+    url: https://arxiv.org/pdf/2510.04145v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-10-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.04145
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.04145 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-non-destructive-diagnostics-of-fiber-orientati
+    title: Non-destructive diagnostics of fiber orientation in large planar fiber-reinforced
+      concrete specimens
+    url: https://arxiv.org/pdf/2510.06272v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-10-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.06272
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.06272 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-normal-subgroup-theorem-for-groups-acting-on-t
+    title: Normal Subgroup Theorem for groups acting on $\tilde A_2$-buildings
+    url: https://arxiv.org/pdf/2310.13472v2
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-10-20'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2310.13472
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2310.13472 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-p2-explore-efficient-exploration-in-unknown-cl
+    title: 'P2 Explore: Efficient Exploration in Unknown Cluttered Environment with
+      Floor Plan Prediction'
+    url: https://arxiv.org/pdf/2409.10878v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-09-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2409.10878
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2409.10878 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-bim-constrained-optimization-for-accurate-loca
+    title: BIM-Constrained Optimization for Accurate Localization and Deviation Correction
+      in Construction Monitoring
+    url: https://arxiv.org/pdf/2504.17693v2
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-04-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2504.17693
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2504.17693 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-progressive-gaussian-transformer-with-anisotro
+    title: Progressive Gaussian Transformer with Anisotropy-aware Sampling for Open
+      Vocabulary Occupancy Prediction
+    url: https://arxiv.org/pdf/2510.04759v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-10-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.04759
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.04759 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-bright-a-globally-distributed-multimodal-build
+    title: 'BRIGHT: A globally distributed multimodal building damage assessment dataset
+      with very-high-resolution for all-weather disaster response'
+    url: https://arxiv.org/pdf/2501.06019v4
+    source: arxiv
+    license: cc-by-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-01-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2501.06019
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2501.06019 (v4, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
