@@ -187692,3 +187692,91 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W1505942057
     resolution: 'sim1: openalex location'
+  - id: oas-w7144454854
+    title: '特集9 : 研究速報 : LESのための流入変動風の作成法に関する研究(第1報) : 周波数スペクトルに基づく流入変動風を用いた等方性乱流の解析'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/18441/files/sk048002009.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-02-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144454854
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/18441/files/sk048002009.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144454854
+    resolution: 'sim1: openalex location'
+  - id: oas-w7223521301
+    title: 醸造建築の調査研究―愛知・岐阜県の酒造場
+    url: https://kindai.repo.nii.ac.jp/record/2005043/files/AN00063653-19951201-0051.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7223521301
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kindai.repo.nii.ac.jp/record/2005043/files/AN00063653-19951201-0051.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7223521301
+    resolution: 'sim1: openalex location'
+  - id: oas-w7145810918
+    title: '渡辺銕蔵と公益建築会社 : ケメニーの「成熟化」論に着目して'
+    url: https://ocu-omu.repo.nii.ac.jp/record/2018889/files/DB00000026.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-09-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145810918
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ocu-omu.repo.nii.ac.jp/record/2018889/files/DB00000026.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145810918
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208583596
+    title: '聾学校の学習集団編成について : 聾学校の建築計画に関する基礎的研究4'
+    url: https://tsukuba-tech.repo.nii.ac.jp/record/1307/files/gakuju95_hirane_001.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-07-20'
+    document_type: article
+    persistent_id: https://openalex.org/W7208583596
+    license_evidence: no licence statement for this copy [copy https://tsukuba-tech.repo.nii.ac.jp/record/1307/files/gakuju95_hirane_001.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208583596
+    resolution: 'sim1: openalex location'
+  - id: oas-w7166489985
+    title: '建物高さ・長さおよび視点高さが異なる場合の二棟平行配置空間の視覚的まとまり : 建築群の空間構成計画に関する研究・その9'
+    url: https://nitech.repo.nii.ac.jp/record/4342/files/JAPEE_470_131.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1995-04-30'
+    document_type: article
+    persistent_id: https://openalex.org/W7166489985
+    license_evidence: no licence statement for this copy [copy https://nitech.repo.nii.ac.jp/record/4342/files/JAPEE_470_131.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7166489985
+    resolution: 'sim1: openalex location'
