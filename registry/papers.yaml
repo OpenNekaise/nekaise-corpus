@@ -186540,23 +186540,6 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-10-31'
-  - id: oas-w2111364805
-    title: '建築学科における建築環境・設備系の授業改善事例報告 : 建築環境工学を中心に'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2005-01-01'
-    document_type: article
-    persistent_id: https://openalex.org/W2111364805
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC09000210&elmid=Body&fname=049_Yamaha.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-31'
-    selected_version: submittedVersion
-    origin_ids: openalex:W2111364805
-    resolution: 'sim1: openalex location'
   - id: oas-w2288531344
     title: '建築家・土浦亀城の住宅作品について : その特徴と変遷'
     url: https://tsukuba.repo.nii.ac.jp/record/14470/files/A3634.pdf
@@ -187569,4 +187552,57 @@ sources:
     rights_verified_at: '2026-11-01'
     selected_version: submittedVersion
     origin_ids: openalex:W7146407510
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144919387
+    title: ウィリアム・モリスと古建築保護協会
+    url: https://hannan-u.repo.nii.ac.jp/record/1136/files/34-4-18.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1999-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144919387
+    license_evidence: no licence statement for this copy [copy https://hannan-u.repo.nii.ac.jp/record/1136/files/34-4-18.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144919387
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144953162
+    title: '643 出先行政機関におけるサービス圏域の基礎特性(鹿児島県、大分県の事例) : 地域コミュニティ施設の変容と利用運営の広域的再編に関する研究(建築計画)'
+    url: https://ir.kagoshima-u.ac.jp/record/13065/files/110006973897.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1999-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144953162
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://ir.kagoshima-u.ac.jp/record/13065/files/110006973897.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144953162
+    resolution: 'sim1: openalex location'
+  - id: oas-w126587328
+    title: '427 デンマークにおける高齢者向け住宅・居住施設の変遷 : コペンハーゲン市の場合(建築計画)'
+    url: https://shizuoka.repo.nii.ac.jp/record/3355/files/090831009.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1999-02-13'
+    document_type: article
+    persistent_id: https://openalex.org/W126587328
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://shizuoka.repo.nii.ac.jp/record/3355/files/090831009.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W126587328
     resolution: 'sim1: openalex location'
