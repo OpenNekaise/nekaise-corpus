@@ -189597,3 +189597,36 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-01'
+  - id: arx-university-building-recognition-dataset-in-tha
+    title: University Building Recognition Dataset in Thailand for the mission-oriented
+      IoT sensor system
+    url: https://arxiv.org/pdf/2512.05468v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-12-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.05468
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.05468 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-cenergy3-an-api-for-city-energy-3d-modeling
+    title: 'Cenergy3: An API for City Energy 3D Modeling'
+    url: https://arxiv.org/pdf/2512.06459v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-12-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.06459
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.06459 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
