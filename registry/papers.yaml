@@ -188110,3 +188110,128 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-01'
+  - id: oas-w7144461931
+    title: '調査報告 : 1985年メキシコ地震調査報告'
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/19919/files/sk038004001.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1986-04-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144461931
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/19919/files/sk038004001.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144461931
+    resolution: 'sim1: openalex location'
+  - id: oas-w7146806243
+    title: '職業選択に及ぼす親の職業的影響 : 小・中学校教師・大学教師・建築設計士について'
+    url: https://our.repo.nii.ac.jp/record/2009120/files/ksk_33_2_171-176.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1985-06-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7146806243
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://our.repo.nii.ac.jp/record/2009120/files/ksk_33_2_171-176.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7146806243
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144396991
+    title: 粘性土地盤に載る建築構造物の沈下過程に関する解析的研究
+    url: https://muroran-it.repo.nii.ac.jp/record/8017/files/kiyo34_rikou_pp55-74.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1984-11-30'
+    document_type: article
+    persistent_id: https://openalex.org/W7144396991
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://muroran-it.repo.nii.ac.jp/record/8017/files/kiyo34_rikou_pp55-74.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144396991
+    resolution: 'sim1: openalex location'
+  - id: arx-bignet-pretrained-graph-neural-network-for-emb
+    title: 'BIGNet: Pretrained Graph Neural Network for Embedding Semantic, Spatial,
+      and Topological Data in BIM Models'
+    url: https://arxiv.org/pdf/2509.11104v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-09-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.11104
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.11104 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
+    origin_ids: doi:10.1111/mice.70073
+  - id: arx-aquair-a-high-resolution-indoor-environmental-
+    title: 'AQUAIR: A High-Resolution Indoor Environmental Quality Dataset for Smart
+      Aquaculture Monitoring'
+    url: https://arxiv.org/pdf/2509.24069v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.24069
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.24069 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-multi-temporal-crack-segmentation-in-concrete-
+    title: Multi-temporal crack segmentation in concrete structures using deep learning
+      approaches
+    url: https://arxiv.org/pdf/2411.04620v2
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2024-11-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2411.04620
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2411.04620 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+    origin_ids: doi:10.5194/isprs-annals-x-g-2025-341-2025
+  - id: arx-optimizing-indoor-environmental-quality-in-sma
+    title: Optimizing Indoor Environmental Quality in Smart Buildings Using Deep Learning
+    url: https://arxiv.org/pdf/2509.26187v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.26187
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.26187 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
