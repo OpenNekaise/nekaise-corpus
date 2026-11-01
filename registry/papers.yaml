@@ -189316,3 +189316,165 @@ sources:
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-01'
     origin_ids: doi:10.1016/j.cag.2025.104477
+  - id: oas-10-32150-00001152-0388b851
+    title: '小中併置校に関する建築計画的研究(I) : 北海道における小中併置校について I : 学級数、児童生徒数及び管理組織について'
+    url: https://hokkyodai.repo.nii.ac.jp/?action=repository_action_common_download&item_id=1158&item_no=1&attribute_id=13&file_no=1
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1965-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.32150/00001152
+    license_evidence: no licence statement for this copy [copy https://hokkyodai.repo.nii.ac.jp/?action=repository_action_common_download&item_id=1158&item_no=1&attribute_id=13&file_no=1;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.32150/00001152 openalex:W211119901
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208375299
+    title: ヨーロッパにおける建築生産の工業化
+    url: https://repository.dl.itc.u-tokyo.ac.jp/record/22984/files/sk014010003.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1962-10-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7208375299
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repository.dl.itc.u-tokyo.ac.jp/record/22984/files/sk014010003.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208375299
+    resolution: 'sim1: openalex location'
+  - id: oas-10-1016-j-egyr-2020-11-011-7317469d
+    title: Investigations towards lower cooling load in a typical residential building
+      in Kurdistan (Iraq)
+    url: http://researchrepository.napier.ac.uk/Output/2787393
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyr.2020.11.011
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy http://researchrepository.napier.ac.uk/Output/2787393;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyr.2020.11.011 openalex:W3109005860
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
+  - id: arx-feasibility-of-embodied-dynamics-based-bayesia
+    title: Feasibility of Embodied Dynamics Based Bayesian Learning for Continuous Pursuit
+      Motion Control of Assistive Mobile Robots in the Built Environment
+    url: https://arxiv.org/pdf/2511.17401v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-11-21'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.17401
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.17401 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-vision-only-gaussian-splatting-for-collaborati
+    title: Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction
+    url: https://arxiv.org/pdf/2508.10936v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-08-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2508.10936
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2508.10936 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-semantic-bim-enrichment-for-firefighting-asset
+    title: 'Semantic BIM enrichment for firefighting assets: Fire-ART dataset and panoramic
+      image-based 3D reconstruction'
+    url: https://arxiv.org/pdf/2511.01399v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-11-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.01399
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.01399 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+    origin_ids: doi:10.1016/j.isprsjprs.2025.11.015
+  - id: arx-table-comprehension-in-building-codes-using-vi
+    title: Table Comprehension in Building Codes using Vision Language Models and Domain-Specific
+      Fine-Tuning
+    url: https://arxiv.org/pdf/2511.18306v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: standards_protocols
+    format: pdf
+    language: en
+    published_at: '2025-11-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.18306
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.18306 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-dsocc-leveraging-depth-awareness-and-semantic-
+    title: 'DSOcc: Leveraging Depth Awareness and Semantic Aid to Boost Camera-Based
+      3D Semantic Occupancy Prediction'
+    url: https://arxiv.org/pdf/2505.20951v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-05-27'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.20951
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.20951 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-adversarial-patch-attacks-on-vision-based-carg
+    title: Adversarial Patch Attacks on Vision-Based Cargo Occupancy Estimation via
+      Differentiable 3D Simulation
+    url: https://arxiv.org/pdf/2511.19254v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-11-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.19254
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.19254 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
