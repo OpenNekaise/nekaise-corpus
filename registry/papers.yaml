@@ -187341,3 +187341,108 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W2750422731
     resolution: 'legacy: openalex location'
+  - id: oas-w7162969732
+    title: Estimation of Sedimentary Structure in Fukui Plain Based on Microtremor Observation
+    url: https://u-fukui.repo.nii.ac.jp/record/24655/files/KK_009_2002_014_019.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-11-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7162969732
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://u-fukui.repo.nii.ac.jp/record/24655/files/KK_009_2002_014_019.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7162969732
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208009591
+    title: '常時微動から推定される伝統的木造建築物の振動特性 : 真楽寺三重塔修理前後の特性比較'
+    url: https://nagano-nct.repo.nii.ac.jp/record/221/files/nagano_nct-36-21.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-06-28'
+    document_type: article
+    persistent_id: https://openalex.org/W7208009591
+    license_evidence: no licence statement for this copy [copy https://nagano-nct.repo.nii.ac.jp/record/221/files/nagano_nct-36-21.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208009591
+    resolution: 'sim1: openalex location'
+  - id: oas-w640974175
+    title: 平成十三（二〇〇一）年度妙心寺養源院の建築及び障壁画の調査研究報告
+    url: https://kansai-u.repo.nii.ac.jp/record/1003/files/KU-0200HK-20020331-04s.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W640974175
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kansai-u.repo.nii.ac.jp/record/1003/files/KU-0200HK-20020331-04s.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W640974175
+    resolution: 'sim1: openalex location'
+  - id: oas-w7208148057
+    title: 中井家絵図より見た京都所司代の上屋敷、中屋敷、下屋敷の建築について
+    url: https://ocu-omu.repo.nii.ac.jp/record/2015424/files/DB00010609.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-03-31'
+    document_type: article
+    persistent_id: https://openalex.org/W7208148057
+    license_evidence: no licence statement for this copy [copy https://ocu-omu.repo.nii.ac.jp/record/2015424/files/DB00010609.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7208148057
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144984219
+    title: 鳥居徳敏著 『ガウディの建築ルーツ』
+    url: https://kanagawa-u.repo.nii.ac.jp/record/1724/files/23-22.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-03-23'
+    document_type: article
+    persistent_id: https://openalex.org/W7144984219
+    license_evidence: no licence statement for this copy [copy https://kanagawa-u.repo.nii.ac.jp/record/1724/files/23-22.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144984219
+    resolution: 'sim1: openalex location'
+  - id: oas-w7145915815
+    title: '単位制高等学校の建築計画に関する研究 : 居場所の特性と情報伝達の仕組み(その1)'
+    url: https://niigata-u.repo.nii.ac.jp/record/4001/files/110004660466.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '2002-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7145915815
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://niigata-u.repo.nii.ac.jp/record/4001/files/110004660466.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7145915815
+    resolution: 'sim1: openalex location'
