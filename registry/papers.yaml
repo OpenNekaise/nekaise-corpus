@@ -187780,3 +187780,105 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7166489985
     resolution: 'sim1: openalex location'
+  - id: oas-10-15113-00013473-e030a06c
+    title: 'スズメPasser montanus saturatus（スズメ目･ハタオリドリ科）および数種の鳥類の現代建築物と構造物利用の習性 : 鳥類の人為環境における棲息II'
+    url: https://iwate-u.repo.nii.ac.jp/record/13479/files/al-no55p235-248.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.15113/00013473
+    license_evidence: no licence statement for this copy [copy https://iwate-u.repo.nii.ac.jp/record/13479/files/al-no55p235-248.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: doi:10.15113/00013473 openalex:W581946815
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144610773
+    title: '住宅団地の都市気候環境 : 多摩ニュータウン南大沢地区の事例'
+    url: https://tokyo-metro-u.repo.nii.ac.jp/record/5487/files/20024-053-007.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1994-01-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7144610773
+    license_evidence: no licence statement for this copy [copy https://tokyo-metro-u.repo.nii.ac.jp/record/5487/files/20024-053-007.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144610773
+    resolution: 'sim1: openalex location'
+  - id: oas-w1607112810
+    title: '福岡ドームの設備概要 : 竹中工務店・前田建設工業共同施計・施工-'
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/7471/1-8-3_p303-311.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-11-01'
+    document_type: article
+    persistent_id: https://openalex.org/W1607112810
+    license_evidence: no licence statement for this copy [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/7471/1-8-3_p303-311.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1607112810
+    resolution: 'sim1: openalex location'
+  - id: oas-w7144914871
+    title: '聾学校の児童・生徒数の推移について : 聾学校の建築計画に関する基礎的研究３'
+    url: https://tsukuba-tech.repo.nii.ac.jp/record/1299/files/gakuju93_hirane_001.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-07-25'
+    document_type: article
+    persistent_id: https://openalex.org/W7144914871
+    license_evidence: no licence statement for this copy [copy https://tsukuba-tech.repo.nii.ac.jp/record/1299/files/gakuju93_hirane_001.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144914871
+    resolution: 'sim1: openalex location'
+  - id: oas-w390385466
+    title: 地理情報システム(GIS)研究とGIS教育の必要性
+    url: https://nara-u.repo.nii.ac.jp/record/2001519/files/AN00181569-19930300-1012.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W390385466
+    license_evidence: no licence statement for this copy [copy https://nara-u.repo.nii.ac.jp/record/2001519/files/AN00181569-19930300-1012.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W390385466
+    resolution: 'sim1: openalex location'
+  - id: oas-w57862854
+    title: 'ガウディ : 建築と彫刻の“融合”への挑戦'
+    url: https://atomi.repo.nii.ac.jp/record/1946/files/atomi-bigaku-21-4.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1993-03-01'
+    document_type: article
+    persistent_id: https://openalex.org/W57862854
+    license_evidence: no licence statement for this copy [copy https://atomi.repo.nii.ac.jp/record/1946/files/atomi-bigaku-21-4.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W57862854
+    resolution: 'sim1: openalex location'
