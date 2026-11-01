@@ -186970,23 +186970,6 @@ sources:
     selected_version: publishedVersion
     origin_ids: doi:10.3389/fcomp.2026.1800319 openalex:W7141211125
     resolution: 'ai1: openalex location'
-  - id: oas-w621987907
-    title: '建築構造物の地震被害予測に関する実地調査研究・III : 瀬戸市の調査結果'
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2004-12-15'
-    document_type: article
-    persistent_id: https://openalex.org/W621987907
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC12000224&elmid=Body&fname=E01_040_081.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-10-31'
-    selected_version: submittedVersion
-    origin_ids: openalex:W621987907
-    resolution: 'sim1: openalex location'
   - id: oas-w1606764117
     title: 産業学習「住宅建築」の授業展開 ： 小学校における都市型社会科カリキュラム開発
     url: https://hyogo-u.repo.nii.ac.jp/record/634/files/AN104043200160006.pdf
@@ -187989,3 +187972,141 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.15094/00008629 openalex:W2110752084
     resolution: 'sim1: openalex location'
+  - id: oas-w2127410084
+    title: '西ドイツ建築法における「隣人利益の配慮原則」 (一) : 二重効果的行政行為の取消理由に関連して'
+    url: https://niigata-u.repo.nii.ac.jp/record/30108/files/19%281%29_54-94.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1987-11-01'
+    document_type: article
+    persistent_id: https://openalex.org/W2127410084
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://niigata-u.repo.nii.ac.jp/record/30108/files/19%281%29_54-94.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2127410084
+    resolution: 'sim1: openalex location'
+  - id: oas-w7212417552
+    title: 醸造建築の調査研究
+    url: https://kindai.repo.nii.ac.jp/record/2004828/files/AN00063653-19861201-0051.pdf
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1986-12-01'
+    document_type: article
+    persistent_id: https://openalex.org/W7212417552
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://kindai.repo.nii.ac.jp/record/2004828/files/AN00063653-19861201-0051.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7212417552
+    resolution: 'sim1: openalex location'
+  - id: arx-robust-computer-vision-based-construction-site
+    title: Robust Computer-Vision based Construction Site Detection for Assistive-Technology
+      Applications
+    url: https://arxiv.org/pdf/2503.04139v2
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-03-06'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2503.04139
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2503.04139 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-lidar-based-tracking-of-traffic-participants-w
+    title: Lidar-based Tracking of Traffic Participants with Sensor Nodes in Existing
+      Urban Infrastructure
+    url: https://arxiv.org/pdf/2509.20009v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-09-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.20009
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.20009 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-zero-shot-detection-of-buildings-in-mobile-lid
+    title: Zero-shot detection of buildings in mobile LiDAR using Language Vision Model
+    url: https://arxiv.org/pdf/2404.09931v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-04-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2404.09931
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2404.09931 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
+    origin_ids: doi:10.5194/isprs-archives-xlviii-2-2024-107-2024
+  - id: arx-safety-assessment-of-scaffolding-on-constructi
+    title: Safety Assessment of Scaffolding on Construction Site using AI
+    url: https://arxiv.org/pdf/2509.21368v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2025-09-22'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.21368
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.21368 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-extracting-actionable-insights-from-building-e
+    title: Extracting Actionable Insights from Building Energy Data using Vision LLMs
+      on Wavelet and 3D Recurrence Representations
+    url: https://arxiv.org/pdf/2509.21934v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.21934
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.21934 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-on-an-optimization-framework-for-damage-locali
+    title: On an optimization framework for damage localization in structures
+    url: https://arxiv.org/pdf/2509.22492v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.22492
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.22492 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
