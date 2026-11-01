@@ -187624,23 +187624,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W134112724
     resolution: 'sim1: openalex location'
-  - id: oas-w413185441
-    title: 建築構造物の減衰性能と生体の生理反応--座位・立位での振動暴露に対する手掌部発汗
-    url: http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10102222&elmid=Body&fname=079_Kotake.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '1997-12-01'
-    document_type: article
-    persistent_id: https://openalex.org/W413185441
-    license_evidence: no licence statement for this copy [copy http://elib.bliss.chubu.ac.jp/webopac/bdyview.do?bodyid=XC10102222&elmid=Body&fname=079_Kotake.pdf;
-      version submittedVersion; rights unknown]
-    rights_verified_at: '2026-11-01'
-    selected_version: submittedVersion
-    origin_ids: openalex:W413185441
-    resolution: 'sim1: openalex location'
   - id: oas-w1505942057
     title: '建築請負人の債権担保に関する考察 : スイス法・ドイツ法を手掛かりに,転用物(verso in rem)の視角から(三)(完)'
     url: https://barrel.repo.nii.ac.jp/record/1396/files/ER_47(1)_137-187.pdf
@@ -188967,6 +188950,74 @@ sources:
     persistent_id: doi:10.48550/arxiv.2511.02018
     license_url: http://creativecommons.org/licenses/by/4.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.02018 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-uwbcargraz-dataset-for-car-occupancy-detection
+    title: '"UWBCarGraz" Dataset for Car Occupancy Detection using Ultra-Wideband Radar'
+    url: https://arxiv.org/pdf/2311.10478v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2023-11-17'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2311.10478
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2311.10478 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-01'
+    origin_ids: doi:10.1109/radarconf2458775.2024.10549280
+  - id: arx-tunable-multistage-refrigeration-via-geometric
+    title: Tunable Multistage Refrigeration via Geometrically Frustrated Triangular
+      Lattice Antiferromagnet for Space Cooling
+    url: https://arxiv.org/pdf/2511.03254v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-11-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.03254
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.03254 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-svg-decomposition-for-enhancing-large-multimod
+    title: 'SVG Decomposition for Enhancing Large Multimodal Models Visualization Comprehension:
+      A Study with Floor Plans'
+    url: https://arxiv.org/pdf/2511.03478v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-11-05'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.03478
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.03478 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-reasoning-is-all-you-need-for-urban-planning-a
+    title: Reasoning Is All You Need for Urban Planning AI
+    url: https://arxiv.org/pdf/2511.05375v1
+    source: arxiv
+    license: cc-by
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-11-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2511.05375
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2511.05375 (v1, the current
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-01'
