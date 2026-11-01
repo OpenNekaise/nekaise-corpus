@@ -188567,3 +188567,88 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-01'
+  - id: oas-w7144399595
+    title: RC学校建築の耐震性判定基準案の適用について
+    url: https://meiji.repo.nii.ac.jp/record/5682/files/kougakubuhokoku_29_207.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1974-12-15'
+    document_type: article
+    persistent_id: https://openalex.org/W7144399595
+    license_evidence: no licence statement for this copy [copy https://meiji.repo.nii.ac.jp/record/5682/files/kougakubuhokoku_29_207.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W7144399595
+    resolution: 'sim1: openalex location'
+  - id: arx-mcop-multi-uav-collaborative-occupancy-predict
+    title: 'MCOP: Multi-UAV Collaborative Occupancy Prediction'
+    url: https://arxiv.org/pdf/2510.12679v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-10-14'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.12679
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.12679 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
+  - id: arx-complementary-information-guided-occupancy-pre
+    title: Complementary Information Guided Occupancy Prediction via Multi-Level Representation
+      Fusion
+    url: https://arxiv.org/pdf/2510.13198v1
+    source: arxiv
+    license: cc-by
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-10-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.13198
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.13198 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-autonomous-reactive-masonry-construction-using
+    title: Autonomous Reactive Masonry Construction using Collaborative Heterogeneous
+      Aerial Robots with Experimental Demonstration
+    url: https://arxiv.org/pdf/2510.15114v1
+    source: arxiv
+    license: cc-by
+    topic: materials
+    format: pdf
+    language: en
+    published_at: '2025-10-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2510.15114
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2510.15114 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-01'
+  - id: arx-lopr-latent-occupancy-prediction-using-generat
+    title: 'LOPR: Latent Occupancy PRediction using Generative Models'
+    url: https://arxiv.org/pdf/2210.01249v4
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2022-10-03'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2210.01249
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2210.01249 (v4, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-01'
