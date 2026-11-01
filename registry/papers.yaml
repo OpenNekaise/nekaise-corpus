@@ -187675,3 +187675,20 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W413185441
     resolution: 'sim1: openalex location'
+  - id: oas-w1505942057
+    title: '建築請負人の債権担保に関する考察 : スイス法・ドイツ法を手掛かりに,転用物(verso in rem)の視角から(三)(完)'
+    url: https://barrel.repo.nii.ac.jp/record/1396/files/ER_47(1)_137-187.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: ja
+    published_at: '1996-07-31'
+    document_type: article
+    persistent_id: https://openalex.org/W1505942057
+    license_evidence: no licence statement for this copy [copy https://barrel.repo.nii.ac.jp/record/1396/files/ER_47(1)_137-187.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-01'
+    selected_version: submittedVersion
+    origin_ids: openalex:W1505942057
+    resolution: 'sim1: openalex location'
