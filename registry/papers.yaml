@@ -157408,24 +157408,6 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-10-19'
     origin_ids: doi:10.1214/ejp.v20-3744
-  - id: oas-w7221481425
-    title: 局部座屈崩壊形式を考慮した H 形断面梁部材の構造性能評価
-    url: https://isct.repo.nii.ac.jp/record/2003214/files/1757035592885.pdf
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: ja
-    published_at: '2025-09-01'
-    document_type: article
-    persistent_id: https://openalex.org/W7221481425
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
-      [copy https://isct.repo.nii.ac.jp/record/2003214/files/1757035592885.pdf; version
-      submittedVersion; rights restricted]
-    rights_verified_at: '2026-10-19'
-    selected_version: submittedVersion
-    origin_ids: openalex:W7221481425
-    resolution: 'sim1: openalex location'
   - id: oas-w7221487927
     title: 部材形状と板要素材端の境界条件が冷間成形溝形断面部材の弾性座屈耐力と最大耐力の関係性に及ぼす影響
     url: https://isct.repo.nii.ac.jp/record/2003203/files/1754306693803.pdf
@@ -191309,24 +191291,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: doi:10.1016/j.resconrec.2015.03.015 openalex:W2000295761
     resolution: 'legacy: openalex location'
-  - id: ope-set-in-stone-a-perspective-on-the-concrete-sus
-    title: Set in stone? A perspective on the concrete sustainability challenge
-    url: https://dspace.mit.edu/bitstream/1721.1/77557/1/Buehler_Set%20in%20stone.pdf
-    source: openalex
-    license: cc-by-nc
-    topic: standards_protocols
-    format: pdf
-    language: en
-    published_at: '2012-04-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1557/mrs.2012.55
-    license_evidence: openalex.license=cc-by-nc; openalex.license_id=https://openalex.org/licenses/cc-by-nc
-      [copy https://dspace.mit.edu/bitstream/1721.1/77557/1/Buehler_Set%20in%20stone.pdf;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-11-02'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1557/mrs.2012.55 openalex:W1996256226
-    resolution: 'legacy: openalex location'
   - id: ope-digital-twins-for-urban-underground-space
     title: Digital twins for urban underground space
     url: https://www.repository.cam.ac.uk/bitstreams/c80e1404-5938-41da-8478-3975c75caf56/download
@@ -192856,6 +192820,76 @@ sources:
     persistent_id: doi:10.48550/arxiv.2512.07527
     license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
     license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.07527 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+  - id: oas-10-1016-j-egyr-2020-11-011-7317469d
+    title: Investigations towards lower cooling load in a typical residential building
+      in Kurdistan (Iraq)
+    url: http://researchrepository.napier.ac.uk/Output/2787393
+    source: openalex_sim
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-11-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyr.2020.11.011
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
+      unpaywall.license=cc-by-nc-nd [copy http://researchrepository.napier.ac.uk/Output/2787393;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.egyr.2020.11.011 openalex:W3109005860
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
+  - id: arx-multi-agent-home-energy-management-assistant
+    title: Multi-Agent Home Energy Management Assistant
+    url: https://arxiv.org/pdf/2602.15219v2
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-02-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.15219
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.15219 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1016/j.softx.2026.102633
+  - id: arx-few-shot-incremental-3d-object-detection-in-dy
+    title: Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments
+    url: https://arxiv.org/pdf/2604.07997v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-04-09'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.07997
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.07997 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-02'
+  - id: arx-nested-radially-monotone-polar-occupancy-estim
+    title: 'Nested Radially Monotone Polar Occupancy Estimation: Clinically-Grounded
+      Optic Disc and Cup Segmentation for Glaucoma Screening'
+    url: https://arxiv.org/pdf/2604.09062v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-04-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.09062
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.09062 (v1, the current
       version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
