@@ -191328,3 +191328,57 @@ sources:
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-02'
     origin_ids: doi:10.1016/j.compenvurbsys.2025.102393
+  - id: ope-enhancing-retrofitting-measure-assessment-in-r
+    title: Enhancing retrofitting measure assessment in residential buildings through
+      a Shapley Additive Explanations interaction weighting method
+    url: https://eprints.leedsbeckett.ac.uk/id/eprint/13208/1/EnhancingRetrofittingMeasureAssessmentInResidentialBuildingsThroughAShapleyAdditiveExplanationsInteractionWeightingMethodPV-SHAKEEL.pdf
+    source: openalex
+    license: unverified
+    topic: equipment_systems
+    format: pdf
+    language: en
+    published_at: '2026-06-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.egyr.2026.109463
+    license_evidence: openalex.license=other-oa; openalex.license_id=https://openalex.org/licenses/other-oa
+      [copy https://eprints.leedsbeckett.ac.uk/id/eprint/13208/1/EnhancingRetrofittingMeasureAssessmentInResidentialBuildingsThroughAShapleyAdditiveExplanationsInteractionWeightingMethodPV-SHAKEEL.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1016/j.egyr.2026.109463 openalex:W7166472800
+    resolution: 'legacy: openalex location'
+  - id: arx-directly-from-alpha-to-omega-controllable-end-
+    title: 'Directly from Alpha to Omega: Controllable End-to-End Vector Floor Plan
+      Generation'
+    url: https://arxiv.org/pdf/2602.20377v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-02-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.20377
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.20377 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1109/tvcg.2026.3665422
+  - id: arx-qwen-bim-developing-large-language-model-for-b
+    title: 'Qwen-BIM: developing large language model for BIM-based design with domain-specific
+      benchmark and dataset'
+    url: https://arxiv.org/pdf/2602.20812v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2026-02-24'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.20812
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.20812 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-02'
