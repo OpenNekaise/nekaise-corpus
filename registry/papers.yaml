@@ -192359,3 +192359,276 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-02'
+  - id: ope-effect-of-surface-carbonization-on-mechanical-
+    title: Effect of surface carbonization on mechanical properties of LVL
+    url: https://bioresources.cnr.ncsu.edu/wp-content/uploads/2018/11/BioRes_14_1_453_Wang_WCZZ_Effect_Surface_Carbonization_Mechan-Props_LVL_14154.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2018-11-26'
+    document_type: article
+    persistent_id: https://doi.org/10.15376/biores.14.1.453-463
+    license_evidence: no licence statement for this copy [copy https://bioresources.cnr.ncsu.edu/wp-content/uploads/2018/11/BioRes_14_1_453_Wang_WCZZ_Effect_Surface_Carbonization_Mechan-Props_LVL_14154.pdf;
+      version publishedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.15376/biores.14.1.453-463 openalex:W2907226464
+    resolution: 'legacy: openalex location'
+  - id: ope-structural-resistance-of-reinforced-concrete-b
+    title: Structural Resistance of Reinforced Concrete Buildings in Areas of Moderate
+      Seismicity and Assessment of Strategies for Structural Improvement
+    url: https://centaur.reading.ac.uk/73139/1/Art%C3%ADculo%20Buildings%202017.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2017-10-13'
+    document_type: article
+    persistent_id: https://doi.org/10.3390/buildings7040089
+    license_evidence: no licence statement for this copy [copy https://centaur.reading.ac.uk/73139/1/Art%C3%ADculo%20Buildings%202017.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.3390/buildings7040089 openalex:W2761729925
+    resolution: 'legacy: openalex location'
+  - id: ope-probabilistic-prediction-of-the-failure-mode-o
+    title: Probabilistic prediction of the failure mode of the Ruytenschildt Bridge
+    url: https://repository.tudelft.nl/file/File_eec2754e-1de7-47d7-9c2a-a87ce005fe6e
+    source: openalex
+    license: cc-by-nc-sa
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2016-09-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2016.08.054
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa
+      [copy https://repository.tudelft.nl/file/File_eec2754e-1de7-47d7-9c2a-a87ce005fe6e;
+      version publishedVersion; rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1016/j.engstruct.2016.08.054 openalex:W2518696082
+    resolution: 'legacy: openalex location'
+  - id: ope-flexural-behavior-of-prestressed-concrete-mono
+    title: Flexural behavior of prestressed concrete monoblock crossties
+    url: https://www.ideals.illinois.edu/items/91286/bitstreams/237422/data.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2015-12-11'
+    document_type: article
+    persistent_id: https://openalex.org/W2591764171
+    license_evidence: no licence statement for this copy [copy https://www.ideals.illinois.edu/items/91286/bitstreams/237422/data.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2591764171
+    resolution: 'legacy: openalex location'
+  - id: ope-seismic-damage-estimation-of-in-plane-regular-
+    title: Seismic damage estimation of in-plane regular steel moment resisting and
+      x-braced frames
+    url: https://researchonline.ljmu.ac.uk/id/eprint/3766/1/Estimation%20of%20Damage-deposit.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2012-10-25'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s10518-012-9387-2
+    license_evidence: no licence statement for this copy [copy https://researchonline.ljmu.ac.uk/id/eprint/3766/1/Estimation%20of%20Damage-deposit.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s10518-012-9387-2 openalex:W2054365480
+    resolution: 'legacy: openalex location'
+  - id: ope-estimating-the-compressive-strength-of-lightwe
+    title: Estimating the compressive strength of lightweight foamed concrete using
+      different machine learning-based symbolic regression techniques
+    url: https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2024.1446597/pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-08-27'
+    document_type: article
+    persistent_id: https://doi.org/10.3389/fbuil.2024.1446597
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://www.frontiersin.org/journals/built-environment/articles/10.3389/fbuil.2024.1446597/pdf;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-11-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.3389/fbuil.2024.1446597 openalex:W4401928548
+    resolution: 'legacy: openalex location'
+  - id: ope-punching-shear-behavior-and-corrosion-resistan
+    title: Punching shear behavior and corrosion resistance of composite slab-column
+      connections reinforced by BFRP and steel rebar
+    url: https://openaccess.city.ac.uk/id/eprint/32341/1/JSE-LSL-corrosion%26BFRP-0802-FF-city.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2024-02-10'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2024.117589
+    license_evidence: no licence statement for this copy [copy https://openaccess.city.ac.uk/id/eprint/32341/1/JSE-LSL-corrosion%26BFRP-0802-FF-city.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2024.117589 openalex:W4391720941
+    resolution: 'legacy: openalex location'
+  - id: ope-shear-cracking-behavior-of-pre-damaged-pva-agg
+    title: 'Shear cracking behavior of pre-damaged PVA-aggregate mixed ECC beams: Direct
+      observation using DIC'
+    url: https://eprints.lib.hokudai.ac.jp/repo/huscap/all/97063/Revised manuscript.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-11-29'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engfracmech.2023.109757
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://eprints.lib.hokudai.ac.jp/repo/huscap/all/97063/Revised manuscript.pdf;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engfracmech.2023.109757 openalex:W4389119061
+    resolution: 'legacy: openalex location'
+  - id: ope-comparative-performance-analysis-of-ground-sla
+    title: Comparative performance analysis of ground slabs and beams reinforced with
+      macro polypropylene fibre, steel fibre, and steel mesh
+    url: https://researchonline.jcu.edu.au/79594/1/Comparative%20performance%20analysis%20of%20ground%20slabs%20and%20beams%20reinforced%20with%20steel%20and%20plastic%20fibres.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-07-21'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.istruc.2023.104920
+    license_evidence: no licence statement for this copy [copy https://researchonline.jcu.edu.au/79594/1/Comparative%20performance%20analysis%20of%20ground%20slabs%20and%20beams%20reinforced%20with%20steel%20and%20plastic%20fibres.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.istruc.2023.104920 openalex:W4385208513
+    resolution: 'legacy: openalex location'
+  - id: ope-evaluation-of-seismic-residual-capacity-ratio-
+    title: Evaluation of seismic residual capacity ratio for reinforced concrete structures
+    url: https://isct.repo.nii.ac.jp/record/2004645/files/1684387620641.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2023-03-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.rcns.2023.02.004
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://isct.repo.nii.ac.jp/record/2004645/files/1684387620641.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.rcns.2023.02.004 openalex:W4322768740
+    resolution: 'legacy: openalex location'
+  - id: ope-a-new-damage-factor-for-seismic-assessment-of-
+    title: A new damage factor for seismic assessment of deficient bare and FRP-retrofitted
+      RC structures
+    url: https://discovery.dundee.ac.uk/ws/files/124343929/Mourlas_AAM.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-09-27'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2021.113152
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://discovery.dundee.ac.uk/ws/files/124343929/Mourlas_AAM.pdf; version
+      submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2021.113152 openalex:W3201869869
+    resolution: 'legacy: openalex location'
+  - id: ope-testing-robustness-a-full-scale-experimental-t
+    title: 'Testing robustness: A full-scale experimental test on a two-storey reinforced
+      concrete frame with solid slabs'
+    url: https://repositorio.comillas.edu/bitstreams/cb426ce7-76da-49e1-918a-a0efebeed081/download
+    source: openalex
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-05-04'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.engstruct.2021.112411
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://repositorio.comillas.edu/bitstreams/cb426ce7-76da-49e1-918a-a0efebeed081/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.engstruct.2021.112411 openalex:W3157324883
+    resolution: 'legacy: openalex location'
+  - id: ope-experimental-and-numerical-analysis-on-the-eff
+    title: Experimental and numerical analysis on the effectiveness of GFRP wrapping
+      system on timber pile rehabilitation
+    url: https://eprints.qut.edu.au/212839/1/97404787.pdf
+    source: openalex
+    license: cc-by-nc-nd
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2021-04-22'
+    document_type: article
+    persistent_id: https://doi.org/10.1016/j.cscm.2021.e00552
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://eprints.qut.edu.au/212839/1/97404787.pdf; version submittedVersion;
+      rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1016/j.cscm.2021.e00552 openalex:W3159492189
+    resolution: 'legacy: openalex location'
+  - id: ope-numerical-simulation-of-the-daikai-station-sub
+    title: Numerical Simulation of the Daikai Station Subway Structure Collapse due
+      to Sudden Uplift during Earthquake
+    url: https://muroran-it.repo.nii.ac.jp/record/10513/files/JEM_147_3_04020152.pdf
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-12-18'
+    document_type: article
+    persistent_id: https://doi.org/10.1061/(asce)em.1943-7889.0001895
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://muroran-it.repo.nii.ac.jp/record/10513/files/JEM_147_3_04020152.pdf;
+      version submittedVersion; rights accepted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1061/(asce)em.1943-7889.0001895 openalex:W3117709483
+    resolution: 'legacy: openalex location'
+  - id: arx-adasformer-adaptive-serialized-transformers-fo
+    title: 'AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene
+      Completion from Indoor Environments'
+    url: https://arxiv.org/pdf/2603.25494v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-03-26'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2603.25494
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2603.25494 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
