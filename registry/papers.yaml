@@ -191526,3 +191526,37 @@ sources:
     selected_version: acceptedVersion
     origin_ids: doi:10.48550/arxiv.2102.02622 openalex:W3126628409
     resolution: 'legacy: openalex location'
+  - id: oas-10-1184-r1-6715931-54529b53
+    title: Device-Level Data Analytics to Guide Policy
+    url: http://repository.cmu.edu/dissertations/896
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1184/r1/6715931
+    license_evidence: no licence statement for this copy [copy http://repository.cmu.edu/dissertations/896;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1184/r1/6715931 openalex:W2615161488
+    resolution: 'sim1: openalex location; resolution retry'
+  - id: oas-10-48550-arxiv-2404-12486-1ec4753b
+    title: 'Follow-Me AI: Energy-Efficient User Interaction with Smart Environments'
+    url: https://arxiv.org/pdf/2404.12486
+    source: openalex_ai
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2024-04-18'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2404.12486
+    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd
+      [copy https://arxiv.org/pdf/2404.12486; version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2404.12486 openalex:W4395021965
+    resolution: 'ai1: openalex location'
