@@ -191221,3 +191221,110 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-02'
+  - id: oas-10-1007-s12273-017-0347-2-895a5ab9
+    title: Simulation-based analysis of the use of PCM-wallboards to reduce cooling
+      energy demand and peak-loads in low-rise residential heavyweight buildings in
+    url: https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download
+    source: openalex_sim
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2017-01-16'
+    document_type: article
+    persistent_id: https://doi.org/10.1007/s12273-017-0347-2
+    license_evidence: openalex.license=cc-by-nc-sa; openalex.license_id=https://openalex.org/licenses/cc-by-nc-sa;
+      unpaywall.license=cc-by-nc-sa [copy https://dspace.mit.edu/bitstreams/6e1cd1f9-6c6e-4cc1-ae2d-ca1ab1aa26ba/download;
+      version submittedVersion; rights restricted]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1007/s12273-017-0347-2 openalex:W2573472155
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
+  - id: arx-knowledge-driven-description-synthesis-for-flo
+    title: Knowledge driven Description Synthesis for Floor Plan Interpretation
+    url: https://arxiv.org/pdf/2103.08298v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-03-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2103.08298
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2103.08298 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1007/s10032-021-00367-3
+  - id: arx-can-wearable-exoskeletons-reduce-gender-and-di
+    title: Can Wearable Exoskeletons Reduce Gender and Disability Gaps in the Construction
+      Industry?
+    url: https://arxiv.org/pdf/2602.16631v1
+    source: arxiv
+    license: cc-by
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2026-02-18'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.16631
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.16631 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1080/10400435.2026.2615356
+  - id: arx-himap-history-aware-map-occupancy-prediction-w
+    title: 'HiMAP: History-aware Map-occupancy Prediction with Fallback'
+    url: https://arxiv.org/pdf/2602.17231v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-02-19'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.17231
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.17231 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+  - id: arx-graphgsocc-semantic-geometric-graph-transforme
+    title: 'GraphGSOcc: Semantic-Geometric Graph Transformer with Dynamic-Static Decoupling
+      for 3D Gaussian Splatting-based Occupancy Prediction'
+    url: https://arxiv.org/pdf/2506.14825v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-06-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2506.14825
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2506.14825 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1109/tcsvt.2026.3667111
+  - id: arx-learning-street-view-representations-with-spat
+    title: Learning Street View Representations with Spatiotemporal Contrast
+    url: https://arxiv.org/pdf/2502.04638v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-02-07'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2502.04638
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2502.04638 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1016/j.compenvurbsys.2025.102393
