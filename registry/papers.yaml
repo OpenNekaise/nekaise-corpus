@@ -190705,3 +190705,108 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-02'
+  - id: ope-cfd-simulation-of-air-pollution-distribution-a
+    title: CFD Simulation of Air Pollution Distribution and Its Effect on Patients in
+      Hospital Operating Rooms
+    url: https://journals.ust.edu/index.php/JST/article/download/1750/1536
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2021-03-11'
+    document_type: article
+    persistent_id: https://doi.org/10.20428/jst.25.2.1
+    license_evidence: no licence statement for this copy [copy https://journals.ust.edu/index.php/JST/article/download/1750/1536;
+      version publishedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.20428/jst.25.2.1 openalex:W3167495425
+    resolution: 'legacy: openalex location'
+  - id: ope-energy-performance-analysis-of-a-six-green-sta
+    title: Energy Performance Analysis of a Six Green Star Building
+    url: http://eprints.usq.edu.au/43084/13/Angove_T_Wandel_Redacted.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2020-10-01'
+    document_type: article
+    persistent_id: https://openalex.org/W3188612763
+    license_evidence: no licence statement for this copy [copy http://eprints.usq.edu.au/43084/13/Angove_T_Wandel_Redacted.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3188612763
+    resolution: 'legacy: openalex location'
+  - id: ope-the-effectiveness-of-energy-recovery-ventilato
+    title: The effectiveness of energy recovery ventilators (ERV) for air conditioning
+      systems in multi-purpose halls in North Queensland
+    url: http://eprints.usq.edu.au/43120/13/Morgan_G_Wandel_Redacted.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2019-10-01'
+    document_type: article
+    persistent_id: https://openalex.org/W3202394691
+    license_evidence: no licence statement for this copy [copy http://eprints.usq.edu.au/43120/13/Morgan_G_Wandel_Redacted.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: openalex:W3202394691
+    resolution: 'legacy: openalex location'
+  - id: ope-indoor-air-quality-and-ventilation-in-modern-a
+    title: Indoor air quality and ventilation in modern airtight homes
+    url: http://radar.gsa.ac.uk/4752/1/Practice%20note.pdf
+    source: openalex
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2016-08-01'
+    document_type: article
+    persistent_id: https://openalex.org/W2547814617
+    license_evidence: no licence statement for this copy [copy http://radar.gsa.ac.uk/4752/1/Practice%20note.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: openalex:W2547814617
+    resolution: 'legacy: openalex location'
+  - id: arx-shedding-the-facades-connecting-the-domains-de
+    title: 'Shedding the Facades, Connecting the Domains: Detecting Shifting Multimodal
+      Hate Video with Test-Time Adaptation'
+    url: https://arxiv.org/pdf/2602.00132v1
+    source: arxiv
+    license: cc-by
+    topic: architecture
+    format: pdf
+    language: en
+    published_at: '2026-01-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.00132
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.00132 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+  - id: arx-enhancing-indoor-occupancy-prediction-via-spar
+    title: Enhancing Indoor Occupancy Prediction via Sparse Query-Based Multi-Level
+      Consistent Knowledge Distillation
+    url: https://arxiv.org/pdf/2602.02318v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-02-02'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.02318
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.02318 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
