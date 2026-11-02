@@ -189314,25 +189314,6 @@ sources:
     selected_version: submittedVersion
     origin_ids: openalex:W7208375299
     resolution: 'sim1: openalex location'
-  - id: oas-10-1016-j-egyr-2020-11-011-7317469d
-    title: Investigations towards lower cooling load in a typical residential building
-      in Kurdistan (Iraq)
-    url: http://researchrepository.napier.ac.uk/Output/2787393
-    source: openalex_sim
-    license: cc-by-nc-nd
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2020-11-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1016/j.egyr.2020.11.011
-    license_evidence: openalex.license=cc-by-nc-nd; openalex.license_id=https://openalex.org/licenses/cc-by-nc-nd;
-      unpaywall.license=cc-by-nc-nd [copy http://researchrepository.napier.ac.uk/Output/2787393;
-      version submittedVersion; rights restricted]
-    rights_verified_at: '2026-11-01'
-    selected_version: submittedVersion
-    origin_ids: doi:10.1016/j.egyr.2020.11.011 openalex:W3109005860
-    resolution: 'sim1: openalex+unpaywall location; resolution retry'
   - id: arx-feasibility-of-embodied-dynamics-based-bayesia
     title: Feasibility of Embodied Dynamics Based Bayesian Learning for Continuous Pursuit
       Motion Control of Assistive Mobile Robots in the Built Environment
@@ -191064,3 +191045,89 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-11-02'
     origin_ids: doi:10.1002/adfm.202600032
+  - id: oas-10-48550-arxiv-2610-33148-fcb83759
+    title: Modeling Liquid-Cooled Data Centers in EnergyPlus
+    url: https://arxiv.org/pdf/2610.33148
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-10-23'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.33148
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.33148;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.33148 openalex:W7223819382
+    resolution: 'sim1: openalex location'
+  - id: oas-10-48550-arxiv-2610-31204-e020400a
+    title: Feeder-Aware Service-Conditioned Flexibility of Grid-Interactive Buildings
+    url: https://arxiv.org/pdf/2610.31204
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-10-22'
+    document_type: preprint
+    persistent_id: https://doi.org/10.48550/arxiv.2610.31204
+    license_evidence: no licence statement for this copy [copy https://arxiv.org/pdf/2610.31204;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.48550/arxiv.2610.31204 openalex:W7223407873
+    resolution: 'sim1: openalex location'
+  - id: arx-a-large-language-model-for-disaster-structural
+    title: A Large Language Model for Disaster Structural Reconnaissance Summarization
+    url: https://arxiv.org/pdf/2602.11588v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-02-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.11588
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.11588 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+  - id: arx-zero-shot-adaptation-to-robot-structural-damag
+    title: Zero-Shot Adaptation to Robot Structural Damage via Natural Language-Informed
+      Kinodynamics Modeling
+    url: https://arxiv.org/pdf/2602.12385v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-02-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.12385
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.12385 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+  - id: arx-gaussianformer3d-multi-modal-gaussian-based-se
+    title: 'GaussianFormer3D: Multi-Modal Gaussian-based Semantic Occupancy Prediction
+      with 3D Deformable Attention'
+    url: https://arxiv.org/pdf/2505.10685v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-05-15'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2505.10685
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2505.10685 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
