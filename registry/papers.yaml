@@ -192894,3 +192894,55 @@ sources:
       -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
       to arXiv only))'
     rights_verified_at: '2026-11-02'
+  - id: arx-geoformer-a-lightweight-swin-transformer-for-j
+    title: 'GeoFormer: A Lightweight Swin Transformer for Joint Building Height and
+      Footprint Estimation from Sentinel Imagery'
+    url: https://arxiv.org/pdf/2602.09932v2
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-02-10'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.09932
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.09932 (v2, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+  - id: arx-a-mamba-based-multimodal-network-for-multiscal
+    title: A Mamba-Based Multimodal Network for Multiscale Blast-Induced Rapid Structural
+      Damage Assessment
+    url: https://arxiv.org/pdf/2604.11709v1
+    source: arxiv
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-04-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.11709
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.11709 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+  - id: arx-fall-risk-and-gait-analysis-in-community-dwell
+    title: Fall Risk and Gait Analysis in Community-Dwelling Older Adults using World-Spaced
+      3D Human Mesh Recovery
+    url: https://arxiv.org/pdf/2604.11961v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-04-13'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.11961
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.11961 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-02'
