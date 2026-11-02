@@ -189209,24 +189209,6 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-01'
-  - id: oas-10-1109-access-2023-3262934-07d066b6
-    title: Design of an EnergyPlus Model-Based Smart Controller for Maintaining Thermal
-      Comfortable Environment in Non-Domestic Building
-    url: https://e-space.mmu.ac.uk/632483/1/10086530.pdf
-    source: openalex_sim
-    license: unverified
-    topic: building_energy
-    format: pdf
-    language: en
-    published_at: '2023-01-01'
-    document_type: article
-    persistent_id: https://doi.org/10.1109/access.2023.3262934
-    license_evidence: no licence statement for this copy [copy https://e-space.mmu.ac.uk/632483/1/10086530.pdf;
-      version acceptedVersion; rights unknown]
-    rights_verified_at: '2026-11-01'
-    selected_version: acceptedVersion
-    origin_ids: doi:10.1109/access.2023.3262934 openalex:W4361801809
-    resolution: 'sim1: openalex+unpaywall location; resolution retry'
   - id: arx-sharp-barrier-estimates-for-bessel-bridges
     title: Sharp barrier estimates for Bessel bridges
     url: https://arxiv.org/pdf/2511.13416v1
@@ -191029,3 +191011,56 @@ sources:
     rights_verified_at: '2026-11-02T02:30:39Z'
     origin_ids: doi:10.3390/su11061665 openalex:W2924080607
     resolution: 'legacy: openalex location'
+  - id: arx-recitygen-interactive-and-generative-participa
+    title: RECITYGEN -- Interactive and Generative Participatory Urban Design Tool with
+      Latent Diffusion and Segment Anything
+    url: https://arxiv.org/pdf/2602.07057v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2026-02-04'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.07057
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.07057 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-02'
+  - id: arx-building-damage-detection-using-satellite-imag
+    title: Building Damage Detection using Satellite Images and Patch-Based Transformer
+      Methods
+    url: https://arxiv.org/pdf/2602.08117v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-02-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2602.08117
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2602.08117 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+  - id: arx-inducing-ferromagnetism-by-structural-engineer
+    title: Inducing ferromagnetism by structural engineering in a strongly spin-orbit
+      coupled oxide
+    url: https://arxiv.org/pdf/2507.22638v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2025-07-30'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2507.22638
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2507.22638 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1002/adfm.202600032
