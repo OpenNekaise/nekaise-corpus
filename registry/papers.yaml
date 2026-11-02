@@ -192632,3 +192632,57 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
       -> cc-by (canonical Creative Commons grant)'
     rights_verified_at: '2026-11-02'
+  - id: arx-sug-occ-explicit-semantics-and-uncertainty-gui
+    title: 'SUG-Occ: Explicit Semantics and Uncertainty Guided Sparse Learning for Efficient
+      3D Occupancy Prediction'
+    url: https://arxiv.org/pdf/2601.11396v5
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-01-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2601.11396
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2601.11396 (v5, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+  - id: arx-an-instance-centric-panoptic-occupancy-predict
+    title: An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous
+      Driving
+    url: https://arxiv.org/pdf/2603.27238v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-03-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2603.27238
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2603.27238 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+  - id: arx-class-distribution-guided-active-learning-for-
+    title: Class-Distribution Guided Active Learning for 3D Occupancy Prediction in
+      Autonomous Driving
+    url: https://arxiv.org/pdf/2603.27294v1
+    source: arxiv
+    license: cc-by-nc-nd
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2026-03-28'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2603.27294
+    license_url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2603.27294 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-nd/4.0/
+      -> cc-by-nc-nd (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1109/lra.2026.3678110
