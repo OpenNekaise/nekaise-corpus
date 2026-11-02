@@ -192790,3 +192790,73 @@ sources:
       to arXiv only))'
     rights_verified_at: '2026-11-02'
     origin_ids: doi:10.1109/iccd50377.2020.00022
+  - id: oas-10-1109-access-2023-3262934-07d066b6
+    title: Design of an EnergyPlus Model-Based Smart Controller for Maintaining Thermal
+      Comfortable Environment in Non-Domestic Building
+    url: https://e-space.mmu.ac.uk/632483/1/10086530.pdf
+    source: openalex_sim
+    license: unverified
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2023-01-01'
+    document_type: article
+    persistent_id: https://doi.org/10.1109/access.2023.3262934
+    license_evidence: no licence statement for this copy [copy https://e-space.mmu.ac.uk/632483/1/10086530.pdf;
+      version acceptedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: acceptedVersion
+    origin_ids: doi:10.1109/access.2023.3262934 openalex:W4361801809
+    resolution: 'sim1: openalex+unpaywall location; resolution retry'
+  - id: arx-bepo-dual-representation-for-3d-occupancy-pred
+    title: 'BePo: Dual Representation for 3D Occupancy Prediction'
+    url: https://arxiv.org/pdf/2506.07002v2
+    source: arxiv
+    license: cc-by-sa
+    topic: controls_bas
+    format: pdf
+    language: en
+    published_at: '2025-06-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2506.07002
+    license_url: http://creativecommons.org/licenses/by-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2506.07002 (v2, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-sa/4.0/
+      -> cc-by-sa (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+  - id: arx-the-hierarchical-morphotope-classification-a-t
+    title: 'The Hierarchical Morphotope Classification: A Theory-Driven Framework for
+      Large-Scale Analysis of Built Form'
+    url: https://arxiv.org/pdf/2509.10083v1
+    source: arxiv
+    license: cc-by
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2025-09-12'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2509.10083
+    license_url: http://creativecommons.org/licenses/by/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2509.10083 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by/4.0/
+      -> cc-by (canonical Creative Commons grant)'
+    rights_verified_at: '2026-11-02'
+    origin_ids: doi:10.1016/j.cities.2026.107047
+  - id: arx-from-orbit-to-ground-generative-city-photogram
+    title: 'From Orbit to Ground: Generative City Photogrammetry from Extreme Off-Nadir
+      Satellite Images'
+    url: https://arxiv.org/pdf/2512.07527v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: urban
+    format: pdf
+    language: en
+    published_at: '2025-12-08'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2512.07527
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2512.07527 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
