@@ -192946,3 +192946,110 @@ sources:
       version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
       -> cc-by-nc-sa (NC/ND Creative Commons licence)'
     rights_verified_at: '2026-11-02'
+  - id: ope-soil-organic-carbon-redistribution-by-water-er
+    title: Soil Organic Carbon Redistribution by Water Erosion – The Role of CO2 Emissions
+      for the Carbon Budget
+    url: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0096299&type=printable
+    source: openalex
+    license: cc-by
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2014-05-06'
+    document_type: article
+    persistent_id: https://doi.org/10.1371/journal.pone.0096299
+    license_evidence: openalex.license=cc-by; openalex.license_id=https://openalex.org/licenses/cc-by
+      [copy https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0096299&type=printable;
+      version publishedVersion; rights accepted]
+    rights_verified_at: '2026-11-02'
+    selected_version: publishedVersion
+    origin_ids: doi:10.1371/journal.pone.0096299 openalex:W2070649761
+    resolution: 'legacy: openalex location'
+  - id: ope-mechanical-properties-and-air-permeability-of-
+    title: Mechanical Properties and Air Permeability of Concrete Containing Waste Tires
+      Extracts
+    url: https://repository.uwl.ac.uk/id/eprint/7247/1/2020_JMCE_ASCE_-_Mechanical_properties_and_air_permeability_of_concrete_containing_waste_tyres_extracts_Accepted_manuscript.pdf
+    source: openalex
+    license: unverified
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2020-12-02'
+    document_type: article
+    persistent_id: https://doi.org/10.1061/(asce)mt.1943-5533.0003588
+    license_evidence: no licence statement for this copy [copy https://repository.uwl.ac.uk/id/eprint/7247/1/2020_JMCE_ASCE_-_Mechanical_properties_and_air_permeability_of_concrete_containing_waste_tyres_extracts_Accepted_manuscript.pdf;
+      version submittedVersion; rights unknown]
+    rights_verified_at: '2026-11-02'
+    selected_version: submittedVersion
+    origin_ids: doi:10.1061/(asce)mt.1943-5533.0003588 openalex:W3110343553
+    resolution: 'legacy: openalex location'
+  - id: arx-edge-zeta-functions-and-eigenvalues-for-buildi
+    title: Edge Zeta Functions and Eigenvalues for Buildings of Finite Groups of Lie
+      Type
+    url: https://arxiv.org/pdf/2405.14395v3
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2024-05-23'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2405.14395
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2405.14395 (v3, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+  - id: arx-chronological-knowledge-retrieval-a-retrieval-
+    title: 'Chronological Knowledge Retrieval: A Retrieval-Augmented Generation Approach
+      to Construction Project Documentation'
+    url: https://arxiv.org/pdf/2604.14169v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: construction
+    format: pdf
+    language: en
+    published_at: '2026-03-25'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.14169
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.14169 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
+  - id: arx-accelerating-cronet-on-amd-versal-aie-ml-engin
+    title: Accelerating CRONet on AMD Versal AIE-ML Engines
+    url: https://arxiv.org/pdf/2604.14700v1
+    source: arxiv
+    license: cc-by-nc-sa
+    topic: building_energy
+    format: pdf
+    language: en
+    published_at: '2026-04-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.14700
+    license_url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.14700 (v1, the current
+      version and the copy this URL names): http://creativecommons.org/licenses/by-nc-sa/4.0/
+      -> cc-by-nc-sa (NC/ND Creative Commons licence)'
+    rights_verified_at: '2026-11-02'
+  - id: arx-ms-sse-net-a-multi-scale-spatial-squeeze-and-e
+    title: 'MS-SSE-Net: A Multi-Scale Spatial Squeeze-and-Excitation Network for Structural
+      Damage Detection in Civil and Geotechnical Engineering'
+    url: https://arxiv.org/pdf/2604.14711v1
+    source: arxiv
+    license: arxiv-nonexclusive
+    topic: structures_civil
+    format: pdf
+    language: en
+    published_at: '2026-04-16'
+    document_type: preprint
+    persistent_id: doi:10.48550/arxiv.2604.14711
+    license_url: http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+    license_evidence: 'arXiv OAI-PMH arXivRaw oai:arXiv.org:2604.14711 (v1, the current
+      version and the copy this URL names): http://arxiv.org/licenses/nonexclusive-distrib/1.0/
+      -> arxiv-nonexclusive (arXiv non-exclusive distribution licence (grants distribution
+      to arXiv only))'
+    rights_verified_at: '2026-11-02'
