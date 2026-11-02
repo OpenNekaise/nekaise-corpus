@@ -836,6 +836,11 @@ EXIT_HELD = 75  # EX_TEMPFAIL: nothing was started; dig.sh retries on the next c
 def disk_hold(root: Path | None = None) -> str | None:
     """Why a round must not start for lack of disk space, or None. NEKAISE_MIN_FREE_GB overrides
     MIN_FREE_GB (an unparsable or negative value keeps the default)."""
+    hold = (ROOT if root is None else root) / "workspace" / ".capacity-hold"
+    # An operator's capacity investigation may need to outlive the maintenance lock.
+    # Keep this separate from .maintenance-blocked, which the maintainer recomputes.
+    if hold.exists():
+        return f"operator capacity hold at {hold}; review its release conditions before removing it"
     raw = os.environ.get("NEKAISE_MIN_FREE_GB")
     try:
         floor = float(raw) if raw else MIN_FREE_GB

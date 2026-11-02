@@ -1074,10 +1074,23 @@ def test_main_holds_a_round_on_low_disk_before_any_run(tmp_path, monkeypatch, ca
     assert "held: data disk has 5.0 GB free" in capsys.readouterr().err
 
 
+def test_capacity_hold_survives_free_space_and_floor_override(tmp_path, monkeypatch):
+    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(500))
+    monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "0")
+    hold = tmp_path / "workspace" / ".capacity-hold"
+    hold.parent.mkdir()
+    hold.write_text("Investigate peak round usage before release\n")
+    assert "operator capacity hold" in run_round.disk_hold(tmp_path)
+    hold.unlink()
+    assert run_round.disk_hold(tmp_path) is None
+
+
 def test_main_never_holds_recovery_on_low_disk(tmp_path, monkeypatch):
     monkeypatch.setattr(run_round, "ROOT", tmp_path)
     monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(5))
     monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "40")
+    (tmp_path / "workspace").mkdir(exist_ok=True)
+    (tmp_path / "workspace" / ".capacity-hold").write_text("capacity investigation\n")
     monkeypatch.setattr(sys, "argv", ["run_round.py", "--recover", rid("held-recover")])
 
     with pytest.raises(store.PendingTransaction):  # reached recovery, was not held

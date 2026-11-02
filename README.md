@@ -42,6 +42,12 @@ python scripts/run_round.py --skip-discovery --commit
 The runner fetches the registered sources, gates document quality, builds `corpus/`, and verifies
 the result before committing provenance locally. Budget disk space for all three stages shown above.
 
+For a capacity investigation that must outlive a maintenance window, write its reason and release
+conditions to `workspace/.capacity-hold` while holding the canonical round lock. New rounds then
+exit 75 without starting work; recovery and resume remain available. The maintainer does not clear
+this operator hold automatically. Remove it under the lock only after checking its release
+conditions. The normal 40 GB start guard and health thresholds remain unchanged.
+
 ## How it works
 
 ```text
