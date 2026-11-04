@@ -830,12 +830,14 @@ def nested_round_owner(st) -> str | None:
 # rollback and the store must then repair. Another project sharing the disk can fill it within
 # hours, so the check runs before every round. Recovery and resume are never held.
 MIN_FREE_GB = 40.0
+MIN_FREE_FRACTION = 0.04
 EXIT_HELD = 75  # EX_TEMPFAIL: nothing was started; dig.sh retries on the next cron minute
 
 
 def disk_hold(root: Path | None = None) -> str | None:
     """Why a round must not start for lack of disk space, or None. NEKAISE_MIN_FREE_GB overrides
-    MIN_FREE_GB (an unparsable or negative value keeps the default)."""
+    MIN_FREE_GB (invalid/non-finite values keep the default). The 4% floor always applies.
+    An assessed peak + reserves can require a higher absolute floor or an operator hold."""
     hold = (ROOT if root is None else root) / "workspace" / ".capacity-hold"
     # An operator's capacity investigation may need to outlive the maintenance lock.
     # Keep this separate from .maintenance-blocked, which the maintainer recomputes.
@@ -846,11 +848,13 @@ def disk_hold(root: Path | None = None) -> str | None:
         floor = float(raw) if raw else MIN_FREE_GB
     except ValueError:
         floor = MIN_FREE_GB
-    if floor < 0:
+    if not 0 <= floor < float("inf"):
         floor = MIN_FREE_GB
-    free = shutil.disk_usage(ROOT if root is None else root).free / 1e9
-    if free < floor:
-        return f"data disk has {free:.1f} GB free, below the {floor:g} GB a round needs"
+    disk = shutil.disk_usage(ROOT if root is None else root)
+    floor = max(floor, disk.total * MIN_FREE_FRACTION / 1e9)
+    free = disk.free / 1e9
+    if free <= floor:
+        return f"data disk has {free:.1f} GB free, at or below the {floor:g} GB start floor (max of absolute reserve and 4% of disk)"
     return None
 
 

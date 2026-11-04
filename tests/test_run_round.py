@@ -1042,21 +1042,21 @@ def test_resume_refusals_come_before_anything_is_adopted():
         None, None, {"status": "open", "kind": "standalone"}, None, [])
 
 
-def _disk(free_gb):
-    return lambda _path: SimpleNamespace(total=4000e9, used=4000e9 - free_gb * 1e9,
+def _disk(free_gb, total_gb=4000):
+    return lambda _path: SimpleNamespace(total=total_gb * 1e9, used=(total_gb - free_gb) * 1e9,
                                          free=free_gb * 1e9)
 
 
 def test_disk_hold_uses_floor_and_its_override(tmp_path, monkeypatch):
-    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(39.9))
+    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(39.9, total_gb=500))
     monkeypatch.delenv("NEKAISE_MIN_FREE_GB")
-    assert "39.9 GB free, below the 40 GB" in run_round.disk_hold(tmp_path)
+    assert "39.9 GB free, at or below the 40 GB" in run_round.disk_hold(tmp_path)
     monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "30")
     assert run_round.disk_hold(tmp_path) is None
-    for bad in ("-5", "lots"):
+    for bad in ("-5", "lots", "nan", "inf", "-inf"):
         monkeypatch.setenv("NEKAISE_MIN_FREE_GB", bad)
         assert run_round.disk_hold(tmp_path) is not None
-    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(40))
+    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(40.1, total_gb=500))
     monkeypatch.delenv("NEKAISE_MIN_FREE_GB")
     assert run_round.disk_hold(tmp_path) is None
 
@@ -1095,3 +1095,17 @@ def test_main_never_holds_recovery_on_low_disk(tmp_path, monkeypatch):
 
     with pytest.raises(store.PendingTransaction):  # reached recovery, was not held
         run_round.main()
+
+
+@pytest.mark.parametrize("free_gb,held", [(47.6, True), (159.999, True), (160, True), (160.001, False)])
+def test_disk_fraction_floor_cannot_be_lowered(tmp_path, monkeypatch, free_gb, held):
+    monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(free_gb))
+    monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "0")
+    assert (run_round.disk_hold(tmp_path) is not None) is held
+
+
+def test_assessed_absolute_reserve_can_raise_fraction_floor(tmp_path, monkeypatch):
+    monkeypatch.setenv("NEKAISE_MIN_FREE_GB", "200")
+    for free_gb, held in ((199, True), (200, True), (201, False)):
+        monkeypatch.setattr(run_round.shutil, "disk_usage", _disk(free_gb))
+        assert (run_round.disk_hold(tmp_path) is not None) is held

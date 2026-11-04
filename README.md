@@ -46,7 +46,12 @@ For a capacity investigation that must outlive a maintenance window, write its r
 conditions to `workspace/.capacity-hold` while holding the canonical round lock. New rounds then
 exit 75 without starting work; recovery and resume remain available. The maintainer does not clear
 this operator hold automatically. Remove it under the lock only after checking its release
-conditions. The normal 40 GB start guard and health thresholds remain unchanged.
+conditions. Independently of the marker, new rounds require free space strictly above the larger
+of 4% of filesystem capacity and 40 GB. `NEKAISE_MIN_FREE_GB` overrides the absolute floor;
+it cannot lower the 4% floor. Set it higher when assessed round peak storage plus 40 GB and
+explicit background/backup reserves require more headroom. These are preflight checks, not a
+reservation against other writers. Keep the operator hold while peak needs or reserves remain
+unknown; clearing 4% alone does not establish safe operating capacity. Health thresholds are unchanged.
 
 ## How it works
 
