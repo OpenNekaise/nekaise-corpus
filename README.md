@@ -53,6 +53,16 @@ explicit background/backup reserves require more headroom. These are preflight c
 reservation against other writers. Keep the operator hold while peak needs or reserves remain
 unknown; clearing 4% alone does not establish safe operating capacity. Health thresholds are unchanged.
 
+Rounds record `disk_usage` summaries in `logs/run_history.jsonl` for each command/finder/gate
+and the whole locked round (including snapshots, index warmup and rollback). The runner samples
+the repository filesystem at scope boundaries and every 10 seconds, recording start/end/minimum
+free bytes, maximum used bytes, and `peak_drop_bytes` (start free minus minimum free, floored at
+zero). Summaries also survive ordinary failures; sample errors mark them incomplete. These are
+observed filesystem peaks: other writers contribute, overlapping step peaks must not be summed,
+and short spikes between samples can be missed. Separate payload mounts need separate assessment.
+Hard kills can lose the unfinished scope's summary. Sampling neither releases a hold nor changes
+the floor; a supervised round and explicit reserves are still required before sustained growth.
+
 ## How it works
 
 ```text

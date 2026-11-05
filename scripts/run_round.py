@@ -47,6 +47,7 @@ import rotation
 import round_recovery
 import corpus_stats
 import dedup
+import disk_telemetry
 import staged_runs
 import store
 import store_authority
@@ -141,12 +142,29 @@ def finder_command(name: str, cfg: dict, rotation_state: dict,
     return [*cmd, "--append"]
 
 
+@contextmanager
+def record_disk_usage(run_id: str, step: str | None = None):
+    """Persist observed filesystem peaks even if a command or the round fails.
+
+    Overlapping steps measure the same filesystem; their peaks must not be summed.
+    The whole-round scope also covers snapshots, index warmup, merge and rollback.
+    """
+    metrics = {"complete": False, "last_error": "measurement did not start"}
+    try:
+        with disk_telemetry.measure(ROOT) as metrics:
+            yield
+    finally:
+        ops.run_event(run_id, "disk_usage", scope="round" if step is None else "step",
+                      **({"step": step} if step is not None else {}), **metrics)
+
+
 def run_command(step: str, cmd: list[str], env: dict, run_id: str) -> None:
     shown = shlex.join(cmd)
     print(f"\n== {step}: {shown}", flush=True)
     ops.run_event(run_id, "step_started", step=step, command=shown)
     started = time.monotonic()
-    result = subprocess.run(cmd, cwd=ROOT, env=env)
+    with record_disk_usage(run_id, step):
+        result = subprocess.run(cmd, cwd=ROOT, env=env)
     elapsed = round(time.monotonic() - started, 3)
     if result.returncode:
         ops.run_event(
@@ -306,7 +324,8 @@ def run_verify_parallel(gates: list[tuple[str, list[str]]], env: dict, run_id: s
                 gate_env[verify_generation.REPORT_ENV] = str(reports[step])
         # output goes to unlinked temp files, never pipes: a descendant that outlives the gate
         # (or survives cancellation) can then never block the round waiting for pipe EOF
-        with tempfile.TemporaryFile() as out_f, tempfile.TemporaryFile() as err_f:
+        with record_disk_usage(run_id, step), \
+                tempfile.TemporaryFile() as out_f, tempfile.TemporaryFile() as err_f:
             with live_lock:
                 if cancelled.is_set():      # the round is unwinding: never start another gate
                     raise RuntimeError(f"{step} not started: the round was cancelled")
@@ -631,13 +650,14 @@ def run_finders_parallel(
             step = f"discover:{name}"
             ops.run_event(run_id, "step_started", step=step, command=shown)
             started = time.monotonic()
-            result = subprocess.run(
-                command,
-                cwd=ROOT,
-                env=child_env,
-                capture_output=True,
-                text=True,
-            )
+            with record_disk_usage(run_id, step):
+                result = subprocess.run(
+                    command,
+                    cwd=ROOT,
+                    env=child_env,
+                    capture_output=True,
+                    text=True,
+                )
             elapsed = round(time.monotonic() - started, 3)
             event = "step_completed" if result.returncode == 0 else "step_failed"
             ops.run_event(
@@ -963,7 +983,8 @@ def main() -> int:
         # The round's single store writer: the canonical round lock plus the token proving it,
         # declaring this round so its own snapshot is not "unsettled" state (ADR 0001 stage 3).
         # Failure rollback happens inside this scope, i.e. still under the lock.
-        with st.writer(timeout=args.lock_timeout, round_id=run_id) as writer:
+        with st.writer(timeout=args.lock_timeout, round_id=run_id) as writer, \
+                record_disk_usage(run_id):
             return _locked_round(args, st, writer, run_id, env)
     except Exception as exc:
         ops.run_event(run_id, "run_failed", error=str(exc))
@@ -1193,7 +1214,8 @@ def _staged_modes(args, st, env: dict, lifecycle) -> int:
     # aborted unless it was already promoted — instead of dying with the run left open
     previous = signal.signal(signal.SIGTERM, _terminated)
     try:
-        with st.writer(timeout=args.lock_timeout, round_id=run_id) as writer:
+        with st.writer(timeout=args.lock_timeout, round_id=run_id) as writer, \
+                record_disk_usage(run_id):
             if args.resume:
                 return _resume_staged(args, st, writer, run_id, env, lifecycle)
             return _staged_round(args, st, writer, run_id, env, lifecycle)

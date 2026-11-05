@@ -104,6 +104,8 @@ def test_run_verify_parallel_awaits_every_gate_and_aggregates_failures(monkeypat
     started = sorted(step for event, step in events if event == "step_started")
     assert started == sorted(step for step, _ in gates)  # nothing skipped after a failure
     assert ("step_failed", "fail-a") in events and ("step_completed", "slow-ok") in events
+    assert sorted(step for event, step in events if event == "disk_usage") == sorted(
+        step for step, _ in gates)  # failing gates retain measurements too
     out = capsys.readouterr().out  # replayed in declared order, not completion order
     assert out.index("out fail-a") < out.index("out slow-ok") < out.index("out fail-b") < out.index("out ok")
 
@@ -447,6 +449,37 @@ def test_run_command_raises_on_nonzero(monkeypatch):
     monkeypatch.setattr(run_round.ops, "run_event", lambda *args, **kwargs: None)
     with pytest.raises(RuntimeError, match="failed with exit 9"):
         run_round.run_command("broken", ["false"], {}, rid("run-1"))
+
+
+@pytest.mark.parametrize("failure", [None, "exit", "launch"])
+def test_run_command_records_disk_usage_even_on_failure(monkeypatch, tmp_path, failure):
+    free = iter((1000, 900))
+    monkeypatch.setattr(run_round, "ROOT", tmp_path)
+    monkeypatch.setattr(run_round.shutil, "disk_usage",
+                        lambda _: SimpleNamespace(free=next(free), used=2000))
+    events = []
+    monkeypatch.setattr(run_round.ops, "run_event",
+                        lambda run_id, event, **kw: events.append((event, kw)))
+
+    def command(*args, **kwargs):
+        if failure == "launch":
+            raise OSError("cannot launch")
+        return SimpleNamespace(returncode=9 if failure == "exit" else 0)
+
+    monkeypatch.setattr(run_round.subprocess, "run", command)
+    if failure is None:
+        run_round.run_command("fetch", ["fake"], {}, rid("disk"))
+        assert events[-1][0] == "step_completed"
+    else:
+        with pytest.raises(OSError if failure == "launch" else RuntimeError):
+            run_round.run_command("fetch", ["fake"], {}, rid("disk"))
+        if failure == "exit":
+            assert events[-1][0] == "step_failed"
+    measurements = [data for event, data in events if event == "disk_usage"]
+    assert len(measurements) == 1
+    assert measurements[0]["scope"] == "step" and measurements[0]["step"] == "fetch"
+    assert measurements[0]["peak_drop_bytes"] == 100
+    assert measurements[0]["complete"]
 
 
 def test_doc_stats_counts_only_training_eligible_rows(monkeypatch, tmp_path):
@@ -936,7 +969,7 @@ def test_capture_failure_stops_round_before_mutation(tmp_path, monkeypatch, caps
 
     assert run_round.main() == 1
     assert "No space left on device" in capsys.readouterr().err
-    assert events == ["run_started", "run_failed"]
+    assert events == ["run_started", "disk_usage", "run_failed"]
     assert state.read_bytes() == b"before\n"
     assert not run_round.ops.StateSnapshot.pending()
     assert not (snapshots / rid("capture-failed")).exists()
@@ -1068,6 +1101,8 @@ def test_main_holds_a_round_on_low_disk_before_any_run(tmp_path, monkeypatch, ca
     events = []
     monkeypatch.setattr(run_round.ops, "run_event", lambda *a, **kw: events.append(a))
     monkeypatch.setattr(sys, "argv", ["run_round.py", "--commit"])
+    monkeypatch.setattr(run_round, "record_disk_usage",
+                        lambda *a, **kw: pytest.fail("held round must not start a sampler"))
 
     assert run_round.main() == run_round.EXIT_HELD == 75
     assert events == []
