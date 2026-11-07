@@ -63,6 +63,13 @@ and short spikes between samples can be missed. Separate payload mounts need sep
 Hard kills can lose the unfinished scope's summary. Sampling neither releases a hold nor changes
 the floor; a supervised round and explicit reserves are still required before sustained growth.
 
+Health monitoring reports cleaned-backup freshness separately from original-byte recovery:
+the current backup scope excludes `raw/` and `text/`, so `original_backup` remains a warning
+until their coverage and restore verification are established. The daily PostgreSQL shadow
+comparison writes `workspace/pg-shadow-verify.json`; health reports failures and receipts older
+than 26 hours (critical after 50 hours). A passing receipt covers its recorded commit watermark,
+not subsequent commits. Nested domain configurations participate in both replication and comparison.
+
 ## How it works
 
 ```text

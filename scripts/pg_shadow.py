@@ -95,6 +95,8 @@ def kind_of(path: str) -> str | None:
     if not path.startswith("registry/"):
         return None
     rel = path[len("registry/"):]
+    if rel in store.CONFIG_FILES:
+        return "config"
     if "/" in rel:
         return "events" if rel.startswith("journal/") and name.endswith(".jsonl") else None
     if name.endswith(".yaml"):
@@ -105,8 +107,6 @@ def kind_of(path: str) -> str | None:
         return "rotation"
     if name == store.BACKEND_STATE_FILE:
         return "backend_state"
-    if name in store.CONFIG_FILES:
-        return "config"
     if name in store.CONTROL_FILES:
         return "control"
     return None
@@ -439,7 +439,7 @@ def git_digests(rev: str, repo: Path = ROOT) -> dict[str, str]:
         elif kind == "control":
             control[Path(p).name] = parse(kind, git_bytes(rev, p, repo))
         elif kind == "config":
-            config[Path(p).name] = hashlib.sha256(git_bytes(rev, p, repo)).hexdigest()
+            config[p[len("registry/"):]] = hashlib.sha256(git_bytes(rev, p, repo)).hexdigest()
     out = {k: v.value() for k, v in d.items()}
     out["rotation"] = store._digest(rotation)
     out["backend_state"] = store._digest({k: {"enabled": bool(v["enabled"]), "reason": v.get("reason")}
@@ -514,16 +514,42 @@ def pg_digests(st: store_pg.PgStore) -> tuple[str | None, dict[str, str]]:
     return watermark, out
 
 
-def do_verify(st: store_pg.PgStore, repo: Path = ROOT, log=print) -> bool:
+def do_verify(st: store_pg.PgStore, repo: Path = ROOT, log=print, *,
+              receipt: dict | None = None) -> bool:
     watermark, pg = pg_digests(st)
+    if receipt is not None:
+        receipt["watermark"] = watermark
     if watermark is None:
         raise SystemExit("shadow has no watermark; run import first")
     files = git_digests(watermark, repo)
     bad = sorted(k for k in files if files[k] != pg.get(k))
+    if receipt is not None:
+        receipt["mismatches"] = bad
     for k in sorted(files):
         log(f"  {k:14s} {'OK ' if k not in bad else 'DIFF'} git={files[k][:24]} pg={pg.get(k, '')[:24]}")
     log(f"verify at {watermark[:10]}: {'OK' if not bad else 'DIVERGED: ' + ', '.join(bad)}")
     return not bad
+
+
+def verify_and_record(st: store_pg.PgStore, repo: Path = ROOT, log=print) -> bool:
+    """Publish the daily verdict for health monitoring, including failed evaluations.
+
+    The receipt describes the watermark actually compared, not later synced commits.
+    Keep the full scan in the daily verifier; health reads only this small receipt.
+    """
+    import ops
+    receipt = {"ok": False, "watermark": None, "mismatches": [], "error": None}
+
+    try:
+        receipt["ok"] = do_verify(st, repo, log, receipt=receipt)
+        return receipt["ok"]
+    except (Exception, SystemExit) as exc:
+        receipt["error"] = f"{type(exc).__name__}: {exc}"[:300]
+        raise
+    finally:
+        receipt["checked_at"] = time.time()
+        ops.atomic_write_text(repo / "workspace" / "pg-shadow-verify.json",
+                              json.dumps(receipt, sort_keys=True) + "\n")
 
 
 def enable(dsn: str, schema: str, repo: Path = ROOT) -> None:
@@ -563,7 +589,7 @@ def main(argv=None) -> int:
     elif args.command == "sync":
         do_sync(st, args.commit, limit=args.limit)
     elif args.command == "verify":
-        return 0 if do_verify(st) else 1
+        return 0 if verify_and_record(st) else 1
     else:
         with st._connect() as conn:
             gen, rep = conn.execute("SELECT generation, replication FROM state").fetchone()

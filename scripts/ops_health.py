@@ -12,7 +12,10 @@ Checks (each: ok | warning | critical, with its facts):
   the newest restore drill (its verdict, its measured RTO against 60 min, its age); capacity of
   the backup disk (free space and the projected 35-day WAL volume) and of the data disk;
 * payload backups — reported SEPARATELY (backup_schedule's status): the metadata RPO says nothing
-  about raw/text/artifact bytes, whose durability is stage 5's;
+  about raw/text/artifact bytes, whose durability is stage 5's; original-byte coverage is also
+  reported separately from cleaned-backup freshness;
+* file-authority shadow verification — the last daily verdict at its recorded watermark,
+  including failures and stale receipts, without another full-corpus scan;
 * the staged lifecycle (only where a PostgreSQL schema has runs): stalled open/frozen runs,
   promotion latency (a frozen run waiting, and the age of the newest promotion when rounds are
   expected), materialization lag (corpus/ behind the current generation), review backlog
@@ -35,6 +38,7 @@ from __future__ import annotations
 import argparse
 import calendar
 import json
+import math
 import shutil
 import sys
 import time
@@ -47,6 +51,8 @@ STATE = ROOT / "workspace" / "ops-health.json"
 ALERTS = ROOT / "logs" / "alerts.jsonl"
 PAYLOAD_STATUS = ROOT / "workspace" / "backup-status.json"
 SWEEP_STATE = ROOT / "workspace" / "integrity-sweep.json"
+SHADOW_STATUS = ROOT / "workspace" / "pg-shadow-verify.json"
+SHADOW_MARKER = ROOT / "workspace" / ".pg-shadow"
 
 # thresholds (seconds unless named otherwise)
 BASE_WARN_H, BASE_CRIT_H = 26, 50
@@ -54,6 +60,7 @@ DRILL_WARN_DAYS, DRILL_CRIT_DAYS = 8, 15
 SSD_WARN_FREE, SSD_CRIT_FREE = 0.15, 0.05
 DATA_WARN_FREE, DATA_CRIT_FREE = 0.10, 0.04
 PAYLOAD_WARN_H, PAYLOAD_CRIT_H = 48, 96
+SHADOW_WARN_H, SHADOW_CRIT_H = 26, 50
 RUN_STALL_WARN, RUN_STALL_CRIT = 3 * 3600, 12 * 3600
 FROZEN_WAIT_WARN = 30 * 60
 PROMOTION_WARN = 6 * 3600
@@ -208,7 +215,7 @@ def data_disk_check(root: Path | None = None) -> dict:
 
 
 def payload_check(now: float, path: Path | None = None) -> dict:
-    """raw/text/artifact backups (backup_schedule): freshness only, reported apart from the
+    """Payload backups (backup_schedule): freshness only, reported apart from the
     metadata RPO (the payload durability gap closes in stage 5). Whatever the status file holds
     — missing, unreadable, valid JSON of the wrong shape, a bad date — becomes a check result;
     nothing escapes (health publication and the review evidence depend on it)."""
@@ -239,6 +246,59 @@ def payload_check(now: float, path: Path | None = None) -> dict:
                       result=result, error=str(error)[:300] if error else None, latest=latest)
     except Exception as exc:
         return _error("payload_backup", exc)
+
+
+def payload_scope_check(path: Path | None = None) -> dict:
+    """Expose original-byte coverage separately from a fresh cleaned-view backup.
+
+    No existing backup format proves raw/text coverage. Unknown or future scopes remain
+    unverified until they have an explicit coverage and restore-verification contract.
+    """
+    path = PAYLOAD_STATUS if path is None else path
+    try:
+        status = json.loads(path.read_text())
+        latest = status.get("latest_backup")
+        if not isinstance(latest, str) or not latest:
+            raise ValueError("no latest backup path")
+        scope = json.loads((Path(latest) / "SCOPE.json").read_text())
+        if not isinstance(scope, dict):
+            raise ValueError("backup scope is not an object")
+        cleaned = scope.get("scope") == "cleaned-views"
+        return _check("original_backup", "warning",
+                      "backup covers cleaned views; raw/text originals are excluded" if cleaned
+                      else "original-byte backup coverage and restore verification are unknown",
+                      scope=scope.get("scope"), not_included=scope.get("not_included"),
+                      originals_verified=False, latest=latest)
+    except FileNotFoundError:
+        return _check("original_backup", "warning",
+                      "no backup scope evidence; original-byte recovery is unverified")
+    except Exception as exc:
+        return _error("original_backup", exc)
+
+
+def shadow_check(now: float, path: Path | None = None) -> dict:
+    """The last daily comparison at its recorded watermark; never a full scan here."""
+    path = SHADOW_STATUS if path is None else path
+    try:
+        try:
+            receipt = json.loads(path.read_text())
+        except FileNotFoundError:
+            return _check("shadow_verification", "warning", "no shadow verification receipt")
+        at, ok = receipt["checked_at"], receipt["ok"]
+        if (type(at) not in (int, float) or not math.isfinite(at) or at > now + 300
+                or type(ok) is not bool):
+            raise ValueError("invalid shadow verification time or verdict")
+        age_h = max(0, now - at) / 3600
+        if ok and (not receipt.get("watermark") or receipt.get("mismatches") or receipt.get("error")):
+            raise ValueError("inconsistent successful shadow verification receipt")
+        severity = ("critical" if not ok or age_h > SHADOW_CRIT_H else
+                    "warning" if age_h > SHADOW_WARN_H else "ok")
+        summary = (f"shadow verification passed {age_h:.1f} h ago at "
+                   f"{str(receipt.get('watermark'))[:10]}" if ok else
+                   f"shadow verification failed: {receipt.get('error') or receipt.get('mismatches')}")
+        return _check("shadow_verification", severity, summary, age_h=round(age_h, 2), **receipt)
+    except Exception as exc:
+        return _error("shadow_verification", exc)
 
 
 def lifecycle_checks(conn, now: float, root: Path | None = None) -> list[dict]:
@@ -410,6 +470,7 @@ def evaluate(*, now: float | None = None, lifecycle_conn=None) -> list[dict]:
         checks.append(_error("metadata_recoverability", exc))
     checks.append(_guarded("data_capacity", data_disk_check))
     checks.append(_guarded("payload_backup", payload_check, now))
+    checks.append(_guarded("original_backup", payload_scope_check))
     try:
         if lifecycle_conn is None:
             import psycopg
@@ -432,6 +493,8 @@ def evaluate(*, now: float | None = None, lifecycle_conn=None) -> list[dict]:
     checks.append(_guarded("integrity_sweep", sweep_check, now) if staged else _check(
         "integrity_sweep", "ok", "not applicable under file authority (lint_registry and "
         "check_contracts check the whole state every round)"))
+    if not staged and SHADOW_MARKER.exists():
+        checks.append(_guarded("shadow_verification", shadow_check, now))
     return checks
 
 

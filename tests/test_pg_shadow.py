@@ -191,6 +191,27 @@ def test_verify_hashes_the_pinned_config_documents_themselves(env):
     assert not pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
 
 
+def test_nested_configuration_import_update_and_delete(env):
+    pg_shadow, st, repo, _ = env
+    name = "domains/modelica.json"
+    repo.write(f"registry/{name}", json.dumps({"version": 1, "terms": ["equation"]}))
+    head = repo.commit("nested domain config")
+    pg_shadow.do_import(st, head, repo.path, log=lambda *_: None)
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    repo.write(f"registry/{name}", json.dumps({"version": 2, "terms": ["equation", "heat"]}))
+    head = repo.commit("only nested config changed")
+    assert pg_shadow.do_sync(st, head, repo.path, log=lambda *_: None) == 1
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st.read() as view:
+        assert view.config_get().documents[name]["version"] == 2
+    repo.rm(f"registry/{name}")
+    head = repo.commit("remove nested config")
+    assert pg_shadow.do_sync(st, head, repo.path, log=lambda *_: None) == 1
+    assert pg_shadow.do_verify(st, repo.path, log=lambda *_: None)
+    with st.read() as view:
+        assert name not in view.config_get().documents
+
+
 def test_import_refuses_any_prior_operational_state(env):
     pg_shadow, st, repo, c1 = env
     with st.writer() as w:  # an earlier store transaction that only touched the blocklist

@@ -114,6 +114,25 @@ def test_sweep_failures_are_critical_and_stale_passes_warn(tmp_path):
     assert ops_health.sweep_check(NOW, path)["severity"] == "critical"
 
 
+def test_a_fresh_cleaned_backup_does_not_claim_original_byte_durability(tmp_path):
+    status = tmp_path / "status.json"
+    assert ops_health.payload_scope_check(status)["severity"] == "warning"
+    stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime(NOW - 3600))
+    backup = tmp_path / f"corpus-{stamp}-a"
+    backup.mkdir()
+    status.write_text(json.dumps({"latest_backup": str(backup), "result": "up-to-date"}))
+    scope = backup / "SCOPE.json"
+    scope.write_text(json.dumps({"scope": "cleaned-views", "not_included": "raw/, text/"}))
+    assert ops_health.payload_check(NOW, status)["severity"] == "ok"
+    check = ops_health.payload_scope_check(status)
+    assert check["severity"] == "warning" and not check["facts"]["originals_verified"]
+    assert "excluded" in check["summary"]
+    scope.write_text(json.dumps({"scope": "unrecognized-future-format"}))
+    assert ops_health.payload_scope_check(status)["severity"] == "warning"
+    scope.write_text("[]")
+    assert ops_health.payload_scope_check(status)["severity"] == "critical"
+
+
 def test_record_appends_only_transitions(tmp_path):
     state, alerts = tmp_path / "state.json", tmp_path / "alerts.jsonl"
     ok = [{"check": "archive", "severity": "ok", "summary": "fine", "facts": {}}]

@@ -76,6 +76,8 @@ def _no_live_backups(monkeypatch, tmp_path):
     monkeypatch.setattr(ops_health, "ALERTS", tmp_path / "no-live-alerts.jsonl")
     monkeypatch.setattr(ops_health, "PAYLOAD_STATUS", tmp_path / "no-live-backup-status.json")
     monkeypatch.setattr(ops_health, "SWEEP_STATE", tmp_path / "no-live-sweep.json")
+    monkeypatch.setattr(ops_health, "SHADOW_STATUS", tmp_path / "no-live-shadow.json")
+    monkeypatch.setattr(ops_health, "SHADOW_MARKER", tmp_path / "no-live-shadow-marker")
 
 
 @pytest.fixture(autouse=True)
