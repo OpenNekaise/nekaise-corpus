@@ -302,8 +302,12 @@ def test_resume_continues_an_interrupted_run_only_when_nothing_changed(world):
                                    "'fetch' ORDER BY seq", [run_id])]
     assert names[0] == "ckpt-0001" and names[1:] and all(n.startswith("a2-") for n in names[1:])
     assert corpus_ids(world) == {e["id"] for e in entries} | {"ost-s-disc"}
-    events = [e["event"] for e in world.events(run_id)]
-    assert "staged_run_adopted" in events and events[-1] == "run_completed"
+    events = world.events(run_id)
+    assert any(e["event"] == "staged_run_adopted" for e in events)
+    # The outer sampler finishes after the resumed round publishes completion.
+    assert [e["event"] for e in events[-2:]] == ["run_completed", "disk_usage"]
+    assert events[-1]["scope"] == "round" and events[-1]["complete"]
+    assert events[-1]["samples"] >= 2
 
 
 def test_a_resumed_frozen_run_only_runs_its_missing_gates(world):
