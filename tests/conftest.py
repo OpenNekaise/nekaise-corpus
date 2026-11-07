@@ -12,6 +12,33 @@ def pytest_configure(config):
 
 
 @pytest.fixture(autouse=True)
+def _private_run_events(tmp_path):
+    """Recovery tests emit real events, but never into the operator's run history.
+
+    Own the patches separately from the test's monkeypatch fixture: its undo() must not
+    restore live defaults part-way through recovery. Guard outside run_event's best-effort
+    exception handler so an accidental live destination fails the test visibly.
+    """
+    import ops
+
+    live = Path(__file__).resolve().parents[1]
+    real_event = ops.run_event
+
+    def guarded(run_id, event, **fields):
+        if Path(ops.RUN_LEDGER).resolve().is_relative_to(live / "logs"):
+            raise AssertionError("test selected the live run ledger")
+        if Path(ops.WORKSPACE).resolve() == live / "workspace":
+            raise AssertionError("test selected the live run-ledger lock directory")
+        return real_event(run_id, event, **fields)
+
+    with pytest.MonkeyPatch.context() as isolation:
+        isolation.setattr(ops, "RUN_LEDGER", tmp_path / "logs" / "run_history.jsonl")
+        isolation.setattr(ops, "WORKSPACE", tmp_path / "workspace")
+        isolation.setattr(ops, "run_event", guarded)
+        yield
+
+
+@pytest.fixture(autouse=True)
 def _no_live_store_dedup(monkeypatch):
     """A finder under test must never ask the live repository's store (it would take the round
     lock or build the full index): tests patch dedup.open_keys or pass an explicit root."""
