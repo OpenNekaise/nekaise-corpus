@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "id": "building-controls",
+  "title": "PLC, building automation and controls",
+  "description": "IEC 61131 PLC programming, BACnet, Modbus, OPC UA, KNX, building metadata and control algorithms.",
+  "selector": {
+    "categories": [
+      "plc_iec61131",
+      "building_protocols",
+      "building_automation",
+      "controls_calibration"
+    ]
+  },
+  "roles": [
+    "core",
+    "research_candidates",
+    "patent_supplement",
+    "reference_assets",
+    "reference_history",
+    "reference_pdf"
+  ],
+  "publication": "Immutable local domain dataset; independent of the default corpus view and training execution.",
+  "text_policy": "Preserve verified prepared bytes and complete source code; no implicit global cleaner.",
+  "exclusions": "Private evaluation banks and the operator-excluded general datasets; no authentication/access bypass. Source license declarations remain provenance, not a domain acquisition gate."
+}

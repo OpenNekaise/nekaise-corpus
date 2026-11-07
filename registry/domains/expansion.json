@@ -1,0 +1,414 @@
+{
+  "schema": 1,
+  "as_of": "2026-11-07",
+  "purpose": "Operator-authorized multilingual controls, physical simulation and building energy expansion",
+  "repositories": [
+    {
+      "repo": "Autonomy-Logic/openplc-runtime",
+      "ref": "HEAD",
+      "categories": [
+        "plc_iec61131"
+      ],
+      "source_url": "https://github.com/Autonomy-Logic/openplc-runtime",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "Autonomy-Logic/openplc-editor",
+      "ref": "HEAD",
+      "categories": [
+        "plc_iec61131"
+      ],
+      "source_url": "https://github.com/Autonomy-Logic/openplc-editor",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "Autonomy-Logic/user-docs",
+      "ref": "HEAD",
+      "categories": [
+        "plc_iec61131"
+      ],
+      "source_url": "https://github.com/Autonomy-Logic/user-docs",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "beremiz/beremiz",
+      "ref": "HEAD",
+      "categories": [
+        "plc_iec61131"
+      ],
+      "source_url": "https://github.com/beremiz/beremiz",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "beremiz/matiec",
+      "ref": "HEAD",
+      "categories": [
+        "plc_iec61131"
+      ],
+      "source_url": "https://github.com/beremiz/matiec",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "Autonomy-Logic/STruCpp",
+      "ref": "HEAD",
+      "categories": [
+        "plc_iec61131"
+      ],
+      "source_url": "https://github.com/Autonomy-Logic/STruCpp",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "bacnet-stack/bacnet-stack",
+      "ref": "HEAD",
+      "categories": [
+        "building_protocols"
+      ],
+      "source_url": "https://github.com/bacnet-stack/bacnet-stack",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "JoelBender/BACpypes3",
+      "ref": "HEAD",
+      "categories": [
+        "building_protocols"
+      ],
+      "source_url": "https://github.com/JoelBender/BACpypes3",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "pymodbus-dev/pymodbus",
+      "ref": "HEAD",
+      "categories": [
+        "building_protocols"
+      ],
+      "source_url": "https://github.com/pymodbus-dev/pymodbus",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "stephane/libmodbus",
+      "ref": "HEAD",
+      "categories": [
+        "building_protocols"
+      ],
+      "source_url": "https://github.com/stephane/libmodbus",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "open62541/open62541",
+      "ref": "HEAD",
+      "categories": [
+        "building_protocols"
+      ],
+      "source_url": "https://github.com/open62541/open62541",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "FreeOpcUa/opcua-asyncio",
+      "ref": "HEAD",
+      "categories": [
+        "building_protocols"
+      ],
+      "source_url": "https://github.com/FreeOpcUa/opcua-asyncio",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "XKNX/xknx",
+      "ref": "HEAD",
+      "categories": [
+        "building_protocols"
+      ],
+      "source_url": "https://github.com/XKNX/xknx",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "eclipse-volttron/volttron-core",
+      "ref": "HEAD",
+      "categories": [
+        "building_automation"
+      ],
+      "source_url": "https://github.com/eclipse-volttron/volttron-core",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "VOLTTRON/volttron",
+      "ref": "HEAD",
+      "categories": [
+        "building_automation"
+      ],
+      "source_url": "https://github.com/VOLTTRON/volttron",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "BrickSchema/Brick",
+      "ref": "HEAD",
+      "categories": [
+        "building_automation"
+      ],
+      "source_url": "https://github.com/BrickSchema/Brick",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "Project-Haystack/haystack-defs",
+      "ref": "HEAD",
+      "categories": [
+        "building_automation"
+      ],
+      "source_url": "https://github.com/Project-Haystack/haystack-defs",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "lbl-srg/obc",
+      "ref": "HEAD",
+      "categories": [
+        "building_automation"
+      ],
+      "source_url": "https://github.com/lbl-srg/obc",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "NatLabRockies/OpenStudio-ERI",
+      "ref": "HEAD",
+      "categories": [
+        "energy_rating"
+      ],
+      "source_url": "https://github.com/NatLabRockies/OpenStudio-ERI",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "NatLabRockies/OpenStudio-HPXML",
+      "ref": "HEAD",
+      "categories": [
+        "energy_rating"
+      ],
+      "source_url": "https://github.com/NatLabRockies/OpenStudio-HPXML",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "communitiesuk/epb-home-energy-model",
+      "ref": "HEAD",
+      "categories": [
+        "energy_rating"
+      ],
+      "source_url": "https://github.com/communitiesuk/epb-home-energy-model",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "hpxmlwg/hpxml",
+      "ref": "HEAD",
+      "categories": [
+        "energy_rating"
+      ],
+      "source_url": "https://github.com/hpxmlwg/hpxml",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "BuildingSync/schema",
+      "ref": "HEAD",
+      "categories": [
+        "energy_rating"
+      ],
+      "source_url": "https://github.com/BuildingSync/schema",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "hes-pnnl/hes-validation-engine",
+      "ref": "HEAD",
+      "categories": [
+        "energy_rating"
+      ],
+      "source_url": "https://github.com/hes-pnnl/hes-validation-engine",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "NatLabRockies/resstock",
+      "ref": "HEAD",
+      "categories": [
+        "building_energy"
+      ],
+      "source_url": "https://github.com/NatLabRockies/resstock",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "NatLabRockies/ComStock",
+      "ref": "HEAD",
+      "categories": [
+        "building_energy"
+      ],
+      "source_url": "https://github.com/NatLabRockies/ComStock",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source",
+      "max_archive_bytes": 2147483648
+    },
+    {
+      "repo": "NatLabRockies/OCHRE",
+      "ref": "HEAD",
+      "categories": [
+        "building_energy"
+      ],
+      "source_url": "https://github.com/NatLabRockies/OCHRE",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "architecture-building-systems/CityEnergyAnalyst",
+      "ref": "HEAD",
+      "categories": [
+        "building_energy"
+      ],
+      "source_url": "https://github.com/architecture-building-systems/CityEnergyAnalyst",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "do-mpc/do-mpc",
+      "ref": "HEAD",
+      "categories": [
+        "controls_calibration"
+      ],
+      "source_url": "https://github.com/do-mpc/do-mpc",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "python-control/python-control",
+      "ref": "HEAD",
+      "categories": [
+        "controls_calibration"
+      ],
+      "source_url": "https://github.com/python-control/python-control",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "GMLC-TDC/HELICS",
+      "ref": "HEAD",
+      "categories": [
+        "controls_calibration"
+      ],
+      "source_url": "https://github.com/GMLC-TDC/HELICS",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    },
+    {
+      "repo": "bsl546/energym",
+      "ref": "HEAD",
+      "categories": [
+        "controls_calibration"
+      ],
+      "source_url": "https://github.com/bsl546/energym",
+      "scope": "Public source code, examples, schemas and documentation; preserve all languages; never execute source"
+    }
+  ],
+  "web_and_pdf_sources": [
+    {
+      "id": "home-energy-score-engineering",
+      "url": "https://hescore-documentation.labworks.org/home",
+      "prefix": "https://hescore-documentation.labworks.org/home",
+      "language_hint": "en",
+      "categories": [
+        "energy_rating"
+      ],
+      "max_pages": 40,
+      "license": "unverified"
+    },
+    {
+      "id": "bacpypes3-docs",
+      "url": "https://bacpypes3.readthedocs.io/en/latest/",
+      "prefix": "https://bacpypes3.readthedocs.io/en/latest/",
+      "language_hint": "en",
+      "categories": [
+        "building_protocols"
+      ],
+      "max_pages": 40,
+      "license": "unverified"
+    },
+    {
+      "id": "haystack-docs",
+      "url": "https://project-haystack.org/doc/docHaystack/Intro",
+      "prefix": "https://project-haystack.org/doc/docHaystack/",
+      "language_hint": "en",
+      "categories": [
+        "building_automation"
+      ],
+      "max_pages": 40,
+      "license": "unverified"
+    },
+    {
+      "id": "france-dpe-technical",
+      "url": "https://rt-re-batiment.developpement-durable.gouv.fr/IMG/pdf/annexe_methode_de_calcul_3cl-dpe_v1.3.pdf",
+      "prefix": "https://rt-re-batiment.developpement-durable.gouv.fr/IMG/pdf/",
+      "language_hint": "fr",
+      "categories": [
+        "energy_rating"
+      ],
+      "max_pages": 40,
+      "license": "unverified"
+    },
+    {
+      "id": "japan-building-label-method",
+      "url": "https://www.mlit.go.jp/shoene-label/",
+      "prefix": "https://www.mlit.go.jp/shoene-label/",
+      "language_hint": "ja",
+      "categories": [
+        "energy_rating"
+      ],
+      "max_pages": 40,
+      "license": "unverified"
+    },
+    {
+      "id": "german-building-energy-certificate",
+      "url": "https://www.gebaeudeforum.de/ordnungsrecht/energieausweis/",
+      "prefix": "https://www.gebaeudeforum.de/ordnungsrecht/energieausweis/",
+      "language_hint": "de",
+      "categories": [
+        "energy_rating"
+      ],
+      "max_pages": 40,
+      "license": "unverified"
+    },
+    {
+      "id": "us-home-energy-score-modeling",
+      "url": "https://www.energy.gov/sites/default/files/2024-11/bto-peer-2024-15130-Home-Energy-Score-Modeling-Merket.pdf",
+      "prefix": "https://www.energy.gov/sites/default/files/2024-11/",
+      "language_hint": "en",
+      "categories": [
+        "energy_rating"
+      ],
+      "max_pages": 40,
+      "license": "unverified"
+    },
+    {
+      "id": "uk-hem-method",
+      "url": "https://www.gov.uk/government/consultations/home-energy-model-replacement-for-the-standard-assessment-procedure-sap/the-home-energy-model-making-the-standard-assessment-procedure-fit-for-a-net-zero-accessible-webpage",
+      "prefix": "https://www.gov.uk/government/consultations/home-energy-model-replacement-for-the-standard-assessment-procedure-sap/",
+      "language_hint": "en",
+      "categories": [
+        "energy_rating"
+      ],
+      "max_pages": 40,
+      "license": "unverified"
+    }
+  ],
+  "discovery_leads": [
+    {
+      "url": "https://www.mohurd.gov.cn/gongkai/zc/wjk/",
+      "language": "zh",
+      "topic": "building energy efficiency standards and calculation methods",
+      "status": "needs scoped document enumeration"
+    },
+    {
+      "url": "https://data.ademe.fr/",
+      "language": "fr",
+      "topic": "DPE energy rating methods and open building data",
+      "status": "needs API schema and bulk access review"
+    },
+    {
+      "url": "https://modelica.org/libraries/",
+      "language": "multilingual",
+      "topic": "library catalog and declared dependencies",
+      "status": "reconcile against pinned repository inventory"
+    }
+  ],
+  "policy": {
+    "translation": false,
+    "languages": "all",
+    "collection": "All publicly obtainable rights classes; access restrictions remain binding",
+    "default_use": "Classify rights before default training use; unknown stays unverified",
+    "reserve_gib": 128,
+    "refresh": "Uncollected sources first; failures receive a 24h cooldown; retained source versions never overwritten"
+  }
+}

@@ -88,7 +88,8 @@ INHERITED_LOCK_ENV = ops.INHERITED_LOCK_ENV
 CONFIG_FILES = ("backends.json", "eligibility.json", "vendors.json", "host_policy.json",
                 "regdocs.json", "eurlex.json", "esef.json", "repositories.json",
                 "domains/modelica.json",
-                "domains/energy-physical-modeling.json", "domains/sources.json")
+                "domains/energy-physical-modeling.json", "domains/sources.json",
+                "domains/building-controls.json", "domains/expansion.json")
 BACKEND_STATE_FILE = "backend_state.json"
 # Runtime control documents: whole JSON objects that the loop maintains (not configuration, not
 # rows), stored and replicated as-is. github_passes.json records find_github's completed passes;

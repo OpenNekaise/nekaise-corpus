@@ -24,8 +24,10 @@ import tempfile
 from artifact_store import LocalArtifacts
 import ops
 import store
+import domain_storage
 
 ROLES = ('core', 'research_candidates', 'patent_supplement', 'reference_assets', 'reference_history', 'reference_pdf')
+_verified = {}
 
 
 def canonical(value):
@@ -45,10 +47,7 @@ def file_sha(path):
 
 
 def safe(root, relative):
-    result = (root / relative).resolve()
-    if not result.is_relative_to(root.resolve()):
-        raise ValueError('Path escapes root: ' + str(relative))
-    return result
+    return domain_storage.resolve(root, relative)
 
 
 def body_text(text):
@@ -72,7 +71,7 @@ def write_json(path, value):
 
 
 def home(root):
-    return root / 'workspace' / 'domains'
+    return domain_storage.home(root)
 
 
 def pool(root):
@@ -99,8 +98,17 @@ def pin_bytes(root, data, stage='raw'):
 
 def verified_ref(root, ref):
     path = safe(root, ref['path'])
-    if file_sha(path) != ref['sha256'] or path.stat().st_size != ref['bytes']:
+    stat = path.stat()
+    signature = (stat.st_dev, stat.st_ino, stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns)
+    cached = _verified.get(path)
+    if cached == (signature, ref['sha256'], ref['bytes']):
+        return path
+    if file_sha(path) != ref['sha256'] or stat.st_size != ref['bytes']:
         raise ValueError('Artifact mismatch: ' + ref['path'])
+    after = path.stat()
+    if signature != (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns, after.st_ctime_ns):
+        raise ValueError('Artifact changed during verification: ' + ref['path'])
+    _verified[path] = (signature, ref['sha256'], ref['bytes'])
     return path
 
 
@@ -236,6 +244,10 @@ def build(root, domain, inventories, definition_path=None):
         raise ValueError('Domain ID mismatch')
     if len({p.resolve() for p in inventories}) != len(inventories):
         raise ValueError('Repeated inventory input')
+    # Unrelated additions must not manufacture a new copy of an unchanged view.
+    # Imported inventories are verified on admission; selected ones are verified again here.
+    inventories = [p for p in inventories if any(selected(row, definition)
+                   for row in rows(p / 'documents.jsonl'))]
     receipts = []
     for inventory in inventories:
         verify_inventory(root, inventory)
@@ -277,7 +289,7 @@ def build(root, domain, inventories, definition_path=None):
                 link = work / 'browse' / row['split'] / folder / (key + '--' + label + ext)
                 link.parent.mkdir(parents=True, exist_ok=True)
                 final_link = target / link.relative_to(work)
-                link.symlink_to(os.path.relpath(safe(root, row['text_artifact']['path']), final_link.parent))
+                link.symlink_to(os.path.relpath(safe(root, row['text_artifact']['path']), final_link.parent.resolve()))
         with (work / 'aliases.jsonl').open('w') as f:
             for row in sorted(aliases, key=lambda r: (r['duplicate_key'], r['id'], r['import_id'])):
                 emit(f, row)

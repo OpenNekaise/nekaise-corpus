@@ -105,3 +105,13 @@ def test_multilingual_browse_names_fit_filesystem_and_current_is_published(tmp_p
     assert (dc.home(root) / 'modelica/current').resolve() == snapshot
     link, = (snapshot / 'browse').rglob('*.txt')
     assert len(link.name.encode()) < 255 and link.read_text() == 'model Wall end Wall;'
+
+
+def test_unrelated_inventory_does_not_duplicate_a_domain_snapshot(tmp_path):
+    root = root_with_definitions(tmp_path)
+    original = dc.import_bundle(root, fixture_bundle(tmp_path))
+    snapshot = dc.build(root, 'modelica', [original])
+    second = tmp_path / 'second'; second.mkdir()
+    unrelated = dc.import_bundle(root, fixture_bundle(second,
+        [('plc', 'PROGRAM Main x := 1; END_PROGRAM', 'core', ['plc_iec61131'])]))
+    assert dc.build(root, 'modelica', [original, unrelated]) == snapshot

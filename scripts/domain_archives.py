@@ -21,7 +21,10 @@ import tempfile
 from domain_collections import body_text, emit, file_sha, sha, write_json
 
 TEXT = {'.mo', '.mos', '.py', '.cpp', '.cc', '.c', '.h', '.hh', '.hpp', '.f90', '.f', '.idf', '.idd',
-        '.cal', '.rad', '.order', '.md', '.rst', '.tex', '.adoc', '.1', '.html', '.htm', '.txt', '.xml', '.xsd', '.json', '.csv', '.yaml', '.yml'}
+        '.cal', '.rad', '.order', '.md', '.rst', '.tex', '.adoc', '.1', '.html', '.htm', '.txt', '.xml', '.xsd', '.json', '.csv', '.yaml', '.yml',
+        '.st', '.iecst', '.scl', '.il', '.awl', '.plc', '.ld', '.fbd', '.sfc', '.dpt',
+        '.epw', '.ddy', '.rvi', '.mvi', '.osm', '.osw', '.ttl', '.n3', '.rq', '.sparql', '.js', '.ts', '.rs',
+        '.rb', '.fan', '.trio', '.xeto', '.zinc', '.props', '.properties', '.toml', '.tcpou', '.tcgvl', '.tcdut'}
 EXCLUDE = re.compile(r'gpqa|mmlu|nemotron.cc|fineweb|dclm|dolma|modigen|modbench|xmufst|nekaise.bench', re.I)
 OMIT = {'.git', '.github', 'node_modules', 'third_party', 'third-party', 'vendor', 'vendors', '_build', 'build', 'dist'}
 
@@ -65,7 +68,7 @@ def role_for(path, text, encoding):
     if path.lower().endswith('.pdf'): return 'reference_pdf'
     if encoding != 'utf-8-sig': return 'reference_history'
     if any(x in lower for x in ['/referenceresults/', '/obsolete/', '/idd/versions/', '/weatherdata/']): return 'reference_assets'
-    if lower.endswith(('.csv', '.order')) or 'precipitationschedules' in lower: return 'reference_assets'
+    if lower.endswith(('.csv', '.order', '.epw', '.ddy')) or 'precipitationschedules' in lower: return 'reference_assets'
     if lower.endswith(('.json', '.yaml', '.yml')) and not any(x in lower for x in ['schema', 'specification']): return 'reference_assets'
     if text.startswith('#1') and re.search(r'\bdouble\s+\w+\(', text[:1000]): return 'reference_assets'
     if len(text) > 100000 and sum(c.isdigit() for c in text) / len(text) > 0.45: return 'reference_assets'
@@ -113,7 +116,7 @@ def inspect(spec, out):
             try:
                 if path.lower().endswith('.pdf'):
                     _, pdf_ref = pin(out, raw, '.pdf')
-                    with tempfile.NamedTemporaryFile(suffix='.txt') as f:
+                    with tempfile.NamedTemporaryFile(suffix='.txt', dir=out) as f:
                         subprocess.run(['pdftotext', '-layout', str(out / pdf_ref), f.name], check=True, timeout=45, capture_output=True)
                         text = Path(f.name).read_text()
                 else:
@@ -130,6 +133,8 @@ def inspect(spec, out):
             prepared = raw if not pdf_ref and encoding == 'utf-8-sig' else text.encode()
             digest, object_path = pin(out, prepared)
             role = role_for(path, text, encoding)
+            if spec.get('candidate_only') and role == 'core':
+                role = 'research_candidates'
             row = {'id': f'git:{repo}@{commit}:{path}', 'title': repo + ': ' + path,
                    'url': 'https://github.com/' + repo + '/blob/' + commit + '/' + path,
                    'source': repo, 'origin': 'new_repository_snapshot', 'tier': 'core',
@@ -138,7 +143,9 @@ def inspect(spec, out):
                    'categories': spec['categories'], 'preparation_role': role,
                    'source_sha256': raw_hash, 'encoding': encoding,
                    'representation': 'repository_pdf_layout' if pdf_ref else 'verbatim_repository_file' if encoding == 'utf-8-sig' else 'decoded_legacy_source_requires_review',
-                   'license': 'source declaration retained in original archive; no license admission gate'}
+                   'license': 'unverified', 'use_class': 'unverified',
+                   'license_evidence': 'Repository and nested declarations retained in pinned archive; path-specific rights review pending',
+                   'repository_license_spdx': spec.get('license_spdx', 'NOASSERTION')}
             if pdf_ref: row['original_pdf'] = pdf_ref
             if spec.get('canonical_git_url'):
                 row['canonical_git_url'] = spec['canonical_git_url']

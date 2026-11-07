@@ -128,3 +128,97 @@ public access limits remain; private evaluation banks are not consulted.
 
 Tests: `pytest tests/test_domain_collections.py tests/test_domain_archives.py
 tests/test_architecture.py tests/test_artifact_store.py`.
+
+## SSD operation (2026-11-07)
+
+The active host stores domain payloads at `/media/zengp/ssd/nekaise-domains`.
+`workspace/domains` is a compatibility symlink: old content addresses and frozen
+snapshot identities remain valid. The host-local binding in
+`workspace/domain-storage.json` pins the mount UUID. `domain_storage.py` refuses
+reads/writes through the domain API if that volume is missing or replaced, and
+new acquisition requires 128 GiB free for the other SSD workloads.
+The repository's code and curation recipe remain in Git on the workstation.
+
+The migration compares every file by checksum and every symlink, before switching
+the path. The original directory is retained until source inventories, snapshots
+and the independent backup have verified. Historical Studio preparation bundles
+are retained under `_legacy/studio-domain-prep`, with their former path linked to
+the SSD. Private simulation experiment runs are a separate project and are not
+admitted into these collections.
+
+`_custody/latest.json` records independent copies of the publisher originals used
+by historical domain imports. Each original must match the historical SHA256;
+missing versions and drift remain explicit. Original inventory/snapshot records
+are never rewritten to pretend that a historical provenance gap did not exist.
+
+### Continue collection
+
+```bash
+.venv/bin/python scripts/domain_acquire.py --repositories 6 --websites 6
+```
+
+This deterministic runner acquires the scheduled-growth and canonical round locks,
+then the domain and accounting locks. It resumes its state under
+`workspace/domains/_acquisition/`, fetches a bounded batch, imports verified
+archives/pages, publishes all three domain views, materializes classified cleaned
+views, and verifies an incremental backup on a second physical disk. It can run
+while the global corpus's capacity hold remains in place; that hold is not removed.
+No model calls, translation, source-code execution, or automatic training occurs.
+
+The original recipe is `registry/domains/sources.json`; the controls/energy-rating
+expansion is `registry/domains/expansion.json`. This adds IEC 61131 PLC code,
+BACnet, Modbus, OPC UA, KNX, VOLTTRON, Brick/Haystack, OpenStudio ERI/HPXML and HEM.
+All languages and rights classes are collected. New repository records retain the
+archive and path-specific evidence but remain `unverified` until a rights audit;
+a repository-level license guess never admits all nested files to the open view.
+The archive inspector now recognizes PLC source formats, Ruby energy models,
+Haystack definitions, RDF schemas, weather and simulation input files.
+
+Each round also runs one paginated GitHub repository discovery query, rotating
+across domain topics and language queries. Results retain the API payload and
+selection reason; evaluation banks and unrelated/fork results are excluded.
+Accepted leads join the next acquisition queue. GitHub versions are frozen at an
+explicit commit; already imported versions are not repeatedly downloaded. Public
+website queues resume within declared prefixes and page caps. HTTP hops use the
+existing host suspension, robots, pacing, redirect, challenge and byte-limit
+checks. A failed source receives a 24-hour cooldown and stays visible in state.
+Catalog and dependency leads that lack a reviewed adapter remain explicit gaps.
+
+### Cleaned views and recoverability
+
+`<domain>/clean-current/<use-class>/<role>/` is the classified materialization.
+The initial cleaning policy is faithful pass-through, with exact-body duplicates
+already merged in the source snapshot and aliases retained. No new prose rule is
+applied to source code, equations, multilingual text or numeric tables. The default
+training selection is `open/core`; reference PDFs, numerical assets, research
+candidates and other use classes need explicit selection. The global corpus's
+cleaning rules and admissions are unchanged. Every view has a hashed membership
+receipt and verified links to immutable text.
+
+`domain_backup.py` mirrors the entire domain tree to the UUID-bound second device
+configured in `workspace/domain-storage.json` (this host:
+`/mnt/data1/nekaise-domain-backups/replica`). It does not delete old immutable
+versions; replaced operational metadata goes into a dated history directory.
+A checksum/link comparison precedes its successful receipt. The backup covers
+raw artifacts, extracted text, all views, custody evidence, acquisition state,
+logs and legacy preparation. The existing October SSD archives remain historical
+backups, but sharing the active SSD makes them unsuitable as its only backup.
+
+Inspect `_acquisition/latest.json`, `_acquisition/job-status.json`,
+`_custody/latest.json` and `backup-status.json` for compact operational evidence.
+`_acquisition/cron.log` holds detailed failures. A successful publication reports
+its residual source/extraction failures; it does not assert complete internet
+coverage, validated simulations, or that every retained byte is training-ready.
+
+Install the authorized six-hour continuation with
+`.venv/bin/python scripts/install_domain_cron.py` (remove with `--remove`).
+It runs at 01:47, 07:47, 13:47 and 19:47 in the crontab's configured timezone,
+uses a three-hour process-group timeout, and preserves all other cron entries.
+Unpinned repository heads are rechecked weekly; immutable commit-pinned recipes
+remain reproducible. Websites rotate by their last attempt, so one large manual
+cannot indefinitely prevent the remaining languages from being sampled.
+
+Automatically discovered repositories enter `research_candidates` pending source
+relevance review; they never become core merely because a search result matched.
+Curated sources retain their declared core/reference separation. Search-selection
+rules and native-language queries are recorded separately from cleaning policy.

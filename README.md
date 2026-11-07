@@ -106,3 +106,7 @@ are welcome.
 
 Code, registry, and manifest: [MIT](LICENSE). Referenced documents retain their own terms;
 `open` means available to fetch, not unrestricted reuse. Document bytes are never published here.
+
+## Domain collections on external SSD
+
+The isolated physical-modeling, building-energy and controls collections now use a UUID-checked external SSD with a second-device backup. The resumable collection command is `.venv/bin/python scripts/domain_acquire.py --repositories 6 --websites 6`. See [domain operation and coverage](docs/DOMAIN-COLLECTIONS.md#ssd-operation-2026-11-07) for paths, classified cleaned views, discovery limits and failure receipts.
