@@ -74,6 +74,10 @@ RPO_SECONDS = 15 * 60
 RTO_SECONDS = 60 * 60
 SEGMENT_BYTES = 16 * 1024 * 1024
 SEGMENTS_PER_LOG = 0x100000000 // SEGMENT_BYTES
+# Restore drills are discretionary writers, including while growth is held. Keep the same
+# minimum headroom as growth on the actual scratch filesystem, plus the restore estimate.
+RESTORE_MIN_FREE_BYTES = 40_000_000_000
+RESTORE_MIN_FREE_FRACTION = 0.04
 _SEGMENT = re.compile(r"[0-9A-F]{24}")
 _BASE_NAME = re.compile(r"\d{8}T\d{6}Z")
 # Tables whose whole content the fingerprint shows (small control tables; the rest are digested).
@@ -682,6 +686,37 @@ def threading_main() -> bool:
     return threading.current_thread() is threading.main_thread()
 
 
+def check_restore_capacity(record: dict, base_dir: Path, *, segments: int = 0) -> None:
+    """Fail before allocating a restore that would consume scratch's safety floor.
+
+    Count uncompressed manifest bytes and the entire replay WAL range, not compressed archive
+    size. This is an admission estimate, not a reservation or a bound on concurrent writers or
+    recovery growth. Recheck after the potentially slow fingerprint/archive/verification work.
+    Unknown sizes or filesystem errors fail the drill through its normal recorded error path.
+    """
+    files = json.loads((base_dir / "backup_manifest").read_text())["Files"]
+    if not isinstance(files, list) or not files:
+        raise DrillError("cannot size restore: backup manifest has no Files")
+    block = os.statvfs(SCRATCH).f_frsize
+    sizes = [f["Size"] for f in files]
+    if any(type(size) is not int or size < 0 for size in sizes):
+        raise DrillError("cannot size restore: invalid backup manifest file size")
+    base_bytes = sum(((size + block - 1) // block) * block for size in sizes)
+    usage = shutil.disk_usage(SCRATCH)
+    floor = max(RESTORE_MIN_FREE_BYTES, int(usage.total * RESTORE_MIN_FREE_FRACTION))
+    required = base_bytes + segments * SEGMENT_BYTES + floor
+    facts = {"path": str(SCRATCH.resolve()), "free_bytes": usage.free,
+             "total_bytes": usage.total, "floor_bytes": floor, "base_bytes": base_bytes,
+             "wal_bytes": segments * SEGMENT_BYTES, "required_free_bytes": required,
+             "ok": usage.free > required}
+    record.setdefault("capacity_checks", []).append(facts)
+    if not facts["ok"]:
+        raise DrillError(f"restore scratch {SCRATCH} has {usage.free / 1e9:.3f} GB free; "
+                         f"requires more than {required / 1e9:.3f} GB including "
+                         f"{floor / 1e9:.3f} GB safety floor; provision scratch capacity "
+                         "or select a sufficiently provisioned NEKAISE_PG_SCRATCH")
+
+
 def _drill(record: dict, base_name: str | None, *, archive_timeout: float, log) -> dict:
     work = None
     data = None
@@ -693,6 +728,7 @@ def _drill(record: dict, base_name: str | None, *, archive_timeout: float, log) 
         if chosen is None:
             raise DrillError(f"no base backup {base_name}")
         record.update(base=chosen.name, base_age_hours=round((_now() - base_time(chosen)) / 3600, 2))
+        check_restore_capacity(record, chosen)
         target, lsn, segment, live, switched = pin_recovery_point()
         record.update(target=target, lsn=lsn, segment=segment, summary=summary(live))
         # confirmed archival of the recovery point's segment, never a fixed sleep; the time from
@@ -708,6 +744,7 @@ def _drill(record: dict, base_name: str | None, *, archive_timeout: float, log) 
         t0 = time.monotonic()
         run(PGBIN / "pg_verifybackup", "-n", "-m", chosen / "backup_manifest", chosen)
         record["verify_s"] = round(time.monotonic() - t0, 1)
+        check_restore_capacity(record, chosen, segments=record["segments_to_replay"])
         SCRATCH.mkdir(parents=True, exist_ok=True)
         work = Path(tempfile.mkdtemp(prefix="restore-test-", dir=SCRATCH))
         (work / "restore.sh").write_text(RESTORE_SH.format(wal=WAL))

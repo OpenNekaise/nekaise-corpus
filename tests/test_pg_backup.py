@@ -5,8 +5,12 @@ from __future__ import annotations
 
 import calendar
 import json
+import os
+import shutil
+import subprocess
 import time
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -289,3 +293,155 @@ def test_one_drill_at_a_time_and_leftovers_are_swept(tmp_path, monkeypatch):
         fcntl.flock(held.fileno(), fcntl.LOCK_EX)
         rec = pg_backup.restore_test(log=lambda *_: None)
     assert rec["error"] == "another restore drill is running" and not rec["ok"]
+
+
+def _sized_base(tmp_path, monkeypatch):
+    bases = tmp_path / "bases"
+    chosen = _base(bases, "2026-09-29T03:30:00Z", "1/10000000")
+    manifest = json.loads((chosen / "backup_manifest").read_text())
+    manifest["Files"] = [{"Path": "base/1/123", "Size": 8192}]
+    (chosen / "backup_manifest").write_text(json.dumps(manifest))
+    monkeypatch.setattr(pg_backup, "BASES", bases)
+    pg_backup.SCRATCH.mkdir()
+    return chosen
+
+
+@pytest.mark.parametrize("total,floor", [(100_000_000_000, 40_000_000_000),
+                                         (4_000_000_000_000, 160_000_000_000)])
+def test_restore_capacity_keeps_floor_after_uncompressed_base_and_wal(
+        tmp_path, monkeypatch, total, floor):
+    chosen = _sized_base(tmp_path, monkeypatch)
+    required = floor + 8192 + 2 * pg_backup.SEGMENT_BYTES
+    calls = []
+
+    def usage(path):
+        calls.append(path)
+        return SimpleNamespace(total=total, free=required)
+
+    monkeypatch.setattr(pg_backup.shutil, "disk_usage", usage)
+    record = {}
+    with pytest.raises(pg_backup.DrillError, match="safety floor"):
+        pg_backup.check_restore_capacity(record, chosen, segments=2)
+    assert calls == [pg_backup.SCRATCH]  # measure the destination, not ROOT or the backup disk
+    assert record["capacity_checks"][-1]["required_free_bytes"] == required
+    monkeypatch.setattr(pg_backup.shutil, "disk_usage",
+                        lambda _: SimpleNamespace(total=total, free=required + 1))
+    pg_backup.check_restore_capacity(record, chosen, segments=2)
+    assert record["capacity_checks"][-1]["ok"]
+
+
+def test_low_scratch_is_recorded_before_recovery_point_or_extraction(tmp_path, monkeypatch):
+    _sized_base(tmp_path, monkeypatch)
+    monkeypatch.setattr(pg_backup.shutil, "disk_usage",
+                        lambda _: SimpleNamespace(total=4_000_000_000_000, free=49_000_000_000))
+    monkeypatch.setattr(pg_backup, "pin_recovery_point", lambda: pytest.fail("created a point"))
+    monkeypatch.setattr(pg_backup, "extract", lambda *a: pytest.fail("started extraction"))
+    rec = pg_backup.restore_test(log=lambda *_: None)
+    assert not rec["ok"] and "safety floor" in rec["error"]
+    assert "target" not in rec and not list(pg_backup.SCRATCH.glob("restore-test-*"))
+    assert pg_backup.last_drill() == rec
+
+
+def test_restore_rechecks_space_after_archive_wait_before_extraction(tmp_path, monkeypatch):
+    _sized_base(tmp_path, monkeypatch)
+    readings = iter([200_000_000_000, 41_000_000_000])
+    monkeypatch.setattr(pg_backup.shutil, "disk_usage",
+                        lambda _: SimpleNamespace(total=4_000_000_000_000, free=next(readings)))
+    monkeypatch.setattr(pg_backup, "pin_recovery_point", lambda: (
+        "test-point", "1/10000000", "000000010000000100000010", {}, time.monotonic()))
+    monkeypatch.setattr(pg_backup, "wait_archived", lambda *a, **kw: 0)
+    monkeypatch.setattr(pg_backup, "missing_segments", lambda *a: [])
+    monkeypatch.setattr(pg_backup, "run", lambda *a: "")
+    monkeypatch.setattr(pg_backup, "extract", lambda *a: pytest.fail("started extraction"))
+    rec = pg_backup.restore_test(log=lambda *_: None)
+    assert not rec["ok"] and "safety floor" in rec["error"]
+    assert [c["ok"] for c in rec["capacity_checks"]] == [True, False]
+    assert rec["capacity_checks"][-1]["wal_bytes"] == pg_backup.SEGMENT_BYTES
+    assert not list(pg_backup.SCRATCH.glob("restore-test-*"))
+    assert pg_backup.last_drill() == rec
+
+
+@pytest.mark.parametrize("files", [None, [], [{"Size": -1}], [{"Size": "8192"}],
+                                  [{"Size": True}], [{}]])
+def test_unknown_restore_size_fails_closed(tmp_path, monkeypatch, files):
+    chosen = _sized_base(tmp_path, monkeypatch)
+    (chosen / "backup_manifest").write_text(json.dumps({"Files": files}))
+    monkeypatch.setattr(pg_backup, "pin_recovery_point", lambda: pytest.fail("created a point"))
+    rec = pg_backup.restore_test(log=lambda *_: None)
+    assert not rec["ok"] and "error" in rec and "target" not in rec
+    assert pg_backup.last_drill() == rec
+
+
+def test_unreadable_scratch_capacity_fails_closed(tmp_path, monkeypatch):
+    _sized_base(tmp_path, monkeypatch)
+
+    def unavailable(_):
+        raise OSError("capacity unavailable")
+
+    monkeypatch.setattr(pg_backup.shutil, "disk_usage", unavailable)
+    monkeypatch.setattr(pg_backup, "pin_recovery_point", lambda: pytest.fail("created a point"))
+    rec = pg_backup.restore_test(log=lambda *_: None)
+    assert not rec["ok"] and "capacity unavailable" in rec["error"]
+    assert pg_backup.last_drill() == rec
+
+
+@pytest.mark.skipif(not os.environ.get("NEKAISE_PG_TEST_DSN"),
+                    reason="PostgreSQL integration tests not enabled")
+@pytest.mark.parametrize("shortage", [True, False])
+def test_restore_capacity_with_isolated_archiving_cluster(tmp_path, monkeypatch, shortage):
+    """Exercise real backup/WAL/restore without changing either installed cluster.
+
+    The ordinary test cluster has archive_mode=off, so this test owns a small, temporary
+    archiving cluster. Both source and restore processes are stopped before returning.
+    """
+    import tempfile
+    if not (pg_backup.PGBIN / "initdb").exists():
+        pytest.skip("PostgreSQL binaries unavailable")
+    if shutil.disk_usage(tmp_path).free < 512 * 1024**2:
+        pytest.skip("insufficient space for the small isolated cluster")
+    # Short paths keep both source and restored Unix sockets below the platform limit.
+    work = Path(tempfile.mkdtemp(prefix="pg-cap-", dir=tmp_path.parent))
+    data, socket, wal = work / "data", work / "run", work / "wal"
+    socket.mkdir()
+    wal.mkdir()
+    for key, value in {"SOCKET": str(socket), "DB": "postgres", "SCHEMA": "public",
+                       "BASES": work / "bases", "WAL": wal, "SCRATCH": work / "scratch",
+                       "DRILL_LOG": work / "drills.jsonl"}.items():
+        monkeypatch.setattr(pg_backup, key, value)
+    pg_backup.BASES.mkdir()
+    try:
+        subprocess.run([str(pg_backup.PGBIN / "initdb"), "-D", str(data), "-A", "trust",
+                        "--locale=C.UTF-8", "-E", "UTF8"], check=True, capture_output=True)
+        with (data / "postgresql.conf").open("a") as f:
+            f.write(f"\nlisten_addresses = ''\nunix_socket_directories = '{socket}'\n"
+                    "shared_buffers = '16MB'\nmax_wal_size = '64MB'\nmin_wal_size = '32MB'\n"
+                    f"archive_mode = on\narchive_command = 'cp %p {wal}/%f'\n")
+        subprocess.run([str(pg_backup.PGBIN / "pg_ctl"), "-D", str(data), "-l",
+                        str(work / "source.log"), "-w", "-t", "30", "start"],
+                       check=True, capture_output=True)
+        with pg_backup.connect(autocommit=True) as conn:
+            conn.execute("CREATE TABLE capacity_probe (value text)")
+            conn.execute("INSERT INTO capacity_probe VALUES ('in base')")
+        pg_backup.base()
+        with pg_backup.connect(autocommit=True) as conn:
+            conn.execute("INSERT INTO capacity_probe VALUES ('replayed from WAL')")
+        # Controlled capacity readings; this small real restore must also run on CI disks
+        # smaller than the production safety floor.
+        monkeypatch.setattr(pg_backup.shutil, "disk_usage", lambda _: SimpleNamespace(
+            total=4_000_000_000_000, free=49_000_000_000 if shortage else 200_000_000_000))
+        rec = pg_backup.restore_test(archive_timeout=30, log=lambda *_: None)
+        assert pg_backup.last_drill() == rec
+        if shortage:
+            assert not rec["ok"] and "safety floor" in rec["error"]
+            assert "target" not in rec
+        else:
+            assert rec["ok"], rec
+            assert rec["mismatches"] == []
+            assert len(rec["capacity_checks"]) == 2
+            assert all(c["ok"] for c in rec["capacity_checks"])
+        assert not list(pg_backup.SCRATCH.glob("restore-test-*"))
+    finally:
+        stopped = pg_backup.stop_instance(data)
+        if stopped and not list(pg_backup.SCRATCH.glob("restore-test-*")):
+            shutil.rmtree(work)
+        assert stopped, f"test cluster kept at {work}"

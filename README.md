@@ -63,6 +63,13 @@ and short spikes between samples can be missed. Separate payload mounts need sep
 Hard kills can lose the unfinished scope's summary. Sampling neither releases a hold nor changes
 the floor; a supervised round and explicit reserves are still required before sustained growth.
 
+PostgreSQL restore drills also check their scratch filesystem before creating a recovery point
+and again before extraction. Available space must exceed the uncompressed base estimate, replay
+WAL estimate, and a safety floor of max(40 GB, 4% of that filesystem). A refusal is recorded as a
+failed drill; existing backups remain available. Provision scratch capacity or set
+`NEKAISE_PG_SCRATCH` to a sufficiently provisioned filesystem. This preflight does not reserve
+space against other writers or establish a bound on recovery growth.
+
 Health monitoring reports cleaned-backup freshness separately from original-byte recovery:
 the current backup scope excludes `raw/` and `text/`, so `original_backup` remains a warning
 until their coverage and restore verification are established. The daily PostgreSQL shadow
